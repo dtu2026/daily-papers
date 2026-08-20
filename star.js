@@ -1,9 +1,7 @@
 (function () {
   "use strict";
 
-  var REPO = "dtu2026/daily-papers";
-  var PAGES = "https://dtu2026.github.io/daily-papers";
-
+  var API = window.STAR_API || "";
   var body = document.body;
   if (!body) return;
   var who = body.getAttribute("data-who");
@@ -14,29 +12,40 @@
     return "star:" + who + ":" + date + ":" + id;
   }
 
-  function shortTitle(title) {
-    return String(title || "").replace(/^\d+\.\s+/, "").trim();
-  }
-
-  function issueUrl(id, title) {
-    var issueTitle = "[精读] " + who + " " + date + " " + id + " " + shortTitle(title);
-    var paperUrl = PAGES + "/" + who + "/" + date + ".html#" + id;
-    var bodyText = [
-      "who=" + who,
-      "date=" + date,
-      "id=" + id,
-      "title=" + title,
-      "url=" + paperUrl
-    ].join("\n");
-    return "https://github.com/" + REPO + "/issues/new?title=" +
-      encodeURIComponent(issueTitle) +
-      "&body=" + encodeURIComponent(bodyText);
-  }
-
   function markStarred(btn) {
     btn.textContent = "★ 已标";
     btn.classList.add("starred");
     btn.setAttribute("aria-pressed", "true");
+    btn.disabled = true;
+  }
+
+  function markBusy(btn) {
+    btn.textContent = "在标…";
+    btn.disabled = true;
+  }
+
+  function markFail(btn) {
+    btn.textContent = "再点一次";
+    btn.disabled = false;
+    btn.classList.remove("starred");
+    btn.setAttribute("aria-pressed", "false");
+  }
+
+  function postStar(id, title) {
+    var endpoint = (API || "") + "/star";
+    return fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        who: who,
+        date: date,
+        id: id,
+        title: title || ""
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error("star failed");
+      return res.json().catch(function () { return {}; });
+    });
   }
 
   var buttons = document.querySelectorAll("button.star-btn");
@@ -46,21 +55,17 @@
       var title = btn.getAttribute("data-title") || "";
       if (!id) return;
       var starred = false;
-      try {
-        starred = !!localStorage.getItem(storageKey(id));
-      } catch (e) {
-        starred = false;
-      }
+      try { starred = !!localStorage.getItem(storageKey(id)); } catch (e) {}
       if (starred) markStarred(btn);
       btn.addEventListener("click", function () {
-        var already = btn.classList.contains("starred");
-        try {
-          localStorage.setItem(storageKey(id), "1");
-        } catch (e) {}
-        markStarred(btn);
-        if (!already) {
-          window.open(issueUrl(id, title), "_blank", "noopener");
-        }
+        if (btn.classList.contains("starred") || btn.disabled) return;
+        markBusy(btn);
+        postStar(id, title).then(function () {
+          try { localStorage.setItem(storageKey(id), "1"); } catch (e) {}
+          markStarred(btn);
+        }).catch(function () {
+          markFail(btn);
+        });
       });
     })(buttons[i]);
   }
