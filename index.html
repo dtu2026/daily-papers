@@ -110,6 +110,7 @@ footer {
   <div class="tabs">
     <button class="tab active" type="button" data-tab="jeff">Jeff 实证</button>
     <button class="tab" type="button" data-tab="kyle">Kyle 理论</button>
+    <button class="tab" type="button" data-tab="reads">精读</button>
   </div>
   <section id="panel-jeff" class="panel active">
     <div class="card"><a class="row" href="jeff/2026-08-20.html"><span class="date">2026-08-20 <span class="badge badge">最新</span></span><span class="hint">实证 →</span></a><a class="row" href="jeff/2026-08-19.html"><span class="date">2026-08-19</span><span class="hint">实证 →</span></a><a class="row" href="jeff/2026-08-18.html"><span class="date">2026-08-18</span><span class="hint">实证 →</span></a></div>
@@ -117,20 +118,28 @@ footer {
   <section id="panel-kyle" class="panel">
     <div class="card"><a class="row" href="kyle/2026-08-20.html"><span class="date">2026-08-20 <span class="badge badge kyle">最新</span></span><span class="hint">理论 →</span></a><a class="row" href="kyle/2026-08-19.html"><span class="date">2026-08-19</span><span class="hint">理论 →</span></a><a class="row" href="kyle/2026-08-18.html"><span class="date">2026-08-18</span><span class="hint">理论 →</span></a></div>
   </section>
+  <section id="panel-reads" class="panel reads-sec">
+    <div class="card"><div class="empty">还没有精读。打开某天简报，在篇目标题下点「☆ 想精读」。</div></div>
+  </section>
   <footer>静态发布于 GitHub Pages。新简报写入 daily-papers/ 后运行 publish.sh 即可更新。</footer>
 </div>
 <script>
 (function () {
   var tabs = document.querySelectorAll(".tab");
+  function show(id) {
+    tabs.forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === id); });
+    document.querySelectorAll(".panel").forEach(function (p) {
+      p.classList.toggle("active", p.id === "panel-" + id);
+    });
+  }
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
       var id = tab.getAttribute("data-tab");
-      tabs.forEach(function (t) { t.classList.toggle("active", t === tab); });
-      document.querySelectorAll(".panel").forEach(function (p) {
-        p.classList.toggle("active", p.id === "panel-" + id);
-      });
+      show(id);
+      history.replaceState(null, "", id === "reads" ? "#reads" : location.pathname);
     });
   });
+  if (location.hash === "#reads") show("reads");
 })();
 </script>
 </body>
