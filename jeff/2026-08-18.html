@@ -95,7 +95,8 @@
 </style>
 <!-- star-inject --><style>
 .star-row { margin: 2px 0 10px; }
-.star-btn, a.star-read {
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
   appearance: none;
   display: inline-block;
   border: 1px solid #d6d3d1;
@@ -116,8 +117,9 @@
   color: #57534e;
   background: #f5f5f4;
   border-color: #e7e5e4;
-  cursor: default;
+  cursor: pointer;
 }
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
 a.star-read {
   color: #3f6212;
   background: #f4f7ee;

@@ -16,27 +16,29 @@
     btn.textContent = "★ 已标";
     btn.classList.add("starred");
     btn.setAttribute("aria-pressed", "true");
-    btn.disabled = true;
-  }
-
-  function markBusy(btn) {
-    btn.textContent = "在标…";
-    btn.disabled = true;
-  }
-
-  function markFail(btn) {
-    btn.textContent = "再点一次";
     btn.disabled = false;
+    btn.title = "再点取消";
+  }
+
+  function markIdle(btn) {
+    btn.textContent = "☆ 想精读";
     btn.classList.remove("starred");
     btn.setAttribute("aria-pressed", "false");
+    btn.disabled = false;
+    btn.title = "";
   }
 
-  function postStar(id, title) {
-    var endpoint = (API || "") + "/star";
-    return fetch(endpoint, {
+  function markBusy(btn, starring) {
+    btn.textContent = starring ? "在标…" : "取消中…";
+    btn.disabled = true;
+  }
+
+  function post(action, id, title) {
+    return fetch((API || "") + "/star", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        action: action,
         who: who,
         date: date,
         id: id,
@@ -58,13 +60,20 @@
       try { starred = !!localStorage.getItem(storageKey(id)); } catch (e) {}
       if (starred) markStarred(btn);
       btn.addEventListener("click", function () {
-        if (btn.classList.contains("starred") || btn.disabled) return;
-        markBusy(btn);
-        postStar(id, title).then(function () {
-          try { localStorage.setItem(storageKey(id), "1"); } catch (e) {}
-          markStarred(btn);
+        if (btn.disabled) return;
+        var nowStarred = btn.classList.contains("starred");
+        markBusy(btn, !nowStarred);
+        post(nowStarred ? "unstar" : "star", id, title).then(function () {
+          try {
+            if (nowStarred) localStorage.removeItem(storageKey(id));
+            else localStorage.setItem(storageKey(id), "1");
+          } catch (e) {}
+          if (nowStarred) markIdle(btn);
+          else markStarred(btn);
         }).catch(function () {
-          markFail(btn);
+          if (nowStarred) markStarred(btn);
+          else markIdle(btn);
+          btn.textContent = nowStarred ? "取消失败，再点" : "再点一次";
         });
       });
     })(buttons[i]);
