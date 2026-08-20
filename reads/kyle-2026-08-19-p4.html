@@ -25,44 +25,60 @@
   .wrap { max-width: 820px; margin: 0 auto; padding: 44px 22px 80px; }
   header h1 { font-size: 26px; line-height: 1.35; font-weight: 650; margin: 0 0 8px; }
   .meta { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
-  .lede, .box, .toc {
+  .lede {
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 12px;
     padding: 16px 18px;
-    margin-bottom: 22px;
+    margin-bottom: 28px;
   }
-  .lede p, .box p { margin: 0 0 8px; }
-  .lede p:last-child, .box p:last-child { margin: 0; }
-  .toc { font-family: ui-sans-serif, system-ui, "PingFang SC", sans-serif; font-size: 14px; }
+  .lede p { margin: 0 0 8px; }
+  .lede p:last-child { margin: 0; }
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 18px 16px;
+    margin: 0 0 28px;
+  }
+  .toc p { margin: 0 0 8px; font-size: 15px; color: var(--muted); font-family: ui-sans-serif, system-ui, sans-serif; }
   .toc ol { margin: 0; padding-left: 1.3em; }
+  .toc li { margin: 4px 0; }
   .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
   h2 {
     font-size: 19px;
-    margin: 36px 0 10px;
-    padding-top: 10px;
+    margin: 32px 0 10px;
+    padding-top: 8px;
     border-top: 1px solid var(--line);
   }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
   h3 {
     font-size: 15px;
     font-family: ui-sans-serif, system-ui, "PingFang SC", sans-serif;
     letter-spacing: .03em;
     color: var(--accent);
-    margin: 20px 0 6px;
+    margin: 18px 0 6px;
   }
   p { margin: 0 0 10px; }
   ul, ol { margin: 0 0 12px; padding-left: 1.25em; }
   li { margin: 4px 0; }
+  .box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0 16px;
+  }
   .eq {
     font-family: ui-sans-serif, system-ui, sans-serif;
     font-size: 15px;
     text-align: center;
-    margin: 12px 0 6px;
-    padding: 12px 10px;
+    margin: 12px 0;
+    padding: 10px;
     background: #eef2ff;
     border-radius: 8px;
   }
-  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
   .note {
     background: var(--warn);
     border-radius: 8px;
@@ -77,15 +93,35 @@
     font-size: 15px;
     margin: 16px 0;
   }
-  .tag {
+  .mark {
     display: inline-block;
-    font-family: ui-sans-serif, system-ui, sans-serif;
     font-size: 12px;
-    background: var(--tag);
-    color: var(--accent);
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .02em;
     padding: 1px 7px;
     border-radius: 999px;
     margin-right: 6px;
+    vertical-align: middle;
+  }
+  .mark-auth { background: #dbeafe; color: #1e3a8a; }
+  .mark-std { background: #ffedd5; color: #9a3412; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    background: #f5f5f4;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  pre {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    background: #1c1917;
+    color: #f5f5f4;
+    padding: 12px 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+    line-height: 1.55;
+    margin: 12px 0 16px;
   }
   a { color: var(--accent); }
   footer {
@@ -100,286 +136,1291 @@
 <div class="wrap">
 <header>
   <h1>公开信号会把自愿披露挤出去</h1>
-  <p class="meta">Chen &amp; Jin, NBER WP 35625，2026年8月 · 精读 kyle-2026-08-19-p4 · Kyle · 2026-08-20 按全文讲解标准重写</p>
+  <p class="meta">Chen &amp; Jin, 「When Public Signals Backfire: Strategic Disclosure and Information Crowd-Out」, NBER WP 35625，2026年8月 · 精读 kyle-2026-08-19-p4 · Kyle · 2026-08-20 按全文讲解标准重写</p>
 </header>
 
-<div class="lede">
-  <p>监管多放一个和公司私有信息相关的公开指标（评级、一致预期、股价），本意是让外面的人多知道一点。这篇说：如果看的人有点天真，这个指标会改写他们对「公司为什么不说话」的解读。指标越好，沉默越被当成「大概还行」，中间类型更敢藏。加总信息量可以比「没有这个公开指标」更差。</p>
-  <p>下面不是日报短评。先把经典 unraveling 的推导走完，再把他们加的 public signal 和 partial naivete 嵌进去，把 equilibrium 门槛、比较静态、实验在测什么、和你跟 Jeff 做的空公告 / 问询函怎么对上，一步步写清楚。</p>
+<div class="note">
+  <strong>本机没有打开 NBER PDF。</strong> 下面能当「作者原话」写的，只来自 NBER w35625 摘要、作者主页 haoyuanchen.com/research 上同一段工作论文介绍，报告场次来自作者主页（Maryland、清华、人大）。闭式门槛的具体系数、命题编号、附录分情形、实验人数、处理名、点估计，<strong>一律不编</strong>。推导用的是标准可验证披露模型，用来把他们的框架走通；每处都会标成「标准推导」，不是他们论文里的编号命题。
 </div>
 
-<div class="note">
-  NBER 全文这台机器下不下来（作者主页也没有开放 PDF，页面显示免费下载额度用尽）。【作者原话能核到】的部分只来自 NBER 摘要和 <a href="https://www.haoyuanchen.com/research">haoyuanchen.com/research</a>。【标准披露模型的推导】是用来把他们说的框架走通，<strong>不是</strong>他们论文里的编号命题，也不编闭式系数、表号、实验点估计。
+<div class="lede">
+  <p>董杰，这篇不是又一篇「信息多了市场更好」。它问的是反过来的那刀：市场上已经有一个和公司私有状态相关的 public signal（评级、一致预期、GPA、旧财报、股价），接收方又不是完全理性的时候，公司还愿不愿意把能验证的私有数字交出来。</p>
+  <p>人话版本就一句。接收方看见沉默，本来该做 adverse selection：不说的人是差的那一截。部分天真的接收方做不到这一步，会把沉默往已经看见的 public signal 上靠。信号越好，沉默越被读成「大概还行」，中间类型更敢藏。加总透明度可以比「根本没有这个公开指标」更差。</p>
+  <p>你要跟 Jeff 做的空公告 / 问询函，缺的就是这一课：强制开口不等于强制交可核验事实。空模板在这篇的语言里是 silence，不是一段有数字的 cheap talk。下面按课堂顺序走：先把 Grossman–Milgrom 的 unraveling 自己推一遍，再加 public signal 和 partial naivete，再解门槛，再做比较静态，再对实验和 A 股。</p>
 </div>
 
 <nav class="toc">
-  <strong>目录</strong>
+  <p>目录</p>
   <ol>
-    <li><a href="#s1">经典 unraveling：为什么沉默 = 最差</a></li>
+    <li><a href="#s0">题记：这篇到底在干什么</a></li>
+    <li><a href="#s1">先把经典 unraveling 推导一遍</a></li>
     <li><a href="#s2">他们加了什么：public signal + partial naivete</a></li>
-    <li><a href="#s3">Equilibrium 定义和门槛怎么解</a></li>
-    <li><a href="#s4">比较静态：挤出、挤入、对 ρ 非单调</a></li>
+    <li><a href="#s3">Equilibrium：门槛怎么解出来</a></li>
+    <li><a href="#s4">比较静态：crowd-out、crowd-in、ρ 的倒 U</a></li>
     <li><a href="#s5">假设为什么这么设，放松会怎样</a></li>
     <li><a href="#s6">实验：在测什么、怕什么、主结果怎么读</a></li>
-    <li><a href="#s7">对上董杰的空公告 / 问询函</a></li>
+    <li><a href="#s7">和董杰 / Jeff 的 A 股题怎么对上</a></li>
     <li><a href="#s8">文献位置</a></li>
-    <li><a href="#s9">原文还缺什么</a></li>
+    <li><a href="#s9">还缺什么（诚实）</a></li>
   </ol>
 </nav>
 
+<div class="box">
+  <p><span class="mark mark-auth">作者原话能核到</span> 和 <span class="mark mark-std">标准推导</span> 从这里开始分家。蓝条 / 蓝标签 = NBER 摘要或作者主页上的句子，可以回查。橙标签 = 标准披露模型的推导，用来把框架走通；<strong>不是</strong>他们论文里的编号命题，也不是他们的闭式系数。</p>
+</div>
+
+<div class="box">
+  <p><strong>符号表（课堂记号，不是他们正文的字母表）</strong></p>
+  <ul>
+    <li>θ<sub>a</sub>：发送方的私有状态。能被可验证地披露。</li>
+    <li>θ<sub>b</sub>：public signal。所有人看见，和 θ<sub>a</sub> 相关。</li>
+    <li>ρ：Corr(θ<sub>a</sub>, θ<sub>b</sub>)。实验室变动的那一维。</li>
+    <li>θ<sub>L</sub>, θ<sub>H</sub>：私有状态的下界和上界。</li>
+    <li>F, f：θ（或 θ<sub>a</sub>）的分布函数和密度。</li>
+    <li>d ∈ {Disclose, Silence}：发送方动作。Disclose 必须出示真值。</li>
+    <li>ĝ：接收方对 θ<sub>a</sub> 的猜测。理性时是条件期望。</li>
+    <li>ĝ<sub>ND</sub>：看见沉默之后的猜测。</li>
+    <li>t, t(θ<sub>b</sub>)：披露门槛。θ<sub>a</sub> ≥ t 才开口。</li>
+    <li>λ：教学用的天真权重。λ = 0 是 Bayesian，λ &gt; 0 把沉默往锚上拉。<strong>不是他们核过的函数。</strong></li>
+    <li>m(θ<sub>b</sub>)：不倒推 selection 的锚。课堂里取 θ<sub>b</sub> 或 E[θ<sub>a</sub> | θ<sub>b</sub>]。</li>
+    <li>μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) = E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>]：理性隐瞒池均值。</li>
+    <li>Disc(θ<sub>b</sub>) = P(θ<sub>a</sub> ≥ t(θ<sub>b</sub>) | θ<sub>b</sub>)：条件披露率。</li>
+    <li>ND：non-disclosure，沉默。</li>
+  </ul>
+</div>
+
+<h2 id="s0">0. 题记：这篇到底在干什么</h2>
+
+<p>先把对象摆正。发送方手里有一个私有状态，能证明它，也能藏着不说，<strong>不能编一个假数字</strong>。接收方要猜这个状态。发送方的钱只取决于接收方猜得高不高，不取决于猜得准不准。这是自愿披露，不是 cheap talk，也不是 Kyle 里那个对着做市商下单的知情交易。</p>
+
+<p>经典课上到这里会停：完全理性的接收方会把沉默解包到最差，除了最差人人开口。现实里中间类型经常藏。Chen 和 Jin 不走 Dye「也许根本没信息」、也不走 Jovanovic「开口要花钱」那两刀，走第三刀：接收方是 partially naive 的，解包推不完。然后再加一样东西——一个和私有状态相关的 public signal。天真接收方会用它来读沉默。</p>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  作者主页上的原句结构是这样的：自愿披露会响应一个相关的 public signal，条件是接收方部分天真；public signal 会移动天真接收方对沉默的解读；他们推出一个闭式披露门槛，嵌套经典 unraveling；一个有利的 public signal 可以挤出披露，让接收方得到的信息比「没有这个信号」更少。实验室变动私有状态和 public signal 的相关。披露随 public signal 变好而下降，相关越强降得越多；不披露时接收方的猜测朝 public signal 抬，偏离理性基准。策略性沉默可以反过来把 public signal 自己也挤掉，有它的透明度可以低于没有它。这个效应对相关不是单调的：信号强到能锚定信念、又太吵替代不了披露时，最狠。报告过 Maryland、清华、人大。Under review。
+</div>
+
+<p>你读这篇，不要先问「实验系数是多少」。先问清楚三件事。第一，经典 unraveling 的不动点到底为什么只能停在下界。第二，为什么完全理性时，有利的 public signal 通常加的是解包压力，而不是减。第三，部分天真怎样把方向拧过来，让有利信号变成沉默的保护伞。这三件事走通了，A 股空公告才能对上号：涨停、一致预期、同业公告是 θ<sub>b</sub>，空模板是 ND，你要测的是「可核验事实还在不在」，不是 CAR。</p>
+
+<p>和 Grossman–Stiglitz 那句「价格太有效，就没人愿挖信息」不要混。那里被挤出的是 <em>acquisition</em>：私人信息还没生产出来。这里私人状态已经被发送方看见了，被挤出的是 <em>voluntary disclosure</em>：已经知道的东西，选择不交。政策含义也不一样。监管多放一个相关公开指标，以为补了信息；在这篇的世界里，这个指标本身在喂策略性沉默。</p>
+
 <h2 id="s1">1. 先把经典 unraveling 推导一遍</h2>
-<p>Grossman (1981)、Milgrom (1981) 的可验证披露。先把这个物体钉死，后面所有「嵌套解包」才有落点。</p>
 
-<h3>1.1 设定</h3>
+<p><span class="mark mark-std">标准推导</span> 这一整节是 Grossman (1981)、Milgrom (1981) 的课堂版。Chen–Jin 的闭式门槛嵌套的就是它。推的每一步都写出来，后面加 public signal 时才知道哪一项被改了。</p>
+
+<h3>1.1 Setup：人、类型、动作、钱</h3>
+
+<p>两个玩家。Sender 知道自己的私有状态 θ。Receiver 不知道 θ，要出一个猜测 ĝ。Sender 不能撒谎，只能在「出示真值」和「沉默」里选。</p>
+
+<div class="eq">
+  θ ∈ [θ<sub>L</sub>, θ<sub>H</sub>]，分布函数 F，密度 f &gt; 0 落在 (θ<sub>L</sub>, θ<sub>H</sub>) 上，没有原子
+</div>
+<p>人话：类型是一段连续的数，从最差 θ<sub>L</sub> 到最好 θ<sub>H</sub>，中间每一点都有人，没有哪一个点堆了一大坨。</p>
+
+<div class="eq">
+  Sender 的动作：d ∈ {Disclose(θ), Silence}
+</div>
+<p>人话：交成绩单，或者把成绩单藏起来。交出来的必须是真分数，不能改。</p>
+
+<div class="eq">
+  Sender 的支付：u<sub>S</sub> = ĝ
+</div>
+<p>人话：接收方猜得越高，发送方越高兴。他不在乎这个猜测准不准，也不在乎方差，更没有第二期会被打脸的声誉。</p>
+
+<div class="eq">
+  Receiver 的支付：u<sub>R</sub> = −(ĝ − θ)<sup>2</sup>
+</div>
+<p>人话：接收方要猜准。平方损失下，最优猜测就是他信息集里对 θ 的条件期望。所以后面写 ĝ，就是在写这个条件期望（理性时）或者它的天真版（后面第 2 节）。</p>
+
+<div class="box">
+  <p><strong>这一节先假定接收方完全 Bayesian。</strong> 看见 Disclose(θ)，ĝ = θ。看见 Silence，ĝ = E[θ | Silence]。发送方知道接收方会这么做。</p>
+  <p>和 Dye (1985) 的差别现在就要钉死：这里 sender <strong>一定知情</strong>。沉默不是「没看见」，是「看见了选择不说」。</p>
+</div>
+
+<h3>1.2 Timing</h3>
+
+<ol>
+  <li>Nature 抽 θ ∼ F。</li>
+  <li>Sender 看见 θ，选 Disclose 或 Silence。</li>
+  <li>Receiver 看见动作（以及披露时的真值），出 ĝ。</li>
+  <li>支付实现：sender 拿 ĝ，receiver 拿 −(ĝ − θ)<sup>2</sup>。</li>
+</ol>
+
+<p>没有做市商，没有订单流，没有价格冲击。ĝ 就是估值，不是 Kyle 的 p(y)。后面第 5 节会再强调一次：不要把这篇读成知情交易。</p>
+
+<h3>1.3 先用三个离散类型把「剥洋葱」走一遍</h3>
+
+<p>连续情形的不动点不好上手。先用三个点看清楚：为什么「最好的一定说」会一层层传到最差。</p>
+
+<p>设类型 θ ∈ {1, 2, 3}，各 1/3。Sender 要 ĝ 尽量大。Receiver 完全理性。</p>
+
+<p><strong>第一步：假设所有人都沉默。</strong> 接收方只能出先验均值。</p>
+<div class="eq">
+  ĝ<sub>all silent</sub> = (1+2+3)/3 = 2
+</div>
+<p>人话：大家都闭嘴，只好猜中间。</p>
+
+<p>类型 3 拿这个 2，还是出示 3 拿 3？3 &gt; 2，他一定偏离开口。所以「所有人沉默」不是 equilibrium。</p>
+
+<p><strong>第二步：类型 3 一定开口之后，沉默池只剩 {1, 2}。</strong></p>
+<div class="eq">
+  ĝ<sub>{1,2}</sub> = (1+2)/2 = 1.5
+</div>
+<p>人话：接收方看见沉默，已经知道「不是最好的那个」。</p>
+
+<p>类型 2 拿 1.5，还是出示 2 拿 2？2 &gt; 1.5，他也偏离开口。</p>
+
+<p><strong>第三步：只剩类型 1 还在沉默池。</strong></p>
+<div class="eq">
+  ĝ<sub>{1}</sub> = 1
+</div>
+<p>人话：沉默现在等于最差。类型 1 出示 1 也是 1，无差异。约定：最差可以继续藏，因为藏和说一样。</p>
+
+<p>四个类型 {1,2,3,4} 同样剥：全体沉默均值 2.5，4 走；剩 {1,2,3} 均值 2，3 走；剩 {1,2} 均值 1.5，2 走；只剩 1。这就是 unraveling 这个词的来历：从顶上往下解包，一层层剥到最差。</p>
+
+<div class="box">
+  <p><strong>董杰这里容易混的一点：</strong>类型 2 不是「因为自己是 2 所以想说」。他是因为「比他好的人已经走了，沉默池的均值掉到 1.5，低于 2」，才被逼着说。解包是 <em>别人的偏离</em> 造成的压力，不是道德，也不是监管。</p>
+</div>
+
+<h3>1.4 连续类型：门槛策略和不动点</h3>
+
+<p>回到 θ ∈ [θ<sub>L</sub>, θ<sub>H</sub>]。猜一个门槛 t：θ ≥ t 的人披露，θ &lt; t 的人沉默。这是这一类模型的标准策略。要它成为 equilibrium，两件事同时成立。</p>
+
+<p><strong>接收方这边。</strong> 看见披露，ĝ = θ。看见沉默，理性猜测是沉默池的均值：</p>
+<div class="eq">
+  ĝ<sub>ND</sub>(t) = E[θ | θ &lt; t] = (1 / F(t)) ∫<sub>θ<sub>L</sub></sub><sup>t</sup> θ f(θ) dθ
+</div>
+<p>人话：不说话的人，是门槛以下那一截；理性接收方就猜这一截的平均身高。</p>
+
+<p><strong>发送方这边。</strong> 类型 θ 比较两件事：开口拿 θ，闭嘴拿 ĝ<sub>ND</sub>(t)。所以</p>
+<div class="eq">
+  开口  ⇔  θ ≥ ĝ<sub>ND</sub>(t)
+</div>
+<p>人话：比「沉默被猜成多少」更高的人，才愿意开口。刚好相等的人无差异。</p>
+
+<p>策略要自洽：我们猜的门槛 t，必须正好是这个无差异点。</p>
+<div class="eq">
+  t = E[θ | θ &lt; t]
+</div>
+<p>人话：门槛上那个人，开口拿自己的 t，闭嘴拿「比他差的那一截的均值」。这两件事必须打平。否则门槛会自己挪。</p>
+
+<p>如果 t &gt; E[θ | θ &lt; t]，门槛上的人开口严格更好，他下面一点点的人也想开口，门槛该往下走。如果 t &lt; E[θ | θ &lt; t]，门槛上的人宁可藏，门槛该往上走。只有相等才停。</p>
+
+<h3>1.5 为什么连续分布下唯一解是 t = θ<sub>L</sub></h3>
+
+<p>这是整节的关键不等式。设 t &gt; θ<sub>L</sub>。沉默池是 [θ<sub>L</sub>, t)，里面每一个 θ 都严格小于 t。</p>
+<div class="eq">
+  t − E[θ | θ &lt; t] = E[t − θ | θ &lt; t]
+</div>
+<p>人话：门槛减去池均值，等于「池子里每个人比门槛矮多少」的平均。</p>
+
+<p>t − θ 在 θ ∈ [θ<sub>L</sub>, t) 上处处为正，密度又是正的，所以期望严格为正：</p>
+<div class="eq">
+  E[t − θ | θ &lt; t] &gt; 0  ⇒  E[θ | θ &lt; t] &lt; t
+</div>
+<p>人话：只要门槛还在最差之上，池均值就一定矮于门槛。无差异条件 t = E[θ | θ &lt; t] <strong>不可能</strong>在 t &gt; θ<sub>L</sub> 处成立。</p>
+
+<p>用积分写一遍，避免「处处为正所以期望为正」听起来像口号：</p>
+<div class="eq">
+  ∫<sub>θ<sub>L</sub></sub><sup>t</sup> (t − θ) f(θ) dθ &gt; 0
+</div>
+<p>人话：被积函数在正长度的区间上为正，积分就为正。除以 F(t) &gt; 0，结论不变。</p>
+
+<p>那 t = θ<sub>L</sub> 呢？沉默池退化成最差那一点（或约定为 θ ≤ θ<sub>L</sub>）。</p>
+<div class="eq">
+  E[θ | θ ≤ θ<sub>L</sub>] = θ<sub>L</sub>
+</div>
+<p>人话：最差开口拿 θ<sub>L</sub>，闭嘴也被猜成 θ<sub>L</sub>，打平。所有 θ &gt; θ<sub>L</sub> 开口拿自己、闭嘴拿 θ<sub>L</sub>，严格愿意开口。</p>
+
+<p>这就是经典结果：<strong>唯一的门槛 equilibrium 是 t = θ<sub>L</sub>。除了最差，人人披露。沉默 = 最差。</strong></p>
+
+<p>沉默若出现在「人人披露」这条路上，是偏离路径。理性信念把偏离路径的沉默放在 θ<sub>L</sub> 上。这个信念撑得住：没有人想偏离去沉默，因为沉默会被当成最差。</p>
+
+<h3>1.6 均匀分布：把数字算到底</h3>
+
+<p>设 θ ∼ Uniform[θ<sub>L</sub>, θ<sub>H</sub>]。密度 f = 1 / (θ<sub>H</sub> − θ<sub>L</sub>)。门槛以下的条件期望是两头的中点：</p>
+<div class="eq">
+  E[θ | θ &lt; t] = (θ<sub>L</sub> + t) / 2
+</div>
+<p>人话：均匀分布截断之后还是均匀，平均值就是左端点和门槛的一半。</p>
+
+<p>推导一下，别背公式。F(t) = (t − θ<sub>L</sub>) / (θ<sub>H</sub> − θ<sub>L</sub>)。</p>
+<div class="eq">
+  ∫<sub>θ<sub>L</sub></sub><sup>t</sup> θ f(θ) dθ = [1 / (θ<sub>H</sub> − θ<sub>L</sub>)] · (1/2) (t<sup>2</sup> − θ<sub>L</sub><sup>2</sup>)
+</div>
+<p>人话：θ 的积分是半个平方差，再除以区间长度。</p>
+
+<div class="eq">
+  E[θ | θ &lt; t] = [(t<sup>2</sup> − θ<sub>L</sub><sup>2</sup>) / 2] / (t − θ<sub>L</sub>) = (t + θ<sub>L</sub>) / 2
+</div>
+<p>人话：平方差除以一次差，变成和的一半。这就是中点。</p>
+
+<p>代入不动点：</p>
+<div class="eq">
+  t = (θ<sub>L</sub> + t) / 2  ⇒  2t = θ<sub>L</sub> + t  ⇒  t = θ<sub>L</sub>
+</div>
+<p>人话：均匀例子里，你不用谈「处处为正」。代数直接把门槛钉在下界。</p>
+
+<p>用具体数字看「如果有人误以为门槛在中间，会怎样崩」。θ<sub>L</sub> = 0，θ<sub>H</sub> = 100。有人猜 t = 40。</p>
+<div class="eq">
+  E[θ | θ &lt; 40] = 20
+</div>
+<p>人话：他以为 40 以下都藏，接收方其实会猜 20，不是 40。</p>
+
+<p>那类型 21 到 39 开口拿自己、闭嘴拿 20，全部严格愿意开口。门槛从 40 塌到 20。再到 20：E[θ | θ &lt; 20] = 10，类型 11 到 19 又走。一直塌到 0。这就是连续情形下的「剥洋葱」。</p>
+
+<pre>误猜 t=40 → 池均值 20 → t 该是 20
+误猜 t=20 → 池均值 10 → t 该是 10
+误猜 t=10 → 池均值  5 → t 该是  5
+… 一直到 t=0 才停</pre>
+
+<h3>1.6b 分布不是均匀，结论变不变</h3>
+
+<p>董杰容易以为「只有均匀才剥到底」。不是。第 1.5 节的不等式只要求：连续、满密度、没有在内部堆原子。任意这样的 F，E[θ | θ &lt; t] &lt; t 对所有 t &gt; θ<sub>L</sub> 成立，不动点只能在下界。</p>
+
+<p>用一个偏左的密度手算一次。设 θ<sub>L</sub> = 0，θ<sub>H</sub> = 1，f(θ) = 2(1 − θ)。这是越往右越瘦的三角形。F(t) = ∫<sub>0</sub><sup>t</sup> 2(1 − θ) dθ = 2t − t<sup>2</sup>。</p>
+<div class="eq">
+  ∫<sub>0</sub><sup>t</sup> θ · 2(1 − θ) dθ = 2 ∫<sub>0</sub><sup>t</sup> (θ − θ<sup>2</sup>) dθ = t<sup>2</sup> − (2/3) t<sup>3</sup>
+</div>
+<p>人话：θ 加权积分是 t 的二次减三次。</p>
+<div class="eq">
+  E[θ | θ &lt; t] = [t<sup>2</sup> − (2/3) t<sup>3</sup>] / (2t − t<sup>2</sup>) = [t − (2/3) t<sup>2</sup>] / (2 − t)
+</div>
+<p>人话：上下约掉一个 t（t &gt; 0）。</p>
+
+<p>看 t = 0.5：分子 0.5 − (2/3)(0.25) = 0.5 − 1/6 = 1/3，分母 1.5，期望 ≈ 0.222 &lt; 0.5。看 t = 0.2：分子 0.2 − (2/3)(0.04) = 0.2 − 0.0267 = 0.1733，分母 1.8，期望 ≈ 0.096 &lt; 0.2。仍然矮于门槛。不动点方程 t(2 − t) = t − (2/3)t<sup>2</sup>，t &gt; 0 时化成 2 − t = 1 − (2/3)t ⇒ 1 = t/3 ⇒ t = 3，落在支撑外面。支撑内只剩 t = 0。</p>
+
+<p>偏右的密度同样。设 f(θ) = 2θ，F(t) = t<sup>2</sup>，E[θ | θ &lt; t] = (∫ 2θ<sup>2</sup> dθ) / t<sup>2</sup> = (2/3 t<sup>3</sup>) / t<sup>2</sup> = (2/3)t &lt; t。还是矮一截。所以「连续 + 满密度 ⇒ 剥到底」不是均匀的特产。</p>
+
+<h3>1.6c 原子、混合策略、为什么这里不会 countersignal</h3>
+
+<p>若 F 在某个内部点 θ<sub>0</sub> 堆了一坨原子，沉默池可能刚好停在这坨上：池均值被原子拉到等于 θ<sub>0</sub>，门槛可以停在内部。连续满密度把这扇门关了。作者能核到的句子没谈原子；课堂记住：他们嵌套的是连续经典解包。</p>
+
+<p>连续情形下，有人会问「中间类型随机开口行不行」。不行。若某段 (t<sub>1</sub>, t<sub>2</sub>) 里每个人以概率 q 开口，沉默池的均值会被这段拉高或拉低，段里高于池均值的人严格想改成必开，低于的人严格想改成必藏。只在一个点上无差异。混合撑不住一段区间。所以门槛策略不是偷懒，是这一类支付下的最好回应形状。</p>
+
+<p>Countersignaling（最好和最差都说、中间藏）出现在接收方还看见另一维质量、或者发送方要分离「自信」的时候。这里接收方只猜一个数字，发送方只想要这个数字高。最好的人开口收益最大，没有理由学最差一起藏。那类 countersignal 不是这篇的物体。</p>
+
+<h3>1.7 人话收束，以及三刀标准破口</h3>
+
+<p>沉默 = 最差。除了最差都说。这不是「市场喜欢透明」的规范结论，是「发送方要高估值、接收方会反推谁在藏」推出来的唯一不动点。</p>
+
+<p>现实里公司经常藏中间类型。文献常用三刀把解包砍开：</p>
 <ul>
-  <li><strong>发送方</strong>（公司）知道一个数字 θ，落在闭区间 [θ<sub>L</sub>, θ<sub>H</sub>] 上，分布 F 连续、密度 f &gt; 0。θ 是质量、盈余、考试分数。</li>
-  <li>发送方有两个动作：<em>disclose</em>（交出真值 θ）或 <em>silence</em>（什么都不交）。<strong>不能撒谎</strong>。这叫 verifiable disclosure，不是 cheap talk。</li>
-  <li><strong>接收方</strong>（投资者）完全贝叶斯。看见披露就信那个数；看见沉默，按「哪些类型会选择沉默」来算条件期望。</li>
-  <li>发送方的收益就是接收方的猜测 ĝ。他只在乎水平，不在乎方差，也没有第二期会被打脸。</li>
+  <li><strong>Dye (1985)：</strong>发送方以正概率根本没信息，没信息的人只能沉默。于是沉默 = 「没看见」和「看见了很烂」的混合物。中间类型可以躲在「也许他真没看见」后面。门槛停在内部。</li>
+  <li><strong>Jovanovic (1982)：</strong>披露有成本 c。无差异变成 t − c = E[θ | θ &lt; t]。左边比右边少一截成本，t 可以停在 θ<sub>L</sub> 上面。</li>
+  <li><strong>天真接收方：</strong>解包推不完。接收方看见沉默，没有把 selection 倒过来，猜测高于理性的池均值。中间类型发现闭嘴比开口划算。</li>
 </ul>
-<p>时间线：Nature 抽出 θ → 发送方看见 θ，决定说还是藏 → 接收方给出 ĝ。</p>
-<p>人话：成绩单你能交也能藏。交了就按真分数打。藏了，别人按「会藏的那些人」的平均分打。你希望别人打得越高越好。</p>
 
-<h3>1.2 Equilibrium：门槛策略</h3>
-<p>猜一个门槛 t。类型 θ ≥ t 的选择披露，θ &lt; t 的选择沉默。接收方猜对了这个策略，所以：</p>
-<div class="eq">看见 θ → ĝ = θ<br>看见沉默 → ĝ<sub>ND</sub> = E[θ | θ &lt; t]</div>
-<p class="eq-note">人话：说了就按真值；不说，就按隐瞒池的均值开价。</p>
-<p>发送方比的是「说出来拿 θ」还是「闭嘴拿 ĝ<sub>ND</sub>」。对门槛上的人，两边打平：</p>
-<div class="eq">t = E[θ | θ &lt; t]</div>
-<p class="eq-note">人话：刚好在门槛上的类型，交成绩单和藏成绩单，拿到的猜测一样。</p>
+<p>Chen–Jin 走第三刀，再加一个和私有状态相关的 public signal。发送方在他们的框架里是一定知情的，不是 Dye；也没有写成披露成本那一刀。</p>
 
-<h3>1.3 为什么唯一解是 t = θ<sub>L</sub></h3>
-<p>连续分布下，只要 t &gt; θ<sub>L</sub>，隐瞒池是 [θ<sub>L</sub>, t) 这一截，它的均值严格小于右端点：</p>
-<div class="eq">E[θ | θ &lt; t] &lt; t  （对所有 t &gt; θ<sub>L</sub>）</div>
-<p class="eq-note">人话：一堆比 t 小的数，平均不可能等于 t。所以 t = E[θ | θ &lt; t] 在 t &gt; θ<sub>L</sub> 处无解。</p>
-<p>只剩下 t = θ<sub>L</sub>：隐瞒池退化成最差的那一点，沉默 = 最差。除了最差，人人披露。这就是完全 unraveling。</p>
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  他们要的新东西是：这个 public signal 会移动天真接收方对沉默的解读。有利的信号可以挤出披露。这和 Grossman–Stiglitz 挤出的对象不同——那里是信息获取，这里是自愿开口。
+</div>
 
-<h3>1.4 均匀分布走一遍算术</h3>
-<p>设 θ ~ Uniform[θ<sub>L</sub>, θ<sub>H</sub>]。条件期望是区间中点：</p>
-<div class="eq">E[θ | θ &lt; t] = (θ<sub>L</sub> + t) / 2</div>
-<p>代入无差异条件：</p>
-<div class="eq">t = (θ<sub>L</sub> + t) / 2  ⇒  t = θ<sub>L</sub></div>
-<p class="eq-note">人话：就算你先猜一个中间门槛，算完隐瞒池均值一定比门槛低，门槛上的人宁可说。门槛被往下推，一直推到左端点。</p>
-<p>倒着讲同一件事：最好的类型说了一定加分，所以一定说。接收方看见沉默，就知道「不是最好的」。于是次好的也被逼着说。一层层剥下去，只剩最差还在藏。</p>
-
-<h3>1.5 现实里解包为什么推不完</h3>
-<p>公司经常藏中间类型。文献常用三刀砍开：</p>
+<p>对照写死，后面第 8 节还要再碰一次：</p>
 <ul>
-  <li>发送方不一定知情（Dye 1985）。沉默可能是「没看见」，不只是「看见了很烂」。隐瞒池被「不知情」稀释，门槛可以停在中间。</li>
-  <li>披露有成本（Jovanovic 1982）。中间类型交成绩单的成本盖过加分。</li>
-  <li>接收方不是完全理性，解包推不完。Jin, Luca, Martin (AEJ: Micro 2021) 的实验室就是 Ginger Jin 自己做的：发送方会藏不太好的消息，一部分接收方不会把沉默解到最差。</li>
+  <li>Grossman–Stiglitz：价格太明白 → 没人愿付成本去 <em>挖</em> 私有信号。被挤的是 acquisition。</li>
+  <li>Chen–Jin：public signal 太好（且接收方天真）→ 已经知情的发送方不愿 <em>交</em> 私有状态。被挤的是 disclosure。</li>
 </ul>
-<p>Chen–Jin 走第三刀，再加一样东西：市场上已经有一个<strong>和私有状态相关的公共信号</strong>。天真接收方会把沉默往这个信号上靠。</p>
-<p>这不是 Grossman–Stiglitz 那种「公共信息挤出私人挖信息」。GS 挤的是 <em>information acquisition</em>：价格已经反映了很多，谁还花钱去挖。这篇挤的是 <em>voluntary disclosure</em>：公开指标已经把沉默读宽了，谁还交成绩单。</p>
+
+<p>两件事政策处方相反。Grossman–Stiglitz 担心的是「公开得太多，私人生产停了」。Chen–Jin 担心的是「公开了一个相关指标，自愿交出来的可验证事实反而少了，总透明度更差」。</p>
+
+<h3>1.8 三种常见错法，现在就钉死</h3>
+
+<ol>
+  <li><strong>把 unraveling 听成「诚实」。</strong> 发送方不是好人。他开口只是因为闭嘴会被猜成更差。支付仍是 ĝ，不是 −(ĝ − θ)<sup>2</sup>。规范上的「应该透明」和均衡里的「不得不透明」不是同一句话。</li>
+  <li><strong>把 E[θ | θ &lt; t] = t 听成「池均值等于门槛，所以中间也能停」。</strong> 连续满密度下这个等式在 t &gt; θ<sub>L</sub> 处不成立。能停在中间的，一定另有一刀：成本、Dye、天真、原子。看到内部门槛，先问砍的是哪一刀。</li>
+  <li><strong>把 Grossman–Stiglitz 和这篇的 crowd-out 并成「信息多了就没人说话」。</strong> 前者没人去挖，后者已经知情的人不交。A 股空公告是后者。用前者的处方（少公开一点好让私人去生产）会开错药。</li>
+</ol>
+
+<p>第 2 节开始加 public signal。带着这三条进去，才不会把新模型读成「多一张纸，故事换皮」。</p>
 
 <h2 id="s2">2. 他们加了什么：public signal + partial naivete</h2>
-<p><span class="tag">作者原话能核到</span> 作者主页：We study how voluntary disclosure responds to a correlated public signal when receivers are partially naive. We develop a framework in which the public signal shifts naive receivers' interpretation of silence.</p>
 
-<h3>2.1 谁、看见什么、图什么</h3>
-<ul>
-  <li><strong>发送方</strong>看见私有状态 θ<sub>a</sub>。只能如实披露或沉默。和 Dye 不同：这里发送方一定知情，藏是策略，不是运气。</li>
-  <li><strong>公共信号</strong> θ<sub>b</sub>：所有人都能看见，和 θ<sub>a</sub> 正相关，相关系数记作 ρ。例子：分析师一致预期、另一家评级、GPA、旧财报、股价。</li>
-  <li><strong>接收方</strong>部分天真。看见披露就按真值信。看见沉默，不会只做理性的「隐瞒池均值」，还会把公共信号掺进去。</li>
-  <li>发送方目标：让接收方的猜测尽量高（股价、录取概率）。</li>
-</ul>
-<div class="box">
-  <p><strong>时间线</strong></p>
-  <ol>
-    <li>Nature 抽出 (θ<sub>a</sub>, θ<sub>b</sub>)，相关为 ρ。</li>
-    <li>发送方看见 θ<sub>a</sub>（通常也看见 θ<sub>b</sub>），决定 disclose 或 silence。</li>
-    <li>接收方看见 θ<sub>b</sub>，以及「说了的真值」或「沉默」，给出猜测 ĝ。</li>
-    <li>发送方拿到 ĝ。</li>
-  </ol>
+<h3>2.1 作者能核到的骨架</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「We study how voluntary disclosure responds to a correlated public signal when receivers are partially naive. We develop a framework in which the public signal shifts naive receivers' interpretation of silence, and derive a closed-form disclosure threshold nesting classical unraveling.」——作者主页 / NBER 摘要。闭式门槛的代数他们推了；本机没有 PDF，下面不用他们的系数，只用标准框架把同一条逻辑走通。
 </div>
 
-<h3>2.2 部分天真：教学用的线性混合</h3>
-<p>文献里「不会倒推选择」的标准物体是 Eyster–Rabin 的 cursed equilibrium：接收方看见沉默，没有充分反推「哪些类型才会藏」。Jin–Luca–Martin 的实验室也是这一类。</p>
-<p><span class="tag">标准模型推导</span> 下面这个 λ 是教学用的，<strong>不要当成他们论文里的符号</strong>。它把「公共信号改写沉默解读」写成能算的式子：</p>
-<div class="eq">ĝ<sub>ND</sub>(θ<sub>b</sub>) = (1 − λ) · E[θ<sub>a</sub> | ND, θ<sub>b</sub>] + λ · m(θ<sub>b</sub>)</div>
-<p class="eq-note">人话：沉默后的猜测 = 一边听隐瞒池均值，一边听公开指标。λ 是「有多听公开指标」。λ = 0 退回完全贝叶斯；λ &gt; 0 把沉默往 θ<sub>b</sub> 上拉。m(θ<sub>b</sub>) 是接收方从公开指标读出的「大概多少」，最简单就取 m(θ<sub>b</sub>) = θ<sub>b</sub>。</p>
-<p>作者说 public signal shifts naive receivers' interpretation of silence。上面这个式子就是这句话的一个可操作版本：θ<sub>b</sub> 进了 ĝ<sub>ND</sub>，而且是通过天真权重 λ 进去的，不是只通过理性的条件期望进去的。</p>
+<h3>2.2 玩家、信息、策略、支付</h3>
 
-<h3>2.3 为什么必须有 naivete，否则故事反着来</h3>
-<p>这是整篇最容易读反的一步。完全理性（λ = 0）时：</p>
-<div class="eq">ĝ<sub>ND</sub>(θ<sub>b</sub>) = E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t(θ<sub>b</sub>), θ<sub>b</sub>]</div>
-<p class="eq-note">人话：理性人已经知道「好公司更可能说」。公共信号越好，越说明「还在藏的人更差」。隐瞒池被读得更窄，解包压力更大，不是更小。</p>
-<p>所以：<strong>好的公共信号挤出披露，是天真接收方现象。</strong> 没有 λ &gt; 0 这一刀，favorable θ<sub>b</sub> 会加强 adverse selection 推断，发送方更不敢藏。作者把机制钉在 partial naivete 上，不是随便加的行为假设。</p>
+<p><span class="mark mark-std">标准推导</span> 记号按课堂习惯写。作者正文里的字母不必相同。</p>
+
+<ul>
+  <li><strong>私有状态 θ<sub>a</sub>：</strong>只有 sender 看见。这是他能披露的那个东西。支持区间写成 [θ<sub>L</sub>, θ<sub>H</sub>]。</li>
+  <li><strong>Public signal θ<sub>b</sub>：</strong>所有人都能看见。和 θ<sub>a</sub> 相关，相关系数记作 ρ。作者主页明确写了实验室变动的就是「private state 和 public signal 的 correlation」。</li>
+  <li><strong>Sender：</strong>一定知情（不是 Dye）。动作仍是 {Disclose(θ<sub>a</sub>), Silence}。不能谎报一个假的 θ<sub>a</sub>。</li>
+  <li><strong>Receiver：</strong>部分天真。看见披露，按真值信。看见沉默，<strong>不会</strong>只做理性的 E[θ<sub>a</sub> | ND, θ<sub>b</sub>]，还会把 public signal 掺进对沉默的解读。</li>
+  <li><strong>支付：</strong>sender 仍拿猜测的水平；receiver 仍要猜准 θ<sub>a</sub>。没有第二期，没有打脸，没有做市商。</li>
+</ul>
+
+<p>θ<sub>b</sub> 的现场，作者主页和摘要没有替你枚举 A 股对象。课堂里可以把它想成：分析师一致预期、另一家评级、GPA、旧财报、已经实现的价格。这些东西和 θ<sub>a</sub> 不是同一件事，只是相关。</p>
+
+<h3>2.3 Timing</h3>
+
+<ol>
+  <li>Nature 抽 (θ<sub>a</sub>, θ<sub>b</sub>)，相关为 ρ。</li>
+  <li>θ<sub>b</sub> 变成公共信息。Sender 另外看见 θ<sub>a</sub>。</li>
+  <li>Sender 选 Disclose(θ<sub>a</sub>) 或 Silence。</li>
+  <li>Receiver 看见 θ<sub>b</sub>，以及「披露的真值」或「沉默」，给出猜测 ĝ。</li>
+  <li>支付实现。</li>
+</ol>
+
+<p>顺序很关键：public signal 在披露决定之前就已经在桌上。Sender 选藏不藏的时候，已经知道接收方会拿着 θ<sub>b</sub> 读他的沉默。这不是「先沉默、再出宏观新闻」的另一类模型。</p>
+
+<h3>2.4 「部分天真」在这支文献里指什么</h3>
+
+<p>不要一上来就给 λ 安一个「作者的函数形式」。作者能核到的话是 partially naive，以及 public signal 会 shift 他们对沉默的 interpretation。λ 的具体写法，等 PDF。</p>
+
+<p>这支文献里，天真通常指一件事：<strong>没有把「谁选择沉默」倒过来。</strong> 理性接收方看见 ND，知道这是 selection 之后的池子，不是先验。天真接收方低估了这层 selection，猜测往「没看见动作」时的信念靠。</p>
+
+<p>两个标准参照，都不是这篇的编号设定，只是教学对象：</p>
+<ul>
+  <li><strong>Jin, Luca, Martin, AEJ Micro 2021：</strong>Ginger 自己那组解包实验室。发送方有成绩，可出示可藏。接收方经常不把 no news 当成 bad news。解包不完全。这是「天真接收方 + 披露」最直接的实验室前辈。</li>
+  <li><strong>Eyster–Rabin cursed equilibrium：</strong>被诅咒的玩家没有充分意识到别人的动作是别人类型的函数。用在披露上就是：看见沉默，没有充分倒推「什么样的 θ 才会选沉默」。χ-cursed 的人会把别人的动作当成和类型不那么相关。这是标准的 naivete 对象，<strong>不要写成「Chen–Jin 用了某个 χ」</strong>。</li>
+</ul>
+
+<h3>2.5 教学用的线性混合（不是他们的闭式）</h3>
+
+<p><span class="mark mark-std">标准推导</span> 为了把「public signal 移动对沉默的解读」写成能算的东西，课堂用一个线性混合。这是教学对象，不是他们论文里核过的函数。</p>
+
+<div class="eq">
+  ĝ<sub>ND</sub>(θ<sub>b</sub>) = (1 − λ) · E[θ<sub>a</sub> | ND, θ<sub>b</sub>] + λ · m(θ<sub>b</sub>)
+</div>
+<p>人话：沉默之后的猜测，是两块的加权。一块是理性的「隐瞒池均值」，一块是被 public signal 拉过去的锚。</p>
+
+<p>拆开每一项：</p>
+<ul>
+  <li><strong>E[θ<sub>a</sub> | ND, θ<sub>b</sub>]：</strong>完全 Bayesian 的人该出的数。已经用了「谁选择沉默」，也用了 θ<sub>b</sub> 和 θ<sub>a</sub> 的联合分布。λ = 0 时只剩这一项。</li>
+  <li><strong>m(θ<sub>b</sub>)：</strong>一个只靠 public signal、不倒推 selection 的锚。最粗的课堂写法是 m(θ<sub>b</sub>) = θ<sub>b</sub>（假定已经在同一量纲上）。也可以是 E[θ<sub>a</sub> | θ<sub>b</sub>]，即「没看见披露动作、只看见公开指标」时的回归。两种写法精神一样：锚不包含 ND 这一刀 selection。</li>
+  <li><strong>λ ∈ [0, 1]：</strong>有多听公开指标、有多不倒推。λ = 0 回到 Bayesian。λ = 1 完全不理隐瞒池，沉默被读成锚本身。λ &gt; 0 把沉默往 public signal 上拉。</li>
+</ul>
+
+<div class="note">
+  不要把 λ 写成「作者的 λ(ρ)」。作者能核到的比较静态是：相关越强，披露随有利信号下降得越陡；信息损失对 ρ 不是单调。教学上可以把「ρ 上升让锚更有吸引力」记在心里，但那是助记，不是他们的闭式。
+</div>
+
+<p>λ = 0 的还原写清楚，后面嵌套解包要用：</p>
+<div class="eq">
+  λ = 0  ⇒  ĝ<sub>ND</sub>(θ<sub>b</sub>) = E[θ<sub>a</sub> | ND, θ<sub>b</sub>]
+</div>
+<p>人话：完全理性时，公开指标只通过联合分布进入条件期望，不再被额外加权一次。</p>
+
+<h3>2.6 为什么必须有 naivete：理性方向往往是反的</h3>
+
+<p>这是整篇最容易读反的一段。先把「有利的 θ<sub>b</sub>」在理性世界里做什么，和在天真世界里做什么，分开。</p>
+
+<p><strong>世界 A：λ = 0，发送方一定知情，没有披露成本，θ<sub>a</sub> | θ<sub>b</sub> 仍然是满支撑 [θ<sub>L</sub>, θ<sub>H</sub>]。</strong> 第 1 节那个不等式原样在条件分布上成立：</p>
+<div class="eq">
+  E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>] &lt; t    只要 t &gt; θ<sub>L</sub>
+</div>
+<p>人话：即便大家已经看见了公开指标，只要条件分布还是一段连续区间，池均值仍然矮于门槛。不动点还是 t = θ<sub>L</sub>。解包仍然剥到底。有利的 public signal <strong>造不出</strong>内部门槛，也就没有「好信号挤出披露」。</p>
+
+<p><strong>世界 B：仍然理性，但解包因为别的摩擦停在内部（Dye、成本）。</strong> 这时 θ<sub>b</sub> 有两股力，课堂里要分开，别混成一句「公共信息挤出自愿披露」。</p>
+<ul>
+  <li><strong>估值通道：</strong>θ<sub>b</sub> 高，E[θ<sub>a</sub> | θ<sub>b</sub>] 高，隐瞒池的水平也被抬一点。沉默变得没那么惨，披露压力下降。这是 crowd-out 方向。</li>
+  <li><strong>选择通道：</strong>θ<sub>b</sub> 高，好类型更应该已经开口了。沉默这件事本身变成更坏的 news：E[θ<sub>a</sub> | θ<sub>b</sub>] − E[θ<sub>a</sub> | ND, θ<sub>b</sub>] 这截缺口变大。adverse selection 被拧得更紧，披露压力上升。这是 crowd-in 方向。</li>
+</ul>
+
+<p>用户要你记住的课堂判断是：在「可验证、一定知情、接收方会倒推 selection」这一类里，有利的 θ<sub>b</sub> 典型地是在拧紧 adverse selection，<strong>增加</strong>解包压力，和 crowd-out 相反。</p>
+
+<p>用一句话钉死选择通道。θ<sub>b</sub> 很好的时候，接收方心里是：「这么好的公开指标，要是你也很好，你早该交成绩单了。你还不交，那你比这个指标差得更多。」沉默的惩罚变重，不是变轻。</p>
+
+<p><strong>世界 C：λ &gt; 0。</strong> 天真接收方没有好好做上面那句倒推。他们把沉默往 m(θ<sub>b</sub>) 上靠。θ<sub>b</sub> 越好，ĝ<sub>ND</sub> 越高，沉默越值钱，中间类型越敢藏。这才是这篇的 crowd-out。</p>
+
+<div class="box">
+  <p><strong>所以：有利 public signal 挤出自愿披露，在这一类模型里是 naive-receiver 现象。</strong> 没有 λ &gt; 0 这刀，方向对不上作者能核到的那句 “a favorable public signal can crowd out disclosure”。</p>
+  <p>这也是为什么他们必须写 partially naive，而不是再做一遍 Dye 或成本。Dye 的沉默里掺着「没信息」；他们要的是「有信息、策略性不说」，再让公开指标去改天真接收方怎么读这句不说。</p>
+</div>
+
+<p>Companion 那篇 SAT（Chen–Jin, NBER w33660）是同一对作者、同一类物体的招生版：学校怎么解释「不交 SAT」，会反过来改学生交不交。那篇实验室还看到对隐藏解读的学习是 imperfect 的。当作机制亲戚，不要把那篇的估计搬到这篇。</p>
+
+<h3>2.7 四个格子把方向拧过来（离散教学）</h3>
+
+<p><span class="mark mark-std">标准推导</span> 连续门槛还没解之前，用 2 × 2 把「理性拧紧、天真读宽」算成四则运算。不是他们的格子。</p>
+
+<p>θ<sub>a</sub> ∈ {L, H} = {1, 3}，θ<sub>b</sub> ∈ {坏, 好} = {1, 3}。为了让相关看得见，设联合概率：</p>
+<pre>          θ_b = 坏(1)    θ_b = 好(3)
+θ_a = L(1)    0.40          0.10
+θ_a = H(3)    0.10          0.40</pre>
+<p>人话：好指标多半配好类型，坏指标多半配差类型。相关为正，但不是 1：仍有 0.10 + 0.10 的错配，中间有缝可钻。</p>
+
+<p><strong>先验：</strong>P(θ<sub>a</sub> = H) = 0.50，E[θ<sub>a</sub>] = 2。</p>
+<p><strong>只看 θ<sub>b</sub>、不看动作：</strong></p>
+<div class="eq">
+  E[θ<sub>a</sub> | θ<sub>b</sub> = 好] = (0.10·1 + 0.40·3) / 0.50 = 2.6
+</div>
+<p>人话：看见好指标，没看见披露动作，猜 2.6。</p>
+<div class="eq">
+  E[θ<sub>a</sub> | θ<sub>b</sub> = 坏] = (0.40·1 + 0.10·3) / 0.50 = 1.4
+</div>
+<p>人话：看见坏指标，猜 1.4。</p>
+
+<p><strong>先看理性、假设 H 一定披露、L 可以藏（这是解包之后的候选）。</strong> 看见 ND 且 θ<sub>b</sub> = 好：能走到这个格子里还选择沉默的，只剩那 0.10 的 (L, 好)。所以</p>
+<div class="eq">
+  E[θ<sub>a</sub> | ND, θ<sub>b</sub> = 好] = 1
+</div>
+<p>人话：好指标下还闭嘴，理性接收方把你打到最差。选择通道把 2.6 拧成 1。</p>
+
+<p>H 在好指标下开口拿 3，闭嘴拿 1，一定开。L 开口拿 1，闭嘴拿 1，无差异。解包在好指标格子里仍然剥到底。有利信号没有给 L 提供保护伞。</p>
+
+<p><strong>再看天真，教学 λ = 0.5，锚 = E[θ<sub>a</sub> | θ<sub>b</sub>]。</strong> 若接收方仍按「H 开口、L 沉默」去混：</p>
+<div class="eq">
+  ĝ<sub>ND</sub>(好) = 0.5 · 1 + 0.5 · 2.6 = 1.8
+</div>
+<p>人话：一半听隐瞒池（L = 1），一半听好指标的锚（2.6），沉默被猜成 1.8。</p>
+
+<p>L 开口拿 1，闭嘴拿 1.8，<strong>严格愿意藏</strong>。H 开口拿 3，闭嘴拿 1.8，仍开口。候选策略自洽。好指标下，差类型被 1.8 这把保护伞罩住——理性世界里这把伞是 1，罩不住任何严格偏好。</p>
+
+<p>坏指标格子：E[θ<sub>a</sub> | ND, 坏] = 1（仍只有 L 藏），锚 = 1.4，</p>
+<div class="eq">
+  ĝ<sub>ND</sub>(坏) = 0.5 · 1 + 0.5 · 1.4 = 1.2
+</div>
+<p>人话：坏指标下沉默只被抬到 1.2。L 开口 1、闭嘴 1.2，还是想藏；H 开口 3、闭嘴 1.2，一定开。坏格子里天真也没把 H 拉进池，但保护伞比好格子矮一截。</p>
+
+<p>对照写死：</p>
+<ul>
+  <li>理性 + 好指标：ND 猜测 = 1，解包到底，有利信号拧紧 adverse selection。</li>
+  <li>天真 + 好指标：ND 猜测 = 1.8，L 严格藏，有利信号变成保护伞。</li>
+  <li>同一套天真，坏指标的伞只有 1.2，低于好指标的 1.8。这就是 ∂ĝ<sub>ND</sub>/∂θ<sub>b</sub> &gt; 0。</li>
+</ul>
+
+<p>四个格子的概率：好指标出现 0.50，其中 0.40 是 H（开口）、0.10 是 L（藏）。披露率在好指标下 = 0.40/0.50 = 80%。坏指标下同样 80%（0.10 的 H 开口 / 0.50）。这个 2×2 太粗，披露率对 θ<sub>b</sub> 还没动——因为没有「中间类型」。要把 crowd-out 做成披露率下降，必须有第三种 θ<sub>a</sub>，落在 1.2 和 1.8 之间：坏指标下被逼开口，好指标下选择藏。这正是连续门槛做的事。2×2 只负责把「理性拧紧 vs 天真读宽」算明白；中间类型交给第 3 节。</p>
 
 <h2 id="s3">3. Equilibrium：门槛怎么解出来</h2>
-<p><span class="tag">作者原话能核到</span> 他们推出一个 closed-form disclosure threshold，嵌套经典 unraveling。</p>
-<p><span class="tag">标准模型推导</span> 发送方披露当且仅当交出来更好：</p>
-<div class="eq">disclose  ⇔  θ<sub>a</sub> ≥ ĝ<sub>ND</sub>(θ<sub>b</sub>)</div>
-<p class="eq-note">人话：真值已经比「闭嘴能拿到的猜测」高，就说；否则藏。</p>
-<p>接收方猜对门槛，所以 ĝ<sub>ND</sub> 本身依赖于「哪些人在藏」。门槛 t(θ<sub>b</sub>) 是一个不动点：</p>
-<div class="eq">t(θ<sub>b</sub>) = (1 − λ) · E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t(θ<sub>b</sub>), θ<sub>b</sub>] + λ · m(θ<sub>b</sub>)</div>
-<p class="eq-note">人话：门槛上的人刚好打平。右边第一项是「藏的那些人有多差」，第二项是公开指标把沉默抬了多少。两边要自洽：你用来算隐瞒池的门槛，必须等于算完之后的猜测。</p>
 
-<h3>3.1 嵌套解包</h3>
-<p>令 λ = 0，且先关掉 θ<sub>b</sub>（或者 ρ = 0，θ<sub>b</sub> 不提供关于 θ<sub>a</sub> 的信息）。式子退回</p>
-<div class="eq">t = E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t]</div>
-<p>第 1 节已经证明，连续分布下唯一解是 t = θ<sub>L</sub>。这就是作者说的 nesting classical unraveling：天真权重为零时，回到「只藏最差」。</p>
+<p><span class="mark mark-std">标准推导</span> 作者说他们有闭式披露门槛，嵌套经典 unraveling。闭式本身本机看不到。下面用第 2 节那个教学混合，把门槛当成一个不动点解出来。数字是课堂例子，不是他们的系数。</p>
 
-<h3>3.2 均匀分布的教学例子（不是他们的闭式）</h3>
-<p>先做一个能手算的特例，只为看清门槛怎么被 θ<sub>b</sub> 抬起来。设 θ<sub>a</sub> ~ U[0, 1]，先忽略「θ<sub>b</sub> 还会改理性项」这一层，令 E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t] = t/2，m(θ<sub>b</sub>) = θ<sub>b</sub>。则</p>
-<div class="eq">t = (1 − λ) · (t / 2) + λ · θ<sub>b</sub></div>
-<p>移项：</p>
-<div class="eq">t − (1 − λ)t / 2 = λ θ<sub>b</sub>  ⇒  t · (1 + λ) / 2 = λ θ<sub>b</sub></div>
-<div class="eq">t(θ<sub>b</sub>) = 2λ / (1 + λ) · θ<sub>b</sub></div>
-<p class="eq-note">人话：λ = 0 时 t = 0，完全解包。λ 变大，门槛按 θ<sub>b</sub> 的某个分数往上抬。θ<sub>b</sub> 越好，藏的区间越大。这是教学闭式，用来看方向；<strong>不是</strong>他们论文里的那个 closed-form。</p>
-<p>更完整的理性项 E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>] 会随 ρ 动：ρ 越大，给定 θ<sub>b</sub> 之后，θ<sub>a</sub> 的条件分布越窄。λ = 0 时这一项会让好的 θ<sub>b</sub> 把隐瞒池读得更差（解包更狠）；λ &gt; 0 时第二项 λ m(θ<sub>b</sub>) 往相反方向拉。挤出能不能出现，取决于天真项是否压过理性的 adverse selection 项。作者能写出闭式，说明他们选了一组能解到底的分布和信息结构。具体函数等 PDF。</p>
+<h3>3.1 Sender 的最好回应</h3>
 
-<h2 id="s4">4. 比较静态</h2>
-<p>下面五条，方向来自作者能核到的原话；中间的「为什么」用第 3 节的门槛走。</p>
+<p>Receiver 的沉默猜测现在是 θ<sub>b</sub> 的函数，记作 ĝ<sub>ND</sub>(θ<sub>b</sub>)。Sender 看见自己的 θ<sub>a</sub> 和桌上的 θ<sub>b</sub>，比较：</p>
 
-<h3>4.1 好信号挤出，坏信号挤入</h3>
-<p><span class="tag">作者原话能核到</span> A favorable public signal can crowd out disclosure.</p>
-<p>门槛 t(θ<sub>b</sub>) 随 θ<sub>b</sub> 上升：公开指标越好，沉默被读得越宽，中间类型更愿意藏。披露集合 [t, θ<sub>H</sub>] 变短。反过来，θ<sub>b</sub> 很难看时，沉默被读窄，更多人被迫说——crowd-in。</p>
-<p>实验室里他们变动「公共信号有多有利」，对应的就是这条对 θ<sub>b</sub> 的比较静态。</p>
+<div class="eq">
+  开口拿 θ<sub>a</sub>，闭嘴拿 ĝ<sub>ND</sub>(θ<sub>b</sub>)
+</div>
+<p>人话：成绩单上的真分数，对「不交成绩单时人家会猜多少」。谁大选谁。</p>
 
-<h3>4.2 相关越强，这条斜率越陡</h3>
-<p><span class="tag">作者原话能核到</span> Disclosure falls as the public signal becomes more favorable, and the decline is amplified by stronger correlation.</p>
-<p>人话：同样是「公开指标变好一截」，ρ 更大时，天真接收方更把 θ<sub>b</sub> 当成 θ<sub>a</sub> 的替身，λ m(θ<sub>b</sub>) 这一项更沉，门槛抬得更狠，披露掉得更多。</p>
+<div class="eq">
+  Disclose  ⇔  θ<sub>a</sub> ≥ ĝ<sub>ND</sub>(θ<sub>b</sub>)
+</div>
+<p>人话：只有私有状态至少和「沉默被读成的那个数」一样高，才开口。这是一个对给定 θ<sub>b</sub> 的门槛规则。</p>
 
-<h3>4.3 沉默后的猜测朝公共信号偏</h3>
-<p><span class="tag">作者原话能核到</span> Receiver guesses upon non-disclosure rise correspondingly, departing from the rational benchmark toward the public signal.</p>
-<p>理性基准是 E[θ<sub>a</sub> | ND, θ<sub>b</sub>]。观测到的猜测往 m(θ<sub>b</sub>) 挪。这是在直接测 λ &gt; 0，不是只测发送方少说了。少说可能有别的原因（成本、 Dye 式不知情）；猜测朝 θ<sub>b</sub> 偏，才是「沉默被公开指标读宽」这条机制。</p>
+<p>注意：ĝ<sub>ND</sub> 不随 θ<sub>a</sub> 变——发送方改变自己的类型不会立刻改接收方的公式，他只能决定自己在不在沉默池里。所以对每一个实现的 θ<sub>b</sub>，披露规则是「高于某条线就说」。</p>
 
-<h3>4.4 策略性沉默可以反过来挤掉公共信号自己</h3>
-<p><span class="tag">作者原话能核到</span> Strategic silence can thus crowd out the public signal itself, and transparency can be lower with it than without.</p>
-<p>把三个世界的信息量并排看：</p>
-<ul>
-  <li><strong>没有公共信号。</strong> 接收方只靠自愿披露。若 λ 不太大，解包推得比较深，很多人交 θ<sub>a</sub>。</li>
-  <li><strong>有公共信号 + 理性接收方。</strong> θ<sub>b</sub> 自己带一点关于 θ<sub>a</sub> 的信息；沉默的推断也更狠。信息量通常不会比「没有」更差。</li>
-  <li><strong>有公共信号 + 天真接收方。</strong> θ<sub>b</sub> 加了一点信息，但把一大截自愿披露挤掉了。接收方在沉默时拿到的是「往 θ<sub>b</sub> 靠的混合」，而不是 θ<sub>a</sub>。少掉的那截自愿披露，可能比 θ<sub>b</sub> 本身带来的还多。</li>
-</ul>
-<p>「挤掉公共信号自己」是说：你本来想靠 θ<sub>b</sub> 多告诉接收方一点，但发送方因此改了策略，接收方最终看到的有效信息，比你放 θ<sub>b</sub> 之前还少。θ<sub>b</sub> 的增量被策略性沉默对冲掉了。</p>
+<h3>3.2 门槛是一个固定点</h3>
 
-<h3>4.5 对 ρ 不是单调的，中间最狠</h3>
-<p><span class="tag">作者原话能核到</span> The effect is non-monotonic in the correlation: strongest when the signal is informative enough to anchor beliefs but too noisy to substitute for disclosure.</p>
-<p>两个极限：</p>
-<ul>
-  <li>ρ ≈ 0。θ<sub>b</sub> 和私有状态几乎无关。天真接收方就算想锚定，也锚在一个不相干的数上；发送方知道接收方这个锚不准，挤出有限。</li>
-  <li>ρ → 1。θ<sub>b</sub> 几乎把 θ<sub>a</sub> 说穿。藏不住：接收方即使用 θ<sub>b</sub> 替代披露，误差也接近零。人人说或人人都被看穿，信息损失回来。</li>
-</ul>
-<p>中间：信号够强，能改「沉默大概还行」的信念；又不够准，替代不了开口。这是最适合藏的区间。政策上最危险的，往往不是「完全没公开信息」或「公开信息几乎充分」，而是「放了一个吵但不准的相关指标」。</p>
+<p>接收方要形成 ĝ<sub>ND</sub>，必须知道沉默池是谁。沉默池又取决于 ĝ<sub>ND</sub>。两边要一起解。</p>
 
-<h2 id="s5">5. 假设为什么这么设，放松会怎样</h2>
-<p>逐条。哪一条断了，故事就断。</p>
+<p>设在这个 θ<sub>b</sub> 上，披露门槛是 t。沉默池是 {θ<sub>a</sub> : θ<sub>a</sub> &lt; t}。教学混合变成：</p>
+<div class="eq">
+  ĝ<sub>ND</sub>(θ<sub>b</sub>; t) = (1 − λ) · E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>] + λ · m(θ<sub>b</sub>)
+</div>
+<p>人话：池均值用的是「门槛以下、并且和这个公开指标配对」的那些人；再按 λ 往锚上拉一把。</p>
 
-<h3>5.1 可验证，不能撒谎</h3>
-<p>发送方要么交真分数，要么闭嘴。A 股空公告、模板回复（「以公告为准」「暂无」「感谢关注」）更接近 cheap talk，或「说了等于没说」，不是这篇的「交成绩单」。对空公告要改一刀：把 disclosure 定义成「给出可核验的数字或事实」，空话算沉默。不改这一刀，模型对不上制度。</p>
+<p>自洽要求门槛上的人无差异：</p>
+<div class="eq">
+  t = ĝ<sub>ND</sub>(θ<sub>b</sub>; t)
+</div>
+<p>人话：t = (1 − λ)×「t 以下的条件均值」 + λ×锚。左边是开口的收益，右边是闭嘴的收益。这就是门槛方程。</p>
 
-<h3>5.2 发送方一定知情</h3>
-<p>不是 Dye。沉默没有「没看见」这个开脱。A 股异动公告是强制开口，公司一定知道自己有没有应披事项——更接近这篇，而不是 Dye。问询函也是：监管已经认定你知情，逼你说。</p>
-<p>如果改成 Dye（有概率没信息），沉默被进一步稀释，门槛更容易停在中间。公共信号的挤出还在，但会和「也许真不知道」叠在一起，identification 更脏。</p>
+<p>写成一个映射更清楚。定义</p>
+<div class="eq">
+  T(t | θ<sub>b</sub>) := (1 − λ) E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>] + λ m(θ<sub>b</sub>)
+</div>
+<p>人话：T(t) 是「假如大家都用门槛 t，接收方会把沉默猜成多少」。</p>
 
-<h3>5.3 收益只在乎猜测的水平</h3>
-<p>没有「说错了会被打脸」的第二期，也没有方差厌恶。你跟 Jeff 做的「空公告 → 45 天内打脸 → 再空公告」是这篇没有的动态。要把接收方的 λ 写成「上一次打脸」的函数：打脸之后，散户不再把沉默往好信号上靠，λ 下降，解包压力回来。这是你的增量，不是他们的命题。</p>
+<p>equilibrium 门槛是 T 的不动点：t = T(t | θ<sub>b</sub>)。有解之后，记作 t(θ<sub>b</sub>)。披露率是 P(θ<sub>a</sub> ≥ t(θ<sub>b</sub>) | θ<sub>b</sub>)，或者无条件的 P(θ<sub>a</sub> ≥ t(θ<sub>b</sub>))，看你问的是条件披露还是平均披露。</p>
 
-<h3>5.4 接收方部分天真</h3>
-<p>第 2.3 节写过：没有这一刀，好信号会加强解包，挤出不会出现。实验室里他们用「猜测朝 θ<sub>b</sub> 偏、偏离理性基准」来抓这个假设，不是只抓披露率。</p>
-<p>如果接收方是机构、做市商、能倒推选择的人，这篇的符号可能翻掉。A 股里要把「谁在读公告」分开：散户更接近 naive，买方研究更接近贝叶斯。混合接收方下，发送方面对的是加权后的 ĝ<sub>ND</sub>。</p>
+<h3>3.3 嵌套经典解包：λ = 0 必须回到 t = θ<sub>L</sub></h3>
 
-<h3>5.5 ρ 在中间，不是 0 也不是 1</h3>
-<p>第 4.5 节。政策含义钉在这里：监管若只能强制「相关的公开指标」、强制不了私有状态本身，有可能把透明度弄得更差。作者写的是 cautionary message，不是「永远不要公开信号」。</p>
-
-<h3>5.6 没有市场、没有价格冲击</h3>
-<p>这不是 Kyle 模型。没有做市商、没有订单流、没有 adverse selection 进价差。θ<sub>b</sub> 如果是股价本身，在微观结构里既是信号也是均衡结果，这篇没有处理这个固定点。你要是把涨停当成 θ<sub>b</sub>，要想清楚：涨停是交易出来的，不是实验里外生抽的。</p>
-
-<h2 id="s6">6. 实验：在测什么、怕什么、主结果怎么读</h2>
-<p><span class="tag">作者原话能核到</span> 实验室变动私有状态和公共信号的相关系数。披露随公共信号变好而下降，相关越强降得越多；不披露时接收方的猜测朝公共信号抬，偏离理性基准。</p>
-<p>人数、轮次、处理名称、估计的 λ，原文没打开，不写。</p>
-
-<h3>6.1 在比谁</h3>
-<p>不是「公开信息多了价格更有效」。是两件事同时成立：</p>
-<ol>
-  <li>发送方：公共信号越有利，越不披露；这条斜率在 ρ 更大时更陡。</li>
-  <li>接收方：沉默之后的猜测，不跟着理性隐瞒池走，跟着 θ<sub>b</sub> 走。</li>
-</ol>
-<p>两件事缺一不可。只有 (1)，可能是成本、疲劳、没看懂规则。加上 (2)，才是「沉默被公开指标读宽」。</p>
-
-<h3>6.2 identification</h3>
-<p>实验室随机给 (θ<sub>b</sub>, ρ)。这不是公司层面的 DID，也没有 instrument。外生性来自实验者抽签。理性基准可以按规则和分布算出来，拿观测猜测去减，就是「朝公共信号偏了多少」。</p>
-<p>人话：他们能指着一张图说「同一群人，只是公开指标变好了 / 相关变强了，披露掉了，猜测抬了」。这是实验 identification 的全部。</p>
-
-<h3>6.3 怕什么</h3>
-<ul>
-  <li><strong>experimenter demand：</strong>被试猜到你想看「有公开信号就少说」，按剧本演。</li>
-  <li><strong>没懂 verifiability：</strong>以为可以报一个假数字。规则一旦被理解成 cheap talk，整篇模型换了。</li>
-  <li><strong>跨轮学习：</strong>同一对作者的 SAT 篇（NBER w33660）发现被试对「学校怎么解读不交分数」学得不完全。这篇如果也是多轮，要把「一开始就偏」和「学完还偏」分开。那是相关论文的结果，不是这篇已经核到的数字。</li>
-  <li><strong>measurement：</strong>披露率好测。理性基准要按他们写的分布和策略算，算错了「偏离」就是假的。原文没打开，这里不重算。</li>
-</ul>
-
-<h3>6.4 主结果怎么读（只有方向）</h3>
-<ul>
-  <li>横轴：公共信号有多有利。纵轴：披露率。作者说这条线往下；ρ 更大的那组更陡。</li>
-  <li>横轴：同样。纵轴：沉默后的猜测。作者说往上，方向朝 θ<sub>b</sub>，不是朝理性隐瞒池均值。</li>
-  <li>信息量：有公共信号的世界，可以低于没有的世界。这是加总命题，不是单看披露率。</li>
-</ul>
-<p>具体点估计等 PDF。不要把日报里任何未复核的实验数字当结果。</p>
-
-<h2 id="s7">7. 对上董杰的空公告、涨停、问询函</h2>
-<p>这篇不是 A 股制度论文。机制和「空公告当强制 cheap talk」是同一类物体：公司必须发声（异动公告、问询函回复），内容却可以是空的。把空话当成沉默，把市场上已经有的东西当成 θ<sub>b</sub>。</p>
-
-<h3>7.1 映射</h3>
-<ul>
-  <li><strong>θ<sub>a</sub>：</strong>公司私有的、可核验的那件事（有没有应披事项、业绩数字、合同）。</li>
-  <li><strong>disclosure：</strong>公告里出现新的数字或事实。</li>
-  <li><strong>silence：</strong>「无应披未披」「以公告为准」「暂无」「请查阅公告」。发了公告但没有可核验内容。</li>
-  <li><strong>θ<sub>b</sub>：</strong>已经涨停、已经放量、龙虎榜、北向、分析师一致预期、同业公告、行业景气新闻；以及你样本里「45 天内打脸」的事后公共信号。</li>
-  <li><strong>ρ：</strong>这类公开信号平时能预测多大的后续基本面。涨停很吵，和「到底有没有应披事项」只是中等相关——正好落在作者说的危险区间。</li>
-</ul>
-
-<h3>7.2 这篇直接给的预测</h3>
-<ul>
-  <li>异动当天已经涨停、情绪面很好时，空公告应该更多，不是更少。和「公司没话说所以才空」的朴素故事反着：没话说加上市场已经很好，更空。</li>
-  <li>相关中等时挤出最狠。涨停是很吵但不准的 θ<sub>b</sub>。</li>
-  <li>问询函是监管强制开口。若市场已经有很强的公开叙事，函件回复更容易滑向模板。Hudongyi 那组「以公告为准、暂无、感谢关注」是同一方向。论文 (2) 先挂着等论文 (6)，这篇给理论借口：模板回复是被公共信号读宽之后的最优沉默。</li>
-</ul>
-
-<h3>7.3 这篇解释不了、你必须自己加的</h3>
-<ul>
-  <li><strong>打脸后的声誉。</strong> 模型是一期。你关心的是「被证明说空话之后，下一次还空不清空」。λ(打脸) 下降，解包回来。这是增量。</li>
-  <li><strong>空话不是可验证披露。</strong> 他们要么交真分数要么闭嘴。你的 DV 必须是「有没有可核验数字 / 新事实」，不要用「发没发公告」——公告是强制的。</li>
-  <li><strong>价格本身既是结果也是信号。</strong> 涨停既是 θ<sub>b</sub>，也是接收方猜测的市场版。这篇没有订单簿。</li>
-</ul>
-
-<h3>7.4 假如和 Jeff 做：测什么、怕什么</h3>
-<p>先讲在测什么：不是「公开信息多了价格更有效」，是「公开信号越好，公司越不提供可核验的自愿信息」。</p>
-<ul>
-  <li><strong>DV：</strong>异动公告 / 预告 / 问询函回复里，有没有新的数字或事实。空模板 = 沉默。</li>
-  <li><strong>核心自变量：</strong>公告前已实现的公共信号——涨停幅度、超预期程度、分析师预测相对最后一次财报的位置。预测：信号越有利，沉默越多。</li>
-  <li><strong>ρ 的代理：</strong>这类公开信号平时能预测多大的后续基本面。预测：中等预测力的信号，挤出最大；几乎完美的信号（业绩已预告），挤出反而小。</li>
-  <li><strong>怕什么（selection / omitted）：</strong>好信号的日子公司本来就没事可说。需要一个「信号好、但不是公司自己放出」的变异——行业冲击、指数涨停、同业公告。这才接近他们实验室里外生变动 θ<sub>b</sub>。</li>
-  <li><strong>不要用 CAR 当主 DV。</strong> 问询函那轮：CAR[0,1] 8.17% → 3.72%（t = −1.47），同日超额 7.10% → 3.33%（t = −1.90）。方向还行，不显著；而且 8% 很大一块就是涨停本身，不是 cheap talk 有没有被信。这篇的被解释变量是「说还是藏」。</li>
-</ul>
-
-<h2 id="s8">8. 文献位置</h2>
-<ul>
-  <li><strong>Unraveling：</strong>Grossman (1981), Milgrom (1981)。完全知情、可验证、理性接收方 → 只藏最差。</li>
-  <li><strong>砍开解包：</strong>Dye (1985) 不知情；Jovanovic (1982) 披露成本。</li>
-  <li><strong>天真接收方 + 披露实验室：</strong>Jin, Luca, Martin (AEJ: Micro 2021)。Ginger 自己的前一篇实验：解包推不完。</li>
-  <li><strong>Cursed / 不会倒推选择：</strong>Eyster–Rabin。教学用的 λ 和这个是一类物体。</li>
-  <li><strong>同一对作者的招生版：</strong>Chen–Jin, NBER w33660《Voluntary Report of Standardized Test Scores》。可选 SAT：学校把「不交」解读得越宽，学生越不交。那是这篇机制的学校政策现场。A 股空公告是上市公司版。</li>
-  <li><strong>不是：</strong>Grossman–Stiglitz（挤的是挖信息，不是开口）；也不是 Kyle（没有价格冲击）。</li>
-</ul>
 <div class="qual">
-  <strong>顶刊作者：</strong>Ginger Zhe Jin — <em>QJE</em> 2003「The Effect of Information on Product Quality: Evidence from Restaurant Hygiene Grade Cards」（with Leslie）。披露实验另有 AEJ: Micro 2021，不在你定的顶刊清单里，只作机制背景。
+  <span class="mark mark-auth">作者原话能核到</span>
+  「derive a closed-form disclosure threshold nesting classical unraveling。」λ = 0 退回只藏最差，这一步和作者能核到的话对得上。下面的代数是标准推导，不是他们的闭式。
 </div>
 
-<h2 id="s9">9. 原文还缺什么</h2>
-<ul>
-  <li>他们的 closed-form 到底长什么样、用了什么分布和信息结构。</li>
-  <li>命题编号、附录里放松了哪些（多维信号、披露成本、混合理性接收方）。</li>
-  <li>实验的 n、轮次、报酬、处理单元格、点估计和标准误。</li>
-</ul>
-<p>机制方向、嵌套解包、对 ρ 非单调、实验在比谁，这些已经能核。PDF 能打开时只补公式和数字，不用改故事。</p>
+<p>把 λ = 0 代进去：</p>
+<div class="eq">
+  t = E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>]
+</div>
+<p>人话：门槛等于「门槛以下、再条件于公开指标」的均值。</p>
 
-<p><a href="https://www.nber.org/papers/w35625">NBER w35625</a> · <a href="https://www.haoyuanchen.com/research">作者主页</a> · 日报卡片 <a href="https://dtu2026.github.io/daily-papers/kyle/2026-08-19.html#p4">2026-08-19 #p4</a></p>
+<p>只要 θ<sub>a</sub> | θ<sub>b</sub> 在 [θ<sub>L</sub>, θ<sub>H</sub>] 上仍有满密度，第 1.5 节的不等式原样成立：t &gt; θ<sub>L</sub> 时右边严格小于左边。唯一解 t = θ<sub>L</sub>。经典 unraveling 被嵌在 λ = 0 这个刀口上。</p>
+
+<p>这就是「嵌套」在教学里的意思：他们的门槛公式，把 Grossman–Milgrom 当成一个特例，而不是另起炉灶。新的作用力全部来自 λ &gt; 0 那一截。</p>
+
+<h3>3.4 教学例子：均匀 + 线性锚，先忽略「θ<sub>b</sub> 上的 selection」</h3>
+
+<p><span class="mark mark-std">标准推导</span> 这一小节是课堂闭式，<strong>不是</strong> Chen–Jin 的闭式。目的：让董杰亲手解一个不动点，看见 t 怎么随 θ<sub>b</sub> 和 λ 动。</p>
+
+<p>设 θ<sub>a</sub> ∼ Uniform[0, 1]，所以 θ<sub>L</sub> = 0，θ<sub>H</sub> = 1。锚取最粗的写法 m(θ<sub>b</sub>) = θ<sub>b</sub>，并且假定 θ<sub>b</sub> 已经在同一量纲上、落在 [0, 1] 里。第一遍先假装 E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>] = E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t] = t / 2，也就是先把「公开指标怎么改截断均值」关掉。ρ 的作用下一小节再开。</p>
+
+<div class="eq">
+  ĝ<sub>ND</sub> = (1 − λ) · (t / 2) + λ · θ<sub>b</sub>
+</div>
+<p>人话：一半是「门槛的一半」（均匀截断均值），一半是桌上的公开指标。</p>
+
+<p>不动点：</p>
+<div class="eq">
+  t = (1 − λ)(t / 2) + λ θ<sub>b</sub>
+</div>
+<p>人话：门槛等于混合猜测。</p>
+
+<p>每一步搬一项，不要跳：</p>
+<pre>t − (1 − λ) t / 2  =  λ θ_b
+t [ 1 − (1 − λ)/2 ]  =  λ θ_b
+t [ (2 − 1 + λ) / 2 ]  =  λ θ_b
+t (1 + λ) / 2  =  λ θ_b
+t  =  2 λ θ_b / (1 + λ)</pre>
+
+<div class="eq">
+  t*(θ<sub>b</sub>) = 2λ θ<sub>b</sub> / (1 + λ)
+</div>
+<p>人话：教学例子里，门槛是公开指标的一个比例。比例 2λ/(1+λ) 随 λ 上升，从 0（完全理性）升到 1（完全听公开指标）。</p>
+
+<p>核对三个刀口，防止代数抄错：</p>
+<ul>
+  <li>λ = 0：t* = 0 = θ<sub>L</sub>。经典 unraveling。对。</li>
+  <li>λ = 1：t* = θ<sub>b</sub>。完全不理隐瞒池，开口当且仅当私有状态压过公开指标。</li>
+  <li>θ<sub>b</sub> = 0：t* = 0。公开指标已经是最差，沉默被读得很窄，解包压力回来。</li>
+</ul>
+
+<p>还要检查角点。t* 必须落在 [0, 1] 里。因为 2λ/(1+λ) ≤ 1 对所有 λ ∈ [0, 1] 都成立（2λ ≤ 1+λ ⇔ λ ≤ 1），再乘上 θ<sub>b</sub> ≤ 1，所以 t* ≤ 1，不会出现「所有人沉默」的角。下界 0 也碰得到。教学例子内部解干净，这是选均匀 [0,1] 的原因。</p>
+
+<h3>3.5 用数字把 crowd-out 算出来</h3>
+
+<p>固定 λ = 0.4，于是 2λ/(1+λ) = 0.8 / 1.4 = 4/7 ≈ 0.571。门槛 ≈ 0.571 × θ<sub>b</sub>。披露率在这个第一遍近似里是 1 − t*（均匀 [0,1]）。</p>
+
+<pre>θ_b = 0.30 → t* ≈ 0.171 → 披露率 ≈ 82.9%
+θ_b = 0.50 → t* ≈ 0.286 → 披露率 ≈ 71.4%
+θ_b = 0.70 → t* ≈ 0.400 → 披露率 ≈ 60.0%
+θ_b = 0.90 → t* ≈ 0.514 → 披露率 ≈ 48.6%</pre>
+
+<p>人话：公开指标从一般变成很好，门槛从 0.17 抬到 0.51，大约三分之一的类型从「说」变成「藏」。藏的是中间那截：比如 θ<sub>b</sub> = 0.90 时，θ<sub>a</sub> ∈ [0.17, 0.51] 的人，在坏指标世界里会被逼着说，在好指标世界里选择沉默。</p>
+
+<p>再固定 θ<sub>b</sub> = 0.80，看 λ 怎么放大：</p>
+<pre>λ = 0.00 → t* = 0.000 → 披露率 = 100%（除最差）
+λ = 0.20 → t* = 0.267 → 披露率 ≈ 73.3%
+λ = 0.40 → t* = 0.457 → 披露率 ≈ 54.3%
+λ = 0.70 → t* = 0.659 → 披露率 ≈ 34.1%
+λ = 1.00 → t* = 0.800 → 披露率 = 20.0%</pre>
+
+<p>人话：同样一张很好的公开指标，接收方越不倒推 selection，中间类型藏得越多。λ = 0 时这张指标改变不了披露；λ 一大，它变成沉默的保护伞。</p>
+
+<p>把两个方向合在一张表上。定义教学斜率 ∂t*/∂θ<sub>b</sub> = 2λ/(1+λ)。λ 越大，斜率越陡：同样改善一点公开指标，门槛上移得越多，披露掉得越多。这和作者能核到的「相关越强，下降越被放大」是同一方向的助记——如果把更高的 ρ 理解成天真锚更有吸引力。助记不是他们的函数。</p>
+
+<h3>3.6 把理性项重新打开，ρ 进到哪里</h3>
+
+<p>第一遍把「θ<sub>b</sub> 怎么改截断均值」关了。现在开。这一小节仍然是标准推导，不装成他们的闭式。</p>
+
+<p>联合分布下，理性项是</p>
+<div class="eq">
+  μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) := E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t, θ<sub>b</sub>]
+</div>
+<p>人话：已知公开指标、已知这个人选择了沉默（低于门槛），私有状态的均值。</p>
+
+<p>门槛方程变成</p>
+<div class="eq">
+  t = (1 − λ) μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) + λ m(θ<sub>b</sub>)
+</div>
+<p>人话：还是那句混合，只是池均值现在真的依赖 θ<sub>b</sub> 和 ρ。</p>
+
+<p>μ<sub>R</sub> 常见的三件定性性质（联合分布正则、相关为正时）：</p>
+<ol>
+  <li><strong>截断低于门槛：</strong>μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) &lt; t，只要条件支撑的下界还低于 t。这保证 λ = 0 时仍然解包到底。</li>
+  <li><strong>水平随 θ<sub>b</sub> 升：</strong>正关联下，θ<sub>b</sub> 高，θ<sub>a</sub> 的条件分布往右移，截断均值通常也往右移。∂μ<sub>R</sub>/∂θ<sub>b</sub> ≥ 0。ρ 越大，这个斜率越陡——公开指标越能「带」私有状态。</li>
+  <li><strong>沉默作为坏消息的缺口随 θ<sub>b</sub> 变大：</strong>E[θ<sub>a</sub> | θ<sub>b</sub>] − μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) 往往随 θ<sub>b</sub> 上升。人话：公开指标越好，你越应该开口；还不开口，相对这个指标就差得更远。这就是第 2.6 节的选择通道。理性接收方吃的是这个缺口；天真接收方吃得不够。</li>
+</ol>
+
+<p>课堂里用一个线性收缩把第 2 条记在纸上，仍然不是他们的公式。设 E[θ<sub>a</sub> | θ<sub>b</sub>] = (1 − ρ)·μ + ρ·θ<sub>b</sub>，μ 是无条件均值。ρ = 0 时公开指标带不动先验；ρ → 1 时 E[θ<sub>a</sub> | θ<sub>b</sub>] ≈ θ<sub>b</sub>。μ<sub>R</sub> 是这个条件均值再往下截一刀，比 E[θ<sub>a</sub> | θ<sub>b</sub>] 更低，低多少取决于 t 切掉了多少右尾。</p>
+
+<p>第一遍近似关掉的，就是 μ<sub>R</sub> 对 θ<sub>b</sub> 的斜率。打开之后，T(t | θ<sub>b</sub>) 里两项目前都随 θ<sub>b</sub> 升：理性项升一点，锚升得更直接。λ &gt; 0 时，锚那一项足以把不动点从 θ<sub>L</sub> 抬起来，造成内部门槛。ρ 进入的位置有两个：它改 μ<sub>R</sub> 对 θ<sub>b</sub> 有多敏感，也改「把锚当真」在经济上有多说得通。作者能核到的实验比较静态是：相关越强，披露随有利信号下降得越陡。教学例子的斜率 2λ/(1+λ) 只是让你看见「锚的权重变大 → 斜率变陡」这件事，不是去拟合他们的表。</p>
+
+<h3>3.7 发送方在门槛附近到底在比什么</h3>
+
+<p>停一下，把个体决策再钉一次。θ<sub>b</sub> 已经实现，t(θ<sub>b</sub>) 已经解出来。一个具体的发送方看着自己的 θ<sub>a</sub>：</p>
+
+<ul>
+  <li>若 θ<sub>a</sub> &gt; t(θ<sub>b</sub>)：开口拿更高的真值，藏只拿 t。开口。</li>
+  <li>若 θ<sub>a</sub> &lt; t(θ<sub>b</sub>)：开口等于承认自己比沉默猜测更差，藏反而被高估。沉默。</li>
+  <li>若 θ<sub>a</sub> = t(θ<sub>b</sub>)：无差异。连续分布下这一点测度为零。</li>
+</ul>
+
+<p>被挤出去的披露，不是最差（最差本来就藏），也不是最好（最好开口的收益最大）。是门槛抬升时新划进沉默池的那一截中间类型。作者实验能核到的话是：披露随 public signal 变好而下降。和「中间类型进池」是同一件事。</p>
+
+<p>再写一次披露率，避免和「平均猜测」混：</p>
+<div class="eq">
+  Disc(θ<sub>b</sub>) = P(θ<sub>a</sub> ≥ t(θ<sub>b</sub>) | θ<sub>b</sub>)
+</div>
+<p>人话：这个公开指标实现之后，还有多大比例的发送方开口。</p>
+
+<p>t 升则 Disc 降。后面所有「crowd-out」先指这个量，再谈接收方猜得准不准、总透明度升还是降。两件事情不是自动同一方向——第 4 节会拆。</p>
+
+<h3>3.8 不动点稳不稳：T 的斜率必须小于 1</h3>
+
+<p><span class="mark mark-std">标准推导</span> 画出 T(t) 和 45 度线。交点是门槛。若 T 太陡，交点可能不稳，或者不止一个。教学例子里这件事可以直接算。</p>
+
+<div class="eq">
+  T(t) = (1 − λ) · (t / 2) + λ θ<sub>b</sub>，   T′(t) = (1 − λ) / 2
+</div>
+<p>人话：门槛每抬 1，理性池均值只抬 0.5，再乘 (1 − λ)，T 的斜率最多是 1/2。</p>
+
+<p>(1 − λ)/2 ≤ 1/2 &lt; 1。T 是一条斜率小于 1 的直线，和 45 度线恰好交一次。唯一、稳定。从任何误猜的 t 出发，迭代 t ← T(t) 都会走到 t*。</p>
+
+<p>数字走一遍。λ = 0.4，θ<sub>b</sub> = 0.8，T(t) = 0.6 · (t/2) + 0.32 = 0.3 t + 0.32。有人误猜 t = 0.20：</p>
+<pre>T(0.20) = 0.38
+T(0.38) = 0.434
+T(0.434) ≈ 0.450
+T(0.450) = 0.455
+T(0.455) ≈ 0.4565  →  收敛到 2·0.4·0.8 / 1.4 ≈ 0.457</pre>
+<p>人话：即便发送方一开始猜错了接收方会猜多少，只要两边按最好回应调整，也会走到同一个门槛。这是课堂例子的稳定性，不是他们附录里的收缩映射。</p>
+
+<p>一般情形 T′(t) = (1 − λ) ∂μ<sub>R</sub>/∂t。截断均值对门槛的导数通常在 (0, 1) 里：门槛抬一点，池子右边多进来一点较高的类型，均值升，但升幅小于 1。乘上 (1 − λ) 更小。正则条件下唯一稳定内点仍然说得通。若密度在某一点堆成原子，T 可能跳，唯一性要另说——PDF 没打开，不假装他们处理了原子。</p>
+
+<h3>3.9 第二遍教学闭式：锚改成 E[θ<sub>a</sub> | θ<sub>b</sub>]，让 ρ 显式进来</h3>
+
+<p>第一遍用 m(θ<sub>b</sub>) = θ<sub>b</sub>，ρ 只停在嘴里。现在换一个仍然标准、仍然不是他们闭式的写法：</p>
+<div class="eq">
+  m(θ<sub>b</sub>) = E[θ<sub>a</sub> | θ<sub>b</sub>] = (1 − ρ) μ + ρ θ<sub>b</sub>
+</div>
+<p>人话：不倒推沉默、只看公开指标时，把私有状态往公开指标上做线性收缩。ρ = 0 时锚退回无条件均值 μ；ρ = 1 时锚就是 θ<sub>b</sub>。</p>
+
+<p>继续用 θ<sub>a</sub> ∼ U[0,1]，所以 μ = 1/2，第一遍那种「关掉 μ<sub>R</sub> 对 θ<sub>b</sub> 的依赖」还在：E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t] = t/2。</p>
+<div class="eq">
+  t = (1 − λ)(t / 2) + λ [ (1 − ρ)(1/2) + ρ θ<sub>b</sub> ]
+</div>
+<p>人话：左边门槛，右边一半是池均值，一半是收缩后的锚。</p>
+
+<pre>t − (1 − λ) t / 2  =  λ(1 − ρ)/2 + λ ρ θ_b
+t (1 + λ) / 2     =  λ(1 − ρ)/2 + λ ρ θ_b
+t                 =  [ λ(1 − ρ) + 2 λ ρ θ_b ] / (1 + λ)</pre>
+
+<div class="eq">
+  t*(θ<sub>b</sub>, ρ) = λ(1 − ρ)/(1 + λ) + [2λ ρ /(1 + λ)] θ<sub>b</sub>
+</div>
+<p>人话：门槛 = 一截不随 θ<sub>b</sub> 动的基线 + 一截随 θ<sub>b</sub> 动的斜率。基线随 ρ 下降，斜率随 ρ 上升。</p>
+
+<p>四个刀口，必须核对：</p>
+<ul>
+  <li>λ = 0：t* = 0。无论 ρ、无论 θ<sub>b</sub>。经典 unraveling。</li>
+  <li>ρ = 0：t* = λ/(1 + λ)。公开指标带不动锚，门槛退回「没有 θ<sub>b</sub>」的天真基线 t<sub>0</sub>。左极限：挤不出「因信号好坏而变」的那一截。</li>
+  <li>ρ = 1：t* = 2λ θ<sub>b</sub>/(1 + λ)。回到第一遍。锚就是 θ<sub>b</sub>。</li>
+  <li>θ<sub>b</sub> = μ = 1/2：t* = λ/(1 + λ) = t<sub>0</sub>，对任何 ρ。公开指标等于先验，不比没纸更好也更差。</li>
+</ul>
+
+<p>斜率现在显式含 ρ：</p>
+<div class="eq">
+  ∂t* / ∂θ<sub>b</sub> = 2λ ρ / (1 + λ)
+</div>
+<p>人话：同样的天真权重，相关越强，有利信号把门槛抬得越陡。这是第 4.3 节「放大」在课堂闭式里的样子。ρ = 0 时斜率为 0；ρ 升，斜率升。仍然不是他们的公式。</p>
+
+<p>数字。λ = 0.4，θ<sub>b</sub> 从 0.5 走到 0.9：</p>
+<pre>ρ = 0.0 → t 始终 = 0.286，披露率不变
+ρ = 0.3 → t : 0.286 → 0.354，披露率 71.4% → 64.6%
+ρ = 0.6 → t : 0.286 → 0.423，披露率 71.4% → 57.7%
+ρ = 1.0 → t : 0.286 → 0.514，披露率 71.4% → 48.6%</pre>
+<p>人话：公开指标同样变好一截，相关越强，开口掉得越多。作者实验能核到的符号在这里能用手算出来。掉得最多的是 ρ = 1 那一行——但这是<strong>披露率对有利程度的斜率</strong>，不是「引进这张纸之后的透明度损失」。损失的倒 U 还要扣掉「ρ 极高时 θ<sub>b</sub> 自己替代了成绩单」。课堂这个第二遍把 μ<sub>R</sub> 对 θ<sub>b</sub> 的依赖关着，右极限的「替代」还没进 MSE，所以不要用上面这张表宣布倒 U。</p>
+
+<h3>3.10 停下来自己算（给董杰）</h3>
+
+<p>纸上做三道，答案就在本小节下面，先自己写。</p>
+<ol>
+  <li>θ ∼ U[2, 8]。理性、无 public signal。E[θ | θ &lt; t] 写成 t 的函数。不动点是几？</li>
+  <li>教学第一遍，λ = 0.5，θ<sub>b</sub> = 0.6。t* 是几？类型 0.40 开口还是沉默？</li>
+  <li>教学第二遍，λ = 0.5，ρ = 0，θ<sub>b</sub> = 0.9。门槛随这张很好的纸动吗？</li>
+</ol>
+<div class="box">
+  <p><strong>答。</strong> (1) E[θ | θ &lt; t] = (2 + t)/2。t = (2+t)/2 ⇒ t = 2 = θ<sub>L</sub>。均匀怎么平移都剥到底。(2) t* = 2·0.5·0.6 / 1.5 = 0.6/1.5 = 0.40。类型 0.40 无差异；0.39 沉默，0.41 开口。(3) ρ = 0 时 t* = 0.5/1.5 = 1/3，和 θ<sub>b</sub> 无关。很好的一张纸，相关为零，门槛不动。crowd-out 需要锚真的在说 θ<sub>a</sub>。</p>
+</div>
+
+<h2 id="s4">4. 比较静态：crowd-out、crowd-in、ρ 的倒 U</h2>
+
+<p>这一节是他们的核心。能核到的方向写蓝标签；用教学门槛推的中间步骤写橙标签。不编他们的系数。</p>
+
+<h3>4.1 有利信号挤出披露</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「A favorable public signal can crowd out disclosure, leaving receivers with less information than absent the signal。」「Disclosure falls as the public signal becomes more favorable, and the decline is amplified by stronger correlation。」
+</div>
+
+<p><span class="mark mark-std">标准推导</span> 教学例子里这件事是直接的：</p>
+<div class="eq">
+  ∂t* / ∂θ<sub>b</sub> = 2λ / (1 + λ)  &gt; 0    当 λ &gt; 0
+</div>
+<p>人话：公开指标每好一点，沉默被读高一点，门槛上移一点，更多中间类型选择藏。</p>
+
+<p>λ = 0 时这个偏导是 0。再一次：没有 naivete，教学例子里有利信号不抬门槛。</p>
+
+<p>一般的不动点 t = (1 − λ) μ<sub>R</sub>(t, θ<sub>b</sub>, ρ) + λ m(θ<sub>b</sub>)，对 θ<sub>b</sub> 隐函数求导（假定内点、T 对 t 的斜率小于 1，从而不动点稳定）：</p>
+<div class="eq">
+  dt/dθ<sub>b</sub> = [ (1 − λ) ∂μ<sub>R</sub>/∂θ<sub>b</sub> + λ m′(θ<sub>b</sub>) ] / [ 1 − (1 − λ) ∂μ<sub>R</sub>/∂t ]
+</div>
+<p>人话：分子是「公开指标直接把猜测抬多少」——理性截断均值抬一点，锚抬一点。分母是「门槛自己动的时候，池均值会跟着动，不能算两遍」，是一个小于 1 的收缩。</p>
+
+<p>λ &gt; 0 且 m′ &gt; 0 时，分子为正，分母在正则条件下为正，于是 dt/dθ<sub>b</sub> &gt; 0。这就是 crowd-out 的比较静态：<strong>有利的 public signal 提高沉默的价值。</strong></p>
+
+<p>对应到披露率：</p>
+<div class="eq">
+  ∂ Disc / ∂θ<sub>b</sub> &lt; 0    当 λ &gt; 0
+</div>
+<p>人话：指标越好，开口的人越少。作者实验室看到的就是这个符号。</p>
+
+<h3>4.2 不利信号挤入披露</h3>
+
+<p>同一条导数，反过来读。θ<sub>b</sub> 很低时，锚 m(θ<sub>b</sub>) 很低，ĝ<sub>ND</sub> 被往下拉，沉默变惨，门槛下移，更多人被迫开口。这是 crowd-in。</p>
+
+<p>人话：公开指标已经很难看，你再闭嘴，天真接收方也会把你往这个难看的指标上靠。藏不住。还不如自己交成绩单，至少真分数可能比这个烂指标好一点。</p>
+
+<p>作者摘要的句子写的是有利信号的 crowd-out 方向。crowd-in 是同一条机制的另一端，课堂对称写出来，方便你对 A 股：异动当天已经在跌停、一致预期已经被打穿，空模板的「保护伞」不在，可核验事实反而更可能被逼出来。这是预测，不是他们表里的处理名。</p>
+
+<h3>4.3 ρ 放大「有利 → 少说」这条斜率</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  下降被更强的 correlation 放大。实验室变动的就是 private state 和 public signal 之间的相关。
+</div>
+
+<p><span class="mark mark-std">标准推导</span> 教学上有两条通道让 ρ 把 ∂ Disc / ∂θ<sub>b</sub> 变得更负，两条都不要写成他们的公式。</p>
+
+<ul>
+  <li><strong>锚更有吸引力。</strong> ρ 高，θ<sub>b</sub> 更像 θ<sub>a</sub>，把沉默往 θ<sub>b</sub> 上靠不再那么荒谬。等价于教学 λ 变大，斜率 2λ/(1+λ) 变陡。</li>
+  <li><strong>理性项本身对 θ<sub>b</sub> 更敏感。</strong> ρ 高，∂μ<sub>R</sub>/∂θ<sub>b</sub> 更大，隐函数分子里 (1 − λ) 那一项也更大。即便 λ 不动，有利信号也会把池均值抬得更明显。</li>
+</ul>
+
+<p>两条通道都指向：同样从「一般的 θ<sub>b</sub>」走到「很好的 θ<sub>b</sub>」，高相关处理里披露掉得更多。这和作者能核到的实验句子一致。不要把「放大」读成「高相关一定信息损失最大」——那是下一小节的倒 U，对象不同。</p>
+
+<div class="box">
+  <p><strong>两个 ρ 效应，对象不一样，不要并成一句。</strong></p>
+  <p>(i) 披露对「信号有多好」的斜率：相关越强，掉得越陡。作者实验原话。</p>
+  <p>(ii) 「有这个信号 vs 没这个信号」的透明度损失：对 ρ 不是单调，中间最狠。作者原话。下一小节。</p>
+</div>
+
+<h3>4.4 对 ρ 的非单调：两个极限，中间最狠</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「The effect is non-monotonic in the correlation: strongest when the signal is informative enough to anchor beliefs but too noisy to substitute for disclosure.」
+</div>
+
+<p>画一个口头的倒 U。横轴是 ρ，纵轴是「引进这个 public signal 之后，透明度掉了多少」（有它 minus 没有它）。不要标假刻度，也不要假装这是他们图里的数。</p>
+
+<p><strong>左极限 ρ ≈ 0。</strong> θ<sub>b</sub> 和 θ<sub>a</sub> 几乎不相关。公开指标带不动对私有状态的信念。天真接收方即便想锚定，锚的内容也是噪音，或者他们根本不觉得这个指标在说 θ<sub>a</sub>。沉默的解读移不动，门槛抬不起来，挤出有限。损失接近 0：你引进了一张无关的纸，没人拿它当保护伞。</p>
+
+<p><strong>右极限 ρ → 1。</strong> θ<sub>b</sub> 几乎把 θ<sub>a</sub> 说穿。两件事情同时发生，藏失败。</p>
+<ul>
+  <li>能从藏里赚钱的，是那些 θ<sub>a</sub> 远低于 ĝ<sub>ND</sub>(θ<sub>b</sub>) 的人，也就是私有状态远低于公开指标。ρ → 1 时这种人几乎不存在：低 θ<sub>a</sub> 配到的就是低 θ<sub>b</sub>，高 θ<sub>a</sub> 配到的就是高 θ<sub>b</sub>。</li>
+  <li>高类型开口拿 θ<sub>a</sub> ≈ θ<sub>b</sub>，闭嘴也被猜成 ≈ θ<sub>b</sub>，无差异附近。低类型开口闭嘴都低。披露不再是「藏中间」的游戏，公开指标自己已经替代了成绩单。</li>
+</ul>
+<p>人话：相关极强时，公开指标几乎就是私有状态。你没有「指标很好、自己一般」这种可以钻的缝。损失回来，倒 U 的右腿下降。</p>
+
+<p><strong>内点 ρ。</strong> 信号强到能改信念：天真接收方真的会把沉默往 θ<sub>b</sub> 上靠。信号又不够准，替代不了开口：θ<sub>a</sub> 和 θ<sub>b</sub> 之间还有缝，中间类型可以钻「指标不错、自己没那么好、闭嘴会被读成指标」这个空档。这是最适合藏的区间，倒 U 的山顶。</p>
+
+<p>A 股预告一句，第 7 节展开：涨停很吵，和「到底有没有应披事项」只是中等相关——正好是山顶，不是右极限。</p>
+
+<h3>4.5 策略性沉默反过来挤出 public signal 自己</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「Strategic silence can thus crowd out the public signal itself, and transparency can be lower with it than without.」
+</div>
+
+<p>这句话比「披露少了」多一截。披露少了，是发送方的动作。挤出 public signal 自己，是接收方最后手里的信息。</p>
+
+<p>没有策略时，引进 θ<sub>b</sub> 是稳赚的：多一张和 θ<sub>a</sub> 相关的纸，MSE 不该变差。有策略时，θ<sub>b</sub> 改变了谁开口。本来该被交到桌上的 θ<sub>a</sub>，现在缺席；接收方被迫用「θ<sub>b</sub> 和一点点隐瞒池」去填这个洞。他们「有」的那张公开指标，一部分功能从「额外信息」变成了「替代消失的成绩单」。增量信息被自己诱发的沉默吃掉。这就是 crowd out the public signal itself。</p>
+
+<p>透明度可以 with the signal 低于 without。不是修辞。比较的是两个世界接收方对 θ<sub>a</sub> 知道多少，不是「桌上多了一张纸没有」。</p>
+
+<h3>4.6 三个世界的信息会计</h3>
+
+<p><span class="mark mark-std">标准推导</span> 用接收方猜测对 θ<sub>a</sub> 的均方误差当透明度的课堂尺子。MSE 越小越透明。这不是他们的福利函数，是为了把三句话摆在同一把尺子上。</p>
+
+<p><strong>世界 (i)：没有 public signal。</strong></p>
+<ul>
+  <li>接收方理性：第 1 节，t = θ<sub>L</sub>，几乎人人披露，ĝ = θ<sub>a</sub>，MSE ≈ 0。</li>
+  <li>接收方仍然天真、但没有 θ<sub>b</sub> 可锚：混合变成 (1 − λ) E[θ<sub>a</sub> | ND] + λ μ，门槛停在某个 t<sub>0</sub> &gt; θ<sub>L</sub>。已经有一块「本来就会藏」的损失。这块和公共信号无关。</li>
+</ul>
+
+<p>教学例子里没有 θ<sub>b</sub>、锚退回无条件均值 μ = 1/2、θ<sub>a</sub> ∼ U[0,1]：</p>
+<div class="eq">
+  t<sub>0</sub> = 2λ · (1/2) / (1 + λ) = λ / (1 + λ)
+</div>
+<p>人话：没有公开指标时，天真自己就会抬起一道门槛。λ = 0.4 时 t<sub>0</sub> ≈ 0.286，大约 29% 的人藏。这是基线损失，不是这篇要警告的那一截。</p>
+
+<p><strong>世界 (ii)：有 public signal，接收方理性（λ = 0）。</strong></p>
+<ul>
+  <li>满支撑下仍然 t = θ<sub>L</sub>，θ<sub>a</sub> 还是被交出来。MSE 对 θ<sub>a</sub> 仍 ≈ 0。</li>
+  <li>桌上多了 θ<sub>b</sub>，对其他决策也许有用，但对「猜 θ<sub>a</sub>」已经多余。</li>
+  <li>透明度不会比世界 (i) 的理性版本更差。没有 crowd-out。</li>
+</ul>
+
+<p><strong>世界 (iii)：有 public signal，接收方天真（λ &gt; 0）。</strong></p>
+<ul>
+  <li>门槛 t(θ<sub>b</sub>) 随有利的 θ<sub>b</sub> 上升，可以高于 t<sub>0</sub>。</li>
+  <li>披露的人：ĝ = θ<sub>a</sub>，这部分没有误差。</li>
+  <li>沉默的人：ĝ = (1 − λ) μ<sub>R</sub> + λ m(θ<sub>b</sub>)，误差 (ĝ − θ<sub>a</sub>)<sup>2</sup>。ĝ 被拉向 θ<sub>b</sub>，对 θ<sub>a</sub> 的偏差可以比世界 (i) 的天真基线更大。</li>
+  <li>再叠加：沉默池本身变大。更多人走进「用 θ<sub>b</sub> 冒充 θ<sub>a</sub>」的区域。</li>
+</ul>
+
+<p>作者警告的，是世界 (iii) 对世界 (i) 的比较，不是 (iii) 对 (ii)。政策上你加一张公开指标，接收方又不会完全倒推，结果可能比「别加这张纸」更不透明。</p>
+
+<p>把「偏离解包」拆成两截，方便写 A 股：</p>
+<ol>
+  <li><strong>基线天真：</strong>就算没有涨停、没有一致预期，接收方也不会把空模板读成最差。对应 t<sub>0</sub>。</li>
+  <li><strong>被公开指标喂大的沉默：</strong>θ<sub>b</sub> 比先验更好时，t(θ<sub>b</sub>) − t<sub>0</sub> 这一截。政策真正要小心的是这一截——你多放的那个指标，本身在扩大策略性沉默。</li>
+</ol>
+
+<p>教学例子里把两截写成显式。有公开指标时 t(θ<sub>b</sub>) = 2λ θ<sub>b</sub> / (1+λ)，没有时 t<sub>0</sub> = λ/(1+λ)。差额：</p>
+<div class="eq">
+  t(θ<sub>b</sub>) − t<sub>0</sub> = [2λ θ<sub>b</sub> − λ] / (1 + λ) = λ (2θ<sub>b</sub> − 1) / (1 + λ)
+</div>
+<p>人话：只有公开指标好于中点（θ<sub>b</sub> &gt; 1/2）时，门槛才比「没有这张纸」更高。指标差于中点时，差额为负，这是 crowd-in：有这张烂纸，反而比没纸时更愿意说。</p>
+
+<p>λ = 0.4、θ<sub>b</sub> = 0.8：t = 0.457，t<sub>0</sub> = 0.286，差额 0.171。大约 17% 的类型是「因为这张好纸才改口不说」的。λ = 0.4、θ<sub>b</sub> = 0.3：t = 0.171，低于 t<sub>0</sub>，这张难看的纸把一些人从沉默里拽出来。课堂数字，不是他们的估计。</p>
+
+<h3>4.6b 教学 MSE：有利信号怎样把误差做大</h3>
+
+<p><span class="mark mark-std">标准推导</span> 尺子用 E[(ĝ − θ<sub>a</sub>)<sup>2</sup>]。披露的人误差 0。沉默的人，教学第一遍里均衡 ĝ<sub>ND</sub> = t*，θ<sub>a</sub> | ND ∼ Uniform[0, t*]。</p>
+<div class="eq">
+  E[(t* − θ<sub>a</sub>)<sup>2</sup> | θ<sub>a</sub> &lt; t*] = ∫<sub>0</sub><sup>t*</sup> (t* − θ)<sup>2</sup> (1/t*) dθ = (t*)<sup>2</sup> / 3
+</div>
+<p>人话：均匀 [0, t*] 上，猜右端点，平均平方误差是长度平方的三分之一。像一根棍子，你猜头，真值均匀落在棍子上。</p>
+
+<p>无条件 MSE 还要乘沉默概率 t*（均匀 [0,1]）：</p>
+<div class="eq">
+  MSE = t* · (t*)<sup>2</sup> / 3 = (t*)<sup>3</sup> / 3
+</div>
+<p>人话：门槛越高，沉默的人越多，而且每个人被高估得越狠（猜 t*、真值在 0 到 t* 之间）。误差按立方涨。</p>
+
+<p>代入第一遍 t* = 2λ θ<sub>b</sub>/(1+λ)，λ = 0.4：</p>
+<pre>没有 public signal（锚 = 1/2）：t0 = 0.286，MSE0 = 0.286³ / 3 ≈ 0.0078
+θ_b = 0.5：t* = 0.286，MSE = 0.0078（和没纸一样）
+θ_b = 0.8：t* = 0.457，MSE ≈ 0.0318
+θ_b = 0.9：t* = 0.514，MSE ≈ 0.0453
+完全理性（任何 θ_b）：t = 0，MSE ≈ 0
+瞎猜先验 0.5、完全不披露：Var(θ_a) = 1/12 ≈ 0.0833</pre>
+<p>人话：一张 θ<sub>b</sub> = 0.8 的好纸，把天真世界的 MSE 从 0.0078 抬到 0.0318，大约四倍。还没烂到「完全不说、瞎猜先验」（0.083），但已经明显差于「别放这张纸」。这就是 transparency can be lower with it than without 在课堂尺子上的样子。立方来自「更多人沉默 × 每个人错得更大」，两件事被同一道门槛绑在一起。</p>
+
+<p>发送方的平均支付是另一回事。沉默的人拿 t*，披露的人拿自己的 θ<sub>a</sub>。有利的 θ<sub>b</sub> 让沉默池里的人被抬高，这些发送方更好过；被逼开口的人少了，少开口的那些人从「拿自己的真值」变成「拿被抬高的猜测」，若真值低于 t*，他们也更好过。接收方的 MSE 变差，发送方的平均 ĝ 变好。同一道门槛，两边符号相反。</p>
+
+<p>把 ρ 开进第二遍闭式，MSE = [t*(θ<sub>b</sub>,ρ)]³ / 3 仍然只抓「因门槛抬高而损失的披露」。它还没算 θ<sub>b</sub> 自己对猜 θ<sub>a</sub> 的直接帮助——因为第一、二遍都把披露者的误差写成 0，沉默者又只用混合猜测、没用更精细的 E[θ<sub>a</sub> | θ<sub>b</sub>]。所以这把尺子会夸大「高 ρ 的损失」：ρ → 1 时，真实接收方其实可以从 θ<sub>b</sub> 几乎读出 θ<sub>a</sub>，MSE 应该回来。课堂 MSE 能讲清「好纸把门槛抬高、误差按立方涨」；倒 U 的右腿必须靠第 4.4 节的极限讨论，不能靠这把关了替代通道的尺子。PDF 到手，看他们透明度怎么定义，再决定要不要换尺子。</p>
+
+<h3>4.7 福利不是透明度的同义词</h3>
+
+<p>Sender 要的是 ĝ 的水平，不是 −(ĝ − θ<sub>a</sub>)<sup>2</sup>。有利的 θ<sub>b</sub> 让一部分中间类型被高估，这些发送方更好过。Receiver 要的是准。同一件事两边符号相反。</p>
+
+<p>所以「crowd-out 让发送方受益、接收方受损」在教学支付下成立，但不要写成他们的福利命题——PDF 没打开，不知道他们用的是 MSE、决策价值，还是实验积分。课堂只保留会计：谁开口、猜成多少、和 θ<sub>a</sub> 差多少。</p>
+
+<p>也没有社会计划者在这篇能核到的句子里出场。政策语言是 cautionary：你只能强制相关公开信号、强制不了私有状态时，有可能把透明度弄更差。不是「永远不要公开信号」。倒 U 已经说了，ρ 极高时公开指标自己能替代成绩单，损失消失。</p>
+
+<h3>4.8 接收方在 ND 上的猜测：朝 θ<sub>b</sub> 偏，离开理性基准</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「Receiver guesses upon non-disclosure rise correspondingly, departing from the rational benchmark toward the public signal.」
+</div>
+
+<p>这是可以直接画的第二张图。横轴是 θ<sub>b</sub>，纵轴是「看见沉默之后的猜测」。</p>
+<ul>
+  <li>理性基准：ĝ<sup>R</sup> = E[θ<sub>a</sub> | ND, θ<sub>b</sub>] = μ<sub>R</sub>(t(θ<sub>b</sub>), θ<sub>b</sub>, ρ)。注意 t 本身可能随 λ 变，所以连「理性基准」都要说清楚是「按真实沉默池算的贝叶斯」，还是「按理性门槛算的贝叶斯」。实验里通常是：给定观察到的 ND 和 θ<sub>b</sub>，完全贝叶斯该猜多少；被试猜的比它高，并且跟着 θ<sub>b</sub> 走。</li>
+  <li>天真猜测：往 m(θ<sub>b</sub>) 抬。θ<sub>b</sub> 上升时，ĝ<sub>ND</sub> 上升。作者原话：rise correspondingly。</li>
+</ul>
+
+<p>人话：不披露的时候，接收方的嘴没有停在「隐瞒池有多差」，而是跟着公开指标往上飘。这正是发送方愿意藏的原因——他算得出来你会飘。</p>
+
+<p>这一条也是实验 identification 的第二只脚。只看披露率下降，可能是发送方自己乱按。同时看到 ND 条件猜测朝 θ<sub>b</sub> 抬、离开理性基准，才把「接收方被公开指标读宽了」钉住。</p>
+
+<p>教学例子里，均衡时 ĝ<sub>ND</sub> = t* = 2λ θ<sub>b</sub>/(1+λ)，而「按这个沉默池算的纯贝叶斯」是 t*/2 = λ θ<sub>b</sub>/(1+λ)。两者之差：</p>
+<div class="eq">
+  ĝ<sub>ND</sub> − E[θ<sub>a</sub> | θ<sub>a</sub> &lt; t*] = λ θ<sub>b</sub> / (1 + λ)
+</div>
+<p>人话：偏离理性池均值的那一截，正好是锚多出来的部分。θ<sub>b</sub> 越大、λ 越大，偏得越远。方向和作者那句 departing toward the public signal 一致。系数是课堂的，不是他们的。</p>
+
+<h2 id="s5">5. 假设为什么这么设，放松会怎样</h2>
+
+<p>下面逐条。每条先写「为什么必须这样」，再写「断了故事怎么变」。不断开假设，后面 A 股会对错号。</p>
+
+<h3>5.1 可验证披露，不是 cheap talk</h3>
+
+<p>Sender 出示的必须是真的 θ<sub>a</sub>。不能报一个假数字。这是 Grossman–Milgrom 和这篇共同的硬信息。</p>
+
+<p>为什么这么设：cheap talk 里，话本身不绑定状态，均衡往往是部分混同，消息被压缩成几个档。这篇要的物体是「交成绩单还是不交」，不是「报一个可以随便说的数」。unraveling 这套剥洋葱，依赖于「交出来就是真话」——否则最好的类型交出来别人也不信，剥不动。</p>
+
+<p>放松会怎样：如果发送方可以谎报，模型变成廉价交谈或者带惩罚的欺骗（同一对作者另有一篇 data economy 的实验，不在本篇）。A 股里「无应披未披」「以公告为准」不是一个谎报的数字，是一句不可核验的话。对空公告，正确的映射不是「把空话当成 cheap talk 的一个消息」，是「把空话当成 silence」：强制开口的壳还在，可验证内容等于没交。</p>
+
+<div class="box">
+  <p><strong>A 股空公告是 cheap talk 还是 silence？</strong> 取决于你把动作空间怎么切。若动作是 {交可核验事实, 交空模板}，空模板 = ND。若动作是 {报一个数字}，而数字不可核验，那是 cheap talk，这篇的门槛公式不能直接搬。董杰的 DV 必须落在第一刀：公告里有没有可核验的事实或数字。第 7 节再写。</p>
+</div>
+
+<h3>5.2 发送方一定知情，不是 Dye</h3>
+
+<p>Dye (1985) 的关键概率：有 p 的可能，发送方自己没看见 θ，只能沉默。接收方看见 ND，不知道对面是「没信息」还是「有信息但很烂」。中间类型躲在第一群人后面。</p>
+
+<p>为什么这篇不走 Dye：他们要的 crowd-out 来自「公开指标改写了对策略性沉默的解读」，不是来自「也许他真不知道」。若沉默里掺着不知情，有利的 θ<sub>b</sub> 还会改「他是不知情还是知情但差」的后验，符号不再干净，也嵌不回「只藏最差」那个刀口。</p>
+
+<p>放松会怎样：加回 Dye，门槛本来就在内部。public signal 的选择通道和估值通道同时在，理性接收方也可能 crowd-out 或 crowd-in，取决于哪一刀更大。作者能核到的故事是 naive-receiver 方向，不再是「也许没信息」。</p>
+
+<p>A 股含义：公司在异动公告、问询函回复这些位置，几乎一定知情——该不该有应披事项，内部人比市场清楚。把空模板解释成 Dye 的「没看见」，站不住。空模板是策略。</p>
+
+<h3>5.3 发送方支付 = 猜测的水平，没有方差，没有第二期声誉</h3>
+
+<p>u<sub>S</sub> = ĝ。不是 −(ĝ − θ)<sup>2</sup>，不是均值-方差，不是两期折现。</p>
+
+<p>为什么这么设：只要发送方喜欢被猜高，披露的激励就是「我是否高于沉默猜测」。门槛公式干净。若发送方还讨厌猜测的方差，或者在乎「下一次还敢不敢空」，最优规则不再是单门槛，甚至会出现「最好和最差都说、中间藏」的 countersignaling。</p>
+
+<p>放松会怎样，这是董杰的增量，不是他们的命题：</p>
+<ul>
+  <li><strong>打脸。</strong> 空公告之后 45 天内被证伪，下一期接收方不再把沉默往好信号上靠。教学语言：λ 变成「上一次 cheap talk 失败」的函数，λ 下降，解包压力回来。这篇是一期，给不了这条。</li>
+  <li><strong>声誉资产。</strong> 发送方若在乎长期被当成「说真话的人」，今天可能愿意在不利的 θ<sub>b</sub> 下开口，买明天的 λ。一期模型把这截切掉了。</li>
+  <li><strong>方差厌恶。</strong> 若接收方的猜测进价格、发送方有股票或期权，他可能在乎准不准，不只是高不高。那是另一篇。</li>
+</ul>
+
+<p>人话：他们的 sender 是一个只想被高估、不怕以后被揭穿的一期动物。你跟 Jeff 做的「空公告 → 打脸 → 再空公告」，是在他身上加第二期。不要假装这篇已经给了动态。</p>
+
+<h3>5.4 Partial naivete 对 crowd-out 方向是必要的</h3>
+
+<p>第 2.6 和 4.1 节推过：λ = 0 且满支撑、一定知情、无成本时，t 钉在 θ<sub>L</sub>，有利信号挤不出披露。选择通道甚至会拧紧 adverse selection。</p>
+
+<p>为什么必须写 naive：否则作者那句 favorable public signal can crowd out disclosure 在这一类设定里方向反了。他们不是在写「公开信息降低了不确定性所以没人愿说」（那是成本模型里的估值通道），是在写「公开信息被天真接收方当成沉默的挡箭牌」。</p>
+
+<p>放松会怎样：若接收方完全理性，你要 crowd-out，就得另找摩擦——成本、Dye、有限注意、诉讼风险。那是别的论文。这篇的 identification 在实验室里也是对着「ND 猜测朝 θ<sub>b</sub> 偏、离开理性基准」这只脚，不是对着「理性人也少说」。</p>
+
+<h3>5.5 ρ 必须在内部，两端都会熄火</h3>
+
+<p>第 4.4 节的倒 U：ρ ≈ 0 锚不住，ρ → 1 替代了披露。作者原话：strongest when the signal is informative enough to anchor beliefs but too noisy to substitute for disclosure。</p>
+
+<p>为什么要相关、又不要完全相关：完全不相关，θ<sub>b</sub> 不是在说 θ<sub>a</sub>，把沉默往它身上靠没有内容；完全相关，没有「指标好、自己一般」的缝，中间类型钻不进去。</p>
+
+<p>放松会怎样：ρ 为负（公开指标和私有状态反向）会把故事翻转——有利的 θ<sub>b</sub> 反而意味着 θ<sub>a</sub> 可能更差，锚往哪边拉要重写。作者实验室变动的是正相关的强弱，不是变号。</p>
+
+<p>A 股：涨停和「有应披利好」是中等正相关，不是 1。分析师一致预期和即将披露的真实盈余，也是中等。北向、龙虎榜更吵、更远。这些都落在倒 U 的中间带，不是右极限。</p>
+
+<h3>5.6 没有做市商，没有价格冲击，不是 Kyle</h3>
+
+<p>ĝ 是接收方的猜测，直接进发送方的口袋。没有订单流 y，没有 p(y) = E[θ | y]，没有知情交易者用数量泄露信息。</p>
+
+<p>为什么这么设：他们要隔离的是「披露决策 × 天真解读」，不是「怎么交易」。加做市商会多出一条通道：价格本身变成又一个 public signal，θ<sub>b</sub> 和 p 缠在一起，门槛不再是对单个 θ<sub>b</sub> 的函数。</p>
+
+<p>放松会怎样：A 股的涨停既是 θ<sub>b</sub>（已经实现的公共信号），又是市场对 ĝ 的某种表达（价格本身）。微观结构里还有知情单。这篇给不了「涨停板那天的订单簿」。你若把 CAR 当 DV，就是把结果和信号焊在一起，identification 先死。第 7 节会再骂一次。</p>
+
+<h3>5.7 其他课堂里常被问起、这篇能核到的句子里没有的</h3>
+
+<ul>
+  <li><strong>多个接收方、异质 λ。</strong> 摘要没写。教学上可以想成一个代表性天真接收方。若市场里有理性交易者和天真散户，ĝ 可能是两者的加权，crowd-out 会被理性那一截稀释。</li>
+  <li><strong>强制披露一部分、自愿披露另一部分。</strong> 这正是政策现场：监管能强制的是相关公开指标（另一家评级、GPA、已实现价格），强制不了私有状态本身。作者的 caution 对着这个缺口。</li>
+  <li><strong>发送方对 ρ 的信念。</strong> 课堂默认 sender 知道相关有多强。实验室里相关是处理，被试被告诉或能学到。A 股里公司大概知道「涨停和自己有没有料」相关但不等于 1。</li>
+</ul>
+
+<h2 id="s6">6. 实验：在测什么、怕什么、主结果怎么读</h2>
+
+<div class="note">
+  本机没有 PDF，下面不写人数、轮次、处理标签、回归系数、估计出来的 λ。只写作者主页 / 摘要能核到的设计与符号，以及标准实验该怕什么。
+</div>
+
+<h3>6.1 设计：实验室里外生变动 (θ<sub>b</sub>, ρ)</h3>
+
+<div class="qual">
+  <span class="mark mark-auth">作者原话能核到</span>
+  「We test this in a laboratory experiment varying the correlation between private state and public signal. Disclosure falls as the public signal becomes more favorable, and the decline is amplified by stronger correlation. Receiver guesses upon non-disclosure rise correspondingly, departing from the rational benchmark toward the public signal.」
+</div>
+
+<p>这是实验室，不是公司面板上的 DID。identification 来自实验者随机化 (θ<sub>b</sub>, ρ)，不是来自「哪家公司碰巧有一个更好的公开指标」。</p>
+
+<p>能核到的处理维度就两维：</p>
+<ul>
+  <li><strong>Public signal 有多有利：</strong>θ<sub>b</sub> 的实现偏高还是偏低。预测：偏高 → 披露降。</li>
+  <li><strong>Private state 和 public signal 的相关：</strong>ρ 更强还是更弱。预测：更强 → 上面那条下降更陡。</li>
+</ul>
+
+<p>发送方看见 θ<sub>a</sub>（以及桌上的 θ<sub>b</sub>），选 disclose 或 not。接收方看见 θ<sub>b</sub> 和动作，出猜测。支付按实验室的积分规则走——具体点值 PDF 里，这里不编。</p>
+
+<p>Companion 那篇 SAT（w33660）是「学校解读不交分数」的实验室，不是这篇。这篇变动的是相关，不是「隐藏的学校解读」。</p>
+
+<h3>6.2 在测什么：两个结果，两只脚</h3>
+
+<p><strong>结果 1：披露率。</strong> 发送方开口的频率，最好再按 θ<sub>a</sub> 的位置拆开看——理论说掉的是中间类型，不是最好也不是最差。摘要只写了 disclosure falls，没写他们是否按类型分段。课堂预测是中间。</p>
+
+<p><strong>结果 2：ND 条件猜测。</strong> 接收方在看见沉默之后猜多少。理论说它随 θ<sub>b</sub> 升，并且高于理性基准、朝 public signal 偏。</p>
+
+<p>两只脚缺一不可。</p>
+<ul>
+  <li>只有结果 1：也许发送方没读懂规则，有利信号下随便少按。没有「接收方被读宽」的证据。</li>
+  <li>只有结果 2：也许接收方跟着 θ<sub>b</sub> 走，但发送方并没有据此少说。crowd-out 的策略闭环没闭上。</li>
+</ul>
+
+<p>作者两句都写了，所以闭环在摘要层面是齐的。点估计等 PDF。</p>
+
+<h3>6.3 预测符号（只写方向）</h3>
+
+<ol>
+  <li>∂ Disc / ∂(θ<sub>b</sub> 的有利程度) &lt; 0。</li>
+  <li>这条负斜率的绝对值随 ρ 升。</li>
+  <li>E[ĝ | ND, θ<sub>b</sub>] 随 θ<sub>b</sub> 升。</li>
+  <li>E[ĝ | ND, θ<sub>b</sub>] − 理性基准 &gt; 0，并且朝 θ<sub>b</sub> 偏，不是朝隐瞒池均值偏。</li>
+  <li>透明度（接收方对 θ<sub>a</sub> 知道多少）可以 with-signal 低于 without-signal；这个差对 ρ 呈倒 U。</li>
+</ol>
+
+<p>第 5 条是加总会计，实验里要用「有信号处理 vs 无信号处理」或者结构反事实。摘要写了这个方向，没给数字。不要把任何本机核不到的人数、轮次、ρ 取值写进来。</p>
+
+<h3>6.3b 实验室 vs A 股：同一条预测，identification 差在哪</h3>
+
+<p>把第 6.3 的符号和第 7 节将要用的回归并排，避免「实验室证实了，所以公司回归也能证」。</p>
+
+<pre>预测                实验室怎么识别              A 股若要借
+Disc ↓ in 有利θ_b    实验者抽 θ_b              θ_b 必须不是本公司新闻
+斜率随 ρ 变陡        实验者指定联合分布          ρ 用「信号对后续基本面的
+                                               历史预测力」分档，不是
+                                               用本公司自己的 R² 当因果
+ĝ_ND 朝 θ_b 偏       直接观察接收方的数字       A 股没有 ĝ。CAR 不能冒充。
+                                               分析师修正 / 下期是否仍空，
+                                               都是脏的第二只脚
+透明度 with&lt;without  有信号 vs 无信号处理       公司数据里「没有公开指标」
+                                               的反事实几乎不存在。不要
+                                               硬做。最多比较 ρ 分档的
+                                               空模板率倒 U</pre>
+
+<p>人话：符号可以借，识别策略不能借。他们的脚在随机化上；你的脚必须自己找「非本公司的 θ<sub>b</sub>」。</p>
+
+<h3>6.4 identification：随机化，不是公司 DID</h3>
+
+<p>实验室的干净之处：θ<sub>b</sub> 不是公司自己选出来的，ρ 也不是均衡里长出来的。实验者指定联合分布，再抽实现。发送方没有「因为今天基本面好所以公开指标也好」这种纠缠。</p>
+
+<p>对照 A 股你马上失去的东西：</p>
+<ul>
+  <li>涨停、一致预期、北向，都和公司自己的 θ<sub>a</sub> 一起被同一天的新闻驱动。θ<sub>b</sub> 不是随机的。</li>
+  <li>ρ 在横截面上因行业、因是否业绩预告过而不同，但也和「这家公司有没有料」缠在一起。</li>
+  <li>所以 A 股若要借这条机制，必须找「信号好、但不是本公司自己放出来」的变异：行业冲击、指数涨停、同业公告。第 7 节。</li>
+</ul>
+
+<p>人话：他们在实验室把你在 A 股最怕的遗漏变量直接随机掉了。你回去做公司数据，怕的东西原样回来。</p>
+
+<h3>6.5 怕什么（实验内部）</h3>
+
+<p>即便随机化干净，实验室还有自己的威胁。这些是标准实验担心，不是他们附录里核过的句子。</p>
+
+<ul>
+  <li><strong>Experimenter demand。</strong> 被试猜到「你们想看我在好信号下少说」，按这个演。缓解通常是：支付真的跟猜测准不准、估值高不高挂钩，而不是跟「像不像理论」挂钩。PDF 里的支付函数这里不编。</li>
+  <li><strong>没读懂可验证。</strong> 有人以为开口可以报假数，有人以为沉默会被实验者惩罚。一旦 verifiability 没进脑子，动作空间就不是 {Disclose(θ), Silence}。这是这类实验最脏的理解失败。</li>
+  <li><strong>跨轮学习。</strong> 多轮之后，接收方可能慢慢学会倒推 selection，λ 往下走；也可能学错。Companion SAT（w33660）里，被试对「学校怎么解释不交分数」有一些学习，但是 imperfect。当作亲戚：同一对作者已经在相近设计里看到学习不完全。不要写成这篇的结果。</li>
+  <li><strong>角色混淆。</strong> 有人既当过 sender 又当过 receiver，会把「我藏的时候希望被猜高」带进接收方的猜测。设计若换角色，要看顺序效应。</li>
+  <li><strong>把 θ<sub>b</sub> 当成 θ<sub>a</sub>。</strong> 相关很高的处理里，被试可能偷懒直接报 θ<sub>b</sub>，看起来像「朝 public signal 偏」，其实是没在猜 θ<sub>a</sub>。倒 U 的右端会和这种偷懒缠在一起。作者说右端损失回来，是因为藏失败 / 信号替代披露；若只是被试复制 θ<sub>b</sub>，解释不同。</li>
+</ul>
+
+<h3>6.6 主结果怎么读（仍然只读符号）</h3>
+
+<p>按摘要的顺序读，不要补表。</p>
+
+<ol>
+  <li>披露随 public signal 变好而下降。读成：门槛 t(θ<sub>b</sub>) 在 λ &gt; 0 时上移。不要读成「好公司更透明」——正好相反，好的是公开指标，不是私有状态。</li>
+  <li>相关越强，下降越陡。读成：ρ 放大 ∂ Disc / ∂θ<sub>b</sub> 的负号。不要读成「高相关信息损失最大」。损失的倒 U 是另一张图。</li>
+  <li>ND 猜测上升，朝 public signal 偏、离开理性基准。读成：接收方没有把沉默倒推成更差的隐瞒池，而是被 θ<sub>b</sub> 拉走。这是 naivete 的直接足迹。</li>
+  <li>策略性沉默挤出 public signal 自己；有它的透明度可以更低。读成：第 4.5–4.6 节的会计，不是「多一张纸一定更好」。</li>
+  <li>对 ρ 非单调，中间最狠。读成：锚得住、又替代不了。政策上最危险的公开指标，不是最准的那张，是「够响、不够准」的那张。</li>
+</ol>
+
+<p>读完实验，回到理论上你应该能用自己的嘴说：他们不是在测「信息公开了价格更有效」，是在测「公开指标越好，自愿交可验证事实的人越少，而接住沉默的那个人越往公开指标上靠」。</p>
+
+<h2 id="s7">7. 和董杰 / Jeff 的 A 股题怎么对上</h2>
+
+<p>这篇不是 A 股制度论文。机制和你正在做的「空公告当强制外壳下的沉默」是同一类物体。下面逐项映射，不写鸡汤。</p>
+
+<h3>7.1 物件怎么对</h3>
+
+<p>先把动作空间切对。A 股异动公告、问询函回复，<strong>发文是强制的</strong>。发不发不是选择。选择在内容。</p>
+
+<ul>
+  <li><strong>Disclose：</strong>公告里出现可核验的事实或数字。比如具体订单金额、具体股东增减持股数、具体项目进展的日期和主体、具体业绩预告的区间。别人能去对。</li>
+  <li><strong>Silence / ND：</strong>空模板。「无应披未披事项」「以公告为准」「感谢关注」「不存在应披露而未披露的信息」。字很多，可核验内容为零。</li>
+  <li><strong>不是 cheap talk 的一个数：</strong>空模板没有报一个可以随便说的盈余数字。不要把 cheap talk 套在「无应披未披」这六个字上。六个字 = 没交成绩单。</li>
+</ul>
+
+<p>θ<sub>a</sub> 是公司私有、能被交出来的那个状态：到底有没有应披事项、事项有多好。θ<sub>b</sub> 是桌上已经有的公共信号，和 θ<sub>a</sub> 相关但不是同一件事。</p>
+
+<div class="box">
+  <p><strong>θ<sub>b</sub> 在 A 股的候选（都是公开的、和私有状态相关、发送方决定空不空之前已经在桌上）：</strong></p>
+  <ul>
+    <li>已经涨停、已经放量、已经封板。交易出来的公共信号。</li>
+    <li>分析师一致预期、盈利预测相对上次财报的位置。</li>
+    <li>同业公告、行业景气新闻、指数涨停。</li>
+    <li>北向净流入、龙虎榜。</li>
+    <li>上一次被打脸的事实（你样本里「45 天内打脸」）：这是事后公共信号，进入下一轮空公告时的 θ<sub>b</sub>，也进入下一轮的 λ。</li>
+  </ul>
+</div>
+
+<h3>7.2 这篇直接给的预测</h3>
+
+<ol>
+  <li><strong>空公告在有利的 public signal 之后更常见，不是更少。</strong> 异动当天已经涨停、情绪面已经很好，空模板（「无应披未披」）应该更多。朴素故事是「公司没话说所以才空」；这篇的故事是「没话说加上市场已经很好，更空」。好信号挤出披露。</li>
+  <li><strong>相关中等时，信息损失最狠。</strong> 涨停很吵，和「到底有没有应披事项」只是中等相关：涨停可以由游资、板块、情绪单独完成，不必有一个待披露的事实。这正好落在作者说的危险区间——信号强到能锚定「沉默还行」，又没强到替代开口。</li>
+  <li><strong>问询函是监管强制开口。</strong> 若市场已经有很强的公开叙事，函件回复更容易滑向模板。和 Hudongyi 那组「以公告为准、暂无、感谢关注」同一方向。模板回复是被 public signal 读宽之后的最优沉默，不是「公司真的无事可说」的充分统计量。</li>
+  <li><strong>不利的 θ<sub>b</sub> 挤入。</strong> 已经跌停、一致预期已被打穿、同业已经爆雷，空模板的保护伞变薄，可核验事实被逼出来的概率上升。</li>
+</ol>
+
+<h3>7.2b DV 怎么编码：什么算可核验</h3>
+
+<p>把「有没有可核验事实」写成 0/1 之前，先用几个具体句子标定边界。下面是编码规则，不是他们论文里的变量。</p>
+
+<ul>
+  <li>「公司不存在应披露而未披露的事项。」→ 0。纯模板。</li>
+  <li>「一切以公司已披露的公告为准。感谢关注。」→ 0。指向已经在桌上的东西，没有新事实。</li>
+  <li>「控股股东拟于 30 日内增持不少于 1000 万元、不超过 5000 万元。」→ 1。金额、主体、窗口都可对。</li>
+  <li>「在谈一个大单，金额暂不便披露。」→ 0。有叙事，无可核验数字，也没有可对的对手方与日期。比纯模板多几个字，仍是 ND。</li>
+  <li>「收到问询函，将于 15 个交易日内回复。」→ 这是程序，不是对私有状态的披露。若你的样本就是问询函回复本身，这条不算。若你的样本是异动公告，这条只说明监管来了，θ<sub>a</sub> 还没交。</li>
+  <li>「预计上半年净利 1.2 亿至 1.5 亿，同比 +30% 至 +45%。」→ 1。区间也是可核验数字。</li>
+  <li>「生产经营正常，订单饱满。」→ 0。「饱满」不可对。</li>
+</ul>
+
+<p>灰色地带：「正在筹划重大事项，股票停牌」。停牌和「筹划」是可观察的程序事实，但不是 θ<sub>a</sub> 的内容。建议单独做一档「程序披露」，不要和「无应披未披」混，也不要和「金额 / 日期 / 主体」混。主回归的 1，只给内容可对的那一档。</p>
+
+<p>这样切完，空模板率和这篇的 Disc 才是同一个物体的相反数。发文率不是。CAR 不是。</p>
+
+<h3>7.3 论文 (6) 的提醒：不要用 CAR[0,1] 当 DV</h3>
+
+<p>这篇的被解释变量是「说还是藏」，不是「市场信不信」。CAR[0,1] 在涨停日很大一块就是涨停本身——那是 θ<sub>b</sub>，不是 ĝ 的干净度量，更不是 disclosure 的度量。</p>
+
+<p>8.17% → 3.72% 那截 CAR 变化是你另一篇问询函试点里的价格结果，<strong>不是</strong> Chen–Jin 的对象，也不是你跟 Jeff 借这篇机制时该放在左边的东西。左边放：公告 / 回复里有没有可核验事实或数字。空模板 = 0，有事实 = 1。可以再拆「有数字 / 只有定性事实 / 纯模板」三档，但不要滑回 CAR。</p>
+
+<p>人话：价格既是结果也是信号。你拿价格当 DV，等于拿 θ<sub>b</sub> 的一部分去回归 θ<sub>b</sub> 的另一部分，再声称在测披露。identification 先死。</p>
+
+<h3>7.4 这篇给不了、必须你自己加的</h3>
+
+<p><strong>打脸后的声誉，两期。</strong> 他们是一期。你关心的是「被证明说空话之后，下一次还空不清空」。要把接收方的 λ 写成上一次失败 cheap talk 的函数：</p>
+<div class="eq">
+  λ<sub>t</sub> = λ(打脸<sub>t−1</sub>)，打脸之后 λ 下降
+</div>
+<p>人话：上一次空完被揭穿，散户不再把沉默往好信号上靠。解包压力回来，空模板变贵。这是董杰的增量，不是他们的命题。</p>
+
+<p>教学上可以想成：打脸把接收方从世界 (iii) 往世界 (ii) 推了一截。同一张有利的 θ<sub>b</sub>，打脸之后抬不起那么高的门槛。于是你能预测：有打脸史的公司，好信号对空模板的挤出应当更弱。这是可写进 A 股设计的比较静态，仍然不要假装是 Chen–Jin 的表。</p>
+
+<p><strong>空话不是可验证披露。</strong> 他们的发送方要么交真分数，要么闭嘴。A 股公司交的是一段话。DV 必须自己定义成「有没有可核验数字 / 新事实」，不要用「发没发公告」——公告是强制的。</p>
+
+<p><strong>价格本身既是结果也是信号。</strong> 涨停既是 θ<sub>b</sub>，也是接收方猜测的市场版。微观结构里还有知情交易。这篇没有订单簿，没有 Kyle 的 p(y)。</p>
+
+<h3>7.5 A 股 identification 最怕的那句：好日子本来就没事可说</h3>
+
+<p>实验室随机化 θ<sub>b</sub>。A 股做不到。最脏的遗漏是：公开指标好的日子，公司本来就没有应披事项——不是策略性沉默，是真的无事。于是你看到「涨停 → 空模板」，其实是「没料 → 又涨停又空」。</p>
+
+<p>要接近他们实验室，必须找「信号好、但不是本公司自己新闻」的变异：</p>
+<ul>
+  <li><strong>行业冲击 / 板块涨停：</strong>同业都在涨，本公司还没有自己的公告。θ<sub>b</sub> 来自别人。</li>
+  <li><strong>指数涨停、市场情绪：</strong>大盘或行业指数的已实现收益，不是公司自己的收益。</li>
+  <li><strong>同业公告：</strong>竞争对手先披露了一个相关事实，本公司随后发异动公告。别人的披露是你的 θ<sub>b</sub>。</li>
+  <li><strong>分析师一致预期的行业分量：</strong>把公司自己的预期拆掉，留下行业共同部分。</li>
+</ul>
+
+<p>公司自己的涨停、自己的盈利惊喜、自己刚发的预告，太像 θ<sub>a</sub> 的公开版，ρ 太高，也太像「自己的新闻」。用它们当 θ<sub>b</sub>，倒 U 的右端和「本来就没事」分不开。</p>
+
+<p>ρ 的代理：这类公开信号平时能预测多大的后续基本面（后续盈余、后续应披事项的发生）。预测：中等预测力的信号，挤出最大；几乎完美的信号（比如业绩已预告、事项已公告），挤出反而小。这是倒 U，可以用「信号对后续基本面的历史 R²」分档来探，不要只做线性交互然后宣布单调。</p>
+
+<h3>7.6 假如和 Jeff 做，测什么、回归写什么</h3>
+
+<p>在测什么：不是「公开信息多了价格更有效」，是「公开信号越好，公司越不提供可核验的自愿信息」。</p>
+
+<pre>1{公告含可核验事实} = a + b · θ_b有利 + c · θ_b有利 × ρ代理
+                         + 公司 FE + 日期/行业-日 FE + e</pre>
+
+<p>人话：同一家公司，碰上更有利的公开指标时，空模板是不是更多；这个更多，在中等相关的信号上是不是最狠。</p>
+
+<ul>
+  <li>b 的预测符号：负（有利 → 更空）。对应 crowd-out。</li>
+  <li>c：不要先验写成线性。按 ρ 代理分三档，看中间档 |b| 最大，才是倒 U。</li>
+  <li>标准误：公司和日双向聚类。行业-日 FE 吃掉「当天板块一起动」。</li>
+  <li>样本：强制开口的位置——异动公告、问询函回复。不要用「自愿业绩预告发没发」和这篇的强制外壳混在一堆，除非你单独做一截真正的自愿披露。</li>
+</ul>
+
+<p>第二只脚，A 股没有实验室那种 ĝ。不要用 CAR 冒充。可以用「空模板之后的分析师修正 / 卖方文本有没有把沉默读宽」，或者下一期还空不空。脏，但至少不是涨停本身。</p>
+
+<p>怕什么，再写一次：好信号的日子公司本来没事可说。行业冲击、指数、同业公告是挡这一刀的。公司自己的涨停当 θ<sub>b</sub>，挡不住。</p>
+
+<h3>7.7 把整条逻辑链用 A 股句子再说一遍</h3>
+
+<p>不停在映射表上。用一天的异动走完第 1 到第 4 节。</p>
+
+<ol>
+  <li>昨夜或今早，板块已经涨停、同业已经发了利好。这是 θ<sub>b</sub>，桌上人人看见。</li>
+  <li>本公司有一个私有状态 θ<sub>a</sub>：到底有没有自己的应披事项、事项有多好。董秘知道。</li>
+  <li>监管要求发异动公告。外壳强制，内容可选。交可核验事实 = Disclose；发「无应披未披」= Silence。</li>
+  <li>若散户完全理性：看见空模板，倒推「这么好的板块你还不交材料，你比板块差一截」。ĝ<sub>ND</sub> 低。中间类型被逼着开口。这是第 2.6 节的选择通道，crowd-in 方向。</li>
+  <li>若散户部分天真：空模板被读成「大概也符合板块」。ĝ<sub>ND</sub> 往 θ<sub>b</sub> 靠。中间类型比较：交材料拿 θ<sub>a</sub>，交空模板拿被抬高的猜测。θ<sub>a</sub> 一般、θ<sub>b</sub> 很好时，闭嘴赢。门槛上移。crowd-out。</li>
+  <li>涨停和「有应披」只是中等相关。锚得住，又替代不了开口。倒 U 的山顶。若业绩已经预告过、事项已经公告，ρ 接近 1，藏不住，这篇预测挤出反而小。</li>
+  <li>加总：市场多看了一块涨停，少看了一批本该交出来的事实。透明度可以比「今天没有这块涨停、公司按基线天真决定空不空」更差。</li>
+  <li>你要测的是第 5 步的动作，不是第 1 步的价格。左边 = 1{可核验事实}。θ<sub>b</sub> 尽量用同业 / 板块 / 指数，不用本公司自己的涨停当唯一自变量。</li>
+  <li>打脸是你加的第 9 步：45 天内被证伪，下一期 λ 下降，同一张好 θ<sub>b</sub> 抬不起那么高的门槛。一期的 Chen–Jin 到第 7 步结束。</li>
+</ol>
+
+<p>若你和 Jeff 只能做一件事，做第 8 步的 DV 和「非本公司的 θ<sub>b</sub>」。其余都是围绕这两项转的比较静态。</p>
+
+<h2 id="s8">8. 文献位置</h2>
+
+<p>短，只放你用得到的坐标。不发明菜单，不写假引用。</p>
+
+<h3>8.1 解包这条线</h3>
+
+<ul>
+  <li><strong>Grossman (1981)、Milgrom (1981)：</strong>可验证披露，完全理性，unraveling 到最差。第 1 节推过。Chen–Jin 的闭式门槛嵌套的就是这个刀口。</li>
+  <li><strong>Dye (1985)：</strong>发送方可能不知情。沉默是混合物，门槛停在内部。Chen–Jin 不走这刀：他们的 sender 一定知情。</li>
+  <li><strong>Jovanovic (1982)：</strong>披露有成本。无差异变成 t − c = 池均值。Chen–Jin 也不走这刀。</li>
+</ul>
+
+<p>三刀破解包：不知情、成本、天真接收方。他们拿第三刀，再加相关 public signal。</p>
+
+<h3>8.2 天真接收方 + 披露实验室</h3>
+
+<p><strong>Jin, Luca, Martin, AEJ Micro 2021</strong>（「Is No News (Perceived as) Bad News?」）。Ginger 自己的解包实验室。发送方有成绩，可出示可藏；接收方经常不把 no news 当成 bad news，解包不完全。Chen–Jin 2026 这篇是在那条线上加 public signal，问公开指标会不会把已经不完全的解包再读宽一截。</p>
+
+<p><strong>Eyster–Rabin cursed equilibrium</strong> 是标准的 naivete 对象：玩家没有充分意识到别人的动作是别人类型的函数。用在披露上就是没倒推沉默里的 selection。教学 λ 和 cursed 的精神相近。<strong>不要写成他们用了某个 χ。</strong></p>
+
+<h3>8.3 Companion：Chen–Jin NBER w33660，SAT</h3>
+
+<p>同一对作者，招生版。自愿交标准化考试分数。作者主页能核到的句子：自愿披露是不完全、有选择的；既有 partial unraveling（分数高的更愿意交），也有 reverse unraveling（学校对「不交」的解释越好，学生越不交）；被试对隐藏的学校解读有一些学习，但不完全。结构反事实里，信息完全时 test-required 在准备度和多样性上都最好，test-blind 最差；信息不完全时，某些 test-optional 可以比 test-required 更多样。</p>
+
+<p>test-optional 是「public signal / 对沉默的解释」的现场教材：GPA、课外、人口统计已经在桌上（θ<sub>b</sub> 的亲戚），SAT 是可交可不交的 θ<sub>a</sub>。学校把不交读得越宽，学生越不交——和这篇的 crowd-out 同一方向。学习不完全，提醒你：实验室里 λ 不会一轮就到 0。那是亲戚，不是本篇结果。</p>
+
+<h3>8.4 不是 Grossman–Stiglitz</h3>
+
+<p>Grossman–Stiglitz 挤出的是信息 <em>获取</em>：价格太有效，没人愿付成本去挖私有信号。Chen–Jin 挤出的是自愿 <em>披露</em>：私有状态已经被看见，选择不交。政策处方相反。前者担心公开太多、私人生产停了；后者担心公开了一个相关指标，可验证事实反而少了，总透明度更差。第 1.7 节写过，这里只钉文献标签：不要把这篇放进「价格揭示挤出调研」那一堆。</p>
+
+<h3>8.5 Ginger 的顶刊坐标</h3>
+
+<div class="qual">
+  <strong>顶刊作者：</strong>Ginger Zhe Jin — <em>QJE</em> 2003「The Effect of Information on Product Quality: Evidence from Restaurant Hygiene Grade Cards」（with Leslie）。强制卫生等级卡是另一类披露：监管把 θ 直接贴在门上，不是自愿。和这篇的对照正好是：强制公开指标会不会改变没被强制的那部分行为。餐厅那篇看的是质量本身，这篇看的是自愿开口。AEJ: Micro 2021 不在顶刊清单里，只作机制背景。
+</div>
+
+<p>报告过 University of Maryland、Tsinghua、Renmin。Under review。清华 SEM 2026 年 6 月 23 日有 Ginger 的同题报告，能核到的是报告发生过，不是论文被清华接受。w35625 的致谢名单和 IRB 本机没有打开，不从 SAT 那篇（w33660）搬过来。</p>
+
+<h2 id="s9">9. 还缺什么（诚实）</h2>
+
+<p>PDF 到手，按这个顺序填，不要一上来抄表。</p>
+<ol>
+  <li>找到披露门槛的正式命题。核三件事：是不是 t = ĝ<sub>ND</sub> 的不动点；λ = 0（或他们的天真权重为零）是不是回到 t = θ<sub>L</sub>；t 对 θ<sub>b</sub> 的偏导在天真时是不是正的。对得上，第 3–4 节不用改结构，只把课堂闭式换成他们的式子。</li>
+  <li>找到 naivete 的定义。若是线性混合，第 2.5 节的 λ 可以升级成「作者原话」；若是 cursed / 层级 / 其他，保留教学 λ，加一段对照。</li>
+  <li>找到实验设计段：处理怎么切、θ<sub>a</sub> 和 θ<sub>b</sub> 怎么抽、支付怎么积。然后才看表。表只核第 6.3 节五条符号，不把点估计倒写进机制课。</li>
+  <li>找到透明度和福利的定义。第 4.6b 的 MSE 是课堂尺子；他们若用别的，加一段换尺子，不要删倒 U 的极限讨论。</li>
+</ol>
+
+<p>本机没有打开 NBER PDF。所以下面这些东西，这篇精读里故意是空的。PDF 到手，只填空，不要改机制课的骨架。</p>
+
+<ul>
+  <li><strong>闭式门槛的真正表达式。</strong> 作者说他们推了，嵌套经典 unraveling。我们用的  t = 2λ θ<sub>b</sub>/(1+λ)  是均匀 + 线性锚、关掉 selection-on-θ<sub>b</sub> 的课堂解。他们的系数、对 ρ 的显式依赖、角点情形，都还没对过原文。</li>
+  <li><strong>命题编号、附录分情形。</strong> 离散类型、原子、θ<sub>b</sub> 的支撑、λ 是否随 ρ 变，附录里有没有，不知道。</li>
+  <li><strong>实验的点估计。</strong> 人数、轮次、处理名、ρ 取了哪些值、披露率掉了多少、ND 猜测偏了多少、有没有结构估计出来的天真参数。理论简报里曾经出现过一组未复核数字，这篇不沿用。</li>
+  <li><strong>他们用的 naivete 函数形式。</strong> 线性混合是教学对象。是不是 cursed、是不是 λ(ρ)、是不是有限认知层级，要看正文。</li>
+  <li><strong>福利 / 透明度的正式定义。</strong> 课堂用了 MSE。他们也许用熵、用实验积分、用反事实「关掉 public signal」。句子能核到（transparency can be lower with it than without），尺子不能核到。</li>
+  <li><strong>和 w33660 在设计上的具体差别。</strong> 两篇都是实验室、都是对沉默的解读。处理维度不同：那篇是学校解读，这篇是相关。细节对照等两份 PDF 并排。</li>
+</ul>
+
+<p>PDF 到手之后优先填的三块：闭式门槛（对着第 3 节的不动点核对）、实验表（对着第 6.3 的五条符号核对）、naivete 的正式定义（对着第 2.5 的教学 λ 核对）。机制课的顺序不用改：先解包，再加信号和天真，再比较静态，再对 A 股。</p>
+
+<p>你读完这篇，应该能不看 PDF 就做三件事。第一，在纸上写出 t = E[θ | θ &lt; t] 为什么只能停在 θ<sub>L</sub>。第二，说明为什么 λ = 0 时有利的 θ<sub>b</sub> 挤不出披露，λ &gt; 0 时能。第三，把空模板写成 ND，把涨停 / 一致预期 / 同业公告写成 θ<sub>b</sub>，并解释为什么 DV 不能是 CAR。这三件事是这篇精读的考试范围。闭式系数不是。</p>
+
+<p><a href="https://www.nber.org/papers/w35625">NBER w35625</a> · <a href="https://www.haoyuanchen.com/research">作者主页</a> · 日报卡片在 <a href="https://dtu2026.github.io/daily-papers/kyle/2026-08-19.html#p4">2026-08-19 #p4</a></p>
 
 <footer>
-  精读 · Kyle · 2026-08-20 按全文讲解标准重写 · /workspace/research/daily-papers/reads/kyle-2026-08-19-p4.html<br>
-  依据：NBER 摘要、作者主页对机制和实验的说明、Grossman/Milgrom/Dye/Jovanovic 与 Jin–Luca–Martin 的标准披露模型。推导部分已标明为教学用，不是他们的编号命题。NBER PDF 未打开，未写入未经原文核对的闭式系数和实验点估计。
+  精读 · Kyle · 2026-08-20 按全文讲解标准重写 · 依据 NBER 摘要与作者主页；推导部分标明为标准披露模型，不是他们编号命题。<br>
+  路径 /workspace/research/daily-papers/reads/kyle-2026-08-19-p4.html<br>
+  NBER PDF 本机未打开。未写入未经原文核对的闭式系数、命题编号、表号、实验人数和处理点估计。
 </footer>
 </div>
 </body>
