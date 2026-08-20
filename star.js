@@ -28,26 +28,31 @@
     btn.title = "";
   }
 
-  function markBusy(btn, starring) {
-    btn.textContent = starring ? "在标…" : "取消中…";
-    btn.disabled = true;
+  function persist(id, starred) {
+    try {
+      if (starred) localStorage.setItem(storageKey(id), "1");
+      else localStorage.removeItem(storageKey(id));
+    } catch (e) {}
   }
 
-  function post(action, id, title) {
-    return fetch((API || "") + "/star", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: action,
-        who: who,
-        date: date,
-        id: id,
-        title: title || ""
-      })
-    }).then(function (res) {
-      if (!res.ok) throw new Error("star failed");
-      return res.json().catch(function () { return {}; });
-    });
+  function notify(action, id, title) {
+    var q = "action=" + encodeURIComponent(action) +
+      "&who=" + encodeURIComponent(who) +
+      "&date=" + encodeURIComponent(date) +
+      "&id=" + encodeURIComponent(id) +
+      "&title=" + encodeURIComponent(title || "");
+    var url = (API || "") + "/star?" + q;
+    try { new Image().src = url; } catch (e) {}
+    if (typeof fetch === "function") {
+      var ctrl = typeof AbortController === "function" ? new AbortController() : null;
+      var t = ctrl ? setTimeout(function () { ctrl.abort(); }, 4000) : null;
+      fetch((API || "") + "/star", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: action, who: who, date: date, id: id, title: title || "" }),
+        signal: ctrl ? ctrl.signal : undefined
+      }).catch(function () {}).then(function () { if (t) clearTimeout(t); });
+    }
   }
 
   var buttons = document.querySelectorAll("button.star-btn");
@@ -58,23 +63,15 @@
       if (!id) return;
       var starred = false;
       try { starred = !!localStorage.getItem(storageKey(id)); } catch (e) {}
-      if (starred) markStarred(btn);
-      btn.addEventListener("click", function () {
-        if (btn.disabled) return;
+      if (starred) markStarred(btn); else markIdle(btn);
+      btn.addEventListener("click", function (ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
         var nowStarred = btn.classList.contains("starred");
-        markBusy(btn, !nowStarred);
-        post(nowStarred ? "unstar" : "star", id, title).then(function () {
-          try {
-            if (nowStarred) localStorage.removeItem(storageKey(id));
-            else localStorage.setItem(storageKey(id), "1");
-          } catch (e) {}
-          if (nowStarred) markIdle(btn);
-          else markStarred(btn);
-        }).catch(function () {
-          if (nowStarred) markStarred(btn);
-          else markIdle(btn);
-          btn.textContent = nowStarred ? "取消失败，再点" : "再点一次";
-        });
+        var next = !nowStarred;
+        persist(id, next);
+        if (next) markStarred(btn); else markIdle(btn);
+        notify(next ? "star" : "unstar", id, title);
       });
     })(buttons[i]);
   }
