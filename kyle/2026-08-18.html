@@ -92,8 +92,40 @@
     font-family: ui-sans-serif, system-ui, sans-serif;
   }
 </style>
+<!-- star-inject --><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: default;
+}
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
 </head>
-<body>
+<body data-who="kyle" data-date="2026-08-18">
 <div class="wrap">
 <header>
   <h1>股市理论论文简报</h1>
@@ -116,6 +148,7 @@
 
 <article id="p1">
   <h2>1. AI-Powered Trading, Algorithmic Collusion, and Price Efficiency</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. AI-Powered Trading, Algorithmic Collusion, and Price Efficiency" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
   <p class="authors">Winston Wei Dou, Itay Goldstein, Yan Ji · NBER WP 34054 · 2025年7月（SSRN 更早稿亦有）</p>
   <div class="tags">
     <span class="tag">Kyle 扩展</span>
@@ -157,6 +190,7 @@
 
 <article id="p2">
   <h2>2. Competition and Collusion Among Strategic Traders Who Face Uncertainty</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Competition and Collusion Among Strategic Traders Who Face Uncertainty" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
   <p class="authors">Snehal Banerjee, George Malikov, Filipp Prokopev · 作者主页 PDF（2026年3月稿）；SSRN abstract 4980072（修订至 2025年4月）</p>
   <div class="tags">
     <span class="tag">Kyle 双知情者</span>
@@ -194,6 +228,7 @@
 
 <article id="p3">
   <h2>3. Kyle Meets Friedman: Informed Trading When Anticipating Future Information</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Kyle Meets Friedman: Informed Trading When Anticipating Future Information" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
   <p class="authors">Hongjun Yan, Liyan Yang, Xueyong Zhang, Deqing Zhou · SSRN abstract 4737312 · 文稿日期 2024年11月，SSRN 修订至 2025年2月；2025 ABFER 报告</p>
   <div class="tags">
     <span class="tag">动态 Kyle</span>
@@ -236,6 +271,7 @@
 
 <article id="p4">
   <h2>4. Algorithmic Pricing and Liquidity in Securities Markets</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Algorithmic Pricing and Liquidity in Securities Markets" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
   <p class="authors">Jean-Edouard Colliard, Thierry Foucault, Stefano Lovo · SSRN abstract 4252858（修订至 2025年5月）；<em>Review of Financial Studies</em> 2026年2月已正式发表</p>
   <div class="tags">
     <span class="tag">算法做市</span>
@@ -274,6 +310,7 @@
 
 <article id="p5">
   <h2>5. Earnings Management and Price Informativeness</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p5" data-title="5. Earnings Management and Price Informativeness" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
   <p class="authors">Zhiguo He, Wenxi Jiang, Wei Xiong · NBER WP 35178 · 2026；作者主页亦有 PDF</p>
   <div class="tags">
     <span class="tag">A股</span>
@@ -315,5 +352,6 @@
   选文标准：2025 年起 WP；至少一位作者可核顶刊（JF/JFE/RFS/JFQA；TAR/JAR/JAE；AER/QJE/JPE/Econometrica/REStud）。不编造论文或发表记录。
 </footer>
 </div>
+<!-- star-inject --><script src="../star.js"></script><!-- /star-inject -->
 </body>
 </html>

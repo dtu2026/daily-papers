@@ -82,6 +82,13 @@ header h1 {
 }
 .badge.kyle { background: #e8eef6; color: var(--kyle); }
 .empty { color: var(--muted); padding: 22px 18px; }
+.sec-title {
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: .04em;
+  margin: 28px 0 12px;
+}
+.reads-sec .date { font-size: 16px; }
 footer {
   margin-top: 28px;
   color: var(--muted);
@@ -90,6 +97,7 @@ footer {
 @media (max-width: 420px) {
   header h1 { font-size: 26px; }
   .date { font-size: 17px; }
+  .reads-sec .date { font-size: 15px; }
 }
 </style>
 </head>
@@ -97,7 +105,7 @@ footer {
 <div class="wrap">
   <header>
     <h1>每日论文</h1>
-    <p class="lede">Jeff 实证 · Kyle 理论。点日期打开当日简报。</p>
+    <p class="lede">Jeff 实证 · Kyle 理论。点日期打开当日简报。星标一篇即请人写精读。</p>
   </header>
   <div class="tabs">
     <button class="tab active" type="button" data-tab="jeff">Jeff 实证</button>
