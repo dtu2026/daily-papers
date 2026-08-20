@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精读 · Chen–Jin (2026) When Public Signals Backfire</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f4ef;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+    --warn: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.75 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 44px 22px 80px; }
+  header h1 { font-size: 26px; line-height: 1.35; font-weight: 650; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 22px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 28px;
+  }
+  .lede p { margin: 0 0 8px; }
+  .lede p:last-child { margin: 0; }
+  h2 {
+    font-size: 19px;
+    margin: 32px 0 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: 0; padding-top: 0; }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", sans-serif;
+    letter-spacing: .03em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+  }
+  p { margin: 0 0 10px; }
+  ul, ol { margin: 0 0 12px; padding-left: 1.25em; }
+  li { margin: 4px 0; }
+  .box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 12px 0 16px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 12px 0;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .note {
+    background: var(--warn);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 12px 0 16px;
+  }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 16px 0;
+  }
+  a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 28px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>公开信号会把自愿披露挤出去</h1>
+  <p class="meta">Chen &amp; Jin, NBER WP 35625，2026年8月 · 精读 kyle-2026-08-19-p4 · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>一句话：监管多放一个和公司私有信息相关的公开指标（评级、一致预期、股价），散户会拿它来读「公司为什么不说话」。指标越好，沉默越被当成「大概还行」，中间类型更敢藏。加总信息量可以比「没有这个公开指标」更差。损失在中等相关时最大。</p>
+  <p>下面不复述日报。先补解包这一课，再走模型、实验、和你跟 Jeff 做的空公告 / 问询函怎么对上。NBER 全文这台机器下不下来，闭式门槛的系数只写作者主页和摘要里能核到的结构，不编具体数字。</p>
+</div>
+
+<h2>1. 先补一课：经典解包为什么「不说 = 最差」</h2>
+<p>Grossman (1981)、Milgrom (1981) 的可验证披露：发送方知道一个数字（质量、盈余），可以说真话，也可以闭嘴，<strong>不能撒谎</strong>。接收方完全理性。发送方希望接收方猜得越高越好。</p>
+<p>解包（unraveling）是倒着推的：</p>
+<ol>
+  <li>最好的类型说了一定加分，所以一定说。</li>
+  <li>接收方看见沉默，就知道「不是最好的」。于是次好的也被逼着说。</li>
+  <li>一层层剥下去，均衡里只有最差的那一截还在藏。沉默 = 最差。</li>
+</ol>
+<p>人话：考试成绩单你能交也能藏。交了就按真分数打。藏了，别人当零分。所以除了零分，人人交。</p>
+<p>现实里公司经常藏中间类型。文献常用三刀砍开解包：</p>
+<ul>
+  <li>发送方不一定知情（Dye 1985）——沉默可能是「没看见」，不只是「看见了很烂」。</li>
+  <li>披露有成本（Jovanovic 1982）。</li>
+  <li>接收方不是完全理性，解包推不完。</li>
+</ul>
+<p>Chen–Jin 走第三刀，再加一样东西：市场上已经有一个<strong>和私有状态相关的公共信号</strong>。天真接收方会把沉默往这个信号上靠。这不是「公共信息挤出私人挖信息」（Grossman–Stiglitz 那种），是「公共信号挤出自愿开口」。</p>
+
+<h2>2. 模型设定（谁、看见什么、图什么）</h2>
+<p>作者主页和 NBER 摘要能核到的骨架：</p>
+<ul>
+  <li><strong>发送方</strong>（公司、申请人）：看见私有状态，记作 <em>θ<sub>a</sub></em>。只能「如实披露」或「沉默」。不能编一个假数字。</li>
+  <li><strong>公共信号</strong> <em>θ<sub>b</sub></em>：所有人都能看见，和 <em>θ<sub>a</sub></em> 正相关，相关系数 <em>ρ</em>。例子：分析师一致预期、另一家评级、GPA、旧财报、股价。</li>
+  <li><strong>接收方</strong>（投资者、招生官）：部分天真。看见披露就按真值信。看见沉默，<strong>不会</strong>只做理性的「隐瞒池均值」，还会把公共信号掺进去。</li>
+  <li><strong>发送方目标</strong>：让接收方的猜测尽量高（股价、录取概率）。</li>
+</ul>
+<div class="box">
+  <p><strong>时间线：</strong>先抽 <em>θ<sub>a</sub></em> 和 <em>θ<sub>b</sub></em> → 发送方决定说还是藏 → 接收方给出猜测。</p>
+  <p>和 Dye「可能没信息」不同：这里发送方一定知情，藏是策略，不是运气。</p>
+</div>
+
+<h2>3. 核心机制：沉默被公共信号「读宽」了</h2>
+<p>完全理性时，沉默后的猜测 = 所有选择沉默的类型的均值。公共信号好，理性人已经知道「好公司更可能说」，隐瞒池应该更差，猜测应该更低。解包压力还在。</p>
+<p>部分天真时，作者的框架是：公共信号会改变接收方对沉默的解读。结构可以写成</p>
+<div class="eq">
+  沉默后的猜测 ≈ (1 − λ) × 隐瞒池均值 + λ × 公共信号
+</div>
+<p>人话：<em>λ</em> 是「有多听公开指标」。<em>ρ</em> 越大，公开指标越像私有状态，天真接收方越把沉默锚定在 <em>θ<sub>b</sub></em> 上，<em>λ</em> 往上走。作者说他们推出一个闭式披露门槛，<em>λ</em> = 0 时退回经典解包（只藏最差）。</p>
+<p>发送方比的是：说出来拿 <em>θ<sub>a</sub></em>，还是闭嘴拿上面那个猜测。门槛类型刚好打平。于是：</p>
+<ul>
+  <li><em>θ<sub>b</sub></em> 好看 → 沉默被读得宽 → 门槛上移 → 更多中间类型闭嘴。<strong>挤出披露。</strong></li>
+  <li><em>θ<sub>b</sub></em> 难看 → 沉默被读得窄 → 门槛下移 → 更多人被迫说。<strong>挤入披露。</strong></li>
+</ul>
+<p>偏离解包可以拆成两截（日报里写过，这里补一句为什么要拆）：一截是「接收方本来就不完全解包」，和公共信号无关；另一截是「公共信号比先验更好时，再多藏一截」。政策关心的是第二截——你多放的那个指标，本身在喂策略性沉默。</p>
+
+<h2>4. 关键假设（哪一条断了，故事就断）</h2>
+<ul>
+  <li><strong>可验证：</strong>不能撒谎。A 股空公告、模板回复更接近「廉价交谈」或「说了等于没说」，不是这篇的「交成绩单」。对空公告要改一刀：把「披露」定义成「给出可核验的数字或事实」，空话算沉默。</li>
+  <li><strong>接收方部分天真：</strong>不是 100% 把沉默当最差。没有这刀，公共信号好时理性解包会更狠，挤出不会出现（甚至反着来）。</li>
+  <li><strong>公共信号和私有状态正相关，但不是同一件事：</strong><em>ρ</em> = 0 时公开指标没用；<em>ρ</em> → 1 时公开指标几乎替代私有状态，藏不住。</li>
+  <li><strong>发送方只在乎猜测的水平，不在乎方差：</strong>没有「说错了会被打脸」的动态声誉。你跟 Jeff 做的「空公告 → 45 天内打脸 → 再空公告」是这篇没有的第二期。</li>
+</ul>
+
+<h2>5. 主要命题（按作者能核到的说法）</h2>
+<p>来自 NBER 摘要和作者主页，不编数字。</p>
+<ol>
+  <li><strong>门槛嵌套解包。</strong> 存在闭式披露门槛。天真权重为零时，回到「只藏最差」。</li>
+  <li><strong>好信号挤出，坏信号挤入。</strong> 公共信号越有利，自愿披露越少；相关越强，这条斜率越陡。</li>
+  <li><strong>沉默后的猜测跟着公共信号走，偏离理性基准。</strong> 方向是朝 <em>θ<sub>b</sub></em> 偏，不是朝隐瞒池均值。</li>
+  <li><strong>加总信息量可以低于「没有公共信号」的世界。</strong> 公共信号自己带了一点信息，但挤掉的自愿披露可能更多。作者的原话：策略性沉默可以反过来把公共信号自己也挤掉。</li>
+  <li><strong>信息损失对 <em>ρ</em> 不是单调的，中间最狠。</strong> 相关太弱：公开指标撑不起「沉默还行」的故事，挤出有限。相关极强：公开指标几乎把私有状态说穿，藏不住，人人披露，损失回来。中间：信号够强，能改信念；又不够准，替代不了开口。这是最适合藏的区间。</li>
+  <li><strong>政策含义。</strong> 监管若只能强制「相关的公开指标」（不能强制私有状态本身），有可能把市场透明度弄得更差。作者写的是 cautionary message，不是「永远不要公开信号」。</li>
+</ol>
+<div class="note">
+  实验室：作者在不同处理里变动私有状态和公共信号的相关系数。披露随公共信号变好而下降，相关越强降得越多；不披露时接收方的猜测朝公共信号抬。具体人数、轮次、估计的 <em>λ</em>，等 PDF 能打开再补，这里不写日报里那组未复核数字。
+</div>
+
+<h2>6. 和董杰的题：空公告、涨停、问询函</h2>
+<p>这篇不是 A 股制度论文。但机制和你正在做的「空公告当强制廉价交谈」是同一类物体：公司必须发声（异动公告、问询函回复），内容却可以是空的。把空话当成沉默，把市场上已经有的东西当成 <em>θ<sub>b</sub></em>。</p>
+
+<h3>公共信号 <em>θ<sub>b</sub></em> 在 A 股是什么</h3>
+<ul>
+  <li>已经涨停、已经放量、龙虎榜、北向净流入：交易出来的公共信号，和公司私有状态相关，但远不是同一件事。</li>
+  <li>分析师盈利预测、行业景气新闻、同业公告。</li>
+  <li>上一次被打脸的事实（你样本里的「45 天内打脸」）：这是事后公共信号，进入下一轮空公告的 <em>θ<sub>b</sub></em>。</li>
+</ul>
+
+<h3>这篇直接给的预测</h3>
+<ul>
+  <li>异动当天已经涨停、情绪面很好时，空公告（「无应披未披」「以公告为准」）应该更多，不是更少。日报里写过「好信号挤出」。这和「公司没话说所以才空」的朴素故事反着：没话说加上市场已经很好，更空。</li>
+  <li>相关中等时挤出最狠。涨停是很吵的信号，但和「到底有没有应披事项」只是中等相关——正好落在作者说的危险区间。</li>
+  <li>问询函是监管强制开口。若市场已经有很强的公开叙事，函件回复更容易滑向模板。这和 Hudongyi 那组「以公告为准、暂无、感谢关注」是同一方向。论文 (2) 先挂着等论文 (6)，这篇给理论借口：模板回复是被公共信号读宽之后的最优沉默。</li>
+</ul>
+
+<h3>这篇解释不了、你必须自己加的</h3>
+<ul>
+  <li><strong>打脸后的声誉。</strong> 模型是一期。你关心的是「被证明说空话之后，下一次还空不清空」。要把接收方的 <em>λ</em> 写成「上一次打脸」的函数：打脸之后，散户不再把沉默往好信号上靠，<em>λ</em> 下降，解包压力回来。这是你的增量，不是他们的命题。</li>
+  <li><strong>空话不是可验证披露。</strong> 他们的发送方要么交真分数，要么闭嘴。A 股公司交的是一段话。精读里建议你把 DV 定义成「有没有可核验数字 / 新事实」，不要用「发没发公告」——公告是强制的。</li>
+  <li><strong>价格本身既是结果也是信号。</strong> 涨停既是 <em>θ<sub>b</sub></em>，也是接收方猜测的市场版。微观结构里还有知情交易。这篇没有订单簿。</li>
+</ul>
+
+<h2>7. 假如和 Jeff 做，测什么、怕什么</h2>
+<p>先讲在测什么：不是「公开信息多了价格更有效」，是「公开信号越好，公司越不提供可核验的自愿信息」。</p>
+<ul>
+  <li><strong>DV：</strong>异动公告 / 预告 / 问询函回复里，有没有新的数字或事实。空模板 = 沉默。</li>
+  <li><strong>核心自变量：</strong>公告前已实现的公共信号——涨停幅度、超预期程度、分析师预测相对最后一次财报的位置。预测：信号越有利，沉默越多。</li>
+  <li><strong>相关的强度：</strong>用「这类公开信号平时能预测多大的后续基本面」当 <em>ρ</em> 的代理。预测：中等预测力的信号，挤出最大；几乎完美的信号（比如业绩已预告），挤出反而小。</li>
+  <li><strong>怕什么：</strong>好信号的日子公司本来就没事可说（遗漏变量）。需要一个「信号好、但不是公司自己放出」的变异——比如行业冲击、指数涨停、同业公告。这才接近他们实验室里外生变动 <em>θ<sub>b</sub></em>。</li>
+</ul>
+<p>不要用 CAR 当主 DV。8 月那轮问询函试点已经说明：CAR[0,1] 很大一块就是涨停本身。这篇的被解释变量是「说还是藏」，不是「市场信不信」。</p>
+
+<h2>8. 作者自己举的现场，以及他们另一篇</h2>
+<p>作者主页把政策含义对准「只能强制相关公开信号、强制不了私有状态」的监管：评级旁边的另一家公开评级、强制披露旁边的管理层预测、可选 SAT 旁边的 GPA、ESG 分数。同一对作者另有 NBER w33660《Voluntary Report of Standardized Test Scores》（2025），实验室里直接做可选 SAT：自愿交分数是不完全的，学校把「不交」解读得越宽，学生越不交。那是这篇机制的招生版。A 股空公告是上市公司版。</p>
+
+<div class="qual">
+  <strong>顶刊作者：</strong>Ginger Zhe Jin — <em>QJE</em> 2003「The Effect of Information on Product Quality: Evidence from Restaurant Hygiene Grade Cards」（with Leslie）。披露实验另有 AEJ: Micro 2021，不在你定的顶刊清单里，只作背景。
+</div>
+
+<p><a href="https://www.nber.org/papers/w35625">NBER w35625</a> · <a href="https://www.haoyuanchen.com/research">作者主页</a> · 日报卡片在 <a href="https://dtu2026.github.io/daily-papers/kyle/2026-08-19.html#p4">2026-08-19 #p4</a></p>
+
+<footer>
+  精读 · Kyle · /workspace/research/daily-papers/reads/kyle-2026-08-19-p4.html<br>
+  依据：NBER 摘要、作者主页对机制和实验的说明、经典解包文献。NBER PDF 本机未打开，未写入未经原文核对的闭式系数和实验点估计。
+</footer>
+</div>
+</body>
+</html>
