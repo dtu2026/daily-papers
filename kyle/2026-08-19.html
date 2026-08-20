@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-19</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月19日 · 第二期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇都围着同一句话：<strong>信息多了，市场不一定更好。</strong> 价格会挤出别人去挖信息；公开信号会让公司更敢藏；把「挖情报」和「卖股票」捆在同一笔交易里，流动性就被知情者吃掉。四篇分别从限价单竞争、IPO 机制、投资者注意力、自愿披露来讲这件事。</p>
+  <p>读法还是：先看「问了什么」和「主要结论」，再读「机制直觉」。和昨天的合谋题不重复。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Pavan–Sundaresan–Vives：限价单市场里，信息挖多了也挖少了</a> — 两种外部性对着干</li>
+      <li><a href="#p2">Foucault–Koufopoulos–Kozhan：知情与流动性其实不必二选一</a> — 把情报市场和股票市场拆开</li>
+      <li><a href="#p3">Fischer–Heinle–Kim–Zhu：用旧价格当筛子，决定去哪家公司挖信息</a> — 异常波动会招来下一轮知情交易</li>
+      <li><a href="#p4">Chen–Jin：公开信号会挤出自愿披露</a> — 好消息一出来，公司更敢沉默</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. (In)efficiency in Information Acquisition and Aggregation through Prices</h2>
+  <p class="authors">Alessandro Pavan, Savitar Sundaresan, Xavier Vives · 作者主页 PDF · 2026年1月稿</p>
+  <div class="tags">
+    <span class="tag">限价单竞争</span>
+    <span class="tag">信息获取</span>
+    <span class="tag">学习外部性</span>
+    <span class="tag">福利</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>交易者先花钱挖私有信息，再提交需求曲线（限价单）去交易。均衡里他们会不会挖太多或太少？交易会不会对私有信号反应过度或不足？只盯价格和每个人成交量的税，能不能同时修好「挖信息」和「怎么交易」两件事？</p>
+
+  <h3>核心机制（两种外部性对着干）</h3>
+  <ul>
+    <li><strong>学习外部性：</strong>你对信号反应更猛，价格里就多一点基本面信息，别人也能从价格里学。你自己不吃这份好处，所以均衡里大家对私有信号反应偏弱、挖信息也偏少。</li>
+    <li><strong>金钱外部性：</strong>限价单随价格弹性移动。你信号里的噪声会把价格推偏，别人的持仓跟着被挤。这份伤害你也不内化，所以均衡里大家对私有信号反应偏猛、挖信息也可能过多。</li>
+  </ul>
+  <p>需求曲线向下倾斜时，金钱外部性占上风（交易对信号过猛）；向上倾斜时，学习外部性占上风（反应不足）。刀口情形两种刚好抵消，这时用法是有效的。</p>
+
+  <h3>关键假设</h3>
+  <p>连续统交易者，线性二次高斯；资产有共同价值 <em>θ</em> 和有噪声的供给；交易前各自选择信号精度；信号噪声里有<strong>共同成分</strong>（大家盯同一批研报、同一套另类数据，错也一起错）。竞争方式是提交需求曲线，不是市价单。</p>
+
+  <h3>机制直觉</h3>
+  <p>把「对私有信号下多重」想成油门。踩深一点：价格更明白（好事，别人白嫖），但噪声订单也更会把价格撞歪（坏事）。市价单把油门锁死，两种外部性一起消失，但配置对基本面的反应也变钝，所以禁止限价单不一定更好。</p>
+  <p>关键技术点：噪声如果在交易者之间<strong>相互独立</strong>，「交易有效 ⇒ 挖信息也有效」。一旦噪声相关（更现实），修好交易的税一般<strong>修不好</strong>挖信息——因为相关噪声让「社会价值」和「私人价值」在精度上再分叉一刀。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>除刀口参数外，放任均衡在挖信息和交易用法上都不有效。</li>
+    <li>只依赖均衡价格和个人成交量的政策，<strong>一般不可能</strong>同时实现两个有效。信息开支可核验时，再加一笔针对挖信息的补贴/税就行；不可核验时，要把边际税率挂上<strong>总成交量</strong>，让人猜不准税率，从而对齐挖信息的激励。</li>
+    <li>最优方案：金钱外部性主导时用累进税（压反应）；学习外部性主导时用累退税（放大反应）。</li>
+    <li>简单从价交易税（托宾税那种）在这里很差：它只改需求对价格的斜率，而这部分在放任均衡里已经最优，税反而把配置推远。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是把「限价单 + 内生信息」做成可算福利的一篇。你要是写政策（印花税、信息披露补贴），别只说「少交易就少投机」——这篇证明从价税可能帮倒忙，真正要动的是非线性、带总量条件的税。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Xavier Vives — <em>Econometrica</em> 2011「Strategic Supply Function Competition with Private Information」；<em>Journal of Finance</em> 2015「The Beauty Contest and Short-Term Trading」；<em>Review of Economic Studies</em> 2017「Endogenous Public Information and Welfare in Market Games」。Alessandro Pavan — <em>Econometrica</em> 2007「Efficient Use of Information and Social Value of Information」（with Angeletos）。
+  </div>
+  <p class="links"><a href="https://blog.iese.edu/xvives/files/2026/02/PSV-26.pdf">作者 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Trade-Off? What Trade-Off: Information Production without Illiquidity</h2>
+  <p class="authors">Thierry Foucault, Kostas Koufopoulos, Roman Kozhan · HEC Paris WP / SSRN · 最新稿 2026年2–3月（2025年4月已有稿）</p>
+  <div class="tags">
+    <span class="tag">机制设计</span>
+    <span class="tag">IPO</span>
+    <span class="tag">知情 vs 流动性</span>
+    <span class="tag">拆市场</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>教科书说：价格要有信息，知情者就得从不知情者身上赚钱，所以流动性必然变差（Grossman–Stiglitz）。卖股票的人（创业者、IPO）既想套现、又想从买卖里学到资产值多少。这个权衡是不是市场设计的宿命？能不能设计一种卖法，信息也有、折价也不要？</p>
+
+  <h3>核心机制（Divide and Conquer）</h3>
+  <p>把一场买卖拆成两段：</p>
+  <ul>
+    <li><strong>第一段：情报市场。</strong>卖方挨个找「专家」，只卖两种衍生品（涨时赔、跌时赔）。专家用选哪张合约来<em>报告</em>自己看到的信号。这一段不卖正股。</li>
+    <li><strong>第二段：流动性市场。</strong>公开第一段选了哪张合约，再按这个信息把正股卖给剩下的人。价格等于条件期望，没有赢家诅咒。</li>
+  </ul>
+  <p>固定价格发行（Rock 1986）能揭开信息，但必须折价补偿散户；「禁止知情交易」的机制不折价，但学不到东西。DaC 把两件事拆开：专家的租金只发生在衍生品上，而且可以压到刚好覆盖挖信息的成本；正股按公允价值卖。</p>
+
+  <h3>关键假设</h3>
+  <p>卖方既在乎发行收入，也在乎预测误差（参数 <em>γ</em>，可理解成「我还要用这个信息去做别的投资」）。买方分专家和普通人，卖方看不出谁是谁。专家可以花钱搜索；搜索可能失败。衍生品支付可以写在未来现金流上（类似承销商的权证、激励费）。</p>
+
+  <h3>机制直觉</h3>
+  <p>知情交易之所以伤流动性，是因为「揭信息」和「搬股票」绑在同一笔成交里。专家要赚钱，散户就要折价。如果你让专家先在一张小合约上说话，正股再按已经公开的话定价，散户面对的就是公平价格。信息成本由第一段的小合约来付，不必靠正股折价来付。</p>
+  <p>信息要花钱挖时，卖方按顺序一个个问专家，边际收益低于成本就停——投资规模也有效。参与过第一段的人排除出第二段，防止他们藏着信号去第二段掏。卖方效用可以任意接近「没有逆向选择、没有道德风险」的上限。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>标准权衡不是机制最优：DaC 可以同时做到全揭信息、正股按期望价值卖。</li>
+    <li>信息内生时，DaC 仍能把卖方效用推到可观察努力时的基准附近；专家租金 ≈ 挖信息成本，没有额外信息租。</li>
+    <li>对应现实：IPO 尽调/招股说明书是第一段，簿记发行是第二段；带激励费、权证的承销安排，很像第一段的衍生品。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>如果你的题碰到「价格信息量 vs 流动性」，这篇给了一条很硬的机制设计出路：别在同一本订单簿里求两全。A 股询价、战略配售、分析师路演，都可以拿这个框架对照：情报有没有被单独定价。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Thierry Foucault — <em>Journal of Financial Economics</em> 2008「Stock price informativeness, cross-listings, and investment decisions」；<em>Review of Financial Studies</em> 2017「Toxic Arbitrage」（with Kozhan, Tham）；亦有 <em>Journal of Finance</em> 等微观结构论文。
+  </div>
+  <p class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6263599">SSRN</a> · <a href="https://thierryfoucault.com/working-papers/">作者主页</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Rational Information Acquisition Screens</h2>
+  <p class="authors">Paul E. Fischer, Mirko S. Heinle, Jung Min Kim, Christina Zhu · 2026年1月25日稿（迈阿密 Winter Warmup）</p>
+  <div class="tags">
+    <span class="tag">注意力配置</span>
+    <span class="tag">信息获取</span>
+    <span class="tag">价格作为筛子</span>
+    <span class="tag">量价</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>投资者在挖私有信息之前，往往不知道哪家公司「值得挖」。他们手里有过时的公开信息（旧价格、旧盈余）。这些东西已经进了价格，对预测现金流没增量。那它们还有什么用？作者说：当筛子，用来猜「去哪家挖私有信息更赚钱」。</p>
+
+  <h3>核心机制</h3>
+  <p>两期、两家公司。第一期有人已经带着私有信息在交易。新来的投机者资源有限，必须选一家跟。他们看不到「挖信息的真实利润」，但看得到第一期价格偏离公开预期有多远。偏离越大，说明这家公司的私有信息精度可能越高（或者噪声交易让价格更乱、知情者更好藏），跟进去挖更划算。</p>
+  <p>于是：<strong>无法用公开信息解释的价格波动 → 下一期更多人来挖私有信息 → 未来波动和成交量都上去。</strong> 不是因为价格里还有没被消化的基本面，而是因为价格在报告「这里的信息生意好做」。</p>
+
+  <h3>关键假设</h3>
+  <p>完全竞争；投机者、理性不知情者、噪声交易者三类。新投机者在选公司时，公开信息对现金流是陈旧的（半强有效），但他们对「私有信息精度」仍不确定。处理能力有限，所以必须筛选。</p>
+
+  <h3>机制直觉</h3>
+  <p>把异常收益当成招聘广告。不是「价格错了所以能套利」，而是「这里有人在知情交易，跟进去可能也有肉」。EDGAR 点击、Bloomberg 阅读可以当「去挖了」的代理。模型预测：解释不了的价格波动之后，关注度、未来波动、未来成交量一起升。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>理论：筛子只解决「精度」的二阶不确定性，不解决现金流本身。</li>
+    <li>可检验：更大的未预期价格变动 → 更多私有信息获取、更高后续波动和成交量。</li>
+    <li>作者用 EDGAR / Bloomberg 的信息获取数据做了配套实证（理论简报里只记机制）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「量价齐升、波动聚集」一个不靠行为偏差的理性故事。你要是做 A 股异动公告、龙虎榜之后的成交量，这篇的筛子逻辑可以直接改写成：公开异动把注意力吸过来，下一轮私有信息交易变多——看起来像信息，其实是筛选。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Mirko Heinle — <em>Journal of Accounting Research</em> 2015「Lobbying and uniform disclosure regulation」（with Friedman）；<em>Journal of Accounting and Economics</em> 2016「Beliefs-driven price association」（with Fischer, Verrecchia）。Paul Fischer 亦有 JAR 等会计顶刊记录。
+  </div>
+  <p class="links"><a href="https://www.herbert.miami.edu/_assets/pdfs/faculty-research/business-conferences/winter-warmup/2026/paper-3_heinle.pdf">会议 PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. When Public Signals Backfire: Strategic Disclosure and Information Crowd-Out</h2>
+  <p class="authors">Marty Haoyuan Chen, Ginger Zhe Jin · NBER WP 35625 · 2026年8月</p>
+  <div class="tags">
+    <span class="tag">自愿披露</span>
+    <span class="tag">解包失败</span>
+    <span class="tag">公共信号挤出</span>
+    <span class="tag">实验</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>经典解包（Grossman–Milgrom）：能验证的好消息都会说，不说就是最差。现实里公司经常藏中间类型。如果市场上已经有一个和私有状态相关的<strong>公共信号</strong>（评级、旧财报、分析师预测、股价），接收方又有点天真，自愿披露会怎样？公共信号会不会让整体信息环境变差？</p>
+
+  <h3>核心机制</h3>
+  <p>发送方看到私有状态 <em>θ<sub>a</sub></em> 和公共信号 <em>θ<sub>b</sub></em>，只能如实披露或沉默。接收方沉默时的猜测不是理性的「隐瞒池均值」，而是：</p>
+  <p style="text-align:center;font-family:ui-sans-serif,system-ui,sans-serif;font-size:15px;margin:12px 0;">
+    猜测 = (1 − λ<sub>ρ</sub>) × 隐瞒池均值 + λ<sub>ρ</sub> × 公共信号
+  </p>
+  <p>人话：相关越高，越把沉默往公共信号上锚定。<em>λ<sub>ρ</sub></em> 随相关系数 <em>ρ</em> 上升。公共信号好看时，沉默也被当成「大概还行」，发送方更敢藏中间类型。门槛的闭式解嵌套经典解包：<em>λ</em>=0 时只隐瞒最差类型。</p>
+  <p>分解：偏离解包 = 「本来就会藏一点」（和公共信号无关）+ 「公共信号比先验更好时再多藏一截」。好信号挤出披露，坏信号挤入披露。</p>
+
+  <h3>关键假设</h3>
+  <p>可验证披露（不能撒谎，只能藏）。接收方部分天真，不是完全理性解包。公共信号与私有状态正相关。实验里 238 人、50 轮，<em>ρ</em> ∈ {0.2, 0.5, 0.8}。</p>
+
+  <h3>机制直觉</h3>
+  <p>把分析师一致预期想成公共信号。公司私有的真实盈余如果一般、但市场预期已经很好，沉默会被散户读成「大概符合预期」。于是公司更不说。监管以为多一个公开指标能补信息，结果公司把这个指标当挡箭牌。</p>
+  <p>信息损失在<strong>中等相关</strong>时最狠：信号强到能改信念，又没强到让人直接读出私有状态；相关极高时，几乎人人披露，损失又回来。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>实验：公共信号越好，披露越少，集中在中间类型；沉默后的猜测跟着公共信号和 <em>ρ</em> 往上走。</li>
+    <li>估计的天真参数随相关上升（约 0.17 → 0.26 → 0.32），比完全天真小，也比「被诅咒均衡」更贴数据。</li>
+    <li>好信号时，沉默后的推断差于「没有公共信号」的基准；总信息量在低、中相关下也会变差，中等相关损失最大。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和你跟 Jeff 做的「空公告 / 业绩预告 / 问询函」直接相关：市场上已经有涨停、龙虎榜、北向这些公共信号时，公司更可能发一句「无应披未披」。这篇给出「公共信号 → 沉默被读宽 → 更敢不说」的理论，以及「中等相关最伤」的可检验形状。债券评级购物、美国可选 SAT、ESG 披露，作者都拿来当现场。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Ginger Zhe Jin — <em>Quarterly Journal of Economics</em> 2003「The Effect of Information on Product Quality: Evidence from Restaurant Hygiene Grade Cards」（with Leslie）。亦有披露实验 <em>AEJ: Micro</em> 2021（不在本次顶刊清单内，仅作背景）。
+  </div>
+  <p class="links"><a href="https://www.nber.org/papers/w35625">NBER w35625</a></p>
+</article>
+
+<footer>
+  第二期 · Kyle · 路径 /workspace/research/daily-papers/theory-2026-08-19.html<br>
+  选文标准：2025 年起 WP；至少一位作者可核顶刊（JF/JFE/RFS/JFQA；TAR/JAR/JAE；AER/QJE/JPE/Econometrica/REStud）。不编造论文或发表记录。
+</footer>
+</div>
+</body>
+</html>

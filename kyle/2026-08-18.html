@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-18</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+    --ok: #14532d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月18日 · 第一期 · 5 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天挑了五篇。前四篇是微观结构 / 知情交易 / 算法合谋的纯理论（或理论+仿真），第五篇是何治国、熊伟他们给 A 股写的「价格倒逼盈余管理」机制。共同标准：2025 年起的 WP，至少一位作者能核到顶刊题目和年份。</p>
+  <p>读法：先看「问了什么」和「主要结论」，再读「机制直觉」。公式尽量用人话拆开；你关心的「AI 投资者会不会合谋」直接看第 1、2 篇。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Dou–Goldstein–Ji：AI 知情交易者会默契合谋</a> — 两种机制，一种聪明一种笨</li>
+      <li><a href="#p2">Banerjee–Malikov–Prokopev：流动性不确定时，合谋可能不划算</a> — 别只靠利润抓合谋</li>
+      <li><a href="#p3">Yan–Yang–Zhang–Zhou：Kyle 遇上弗里德曼</a> — 信息用法像「永久收入」</li>
+      <li><a href="#p4">Colliard–Foucault–Lovo：算法做市商学不会完全竞争</a> — 报价总带着加价</li>
+      <li><a href="#p5">He–Jiang–Xiong：A 股「操纵去迎合」</a> — 高估值倒逼虚增盈余</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. AI-Powered Trading, Algorithmic Collusion, and Price Efficiency</h2>
+  <p class="authors">Winston Wei Dou, Itay Goldstein, Yan Ji · NBER WP 34054 · 2025年7月（SSRN 更早稿亦有）</p>
+  <div class="tags">
+    <span class="tag">Kyle 扩展</span>
+    <span class="tag">强化学习</span>
+    <span class="tag">默契合谋</span>
+    <span class="tag">价格有效性</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>知情投机者换成自己学的强化学习（Q-learning）算法之后，会不会在没有沟通、没有事先约定的情况下，仍然一起少交易、把利润抬到竞争水平之上？这种「AI 合谋」在什么市场条件下出现？对流动性和价格信息量有什么伤害？</p>
+
+  <h3>核心机制（两种）</h3>
+  <ul>
+    <li><strong>价格触发策略（他们叫「artificial intelligence」）</strong>：大家先保守地吃信息；一旦价格对基本面反应过猛（像有人偷偷加仓），就切换到惩罚阶段，大家一起打回激烈竞争。这和 Green–Porter 的触发策略是一路的。</li>
+    <li><strong>过度修剪偏差（「artificial stupidity」）</strong>：算法靠试错更新「这个动作值不值」。碰上噪声交易同向时，激进策略亏得很惨，Q 值被砍一刀后很少再试；碰上反向噪声时赚很多，但会被反复再用、最终纠偏。激进策略更容易被永久砍掉，结果大家「碰巧」都变保守，合谋利润照样出现。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <p>多期、多个知情投机者，每期换一只短命资产；有噪声交易者；还有一群对短期信息不敏感、需求随价格向下倾斜的投资者；做市商兼顾库存成本和定价误差。算法只看自己的状态、动作和收益，不知道对手是谁。</p>
+
+  <h3>机制直觉</h3>
+  <p>经典 Kyle（1985）里，知情者会「藏着掖着」交易，免得价格立刻反映信息。这里多了重复博弈和算法学习。价格信息量够高时，价格本身就能当监控器，触发策略站得住；信息量太低时，触发失效，但学习偏差反而更容易让人一起缩手。所以合谋不是「AI 太聪明」一种故事，笨也能合谋。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>两种机制都会给出高于非合谋 Nash、低于完美卡特尔的超竞争利润，并压低流动性、价格信息量，抬高错定价。</li>
+    <li>价格触发：噪声交易风险低、不敏感投资者「厚」时更容易出现；人数少、更耐心时合谋能力更强。</li>
+    <li>过度修剪：在噪声大或不敏感投资者薄的区域仍然出现；对主观折现因子不敏感；噪声变小时这类合谋反而减弱。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是目前把「算法合谋」真正嵌进证券交易微观结构的标杆论文。反垄断法盯沟通和意图，这里两者都没有，监管空白写得很清楚。和你关心的「AI 投资者合谋」几乎是同一题。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Itay Goldstein — <em>Journal of Finance</em> 多篇（如 2005 Demand-Deposit Contracts）；<em>Journal of Financial Economics</em>；<em>Review of Financial Studies</em>（曾任执行主编）；亦有 <em>American Economic Review</em>（如 2016 Bayesian Persuasion in Coordination Games, with Huang）。
+  </div>
+  <p class="links"><a href="https://www.nber.org/papers/w34054">NBER w34054</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4452704">SSRN</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Competition and Collusion Among Strategic Traders Who Face Uncertainty</h2>
+  <p class="authors">Snehal Banerjee, George Malikov, Filipp Prokopev · 作者主页 PDF（2026年3月稿）；SSRN abstract 4980072（修订至 2025年4月）</p>
+  <div class="tags">
+    <span class="tag">Kyle 双知情者</span>
+    <span class="tag">合谋 vs 竞争</span>
+    <span class="tag">流动性不确定</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>教科书直觉：知情交易者合在一起（共享信息、协调下单）一定比各自为战赚得多。如果他们对「噪声交易波动有多大」不确定，这个直觉还成立吗？</p>
+
+  <h3>核心机制</h3>
+  <p>在 Kyle（1985）两人扩展里，做市商知道噪声波动分布，知情者不知道——噪声波动可能是高或低。合谋等于把两人变成一个垄断知情者；竞争则是各拿自己的信号下单。不确定性低时，合谋利润更高；不确定性够高时，<strong>单个</strong>竞争者的期望利润，可以超过<strong>全体</strong>合谋者的总利润。</p>
+
+  <h3>关键假设</h3>
+  <p>单期；两个知情者信号条件独立；风险中性竞争做市商按总订单流定出条件期望价格；知情者对噪声波动有先验不确定（Hong–Rady 式设定）。</p>
+
+  <h3>机制直觉</h3>
+  <p>合谋要你「像一个人一样」下重手。噪声波动不确定时，你可能在「其实很薄的市场」里下太大的单，价格冲击吃掉利润。竞争时各自下得更谨慎，反而更抗这种误判。所以不确定性本身就像一种合谋税。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>存在阈值：噪声波动不确定性越过阈值后，竞争优于合谋。</li>
+    <li>若内生化「要不要合谋」，不确定性小幅上升就能引起交易量、价格波动、价格信息量的离散跳跃。</li>
+    <li>政策含义：看到超高投机利润，不足以推断合谋——竞争在高不确定下也能很肥。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>正好和第 1 篇对着读：Dou 等人问「算法会不会合谋」，这篇问「合谋什么时候根本不值得」。你做 AI 投资者合谋题，可以把「流动性不确定」写成破坏合谋的对照实验。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Snehal Banerjee — <em>Journal of Finance</em> 2024「Disclosing to Informed Traders」（with Marinovic, Smith）；亦有 <em>Journal of Finance</em> 2010「Disagreement and Learning」；<em>Review of Financial Studies</em>、<em>Journal of Financial Economics</em> 多篇。
+  </div>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BMP_UncertainKyle.pdf">作者 PDF</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4980072">SSRN</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Kyle Meets Friedman: Informed Trading When Anticipating Future Information</h2>
+  <p class="authors">Hongjun Yan, Liyan Yang, Xueyong Zhang, Deqing Zhou · SSRN abstract 4737312 · 文稿日期 2024年11月，SSRN 修订至 2025年2月；2025 ABFER 报告</p>
+  <div class="tags">
+    <span class="tag">动态 Kyle</span>
+    <span class="tag">事后披露</span>
+    <span class="tag">永久收入假说</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>垄断知情投资者会<strong>持续</strong>收到新私有信息，交易后还要披露。他今天该「用掉」多少信息、该「留」多少给以后？均衡交易、价格、流动性怎么取决于对未来信息的预期？</p>
+
+  <h3>核心机制</h3>
+  <p>在承诺价值为零的条件下，知情者与做市商的二人博弈，可以化成知情者一个人的「信息分配」问题；再换标签，数学上等价于带借款约束的消费–储蓄模型。于是弗里德曼永久收入假说的直觉可以直接搬过来：</p>
+  <ul>
+    <li><strong>未雨绸缪</strong>：预期明天信息差，今天少用信息（多「存」）。</li>
+    <li><strong>平滑</strong>：信息用法跨期熨平。</li>
+    <li><strong>预防性储蓄</strong>：预期明天信息更不确定，今天更保守。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <p>动态垄断知情者；信息陆续到达；交易后有披露要求；关键技术条件是知情者的承诺价值为零（有承诺与无承诺均衡重合），从而二人博弈塌缩成单人问题。</p>
+
+  <h3>机制直觉</h3>
+  <p>把「还没被价格吃掉的私有信息方差」想成资本存量，每期「消费」一点信息换成交易利润。你不会把所有信息一口气用光，除非你确定以后没有新粮。Pete Kyle 本人在 ABFER 讨论过这个类比。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>均衡刻画可归结为解一个带约束的消费–储蓄问题，得到知情者执行强度、价格信息量、市场流动性的显式含义。</li>
+    <li>对未来信息到达的预期，直接改变今天的交易激进程度——不是静态 Kyle 能讲的故事。</li>
+    <li>零承诺价值是等价性的枢纽；未来可问：什么微观结构让承诺价值不为零。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>少见地把宏观消费理论和微观结构接到一起，直觉极强。做「持续信息流 + 披露」的理论题，这是现成的技术模板。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Liyan Yang — <em>Review of Financial Studies</em> 2020「Back-running: Seeking and Hiding Fundamental Information in Order Flows」（with Haoxiang Zhu）；亦与 Goldstein 等合写 <em>Journal of Finance</em>、<em>Review of Financial Studies</em> 多篇。
+  </div>
+  <p class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4737312">SSRN</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Algorithmic Pricing and Liquidity in Securities Markets</h2>
+  <p class="authors">Jean-Edouard Colliard, Thierry Foucault, Stefano Lovo · SSRN abstract 4252858（修订至 2025年5月）；<em>Review of Financial Studies</em> 2026年2月已正式发表</p>
+  <div class="tags">
+    <span class="tag">算法做市</span>
+    <span class="tag">逆向选择</span>
+    <span class="tag">Q-learning</span>
+    <span class="tag">加价</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>做市商用 Q-learning 报买卖价，面对知情客户的逆向选择时，能不能学会「理论上的竞争价格」？还是会系统性加价？</p>
+
+  <h3>核心机制</h3>
+  <p>算法能学会应对逆向选择（成交后调价方向对），但学不会完全竞争。原因是：试探「略微压过对手」的收益反馈又吵又弱，实验不足，于是报价停在带 markup 的位置。利润波动越大，竞争结果往往越差。</p>
+
+  <h3>关键假设</h3>
+  <p>Glosten–Milgrom / Kyle 式不对称信息做市环境；多个算法做市商用 Q-learning 选报价；与经典 Nash 竞争基准对照。</p>
+
+  <h3>机制直觉</h3>
+  <p>第 1 篇的 AI 是「知情投机者」；这篇的 AI 是「做市商」。合谋叙事换成：不是故意串谋，而是学习动力学本身学不到削价竞争。可检验痕迹包括：没有逆向选择时租金反而更高；买卖价差对对称成本冲击反应不对称。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>算法适应逆向选择，但相对竞争基准持续加价；做市商人数增加会压低加价。</li>
+    <li>逆向选择减弱时，加价未必下降（与标准理论相反）。</li>
+    <li>报价对成交的敏感度强于理论预测；信息不对称下降后报价可变差。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 Dou–Goldstein–Ji 形成「知情侧 vs 做市侧」对照。监管若只防知情者合谋，可能漏掉做市算法的学习性市场势力。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Thierry Foucault — <em>Review of Financial Studies</em> 多篇（如 2017「Toxic Arbitrage」with Kozhan, Tham）；微观结构顶刊常客，亦有 <em>Journal of Finance</em> 等发表记录。本文本身已于 2026 年发表于 RFS。
+  </div>
+  <p class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4252858">SSRN</a> · <a href="https://doi.org/10.1093/rfs/hhag010">RFS 2026</a></p>
+</article>
+
+<article id="p5">
+  <h2>5. Earnings Management and Price Informativeness</h2>
+  <p class="authors">Zhiguo He, Wenxi Jiang, Wei Xiong · NBER WP 35178 · 2026；作者主页亦有 PDF</p>
+  <div class="tags">
+    <span class="tag">A股</span>
+    <span class="tag">价格反馈</span>
+    <span class="tag">盈余管理</span>
+    <span class="tag">manipulate-to-cater</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>A 股里，高估值公司随后几年报告更高盈余——这通常被读成「价格有信息」。会不会有一部分其实是：高价格倒逼管理层把盈余做出来？</p>
+
+  <h3>核心机制（manipulate-to-cater）</h3>
+  <p>一部分投资者把报告盈余当真相，把价格推到基本面之上；高估值又给管理层压力，用非经常性损益等手段抬高报告盈余去「圆」这个估值。价格既预测盈余，也<strong>制造</strong>被管理过的盈余。所以截面上价格能预测未来盈余，时间序列上却出现盈余反转（3–5 年后增长变弱）。</p>
+
+  <h3>关键假设</h3>
+  <p>市场里有把盈余面值当真的投资者；管理层有会计裁量权（尤其非经常性损益）；治理与信息环境允许短期迎合。实证上用 2020 退市新规做自然实验。</p>
+
+  <h3>机制直觉</h3>
+  <p>不是经典的「价格聚合私有信息」，而是「价格变成考核指标」。你写的披露 / 微观结构题若碰到 A 股高估值、龙虎榜、业绩预告，这篇给出「价格→披露/盈余」的反馈通道，而不只是「披露→价格」。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>截面：高估值预测未来 1–5 年更高报告盈余。</li>
+    <li>时间序列：高估值预测 3–5 年盈余增长走弱，符合短期管理后回吐。</li>
+    <li>非经常性损益是重要管理渠道；退市规则改革帮助识别机制。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>理论味在机制（manipulate-to-cater），落地全是 A 股。和你跟 Jeff 做的披露制度题（预告、空公告、问询）最容易对接：价格压力会不会改变公司对散户/监管的「说法」。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Zhiguo He &amp; Wei Xiong — <em>Review of Financial Studies</em> 2012「Dynamic Debt Runs」；二人在 <em>Journal of Finance</em>、<em>Econometrica</em> 等亦有多篇。Wei Xiong 另有资产定价与行为金融顶刊记录。
+  </div>
+  <p class="links"><a href="https://www.nber.org/papers/w35178">NBER w35178</a> · <a href="https://wxiong.mycpanel.princeton.edu/papers/earnings.pdf">作者 PDF</a> · <a href="https://corpgov.law.harvard.edu/2026/06/16/when-stock-prices-become-targets-earnings-management-and-price-informativeness-in-china/">哈佛公司治理综述</a></p>
+</article>
+
+<footer>
+  第一期 · Kyle · 路径 /workspace/research/daily-papers/theory-2026-08-18.html<br>
+  选文标准：2025 年起 WP；至少一位作者可核顶刊（JF/JFE/RFS/JFQA；TAR/JAR/JAE；AER/QJE/JPE/Econometrica/REStud）。不编造论文或发表记录。
+</footer>
+</div>
+</body>
+</html>

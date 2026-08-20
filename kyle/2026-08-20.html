@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-20</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月20日 · 第三期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇换了切口：<strong>谁在交易、披露什么、股市到底拿来干什么。</strong> 政府自己下场买卖；气候披露会把绿色项目挤掉；银行一紧，股票就被拿去换钱，价格就不报基本面了；季报越勤，短期投资者越不敢玩选美。和前两天的合谋、限价单外部性不重复。</p>
+  <p>读法照旧：先看「问了什么」和「主要结论」，再读「机制直觉」。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Wang：政府入市买卖，没有信息也能改善福利</a> — 但量一大就帮倒忙</li>
+      <li><a href="#p2">Banerjee–Prokopev：强制披露气候风险，绿色项目反而更少</a> —  pooling 才让差一点的公司也上</li>
+      <li><a href="#p3">Bostanci–Ordoñez：股票既报信又当零钱，两件事会打架</a> — 银行一紧，价格更哑</li>
+      <li><a href="#p4">Jiang–Yang–Wei–Zhang：未来还有公告，今天的价格反而更明白</a> — 选美被拆掉</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Government Intervention in the Financial Market</h2>
+  <p class="authors">Jiang Wang · NBER WP 33827 · 2025年5月（2月稿的大幅修订）</p>
+  <div class="tags">
+    <span class="tag">政府交易</span>
+    <span class="tag">不对称信息</span>
+    <span class="tag">不完全市场</span>
+    <span class="tag">福利</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>政府不只监管，还自己下场买卖（平准基金、汇金、央行公开市场）。它没有比市场更多的信息时，入市到底帮不帮投资者？盯「价格更稳、流动性更好、价格更有效」这些常见目标，和投资者福利是不是一回事？用市场盈亏去考核国家队，靠不靠谱？</p>
+
+  <h3>核心机制</h3>
+  <p>一般均衡：市场不完全、投资者信息不对称。放任均衡本来就不是最优——风险分担没分够，价格也没把能用的信息用完。政府即使没有私有信息，单靠改变交易量，也能把配置往好的方向推。</p>
+  <p>关键权衡出在「噪声单」上。政府按噪声下单：</p>
+  <ul>
+    <li>价格里多一层噪声，风险溢价 <em>c</em> 往下走，投资者对冲收入风险更便宜 —— 好事。</li>
+    <li>价格对经济状态 <em>Y</em> 更不敏感，大家从价格里学到的更少，终端财富更险 —— 坏事。</li>
+  </ul>
+  <p>人话：国家队小规模「搅一搅」，等于给市场多送一点保险；搅太多，价格就变成噪声，保险也买不成了。文中数值显示：小规模噪声交易边际福利为正，大规模则翻负。</p>
+
+  <h3>关键假设</h3>
+  <p>投资者有不可交易的收入风险；股票是不完全对冲工具；一部分人有关于基本面的私有信息。政府可以选：无信息、全信息、部分信息三种情形。政策目标可以是福利、价格稳定、流动性或信息效率，四者不自动对齐。</p>
+
+  <h3>机制直觉</h3>
+  <p>把国家队想成一个可以选「多吵还是多聪明」的大户。市场缺的是对冲工具，不是缺一个全知的定价者。小噪声相当于多印了一点对冲券；大噪声相当于把价格这个公共信号砸坏。所以「国家队该不该稳股价」和「投资者过得好不好」可以反着走：价格稳住了，信息没了，风险分担更差。</p>
+  <p>用市场价格去算国家队赚不赚钱，会骗人：它自己的单子已经改了价格，账面利润不等于社会福利。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>不完全 + 不对称信息时，政府即使没有增量信息，入市也可以改善福利。</li>
+    <li>福利对政策设计和结构参数很敏感；信息效率、价格稳定、流动性这三个常见目标，福利含义可以互相打架。</li>
+    <li>基于市价的政府交易绩效指标会误导。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>直接对着 A 股「国家队」。别把「护盘」写成「信息效率」的代理。这篇把三件事拆开：稳价格、给流动性、让价格说话。你要写平准基金，先问清楚政府这笔单是在降风险溢价，还是在把价格搅糊。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Jiang Wang — <em>Review of Economic Studies</em> 1993「A Model of Intertemporal Asset Prices Under Asymmetric Information」；<em>Quarterly Journal of Economics</em> 1993「Trading Volume and Serial Correlation in Stock Returns」（with Campbell, Grossman）；<em>Journal of Political Economy</em> 1994「A Model of Competitive Stock Trading Volume」；<em>Journal of Finance</em> 2006「Trading Volume: Implications of an Intertemporal Capital Asset Pricing Model」（with Lo）。
+  </div>
+  <p class="links"><a href="https://www.nber.org/papers/w33827">NBER w33827</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. When climate-risk disclosures reduce green investment and welfare</h2>
+  <p class="authors">Snehal Banerjee, Filipp Prokopev · 作者主页 PDF · 2026年3月</p>
+  <div class="tags">
+    <span class="tag">自愿/强制披露</span>
+    <span class="tag">气候风险</span>
+    <span class="tag">风险分担</span>
+    <span class="tag">绿色投资</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>强制公司把项目的气候风险暴露（「有多绿」）说清楚，会不会让绿色投资更多、投资者更好过？教科书说会：信息多，对冲更准。作者说：公司是看着股价决定上不上绿色项目的。一强制披露，差一点的项目就不敢上了，市场上能对冲气候风险的股票变少，福利可能下降。</p>
+
+  <h3>核心机制</h3>
+  <p>经理选 <em>k</em>∈{0,1}：维持现状（期望现金流更高，不暴露气候），或上绿色项目（平均回报更低，但气候变差时现金流更高，能对冲）。投资者里有一块「绿投资者」，身上扛着气候冲击 <em>ω</em>；其余人没有这笔风险。经理最大化预期股价，不内化投资者之间的风险分担。</p>
+  <p>完全披露：投资者看见项目绿度 <em>β</em>。股价随 <em>β</em> 上升，只有 <em>β ≥ β<sup>FD</sup> = γ/(mρσ)</em> 的公司才上项目。人话：对冲溢价盖过少赚的那截现金流，才肯上。</p>
+  <p>不披露：投资者只看见「上没上」，看不见 <em>β</em>。门槛类型跟「所有更高类型的平均绿度」比价。于是 <em>β<sup>ND</sup> ≤ β<sup>FD</sup></em>：更差一点的公司也挤进绿色池子，因为可以跟更绿的公司混在一起卖。</p>
+
+  <h3>关键假设</h3>
+  <p>项目选择可观察（年报、资本开支能看见上没上），但绿度不一定能验证。经理短视、盯股价。投资者均值–方差，市场对气候风险不完全。绿项目与棕项目总波动相同，只改与气候的相关，好把「对冲」从「多承担风险」里剥出来。</p>
+
+  <h3>机制直觉</h3>
+  <p>把强制气候披露想成「不许混装」。不许混装时，只有真正很绿的才上；允许混装时，中等绿的也上，市场上绿色股票的供给更大。绿投资者要的是「有东西可以对冲」，不是「精确知道每一家有多绿」。项目选择外生时，披露永远更好（定价准、对冲准）；项目选择内生时，披露会砍掉供给，第二项可能压过第一项。</p>
+  <p>这不是 Hirshleifer 效应。Hirshleifer 是把风险实现值说穿，对冲合约没了。这里说的是风险暴露本身：暴露说得越清，上项目的公司越少。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>强制披露降低绿色采纳。福利在「股票人均持仓 <em>q</em> 很小」或「绿色项目大多不太绿」时，不披露可以更高。</li>
+    <li><em>β ∼ U[0,1]</em> 时，机会成本 <em>γ</em> 足够高（全披露下几乎没人上）时，不披露胜出。</li>
+    <li>有成本的自愿披露（付费认证）可以两边都要一点：高类型花钱揭开，中间类型上项目但不说。福利最大化的认证费往往在中间，垄断评级机构收的费一般不对齐。</li>
+    <li>气候衍生品越完善，强制披露越不伤（对冲不必靠正股）。若公司做的是「减排/治理」而不是「气候适应项目」，披露反而会让治理上得过多——方向翻过来。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>ESG、碳披露、绿色债券标签都能套。监管默认「说得越清越好」，这篇给出可检验的反例：强制披露之后，绿色资本开支下降、中间类型更不说。A 股「碳中和」标签、环境处罚、互动易里的气候问答，都可以拿「披露 → 采纳下降」对着看。别把它读成「披露有害」——有衍生品、或目标是减排时，结论会转。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Snehal Banerjee — <em>Journal of Finance</em> 2025「Feedback Effects and Systematic Risk Exposures」（with Breon-Drish, Smith）；<em>Journal of Finance</em> 2024「Choosing to Disagree: Endogenous Dismissiveness and Overconfidence in Financial Markets」；<em>Review of Financial Studies</em> 2025 forthcoming「Incentivizing Effort and Informing Investment」。
+  </div>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BP_Climate_disclosure.pdf">作者 PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Business, Liquidity, and Information Cycles</h2>
+  <p class="authors">Gorkem Bostanci, Guillermo Ordoñez · 作者主页 PDF · 2026年2月23日稿（NBER w32501 的修订）</p>
+  <div class="tags">
+    <span class="tag">价格信息量</span>
+    <span class="tag">流动性</span>
+    <span class="tag">内生噪声</span>
+    <span class="tag">资本错配</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>股市干两件事：让价格说出公司好不好（好配置资本），以及随时能换成现金（流动性）。这两件事会不会互相拆台？银行一紧、大家都拿股票当零钱时，价格还报不报基本面？这对衰退有多大的真实伤害？</p>
+
+  <h3>核心机制</h3>
+  <p>没有外生噪声交易者。市场上两类人：有人冲着公司基本面来，有人冲着「今晚要现金」来。你的单对另一类人就是噪声。线性定价函数里，价格信息量取决于两类人的相对权重——流动性交易越多，价格越像在报「好不好变现」，越不像在报「公司好不好」。</p>
+  <p>把这个交易模块嵌进异质企业的动态一般均衡。衰退本身会让人更愿意挖信息（价格更明白，配置改善）。可一旦银行也紧了，替代流动性没了，股票被拿去换钱，价格变哑，资本错配加重。</p>
+
+  <h3>关键假设</h3>
+  <p>股票同时是信息源和流动性工具；银行是另一种流动性来源。信息获取有成本。校准美国，并用多国价格信息量估计对照银行压力时期。</p>
+
+  <h3>机制直觉</h3>
+  <p>把股价想成一句含糊的话：「涨了」可能是公司好，也可能是有人急着买流动性。银行好用的时候，急着用钱的人去银行，股价更像在说公司。银行不好用的时候，急着用钱的人涌进股市，这句话更含糊。所以「成交量放大」在银行危机里不一定是信息，更可能是零钱需求。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>多国估计：银行系统提供流动性受阻时，股价信息量下降。</li>
+    <li>单独衰退：价格更有信息，配置改善，缓和产出损失约 4%。</li>
+    <li>衰退叠加银行压力：价格更不有信息，配置恶化，放大产出损失约 22%（2026年2月稿；2024年NBER初稿曾报过更大的数字，以新稿为准）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「量价」一个宏观出口：不是行为过度反应，是流动性用途挤走了信息用途。A 股 2015、2020 的量能和银行间紧张一起出现时，这篇预测价格对基本面更哑、错配更大。做异动公告、龙虎榜，记得控制「这是不是在用股票换现金」。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Guillermo Ordoñez — <em>American Economic Review</em> 2014「Collateral Crises」（with Gorton）；<em>Journal of Political Economy</em> 2013「The Asymmetric Effects of Financial Frictions」；<em>Review of Economic Studies</em> 2025「Information Spillovers in Sovereign Debt」（with Cole, Neuhann）。
+  </div>
+  <p class="links"><a href="https://web.sas.upenn.edu/ordonez/files/2026/03/BLIC.pdf">作者 PDF</a> · <a href="https://www.nber.org/papers/w32501">NBER w32501</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. The Effect of Periodic Disclosure on Price Informativeness and Cost of Capital in a Keynesian Beauty Contest Setting</h2>
+  <p class="authors">Xu Jiang, Liyan Yang, Xu Wei, Xueyong Zhang · SSRN · 2025年2月7日修订（2024年11月首稿）</p>
+  <div class="tags">
+    <span class="tag">定期披露</span>
+    <span class="tag">凯恩斯选美</span>
+    <span class="tag">价格信息量</span>
+    <span class="tag">资本成本</span>
+  </div>
+
+  <h3>问了什么</h3>
+  <p>短视投资者盯下一家谁会买（选美），不盯公司值多少。以前很多模型假设「交易之后再没有公告」。现实是季报、年报、业绩预告一轮接一轮。把「以后还会公告」加进去，更勤、更准的定期披露，对今天的价格信息量和资本成本意味着什么？</p>
+
+  <h3>核心机制</h3>
+  <p>两期噪声理性预期，投资者短视。每一期都有公开披露。未来那期的公告有两刀：</p>
+  <ul>
+    <li><strong>拆选美：</strong>反正下一期会有公共信息把价格钉住，今天就没那么需要猜别人怎么猜。私人信号在今天的价格里权重上升，信息量上升。</li>
+    <li><strong>挤出未来：</strong>今天价格已经更明白，未来那期公告能再贡献的增量变小。</li>
+  </ul>
+  <p>两刀对着干，但作者证明：定期披露更准时，<strong>所有期</strong>的价格信息量都上升。这和「披露精度不影响价格信息量」的旧独立性结果相反——那个结果依赖「没有后续公告」。</p>
+
+  <h3>关键假设</h3>
+  <p>短视（每期把资产转手）；高斯–CARA；每期都有公共信号。比「只披一次、之后不再披」的标准设定多一个未来公共信号。</p>
+
+  <h3>机制直觉</h3>
+  <p>选美赛里大家不敢按自己看到的基本面下单，怕别人不认。如果你告诉他们「明天会有官方成绩单」，今天就敢按自己的眼睛买，价格更像基本面。明天的成绩单因此没那么新鲜——但加总之后，两条价格都更明白。人话：预告越勤，不是把信息提前耗干，而是把「猜别人」的税降下来。</p>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>引入后续公开信息，改变披露如何进入价格信息量和资本成本的比较静态。</li>
+    <li>更精确的定期披露，无歧义地提高各期价格信息量。</li>
+    <li>对事前资本成本的影响更细，不再是文献里的「无关」。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>对着业绩预告、快报、季报频率。A 股强制预告本身就是「未来还有公告」。这篇说：别用「只披一次」的模型去评价预告制度——选美被拆掉之后，信息量的符号会变。和你跟 Jeff 做的空公告/问询函不直接撞车，但提供一个「后续还会说」的基准：空公告等于把这期公共信号关掉，选美税立刻回来。</p>
+
+  <div class="qual">
+    <strong>顶刊作者核验：</strong>Liyan Yang — <em>Journal of Finance</em> 2015「Information Diversity and Complementarities in Trading and Information Acquisition」（with Goldstein）；<em>Journal of Financial Economics</em> 2025「Information Sharing in Financial Markets」（with Goldstein, Xiong）；亦有 <em>Review of Financial Studies</em> 多篇微观结构/披露论文。
+  </div>
+  <p class="links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5023632">SSRN</a></p>
+</article>
+
+<footer>
+  第三期 · Kyle · 路径 /workspace/research/daily-papers/theory-2026-08-20.html<br>
+  选文标准：2025 年起 WP（含 2025 年后修订）；至少一位作者可核顶刊（JF/JFE/RFS/JFQA；TAR/JAR/JAE；AER/QJE/JPE/Econometrica/REStud）。不编造论文或发表记录。与 8/18、8/19 九篇不重复。
+</footer>
+</div>
+</body>
+</html>

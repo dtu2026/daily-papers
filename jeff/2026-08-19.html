@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-19</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+    --ok: #14532d;
+    --warn: #9a3412;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月19日 · 第二期 · 5 篇 2025–2026 working paper · Jeff</p>
+</header>
+
+<div class="lede">
+  <p>今天五篇，和昨天不重复。前三篇是 A 股：估值能不能预测「报出来的」盈利、大模型会不会压 A-H 溢价、2020 年货币宽松到底抬了股价还是只抬了波动。后两篇是方法对照：美股散户在盈余公告附近的反向交易，以及有钱人其实几乎不把风险转出去。</p>
+  <p>读法还是先看「问了什么」和「主结果」，再读「方法讲懂」。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">何治国、江轩宇、熊伟：估值与盈余管理</a> — 高估值之后，A 股盈利会先上后撤</li>
+      <li><a href="#p2">Da 等：AI 与一价定律</a> — 国产大模型上线后，海外业务多的公司 A-H 溢价收了</li>
+      <li><a href="#p3">Davis 等：疫情初期的政策干预</a> — 宽松抬了隐含波动，几乎没抬股价水平</li>
+      <li><a href="#p4">Luo 等：散户反向交易与 PEAD</a> — 没有够猛的散户反向单，动量和 PEAD 几乎不在</li>
+      <li><a href="#p5">Gabaix、Koijen、Yogo 等：有限风险转移</a> — 每季主动调风险只有 0.65%，需求很钝</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Earnings Management and Price Informativeness</h2>
+  <p class="authors">Zhiguo He, Wenxi Jiang, Wei Xiong · NBER WP 35178 · 2026年5月</p>
+  <div class="tags">
+    <span class="tag">A 股</span>
+    <span class="tag">盈余 / 估值</span>
+    <span class="tag">Fama–MacBeth · 退市改革</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（熊伟）：</strong> Review of Financial Studies, 2017, “Market Segmentation and Differential Reactions of Local and Foreign Investors to Analyst Recommendations”（与 Jia, Wang），RFS 30(9): 2972–3008。<br>
+    <strong>备援（何治国）：</strong> Journal of Finance, 2026, “The Drivers and Implications of Retail Margin Trading”（Bian, Da, He, Lou, Shue, Zhou），JF 81(4): 2217–2270。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>A 股现在估值高的公司，以后报出来的盈利是不是真的更高？如果是，有两种完全不同的故事。一种是价格里有信息（水晶球）：市场提前看到了基本面。另一种是经理人迎合股价：估值一高，就用非经常性损益（NRGL，卖资产、政府补助、投资收益这类）把盈利做上去，过几年再塌回来。这篇把两种故事拆开，并用 2020 年退市新规（监管用的利润不再计入 NRGL）当一次自然实验。</p>
+
+  <h3>用了什么数据</h3>
+  <p>非金融 A 股，1995–2024，CSMAR，去掉资产最低 5%。对照：美国非金融标普 500，1960–2024。NRGL 从 1999 年起。A+H 子样本 117 家非金融公司，双重上市检验从 2002 年起。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：今天的市值/资产，能不能预测未来 1 到 5 年的「报出盈利/资产」，以及这个预测有多少是经营现金流，有多少是应计，有多少是 NRGL。</p>
+  <p><strong>横截面：Fama–MacBeth。</strong> 每年做一次回归：未来盈利 ~ 今天估值 + 今天盈利。再把各年系数平均起来。本科对照：不是把 30 年混在一起回归（那样会被某几年带着跑），而是「每年拍一张截面照片，再对照片取平均」。这是 Bai–Philippon–Savov / Carpenter–Lu–Whitelaw 那一路「价格里有多少基本面信息」的做法。</p>
+  <p><strong>时间序列 / 公司内部：</strong> 看同一家公司，估值高的年份之后，盈利是先升后降，还是一路升。加公司固定效应 = 拿公司自己跟自己比；加年份固定效应 = 去掉所有公司一起动的年份冲击。标准误用 Driscoll–Kraay（允许残差在时间和截面上相关）。</p>
+  <p><strong>2020 退市新规。</strong> 监管看的利润不再算 NRGL，从 2020 年报开始。他们看「估值对未来盈利的预测力」在 2020 之后是不是变弱（估值 × 改革后）。美国样本做同样的交互，当安慰剂——美国没有这条中国退市规则，如果美国也变，就怕是新冠，不是规则。</p>
+  <p><strong>A+H。</strong> 同一家公司有 A 价和 H 价。如果是迎合 A 股情绪，应该是 A 价估值在预测 NRGL，不是 H 价。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>「迎合」和「水晶球」可以同时存在。加公司固定效应会让反转更明显，加时间固定效应会让反转变弱——说明你信哪一套控制，故事的权重会变。</li>
+    <li>估值本身内生：情绪、基本面、过去的操纵都在里面。</li>
+    <li>退市改革是 2020 年全国一起改，正好叠新冠。美国安慰剂能挡一部分，挡不干净。</li>
+    <li>能发 A+H 的公司本来披露就更好，不是随机分组。</li>
+    <li>1999 年以前的 NRGL 用营业外利润代替。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>横截面：估值高的 A 股，未来 1、3、5 年报出盈利确实更高（他们把系数乘以估值的标准差：0.017 / 0.022 / 0.019）。美国同期更大（0.032 / 0.039 / 0.047）。但 A 股的分红预测只有 0.002–0.005，远小于盈利预测；美国分红 0.014–0.040。价格预测了「账面盈利」，没怎么预测「拿得出手的现金」。</li>
+    <li>公司内部：估值高的年份，当年到下一年盈利变化 +0.044（t=22.6），第 1 年到第 5 年 −0.016（t=−2.15）。美国标普 500 没有这种长窗口反转。</li>
+    <li>拆开看：A 股估值主要预测 NRGL（0.003 到 0.005，t 都大于 5.7），经营现金流短窗口弱甚至为负。美国估值主要预测经营现金流。</li>
+    <li>收益：NRGL 高的公司后面一年收益更低。导言写「两倍标准差的 NRGL 对应随后一年低 3.99%」；后文表格算成 3.03%。两处数字并存，这里不强行对齐。NRGL/资产的回归系数是 −0.971（t=−5.65）。</li>
+    <li>2020 改革后，估值对下一年盈利的预测力下降（交互项 −0.005，t=−9.62；主效应 0.020）。k=2、3 年大约 −0.008。美国交互项是正的。改革后估值–NRGL 的联系也变弱。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>直接对着 A 股披露：价格预测「报出盈利」，不等于预测基本面。NRGL 是中国报表里特别肥的操纵位。2020 退市新规是一次会计口径冲击，A vs H、只发 A  vs A+H，都是问询函 / 注册制论文可以借的对照。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35178">w35178</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35178/w35178.pdf">PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Artificial Intelligence and the Law of One Price: Evidence from the Chinese A-H Premium</h2>
+  <p class="authors">Zhi Da, Xinyi Peng, Yongxin Xu, Gaoping Zheng · 工作论文，本稿 2026年8月（SSRN 挂出 2025）</p>
+  <div class="tags">
+    <span class="tag">A+H</span>
+    <span class="tag">大模型</span>
+    <span class="tag">DID · 盈余公告</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Zhi Da）：</strong> Journal of Finance, 2011, “In Search of Attention”（与 Engelberg, Gao），JF 66(5): 1461–1499。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>同一家公司，A 股给内地投资者买，H 股给境外投资者买，价格长期不是一个（一价定律不成立）。2023年8月31日，国内第一批大模型获准对公众开放。这篇问：内地投资者突然有了能读外文、翻海外新闻的工具之后，海外业务多的公司，A 相对 H 是不是贵得少一点？机制是不是「负面信息终于被 A 股及时吃进去」？</p>
+
+  <h3>用了什么数据</h3>
+  <p>A+H 公司。处理组：2022 年海外收入占比高于样本中位数（5.71%）。事件窗：2023年8月31日前后各 60 个交易日（6月5日–12月6日）。1:1 倾向得分匹配后 33+33 家，7,843 个公司–日。匹配后 A/H 均价比 2.198。盈余检验用事件前后各四个季度。文本：业绩说明会问答里负面句占比（FinBERT）。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：大模型上线之后，海外业务多的 A+H 相对海外业务少的 A+H，A 相对 H 的溢价变了多少。</p>
+  <p><strong>这是标准 DID，但对照组不是 H 股本身。</strong> 处理组和对照组都是 A+H。差别只是「海外收入高不高」——因为大模型的用处，主要是让内地投资者够到海外经营的坏消息。识别的是「谁更需要这个工具」，不是「A 和 H 谁变了」。</p>
+  <p>回归：A/H 价格比 ~ 处理 × 改革后。公司固定效应（公司自己跟自己比），行业×日固定效应（同一天同一行业的共同波动拿掉）。标准误按公司和日双向聚类。</p>
+  <p><strong>盈余公告。</strong> 看意外盈余（SUE）当天的超额收益有多陡（ERC：盈利意外每大一截，股价跳多少），以及公告后 2 到 61 天还漂不漂（PEAD：消息当天没吃完，后面继续走）。再看说明会提问和回答的负面语气，是不是只在利空之后变脏。</p>
+  <p>本科对照：好的 DID 要「平行趋势」——如果没有大模型，两组溢价本来会一起走。他们给了事件研究图，但是非正式的。样本匹配后只有 66 家，功效有限。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>大模型是全市场一起上的。处理变量是海外收入，可能跟 2023 年出口、地缘、H 股流动性一起动。行业×日固定效应能吃掉「当天 A 或 H 大盘」，吃不掉「处理组自己的新闻」。</li>
+    <li>匹配后 66 家，很小。</li>
+    <li>投资者层面有没有真用大模型，几乎观察不到，股吧关键词只是很吵的代理。</li>
+    <li>2023年7月31日 QDII 额度扩大，离事件很近。作者说规模小，但仍是附近的政策。</li>
+    <li>ERC / PEAD 表的样本量大约 180–324。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>处理 × 改革后，对 A/H：−0.108（t=−2.76，±60 日），−0.127（t=−3.25，+120 日）。作者写成溢价收了 10.8 个百分点，大约是匹配后均值 2.198 的 4.9%。</li>
+    <li>改革前海外负面媒体多的：−0.179；少的：−0.068（不显著）。散户情绪高的：−0.139；低的不显著。股吧里大模型提及高的：−0.175。</li>
+    <li>大模型之后，处理组 A 股对<strong>负面</strong>意外的 ERC 变陡（三重交互 0.383，t=2.33）；正面意外不显著，改革前也不显著。</li>
+    <li>利空后的说明会：处理 × 改革后，提问负面句 +0.157（t=3.93），管理层回答 +0.090（t=2.64）。利好多的一侧没有对称变化。</li>
+    <li>改革前，处理组 A 股对利空有额外 PEAD（0.928，t=2.04）；改革后这段多余漂移变成 −0.309，不再显著。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A-H 溢价、盈余 ERC/PEAD、说明会语气，和问询函、注册制要测的是同一类「信息环境」。这篇的主张很具体：让负面信息现身的工具（不是「更多信息」），会提高 A 股对坏消息的即时反应、杀掉多余漂移。可直接当「一次披露/技术冲击有没有改变 A 股怎么定价盈利」的模板。</p>
+  <p class="links">SSRN：<a href="https://doi.org/10.2139/ssrn.5234282">10.2139/ssrn.5234282</a> · PDF：<a href="https://academicweb.nd.edu/~zda/LLM_LOP.pdf">nd.edu</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Policy Interventions and China’s Stock Market in the Early Stages of the COVID-19 Pandemic</h2>
+  <p class="authors">Steven J. Davis, Dingqian Liu, Xuguang Simon Sheng, Yan Wang · NBER WP 33485 · 2025年2月，2025年5月修订</p>
+  <div class="tags">
+    <span class="tag">A 股政策</span>
+    <span class="tag">高频事件研究</span>
+    <span class="tag">波动 vs 水平</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Steven J. Davis）：</strong> Quarterly Journal of Economics, 2016, “Measuring Economic Policy Uncertainty”（与 Baker, Bloom），QJE 131(4): 1593–1636。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>2020 年上半年，A 股甩开了多数国家的股市，而且在「美国防不住」成为共识之前就开始跑赢。一种流行解释是：货币和信贷放得很猛，把股价托住了。这篇把 2020 年上半年几次央行/金融委宽松，以及证监会对卖空、减持、保险资金入市的干预，拿到分钟级窗口里问：它们到底抬了股价，还是只抬了波动？</p>
+
+  <h3>用了什么数据</h3>
+  <p>万得 A 股，2019年12月26日–2020年7月8日。七次有北京时间戳的宽松（降准、公开市场、LPR、再贴现等）：1月2日、2月4日、2月20日、3月16日、4月7日、4月20日、7月1日。也按 A+H、通车、国企、行业拆。隐含波动：上证 50 vs 标普 500、vs 恒生。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：公告前后很短的一段里，价格水平和隐含波动各自动了多少。</p>
+  <p><strong>高频事件研究。</strong> 事件前 15 分钟到后 15 分钟的收益（10 分钟、60 分钟做稳健性）。想法很朴素：窗口越短，越不容易被别的新闻污染。再把 1月2日到 7月1日里「事件日」和「非事件日」的 30 分钟收益放在一起回归，看事件日是不是系统性更高。2月3日开市日丢掉。</p>
+  <p>同一套回归再按 A+H / 通车 / 国企 / 行业拆，看有没有某一类股票被托起来——如果宽松真的通过信用或外资渠道起作用，这些分组应该露出痕迹。</p>
+  <p><strong>波动的 DID。</strong> 上证 50 隐含波动的日变化，减去标普 500（或恒生）的日变化，看宽松公告日这个「相对波动」是不是跳。加开市、美国政策、前后日控制。前一日如果也跳，才像是消息提前漏了。</p>
+  <p><strong>需求侧干预只做叙事定量，不做回归。</strong> 把「限制融券、窗口指导少卖、保险喊买入」的规模，拿去跟流通市值和日成交比。比完如果只是九牛一毛，就不宜把 3–7 月的行情算在这些干预头上。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>不少公告在隔夜，开盘会被别的新闻污染。作者说七次不太可能刚好都抵消，但证不了。</li>
+    <li>泄露只在波动的前一日上测，没在价格上测。</li>
+    <li>限制卖空、窗口指导没有可信的个股冲击，不能当因果。</li>
+    <li>这篇<strong>没有解释</strong> 2020 上半年为什么涨。财政和信贷延期他们明确说没量化。</li>
+    <li>分钟窗口会漏掉「安心了、慢慢加仓」这种慢信念。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>事实：只在内地交易的 A 股，2020年3月初到 7 月初大约 +40%，远高于标普 500。</li>
+    <li>七次宽松的 30 分钟事件虚拟变量：0.22（标准误 0.33），不显著。95% 置信下，他们排除「平均每次超过 0.88 个百分点」。最强的两次（1月2日 + 4月7日）加起来也只有 2.29 个百分点。4月7日单次 +1.50；3月16日、4月20日是负的。A+H / 通车 / 国企 / 行业没有能救大效应的系统模式。</li>
+    <li>隐含波动：公告附近，上证 50 相对标普大约高 12%；回归虚拟变量 8.7 到 9.3。相对恒生更小、不显著。前一日虚拟变量不显著（作者：不太像提前泄露）。</li>
+    <li>融券/上交所额度：1月9日大约 3.0%，2月3日开市掉到 2.0%，作者推断至少压了额度的 1%。保险「准备入市」1000 亿，相对上交所可流通约 30.1 万亿（大约 140 倍）和复市后十个交易日日均成交约 8000 亿（大约 8 倍）。这些动作集中在 2 月前后几周，解释不了 3–7 月的涨。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是带时间戳的中国政策事件研究模板（央行、证监会、通车、A+H、国企）。它提醒：有些「托市」政策动的是波动，不是水平；把窗口指导算进收益之前，先拿规模去除以成交额。A+H / 通车的切法，和披露、北向论文是同一套分区。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w33485">w33485</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w33485/w33485.pdf">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Retail Investors’ Contrarian Behavior Around News, Attention, and the Momentum Effect</h2>
+  <p class="authors">Patrick Luo, Enrichetta Ravina, Marco C. Sammon, Luis M. Viceira · NBER WP 34086 · 2025年8月</p>
+  <div class="tags">
+    <span class="tag">美股散户</span>
+    <span class="tag">盈余公告 / PEAD</span>
+    <span class="tag">账户数据</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Luis M. Viceira）：</strong> Journal of Finance, 2001, “Optimal Portfolio Choice for Long-Horizon Investors with Nontradable Labor Income”，JF 56(2): 433–470。另有 Campbell, Chan, Viceira，“A Multivariate Model of Strategic Asset Allocation”，JFE 2003。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>盈余一出来，散户是顺着买，还是对着买？这种反向单，够不够解释价格动量和盈余公告后漂移（PEAD：消息当天没走完，后面几十天继续飘）？是不是只有「散户反向得足够猛」的股票，才看得到动量和 PEAD？处置效应（赚钱就卖）和过期委托，能不能解释这些单？</p>
+
+  <h3>用了什么数据</h3>
+  <p>美国一家大型网上券商，超过 280 万个账户，2010 年一季度–2014 年二季度，持股大约 2050 亿美元。作者说大约相当于家庭持股的 1.48%，外推到全市场成交大约要乘 65 倍。注意力子样本：约 1.04–1.1 万个有登录/浏览记录的账户，2013年6月–2014年6月。股票数据来自 CRSP 和 I/B/E/S。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：盈余意外附近，散户净买入有多反向；这种反向有多强时，动量和 PEAD 才出现。</p>
+  <p><strong>这不是因果设计，是条件排序。</strong> 把股票按过去收益（动量）、盈余意外（SUE：实际 EPS 减一致预期，再除以前一日价格）、散户净流入强度切成格子，看格子里的市值加权收益。本科对照：你不是在随机分组，而是在问「这三种东西叠在一起时，收益长什么样」。三者一起被决定，所以不能说「散户导致了 PEAD」，只能说「没有够猛的散户反向，PEAD 几乎不在」。</p>
+  <p>账户层面：在控制「这个人、这次意外」之后，看盈利的股票是不是更常被卖掉（处置效应），以及利好本身是不是让人更想卖（反向）。注意力：当天有没有点开个股研究页，会不会放大「跌了就买」。</p>
+  <p>稳健性：看限价单是不是放了很久才成交（陈旧单被拍到，看起来像反向，其实是过期委托）；也用 TAQ 上的散户代理把样本外推到 2021。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>一家券商，2010–2014，还在 Robinhood 大潮之前。乘 25–65 倍是外推。</li>
+    <li>排序不是识别。散户流、SUE、过去收益是联立的。</li>
+    <li>TAQ 散户代理有假阳性和假阴性，作者自己承认。</li>
+    <li>注意力只在这个平台上测得到，是下限。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>动量几乎只出现在散户交易强度最高的那一档：赢者减输者每月可到 2%；另外四档「几乎不存在」。</li>
+    <li>最差 SUE 的输家，按散户流入从低到高：公告日收益 −2.02% 到 −7.01%；公告后 1–22 日 +0.26% 到 −5.5%。也就是散户越对着买，输家后面跌得越狠。赢者 / 正 SUE 的 PEAD，在散户净流出最大时最正（公告日 3.26%，对比有流入时的 2.75%）。</li>
+    <li>公告当天，各组都有净流入；随后反转：SUE 最好的四档未来 30 天净流出，最差的一档继续吸引买入。</li>
+    <li>处置效应整体在，而且比 Odean（1998）更大；但<strong>盈余附近</strong>，「赚钱」对卖出的系数不显著。正意外把卖出概率抬高 1.16 个百分点（基数 8.92%）。</li>
+    <li>限价单：34.3% 下单即成交，再有 46% 在 36 秒内成交（金额加权 6 秒）。不太像「挂了很久的陈旧单」。</li>
+    <li>点开研究页：卖出概率 +1.9 个百分点，买入 +1.1。盈余收益低 1 个百分点，不看研究的人买入概率高 67.6 个基点，看的人高 1.72 个百分点。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A 股是散户市。这篇说：盈余消息本身不会自动长出 PEAD / 动量，除非散户反向得够猛。做问询函或盈余公告，应该按散户（或北向）流量分组或做交互，不要只切 SUE。注意力 × 意外，可以和股吧 / 东财 / 大模型提及（第 2 篇）对上。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34086">w34086</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34086/w34086.pdf">PDF</a></p>
+</article>
+
+<article id="p5">
+  <h2>5. Limited Risk Transfer Between Investors: A New Benchmark for Macro-Finance Models</h2>
+  <p class="authors">Xavier Gabaix, Ralph S. J. Koijen, Federico Mainardi, Sangmin Simon Oh, Motohiro Yogo · NBER WP 33336 · 2025年1月</p>
+  <div class="tags">
+    <span class="tag">美股持仓</span>
+    <span class="tag">需求弹性</span>
+    <span class="tag">矩 + 校准</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Koijen 与 Yogo）：</strong> Journal of Political Economy, 2019, “A Demand System Approach to Asset Pricing”，JPE 127(4): 1475–1515。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>宏观金融模型里，风险偏好不同的人，本该在股权溢价高的时候大笔对倒风险：胆大的加仓，胆小的减仓。真的发生了多少？这篇用覆盖到富豪的持仓数据，定义「风险转移」= 一组投资者主动调仓带来的市场风险暴露变化（不算价格自己涨跌造成的账面变化），发现这个量非常小，然后用一个需求很钝的模型去匹配它。</p>
+
+  <h3>用了什么数据</h3>
+  <p>Addepar 财富平台的证券级持仓、资金流和收益，2016年1月–2023年3月，季度。平台规模从 1800 亿美元 / 13,765 个组合，到 2.33 万亿美元 / 235,350 个组合。曾经超过 10 亿美元的组合 439 个，2023 年一季度还有 304 个。只算流动性资产（公开股票和债券）；另类资产不算，以免机械地把转移做小。样本里还包括约 400 位亿万富翁。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是一次政策冲击，而是一个新的「矩」——投资者之间到底转了多少风险，好让模型别再假设人们反应过度。</p>
+  <p><strong>先分组，再看主动流。</strong> 按上期流动性组合的市场风险暴露分组（中位数切，也切十等分）。组内按规模加权资金流。风险转移 RT = 这些主动流让该组对市场的 beta 暴露变了百分之几。再算一个比率：平均 |RT| 除以平均 |市场收益|。如果人们真按教科书调仓，这个比率应该很大。</p>
+  <p>对照：无摩擦的 Merton 需求（溢价一变就大幅调仓），以及 Gârleanu–Panageas（2015）那种异质投资者模型。两者都预测比数据大一个数量级以上的转移。然后他们校准一个「需求钝、调仓慢」的模型，看能不能同时对上常见的资产定价矩和这个新的 RT。</p>
+  <p>本科对照：这不是 DID。它更像「先量出一条新尺子，再看哪些模型量得动」。昨天那篇被我们丢掉的何治国–Kondor–Li 理论文，讲的是概念弹性和测到的弹性差一截；这篇是弹性很小的实证尺子。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>Addepar 是有顾问的超高净值，不是普查。账户可能拆在多个未关联户头上。</li>
+    <li>平台会剥掉过重的单票仓和顾问集中度，覆盖不是百分之百。</li>
+    <li>只算流动性资产是设定；把私募、对冲基金加进去，RT 只会更小。</li>
+    <li>样本短（2016–2023）。年频 RT 只有七个不重叠年份。</li>
+    <li>模型里的「行为扰动」是残差，不是从信念数据里识别出来的。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>平均绝对风险转移每季 0.65%（低暴露组 1.0%，高暴露组 0.31%）。样本里典型 |收益| 是 7.6%，所以 RT 比率大约 8.7%。</li>
+    <li>切十等分，RT 仍在 0.31% 到 3.1%，还是小。</li>
+    <li>他们校准的朴素 Merton：RT 比率 270%，大约是数据的 30 倍。</li>
+    <li>Gârleanu–Panageas：高风险厌恶组 78%，低风险厌恶组 3.5%，都远大于 0.65%。</li>
+    <li>钝需求模型能把条件 RT 比率放到 8%、无条件 9.2%，对上 8.7%。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给了一个数量锚：连美国超高净值都几乎不主动把股权风险倒来倒去。A 股散户更钝。北向、通车、问询函的价格压力论文，不要默认教科书式的弹性需求。它把「需求很钝」从理论口号收成一条能对的数字。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w33336">w33336</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w33336/w33336.pdf">PDF</a></p>
+</article>
+
+<footer>
+  入选规则同昨天：2025 年及以后的 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA 或 TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目和年份。不重复 8 月 18 日的五篇。数字只采用摘要或正文里写明的；第 1 篇导言与表格对 NRGL 收益的换算（3.99% vs 3.03%）并存，不强行对齐。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-19.html
+</footer>
+</div>
+</body>
+</html>

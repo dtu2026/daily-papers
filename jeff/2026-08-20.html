@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-20</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月20日 · 第三期 · 5 篇 2025–2026 working paper · Jeff</p>
+</header>
+
+<div class="lede">
+  <p>今天五篇，和 18、19 两天不重复。头一篇是 A 股停牌：基金净值算错了，谁会去挖停牌股票的信息。后面四篇是方法对照：跨市场共同因子、分析师分歧代理几乎不相关、散户研究时到底在看什么、以及一个在 A 股不成立的「AI 溢价」。</p>
+  <p>读法还是先看「问了什么」和「主结果」，再读「方法讲懂」。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Sialm、Xu：停牌、基金净值和信息采集</a> — 披露过的持仓被低估，资金会流进去</li>
+      <li><a href="#p2">Roussanov 等：股、债、期权的共同风险因子</a> — 三个市场有共同因子，但定价并不统一</li>
+      <li><a href="#p3">Harvey 等：分歧的分歧</a> — 常用的三个分歧代理几乎不相关</li>
+      <li><a href="#p4">Wurgler 等：散户到底在研究什么</a> — 中位数一笔交易只查 6 分钟，主要看 K 线</li>
+      <li><a href="#p5">Tsyvinski 等：AI 溢价</a> — 美股很大，A 股没有</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Information Acquisition By Mutual Fund Investors: Evidence from Stock Trading Suspensions</h2>
+  <p class="authors">Clemens Sialm, David X. Xu · NBER WP 34520 · 2025年11月</p>
+  <div class="tags">
+    <span class="tag">A 股停牌</span>
+    <span class="tag">基金净值 / 披露日历</span>
+    <span class="tag">调研 · 百度</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Clemens Sialm）：</strong> Journal of Finance, 2020, “Tax-Efficient Asset Management: Evidence from Equity Mutual Funds”（与 Hanjiang Zhang），JF 75(2): 735–777。另有 Sialm &amp; Starks, “Mutual Fund Tax Clienteles”，JF 2012。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>开放式基金一边让投资者随时申赎，一边手里拿着不一定随时能卖的股票。A 股停牌把二级市场流动性直接关掉，基金净值还得每天报——停牌股票往往按「停牌前价」或基金自己的调整估着，和复牌后真正值多少会对不上。这篇问：投资者会不会主动去挖这些停牌股票的信息、买进被低估的基金？这些信息复牌时会不会进价格？</p>
+
+  <h3>用了什么数据</h3>
+  <p>A 股 4,365 只（上证主板、深证主板/创业板/中小板），2004–2020。多日停牌事件 16,958 次，平均停 28 个交易日。开放式股债混基金 2,881 只。深市强制披露的调研 2012–2020，128,219 场。百度指数 2006–2020。关键制度：证监会基金持仓一年要披露六次——季报只报前十大，半年报/年报报全持仓。同一只停牌股票，有的基金已经披露过，有的还没。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是「停牌 vs 没停牌」。停牌本身往往跟着重组、并购，拿停牌公司跟没停牌的比，处理不是随机的。他们做的是<strong>停牌内部</strong>的比较。</p>
+  <p><strong>净值错价。</strong> 一只基金被低估多少 ≈ 停牌股票的组合权重 × 后来复牌那天的收益。这个「公允价值」用了未来信息，是后面要怕的。资金流样本里，他们要求停牌和复牌不在同一季度，避免当季流和当季复牌缠在一起。</p>
+  <p><strong>识别的尖，在披露日历。</strong> 同一只基金、同一个季度，已经披露过的停牌持仓（「看得见」）和不该被外人知道的持仓（「看不见」）分开。如果资金是冲着错价来的知情流，应该只对看得见的名字有反应。本科对照：这不是经典 DID，更像「同一冲击里，信息公开的那一截 vs 还没公开的那一截」。</p>
+  <p><strong>股票端。</strong> 在已经停牌的股票里，看哪只被某只基金持得更重（MaxWgt = 各基金已披露权重的最大值）。然后看调研次数、百度搜索、复牌 |超额收益|、复牌收益对下一季意外盈余（SUE）有多敏感。控制基金总体持股、其他机构持股、规模、B/M、股东户数、停牌时长、行业和季度固定效应（调研再加城市固定效应）。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>停牌由公司事件触发；MaxWgt 是基金自己选的，不是抽签。控制能擦一点，选择还在。</li>
+    <li>错价用了未来的复牌收益当「真值」，右边变量有前视。分季度能挡一部分，挡不干净。</li>
+    <li>2018 年证监会压缩停牌；大约 45% 的复牌撞上涨跌停，价格当天走不完。</li>
+    <li>论坛帖从 2017 年 7 月才有；调研只有深市、从 2012 年起。</li>
+    <li>基金不能被做空，资金流检验基本是单边（申购），赎回/做空那一侧看不见。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>摘要：净值错价 1 个百分点，对应季度资金流大约是基金总资产的 3%。对机构份额、对申购更强。</li>
+    <li>表 4：看得见的低估 1 个百分点，季度流大约多 1.72%；看不见的持仓系数负或不显著。两者相等被 F 检验拒绝。</li>
+    <li>表 5 分段：低估 1 个百分点 → 申购大约 +3.1%；高估一侧系数接近 0。</li>
+    <li>表 6：净值低估 1%，机构基金份额变化 +1.73%，散户份额 +0.32%。</li>
+    <li>信息采集：基金暴露高一个标准差，调研机构大约多 43%（表内约 0.6 次，无条件均值的 45%）；私募调研 +0.3（均值的 62%）。MaxWgt 高 1 个百分点，百度搜索大约高 1%。</li>
+    <li>复牌：MaxWgt 高一个标准差，|复牌超额收益| 大约大 1.5%；不撞板的子样本 3.6%。复牌收益对下一季 SUE 的敏感度大约翻倍。</li>
+    <li>基金自己对停牌股票的估值调整，跟着的是市场收益，不是公司特质消息。权重 × 复牌收益传进净值收益的斜率 0.98。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>今天最贴 A 股披露的一篇。强制调研、公告、百度搜索、持仓披露日历，把「谁先知道、钱往哪流、复牌价吃进多少信息」串在一条链上。问询函 / 空公告也可以借：同一事件里，把「市场已经能看见的信息」和「还在公告里藏着的」拆开，比「有函 vs 没函」干净。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34520">w34520</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34520/w34520.pdf">PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Common Risk Factors in the Returns on Stocks, Bonds (and Options), Redux</h2>
+  <p class="authors">Zhongtian Chen, Nikolai Roussanov, Xiaoliang Wang, Dongchen Zou · NBER WP 35579 · 2026年8月</p>
+  <div class="tags">
+    <span class="tag">美股 / 债 / 期权</span>
+    <span class="tag">因子结构</span>
+    <span class="tag">市场分割</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Nikolai Roussanov）：</strong> Journal of Financial Economics, 2014, “Composition of wealth, conditioning information, and the cross-section of stock returns”，JFE 111(2): 352–380。另有 Lustig, Roussanov, Verdelhan, “Common Risk Factors in Currency Markets”，RFS 2011。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>股票、公司债、期权，是不是在被同一组风险推着走？如果是，三个市场给这组风险开的「价钱」一样吗？把三个市场的组合并在一起，能不能靠对冲同一风险做出更高的夏普？</p>
+
+  <h3>用了什么数据</h3>
+  <p>月频，2004年7月–2021年12月。美股 35 个特征、8,025 家公司；公司债 26 个特征；股票看涨期权（delta 对冲）19 个特征。样本外用 60 个月起步的扩展窗口，主样本外停在 2019 年 12 月（把新冠和 GameStop 留在外面）。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是一次冲击。这是「从下往上抽共同因子」，再问三个市场给这些因子的补偿一不一样。</p>
+  <p><strong>Regressed-PCA，分三步。</strong> 每一期先把个券收益对特征做 Fama–MacBeth（每年/每月一张截面照片）。得到的特征组合再并到三个市场一起，做主成分。本科对照：PCA 是「在一堆收益里找出共同抖动的方向」。先对特征回归再 PCA，是为了对付期权那种寿命短、缺月份的非平衡面板——个券来来去去，特征还在。</p>
+  <p>然后比：这些共同因子能解释多少收益；解释不掉的 α 还在不在；三个市场合在一起的均值–方差有效组合，夏普是不是比单市场高（因为可以在同一因子上做反向对冲）。最后用 Chen–Knez 那种「随机贴现因子之间的距离」看三个市场给同一因子开的价钱是否不同——不同就叫分割。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>夏普很大一部分来自期权。月频买入持有、delta 对冲，没算交易成本和每日再平衡。</li>
+    <li>主样本外故意丢掉 2020–21。</li>
+    <li>构造有效组合时假设特质误差同方差。</li>
+    <li>样本内夏普 8 不是扣过成本的可交易策略。N 远大于 T 的潜因子估计，是整篇的方法赌注。</li>
+    <li>「分割」指同一因子在不同市场价钱不同，不是直接观察到的交易摩擦。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>前 10 个共同因子解释特征组合样本内变异大约 67%；个券收益样本内 16.76%、样本外 5.42%（三市场合并）。</li>
+    <li>前几个因子样本内夏普有的大于 1，样本外有的大于 2。第一因子样本内 0.83（期权腿 1.57）；第二因子样本内 1.23 / 样本外 2.51。</li>
+    <li>共同因子吃不完截面：10 个因子之后，股票 12/35、债券 14/27、期权 15/20 个特征仍有显著 α。零共同因子暴露的纯 α 组合样本外夏普约 2.14，大约 74% 的协方差来自期权。</li>
+    <li>联合有效组合：样本内夏普 8.04，对比股票 4.24、债券 2.37、期权 4.90。样本外在 14 个因子时到 2.94。超额来自三个市场对同一因子做反向暴露。</li>
+    <li>分割：所有市场对都显著；期权相对债券分得最开，股和债近一些。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>方法文，实证应用清楚：短命合约、缺月份的面板怎么抽共同因子。若你问「问询函冲击是共同因子上的加载，还是 A 股自己的」，或者 A vs H、A vs 信用债是不是在给同一风险开不同价钱，这篇是模板。不是披露论文。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35579">w35579</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35579/w35579.pdf">PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Disagreement of Disagreement</h2>
+  <p class="authors">Christian L. Goulding, Campbell R. Harvey, Hrvoje Kurtović · NBER WP 35049 · 2026年4月</p>
+  <div class="tags">
+    <span class="tag">美股</span>
+    <span class="tag">分析师分歧</span>
+    <span class="tag">IVOL</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Campbell R. Harvey）：</strong> Journal of Finance, 2000, “Conditional Skewness in Asset Pricing Tests”（与 Akhtar Siddique），JF 55(3): 1263–1295。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>文献里「投资者意见不合」常用三个代理：分析师盈利预测离散（AFD）、特质波动（IVOL）、空头利息（SIR）。这篇先量这三个东西相关不相关，发现几乎不相关——那你用其中一个去谈「分歧定价」，讲的可能根本不是同一件事。他们用一个无摩擦模型把潜在分歧写成一个非线性综合指标 DIS，问：DIS 预测收益是不是比单代理稳？Miller（1977）那种「做空摩擦 + 乐观者定价」和他们的无摩擦偏度机制，能不能分开看到？IVOL 之谜是不是其实是分歧？</p>
+
+  <h3>用了什么数据</h3>
+  <p>CRSP–Compustat–I/B/E/S，1994年1月–2022年12月。至少两名分析师、股价不低于 5 美元。719,940 个股票–月。美股 NYSE/AMEX/NASDAQ 普通股。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是冲击。先从模型推出 DIS（IVOL、空头利息、分析师离散、预期特质偏度、分析师人数、收益波动的非线性组合），再做排序和 Fama–MacBeth。</p>
+  <p><strong>Fama–MacBeth 还是那套：</strong> 每月把下月超额收益对 DIS 和一堆控制回归，再把各月系数平均。本科对照：关心的是「这个月 DIS 高的股票，下个月是不是更差」，不是把 30 年混在一起。</p>
+  <p>再赛马：DIS 和 IVOL / AFD / SIR 谁吃掉谁。按 8 个宏观状态切开（VIX、CATFIN、JLN 不确定、Kelly–Pruitt 情绪等），看哪个代理在哪种天气还能预测。最后和（1−机构持股）交互：机构持股趋向 100% 时做空摩擦变弱，Miller 通道该熄火；如果 DIS 还在，更像他们的无摩擦通道。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>DIS 是 IVOL、偏度这些本来就会预测收益的变量的非线性函数（和 DIS 的相关：IVOL 0.47，偏度 0.51）。「吸收 IVOL」有一部分是机械的。</li>
+    <li>丢掉分析师不足两人的股票，恰恰砍掉更像 A 股散户市的小票。作者说这对他们不利，但外推到 A 股要小心。</li>
+    <li>函数形式（包括 γ=2 的 CRRA 和指数变换）来自模型；他们对 γ 做了稳健性，设定搜索仍在。</li>
+    <li>作者标明 p 值未做多重检验调整；不过 alpha 的 t 超过了 Harvey–Liu–Zhu 常用的 3.0 门槛。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>AFD、IVOL、SIR 两两相关接近 0（表内 0.08、0.07、0.14）。</li>
+    <li>市值加权 DIS 空多头年化 alpha：CAPM 21.3%（t=4.95），FF3 20.3%（t=5.53），FFC 17.0%（t=4.41）。主要在空头：高 DIS 月 CAPM α = −1.49%，低 DIS +0.28%。</li>
+    <li>Fama–MacBeth：DIS 对下月超额收益系数 −1.55（t=−3.98，系数×100）。按他们的算术，隐含高低差大约每月 1.03%。</li>
+    <li>DIS 进回归后，IVOL 不再显著，包括 IVOL 单独最强的小市值子样本。</li>
+    <li>8 个宏观指标的高/低一共 16 格，DIS 格格能预测；IVOL 和 SIR 多半只在低不确定状态有用。</li>
+    <li>机构持股趋向 100% 时 DIS 仍在（β=−1.98，t=−3.09）；和摩擦的交互约 0。IVOL、SIR 的预测力集中在摩擦紧的地方。作者读成两条通道并存。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A 股问询函、崩盘风险、散户–机构分裂，经常随手拿分析师离散当「分歧」。这篇是警告：三个常用代理几乎不相关，天气一变结论就变。不要把某一个代理当成潜在分歧本身。要做综合指标，这是一个有微观基础的模板。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35049">w35049</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35049/w35049.pdf">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. The Research Behavior of Individual Investors</h2>
+  <p class="authors">Toomas Laarits, Jeffrey Wurgler · NBER WP 33625 · 2025年3月</p>
+  <div class="tags">
+    <span class="tag">美股散户</span>
+    <span class="tag">点击流</span>
+    <span class="tag">描述，不是因果</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Jeffrey Wurgler）：</strong> Journal of Finance, 2006, “Investor Sentiment and the Cross-Section of Stock Returns”（与 Malcolm Baker），JF 61(4): 1645–1680。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>散户交易前到底查了多久、查哪些股票、打开的是 K 线、分析师意见，还是风险指标？相对交易和盈余公告，他们什么时候查？这篇几乎不做因果，就是把浏览器日志摊开。</p>
+
+  <h3>用了什么数据</h3>
+  <p>大约有代表性的 484 户美国家庭，在 2007 年一个四个月窗口（1–3 月和 6 月）里至少交易过一只美股/ADR。2,911 笔交易；约 850 万次点击、6 万小时浏览。供应商按美国家庭配平。和交易对得上代码的高匹配子样本 50 人。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：描述。把网址分成内容类（行情图、快照、分析师、盈利、分红、风险统计、股权、技术指标、公司官网），再按交易或按月归一。</p>
+  <p>股票–月回归：有多少投资者点过这只股票，对对数市值、新闻条数、是否盈余月、散户成交占比、个人持股等。事件研究：微软盈余、iPhone 发布、Sirius 并购，对照 Google Trends。投资者层面把「研究风格」做主成分，看谁更偏向投机股。</p>
+  <p>本科对照：没有处理组。你看到的是相关和描述，不要读成「看 K 线导致乱交易」。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>2007 年四个月，智能手机、Robinhood、东财 App 都还没到。外推到今天的 A 股散户是一跳。作者说当时网上研究已经是常态，但仍旧是 2007。</li>
+    <li>看不见线下信息，也看不见快照页里眼睛停在哪。公司官网「研究」用了人为封顶。</li>
+    <li>484 户都是窗口内成交过的，偏向上网、爱交易的家庭。</li>
+    <li>这一稿没有收益表现结果，作者标了留给后续。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>中位数：对成交标的，每笔大约查 6 分钟；均值大约 29–30 分钟。中位数投资者的研究大部分发生在成交前 24 小时，常常临下单一阵。</li>
+    <li>Yahoo Finance 是主力；券商站不到总研究时间的一半。</li>
+    <li>对数市值单独解释跨股票「被多少人查过」变异的 19%。盈余月虚拟变量显著为正。四个月里超过 27% 的样本投资者查过苹果。</li>
+    <li>内容：93% 的人会看快照/K 线。风险统计：484 人里只有 7 人点进 beta/波动；把快照时间算进去后，均值每笔 144 分钟里只有 1.8 分钟在风险上。分析师意见：71% 的人看，均值每笔约 12 分钟。明确去找盈利的大约 40%。成交标的上，484 人里只有 1 人点开过 SEC 文件。</li>
+    <li>第二主成分：爱看新闻/论坛/快照/K 线、不爱看盈利/分红/基本面的人，更偏向投机股。</li>
+    <li>盈余附近的点击和微软的 Google Trends 对得上。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A 股是散户市。这是目前能看到的、最干净的「散户盈余和新闻附近到底点开了什么」：K 线和快照，不是年报，不是 beta，不是监管文件。解释百度/东财/雪球关注、问询函下载、公告窗换手时，这是一个可用的先验：他们可能根本没读那份函。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w33625">w33625</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w33625/w33625.pdf">PDF</a></p>
+</article>
+
+<article id="p5">
+  <h2>5. AI Premium</h2>
+  <p class="authors">Nicola Borri, Aleh Tsyvinski, Yukun Liu · NBER WP 35451 · 2026年7月</p>
+  <div class="tags">
+    <span class="tag">美股 + A 股对照</span>
+    <span class="tag">AI 因子</span>
+    <span class="tag">短样本</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Aleh Tsyvinski）：</strong> Econometrica, 2020, “Nonlinear Tax Incidence and Optimal Taxation in General Equilibrium”（与 Sachs, Werquin），Econometrica 88(2): 469–493。备援：Econometrica 2014 两篇、QJE 2007、JPE 2006。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>用真发生过的大模型用量（不是新闻里的「AI」两个字），构造一个高频 AI 因子。股票收益跟这个因子同向动得更凶的公司（高 AI beta），后面是不是赚得更多？这个溢价在不在科技以外？在不在新兴市场、在不在 A 股？</p>
+
+  <h3>用了什么数据</h3>
+  <p>OpenRouter 授权数据：2024年1月–2026年4月，400 多个大模型、380 万亿 token，大约占当时全球月用量的 2%。美股 CRSP 普通股，价不低于 5 美元、市值不低于 100 万美元，每个五分位大约 680 只。国际用 Compustat Global。中国：Datastream A 股，附录里还有一个中国专用的 OpenRouter 因子。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：一个新的系统性因子，以及市场愿意为「跟 AI 用量一起抖动」付多少钱。不是政策 DID。</p>
+  <p><strong>三步。</strong> 先把 token、美元、用户三条周增长做成第一主成分，得到 AI 因子。再对每只股票用过去 13 周，把超额收益对这个因子回归（控制市场），得到 AI beta。最后按 beta 切五档，每周再平衡，看高减低。</p>
+  <p>Fama–MacBeth：个股收益对「形成期之前」的 AI beta，外加规模、价值、盈利、投资、动量、反转、杠杆、应计。稳健性：第一阶段还控制 FF10 高科技、半导体组合、AI/机器人 ETF、行业中性 beta、Google Trends「人工智能」。再把因子拆成闭源 vs 开源、付费老用户 vs 新用户、长提示 vs 短提示。19 次前沿模型和 28 次非前沿发布做事件研究。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>样本就是这轮 AI 行情本身（2024–2026）。每周 64 个基点非常大，作者自己写成「当前的 AI 暴露价格，不是长期估计」。</li>
+    <li>OpenRouter 大约 2% 的全球 token，偏向开发者和 API，不是普通 ChatGPT 用户。</li>
+    <li>13 周滚动 beta 在短面板上很吵；五档的动量本来就不一样，他们控制了。</li>
+    <li>A 股是<strong>零结果</strong>。不要读成「中国没暴露」，只能读成「这段窗口里 A 股没有被定价出来的 AI 溢价」。</li>
+    <li>前沿发布前已经有价格漂移，有泄露/预期的嫌疑。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>市值加权、全市场断点，高减低每周 64.1 个基点（t=2.84）；FF5 α 56.3；FF5+动量 α 55.9（t=2.41）。NYSE 断点 53.3（t=2.51）。等权 35.0（t=2.13）。</li>
+    <li>Fama–MacBeth：AI beta 的市值加权斜率，单变量 19.62（t=3.30），全控制 18.25（t=3.58）。</li>
+    <li>强度拆开（市值加权高减低，每周基点）：闭源 53.4 vs 开源 32.3；付费核心 66.8 vs 新用户 21.9（不显著）；老用户 59.3 vs 非老用户 29.3（不显著）；长提示 54.1 vs 短提示 33.0。</li>
+    <li>国际：发达市场平均高减低每周 17.9（t=2.77）；新兴 5.0（t=0.94，不显著）。摘要写「在新兴市场不在，包括中国」。附录：A 股高减低「为负且不显著」，用全球因子或中国因子都一样。</li>
+    <li>事件：前沿发布前后 5 日，高减低多 1.9%（t=4.17）；FF5+动量后 1.1%（t=2.20）。丢掉前沿发布周，高减低仍有每周 39.5（t=1.96）。</li>
+    <li>职业：非例行互动内容高一个标准差，市场隐含 AI 暴露高 0.15 个标准差；非例行分析是 −0.15。互动/沟通技能加载 0.36。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这组里唯一直接拿 A 股对全球 AI 因子做检验、并且得到零的一篇。和昨天 Da 他们那篇「国产大模型压 A-H 溢价」对照着看：地方性信息工具可以改 A 和 H 的相对价，全球 API 用量因子却没在 A 股做出溢价。也是「另类数据抽出新因子」的干净模板。别把每周 64 个基点当成长期可交易的数。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35451">w35451</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35451/w35451.pdf">PDF</a></p>
+</article>
+
+<footer>
+  入选规则同前两期：2025 年及以后的 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA 或 TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目和年份。不重复 8 月 18、19 日的十篇。数字只采用摘要或正文里写明的。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-20.html
+</footer>
+</div>
+</body>
+</html>

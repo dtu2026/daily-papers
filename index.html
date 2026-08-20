@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日论文</title>
+<style>
+:root {
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --paper: #faf7f2;
+  --card: #fff;
+  --accent: #9a3412;
+  --tag: #f5e6d3;
+  --jeff: #9a3412;
+  --kyle: #1e3a5f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.65 "Source Han Serif SC", "Noto Serif SC", "Songti SC",
+        "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Georgia, serif;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 36px 20px 72px; }
+header h1 {
+  font-size: 30px;
+  font-weight: 650;
+  letter-spacing: .04em;
+  margin: 0 0 6px;
+}
+.lede { color: var(--muted); font-size: 15px; margin: 0 0 28px; }
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.tab {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+.tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.panel { display: none; }
+.panel.active { display: block; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  color: inherit;
+  text-decoration: none;
+  border-top: 1px solid var(--line);
+}
+.row:first-child { border-top: 0; }
+.row:active, .row:hover { background: #fffaf3; }
+.date { font-size: 18px; letter-spacing: .02em; }
+.hint { color: var(--muted); font-size: 13px; }
+.badge {
+  font-size: 12px;
+  background: var(--tag);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 3px 9px;
+  white-space: nowrap;
+}
+.badge.kyle { background: #e8eef6; color: var(--kyle); }
+.empty { color: var(--muted); padding: 22px 18px; }
+footer {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 420px) {
+  header h1 { font-size: 26px; }
+  .date { font-size: 17px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>每日论文</h1>
+    <p class="lede">Jeff 实证 · Kyle 理论。点日期打开当日简报。</p>
+  </header>
+  <div class="tabs">
+    <button class="tab active" type="button" data-tab="jeff">Jeff 实证</button>
+    <button class="tab" type="button" data-tab="kyle">Kyle 理论</button>
+  </div>
+  <section id="panel-jeff" class="panel active">
+    <div class="card"><a class="row" href="jeff/2026-08-20.html"><span class="date">2026-08-20 <span class="badge badge">最新</span></span><span class="hint">实证 →</span></a><a class="row" href="jeff/2026-08-19.html"><span class="date">2026-08-19</span><span class="hint">实证 →</span></a><a class="row" href="jeff/2026-08-18.html"><span class="date">2026-08-18</span><span class="hint">实证 →</span></a></div>
+  </section>
+  <section id="panel-kyle" class="panel">
+    <div class="card"><a class="row" href="kyle/2026-08-20.html"><span class="date">2026-08-20 <span class="badge badge kyle">最新</span></span><span class="hint">理论 →</span></a><a class="row" href="kyle/2026-08-19.html"><span class="date">2026-08-19</span><span class="hint">理论 →</span></a><a class="row" href="kyle/2026-08-18.html"><span class="date">2026-08-18</span><span class="hint">理论 →</span></a></div>
+  </section>
+  <footer>静态发布于 GitHub Pages。新简报写入 daily-papers/ 后运行 publish.sh 即可更新。</footer>
+</div>
+<script>
+(function () {
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var id = tab.getAttribute("data-tab");
+      tabs.forEach(function (t) { t.classList.toggle("active", t === tab); });
+      document.querySelectorAll(".panel").forEach(function (p) {
+        p.classList.toggle("active", p.id === "panel-" + id);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

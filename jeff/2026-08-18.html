@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-18</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+    --ok: #14532d;
+    --warn: #9a3412;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月18日 · 第一期 · 5 篇 2025–2026 working paper · Jeff</p>
+</header>
+
+<div class="lede">
+  <p>今天选了五篇。前四篇是美股/美债上的新工作论文，第五篇是 A 股北向资金。共同标准：2025 年及以后的 WP，至少一位作者在顶刊发过文，而且能核到具体题目和年份。</p>
+  <p>读法建议：先看「问了什么」和「主结果」，再读「方法讲懂」。方法那一节按本科计量来写——先说在比什么、怕什么，再讲他们实际怎么做。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Haddad–He 等：资产定价里的因果推断</a> — DID 往往只测到「相对弹性」</li>
+      <li><a href="#p2">Pástor 等：市值越集中，基金监管限额越绑手</a> — 被迫减仓会留下定价痕迹</li>
+      <li><a href="#p3">Thesmar–Verner：七十年主观预期收益率</a> — 测谁的信念，结论完全不同</li>
+      <li><a href="#p4">Kelly 等：新闻文本的定价无效率</a> — 先去掉「可预测的套话」再测反应</li>
+      <li><a href="#p5">He–Wang–Zhu：自制的「外资」交易</a> — 2018 北向实名后，流量预测力塌了</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Causal Inference for Asset Pricing</h2>
+  <p class="authors">Valentin Haddad, Zhiguo He, Paul Huebner, Péter Kondor, Erik Loualiche · NBER WP 35413 · 2026年7月（作者稿 2026年6月；何治国主页有 2025年3月更早稿）</p>
+  <div class="tags">
+    <span class="tag">方法论文 + 实证应用</span>
+    <span class="tag">公司债 / 美联储购债</span>
+    <span class="tag">IV · DID</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（何治国）：</strong> Journal of Finance, 2023, “Pledgeability and Asset Prices: Evidence from the Chinese Bond Markets”（与 Hui Chen, Zhuo Chen, Jinyu Liu, Rengming Xie），JF 78: 2563–2620。另有 He, Kelly, Manela, “Intermediary Asset Pricing: New Evidence from Many Asset Classes”，JFE 2017（lead article）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>买股票、买债券时，钱不是只从「这一个」资产进出，而是在一篮子里互相替代。所以你看到某只券被买、价格涨，并不等于你测到了「它自己的需求弹性」。这篇问：在什么条件下，一次自然实验能把「相对弹性」和「替代」分开？</p>
+
+  <h3>用了什么数据</h3>
+  <p>应用部分是美国公司债，冲击是美联储的公司债购买计划（哪些债被买、哪些没被买；也对比「大水漫灌」式宽货币 vs 更定向的 SMCCF）。摘要和导言没有写死样本起止年，应用场景就是这几轮购债。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：需求对价格有多敏感，以及买一只券会不会把别的券一起抬起来（价格冲击 / 溢出）。</p>
+  <p>他们的关键假设用白话说：给定你能看见的特征（久期、评级、因子暴露），同类资产的替代方式是一样的。在这个假设下，识别要拆成两步，缺一不可。</p>
+  <p><strong>第一步，横截面 IV 或 DID。</strong> 把「被买的券」和「没被买、但特征接近的券」比数量变化对价格变化。这一步只能得到<strong>相对弹性</strong>：自己的价格弹性减去「跟它长得像的那些券」的交叉弹性。本科课里的 DID 直觉在这里完全适用——处理组减对照组，得到的是两组之差，不是处理组的绝对水平。</p>
+  <p><strong>第二步，按这些特征排序的组合，做时间序列回归。</strong> 替代本身会被第一步里的「特征控制变量」吃掉（他们叫 missing-coefficient problem：控制变量把你真正关心的替代系数吸走了）。要单独把替代捞回来，得换到组合的时间序列上。</p>
+  <p>对照：只做「问询函公司 vs 没收到函的公司」的 DID，测到的也是相对反应。如果同行业、同市值的公司会一起被波及，这个溢出不会出现在 DID 系数里。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>「给定可观测特征，替代是齐的」是假设。漏掉一个替代维度（比如行业、北向持股），两步都会脏。</li>
+    <li>只做横截面、把 IV 系数当成「弹性本身」，正是这篇在警告的错。</li>
+    <li>处理组和对照组如果被无套利绑得很紧，第一阶段会弱。</li>
+    <li>应用是公司债，不是股票；美联储买谁也不是抽签。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <p>相对价格冲击「与零无法区分」，和 Chaudhary 等（2022）一致。溢出结构可以用久期和信用评级两个特征上的线性替代概括。计划怎么设计（宽 vs 定向 SMCCF）会同时改变总量价格冲击、以及哪些债受益——包括没被买到的券。摘要和导言没有再给具体弹性数字。</p>
+
+  <h3>为什么值得看</h3>
+  <p>对 A 股披露实证是直接警告。问询函、空公告、互动易，处理组和对照组往往在行业、市值、北向上很像。你的 DID 系数是「相对弹性」，不是「这件事对市场做了什么」。若问题是后者，还需要第二步（按特征排序的组合时间序列）。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35413">w35413</a> · PDF：<a href="https://www.loualiche.com/docs/causal_inference_HHHKL.pdf">loualiche.com</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. The Hidden Cost of Stock Market Concentration: When Funds Hit Regulatory Limits</h2>
+  <p class="authors">Ľuboš Pástor, Taisiya Sikorskaya, Jinrui Wang · NBER WP 35007 · 2026年3月，2026年6月修订</p>
+  <div class="tags">
+    <span class="tag">美股</span>
+    <span class="tag">基金持仓约束</span>
+    <span class="tag">面板 · 工具变量</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Pástor）：</strong> Journal of Financial Economics, 2022, “Dissecting green returns”（与 Stambaugh, Taylor），JFE 146: 403–424。同页还列有 “Do funds make more when they trade more?”，Journal of Finance 2017；“Uncertainty about Government Policy and Stock Prices”，JF 2012。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>美股市值越来越集中在少数大票上。基金有一条分散化规则（IRS 的 50/5/10），大票权重碰到天花板时，再看好也不能加仓，还得往下削。这篇问：约束绑住之后，基金会怎么调仓？基金业绩会不会变差？被「约束型持仓」压着的股票，后面收益会不会更高（乐观的人加不进去，类似「不能做空」的镜像：空头约束让悲观意见进不来，多头约束让乐观意见进不去）？</p>
+
+  <h3>用了什么数据</h3>
+  <p>4,745 只美国国内股票基金（共同基金 + ETF，主动 + 被动），NPORT-P 季度持仓，2019年9月–2024年12月。股票端：期间被持有过的 6,807 只美股，2024 年底 4,440 只。约束松紧用 buffer 衡量：50% 减去「大额头寸」之和；buffer 在 0 到 5% 算受约束，小于 0 算已经撞线。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是一次政策冲击的经典 DID，而是「硬制度约束有多紧」如何逼出交易，再看交易是否进入价格。</p>
+  <p>四步，每步都是「谁更靠近天花板，下一步做什么」。</p>
+  <p><strong>描述。</strong> 美国前十大市值占比从 2015 年的 13% 升到 2024 年的 31%，约束自然变紧。</p>
+  <p><strong>基金–股票–季度回归。</strong> 看下一季权重变化，是不是「权重大于 5%」且 buffer 很薄的那些仓砍得更狠。控制基金×季度、股票×季度固定效应——同一基金同一季里比不同持仓，同一股票同一季里比不同基金。怕季末粉饰持仓，他们用「上期持仓 × 被动收益」算出一个不交易也会有的假想 buffer，拿它做 IV。</p>
+  <p><strong>基金业绩。</strong> 受约束之后的几个月，FF4 调整收益（相对市场、规模、价值、动量四个因子还多出来的那一截）是不是更差。</p>
+  <p><strong>股票端。</strong> 构造 C：有多少流通股，是被 buffer&lt;5% 的基金当成「大仓」拿着的。然后看高 C 的股票后面 FF4 收益是否更高。也做高 C vs 低 C 的市值加权组合。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>样本短（2019–2024），最紧的 2023–2024 正好叠在 AI / 美股七姐妹大行情上。作者加了 AI-ETF 因子，系数只略缩小，但时间重合还在。</li>
+    <li>季末 buffer 是基金自己管出来的（内生）。IV 有帮助，但不那么精确。</li>
+    <li>C 是下限，且集中在超大盘；在最大的名字上做出可预测性，很容易过度解读。</li>
+    <li>约束紧，是因为指数本身更集中——「监管绑手」和「指数集中」不好拆开。</li>
+    <li>Pástor 是 Vanguard 董事，文中有披露。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>受约束基金资产：2019Q3 几乎可忽略 → 2024Q4 占基金资产 6%。峰值 2024Q3：171 只基金、近 1.4 万亿美元、8% 资产。大约三分之一的大盘成长基金受约束，管理规模超过 1.1 万亿。</li>
+    <li>靠近极限的基金会更狠地削大仓（大仓平均每季大约少 12 个基点，靠近极限超过 20 个基点），并降低股票仓位（已撞线：−1.7 个百分点）。</li>
+    <li>大盘成长基金：受约束后三个月 FF4 调整收益低 57 个基点（2019–2024 全样本）；2023–2024 低 1.31%。已撞线的大盘成长基金，2023–2024 三个月低 2.11%。</li>
+    <li>C&gt;0 的股票，2023–2024 六个月累计超额收益比 C=0 高 2.3%。高 C 市值加权组合年化 FF4 alpha：2019–2024 为 1.7%，2023–2024 为 2.3%。作者自己写：样本短，这些 alpha 只是边际显著。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是「硬制度约束 → 被迫交易 → 价格」的干净模板。A 股可对的制度：基金单票 10% 上限、沪深港通持股额度、股权质押比例、指数纳入后的集中度。问询函或解禁如果逼机构再平衡，「谁被迫在卖」本身可以是收益预测变量。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35007">w35007</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35007/w35007.pdf">PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Beliefs and Stock Market Fluctuations: New Evidence from the Past Seven Decades</h2>
+  <p class="authors">David Thesmar, Emil Verner · NBER WP 35286 · 2026年5月</p>
+  <div class="tags">
+    <span class="tag">美股时间序列</span>
+    <span class="tag">主观预期</span>
+    <span class="tag">预测回归</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Thesmar）：</strong> Journal of Finance, 2022, “Quantifying Reduced-Form Evidence on Collateral Constraints”（与 Catherine, Chaney, Huang, Sraer），JF 77(4): 2143–2181。<br>
+    另有 “The Collateral Channel…”，AER 2012（lead article）；“How to Use Natural Experiments to Measure Misallocation”，AER 2023。<br>
+    <strong>Verner 备援：</strong> “Household Debt Revaluation and the Real Economy…”，AER 2020（lead article）；“How Does Credit Supply Expansion Affect the Real Economy?…”，JF 2020。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>教科书里，估值高的时候，事后收益应该低——因为价格已经把未来现金流折进去了。但问卷里的「普通人」和不少职业预测者，往往是涨了更乐观。这篇做了一条 1956–2024 的新主观预期收益率，问：更老练的卖方分析，是不是跟估值同向、能预测未来收益，并且和散户预期对着干？两边意见不合的时候，成交量是不是更大？</p>
+
+  <h3>用了什么数据</h3>
+  <p>Value Line（VL）的 EPS 预测和目标价，反推出 3–5 年隐含预期收益率，再按市值加权到市场层面。1956–2024 年，约每年 1,500 家公司、92,117 个公司–年；1956–1989 年手工数字化了 38,696 份纸质/缩微报告。对照另外 8 条调查：IBES、Livingston、SPF、Shiller 机构/个人、Graham-Harvey 1 年/10 年、Nagel-Xu。收益用 CRSP 市值加权。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是一次冲击，而是「谁的信念」和估值、过去涨跌、未来收益、成交量怎么共变。</p>
+  <p><strong>先造数据，再对理论。</strong> 理论骨架是 Barberis 等人（2015）那种异质信念：天真投资者外推过去收益，老练投资者接近理性。</p>
+  <p><strong>相关。</strong> VL 预期收益和盈利–价格比（估值越便宜，预期收益越高）是不是一起动。另外 8 条调查做同样的相关，看是不是只有 VL 这样。</p>
+  <p><strong>Campbell–Shiller 分解，但用同一批 VL 预测。</strong> 市盈率的波动，有多少来自「他们觉得以后收益会高」、多少来自「他们觉得盈利会高」、多少来自「他们觉得远期估值会变」。本科直觉：一个价格比率的变动，总要被「分子预期」或「分母预期」或「折现率预期」分掉。</p>
+  <p><strong>预测回归。</strong> 今年一季度的 VL 预期，能不能预测从 4 月起往后 h 年的实现收益。样本只有 69 个年观测，右侧变量又和过去收益相关，这是经典的 Stambaugh 偏误（预测变量很持久时，普通 t 值会骗人）。他们做了 Nagel-Xu 自助法和 Boudoukh 等的修正。</p>
+  <p><strong>分歧与量价。</strong> |VL − 个人投资者| 大的时候，成交量和波动是不是更高。这是相关，不是因果。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>VL 是一家研究机构，不是「市场」本身。把 VL 当成老练/理性一方，是叙事，不是识别。</li>
+    <li>作者自己写：样本前半段，VL 预期对估值反应过度（1988 年以前，预测误差能被盈利–价格比预测）。</li>
+    <li>年频 N=69，收益预测检验天生没多少功效；超额收益（扣掉无风险利率）的结果比名义收益弱。</li>
+    <li>加总时分红比例假定恒定；1956–1989 的 OCR 会有识别误差。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>VL 预期名义收益均值 13%（标准差 8%），实现 11%。</li>
+    <li>盈利–价格比对 VL 预期收益：系数 0.278，t=5.28，R²=65%，N=69。另外 8 条调查里，没有一条和盈利–价格比显著正相关。</li>
+    <li>Campbell–Shiller：预期收益解释市盈率波动的 59%，预期现金流 3%，预期远期倍数 38%。VL 预期收益自身的波动，87% 来自「倍数回归」。</li>
+    <li>VL 预期和过去收益负相关（系数 −0.087，t=−3.27）；过去 EPS 增长加进去没有额外解释。个人投资者（Nagel-Xu、Graham-Harvey）是外推过去收益。</li>
+    <li>九条序列里，只有 VL 稳健预测未来名义收益。R²：4 年 14%，5 年 19%，6 年 24%。</li>
+    <li>VL 和个人投资者的分歧，伴随着更高的成交量和波动（方向写了，弹性数字摘要里没有）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>「测谁的信念」会改掉整套估值分解。卖方和分析师可以是反向的，散户可以是外推的——混在一起叫「市场预期」会说不清。做问询函或年报 MD&amp;A 时：不要把分析师现金流预测和互动易散户情绪揉成同一个「预期」变量。可带走的是异质信念 + 成交量这一截。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35286">w35286</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35286/w35286.pdf">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. The Inefficient Pricing of News</h2>
+  <p class="authors">Antoine Didisheim, Bryan T. Kelly, Mohammad Pourmohammadi, Hanqing Tian · NBER WP 35093 · 2026年4月，2026年5月修订</p>
+  <div class="tags">
+    <span class="tag">美股</span>
+    <span class="tag">新闻文本 / LLM</span>
+    <span class="tag">收益可预测性</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Bryan T. Kelly）：</strong> Journal of Finance, 2023, “Is There a Replication Crisis in Finance?”（与 Jensen, Pedersen），JF 78(5): 2465–2518。<br>
+    另有 Kelly, Moskowitz, Pruitt, “Understanding Momentum and Reversal”，JFE 2021。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>新闻文本里有信息，但新闻本身很大一块能被公司「看起来像什么」预测出来——大公司、热门行业、去年数字难看，稿子本来就会那样写。如果直接拿「新闻分数」预测收益，你分不清市场是在反应新闻，还是在反应那些早就写在特征里的东西。这篇把新闻拆成「可被特征预测的」和「剩下的纯新闻」，问：纯新闻能不能预测收益？预测能持续多久？投资者对哪些话题反应不足、对哪些反应过度？</p>
+
+  <h3>用了什么数据</h3>
+  <p>Thomson Reuters 实时新闻，美国个股稿，1996年1月–2022年12月，过滤后 6,680,550 篇。每月大约 4,198 只股票，52.5% 当月至少有一篇。文本嵌入用 E5-Mistral-7B（4096 维）。公司特征用 Jensen–Kelly–Pedersen（JKP）的 132 个异常特征，外加行业。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：这是收益可预测 / 异象论文，<strong>不是因果推断</strong>。没有冲击，没有对照组。问题是「这段文本里多出来的信息，价格消化得有多慢」。</p>
+  <p><strong>先嵌入，再残差。</strong> 每篇文章变成一个长向量，当月同一股票的文章取平均。然后在横截面上，用 132 个特征和行业去回归这些向量。拟合值 = 套话/可预测新闻；残差 = 纯新闻。拟合优度大约 7.7%（只用 JKP）到 10.2%（加上行业）。</p>
+  <p>本科对照：你想看「考试发挥」，先用「平时成绩、是否补习」回归考试分数，看残差。残差才是这次多出来的东西。不残差的话，你测到的是「好学生本来就会考好」。</p>
+  <p><strong>再拿残差做多空组合。</strong> 4096 个坐标太多，他们用最大夏普比率回归（带岭回归、扩展窗口交叉验证），保证组合权重只用到当时能看到的数据。然后看这个组合的月超额收益、夏普、相对 CAPM 的 alpha。</p>
+  <p><strong>话题拆解。</strong> 用稀疏自编码器拆出大约 5,000 个金融坐标，看「新闻当周的价格反应」和「下月新闻管理组合收益」同号还是反号——同号偏反应不足，反号偏反应过度。</p>
+  <p><strong>怕大模型偷看未来。</strong> 预训练语料可能含有样本期之后的文本。他们用按时间训练的模型做稳健性，夏普会降，但「纯新闻强于原始新闻、也强于常见异象」这个方向还在。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>3.1 的年化夏普非常高，这是工作论文，不是同行评审后的定论。高维嵌入 + 最大夏普，过拟合是第一担心；作者用扩展窗口样本外和按时间训练的模型来挡。</li>
+    <li>换手大约单边 75%，容量有限。作者自己强调普通投资者做不了。按约 6 个月平均嵌入、扣 10 个基点成本后，仍高于 JKP 因子。</li>
+    <li>新闻覆盖偏向大公司；没新闻的股票被丢掉。</li>
+    <li>Kelly 披露有 AQR 咨询收入。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>可预测的那截新闻几乎没有收益预测力。纯新闻把原始新闻的月度预测力提高一倍以上。</li>
+    <li>纯新闻多空年化夏普 3.1（1996–2022）；原始嵌入 1.1；JKP 里最好的单个异象 1.4。大股票（纽约交易所市值中位数以上）夏普 1.4，仍高于最好的大股票 JKP 因子（0.9）。</li>
+    <li>预测力在统计上能撑到未来 18 个月。</li>
+    <li>反应不足的话题占异象权重 62.1%（负面语气、数字密度）；剩下是反应过度（模糊、高关注）。</li>
+    <li>新闻语言大约 8–10% 能被特征预测，而且可预测的份额随时间在升（VoxEU 同作者专栏）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>「可预测新闻 vs 纯新闻」可以直接搬到 A 股披露文本：年报、问询函回复、互动易。MD&amp;A 和回函里很大一块是行业、规模、去年数字就能写出来的套话。先对特征残差，再测市场反应，方法上更干净。负面/数字话题反应不足、高关注话题反应过度，也是问询函语气上现成的假说。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35093">w35093</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35093/w35093.pdf">PDF</a> · <a href="https://cepr.org/voxeu/columns/inefficient-pricing-news">VoxEU</a></p>
+</article>
+
+<article id="p5">
+  <h2>5. Homemade Foreign Trading</h2>
+  <p class="authors">Zhiguo He, Yuehan Wang, Xiaoquan Zhu · NBER WP 35095 · 作者稿 2026年3月16日。注意：SSRN / BFI 更早一版 2023年1月挂出、2023年2月修订——NBER 戳是 2026，但文章从 2023 年就开始传。</p>
+  <div class="tags">
+    <span class="tag">A 股 / 北向</span>
+    <span class="tag">2018 实名制</span>
+    <span class="tag">DID · 三重差分</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（何治国）：</strong> 与第 1 篇同一条，Journal of Finance 2023，“Pledgeability and Asset Prices: Evidence from the Chinese Bond Markets”，JF 78: 2563–2620。他另有 2023 年 AEA Papers &amp; Proceedings “The Stock Connect to China”——P&amp;P 不在本次顶刊名单里，不当作资格凭证。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>沪深港通的北向资金，账面上是「外资」。这篇问：有没有内地知情者绕过「看穿式」监管，经港股通绕一圈，把自己伪装成外资？2018 年北向投资者识别（BCAN）改革之后，北向流量还能不能预测下周收益？这种流量还跟内地内幕交易对得上吗？把隐藏通道堵住之后，股价的信息含量是升还是降？</p>
+
+  <h3>用了什么数据</h3>
+  <p>中国结算/港交所全托管人层面的跨境持仓，2017年3月17日–2019年12月31日（在新冠前停，是故意的）。188 家托管人：32 家外资、83 家港澳台、73 家内资。样本是通车的 A 股。2018年8月24日宣布、9月26日上线北向实名。2019 年底北向持仓大约占通车市值的 2.13%，成交额占比 11.88%。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：一次监管改革，有没有让「藏在不显眼托管人后面的内地知情交易」变贵，从而改变北向流量的预测力和股价信息含量。</p>
+  <p><strong>改革前 vs 改革后 × 托管人类型。</strong> 这是本科 DID 的直接亲戚：不是只比时间（所有北向一起变），也不是只比类型（外资托管人本来就和内资不一样），而是看「可疑类型」在改革后相对「更干净类型」变了多少。</p>
+  <p>他们眼里的「更可能藏人」：名气较小的外资托管人、以及同时做内地和香港业务的交叉经营内资托管人。对照：名气大的外资、不做交叉的内资。安慰剂：港澳台托管人——改革前就没有预测力。</p>
+  <p><strong>第一步，组合。</strong> 每周按北向流入（分托管人来源）把通车股票排序，看多空下周收益（用刘–Stambaugh–袁三因子调过）。</p>
+  <p><strong>第二步，三重差分面板。</strong> 被解释变量是下周收益或净内幕交易。关键项是：这类托管人 × 改革后 × 北向流入。公司固定效应、周固定效应——同一公司跨周比、同一周跨公司比。标准误按行业聚类（同一行业的公司残差可能一起动；如果当独立观测，t 值会虚高）。</p>
+  <p><strong>第三步，信息含量。</strong> 用「个股收益有多少不能被市场解释」（1−R²，非同步性）当信息含量的代理。先比通车 vs 不通车，再在通车里比改革前「问题托管人」暴露高 vs 低。</p>
+  <p>对照我们自己的问询函设计：改革是「藏信息的成本变了」，不是「公司突然变好」。如果隐藏通道被堵，知情者退出，价格信息含量可能下降——这和「监管一定让市场更有效」的直觉相反，但逻辑自洽。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>样本短（2017.3–2019.12），而且卡在新冠前。</li>
+    <li>「问题托管人」是代理，不是揭开的知情者名单。名气、交叉经营也可能对应不同客户或执行质量。</li>
+    <li>2018 年还有贸易战、去杠杆。主要挡箭牌是港澳台安慰剂，以及同一来源内部「名气小 vs 名气大」的对比。</li>
+    <li>通车 vs 不通车的 DID，可能吃到通车股票自己的趋势。</li>
+    <li>北向披露 2024 年 8 月又改成只披露季度，已在样本外。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>全市场北向多空（最高 vs 最低十分位，周频）：2018年8月宣布前年化 36.7%，之后约 16 个月降到 11.8%。</li>
+    <li>名气较小的外资北向：改革前刘–Stambaugh–袁 alpha 每周 0.591%（约年化 30.7%，t=4.05），改革后 0.006%（t=0.05）。「名气小减名气大」改革后相对改革前的多空差：每周 −0.449%（t=−2.69）。</li>
+    <li>交叉经营内资类似；交叉减非交叉、改革后减改革前：每周 −0.314%（t=−2.19，市值加权）。</li>
+    <li>三重交互：名气较小外资的周流入从低到高一个四分位距，改革后相对名气大外资，下周收益低 0.59%（约年化 30.6%）。</li>
+    <li>这些流量和内地内幕<strong>卖出</strong>的对齐，改革后下降；买入一侧更弱。在应计更脏、VPIN 更高（更不透明）的公司上更强。</li>
+    <li>通车相对不通车，改革后非同步性多降 4.7%。通车内部，改革前问题托管人暴露高的，再多降 3.0%（样本均值的 4.2%）。信息含量下降。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是今天唯一的 A 股篇。身份隐瞒、看穿式监管、北向流量里有多少真外资信息，都和问询函 / 内幕 / 披露直接相关。三句能用的：不要把「北向」当成真正的外资信息，至少要按托管人类型拆；2018 年 BCAN 是一次可用的「藏匿名成本」冲击；把隐藏通道关掉，知情者走了，价格信息含量可以下降。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35095">w35095</a> · 作者 PDF：<a href="https://zhiguohe.net/wp-content/uploads/2026/03/homemade_foreign_trading_Full.pdf">zhiguohe.net</a> · 2023 年 SSRN：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4318182">ssrn.com</a></p>
+</article>
+
+<footer>
+  入选规则：2025 年及以后的 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA 或 TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目和年份。数字只采用摘要或导言里写明的，没有补系数。第 5 篇 2023 年已在 SSRN 流传，不把它写成 2026 年才出现的新文。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-18.html · 之后每个工作日 8:53 同一标准直接发你。
+</footer>
+</div>
+</body>
+</html>
