@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-21</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-08-21">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月21日 · 第四期 · 4 篇 2025–2026 working paper · Jeff</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇，和 18–20 三天不重复。头两篇带中国：基金经理报告里的「逆周期政策信念」，以及 QDII 怎么把央行消息传到海外股票。后两篇是方法对照：财富税改完，家庭调仓很慢；散户困了，盈余附近交易更差。</p>
+  <p>有一篇 Hirshleifer 的 AI 社交平台文（NBER 34807）摘要好看，PDF 没拉下来，数字核不准，不硬塞。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">熊伟他们：基金报告里的结构化信念</a> — 常写逆周期政策的基金，业绩更好</li>
+      <li><a href="#p2">Rebucci 他们：中国货币政策的海外股权渠道</a> — QDII 暴露高的美股，紧缩公告后更弱</li>
+      <li><a href="#p3">Guiso 他们：股权溢价变了，投资者调多快</a> — 两年几乎不动，五六年才调到位</li>
+      <li><a href="#p4">Hirshleifer 他们：暮光里交易</a> — 日落更晚的散户，交易后超额更差，渠道是注意力</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Structured Beliefs and Fund Performance: An LLM-Based Approach</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Structured Beliefs and Fund Performance: An LLM-Based Approach" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhenyu Gao, Wei Xiong, Jian Yuan · ABFER 2025 研讨会稿（PDF 页眉 2024年8月）；熊伟主页标 2025。2026年4月普林斯顿稿改名为 “Structured Beliefs in Fund Managers’ Own Words: Fundamentals, Policy, and Sentiment”。无 NBER 编号。</p>
+  <div class="tags">
+    <span class="tag">中国基金报告</span>
+    <span class="tag">LLM 文本</span>
+    <span class="tag">注意版本</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（熊伟）：</strong> Review of Economic Studies, 2022, “China’s Model of Managing the Financial System”（与 Brunnermeier, Sockin），REStud 89(6): 3115–3153。
+  </div>
+
+  <h3>版本先说清楚</h3>
+  <p>下面数字全部来自抓到的 ABFER 稿。2026 年 4 月那一版把股市信念拆成宏观基本面、政策、剩余「基金情绪」，主张预测收益的是政策信念，情绪预测的是资金流。两套故事不要混。这里只报 ABFER 稿里写明的数。</p>
+
+  <h3>问了什么</h3>
+  <p>证监会要求基金半年报、年报写「经理报告」。大模型能在同一段文字里分别给经济、政策、市场打分。作者构造「逆周期政策信念」（CCP）：经理觉得经济差、政策会松，或经济好、政策会紧。常这么写的基金（CCP 基金），是不是业绩更好？他们的市场判断更会预测指数吗？仓位跟得上自己说的话吗？</p>
+
+  <h3>用了什么数据</h3>
+  <p>除 QDII 外的中国公募，至少 10 份有效报告，2008–2023。ABFER 稿：75,448 份报告，432,073 个基金–月。万得。2023 年底 4,627 只、规模 12.2 万亿元。GPT-4 把财政、货币、监管政策和宏观打成 {+1, +0.5, 0, −0.5, −1}。一份报告算 CCP，若经理对经济偏负且预期放松，或对经济偏正且预期收紧。一只基金算 CCP 基金，若带 CCP 的报告占比 ≥ 样本中位数 20%。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是一次政策冲击。是「文本里的结构化信念」和收益、仓位、指数可预测性怎么共变。</p>
+  <p>先把基金分成「经常写 CCP」和「不常写」，做多空组合，再做基金–月面板（时间固定效应，控制规模、资金流、年龄）。然后四问：陈述的市场信念能不能预测下一季指数，CCP 基金是不是更准；信念会不会进持仓，CCP 是不是跟得更紧；CCP 基金的调仓能不能预测指数；CCP 基金内部，CCP=1 的月份后面是不是更好。</p>
+  <p>本科对照：时间固定效应吃掉「这个月所有基金一起好」。你比的是同一月里，CCP 基金相对别的基金多出来的那截。这不是 DID，没有外生冲击。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>GPT-4 有前视：训练语料可能含样本期之后的文本。作者说只打情绪、不让模型做预测；打乱日期后一致性仍高于 90%。提示词和温度仍是选择。</li>
+    <li>CCP 基金这个标签用了 2008–2023 全样本来划「谁经常这么写」，分类本身有前视。</li>
+    <li>报告可能是 cheap talk、迎合，或被过去业绩反过来写。稿子自己显示回顾/展望和近半年收益相关。</li>
+    <li>没有外生政策冲击。CH3/CH4 调过之后，技能、风险、运气仍分不清。</li>
+    <li>若现行稿是 2026 年那版迎合/资金流故事，「政策很准」要减一档来读。</li>
+  </ul>
+
+  <h3>主结果（仅 ABFER 稿）</h3>
+  <ul>
+    <li>21.4% 的报告有 CCP 信念（财政 17.5%，货币 15.9%，监管 18.3%）。基金固定效应 + 时间固定效应只解释大约 20% 的 CCP 变异——多半是同一基金不同期在变，不是「有的基金天生爱这么写」。</li>
+    <li>等权多 CCP / 空非 CCP：月 CH3 alpha 0.147%，CH4 0.127%。市值加权：0.187% 和 0.166%。</li>
+    <li>面板加时间固定效应和基金控制：CCP 基金月原始收益高 0.0662 个百分点，CH3 alpha 高 0.0590，CH4 高 0.0672。</li>
+    <li>股市预期高一档，未来三个月沪深 300 高 0.131%；和 CCP 基金的交互再加 0.111（边际显著）。</li>
+    <li>股市（债市）预期高一档，股票仓 +1.944 个百分点（债券仓 +1.852）。债券仓和信念的联系，CCP 基金明显更紧（交互 +1.348）。</li>
+    <li>CCP 基金内部，CCP=1 的月份：随后月原始收益 +0.0704 个百分点，CH3 +0.0538，CH4 +0.0330。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>今天最贴 A 股披露的一篇：把法定基金报告当成经理层面、反复出现的 disclosure，而且是按话题拆政策语言，不是整篇情绪一个分。问询函、年报 MD&amp;A 要把「政策套话」和「基本面」分开，这是现成模板。读的时候盯版本。</p>
+  <p class="links">ABFER PDF：<a href="https://abfer.org/media/abfer-events-2025/cmd/Structured-Beliefs-and-Fund-Performance_An-LLM-Based-Approach_Gao_Xiong_Yuan.pdf">abfer.org</a> · 后一版（未核数字）：<a href="https://wxiong.mycpanel.princeton.edu/papers/LLM.pdf">princeton</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. A Nascent International Financial Channel of China’s Monetary Policy Transmission</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. A Nascent International Financial Channel of China’s Monetary Policy Transmission" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Chang Ma, Alessandro Rebucci, Sili Zhou · NBER WP 34291 · 2025年9月（NBER 页注明随后有 2026 年 JIE 正式版）</p>
+  <div class="tags">
+    <span class="tag">QDII</span>
+    <span class="tag">央行公告</span>
+    <span class="tag">高频事件研究</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Alessandro Rebucci）：</strong> Review of Financial Studies, 2020, “Uncertainty and Economic Activity: A Multicountry Perspective”（与 Cesa-Bianchi, Pesaran），RFS 33(8): 3393–3445。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>中国私人组合股权外流还小，但在放开和资金外逃下长得很快。央行一紧缩，有没有一条「金融渠道」打到海外股票上——不是中国进口少了，而是 QDII 基金在调仓？谁在调，是管理人还是背后的零售户？</p>
+
+  <h3>用了什么数据</h3>
+  <p>2008–2023 年 63 个央行公告日（降准/升准、存贷款基准、MLF、7 天逆回购），用 7 天回购上一年期 IRS 的当日变化给冲击签名和缩放。丢掉前后 5 天碰上 FOMC 或另一次央行公告的日子。冲击均值 −2 个基点，标准差 12 个基点。55 个 MSCI 国家（不含中国）；美国 CRSP/Compustat 个股。万得 QDII 持仓 2007–2023，半年报全持仓。2023 年 QDII 对中国以外股权大约 405 亿美元。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：公告日附近，QDII 暴露更高的国家指数 / 美股，相对暴露低的，收益是不是更差。</p>
+  <p>这是高频 DID。处理强度 = 滞后的 QDII 持仓（国家占市值份额，或美股是否被持有）× 这次央行意外。国家/公司固定效应，事件或行业×事件固定效应，再控制美国货币政策、VIX、商品、对华贸易、工业增加值、规模、beta、换手、过去收益。机制：按主动股票 / 债券 / 被动，看季度资金流和资产类别权重。也看 QDII 额度上调日、春节前窗口。</p>
+  <p>本科对照：不是「中国概念股 vs 非中国概念」。他们要的是：基本面不怎么沾中国、但被 QDII 拿着的小票、不流动的票，公告后是不是照样弱。若只是贸易渠道，这些票不该动。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>央行公告不是干净的结构冲击（多目标、多工具）。他们用公告日 IRS、丢掉 FOMC 邻日、控制 VIX/商品/未来美国政策，仍不是抽签。</li>
+    <li>QDII 持仓只是中国私人海外股权的一部分（通车、银行、保险、外逃都不在）。半年度持仓会过期。强度边际（拿多少）比「有没有拿」更吵。</li>
+    <li>国家指数效应看起来大，相对 QDII 规模（405 亿 vs CPIS 私人持仓约 6220 亿）偏猛。作者用 Gabaix–Koijen 乘数 5 做信封计算，承认可能高估，「但不是高一个数量级」。</li>
+    <li>事件扎堆；中国概念 / ADR 子样本结果混杂。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>国家指数：滞后 QDII 份额 × 中国货币意外，系数为负。一次 1 个标准差的紧缩，QDII 份额差 1 个标准差的两个国家，美元收益差大约 13.5 个基点（0.045 × 0.03）。新兴市场更强。本币收益也跌。</li>
+    <li>信封：若乘数是 5，13.5 个基点大约需要 270 亿美元的跨境再配置。</li>
+    <li>美股，是否被持有 × 货币冲击：CAR 在 [−1,−1]、[−1,0] 不显著；从 [−1,+1] 起，暴露组大约弱 0.6%，到 [−1,+5] 仍在（表 2：−0.006 和 −0.007）。</li>
+    <li>主要来自小票、不流动的票；普通美股（非 ADR）、低对华 beta、低海外收入的名字上也在——不像贸易/基本面渠道。</li>
+    <li>机制：紧缩后，主动股票 QDII 季度流出（系数 −0.102）；债券基金 +0.014（不显著）。披露的 QDII 投资者里 79% 是零售。主动股票基金减股票仓；被动基金的中国货币系数不显著。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>中国政策消息，经由零售主导的中介，打到海外不流动的票上。北向 / QDII / 通车可以借：用事前持仓当暴露、用公告窗、把零售和经理拆开。也提醒：「中国暴露」≠ 中国概念基本面。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34291">w34291</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34291/w34291.pdf">PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. How Much and How Fast Do Investors Respond to Equity Premium Changes? Evidence from Wealth Taxation</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. How Much and How Fast Do Investors Respond to Equity Premium Changes? Evidence from Wealth Taxation" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Andreas Fagereng, Luigi Guiso, Marius A. K. Ring · NBER WP 35262 · 2026年5月</p>
+  <div class="tags">
+    <span class="tag">挪威家庭</span>
+    <span class="tag">财富税</span>
+    <span class="tag">DID · 调仓摩擦</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Luigi Guiso）：</strong> Journal of Finance, 2008, “Trusting the Stock Market”（与 Sapienza, Zingales），JF 63(6): 2557–2600。另有 “The Role of Social Capital in Financial Development”，AER 2004。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>股权溢价变一截，家庭多久才会改股票仓位？问卷里看到的短期弹性很小。这篇用挪威行政持仓数据，看一次持久的财富税改革——税后股权溢价被削掉大约 30 个基点——短窗口和长窗口各有多大反应。进场和出场对称吗？</p>
+
+  <h3>用了什么数据</h3>
+  <p>挪威行政财富登记，1993–2003，盯 1998 年改革。1992 年曾给上市股票/基金大约 25% 的估值折扣，1998 年拿掉，风险资产和安全资产的边际财富税率拉平。按 1997 年三档税率，税后「财富税股权溢价」分别少 27.5 / 32.5 / 37.5 个基点。过滤后 1997 年 171,262 户（住房稳定、连续四年纳税人身份稳定、年龄 ≥30、无私募）。处理组 = 1997 年交财富税的人。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：税后溢价被削掉之后，股票占金融财富的比例、以及「有没有入市」，处理组相对对照组怎么走。</p>
+  <p>家庭固定效应 DID：1997 年纳税人 vs 不纳税的；税率更高的档做强度。队列×年固定效应。动态事件研究看每一年的系数。作者<strong>不</strong>把 1998 年以前的斜率去掉，因为他们把那截读成对 1992 年「引入折扣」的延迟反应。稳健性：匹配、教育/行业/地理/收入、住房交易、主动仓（不是被涨跌带着走的被动份额）、De Chaisemartin–D’Haultfœuille 估计量。</p>
+  <p>本科对照：DID 的命门是平行趋势。若 1992–97 的上升是两组本来就在分开，不是对 1992 的延迟反应，长期效应会被读大。作者自己把这点写在怕什么里。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>处理组更富、更老。平行趋势是关键假设。把事前斜率当成趋势减掉，还是当成 1992 的延迟反应，幅度差很多。</li>
+    <li>识别的是家庭税后溢价，不是市场溢价。机构、外国人、政府不交这笔财富税，被差分掉；一般均衡价格效应被当成小。</li>
+    <li>1990 年代挪威，当时没有 DC 养老金；只看上市股权。</li>
+    <li>应税财富会均值回归；他们用 1995 年身份指定处理做检查。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>1998–99 立刻动得很小：两年内风险资产份额大约只低 0.5 个百分点。若无摩擦 Merton 要用这么小的数，相对风险厌恶得到大约 15。</li>
+    <li>五到六年后份额大约低 2 个百分点，回到 1993 年附近。隐含价值函数相对风险厌恶大约 1.81（1998）和 2.81（1992）。到 2002–03，份额对溢价单位变化的累计敏感度 6.91。前两年 / 长期 = 0.24，也就是大约四分之一的调整发生在头两年。</li>
+    <li>预测调整成本低的家庭（最低四分位）快一倍以上（0.53 vs 0.19），但总量差不多。</li>
+    <li>1993 年残差股票仓高（更敢承担风险）的家庭，累计敏感度 16.36 vs 6.27。</li>
+    <li>参与：1992–97 处理组相对对照大约 +13 个百分点；1998 年走平然后略降。溢价高 30 个基点，参与大约高 13 个百分点（半弹性 44.2）。出场几乎不动。一次性入场成本大约 800 美元，每期成本大约 89 美元。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>「显著、持久的规则变化 → 组合/参与反应很慢」的干净模板。印花税、北向披露、问询函：短窗口看起来像没效果，经济上大的反应可能堆在几年里；入场和出场可以不对称，因为有固定成本。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w35262">w35262</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35262/w35262.pdf">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Trading in Twilight: Sleep, Mental Alertness, and Stock Market Trading</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Trading in Twilight: Sleep, Mental Alertness, and Stock Market Trading" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hee Seo Han, David Hirshleifer, Jinfei Sheng, Zheng Sun · NBER WP 33477 · 2025年2月</p>
+  <div class="tags">
+    <span class="tag">美股散户</span>
+    <span class="tag">注意力</span>
+    <span class="tag">RDD · 家庭 FE</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（David Hirshleifer）：</strong> Journal of Finance, 2009, “Driven to Distraction: Extraneous Events and Underreaction to Earnings News”（与 Lim, Teoh），JF 64(5): 2289–2325。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>困不困，会不会把散户的交易做差？他们用日落时间当睡眠被打扰的代理，四套设计一起看：同一家人季节里日落早晚、时区边界 RDD、南北纬度在冬夏对调、夏令时拨钟。若更差，是注意力不够，还是处置效应、彩票偏好、反应过度？</p>
+
+  <h3>用了什么数据</h3>
+  <p>Barber–Odean 大型折扣券商散户成交，1991–1996，美国本土连续 48 州。41,131 户有邮编；10,601 只 CRSP 普通股。被解释变量：该户当天成交的股票，按数量加权，（买 = +1 / 卖 = −1）× 随后 10 或 21 个交易日的 Fama–French 三因子超额收益。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：日落更晚（更可能睡不好）的时候或地方，同一批散户当天买卖的票，随后超额是不是更差。</p>
+  <p>四套，互相挡不同的怕：</p>
+  <ul>
+    <li><strong>家庭固定效应面板：</strong> 同一户，季节里日落早晚不同。控制市场/VIX、季节性情感障碍（SAD）、日历固定效应。</li>
+    <li><strong>时区边界 RDD：</strong> 边界两侧大约差 1 小时日落，窗口 200 公里。LateSide 虚拟变量 + 到边界的带符号公里数，日期、州、纬度带、金融中心虚拟变量。同一州跨两个时区的子样本，以及把州界当成假边界的安慰剂。</li>
+    <li><strong>纬度：</strong> 最北 25% vs 最南 25%，夏天和冬天日落谁更晚是反的。</li>
+    <li><strong>夏令时：</strong> 春天拨钟后 5 天 vs 前 5 天；秋天对照。加州 vs 亚利桑那（不拨钟）再做 DID。</li>
+  </ul>
+  <p>机制也用 RDD：盈余公告后 0–2 天成交的概率；公告窗 vs 非公告窗的表现；反应过度、彩票股、处置效应。</p>
+  <p>本科对照：日落不是随机抽签，但四套「该变的时候变、不该变的时候不变」，比单靠季节虚拟变量干净。RDD 用的是边界附近很小一截样本。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>日落不是睡眠。天气、情绪/SAD、工时都可能一起动。四套设计加 SAD 控制之后，剩下的怕是「夏天独有、又跟褪黑素时间对得上」的其他东西。</li>
+    <li>时区边界不是随机划的（铁路、商业）。他们加了同州、假州界、季节异质性。</li>
+    <li>RDD 只是边际显著，只用了面板大约 11% 的样本。</li>
+    <li>1990 年代美国散户券商，不是机构。表现是成交标的事后 10–21 日超额，不是家庭财富。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>家庭固定效应：日落晚一小时，随后 21 个交易日日均 FF3 超额低 2.1 个基点（t=5.31），大约每月 0.44 个百分点，和 Barber–Odean（2000）过度自信的 0.31 个百分点一个量级。加控制后 21 日是 2.3 个基点。日落高一个标准差（约 1 小时 20 分），10 日日均低 1.1 个基点（t=−5.52）。</li>
+    <li>RDD：晚日落一侧，21 日日均超额低 11.3 个基点（t=2.03），大约第一个月 2.4 个百分点；10 日 12.1 个基点（t=−2.16）。同州双子区 −9.8。假州界安慰剂为零。夏天有（10 日 −14.6），冬天没有。</li>
+    <li>纬度：夏天北方相对南方，日超额低 41 个基点；冬天系数为正、不显著。</li>
+    <li>春令时：拨钟后 5 天相对前 5 天，10 日表现低 20.9 个基点。秋令时小、不显著。加州 vs 亚利桑那，春天交互 −0.28（10 日）。</li>
+    <li>注意力：晚一侧，盈余公告后 0–2 天成交的概率低 2.7 个百分点（t=−2.50），基数 14.64%。公告窗交易的弱势大约是非公告窗的 3 倍（LateSide：非公告 −0.099，公告 −0.328）。成长股反应过度、彩票需求、处置效应上没有显著效应。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>有限注意力——不是处置、彩票、反应过度——才是认知资源连到「盈余附近怎么交易」的那条管子。做 A 股问询函和盈余，值得直接量散户（或北向）有没有在披露窗里成交；也警告：日历/季节性的注意力冲击，看起来会像信息效应。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w33477">w33477</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w33477/w33477.pdf">PDF</a></p>
+</article>
+
+<footer>
+  入选规则同前三期：2025 年及以后的 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA 或 TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目和年份。不重复 8 月 18–20 日的十五篇。数字只采用已抓到的 PDF / 摘要。第 1 篇数字仅来自 ABFER 稿，不与 2026 年 4 月改写版混用。Hirshleifer 等 NBER 34807 因 PDF 未取到，不收录。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-21.html · 网站：<a href="https://dtu2026.github.io/daily-papers/">dtu2026.github.io/daily-papers</a>
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
