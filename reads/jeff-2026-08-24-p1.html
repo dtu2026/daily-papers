@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>精读 · Wong 等（2026）Knowledge is Power：给投资者教应计，价格会不会更有效</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+    --soft: #f4f1ea;
+    --eq: #1e293b;
+    --warn: #fef3c7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.75 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 48px 22px 90px; }
+  header h1 { font-size: 26px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; line-height: 1.35; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+  .lede, article, .box, nav.toc {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 0 0 22px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav.toc ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav.toc li { margin: 4px 0; }
+  nav.toc a { color: var(--accent); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 20px; line-height: 1.35; margin: 0 0 12px; }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 20px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul, ol { margin: 0 0 12px; padding-left: 1.25em; }
+  li { margin: 4px 0; }
+  .eq {
+    background: var(--eq);
+    color: #f8fafc;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    padding: 14px 16px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 12px 0;
+    white-space: pre-wrap;
+  }
+  .box { background: var(--soft); }
+  .box h3 { margin-top: 0; }
+  .note {
+    background: var(--warn);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 15px;
+    margin: 0 0 22px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 10px 0 14px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+  }
+  th, td { border-bottom: 1px solid var(--line); text-align: left; padding: 6px 8px; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .num { font-variant-numeric: tabular-nums; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    background: #f5f5f4;
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    margin-top: 8px;
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>精读 · Wong 等（2026）Knowledge is Power：给投资者教应计，价格会不会更有效</h1>
+  <p class="meta">
+    Sonia Man-Lai Wong, Yuan Xue, Bohui Zhang, Xiaofeng Zhao<br>
+    <em>Journal of Accounting and Economics</em> 2026，article 101935 · DOI
+    <a href="https://doi.org/10.1016/j.jacceco.2026.101935">10.1016/j.jacceco.2026.101935</a><br>
+    顶刊：JAE 是会计 top-3（和 TAR、JAR 并列）。这篇是正式发表，不是「投过 JAE」。<br>
+    精读日期 2026-08-24 · Jeff 对着原文讲 · 读者 Dongjie（A 股披露实证）
+  </p>
+</header>
+
+<div class="note">
+  <strong>版本必须先说清楚。</strong> JAE 正式刊（e-pub 2026-08-08，PII S0165410126000790）ScienceDirect / Elsevier 全部 403/406，没有拿到 published PDF。SSRN 4179996（Posted 2022-08-09，Last revised 2023-10-13，74 页）Cloudflare 拦下载。本稿数字全部来自 <strong>ABFER 2022 年会 PDF，封面 Current Version: March 2022，约 69 页</strong>
+  （<a href="https://abfer.org/media/abfer-events-2022/annual-conference/papers-accounting/AC22P5014_Knowledge-is-Power-A-Field-Experiment-in-the-Chinese-and-US-Stock-Markets_.pdf">ABFER 直链</a>；清华 CFRC 另有 January 2022 更早稿）。
+  JAE / Lingnan 页面上的 published abstract 措辞更接近 SSRN 2023 修订：强调「专门做的教育网站 + conceptual 与 quantitative application 成对出现 + 读得更深、sophisticated 更低的股票效应更强」；March 2022 WP 摘要还单独写了 real effect（treatment 公司实验后 discretionary accruals 下降）。<strong>下面系数、N、t 值一律是 March 2022 表里印出来的，不是 JAE 校样。</strong> 若以后拿到 101935，应用发表数字覆盖。
+</div>
+
+<div class="lede">
+  <p>一句话：<strong>作者在 2020 年盈余公告窗，把「应计怎么定价」随机贴到中美社交媒体的股票标签页上；treatment 股票相对只贴「即将出财报」的 control，高应计不再被追捧，随后一年的负回报也变浅，而且实验后这些公司自己的 quarterly discretionary accruals 也下来了。</strong></p>
+  <p>识别是股票层面的 RCT，不是投资者报名实验。比的是「同一只股票的应计，被随机贴了教材 vs 只被提醒要出财报」。下面按本科计量顺序走：先说谁比谁、怕什么，再拆回归，再把每个关键系数翻成中文。</p>
+</div>
+
+<nav class="toc">
+  <p style="margin:0 0 8px;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;font-size:15px;">目录</p>
+  <ol>
+    <li><a href="#s1">研究问题：financial knowledge 能不能动到价格</a></li>
+    <li><a href="#s2">先补一课：accrual anomaly / Sloan (1996)</a></li>
+    <li><a href="#s3">制度环境：为什么同时做中国和美国</a></li>
+    <li><a href="#s4">教材长什么样：conceptual vs methodological</a></li>
+    <li><a href="#s5">RCT 怎么随机、贴到哪、贴给谁</a></li>
+    <li><a href="#s6">样本与平衡：Table 1–2、Appendix 1–2</a></li>
+    <li><a href="#s7">识别：在比谁；怕 spillover、attention、谁点开</a></li>
+    <li><a href="#s8">主方程 (1)：CAR 对 Treat × Accruals</a></li>
+    <li><a href="#s9">Table 3：没有干预时，anomaly 还在吗</a></li>
+    <li><a href="#s10">Figures 1–2 与 Table 4：公告窗</a></li>
+    <li><a href="#s11">Table 5：随后一年还反转吗</a></li>
+    <li><a href="#s12">Table 6：T1 概念 vs T2 概念+方法</a></li>
+    <li><a href="#s13">Table 7–8：读得深、散户多</a></li>
+    <li><a href="#s14">Robustness（未列表）</a></li>
+    <li><a href="#s15">方程 (2) 与 Table 9–10：real effect</a></li>
+    <li><a href="#s16">结论、外推、对 A 股披露实证意味着什么</a></li>
+  </ol>
+</nav>
+
+<article id="s1">
+  <h2>1. 研究问题</h2>
+  <p>Financial literacy 文献（Lusardi and Mitchell, 2014 综述）已经很多：不会算复利的人更少买股票、更乱借债、退休准备更差。作者说这些论文停在<strong>个人决策</strong>，没有直接回答：把知识灌进市场，<strong>价格效率</strong>会不会变。</p>
+  <p>三个概念障碍他们自己列出来了：</p>
+  <ul>
+    <li>完全市场里投资者已经会处理公开信息，教育是多余的（他们引 Simon, 1987）。现实里认知有限（Simon, 1955；Kahneman and Tversky, 1973），但教育仍可能无效：没动力学、学了用不上（Fernandes et al., 2014；Hilgert et al., 2003）。</li>
+    <li>如果边际定价者是机构（Hand, 1990；Collins et al., 2003），只教散户可能动不到价格；机构自己每天就在算应计，教育的回报递减（Cole et al., 2011；Kaiser and Menkhoff, 2017）。</li>
+    <li>观测数据里 knowledge 和定价效率互相决定：有耐心、有钱的人两者都高；投资者也会从过去价格里「学」。代理变量还带 measurement error。</li>
+  </ul>
+  <p>所以他们不做调查、不做「金融素养得分 × 回报」的横截面，而是做一个 <strong>field experiment / RCT</strong>：选一个具体、难、而且文献已经证明会被错误定价的概念——<strong>accounting accruals</strong>——做成教材，随机灌给某些股票的社交媒体受众。</p>
+  <p>H1（原文）：接受 investor education 的股票，accrual mispricing 低于没有接受 treatment 的 control。</p>
+</article>
+
+<article id="s2">
+  <h2>2. Accrual anomaly 用一段话钉住</h2>
+  <p>Earnings = cash flows + accruals。应计是会计师在现金还没进出时，对未来利益和义务的估计：应收账款增加是正应计，应付账款增加是负应计。应计会在两种情况下转回：钱真的收/付了，或者发现收不回来（减值、核销）。因为估计误差和操纵，<strong>应计对未来盈余的 persistence 低于经营现金流</strong>（Dechow and Dichev, 2002；Richardson et al., 2005）。</p>
+  <p>Sloan (1996) 的核心：投资者「fixate」在利润表底线，分不清应计和现金。高应计股票被买贵，随后一年回报更差。Xie (2001) 说错价主要来自 abnormal / discretionary accruals。这不是 Mishkin 检验复刻——本篇<strong>主结果不用 Mishkin、也不做 Fama–MacBeth 截面、也不报 hedge portfolio alpha</strong>。他们用两段回报：公告两日市场模型 CAR，以及公告后第 11 到第 251 日相对 5×5 size–BM 组合的 buy-and-hold abnormal return。</p>
+  <p>作者为什么偏要教应计，而不是复利、通胀、分散化：第一，accrual anomaly 被 Fama and French (2006/2008 一带) 等列为最顽固的 anomaly 之一；第二，它比「基础金融概念」更难，正好测教育能不能抬高认知；第三，读懂应计本身就要较高认知能力（Collins et al., 2003）。</p>
+  <p>正确给应计定价，他们拆成两步昂贵的认知过程：（1）<strong>conceptual</strong>——理解应计和现金对未来盈余含义不同；（2）<strong>methodological</strong>——会用公式和模型估计应计水平和质量。后面 T1 / T2 就是按这两步拆的。</p>
+</article>
+
+<article id="s3">
+  <h2>3. 制度 / 信息环境：中国和美国一起做</h2>
+  <p>美国：最大发达市场，监管严，机构多。中国：最大新兴市场、市值第二，监管和执法更松，散户主导。他们引 Titman, Wei, and Zhao (2021)：中国大约 <strong>90% 的日成交由散户驱动，其中约三分之一没有高中学历</strong>。两边制度差这么大，如果结果同号，他们用来撑 external validity。</p>
+  <p>渠道是社交媒体，不是证监会投教基地、也不是券商 APP 弹窗。中国：<strong>微博、雪球、东方财富股吧</strong>。美国：<strong>Twitter、StockTwits</strong>。微博对标 Twitter，雪球对标 StockTwits，股吧是最大股票论坛。选择理由：Miller and Skinner (2015) 一类文献认为社交媒体已经是投资者信息源；他们还点了 2021 年 GameStop / AMC。</p>
+  <p>实验年份是 <strong>2020 全年</strong>（中国实际操作在 <strong>2020 年 1–5 月</strong>，A 股年报法定披露窗；美国覆盖财政年度结束于 1–5 月和 6–12 月的公司，分别公告 2019 / 2020 年报）。COVID 冲击叠在实验上，所以后面主回归加了<strong>公告月份 fixed effects</strong>。</p>
+</article>
+
+<article id="s4">
+  <h2>4. 教材：网站、动画、按股票定制的 spreadsheet</h2>
+  <p>域名 <code>http://www.financial-education-hub.com</code>，每只股票一页，中文对 A 股、英文对美股。伦理审查：大学 IRB，文号 <code>EC068/1920</code>。</p>
+  <h3>Conceptual knowledge（所有股票同一篇）</h3>
+  <p>Internet Appendix 1.1。开头有 highlight 和短例子，然后七块：定义、会计为什么用应计、应计和现金流实现的关系、对未来业绩的含义（低 persistence）、什么因素让 persistence 更低、高应计之后盈利差的其他原因、总结，外加参考文献。正文上方嵌了一段把文章重讲一遍的 <strong>anime video</strong>。</p>
+  <h3>Methodological knowledge（每只股票不同）</h3>
+  <p>Internet Appendix 1.2–1.3。页上可以跳回概念文。核心是一个 spreadsheet：历史数据已经填好，读者要自己键入最新公告数字（流动资产、流动负债、现金、流动负债里的有息债、总资产、经营利润、经营现金流），算出应计、normal / abnormal accruals。两种 abnormal 模型写在脚注：Dechow and Dichev (2002)（营运资本应计对过去/当期/未来现金流回归）和 Kothari, Leone, and Wasley (2005)（总应计对 1/Assets、ΔSales、PPE、ROA 回归）。输出从 2009 年起的盈余–应计折线、当年 vs 过去十年均值、当年 abnormal 及十年波动，以及行业和市场分位。</p>
+  <p>社交帖是把上述内容缩成短文，带超链接。股吧不允许超链接、但不限字数，所以股吧直接贴全文。为防平台判重复，每条帖子都改写过。</p>
+</article>
+
+<article id="s5">
+  <h2>5. 实验设计：四个随机组，不是投资者报名</h2>
+  <div class="box">
+    <h3>先停一下：处理单位是股票，不是人</h3>
+    <p>本科课里的 RCT 常常是「随机抽人吃药」。这篇随机的是<strong>股票</strong>。帖子打到该股票的 cashtag / 标签页（美股 <code>$AAPL</code> 那种）。谁正好刷到这只股票的时间线，谁就被曝光。作者没有、也不能保证「只有 naïve 散户看见」或「看见的人真的读完」。</p>
+    <p>所以后文的 Treat 是「这只股票的标签页被灌了教材」，不是「持有这只股票的投资者被随机抽中上课」。谁点开、谁评论，是 selection，不是 randomization 本身。</p>
+  </div>
+  <h3>分层随机</h3>
+  <p>先按 2018 年 ROA 在交易所内排序：中国上交所 / 深交所，美国 NYSE / Nasdaq / Amex。每隔四只分进一个组。用 ROA 分层，是因为盈余是他们最想平衡的东西。初始实验样本：中国 2,308，美国 2,547。每组中国 577；美国 T1/T2/C 各 637，S 636。</p>
+  <table>
+    <tr><th>组</th><th>帖子内容</th><th>作者拿它干什么</th></tr>
+    <tr><td>T1</td><td>即将出财报 + conceptual + 类型 1 链接</td><td>只教概念</td></tr>
+    <tr><td>T2</td><td>即将出财报 + conceptual + methodological + 两类链接</td><td>概念+方法；与 T1 的差 = 方法的增量</td></tr>
+    <tr><td>C（control / placebo）</td><td>只贴即将出财报</td><td>主对照。T−C 的差被解释为「教材」，不是「有人在这只股票标签页说话」</td></tr>
+    <tr><td>S（comparison）</td><td>完全不干预</td><td>只用来验证 2020 年 anomaly 还在；不进主回归</td></tr>
+  </table>
+  <p>例子：可口可乐（文中 ticker COKE）在 T2，有 <code>/1/COKE</code> 和 <code>/2/COKE</code>；Google（GOOG）在 T1，只有 <code>/1/GOOG</code>。C 和 S 没有页面。</p>
+  <h3>时间线</h3>
+  <p>盈余公告日前后 <strong>19 日窗</strong>。计划：公告前 7 帖、当天 1 帖、之后 7 帖，每平台每公司 15 帖。平台限流后改成：股吧隔日（11 帖）、雪球每三日（5 帖）、StockTwits 每五日（3 帖）；Twitter 和微博不减。中国公告日来自巨潮（cninf）；美国来自 Nasdaq.com 和 investing.com。</p>
+  <p>账号：每个平台三类虚构名账号，<strong>一类账号只服务一个组</strong>，避免关注者时间线里混到 T 和 C。另外，只有当自己上一帖已经被埋掉（标签页最近 20 条没有自己的，或不在第一页）才发新帖，减少无意义重复。</p>
+</article>
+
+<article id="s6">
+  <h2>6. 样本怎么筛掉，读没人读：Appendix 1、Table 1–2</h2>
+  <h3>中国（Appendix 1 Panel A）</h3>
+  <p>2018 年末上市 3,689 → 删 B 股 99 → 删金融和房地产（CSRC J、K）317 → 2009–2018 财务观测 ≤3 条（Dechow–Dichev 至少要 4 期）1,062 → 2018 无交易 2 → 实验样本 2,308。2020 年退市/没年报 9，停牌 15。分析样本 <strong>2,284 = S 573 + C 573 + T1 569 + T2 569</strong>。</p>
+  <h3>美国（Appendix 1 Panel B）</h3>
+  <p>CRSP/Compustat 2018 年末 5,320 → 非 active（他们写 COSTAT=A）127 → SIC 6000–6999 金融地产 1,508 → 历史不足 1,093 → 2018 无交易 45 → 2,547。2020 退市/没年报 108，停牌 52。分析样本 <strong>2,387 = S 595 + C 594 + T1 599 + T2 599</strong>。</p>
+  <h3>Table 1 随机化平衡（实验前一年）</h3>
+  <p>比的是组间均值：ln(市值)、杠杆、MB、ROA、现金流/资产、现金/资产、营运资本应计、总应计、AccrualsDD、AccrualsKLW。中国 Panel A：T1−C、T2−C、T2−T1 的 p 值全部很大（例如 MV 的 T1−C 差 −0.06，p=0.35）。美国同样。作者的话：随机化有效。这是 RCT 的第一张「体检单」——如果这里已经不平衡，后面 Treat×Accruals 可能只是「本来就更小/更亏的公司」。</p>
+  <h3>Table 2 曝光强度</h3>
+  <p>中国合计 54,734 帖，次日阅读 26,834,089，评论 13,060，转发 13,704，赞 808（仅雪球+微博），收藏 392（仅雪球）。每股大约 32 次沟通、15,000 阅读。美国 28,429 帖，Twitter 阅读 3,397,437（StockTwits 不给阅读数），评论/回复 2,680（表 B1 合计写成 2,690，正文 2,680），转发 2,321，赞 3,937。每股约 15 帖、Twitter 1,800 阅读。作者把中美阅读量差距归因于中国散户更多。</p>
+  <p>组间阅读并非实验操纵的一部分：C 组中国每股阅读 15,767，T1 16,152，T2 14,776，同一量级。C 也被「即将出财报」刷了曝光，所以主对照不是「有人说话 vs 沉默」，是「说话里有没有应计教材」。</p>
+</article>
+
+<article id="s7">
+  <h2>7. Identification：比谁，怕什么</h2>
+  <p><strong>在比谁。</strong> 主样本是 T1∪T2 对 C（中国 N=1,711，美国短窗 N=1,792）。S 不进方程 (1)。识别来自股票层面随机化：给定应计水平，treatment 股票的公告回报 / 随后 BHAR 是否不同于 control。作者把这写成带交互的回归，形态像 DID（Treat × Accruals），但时间维不是「实验前 vs 后」——短窗只有 2020 这次公告。真正的「实验前」放在 Table 4 Panel A 的 2013–2018 placebo 面板。</p>
+  <p>为什么这能叫「financial knowledge 对定价效率的因果」：随机化切断了「爱学习的投资者选爱有效的股票」这类 selection。Control 也发了即将公告的提醒，部分吸收「标签页突然变热闹」的 attention。</p>
+  <h3>作者自己写的威胁</h3>
+  <ul>
+    <li><strong>Attention 而不是 education。</strong> 也许帖子只是叫醒本来就会算应计的人。作者反驳三点：若只是注意力，长期 anomaly 早该自己修（注意力不会永远缺）；T2 相对 T1 在长期应有增量，纯注意力解释不了「方法材料多出来的那一截」；他们后面用阅读、评论、点击网页做强度检验。</li>
+    <li><strong>Spillover / contamination。</strong> 同一投资者可能同时看 treatment 和 control 的标签页，知识会漏到 C。作者承认，并说这会<strong>低估</strong> treatment effect，不翻号。账号隔离只能减少「关注作者主页时混看历史帖」，挡不住投资者自己跨股票浏览。</li>
+    <li><strong>谁点开是 selection。</strong> Reads / CSLS / WebView 不是随机的。高阅读股票可能本来就是散户多、话题多。Table 7 是异质性，不是第二层随机。</li>
+    <li><strong>实验窗叠在盈余公告上。</strong> 这是设计，不是事故：他们就要在应计数字被揭示的那几天灌知识。代价是 COVID 2020、行业新闻、分析师修订都挤在同一个月，所以加 industry FE 和 announcement-month FE，并控制 SUE。</li>
+    <li><strong>平台之间互相看见。</strong> 同一只股票可能在微博和股吧同时被贴。这不是污染（同一 treatment 状态），但阅读量加总会重复计数同一人。</li>
+  </ul>
+  <p>表注只写 t-statistics in brackets，<strong>没有写 clustering</strong>。本科课里你该默认担心：同一行业、同一公告月、同一公司跨年（placebo 面板）的残差相关。作者没在我读到的表注里处理这件事。JAE 版本会不会改，不知道。</p>
+</article>
+
+<article id="s8">
+  <h2>8. 主方程：每一项在干什么</h2>
+  <p>正文方程 (1)（PDF 公式因排版丢了下标，按文字还原）：</p>
+  <div class="eq">AR<sub>i,t</sub> = β<sub>0</sub> + β<sub>1</sub> Treat<sub>i</sub> × Accruals<sub>i</sub> (或 AccrualsUD<sub>i</sub>)
+         + β<sub>2</sub> Treat<sub>i</sub> + β<sub>3</sub> Accruals<sub>i</sub> (或 AccrualsUD<sub>i</sub>)
+         + β<sub>4</sub> SUE<sub>i</sub> + Industry FE + Month FE + ε<sub>i,t</sub></div>
+  <p>谁比谁：<code>Treat=1</code> 若在 T1 或 T2，<code>=0</code> 若在 C。拆知识类型时，把 Treat 换成 T1（T1 vs C）或 T2（T2 vs C）。</p>
+  <ul>
+    <li><code>AR</code>：短窗是 <strong>CAR(0,1)</strong>，市场模型累计异常回报，日 0 = 盈余公告日。长窗是 <strong>CAR(11,251)</strong>：日 11 到日 251 的 buy-and-hold 减去同期 5×5 size–BM 组合回报。从日 11 起，因为他们日 10 停帖，要看 treatment 停了以后价格还怎么走。</li>
+    <li><code>Accruals</code>（跟 Sloan / Richardson / Chan 的总应计口径，按他们自己的句子）：Δ流动资产 − Δ现金 − Δ流动负债 + Δ短期债务 + 折旧，除以总资产。注意他们写的是 <em>plus depreciation</em>；经典 Sloan 里折旧通常是减项。本稿按原文，不改符号。</li>
+    <li><code>AccrualsUD</code>（unexpected discretionary accruals）：当年 discretionary accruals 减上年。Discretionary accruals = 在行业-年里把 Accruals 对 1/Assets、ΔSales/Assets、PPE/Assets、ROA 回归的残差（Kothari et al., 2005）。</li>
+    <li><code>SUE</code>：实际 EPS − 过去一年分析师一致预期，除以公告前股价；没有分析师时用上年 EPS（Louis et al., 2008）。</li>
+    <li>Industry FE：行业里本来反应就不同。Month FE：2020 年不同月份的疫情/流动性。</li>
+  </ul>
+  <p>怎么读系数，先记对照：</p>
+  <ul>
+    <li>β<sub>3</sub>：control 股票上，应计再高一单位，回报变多少。若投资者仍 fixate，短窗 β<sub>3</sub>&gt;0，长窗 β<sub>3</sub>&lt;0。</li>
+    <li>β<sub>1</sub>：treatment 相对 control，这条斜率挪了多少。<strong>短窗我们希望 β<sub>1</sub>&lt;0</strong>（高应计不再被追捧），<strong>长窗希望 β<sub>1</sub>&gt;0</strong>（少反转）。</li>
+    <li>β<sub>2</sub>：应计为 0 时 treatment 的水平移动。作者后来说显著为负可能表示教材让投资者看到了 Accruals / AccrualsUD 没抓住的盈余质量。</li>
+  </ul>
+  <p>Appendix 2 里主回归样本的标准差，后面「一标准差」都用这些：中国 Accruals 0.09、AccrualsUD 0.13；美国 Accruals 0.07、AccrualsUD 0.13（S 组美国 AccrualsUD 的 SD 是 0.14）。</p>
+</article>
+
+<article id="s9">
+  <h2>9. Table 3：S 组——2020 年 anomaly 还在</h2>
+  <p>样本只有 comparison group S（中国 573，美国 595）。没有人贴帖。问：高应计是不是仍被买贵、随后一年是否仍差。</p>
+  <p>Panel A，CAR(0,1)。中国 Accruals <strong>0.060***</strong>（t=2.73）：应计高 0.09（一标准差），两日 CAR 大约高 <strong>0.5%</strong>（0.09×0.06）。AccrualsUD <strong>0.031*</strong>（t=1.95）→ 约 <strong>0.4%</strong>（0.13×0.03）。SUE <strong>0.393**</strong>，一标准差 SUE（0.01）约 <strong>0.4%</strong>。作者的人话：投资者几乎不区分应计和盈余惊喜。美国 Accruals <strong>0.150*</strong>（t=1.74）→ 约 <strong>1.1%</strong>（0.07×0.15），和 SUE 一标准差效应（0.03×0.38≈1.1%）差不多。美国 AccrualsUD 是 <strong>−0.039</strong>（不显著）：美股投资者对「意外的操纵性应计」没有中国那样的正反应。</p>
+  <p>Panel B，CAR(11,251)。中国 Accruals <strong>−0.583**</strong> → 随后一年约 <strong>−5.3%</strong>；AccrualsUD <strong>−0.446***</strong> → 约 <strong>−5.8%</strong>。美国 Accruals <strong>−0.797**</strong> → 约 <strong>−5.6%</strong>；AccrualsUD <strong>−0.253</strong>（不显著）→ 文中写约 −3.5%。SUE 长窗两侧都不显著。</p>
+  <p>作者总结：两边都有 mispricing，中国短窗对 AccrualsUD 的正反应更清楚。S 组只证明「实验年 anomaly 没死」，不能证明教育有效——那是 T vs C 的事。</p>
+</article>
+
+<article id="s10">
+  <h2>10. Figures 1–2 和 Table 4：公告窗主结果</h2>
+  <h3>图</h3>
+  <p>高应计 = AccrualsUD 在全样本上三分位（他们图注写 above the 60th percentile）。中国 Figure 1：实验前 T1/T2/C 平行。Control 在日 0–1 大约 <strong>+2%</strong>，整个 19 日窗大约 <strong>+5%</strong>。T1 两日接近 0，全窗约 0%；T2 全窗约 <strong>−1%</strong>。美国 Figure 2：实验前平行；C 全窗约 <strong>+1.5%</strong>，T1 约 <strong>−1%</strong>，T2 约 <strong>−1.5%</strong>。这是「高应计股票被随机贴教材之后，公告热情被按下去」的图示，还不是回归。</p>
+  <h3>Table 4 Panel A：2013–2018 placebo</h3>
+  <p>把后来的 Treat 标签贴回实验前六年的年度面板（中国 10,047；美国 9,097；加 year FE）。Treat×Accruals 中国 <strong>−0.001</strong>（t=−0.05），美国 <strong>−0.009</strong>（t=−0.42）；Treat×AccrualsUD 几乎是 0。Accruals 主效应仍为正（中国 0.056***，美国 0.029*）——anomaly 在实验前就在，只是当时还没有「未来的教材标签」。作者说 t 都小于 0.5，treatment 在事前不可预测。这是 RCT 的第二张体检单。</p>
+  <h3>Table 4 Panel B：2020 实验年</h3>
+  <p>中国 (1) Treat×Accruals <strong>−0.030***</strong>（t=−3.47），Accruals <strong>0.020***</strong>。人话：control 上应计仍被加分；treatment 上斜率被减掉 0.03，一标准差应计相对 control 少大约 <strong>0.3%</strong> 的两日 CAR（0.09×0.03）。(2) Treat×AccrualsUD <strong>−0.058***</strong>（t=−4.00），AccrualsUD <strong>0.059***</strong>：两边几乎抵消，treatment 投资者不再给意外操纵性应计加分。</p>
+  <p>美国 (3) Treat×Accruals <strong>−0.256***</strong>（t=−4.06），Accruals 本身 −0.008（不显著）。相对 control，一标准差应计少大约 <strong>1.8%</strong> 两日 CAR（0.07×0.26）。(4) Treat×AccrualsUD <strong>−0.058**</strong>（t=−1.97）→ 约 <strong>0.8%</strong>（0.13×0.06）。</p>
+  <p>Treat 单独项中国两列都是约 <strong>−1.0 到 −1.1 个百分点</strong>（−0.011***、−0.009***），美国 (3) −0.011**。作者：教材可能让人看到了两个应计度量没抓住的质量。</p>
+  <p>SUE 在实验年很强（中国约 0.45–0.47，美国约 0.55–0.59），说明回归没有把「就是盈余惊喜」误读成应计。</p>
+</article>
+
+<article id="s11">
+  <h2>11. Table 5：随后一年，反转变浅</h2>
+  <p>因变量换成 CAR(11,251)。逻辑：如果公告日已经把高应计的溢价拆掉，后面就不该再大跌。</p>
+  <p>中国 (1) Accruals <strong>−0.347***</strong>，Treat×Accruals <strong>0.278***</strong>（t=3.21）。Control：一标准差应计随后一年大约 <strong>−3.2%</strong>（文中 0.09×0.35）。Treatment：−0.09×(0.347−0.278) ≈ <strong>−0.6%</strong>。(2) AccrualsUD <strong>−0.628***</strong>，Treat×AccrualsUD <strong>0.844***</strong>。Control 约 <strong>−8.2%</strong>（0.13×0.63）；treatment 交互把回报往上抬约 <strong>10.9%</strong>（0.13×0.84），负关系在 treatment 上消失甚至翻号。</p>
+  <p>美国 (3) Accruals <strong>−2.075***</strong>，Treat×Accruals <strong>1.374***</strong>（t=4.42）。Control 一标准差约 <strong>−14.6%</strong>（0.07×2.08），treatment 降到约 <strong>−4.9%</strong>（0.07×(2.08−1.37)）。(4) AccrualsUD <strong>−0.594***</strong>，Treat×AccrualsUD <strong>0.689***</strong>：control 约 −7.7%，treatment 把回报抬约 9.0%。</p>
+  <p>美国长窗 14.6% 这个数很大，2020–2021 美股横截面本来就吵。作者用 size–BM 调整，但没有报因子模型、也没有把 COVID 行业轮动再拆一层。读的时候把它当成「他们表里的数」，不要直接当成可交易 alpha。</p>
+  <p>Treat 水平项长窗中国显著为负（−0.073***、−0.094***）。作者猜教育对<strong>后续年份</strong>新公告的应计也还有折扣，并说他们用 2020 年应计（实验次年）重跑短窗，高应计 treatment 继续折价（中国 T1 和 T2 都显著，美国主要是 T2）；<strong>这组数写「备索」，表里没有</strong>。</p>
+</article>
+
+<article id="s12">
+  <h2>12. Table 6：概念够不够，还是必须加上方法</h2>
+  <p>把 Treat 拆成 T1 vs C 和 T2 vs C。每列 N 中国 1,142、美国约 1,193。底部有 T1 与 T2 交互系数相等的 p 值。</p>
+  <h3>Panel A 短窗 CAR(0,1)</h3>
+  <p>中国 Accruals：T1×Accruals <strong>−0.041***</strong>，T2×Accruals <strong>−0.030***</strong>，差的 p=<strong>0.2115</strong>。AccrualsUD：T1 <strong>−0.041**</strong>，T2 <strong>−0.072***</strong>，p=<strong>0.3505</strong>。美国 Accruals：T1 <strong>−0.152**</strong>，T2 <strong>−0.324***</strong>，p=<strong>0.1609</strong>；AccrualsUD：T1 <strong>−0.069*</strong>，T2 <strong>−0.092**</strong>，p=<strong>0.3705</strong>。点估计上 T2 常常更负，但短窗统计上分不开。</p>
+  <p>作者的解释：方法材料更费时间。Figure 1–2 里 T2 在日 1 之后还在往下修，19 日窗结束时修得更干净——两日 CAR 抓不住。</p>
+  <h3>Panel B 长窗 CAR(11,251)</h3>
+  <p>这里增量出现了。中国 Accruals：T1×Accruals <strong>−0.139</strong>（不显著），T2×Accruals <strong>0.380***</strong>，p=<strong>0.0140</strong>。AccrualsUD：T1 <strong>0.734***</strong>，T2 <strong>1.124***</strong>，p=<strong>0.0915</strong>。美国 Accruals：T1 <strong>0.620*</strong>，T2 <strong>1.862***</strong>，p=<strong>0.0547</strong>。AccrualsUD：T1 0.598*** vs T2 0.753***，p=<strong>0.3360</strong>（分不开）。</p>
+  <p>人话：公告这两天，讲清楚「应计不是现金」就够把热情按下去；要把随后一年的反转压住，还得让人会算。T2 不是「多发了几条帖」，而是多给了公式和 spreadsheet。</p>
+</article>
+
+<article id="s13">
+  <h2>13. Table 7–8 和 Appendix 3–4：谁学得进</h2>
+  <h3>Table 7 参与强度（因变量仍是 CAR(0,1)，只报 AccrualsUD）</h3>
+  <p>三个哑变量。Reads：该股所有平台阅读合计是否高于样本中位数。CSLS：评论/回复高于中位数，或任意平台被转、赞、藏。WebView：类型 1+2 网页点击落在 treatment 的最高五分位（所以 control 上全是 0；Treat×WebView 和 AccrualsUD×WebView 因共线被省略）。</p>
+  <p>中国三重交互全部显著为负：Treat×AccrualsUD×Reads <strong>−0.147***</strong>（t=−4.12），×CSLS <strong>−0.201***</strong>（t=−5.59），×WebView <strong>−0.124***</strong>（t=−4.59）。美国：×Reads <strong>−0.109*</strong>，×CSLS <strong>−0.039</strong>（不显著；作者怪美国平台没有「收藏」、engagement 变异更小），×WebView <strong>−0.661***</strong>（t=−4.42）。</p>
+  <p>警告：这是「读得更多的股票，折扣更大」，不是「随机多推给一些人」。高阅读可能是热门股。它和「教材没人看就没有效应」的机制一致，但不是第二层 RCT。</p>
+  <h3>Appendix 3：强度 × T1/T2</h3>
+  <p>中国：Reads / CSLS / WebView 加强 T1 和 T2，两者短窗仍分不开。美国：Reads 和 WebView 加强的是 T2 不是 T1（Reads 上 T2×AccrualsUD×Reads = −0.208***，T1 为 −0.024）；WebView 上 T2 = −0.676***，T1 = +0.137（不显著）。作者：方法知识的短窗增量，只在「真的花力气」的美股受众里出现；中国投资者整体更不 sophisticated，加码学习也搬不动方法材料的短窗效应。</p>
+  <h3>Table 8 散户</h3>
+  <p>RI = 1 − 机构持股 / 流通股本。中国 Treat×AccrualsUD×RI <strong>−0.230*</strong>（t=−1.93）：散户越多，教育越能在公告日按下高应计。美国 −0.084，不显著。Appendix 2：中国主样本 RI 均值 0.92（P50=0.99），美国均值 0.49。中国几乎是全散户市场，美国横切还有空间，但三重交互没过显著。</p>
+  <h3>Appendix 4：散户 × T1/T2</h3>
+  <p>中国：T1×AccrualsUD×RI <strong>−0.365**</strong>，T2×… <strong>−0.174</strong>（不显著）。美国正好反过来：T1 0.024，T2 <strong>−0.248**</strong>。作者的故事：中国散户认知约束更紧，「只讲概念」比「概念+方法」更有效（more is less）；美国散户相对更能吃方法材料。这是他们连接 Table 6 短窗「方法没增量」和 Table 7「美国高参与才有 T2 增量」的那座桥。</p>
+</article>
+
+<article id="s14">
+  <h2>14. Robustness：作者做了、但没列表</h2>
+  <p>正文 5.3：「为省篇幅不列表，备索」。三组：</p>
+  <ul>
+    <li>短窗改成 CAR(0,2)、CAR(−5,5)、CAR(−10,10)，「类似」。</li>
+    <li>Accruals / AccrualsUD 改成十分位秩，防 outliers，「稳健」。</li>
+    <li>丢掉公告月 FE 或行业 FE；再控制实验前一季的规模、ROA、现金流、股票收益和波动，「稳健」。</li>
+  </ul>
+  <p>没有：排除 2020 年 3 月熔断、按平台拆开、把阅读量当工具变量、投资者层面面板、Mishkin、对冲组合。JAE 会不会补，本 PDF 看不到。</p>
+</article>
+
+<article id="s15">
+  <h2>15. Real effect：方程 (2)，Table 9–10</h2>
+  <p>故事接到 Bhojraj et al. (2009)：经理用应计搏短期价格，是因为买家看不懂。如果教育拆掉了「高应计 → 短期涨」，经理还要不要做 earnings management？</p>
+  <div class="eq">DA<sub>i,q</sub> = β<sub>0</sub> + β<sub>1</sub> Treat<sub>i</sub> × Post<sub>q</sub> + β<sub>2</sub> Post<sub>q</sub>
+           + β<sub>3</sub> DA<sub>i,q−1</sub> + Firm FE + Industry×Year-Quarter FE + ε</div>
+  <p>DA 是季度 discretionary accruals：在行业-年-季里把总应计对 1/Assets、ΔSales/Assets、PPE/Assets、ROA 回归的残差。Post=1 表示实验之后的季度。窗：<strong>2018Q1–2020Q4</strong>（大约实验后 4 季、实验前 8 季）。Treat 被 firm FE 吃掉。这是标准公司级 DID：treatment 公司相对 control 公司，实验后 DA 变了多少。</p>
+  <p>怕什么：2020 年所有公司的应计都可能因疫情改写——industry×year-quarter FE 是在比「同一行业同一季里，被随机贴过教材的公司 vs 没有」。还怕 DA 自己有序列相关，所以加滞后项（中国约 −0.187***，美国约 −0.202***）。</p>
+  <h3>Table 9 Panel A</h3>
+  <p>Treat×Post 中国 <strong>−0.004**</strong>（t=−2.51），美国 <strong>−0.002**</strong>（t=−2.30）。N 19,794 / 21,476。作者：这是季度 DA 标准差的大约 <strong>8%（中国 SD=0.05）和 5%（美国 SD=0.04）</strong>。Appendix 5 Panel A（文中叙述）：T1 和 T2 都显著，幅度相近——real effect 主要由概念知识驱动，和「经理看的是公告日回报有没有被按下去」一致。</p>
+  <h3>Table 9 Panel B：是不是那些「真的被教育打动」的公司</h3>
+  <p>EduEffect=1 若该公司 Accruals 高于中位数<strong>且</strong> CAR(0,1) 低于中位数（高应计却没涨）。Treat×Post×EduEffect 中国 <strong>−0.009***</strong>，美国 <strong>−0.005***</strong>；Treat×Post 本身变得不显著（−0.002、−0.001）。作者还说只在 treatment 内部比，模式一样（系数未进主表）。这是「价格被纠正 → 经理少做 DA」的关联，不是对经理做的第二场随机实验。</p>
+  <h3>Table 10：散户多、机构监督弱</h3>
+  <p>Institution = 三个 0/1 之和：机构持股高于中位数、分析师覆盖高于中位数、四大审计。RI 和 Institution 用实验前一年（表注有一处写成「实验当年」，正文 6.3 写 ex-ante）。</p>
+  <p>Treat×Post×RI：中国 <strong>−0.103*</strong>，美国 <strong>−0.004*</strong>——散户越多，实验后 DA 降得越多。Treat×Post×Institution：中国 <strong>0.006**</strong>，美国 <strong>0.003**</strong>——机构监督越强，real effect 越小（交互为正，往回抵消负的 Treat×Post）。作者：给散户知识，可以部分替代正式监督。</p>
+  <p>Table 10 表注把窗写成 2018Q1–<strong>2020Q3</strong>，Table 9 是到 2020Q4。同一 PDF 两处不一致。N 仍是 19,794 / 21,476。不要假装统一。</p>
+</article>
+
+<article id="s16">
+  <h2>16. 结论、外推、对你做 A 股披露实证</h2>
+  <h3>作者收束</h3>
+  <p>社交平台上的应计教育，在中美都降低了 treatment 相对 control 的 accrual mispricing；概念+方法在长期最强；效应在参与更深、sophisticated 更低的股票上更大；公司随后少做 discretionary accruals，尤其零售持股高、外部监督弱、而且公告日已经被教育按过价格的那些。</p>
+  <p>政策句：OECD 说大型经济体里只有不到 61% 的成人有基础金融知识和使用；全球投教项目效果有争议（Kaiser et al., 2021 vs Lusardi–Mitchell）。他们说社交媒体投教可以同时改善个人知识和市场结果。贡献上还挂了 McLean and Pontiff (2016)：学术发现 anomaly 之后，还需要把知识散出去，价格才会更有效；并把「有限知识」加进 anomaly 的解释菜单（风险、套利成本、有限注意、补充披露不够之外）。</p>
+  <h3>External validity（不要放大）</h3>
+  <ul>
+    <li>教的是<strong>一个</strong>会计概念，不是「金融知识」这个范畴。换成商誉、租赁、研发资本化，没证据。</li>
+    <li>处理是「标签页被灌教材」，不是「随机提高投资者的 literacy 测验分」。</li>
+    <li>2020 + 盈余公告窗 + 作者高强度发帖（中国每股约 32 次/19 天），不是监管机构一年发两篇投教软文。</li>
+    <li>中美同号是他们的 generalizability 论据，但机制切片不同：中国短窗更吃概念和散户，美国更吃方法材料和网页点击。</li>
+    <li>JAE 正式摘要没再强调 real effect。若发表稿删了或改了 Table 9–10，不要把 WP 的 −0.004 / −0.002 说成 JAE 主结果。</li>
+  </ul>
+  <h3>对 Dongjie 的 A 股披露工作（短，不夸大）</h3>
+  <p>你日常是观测数据：问询函、年报语调、业绩预告、社交媒体转发。识别靠冲击、匹配、公司 FE。这篇提醒三件具体的事。</p>
+  <p>第一，<strong>「信息被披露了」和「受众会用这个会计项目」不是一回事</strong>。Sloan 的世界里，应计已经印在财报第一页，市场仍 fixate。你若写「披露质量提高 → 定价更好」，这篇的 RCT 说：有时缺的不是文本，是 audience 的 conceptual + methodological 工具。这不能反过来说你应该上社交平台去教应计——那是他们的实验，不是你的设定。</p>
+  <p>第二，<strong>control 也很讲究</strong>。他们不怕「有人在标签页说话」，所以 C 组同样刷「即将出年报」。A 股论文里，若处理是监管发声或媒体报道，对照至少要能挡住「注意力被叫醒」。他们仍怕 spillover，并老实写低估。</p>
+  <p>第三，<strong>real effect 的链是价格先变、经理再变</strong>。Table 9B 用「高应计 + 低 CAR」当 EduEffect，不是另一次随机。你写「披露监管降低盈余管理」，要想清楚中间有没有一条可看见的价格/关注通道；没有的话，别把这条 paper 的 DID 系数搬进你的 story。</p>
+  <p>能借鉴的设计细节：按交易所×ROA 分层随机（或至少平衡盈余）；把概念和处理「怎么算」分开；用平台参与当强度而不是当识别；中美对照提醒你——A 股 RI 均值 0.92 这种市场，教材越复杂越可能 more is less。</p>
+  <p>不能借鉴的：把「我们发了微博」写成和这篇同级的 RCT；这篇有 IRB、虚构账号隔离、19 日窗、两组知识、S 组安慰剂市场。观测研究没有这些，就还是观测研究。</p>
+</article>
+
+<div class="box">
+  <h3>表与数字对照（March 2022 WP）</h3>
+  <table>
+    <tr><th>对象</th><th>本稿用到的数字</th></tr>
+    <tr><td>分析样本</td><td>中国 2,284；美国 2,387。主回归 T+C：1,711 / 1,792</td></tr>
+    <tr><td>曝光</td><td>中国 54,734 帖 / 2,683 万阅读；美国 28,429 帖 / Twitter 340 万阅读</td></tr>
+    <tr><td>Table 3 S 组</td><td>中国 Accruals→CAR(0,1) 0.060***；→CAR(11,251) −0.583**</td></tr>
+    <tr><td>Table 4B</td><td>Treat×Accruals 中国 −0.030***，美国 −0.256***（约 −0.3% / −1.8% per SD）</td></tr>
+    <tr><td>Table 5</td><td>Treat×Accruals 中国 0.278***，美国 1.374***；control 每 SD 长窗 −3.2% / −14.6%</td></tr>
+    <tr><td>Table 6B</td><td>中国 T2 vs T1 on Accruals p=0.014；美国 p=0.055</td></tr>
+    <tr><td>Table 9A</td><td>Treat×Post −0.004** / −0.002**（约 0.08 / 0.05 个 SD）</td></tr>
+    <tr><td>没拿到的</td><td>JAE 101935 全部表格；SSRN 2023-10 修订；Internet Appendix 原文页；2020 年报应计的「备索」回归；5.3 稳健性的系数</td></tr>
+  </table>
+</div>
+
+<footer>
+  精读依据：ABFER March 2022 working paper PDF（69 页），不是 JAE 校样。JAE 条目：Wong, S. M. L., Y. Xue, B. Zhang, and X. Zhao. 2026. “Knowledge is Power: A Field Experiment in the Chinese and US Stock Markets.” Journal of Accounting and Economics, 101935。<br>
+  文件路径：/workspace/research/daily-papers/reads/jeff-2026-08-24-p1.html
+</footer>
+</div>
+</body>
+</html>
