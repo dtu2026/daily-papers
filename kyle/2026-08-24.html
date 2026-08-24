@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-24</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-08-24">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月24日 · 第五期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇都在问同一件事：<strong>把信息做粗、把数据拿去卖、把零售抽走，市场会变好还是变坏。</strong> CSR 给个 A/B/C 分档反而逼出多投；交易所卖成交数据会把交易费压下来；Kyle 型大市场里零售越多价格越能聚信息；限价单堆出来的 depth 可能是排队外部性。和上周的披露时点、融券、市价单、flow trading 不重复。</p>
+  <p>读法照旧：先看「问了什么」和「主要结论」，再读「机制直觉」。Foucault–Maurin 的 PDF 本机拉不下，闭式没写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Jiang–Xiong：CSR 分档比全打开更能逼出过度投资</a> — 粗披露把外部性塞进阈值</li>
+      <li><a href="#p2">Foucault–Maurin：交易所一开卖成交数据，交易费会下来</a> — 封顶数据费可能改质量、却伤福利</li>
+      <li><a href="#p3">Khorrami–Thereze：大市场不能又流动又不聚信息</a> — 零售越多，价格越说话</li>
+      <li><a href="#p4">Dugast：书上深度越厚，等成交越久，福利越差</a> — 别把 depth 当作市场质量的充分统计</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Disclosure Standards for Corporate Social Responsibility</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Disclosure Standards for Corporate Social Responsibility" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Xu Jiang &amp; Yan Xiong · 2025年12月8日 · Duke / HKU</p>
+  <div class="tags">
+    <span class="tag">disclosure standard</span>
+    <span class="tag">CSR / ESG</span>
+    <span class="tag">real effects</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Xiong — <em>RFS</em> 2023「Secret and Overt Information Acquisition in Financial Markets」（with Yang）；<em>JFE</em> 2025「Information Sharing in Financial Markets」（with Goldstein &amp; Yang）。Jiang — <em>TAR</em> 2025「Disclosing Endogenous Cost Information」（二人合作）；<em>TAR</em> 2026「Transparency and Bank Liability Structure」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>监管该让公司把 CSR 投资拿出手册一项项数，还是只给一个 A–D 档？粗看似乎信息更少。他们让 CSR 投资<strong>内生</strong>，比三种标准：nondisclosure / full disclosure / discrete disclosure。</p>
+
+  <h3>设定</h3>
+  <p>连续企业，私人看到边际收益 α<sub>i</sub> ∼ U[L, 1]。投资 s<sub>i</sub> 不被直接看到，只有按政策认证的信息 I<sub>i</sub> 才会进利益相关方的猜想 ŝ<sub>i</sub> = E[s<sub>i</sub> | I<sub>i</sub>]。公司只在乎钱：</p>
+  <div class="eq">π<sub>i</sub> = α<sub>i</sub> ŝ<sub>i</sub> − s<sub>i</sub><sup>2</sup> / 2</div>
+  <p class="eq-note">人话：你赚的是「别人以为你投了多少」，不是你真投了多少。真投越多，成本越疼。没人看见，你就一分不买。</p>
+  <p>监管的目标是 Π = β ∫ s + (1−β) ∫ π。β 越大，越在乎 CSR 外部性，越不在乎公司赚不赚。</p>
+
+  <h3>三种标准下企业怎么投</h3>
+  <ul>
+    <li><strong>Nondisclosure</strong>：猜想不随 s 变，均衡 s = 0。市场均跌清。</li>
+    <li><strong>Full disclosure</strong>：ŝ = s，企业选 s<sup>F</sup> = α。投资对私人最优，但没把外部性算进去。</li>
+    <li><strong>Discrete disclosure</strong>：监管设阈值 δ。s &lt; δ 一无所有；s ≥ δ 只证明「High」。猜想只能是 0 或 δ，所以均衡投资只能是 {0, δ}。</li>
+  </ul>
+  <div class="eq">s<sup>D</sup> = δ  如果 α ≥ δ/2；  否则 s<sup>D</sup> = 0</div>
+  <p class="eq-note">人话：达不到阈值，多投一分都浪费，索性退回零。跨过阈值之后再多投，档位不变，也没必要。中间那批 α ∈ [δ/2, δ) 会<strong>往上拉</strong>到 δ——这就是过度投资。</p>
+
+  <h3>主要结论</h3>
+  <p>β 小（监管更在乎公司赚钱）选 full disclosure。β 大选 discrete：故意让一部分公司过度投，把外部性塞进去。他们给的数值例：L = 0.45、β = 1 时，discrete 比 full 的 Π 高约 25%。</p>
+  <p>反常静态：监管越在乎 CSR，<strong>阈值越该抬</strong>——更少人过关，但过关的人投得更猛。延伸里，多档和 censored disclosure（超阈值才数字公开）都严格优于单档和全披露。</p>
+
+  <h3>为什么值得看</h3>
+  <p>和董杰的 A 股披露对得上：异动公告「以公告为准」就是一种粗信号。这篇说，粗不一定是信息丢了——它可能在逼真实投资。含义是：若监管在乎的是外部性大小，不是公司私人最优，分档 / materiality 阈值是工具而不是偷懒。不要把「更细」直接写成更好。</p>
+  <p class="links"><a href="https://sites.duke.edu/xjiang/files/2025/12/CSR_disclosure.pdf">Duke 作者主页 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. The Price of Exchange Data</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. The Price of Exchange Data" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Thierry Foucault &amp; Vincent Maurin · 首稿 2026年7月 · HEC Paris · SSRN 7072038</p>
+  <div class="tags">
+    <span class="tag">market data</span>
+    <span class="tag">exchange design</span>
+    <span class="tag">two-sided pricing</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Foucault — <em>JF</em> 2016「News Trading and Speed」（with Hombert &amp; Roșu）；<em>JF</em> 2025「Equilibrium Data Mining and Data Abundance」（Dugast &amp; Foucault）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>交易所现在不光靠交易费赚钱，还卖成交数据。自家成交数据几乎是垄断品。他们问：平台费 + 数据费怎么一起定，成交量、数据质量、福利会怎么变。</p>
+
+  <h3>摘要里能确认的机制</h3>
+  <p>本机拉不到 PDF（SSRN 403，HAL 被防爬拦）。下面只写他们自己写在摘要里的三句，不补闭式。</p>
+  <ul>
+    <li>交易所同时卖两样东西：下单通道、交易活动生出来的 transaction data。</li>
+    <li><strong>开一个数据市场会把交易费压下来，成交量和福利上去。</strong>人话：数据收入越肥，就越能不靠交易费养活，交易费一下来单子就越多，数据本身也更肥。</li>
+    <li><strong>给数据费封顶，数据质量可能变好，福利反而下降。</strong>人话：禁了一个价格拉杆，交易所会改质量或把交易费抬回去。</li>
+  </ul>
+  <p>这和 Cespa–Foucault《Sale of Price Information by Exchanges》（<em>MS</em> 2014）不是同一篇。老篇说：赚钱的交易所会把行情卖贵，只让一部分人看到价，price discovery 变差。新篇的摘要向另一边倾：数据市场本身能把交易费压下来。闭式和均衡定价在 PDF 里，不编。</p>
+
+  <h3>为什么值得看</h3>
+  <p>A 股的 Level-2 / 逐笔、港股的行情费、美股 SIP vs 专有 feed，都是「交易费 vs 数据费」二元定价。若摘要站得住，拿管数据费不一定让市场更透明——交易所会换手段。等 PDF 下来再补闭式。</p>
+  <p class="links"><a href="https://thierryfoucault.com/working-papers/">Foucault 工作论文页</a> · <a href="https://papers.ssrn.com/abstract=7072038">SSRN 7072038</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Liquidity and Information Aggregation in Large Markets</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Liquidity and Information Aggregation in Large Markets" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Paymon Khorrami &amp; João Thereze · 2026年7月20日 · Duke Fuqua · FTG Boulder</p>
+  <div class="tags">
+    <span class="tag">Kyle</span>
+    <span class="tag">information aggregation</span>
+    <span class="tag">free entry</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Khorrami — <em>RFS</em> 2022「Commonality in Credit Spread Changes」；<em>JF</em> 2026「Dynamic Self-Fulfilling Fire Sales」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>Grossman–Stiglitz (1980) 说：价格若把事说清，就没人愿付钱去查，所以竞争市场聚不齐信息。这篇把 Kyle (1985) + 自由进入 + 平滑信息成本放在一起，问：<strong>大市场能不能把信息聚齐？</strong></p>
+
+  <h3>设定</h3>
+  <p>n 个风险中性战略交易者，信号 s<sub>i</sub> = v + ε<sub>i</sub>，精度 z<sub>i</sub> 花成本 c(z)，c(0)=0、c′(0)=χ ≥ 0。下市价单，做市商 p = E[v | Y]。自由进入等于 n → ∞：个人 z<sub>n</sub> → 0，但总量 n z<sub>n</sub> 可能不掉。</p>
+
+  <h3>核心机制</h3>
+  <p>第一单位精度的边际价值大约是</p>
+  <div class="eq">V′(0) ∝ (1 − I)<sup>2</sup> × L</div>
+  <p class="eq-note">人话：价格越准，私人信号越不值钱。要再有人去查，只能靠流动性 L 爆掉——下单不撕价，信号才值得买。</p>
+  <p>I = 1 当且仅当 χ = 0：第一丝信息白送，大市场就能把事说清。χ &gt; 0 时，I 由一个充分统计决定：</p>
+  <div class="eq">I / (1 − I)<sup>3</sup> = Γ，  Γ = (1/2) × (基础波动 × 零售波动) / χ<sup>2</sup></div>
+  <p class="eq-note">人话：基础越浑、零售越乱，越好藏单，信息租越肥，人就越愿查。</p>
+  <p>跟 NREE 的反差别在这：<strong>零售越多，流动性和信息量一起上去</strong>。NREE 里零售把 I 拉下去。这里多出一条流动性通道：零售把做市商的心放下，L 上去，信号更值钱。故此竞争市场<strong>不能又不聚信息又流动</strong>——不是 I=1 就是 L 有限。</p>
+
+  <h3>为什么值得看</h3>
+  <p>市场设计：把零售（零售）抽到网下 / wholesaler，NREE 会说上市价更准（像 Zhu 2014 的 dark pool）。这篇说相反：抽走噪音会伤流动性，也伤信息生产。A 股的网下组合、美股 PFOF，都可以按这个对照读。假设放开也成立：限价单 + CARA 只改 φ（信息泄漏比例），I 随噪声上去这条不变。</p>
+  <p class="links"><a href="https://papers.paymonkhorrami.com/Information_Aggregation_in_Financial_Markets.pdf">作者主页 PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Inefficient Market Depth</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Inefficient Market Depth" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jérôme Dugast · 2025年3月6日修订（初稿 2024年10月） · Université Paris Dauphine / ESSEC</p>
+  <div class="tags">
+    <span class="tag">limit order book</span>
+    <span class="tag">market depth</span>
+    <span class="tag">execution delay</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Dugast — <em>JF</em> 2018「Unscheduled News and Market Dynamics」；<em>JF</em> 2025「Equilibrium Data Mining and Data Abundance」（with Foucault）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>下限价单省了买卖价差，但要等成交。大家都排队，书上 depth 看起来很厚，似乎市场质量好了。他问：<strong>这种深度是不是一种拥堵？</strong></p>
+
+  <h3>机制（依 SSRN 摘要）</h3>
+  <p>动态限价单市场均衡。权衡就一条：省买卖价差 vs 成交延误。限价单用得越普遍，书上深度越厚，但交易利益被推后。摘要里的主命题：</p>
+  <ul>
+    <li>depth 和限价单成交延误<strong>正相关</strong>；</li>
+    <li>两者都和福利<strong>负相关</strong>；</li>
+    <li>无效深度 = 单子排在书里排不出去。</li>
+  </ul>
+  <p>本机没拉到 PDF（SSRN 超时），不写闭式系数。上面是他们摘要里的方向性结论。</p>
+
+  <h3>为什么值得看</h3>
+  <p>上周 Brooks–Du–Zhang 说市价单能保证竞争价、聚不了信息。这篇从另一边说限价单：书上堆得越厚，可能只是大家都在等。评市场质量别只看盘口厚度，要带上 fill time。tick size、make-take 若把队列拉长了，福利可能掉。A 股的买卖档、揭单队列，可以按「深度 vs 等待」来看。</p>
+  <p class="links"><a href="https://papers.ssrn.com/abstract=3075940">SSRN 3075940</a></p>
+</article>
+
+<footer>
+  避开 8/18–8/21 已写过的篇目。Jiang–Xiong 与 Khorrami–Thereze 依作者主页 PDF；Foucault–Maurin 与 Dugast 依摘要，闭式未写。Cespa–Vives《Market Opacity and Fragility》已是 <em>AER</em> 2026年7月，不再当 WP。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
