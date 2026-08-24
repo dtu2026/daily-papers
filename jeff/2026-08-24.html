@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-24</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-08-24">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月24日 · 第五期 · 4 篇 2025–2026 working paper · Jeff</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇，和 18–21 不重复。中国一篇：IPO 过会相对「差一点被拒」的公司，出口在随后六年涨一截。另外三篇是方法对照：GIF 当情绪、用持仓学公司向量、融券利润和出借方市场力量怎么吃掉异象。</p>
+  <p>熊伟他们那篇基金信念（NBER 35528）是上周五 ABFER 稿的改名，不重收。Hirshleifer 的 AI 社交平台文 PDF 又没拉下来，继续不硬塞。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Wei 他们：过会 vs 差一点被拒</a> — 过会后出口年化多 6% 以上，主要是新市场</li>
+      <li><a href="#p2">Hirshleifer 他们：GIF 情绪</a> — 当天和市场同向，往后四周反向</li>
+      <li><a href="#p3">Koijen、Yogo 他们：资产 embedding</a> — 谁拿着这家公司，比财报特征更能代表它</li>
+      <li><a href="#p4">Zhi Da 他们：融券利润率</a> — 空头有信息、出借方没有市场力量时，异象才剩得下</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Equity Financing and Exports: Evidence from IPO Approvals in China</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Equity Financing and Exports: Evidence from IPO Approvals in China" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Robin Kaiji Gong, Yao Amber Li, Stephen Teng Sun, Shang-Jin Wei · NBER WP 34906 · 2026年2月（NBER 页注明随后有 2026 年 JIE 正式版）</p>
+  <div class="tags">
+    <span class="tag">A 股过会</span>
+    <span class="tag">出口</span>
+    <span class="tag">cohort DID</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Shang-Jin Wei）：</strong> Journal of Political Economy, 2011, “The Competitive Saving Motive: Evidence from Rising Sex Ratios and Savings Rates in China”（与 Xiaobo Zhang），JPE 119(3): 511–564。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>理论里股权和债权对增长的作用不一样，但对出口差在哪，几乎没人量过。中国 IPO 要过发审委最后一轮，只有过线的公司才能上。这篇拿过会的公司和「最后一轮被拒、差一点」的公司比：拿到股权融资之后，出口是不是更多？是老市场卖得更猛（集约边际），还是去了更多目的地–产品（广延边际）？</p>
+  <p>注意：这不是二级市场 CAR 论文。左边是海关出口，不是股价。</p>
+
+  <h3>用了什么数据</h3>
+  <p>万得发审数据和中国海关（CCTS）对接。主板 / 创业板、制造业出口商。审议会 2006–2016，海关 2000–2016。最终 919 家：792 过会，127 被拒。收紧样本丢掉 2010 年以前的会，以及否决理由点了「未来收入/盈利风险」条款的（主板第 37 条 / 创业板第 14 条）——这些否决本身可能带着出口基本面冲击。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：同一年进同一批评审的公司里，过会相对被拒，随后出口差多少。</p>
+  <p><strong>Cohort DID。</strong> 对照组不是「没申请的公司」，是同一评审年份里最后一轮没过的。公司固定效应吃掉公司天生大小；cohort×年、HS2×年、板块×年固定效应吃掉「这一批评审共同的年景、行业年景、主板/创业板年景」。事件研究看开会那年前后出口怎么走。</p>
+  <p>本科对照：这是「差一点的人」当对照。怕的是委员会看见了你看不见的软信息。作者用会议记录，把「担心未来收入/盈利」的否决拿掉，让对照组更像「资质够了、因别的理由没过」。平衡检验他们做了。这仍不是抽签：政治关联、产业政策还可能在。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>否决条款筛过之后，过会仍不是 as-if random。</li>
+    <li>「差一点」的公司后来可能再报、或拿到别的融资。测到的是「第一次申请过会」的局部效应，不是「成为上市公司」本身。</li>
+    <li>只留制造业、海关能对上的、并丢掉 IPO 暂停窗口。</li>
+    <li>核准制 2023 年 2 月 17 日注册制规则之后基本结束，外推到现在要打折。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>摘要：过会后六年，出口年化多 6% 以上。</li>
+    <li>导言全样本：六年累计 39.3%，年化约 6.55%。收紧样本：37.3%，年化 6.22%。</li>
+    <li>广延边际（目的地–产品组合数）：全样本 +26.2%，收紧 +30.7%。集约边际小、不显著。和债务融资文献不一样：股权主要是让公司去试新市场，不是在老市场上加量。</li>
+    <li>机制检验（作者的读法）：IPO 钱更多流向无形资产和更敢冒险的活动。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>今天最贴中国制度的一篇。发审委<strong>条款文本</strong>当 identification，和问询函 / 反馈意见按理由拆开是同一思路：先读委员会在怕什么，再决定谁能当对照。也提醒：行政审核可以当冲击，但要读否决理由，不能把所有被拒的捆成一组。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34906">w34906</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34906/w34906.pdf">PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. GIFfluence: A Visual Approach to Investor Sentiment and the Stock Market</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. GIFfluence: A Visual Approach to Investor Sentiment and the Stock Market" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ming Gu, David Hirshleifer, Siew Hong Teoh, Shijia Wu · NBER WP 34636 · 2026</p>
+  <div class="tags">
+    <span class="tag">美股情绪</span>
+    <span class="tag">Stocktwits GIF</span>
+    <span class="tag">预测，不是因果</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（David Hirshleifer）：</strong> Journal of Finance, 1998, “Investor Psychology and Security Market Under- and Overreactions”（与 Daniel, Subrahmanyam）。<br>
+    <strong>备援（Siew Hong Teoh）：</strong> Journal of Financial Economics, 1998, “Earnings management and the underperformance of seasoned equity offerings”（与 Welch, Wong），JFE 50(1): 63–99。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>投资者心情除了文字，还有动图。他们从投资社交平台上的 GIF 做成 GIFsentiment，问：它跟当天市场是不是同向？往后几周是不是反向（错觉被纠正）？成交、波动、股债基金流跟不跟？更容易被错误定价的组合上，是不是更强？</p>
+
+  <h3>用了什么数据</h3>
+  <p>NBER 摘要只写：数百万条 GIF 帖，领先投资社交平台（Stocktwits），美国股市。样本起止年摘要没写。别处文稿提到 2020 年 9 月（平台上 GIPHY 按钮）到 2024 年 10 月——<strong>这不是 NBER PDF 核过的数</strong>，今天 NBER PDF 超时了，不当成已核实。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是冲击。用带标签的帖子给 GIF 打多空分，做成日度市场情绪，再看它和指数收益、成交、波动、基金流怎么共变，并控制别的情绪和注意力指标。</p>
+  <p>本科对照：这是预测回归。情绪和新闻、收益、关注是缠在一起的，不能读成「GIF 导致了跌」。作者自己的故事是：它代理一种后来会被纠正的错觉。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>内生：GIF 可能只是在跟着新闻和已经实现的涨跌走。</li>
+    <li>Stocktwits 用户偏英语零售、偏美股。</li>
+    <li>GIF 的多空分来自帖子自贴标签，标签和动图可能在标同一件心情，有循环。</li>
+    <li>NBER 正文今天没打开，构造细节和系数都不报。</li>
+  </ul>
+
+  <h3>主结果（仅摘要）</h3>
+  <ul>
+    <li>和季节性心情、新冠封控严重程度相关。</li>
+    <li>当天和市场收益正相关；往后最多四周负向预测收益。控制其他情绪和注意力之后还在。</li>
+    <li>更容易被错误定价的组合上更强。</li>
+    <li>正向预测成交、波动，以及资金流向股票基金、离开债券基金。</li>
+    <li>摘要没有系数。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A 股是散户市。问询函、盈余、回函砸到股吧时，需要一个不是文字的高频情绪控制或结果。短窗口先过热再纠，和披露附近的过度反应是同一类设计。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34636">w34636</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Asset Embeddings</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Asset Embeddings" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Xavier Gabaix, Ralph S. J. Koijen, Robert J. Richmond, Motohiro Yogo · NBER WP 33651 · 2025年4月</p>
+  <div class="tags">
+    <span class="tag">方法 + 实证</span>
+    <span class="tag">机构持仓</span>
+    <span class="tag">不是冲击</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Koijen 与 Yogo）：</strong> Journal of Political Economy, 2019, “A Demand System Approach to Asset Pricing”，JPE 127(4)。<br>
+    <strong>备援（Gabaix）：</strong> Econometrica, 2011, “The Granular Origins of Aggregate Fluctuations”，Econometrica 79(3): 733–772。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>研究里常用财报和行情特征代表一家公司。投资者实际用的信息集比这厚得多，而且很多研究者拿不到。理论说：在说得过去的条件下，组合持仓里已经含了资产定价需要的全部相关信息，会计或文本没有这种保证。他们把 NLP 里的 embedding 搬过来：词向量靠「谁和谁出现在同一篇文档」，公司向量靠「谁和谁被装在同一组合里」。</p>
+
+  <h3>用了什么数据</h3>
+  <p>输入是机构持仓（需求系统文献里那种 13F 设定）。摘要没写年份。市场是美股 / 机构持仓。三个可以只用一个季度评估的基准：相对估值、收益协同、机构下期组合选择。也估投资者 embedding（策略画像）。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：不是因果。问「从持仓里学出的公司向量，能不能在三个基准上打败能看见的特征」。</p>
+  <p>做法：推荐系统、Word2Vec 这类浅层网络、BERT 这类 transformer，从「谁拿了谁」里学高维潜向量。再可选地用大模型读公司文本，给「长得像」的一簇公司写经济叙事。</p>
+  <p>本科对照：这和主成分有点像，但训练信号是持仓共现，不是收益协方差。得到的向量既可能是信息，也可能是指数、mandate、基准的机械结果。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>持仓是均衡结果，embedding 会把信息、约束和被动指数混在一起。</li>
+    <li>不是因果设计。可恢复性是理论命题；实证成功是预测，不是结构。</li>
+    <li>美国 13F 季度、滞后。搬到 A 股如果没有更细的持仓微观数据，会更糙。</li>
+    <li>NBER 摘要没有 R²、夏普或「打败几个特征」的数。会议摘句不采用。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <p>摘要只点名三个基准，没有系数。作者还讨论生成组合、风险管理、压力测试，以及用文本给相似公司写故事。</p>
+
+  <h3>为什么值得看</h3>
+  <p>公司的「信息环境」不必只靠会计和年报文本。若北向 / 通车 / 公募持仓能用，embedding 可以给问询函 CAR 找对照公司：不是同行里规模最近的，而是「被同一批人拿在一起」的。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w33651">w33651</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w33651/w33651.pdf">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Short-Selling Profitability, Market Power, and Asset Pricing Anomalies</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Short-Selling Profitability, Market Power, and Asset Pricing Anomalies" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhi Da, Chengbo Fu, Nanying Lin, Lei Lu · 作者稿 2026年2月16日 · SSRN 5116351（更早一版标题带 stock lending fees）</p>
+  <div class="tags">
+    <span class="tag">美股融券</span>
+    <span class="tag">异象</span>
+    <span class="tag">出借方力量</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊记录（Zhi Da）：</strong> Journal of Finance, 2011, “In Search of Attention”（与 Engelberg, Gao），JF 66(5): 1461–1499。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>空头利息高的股票后面收益更低，这是老结果。这篇加一刀：空头这笔交易有多「值」（价格对最近做空有多敏感），以及出借方有没有市场力量把利润抽走。融券成本平均会吃掉多少异象？在什么股票上，扣完费之后异象还在？</p>
+
+  <h3>用了什么数据</h3>
+  <p>CRSP/Compustat，纽交所/纳斯达克/美交所普通股，去掉公用事业和金融。FIS 融券费率 2005年1月–2021年12月；400,571 个有 SSP 和费率的股票–月。异象用 Chen–Zimmermann 开源库，过滤后 151 个，2007–2021。</p>
+  <p>SSP：滚动 36 个月（至少 24 个月），把超额收益对滞后的异常空头利息回归，SSP = −δ。高 SSP = 最近做空之后价格跌得更狠，空头的信息优势更大（还没扣出借费）。</p>
+
+  <h3>方法讲懂</h3>
+  <p>在测什么：三步，都是条件比较，不是政策冲击。</p>
+  <ol>
+    <li>空头利息预测未来收益，是不是集中在高 SSP 股票上。</li>
+    <li>费率对 SSP 回归，再按出借集中度切开——有力量的出借方是不是把费率抬得更高。</li>
+    <li>151 个异象的多空，扣费后再按 SSP 和出借力量切开。</li>
+  </ol>
+  <p>扣费假设（导言/数据）：空头腿付 100% 的 FIS 费，多头腿收回 70%。换这个分成就会改「吃掉一半」这个数。</p>
+
+  <h3>怕什么</h3>
+  <ul>
+    <li>SSP 来自「收益 ~ 空头利息」同一条关系，后面又拿这条关系当结果，有生成回归量和机械持续。作者说做了样本外排序，对象仍是估出来的。</li>
+    <li>出借「市场力量」用集中度/使用率，可能只是在代理「这票本来就难借」，不是行为。</li>
+    <li>美国融券市场 ≠ A 股（融券名单、转融通、保证金）。不要直接把系数搬过来，搬的是「约束不是 0/1」这个结构。</li>
+  </ul>
+
+  <h3>主结果</h3>
+  <ul>
+    <li>空头利息和未来收益的负向关系，在高 SSP 上明显更强。</li>
+    <li>有市场力量的出借方，费率跟 SSP 绑得更紧——把空头利润抽走一截。</li>
+    <li>导言：融券成本平均吃掉大约 53% 的异象利润。摘要写成「约一半」。</li>
+    <li>导言：空头有信息优势、出借方没有市场力量时，出借方只抽走大约 26%。高 SSP 上，扣费后异象仍显著，尤其是出借方没有力量的时候。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>问询函、利空披露常把价格走得慢写成「不能做空」。这篇说约束不够：扣完费还能留下利润的，是空头真有信息、而且出借方竞争的那些票。A 股不要把「不在融券名单」当成整齐的虚拟变量，按保证金、转融通、是否难借切开。</p>
+  <p class="links">作者 PDF：<a href="https://academicweb.nd.edu/~zda/SSP.pdf">nd.edu</a> · SSRN：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5116351">5116351</a></p>
+</article>
+
+<footer>
+  入选规则同前：2025 年及以后的 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA 或 TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目和年份。不重复 8 月 18–21 日已用篇目。NBER 35528（Gao–Xiong–Yuan）视为上周五基金信念稿的改名，不重收。数字只采用已核对的摘要或导言；GIFfluence 的样本年份未从 NBER PDF 核过，不写死。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-24.html · 网站：<a href="https://dtu2026.github.io/daily-papers/">dtu2026.github.io/daily-papers</a>
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
