@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-26</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-08-26">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月26日 · 第七期 · 4 篇 2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇问的是：<strong>算法怎么改价格、可解释算法会不会挤走人、做市商为什么还要独家关系、内部信息管松了会不会伤公司。</strong> Q-learner 能提高理性投资者平均效用；model-based 算法更猛、人被挤出去，价格信息量可能掉；关系做市商靠「交易记录」筛人，公开记录（RFQ / TRACE）反而伤流动性客户；内部沟通漏得越准，股价越说话，但经理会把内部话讲歪。和昨天的集中持股、概率定价、价格加总、披露外溢不重复。</p>
+  <p>读法照旧：先看「问了什么」和「主要结论」。公式都从 PDF 抄，人话写在旁边。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Banerjee–Szydlowski：跟 Q-learner 对做，波动上去，平均效用也能上去</a> — 反馈环 + 对冲需求</li>
+      <li><a href="#p2">Banerjee–Szydlowski：可解释算法更激进，可能挤掉人的信息</a> — model-based vs model-free</li>
+      <li><a href="#p3">Kuong–Maurin：做市商是客户的「交易记录保管人」</a> — 私下记录优于 TRACE</li>
+      <li><a href="#p4">Banerjee–Hu–Kim：管松内部泄漏，股价更准，公司价值可能更差</a> — 和市场纪律对着干的 alignment</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Trading against Algorithms: Price Dynamics and Risk Sharing in a Market with Q-learners</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Trading against Algorithms: Price Dynamics and Risk Sharing in a Market with Q-learners" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee &amp; Martin Szydlowski · 初稿 2025年8月5日，本稿 2026年7月14日 · Michigan / HKUST</p>
+  <div class="tags">
+    <span class="tag">Q-learning</span>
+    <span class="tag">stochastic volatility</span>
+    <span class="tag">risk sharing</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Banerjee, Breon-Drish &amp; Smith — <em>JF</em> 2025「Feedback Effects and Systematic Risk Exposures」（80(2):981–1028）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>市场里同时有理性投资者和 Q-learning 算法。算法根据实现收益改「买值不值」的估计，这个估计再改需求、再改价格。反馈环会带来什么价格动态？Q-learner 会不会把人坑惨？</p>
+
+  <h3>设定</h3>
+  <p>连续时间。无风险利率 r，风险资产红利 dD<sub>t</sub> = μ dt + σ dB<sub>t</sub>。理性投资者质量 1−θ，CARA，两类：L 要对冲负相关的不可交易风险（想买），S 要对冲正相关（想卖）。净对冲暴露 Ȳ = (2m−1)Y。Q-learner 质量 θ，需求是净 Q 值的 logistic：</p>
+  <div class="eq">N<sup>Q</sup>(Q<sub>t</sub>) = [1 − exp(−Q<sub>t</sub>/β)] / [1 + exp(−Q<sub>t</sub>/β)] ∈ (−1, 1)</div>
+  <p class="eq-note">人话：Q<sub>t</sub> 是「买相对卖值多少」。Q 越大越买。更新用 counterfactual：买了赚 r，就知道卖会亏 r，买卖两边一起改。连续时间极限里 dQ<sub>t</sub> = −α Q<sub>t</sub> dt + 2α dR<sub>t</sub>。α 是学习速度。</p>
+  <p>均衡叫 Q-REE：价格 P<sub>t</sub> = (D<sub>t</sub> + μ)/r + Π(Q<sub>t</sub>)，理性投资者对 {D, P, Q} 的信念正确，Q-learner 按上面的规则交易。</p>
+
+  <h3>核心机制</h3>
+  <p>没有 Q-learner（θ = 0）时，风险溢价是常数，波动 σ/r，收益不可预测。有了以后，红利正冲击抬价 → Q 升 → 算法加仓 → 再抬价。波动变成状态依赖：</p>
+  <div class="eq">σ<sub>P</sub>(Q) = (σ/r) / [1 − 2α Π′(Q)]</div>
+  <p class="eq-note">人话：分母里的 Π′ 是风险溢价对 Q 的斜率。Q 在 0 附近，算法对 Q 最敏感，波动最高。θ 越大、α 越快，波动越高。</p>
+  <p>预期收益对 Q 可以非单调；收益自相关短期更负、中期最负、长期回零。对冲需求大时，Q-learner 「学会」站在净对冲的对面：赚价差，同侧的人被抢生意，对侧的人吃到更好价格。平均理性投资者效用可以上升——尽管波动上去了。所以只盯波动的监管可能减福利。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>Counterfactual updating + 连续时间。离散 Q-learning 要跟一整张 Q 表，解不出。</li>
+    <li>Q-learner 不优化，只按规则更新。福利只算理性投资者（CARA，没有信念扭曲）。</li>
+    <li>理性投资者知道算法是 Boltzmann + counterfactual；不知道 (α, β, Q<sub>0</sub>) 也没关系——看一小段价格就能反推（Prop. 3）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>董杰在做 AI 投资者。8/18 那篇是「算法会不会合谋」。这篇是另一头：算法不合谋，只是跟着收益学，也能制造随机波动和可预测收益，而且可能帮人分担风险。别把「算法进场 = 福利下降」写成默认。</p>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BS_Qlearning.pdf">作者主页 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Algorithmic Trading Architecture and Price Informativeness</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Algorithmic Trading Architecture and Price Informativeness" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee &amp; Martin Szydlowski · 2026年8月 · Michigan / HKUST</p>
+  <div class="tags">
+    <span class="tag">interpretable algorithms</span>
+    <span class="tag">crowding out</span>
+    <span class="tag">price informativeness</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>同上，Banerjee — <em>JF</em> 2025 Feedback Effects。同一作者另一篇 WP，机制完全不同。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>监管喜欢「可解释 / model-based」算法。算法比人信息更准，人要付成本才进场。换一套学习架构，价格信息量会升还是掉？</p>
+
+  <h3>设定</h3>
+  <p>Kyle 式：风险中性做市商看总单定价。人（最多 K̄ 个）付成本 c 买精度 τ<sub>H</sub> 的信号再交易。算法信号更准。噪声交易 σ<sub>z</sub>。比较两种 architecture：</p>
+  <ul>
+    <li><strong>model-free（actor-critic）</strong>：只看实现利润，扰动交易强度 β 来学。稳态是对做市商和人的 best response，等于 Bayes–Nash。</li>
+    <li><strong>model-based</strong>：猜一个价格冲击 λ 的参数模型，用实现结果更新 λ。稳态里 λ 估对了，但模型没把「人拿的是相关信号」算进去，所以交易更猛。</li>
+  </ul>
+
+  <h3>核心机制</h3>
+  <p>人的期望利润随算法强度 β 和在场人数 K 下降。人进场当且仅当 Π<sub>H</sub>(β; K) ≥ c。两条通道对着干：</p>
+  <ul>
+    <li><strong>intensity</strong>：K 固定，β 升 → 人交易更软，但算法信号更准，price informativeness 升。</li>
+    <li><strong>participation</strong>：β 再大，人利润掉到 c 以下就退场。每退一个，信息量离散往下掉，剩下的人和算法利润往上跳。</li>
+  </ul>
+  <p>model-based 等于内生承诺更激进：算法利润严格更高，人更惨。所以「可解释」强制可能让人退得更干净，价格更不说话。限制算法强度或信息接入，只要把人拉回来，净效果可以是信息量上升。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>算法信息严格优于人。反过来，crowding-out 没那么容易发生。</li>
+    <li>model-based 的误设是「忘了人的信号相关」。换一种误设，承诺方向可能翻。</li>
+    <li>人的进场是 0–1（付 c 或不交易），所以 crowding-out 是台阶，不是平滑。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和上一篇是一对：一篇讲学出来的价格动态，一篇讲架构怎么挤人。监管口头禅「算法要可解释」，这篇说可解释 = 更会建模自己的 λ = 更凶 = 人走。A 股量化 + 散户信息采集，也可以按 intensity vs participation 拆。</p>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BS_AIArchitecture.pdf">作者主页 PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Dealers as Record Keepers</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Dealers as Record Keepers" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">John Chi-Fong Kuong &amp; Vincent Maurin · 2026年3月 · CUHK / HEC Paris</p>
+  <div class="tags">
+    <span class="tag">OTC</span>
+    <span class="tag">adverse selection</span>
+    <span class="tag">transparency</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Maurin — <em>JF</em> 2022「Liquidity Fluctuations in Over-the-Counter Markets」（77(2):1325–1369）；Kuong &amp; Glebkin — <em>JFE</em> 2023「When Large Traders Create Noise」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>OTC 里客户明明一点就能问全市场，为什么还跟少数经销商绑着走？更多透明、更多竞争，对流动性客户是好是坏？</p>
+
+  <h3>设定</h3>
+  <p>两期 Glosten–Milgrom。客户类型持续但经销商看不到：hedger（流动性）vs 知情 speculator。日期 1 交易后留下记录 r ∈ {gain, loss}。记录要么只有关系经销商看见（private），要么所有人看见（public）。经销商竞价：即期 spot，或关系合约（承诺、按记录改点差）。Assumption 1：adverse selection 不太狠，匿名即期还能成交。</p>
+
+  <h3>核心机制</h3>
+  <p>即期、无记录：两边都付公平点差 μ b<sub>S</sub>。即期、公开记录：赚过的人日期 2 被当成更像投机者，市场在 r = g 时垮掉；亏过的人点差变便宜。Hedger 反而更好——公开记录是「市场惩罚」。</p>
+  <p>关系合约能跨期交叉补贴：日期 2 亏着也跟赚过的 hedger 做，日期 1 加点差补回来。相对即期，hedger 多赚 (1/2)(b<sub>H</sub> − μ b<sub>S</sub>)。关系一旦能建，<strong>private 记录严格优于 public</strong>：关系散了，公开 gain 记录的 hedger 被全市场关门；私下记录她还能匿名找外面的人做。</p>
+  <p>映射：RFQ（单向、漏方向）≈ 公开记录；voice / RFM ≈ 私下记录。TRACE 式成交后透明、最少报价家数，可能减 gains from trade。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>类型持续一期。多期或类型会变，记录的信号会淡。</li>
+    <li>经销商能承诺关系合约（附录用抵押实现）。没承诺，交叉补贴难做。</li>
+    <li>严重 adverse selection（附录 B）时，匿名即期社会剩余是零，关系和公开记录还能救出交易。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>债券、互换、A 股固收平台都在推电子 RFQ 和成交披露。这篇说客户少问几家不是笨，是在藏记录。透明监管的默认「多问、全披露」可能把 hedger 的保险拆掉。</p>
+  <p class="links"><a href="https://microstructure.exchange/papers/Kuong_Maurin_Relationship_Dealers.pdf">microstructure.exchange PDF</a> · <a href="https://papers.ssrn.com/abstract=6165406">SSRN 6165406</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Information Control and Firm Value</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Information Control and Firm Value" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee, Peicong (Keri) Hu &amp; Taejin Kim · 2026年2月 · Michigan / HKU / Korea University</p>
+  <div class="tags">
+    <span class="tag">disclosure</span>
+    <span class="tag">information control</span>
+    <span class="tag">leaks</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Banerjee, Marinovic &amp; Smith — <em>JF</em> 2024「Disclosing to Informed Traders」（79(2):1513–1578）。旧题「Leaks, disclosures and internal communication」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>经理要跟员工说话才能对齐行动，但这句话会漏到市场。管得松（泄漏更准）能加强市场纪律，也会让经理把内部话讲歪。公司价值到底往哪走？</p>
+
+  <h3>设定</h3>
+  <p>经理付成本做努力 x，决定基本面 ω。私下发信号 t 给员工，员工据此行动。市场看到公开披露 d 和泄漏 m（精度由控制松紧 1/z 决定）。价格线性：对 d、m 的权重是 b<sub>d</sub>、b<sub>m</sub>。努力 x* = b<sub>d</sub> + b<sub>m</sub>（市场纪律）。员工对齐的重要性用 β 衡量。Real efficiency = E[V]。</p>
+
+  <h3>核心机制</h3>
+  <div class="eq">PI = 1 / [σ<sub>ω</sub>² (1 − (b<sub>d</sub> + b<sub>m</sub>))]　　RE = E[ω] − β E[V[ω | d, t]]</div>
+  <p class="eq-note">人话：第一式，价格把多少基本面说清楚，跟 b<sub>d</sub>+b<sub>m</sub> 同向。第二式，公司价值 = 努力带来的期望基本面，减去「员工没对齐」的损失。β 越大，对齐越值钱。</p>
+  <p>管松（1/z 升）：泄漏更准 → b<sub>m</sub> 升、努力升、PI 升。但经理怕漏，内部信号 t 被拧歪，员工后验更糊，对齐损失升。β 小，RE 随管松而升；β 大，RE 对 1/z 是驼峰——太松会伤公司。</p>
+  <p>强制提高公开披露质量（1/σ<sub>ξ</sub>² 升）两条都好：努力升，员工不确定性降。所以「多披露」和「少管内部泄漏」不是一回事。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投资者对称信息，PI 是「价格对计量学者有多清楚」，不是加总私人信号。</li>
+    <li>泄漏精度由公司控制 z 定，不是员工战略选择。吹哨人激励会把 z 往外推。</li>
+    <li>最优控制随 alignment、现金流波动、披露质量变紧。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>董杰做 A 股披露 / 问询函。这篇把「对外说」和「对内管」拆开：强制年报更细，可以又涨 PI 又涨 RE；把内部纪要、微信、券商交流管松，股价更准，项目执行可能更歪。别把「信息多了」直接写成好事。</p>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BHKleaks.pdf">作者主页 PDF</a></p>
+</article>
+
+<footer>
+  避开 8/18–8/25 已写过的篇目。四篇均依作者主页 / microstructure.exchange PDF。Banerjee 三篇机制不同（Q 动态、架构挤出、内部泄漏），未算重复。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
