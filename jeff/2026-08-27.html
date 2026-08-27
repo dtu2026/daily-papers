@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-27</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-08-27">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月27日 · 第八期 · 4 篇 2025–2026 working paper · Jeff</p>
+</header>
+<div class="lede">
+  <p>今天四篇，刻意躲开昨天三篇 Zhi Da 连发。主题是披露文本里的“时间视野”、社交平台上的 AI 内容、散户策略分类，以及宽带铺开后注意力同步会不会把公司特质信息挤掉。</p>
+  <p>最贴董杰的是第一篇：直接从 MD&amp;A 和业绩会里抽管理层说的规划 horizon（视野），问短视是不是真的越来越严重。后两篇帮你看零售文本和 AI 检测怎么进回归；第四篇提醒：波动率下降不等于信息环境变好。</p>
+  <nav><ol>
+    <li><a href="#p1">Appel、Herpfer：公司规划视野</a>：近三十年 MD&amp;A / 业绩会里，管理层说的 horizon 没有持续变短</li>
+    <li><a href="#p2">Hirshleifer 等：AI 与意见生态</a>：Seeking Alpha 上 AI 更像信息生产，WallStreetBets 上更像情绪传染</li>
+    <li><a href="#p3">Chen、Peng、Zhou：散户策略 LLM 分类</a>：基本面帖子情绪正向预测收益，技术面帖子情绪则相反</li>
+    <li><a href="#p4">Maleki、Palia、Seagraves：3G 与股价效率</a>：县区 3G 落地后特质波动下降，但滞后市场交叉自相关上升</li>
+  </ol></nav>
+</div>
+
+<article id="p1">
+  <h2>1. Corporate Horizons</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Corporate Horizons" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ian Appel, Christoph Herpfer · ASU 2026 会议稿 / WP · 2026年2月</p>
+  <div class="tags"><span class="tag">MD&amp;A / 业绩会文本</span><span class="tag">公司短视</span><span class="tag">描述性与关联，不是因果</span></div>
+  <div class="qual"><strong>顶刊记录（Ian Appel）：</strong> “The Limits of Limited Liability: Evidence from Industrial Pollution,” <em>Journal of Finance</em>, 2021, 76(1): 5–55（与 Pat Akey；lead article）。</div>
+  <h3>研究问题</h3>
+  <p>大家常说上市公司越来越短视，但很少有人直接测量管理层在公开文本里说的规划时间有多长。作者从 1996–2024 年的 10-K MD&amp;A 和业绩会逐字稿里，用机器学习先挑出讨论“未来动作时机”的句子（超过 2000 万条），再用大模型抽出明确日期或定性 horizon，聚合成公司—时间层面的规划视野指数。</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>近三十年几乎看不到持续变短的趋势：平均 horizon 在 1990 年代末有所下降后，2000 年代初以来大体稳定；投资类表述近年甚至略升，融资类略降。</li>
+    <li>利率和信用利差越高、政策不确定性和隐含波动越高，陈述的 horizon 越短；与期限结构陡峭（10 年减 2 年国债利差）也显著负相关。</li>
+    <li>财务更健康（更高 Altman Z）和更长债期限对应更长 horizon；短期债占比高则 horizon 更短。</li>
+    <li>把 horizon 滞后项放进资本开支和 R&amp;D 回归，几乎找不到“视野更长→投资更多”的稳定证据；与两年后盈利能力则多呈负相关。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>管理层在法定披露和业绩会里，自己说出的未来行动时间有多远；以及它和宏观利率、不确定性、财务状况、投资与盈利的关联。</p>
+  <p><strong>怎么对比或识别：</strong>先做 RAG（retrieval-augmented generation，检索增强生成）管线：机器学习筛句 → LLM 抽时间 → 聚合成指数。主回归用行业 fixed effects（固定效应）和财务控制；解释变量包括利差、EPU、隐含波动、Z 分数和债务期限结构。这是大规模文本测量加面板相关，不是随机实验。</p>
+  <p><strong>主要坑：</strong>说出来的 horizon 不等于真做出来的投资视野；LLM 抽时间会有测量误差；和利率、不确定性的关系是均衡结果，不能直接写成“加息导致短视”。投资与盈利回归更是关联，别当因果。</p>
+  <p><strong>可操作步骤：</strong>对 A 股年报 MD&amp;A、“管理层讨论与分析”和业绩说明会纪要，先用规则 / 小模型筛含时间词的句子，再人工标定一小批、微调分类器；公司—年指数与国债利率、信用利差、政策不确定指数并排画图，再做行业固定效应回归。把业绩预告、问询函回函里的“未来半年 / 一年 / 三年”表述单独成表，检验是不是坏消息后 horizon 突然变短。</p>
+  <h3>对董杰的意思</h3>
+  <p>这篇几乎是一张可直接移植的披露文本度量说明书。董杰做问询函、业绩预告或空公告时，除了看长度和模糊词，还可以问：公司说的规划窗口有没有缩短？是投资计划在缩，还是融资与还款在缩？若 horizon 只在监管压力后变短、而资本开支不变，更像话术调整，不要写成真实投资短视。</p>
+  <p class="links">PDF：<a href="https://finance-conference.wpcarey.asu.edu/sites/g/files/litvpz3416/files/2026-02/Corporate%20Horizons.pdf">ASU 会议 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. AI, Opinion Ecosystems, and Finance</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. AI, Opinion Ecosystems, and Finance" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">David Hirshleifer, Lin Peng, Qiguang Wang, Weichen Zhang, Xiaoyan Zhang · NBER WP 34807 · 正文日期 2025年12月（NBER 页 2026年2月）</p>
+  <div class="tags"><span class="tag">生成式 AI</span><span class="tag">Seeking Alpha / WSB</span><span class="tag">零售微观结构</span></div>
+  <div class="qual"><strong>顶刊记录（Lin Peng、David Hirshleifer）：</strong> “News Diffusion in Social Networks and Stock Market Reactions,” <em>Review of Financial Studies</em>, 2025, 38(3): 883–937（与 Qiguang Wang）。</div>
+  <h3>研究问题</h3>
+  <p>同样是投资者用生成式 AI 写帖，平台治理不同，市场后果会不会完全不一样？作者对比 Seeking Alpha（有编辑审核、付费约稿、偏基本面）和 Reddit 的 r/WallStreetBets（几乎无预审、梗图和 YOLO 交易截图很多），用 GPTZero 给每篇帖子打 AIProb（AI 生成概率），看采用动机和市场结果是否分叉。</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>样本约 2022 年 ChatGPT 上线前后至 2024 年 12 月。两平台 AIProb 都从接近零上升；WSB 到期末平均约 7.1%。</li>
+    <li>Seeking Alpha：首次覆盖陌生股票、信息更稀缺时 AIProb 更高（首次覆盖约高 2.32 个百分点）。AI 文章情绪更偏分析；高看涨情绪对应下一周约高 35 个基点的收益，未见明显反转；零售订单流更 informative（有信息含量），用户分歧下降，买卖价差收窄。</li>
+    <li>WallStreetBets：AIProb 与信息稀缺无关，却在强零售买入后高 44%–55%。AI 内容更偏情绪传染；随后异常成交量、波动上升，收益分布更像彩票。</li>
+    <li>作者把差异归因于平台治理与用户构成，而不是“AI 本身好坏”。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>AI 辅助发帖在不同平台上，是否分别对应信息发现或信念扭曲，以及随后收益、价差、成交量和零售单流方向。</p>
+  <p><strong>怎么对比或识别：</strong>GPTZero 输出 AIProb；作者自建金融文本验证集准确率约 98%。主回归含股票、日期、作者等 fixed effects，标准误聚类。把 AIProb × Sentiment 放进未来窗口 CAR（累计异常收益）和 OIB（订单失衡）回归。不是实验，identification（识别）靠平台间对照和事前信息稀缺 / 零售买入代理。</p>
+  <p><strong>主要坑：</strong>AI 检测有误判；发帖人选择用 AI 是内生的；平台差异混杂用户类型。数字只在已核 PDF 里写过的窗口使用，别外推到 A 股股吧而不重新验证检测器。</p>
+  <p><strong>可操作步骤：</strong>先固定一个检测器并在中文金融帖上做人工标定；把帖子按平台或版块（如雪球长文 vs 短帖）分开；构造信息稀缺（首次覆盖、分析师少）和注意力（异常换手、涨停）代理，分别回归 AIProb；再看 AIProb × 情绪对 CAR[1,5] 和价差的符号是否在“治理严”与“治理松”样本里相反。</p>
+  <h3>对董杰的意思</h3>
+  <p>A 股没有 Seeking Alpha / WSB 的一一对应，但有互动易、股吧、雪球和公司官微。做披露反应时，可以把“像分析的长文”和“情绪梗帖”分开：若 AI / 模板化回复只在情绪帖里放大成交，不要写成信息含量上升。问询函回函若越来越像套话生成，也可仿照本文看价差和次日回吐，而不是只看长度。</p>
+  <p class="links">NBER：<a href="https://www.nber.org/papers/w34807">w34807</a> · 会议 PDF：<a href="https://conference.nber.org/conf_papers/f229523/f229523.pdf">conference.nber.org</a> · SSRN：<a href="https://ssrn.com/abstract=5452175">5452175</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Wisdom or Whims? Decoding Retail Strategies with Social Media and AI</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Wisdom or Whims? Decoding Retail Strategies with Social Media and AI" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Shuaiyu Chen, Lin Peng, Dexin Zhou · NBER Big Data 会议稿 · 2025年8月</p>
+  <div class="tags"><span class="tag">StockTwits</span><span class="tag">LLM 策略分类</span><span class="tag">零售订单流</span></div>
+  <div class="qual"><strong>顶刊记录（Lin Peng）：</strong> “News Diffusion in Social Networks and Stock Market Reactions,” <em>Review of Financial Studies</em>, 2025, 38(3): 883–937（与 David Hirshleifer、Qiguang Wang）。</div>
+  <h3>研究问题</h3>
+  <p>散户到底按什么策略在交易？作者用 LLM 把约 9600 万条 StockTwits（2010 年 1 月–2023 年 6 月，约 7800 只股票、84 万用户）分成技术分析（TA）、基本面分析（FA）、其他投机策略（OS）和无策略，再把策略情绪接到次日收益、零售订单流和 Robinhood 羊群上。</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>约 31% 的帖子明确提到策略；其中 FA 约 44%、TA 约 28%、OS 约 28%。投资者—股票 fixed effects 后 R² 仍只有约 30%，说明策略选择很动态。</li>
+    <li>公司新闻后 FA 使用升约 4.8 个百分点（约均值的 28%），TA / OS 下降。策略表现差会诱发切换。</li>
+    <li>看涨 TA / OS 情绪预测更低次日收益；看涨 FA 情绪预测更高收益。做空高 TA 情绪、做多低 TA 情绪的多空年化约 9.5%（t = 2.91）；作者强调未扣交易成本。</li>
+    <li>零售订单流只有接到 FA 情绪上才 informative；TA / OS 相关流量会削弱 OIB 的预测力。Robinhood 羊群与看涨 TA 情绪绑定最紧。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>社交帖子反映的策略类型如何随新闻和反馈变化，以及策略特定情绪能否预测收益和解释零售单。</p>
+  <p><strong>怎么对比或识别：</strong>GPT 标注小样本 → 微调 BERT 分类器（如 TA-BERT）；另训情绪分类器。收益预测用次日收益对策略情绪回归，含交易日 fixed effects；再把 OIB 分解到各策略成分。这是预测关系加机制分解，不是政策冲击。</p>
+  <p><strong>主要坑：</strong>帖子不等于成交；LLM 分类有误差；多空收益未扣成本、日度换手会很高。Robinhood 数据窗口短，外推要小心。</p>
+  <p><strong>可操作步骤：</strong>对雪球 / 股吧抽样人工标“基本面 / 技术 / 跟风”，微调中文分类器；按日聚合情绪，预测次日超额收益，并与 CSMAR / 逐笔零售代理对接。公告日把 FA 帖占比单独交互，看 CAR 是否只在 FA 帖升温时更大。</p>
+  <h3>对董杰的意思</h3>
+  <p>A 股披露事件里，散户反应常被写成“噪音”。这篇提醒：噪音和信息可能混在同一批订单流里，关键看帖子策略标签。做业绩预告或问询函时，可把事件窗股吧文本分成“读财报”和“画线喊单”；若只有后者放量，CAR 更像注意力，不要写成基本面吸收。</p>
+  <p class="links">会议 PDF：<a href="https://conference.nber.org/conf_papers/f229510/f229510.pdf">conference.nber.org</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. When Synchrony Crowds Out Information: Broadband Internet and Stock Price Efficiency</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. When Synchrony Crowds Out Information: Broadband Internet and Stock Price Efficiency" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hosein Maleki, Darius Palia, Cayman Seagraves · NBER Big Data 会议稿 · 2025年秋</p>
+  <div class="tags"><span class="tag">3G 铺开</span><span class="tag">注意力同步</span><span class="tag">价格效率</span></div>
+  <div class="qual"><strong>顶刊记录（Darius Palia）：</strong> “A Reexamination of the Conglomerate Merger Wave in the 1960s: An Internal Capital Markets View,” <em>Journal of Finance</em>, 1999, 54(3): 1131–1152（与 R. Glenn Hubbard）。</div>
+  <h3>研究问题</h3>
+  <p>移动宽带让大家更容易随时刷新闻和社交，会提高还是降低股价对公司特质信息的反映？作者利用美国各县 3G 交错落地作为外生接入冲击，看公司特质波动（idiosyncratic volatility）和基于滞后市场收益的交叉自相关（cross-autocorrelation）效率指标怎么变。</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>本地 3G 进入后，Google 搜索兴趣上升；公司年特质波动约降 0.4 个百分点（年化）。</li>
+    <li>同一窗口，下行减上行的交叉自相关上升（事件研究 post–pre 约 0.10），含义是个股对滞后市场、尤其是坏消息的吸收变慢，价格效率变差。</li>
+    <li>恶化在社交媒体 / 零售活跃、金融中心、meme 或“新闻股”，以及更容易做空的非 special 股票上更强；机构持股高的股票上也更强，不完全是纯散户故事。</li>
+    <li>作者结论：更低特质波动不等于更好信息环境；同步注意力会挤出公司特质信息。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>宽带接入冲击后，股价是纳入更多公司信息，还是更多跟着共同叙事走。</p>
+  <p><strong>怎么对比或识别：</strong>交错 3G 铺开近似 staggered DID（交错双重差分）；县—年或公司—年结果，含县 / 公司与州—年 fixed effects，标准误聚类。动态效应用 Sun and Abraham（2021）事件研究，减轻传统 TWFE（双向固定效应）偏误。结果变量是搜索、IVOL 和 downside–upside 交叉自相关。</p>
+  <p><strong>主要坑：</strong>3G 铺开仍可能与地方增长相关；效率度量是间接代理；机构与散户渠道纠缠。作者做了多组分样，但不是随机实验。</p>
+  <p><strong>可操作步骤：</strong>中国可用地级市宽带 / 4G 覆盖或“提速降费”试点做交错冲击；结果用公司日收益对滞后市场的交叉自相关、特质波动和换手。再按股吧活跃度、机构持股分组。公告研究里，若高注意力股票公告后更跟大盘走、公司特质 CAR 更弱，要怀疑注意力同步而不是信息含量上升。</p>
+  <h3>对董杰的意思</h3>
+  <p>做 A 股披露时，别把“公告后波动下降”自动翻译成“不确定性下降、信息改善”。更稳妥的是同时报告价格延迟、同步性和公司特异成交。问询函若赶上全市场刷屏监管新闻，特质信息可能被挤掉，CAR 会看起来更像指数行情。</p>
+  <p class="links">会议 PDF：<a href="https://conference.nber.org/conf_papers/f229520/f229520.pdf">conference.nber.org</a></p>
+</article>
+
+<footer>
+  入选规则同前：只收 2025 年及以后版本的实证 working paper；至少一位作者能核到 JF / JFE / RFS / JFQA、TAR / JAR / JAE，或 AER / QJE / JPE / Econometrica / REStud 的具体论文（写明题目、期刊、年、卷期页）；数字只取已下载 PDF。未重复 8 月 18–26 日已用篇目，也未做成又一期 Zhi Da 专场。<br><br>
+  本轮放弃：NBER 35500（Bali–Kelly–Mörke）再次只下到登录 HTML，无真实 PDF；Hirshleifer 等 Sleep / Trading in Twilight 实为已用 NBER 33477；Tseng 等 MSME 盈余外溢仅有 ABFER 摘要、无 PDF；会计欺诈 document embeddings（Zhang–Zhou）未能核到顶刊作者记录；Cong 等 GenAI 网贷写作质量离股市披露主线且无开放 PDF。NBER 34807 此前三期因登录页未收，本期从 conference.nber.org 取得可核正文后收录。<br><br>
+  文件：/workspace/research/daily-papers/2026-08-27.html · 网站：<a href="https://dtu2026.github.io/daily-papers/">dtu2026.github.io/daily-papers</a>
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
