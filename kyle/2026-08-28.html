@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-28</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-08-28">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月28日 · 第九期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇绕着同一根线：<strong>信号怎么选、需求斜率能不能从冲击里读出来、强制披露在寡头做市里值多少、一厢情愿怎么让人「同意不同意」。</strong> Viswanathan–Xing 说 Kyle 里熵成本下正态信号不亏；He–Kondor–Li 说动态里估出来的需求斜率只有概念斜率的约四成；Kim–Choi 说强制披露降冲击，做市商越少降得越多；Banerjee–Davis–Gondhi 是昨天 BGZ 一厢情愿的基础篇——外生性居中时，对称人会内生地对公共精度分裂成两拨。和 8/18–8/27 不重复。</p>
+  <p>读法照旧：先看「问了什么」和「为什么值得看」。公式从 PDF 抄。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Viswanathan–Xing：Kyle 里随便先验，连续信号就够，正态不亏</a> — 利润潜力 vs 泄漏 vs 熵成本</li>
+      <li><a href="#p2">He–Kondor–Li：供给冲击会拧弯需求曲线，估出来的弹性太扁</a> — 测得斜率 ≈ 概念斜率的 40%</li>
+      <li><a href="#p3">Kim–Choi：强制披露降价格冲击，做市商越少越管用</a> — SOX 403 截面验证</li>
+      <li><a href="#p4">Banerjee–Davis–Gondhi：一厢情愿 + 外生性 → 内生同意不同意</a> — 昨天 BGZ 的信念底座</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Flexible Information Acquisition in the Kyle Model</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Flexible Information Acquisition in the Kyle Model" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">S. Viswanathan &amp; Hao Xing · 2026年3月 · Duke / Boston University · arXiv 2603.21842</p>
+  <div class="tags">
+    <span class="tag">Kyle</span>
+    <span class="tag">information acquisition</span>
+    <span class="tag">entropy</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Foster &amp; Viswanathan — <em>JF</em> 1996「Strategic Trading When Agents Forecast the Forecasts of Others」（51(4):1437–1478）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>经典 Kyle 里知情者先拿到正态信号再交易。先验不是正态、信号结构随便选，熵成本（互信息）下最优信号长什么样？还能不能继续用正态信号？</p>
+
+  <h3>设定</h3>
+  <p>连续时间 Kyle / Back (1992)。知情者在 t=0 选信号结构 (p(·|·), q(·))，付互信息成本 λ I(s̃, ṽ)，然后进交易。利润用 Back–Cocquemas–Ekren–Lioui (2021) 的最优传输表示：</p>
+  <div class="eq">Π = ½ { Var(E[ṽ|s̃]) + E[Z<sub>T</sub>²] − W<sub>2</sub>²(F<sub>s</sub><sup>c</sup>, G) } − λ I(s̃, ṽ)</div>
+  <p class="eq-note">人话：第一项是「后验期望的方差」——信息优势越大，能赚的越多（利润潜力）。W<sub>2</sub> 是后验期望分布离噪声交易正态有多远——交易太猛、尾太肥，做市商学得快，泄漏成本升。λI 是买信息的钱。</p>
+
+  <h3>核心机制</h3>
+  <ul>
+    <li><strong>正态先验：</strong>Gelbrich 下界说，跟噪声正态的 W<sub>2</sub> 最小的也是正态，所以正态信号最优。精度随 λ 升而降、随噪声波动 σ<sub>Z</sub> 升而升（噪声大更好藏，愿意买更准的信号）。</li>
+    <li><strong>任意先验（离散或连续）：</strong>连续信号总是最优。哪怕先验只有两点 {L,H}，后验期望仍在 [L,H] 上连续分布——因为噪声连续，行动空间无穷，凸性让「把一个信号劈成两个」总更好。</li>
+    <li><strong>信号不定性：</strong>任意单调连续信号，配上 logit 型后验，给知情者同样的事前价值、同样的后验期望分布、同样的交易策略无条件分布。所以<strong>选正态信号不亏</strong>，给 Kyle (1984)、Back–Pedersen (1998) 的正态习惯一个理由。</li>
+  </ul>
+  <p>比较静态：λ 升或 σ<sub>Z</sub> 降 → 后验期望方差掉、利润潜力掉，分布越来越像正态（峰度往 3 靠），泄漏成本也降。两点对称先验里，λ/(σ<sub>Z</sub>√T) 是充分统计量。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>成本是 Sims 式互信息，不是凸精度成本。换其他理性疏忽成本，最优信号形状可能变。</li>
+    <li>静态买一次信息。动态边交易边买（Banerjee–Breon-Drish）是另一篇故事。</li>
+    <li>均衡限在 Markovian + inconspicuous（总订单在自身滤波里长得像噪声）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 8/24 Khorrami–Thereze 对着：那边在大市场极限里看「边际成本 χ=0 才有魔法」；这篇在单知情者、灵活信号结构里说「正态不亏、先验形状会被熵成本拧向正态」。A 股里若噪声薄（σ<sub>Z</sub> 小），知情者该买得更糊、交易更像正态——别假设他们总带着重尾私信硬砸。</p>
+  <p class="links"><a href="https://arxiv.org/pdf/2603.21842.pdf">arXiv PDF</a> · <a href="https://arxiv.org/html/2603.21842v1">HTML</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Demand Elasticity in Dynamic Asset Pricing</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Demand Elasticity in Dynamic Asset Pricing" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhiguo He, Péter Kondor &amp; Jessica Shi Li · NBER w34450 · 2025年6月首稿 / 2026年1月作者页 / 2026年7月 NBER 修订</p>
+  <div class="tags">
+    <span class="tag">demand system</span>
+    <span class="tag">elasticity</span>
+    <span class="tag">dynamic GE</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>He &amp; Kondor — <em>Econometrica</em> 2016「Inefficient Investment Waves」（84(2):735–780）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>用残差供给冲击（指数踢出、评级改规则、QE）描投资者需求斜率，是不是在动态经济里站得住？昨天 Fuchs–Fukuda–Neuhann 讲三难（无套利 / 现金流偏好 / 模型无关识别）。这篇从另一头：就算你认准「斜率」这个对象，供给冲击本身也会拧弯需求曲线。</p>
+
+  <h3>设定</h3>
+  <p>连续时间、多资产。两类人：短寿 hedgers（禀赋相关结构被 Poisson 改写，制造残差供给冲击）和长寿 investors（Merton 式消费—组合）。冲击持久度由 Poisson 强度控。</p>
+
+  <h3>核心机制</h3>
+  <p>静态里，斜率 = 风险容忍 / 收益方差，两边都是原语，供给冲击能描出来。动态里不行：</p>
+  <ul>
+    <li><strong>内生风险：</strong>hedgers 减持 → investors 多扛 → 波动放大（财富效应 + 风险溢价反馈）→ 协方差矩阵变胖 → 需求斜率（∝ 协方差逆）变扁。测得的斜率比概念斜率平。</li>
+    <li><strong>放大的跨期对冲：</strong>RRA≠1 时，别人超配某资产会改投资机会；冲击让这层对冲需求移动，需求曲线再平移。</li>
+    <li><strong>对冲反转：</strong>冲击若会回撤，今天的斜率还要贴现「将来被买回去」。</li>
+  </ul>
+  <p>校准后：<strong>测得斜率大约是概念斜率的 40%</strong>——真实需求曲线比文献估出来的陡得多。偏误在冲击无穷小、纯短暂时也不消失。</p>
+  <div class="eq">measured slope ≈ 0.4 × conceptual slope</div>
+  <p class="eq-note">人话：你以为机构「很弹性」（小溢价就吞很多供给），其实一半以上是曲线自己被冲击拧扁了。真要让他们吞同样的量，需要的溢价更大。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>对象是 Merton 式「瞬时期望收益 → 最优组合」斜率，不是 Fuchs 等「单资产价格水平 → 需求量」（那条识别病另说）。</li>
+    <li>校准挂在 Ben-David 等 Morningstar 评级冲击、以及指数纳入量级上；数字依赖这些场景。</li>
+    <li>companion 文 He–Kondor–Li (2026) 换角度谈「总乘数」，不把冲击当需求弹性的工具变量。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和昨天 Trilemma 成对：那边说结构认不出来；这边说就算认得出，动态 GE 也会把测值拧扁。A 股看北向、ETF、互联互通冲击时，别把「半弹性」当政策不变的结构参数——冲击本身改了波动和协方差。</p>
+  <p class="links"><a href="https://zhiguohe.net/wp-content/uploads/2026/02/He_Kondor_Li.pdf">作者主页 PDF</a> · <a href="https://www.nber.org/papers/w34450">NBER w34450</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Mandatory Disclosure in Oligopolistic Market Making</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Mandatory Disclosure in Oligopolistic Market Making" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Seongjin Kim &amp; Jin Hyuk Choi · 2026年4月 · 成均馆 / UNIST · arXiv 2604.10194</p>
+  <div class="tags">
+    <span class="tag">disclosure</span>
+    <span class="tag">oligopoly</span>
+    <span class="tag">Kyle</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Choi, Larsen &amp; Seppi — <em>JFE</em> 2019「Information and trading targets in a dynamic market equilibrium」（132(3):22–49）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>强制披露知情成交（Huddart et al. 2001）一直假设竞争性做市商。寡头做市（Bondarenko；Choi et al. 2026）又常不写披露。两边合在一起：披露带来的流动性改善，是不是随做市竞争强度变？</p>
+
+  <h3>设定</h3>
+  <p>离散时间多期 Kyle。知情者每期下单后公开（强制披露）。为避免可逆策略立刻揭穿私信，知情者加 dissimulation 噪声（混策略）。M≥3 个风险中性做市商，按价格依赖订单竞争出清。线性均衡存在且唯一、对称。</p>
+
+  <h3>核心机制</h3>
+  <p>Proposition 3（相对完全竞争基准）：</p>
+  <ul>
+    <li>披露总是降价格冲击（流动性更好）。</li>
+    <li><strong>比例降幅在竞争弱（M 小）时严格更大</strong>——边际收益随竞争减弱而升。</li>
+    <li>同时削知情者信息租金和做市商寡头租金；噪声交易者福利改善在弱竞争时更明显。</li>
+  </ul>
+  <p>直觉：弱竞争时做市商本就抽很多租、冲击本就大；披露让历史知情单进公共信息，压缩信息不对称，寡头加价的空间被压得更狠。接近完全竞争时，披露的边际改善变小，但还在。</p>
+
+  <h3>实证一笔</h3>
+  <p>SOX Section 403（2002-08-29）把内部人披露从 10 个日历日压到 2 个工作日。CRSP 日度 DID：<code>log(Spread)</code> 对披露×做市商数量，交互显著为正——做市商更少的股票，披露后点差降得更多。和 Prop. 3 同向。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>披露的是知情成交量，不是公司公告；机制挂在 Huddart 式 dissimulation 上。</li>
+    <li>M≥3、线性—高斯。连续统竞争极限用 M→∞ 逼近。</li>
+    <li>实证用做市商覆盖数当竞争代理，是截面强度，不是因果操纵 M。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>监管常问「加披露有没有用」。这篇说：有用，而且在做市薄、竞争弱的票上更有用。A 股部分小票流动性提供者少，强制更快的大单/董监高披露，理论预测点差改善应大于龙头股——可以当异质性假说，交给 Jeff 那边估。</p>
+  <p class="links"><a href="https://arxiv.org/pdf/2604.10194">arXiv PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Strategic Wishful Thinking: Implications for Forecasts</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Strategic Wishful Thinking: Implications for Forecasts" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee, Jesse Davis &amp; Naveen Gondhi · 2026年2月16日 · Michigan / UNC / INSEAD</p>
+  <div class="tags">
+    <span class="tag">wishful thinking</span>
+    <span class="tag">agree to disagree</span>
+    <span class="tag">forecasts</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Banerjee, Breon-Drish &amp; Smith — <em>JF</em> 2025「Feedback Effects and Systematic Risk Exposures」（80(2):981–1028）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>宏观共识常反应不足、个人常过度；金融变量（如 EPS）个人也可能不足；有人对公共信息权重差很多。为什么事前对称的人，会对公共信号精度「同意不同意」？昨天 BGZ 用一厢情愿解释 EPS vs CAPEX；这篇是信念扭曲的总框架。</p>
+
+  <h3>设定与机制</h3>
+  <p>Angeletos–Pavan 式 payoff：</p>
+  <div class="eq">u<sub>i</sub> = −(k<sub>i</sub> − θ)² − ρ(k<sub>i</sub> − K)² − γ(K − θ)²</div>
+  <p class="eq-note">人话：第一项要准；第二项羊群（ρ&gt;0）或标新（ρ&lt;0）；第三项是纯外生性——共识准了你更好（γ&gt;0）还是更差（γ&lt;0，比如「别人错了我的相对排名更高」）。</p>
+  <p>人知道私人信号精度，但不确定公共信号精度；一厢情愿选主观精度抬 anticipatory utility（带偏离最优行动的惩罚）。两条拧信念的力：</p>
+  <ul>
+    <li><strong>基本面不确定通道：</strong>无战略/无外生时，倾向高估公共精度 → 个人过度反应。</li>
+    <li><strong>加总误差通道：</strong>γ、ρ 决定你想不想别人「准」。净效应可用 χ = −γ − ρ − ργ 概括。</li>
+  </ul>
+  <p>γ 很高 → 两通道同向，全员过度；γ 很低 → 加总通道压倒，全员不足；<strong>γ 居中 → 对称纯策略均衡不存在，唯一均衡是混合：一部分人高估公共精度、一部分人低估</strong>——内生 agree to disagree。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>ρ ∈ (−1,1)。扭曲建在 Caplin–Leahy / Banerjee–Davis–Gondhi 的 anticipatory utility 上，不是 diagnostic expectations。</li>
+    <li>基准是选公共精度的主观值；第 6 节才改私人精度。</li>
+    <li>过度/不足用 CG 回归定义：预测误差对修正，系数负=过度、正=不足。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>昨天 BGZ 是「同一扭曲成本参数排 EPS/CAPEX」；这篇解释更底层：外生性强度就能在对称人里生出信念分裂。A 股卖方/买方对「政策信号、窗口指导」精度的公开分歧，不必先假设先天异质先验——战略外生性 + 一厢情愿就够。和 8/18 BMP 合谋篇也顺：那边是流动性不确定改合谋动机；这边是公共精度不确定改主观信念。</p>
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BDGcoordinate.pdf">作者主页 PDF</a></p>
+</article>
+
+<footer>
+  第九期 · Kyle · 路径 /workspace/research/daily-papers/theory-2026-08-28.html<br>
+  避开 8/18–8/27 已写过的篇目。四篇均依 PDF/HTML；顶刊记录已核（Viswanathan JF 1996；He–Kondor Econometrica 2016；Choi JFE 2019；Banerjee JF 2025）。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
