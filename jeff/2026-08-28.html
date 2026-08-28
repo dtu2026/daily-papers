@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-08-28</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-08-28">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年8月28日 · 第九期 · 4 篇 2025–2026 working paper · Jeff</p>
+</header>
+<div class="lede">
+  <p>今天四篇都是“信息怎么进价格、融资成本怎么改行为”：EDGAR/XBRL 会不会把会计类异象打薄、行业财务困境异常、把钱从棕色公司抽走会不会适得其反、以及期权市场上对波动率的 disagreement。</p>
+  <p>最贴董杰的是第一篇：强制电子化披露、机器可读报表，测的是信息获取成本下降之后，会计信号还能不能赚到钱。第三篇提醒：ESG 资金惩罚棕色公司，可能让它们更短视、排放更多。第二、四篇偏资产定价，但“行业互动 vs 公司个体”“用 ML 代理信念分歧”的写法，以后做 A 股文本/互动易都可以借。</p>
+  <nav><ol>
+    <li><a href="#p1">Hirshleifer、Ma：EDGAR / XBRL 与异象</a>：会计类异象被打薄，动量这类非会计异象几乎不动</li>
+    <li><a href="#p2">Chen、Dou、Guo、Ji：行业困境异常</a>：更困境的行业预期收益更低，机制是竞争—困境反馈</li>
+    <li><a href="#p3">Hartzmark、Shue：可持续投资适得其反</a>：抬高棕色公司融资成本，排放反而升</li>
+    <li><a href="#p4">Bali、Kelly、Mörke：波动率 disagreement</a>：期权跨式组合上，分歧越高后续收益越低</li>
+  </ol></nav>
+</div>
+
+<article id="p1">
+  <h2>1. The Effect of New Information Technologies on Asset Pricing Anomalies</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. The Effect of New Information Technologies on Asset Pricing Anomalies" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">David Hirshleifer, Liang Ma · NBER Working Paper 32767 · 2024年8月，2025年1月修订</p>
+  <div class="tags"><span class="tag">EDGAR / XBRL</span><span class="tag">stacked DiD</span><span class="tag">会计异象 vs 非会计异象</span></div>
+  <div class="qual"><strong>顶刊记录（David Hirshleifer）：</strong> “Driven to Distraction: Extraneous Events and Underreaction to Earnings News,” <em>Journal of Finance</em>, 2009, 64(5): 2289–2325（与 Seongyeon Lim、Siew Hong Teoh）。</div>
+  <h3>研究问题</h3>
+  <p>公开财务信息变容易拿、也更容易机器处理之后，那些靠会计数字赚钱的资产定价异象会不会变弱？作者拿两场“外生”的技术改革来比：1993–1996 年分批上线的 EDGAR（电子化披露，降低获取成本），和 2009 年起强制的 XBRL（交互式数据，降低处理成本）。</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>会计类异象（应计、投资/资产、毛利率等）：EDGAR 实施后，聚合多空收益（Net = 多头−空头）大约每月少赚 0.39%–0.41%（相对 Fama–French 三因子调整后仍显著）；XBRL 强制后大约每月少赚 0.36%–0.45%。</li>
+    <li>非会计类异象（如动量）：同样设定下，EDGAR / XBRL 的效应小且不显著。</li>
+    <li>扩到同行评议文本分类的 32 个会计异象 + 34 个非会计异象，模式一样。获取变易和处理变易，对会计异象的打薄幅度差不多。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>降低披露获取成本 / 处理成本之后，会计信号驱动的多空组合还能不能继续赚异常收益。</p>
+  <p><strong>怎么对比或识别：</strong>EDGAR、XBRL 都是分批强制，适合做 staggered DiD（交错双重差分）。作者用的是 stacked DiD：把每一波“新进处理组 vs 尚未处理、且干净的对照”叠成面板，交互项是 Net × Post，系数负就表示异象被打薄。会计 vs 非会计分组，相当于安慰剂：如果只是整体市场变有效，动量一类也应该掉；如果只掉会计组，更像“会计信息成本”这条通道。</p>
+  <p><strong>主要坑：</strong>分批处理里，已处理组当对照会偏（Baker / Goodman-Bacon 那类问题），所以他们 stacked + clean controls；异象本身会随时间变弱，要和同期对照比；EDGAR 时代和 XBRL 时代相隔十几年，制度环境不同，别把两场实验的系数直接比成“哪个技术更强”。</p>
+  <h3>对董杰的意思</h3>
+  <p>A 股互动易、XBRL、强制调研纪要公开，都是“获取/处理成本下降”的近亲。可以照这个框架想：哪些 A 股信号依赖公告原文（更像会计通道），哪些依赖价格动量或资金流（更像非会计）。强制电子化之后，前者的可预测性更该被打薄。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w32767">NBER w32767</a> · PDF 开放（修订稿）</p>
+</article>
+
+<article id="p2">
+  <h2>2. Industry Distress Anomaly</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Industry Distress Anomaly" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hui Chen, Winston Wei Dou, Hongye Guo, Yan Ji · NBER Working Paper 35513 · 2026年7月（JFE R&amp;R）</p>
+  <div class="tags"><span class="tag">行业困境</span><span class="tag">竞争—困境反馈</span><span class="tag">风险定价</span></div>
+  <div class="qual"><strong>顶刊记录（Hui Chen）：</strong> “Macroeconomic Conditions and the Puzzles of Credit Spreads and Capital Structure,” <em>Journal of Finance</em>, 2010, 65(6): 2171–2212。同文作者 Dou 另有 “Inalienable Customer Capital, Corporate Liquidity, and Stock Returns,” <em>Journal of Finance</em>, 2021, 76(1): 211–265。</div>
+  <h3>研究问题</h3>
+  <p>公司层面早就有“财务困境异常”：更可能违约的公司，后续股票收益反而更低（Campbell–Hilscher–Szilagyi 那条线）。这篇问：把财务困境聚到行业层面，是不是还有一层独立的异常？为什么更困境的行业，期望收益反而更低？</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>行业困境越高，后续权益期望收益显著越低；控制公司层面困境之后，行业效应仍在。</li>
+    <li>把公司随机打乱重组成“假行业”，异常消失——说明不是简单把公司困境加总，而是真行业里的战略互动在起作用。</li>
+    <li>理论与实证都指向 competition–distress feedback：行业里一家变弱 → 价格战更凶 → 利润率更差 → 更暴露于折现率冲击。特质左尾风险大的行业更“困境”，但这条反馈反而弱，对折现率冲击的暴露更小，所以期望收益更低。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>行业财务困境与未来行业/行业内股票收益的横截面关系，以及它是不是公司困境的简单加总。</p>
+  <p><strong>怎么对比或识别：</strong>先做行业排序与多空；再把公司困境放进同一回归看行业系数还在不在；关键安慰剂是“随机重组行业”。理论侧用带长期违约债 + 策略性竞争（supergame）的行业均衡模型，推出竞争—困境反馈如何放大对折现率冲击的暴露。</p>
+  <p><strong>主要坑：</strong>行业分类本身有噪声；困境指标和折现率冲击可能同时动；“风险定价”故事要和“错误定价/卖空限制”分开，作者用模型定量对齐，但实证仍要小心遗漏宏观状态变量。</p>
+  <h3>对董杰的意思</h3>
+  <p>A 股很多研究停在公司困境或 ST。这篇提醒：同业竞争强度会把困境“传染”到利润率和要求回报。做披露时也可以想：问询函、行业政策冲击，会不会通过竞争反馈改写同业的盈余与估值，而不只打在被点名的那一家。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35513">NBER w35513</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4738806">SSRN 4738806</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Counterproductive Sustainable Investing: The Impact Elasticity of Brown and Green Firms</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Counterproductive Sustainable Investing: The Impact Elasticity of Brown and Green Firms" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Samuel M. Hartzmark, Kelly Shue · NBER Working Paper 35519 · 2026年7月</p>
+  <div class="tags"><span class="tag">ESG / 影响投资</span><span class="tag">融资成本</span><span class="tag">排放弹性</span></div>
+  <div class="qual"><strong>顶刊记录（Kelly Shue）：</strong> “Can the Market Multiply and Divide? Non-Proportional Thinking in Financial Markets,” <em>Journal of Finance</em>, 2021, 76(5): 2307–2357（与 Richard Townsend）。</div>
+  <h3>研究问题</h3>
+  <p>主流可持续投资是：买“绿”、卖“棕”，希望压低绿公司融资成本、抬高棕公司融资成本，逼所有人变绿。作者问：绿公司和棕公司对融资成本变化的“影响弹性”（impact elasticity，排放随融资成本怎么变）是不是一样？如果不一样，这套策略会不会帮倒忙？</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>绿公司（排放本来就极低，多在金融、保险、医疗）几乎没空间再绿，融资成本变化时排放几乎不动。</li>
+    <li>棕公司空间大约是同规模绿公司的约 180 倍；融资更贵、更接近困境时，排放显著上升（短视：保现金流、推迟绿色技改）。</li>
+    <li>因此：把钱从棕抽到绿，若真改了融资成本，会让棕更棕，而绿几乎不变绿——聚合环境结果可能更差。</li>
+    <li>评级与资金流还常按百分比减排奖励已经很绿的公司，对棕公司改善激励很弱。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>排放强度（Trucost Scope 1+2，按收入缩放）对各类融资成本冲击的反应，在绿/棕分组里是否不同。</p>
+  <p><strong>怎么对比或识别：</strong>样本约 2002–2020。冲击来源包括：行业业绩冲击（剔除本公司后的行业表现，近似外生）、财务困境冲击、implied cost of capital（ICC，偏好 GLS 机械算法，并做多指标平均稳健）。绿/棕按排放分位。核心是交互：冲击 × 棕色，看排放变化。不是随机实验，靠行业层面冲击和多种代理交叉验证。</p>
+  <p><strong>主要坑：</strong>ICC 噪声大；“一般融资冲击”≠“ESG 专门冲击”（ESG 还可能附带声誉激励）；因果方向上，排放也可能反过来影响融资成本——作者用行业冲击、困境代理减轻，但不能说成干净的政策评估。</p>
+  <h3>对董杰的意思</h3>
+  <p>和董杰做披露/互动易很像：平台上“看起来认真回复”不等于实质信息改善。这里是“看起来惩罚棕色”不等于排放下降。做 A 股绿色金融或 ESG 披露研究时，记得测行为弹性（融资变贵之后公司实际怎么改生产），别只测资金流向或评级分数。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35519">NBER w35519</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4359282">SSRN 4359282</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Volatility Disagreement in the Options Market</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Volatility Disagreement in the Options Market" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Turan G. Bali, Bryan T. Kelly, Mathis Mörke · NBER Working Paper 35500 · 2026年7月</p>
+  <div class="tags"><span class="tag">期权 / 波动率</span><span class="tag">信念分歧</span><span class="tag">机器学习代理</span></div>
+  <div class="qual"><strong>顶刊记录（Bryan T. Kelly）：</strong> “Characteristics are covariances: A unified model of risk and return,” <em>Journal of Financial Economics</em>, 2019, 134(3): 501–524（与 Seth Pruitt、Yinan Su；IPCA）。</div>
+  <h3>研究问题</h3>
+  <p>投资者对“未来实现波动率会有多高”经常吵成一团，但市场上几乎没有直接的波动率分歧调查。作者用一堆异质机器学习模型当“假想投资者”，看他们对同一只股票未来实现方差的预测有多散，定义股票—月层面的波动率 disagreement（VDIS），再问：分歧大的时候，期权（尤其是 delta-hedged 跨式）该怎么定价？</p>
+  <h3>主要结果</h3>
+  <ul>
+    <li>按 VDIS 对单名 delta-hedged、平价跨式排序，多空月收益约 −5.14%（高分歧一侧后续收益更低），对常见期权收益预测因子稳健。</li>
+    <li>波动率分歧上升伴随更多新开期权仓位；模式与若干“信念分歧定价”理论定性一致。</li>
+    <li>结合注意力、所有权、套利成本等证据，作者更偏向 Miller 式错误定价（乐观意见主导），而不是单纯的风险补偿。</li>
+  </ul>
+  <h3>方法（本科计量）</h3>
+  <p><strong>在测什么：</strong>第二矩（波动率）上的信念分歧，能不能预测 delta-hedged 期权收益。</p>
+  <p><strong>怎么对比或识别：</strong>用多套随机森林/异质信息集模拟“100 个投资者”，取预测的横截面离散度当 VDIS；再做十分位排序与带控制的回归。关键对照：一阶矩（收益）分歧、方差风险溢价等是否吞掉 VDIS。最后用注意力、持股、保证金摩擦区分“风险”与“错误定价”。</p>
+  <p><strong>主要坑：</strong>ML 分歧是代理变量，不是真实问卷；−5.14% 来自工作论文摘要中的排序结果，经济幅度很大，要警惕微观结构噪声、卖空/保证金摩擦和样本期；NBER 正式 PDF 目前常需订阅，细节以作者放出的 SSRN 稿为准。</p>
+  <h3>对董杰的意思</h3>
+  <p>A 股没有发达的个股期权面板，但“用模型分歧代理投资者 disagreement”可以搬到互动易、股吧、研报文本：同一事件下，不同模型/不同投资者解读的离散度，是否预测漂移或波动。比只做情绪均值更贴近这篇。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35500">NBER w35500</a>（PDF 常为订阅墙；摘要与二次来源交叉核对）</p>
+</article>
+
+<footer>
+  本期避开 8/18–8/27 已报编号与 Zhi Da 连发。数字与设定均来自工作论文正文/摘要；35500、35513 的 NBER PDF 对本机为登录页，35513 另据 SSRN/作者主页摘要与综述交叉核对，35500 的排序收益以 WP 摘要表述为准。站点：<a href="https://dtu2026.github.io/daily-papers/">dtu2026.github.io/daily-papers</a>
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
