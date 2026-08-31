@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-08-31</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-08-31">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年8月31日 · 第十期 · 4 篇 2025–2026 working paper / 新刊 · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇：银行<strong>故意</strong>用不透明换便宜存款；动态资产市场里估需求弹性常估错甚至符号反了；投资者向 ESG 报告何时鼓励绿色、何时压股价；内化交易在小/大 tick 下对 PFOF 与福利方向相反。和 8/18–8/28 不重复（含不重复用 Cespa–Vives《Market Opacity》，8/24 脚注已点过）。</p>
+  <p>读法照旧：先看「问了什么」和「为什么值得看」。机制与数字均依 PDF。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Babus–Farboodi–Stockler：银行故意不透明，用短期挤兑换长期便宜存款</a> — 高利率时过度不透明</li>
+      <li><a href="#p2">van Binsbergen–David–Opp：动态市场里估需求弹性，常用工具偏得离谱甚至符号反</a> — 对照 8/28 He–Kondor–Li</li>
+      <li><a href="#p3">Friedman–Heinle–Luneva：投资者向 ESG 报告何时鼓励绿色、何时压股价</a> — θ 三段式</li>
+      <li><a href="#p4">Degryse–Karagiannis：内化交易 + tick 大小决定 PFOF 与福利方向</a> — 小 tick 伤投资者</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Bank Opacity and Deposit Rates</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Bank Opacity and Deposit Rates" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ana Babus, Maryam Farboodi &amp; Gabriela Stockler · NBER w34618 · 2026年1月 NBER / 作者页 2025-12 / 2026-08-25 修订稿 · WashU / Cornell–MIT / UPF</p>
+  <div class="tags">
+    <span class="tag">bank opacity</span>
+    <span class="tag">deposit rates</span>
+    <span class="tag">illiquidity vs insolvency</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Babus &amp; Kondor — <em>Econometrica</em> 2018「Trading and Information Diffusion in Over-the-Counter Markets」（86(5):1727–1769）；Farboodi &amp; Veldkamp — <em>AER</em> 2020「Long-Run Growth of Financial Data Technology」（110(8):2485–2523）。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>银行天生不透明。一派说不透明放大挤兑与危机；另一派说不透明让债务「对信息不敏感」，反而稳住流动性（Dang–Gorton–Holmström–Ordoñez）。两边都常把不透明当外生政策。银行自己会不会<strong>故意</strong>选组合有多不透明，好同时「存款便宜」又「不太容易死」？</p>
+
+  <h3>设定</h3>
+  <p>三期。银行没钱，向储户吸活期存款，投到最多两个长期风险项目。银行同时选两件事：</p>
+  <ul>
+    <li><strong>组合配置 φ：</strong>资金在两个项目之间怎么分（越接近 ½ 越分散）。</li>
+    <li><strong>组合构成：</strong>透明（中间期两个项目收益都可见）、不透明（只见一个）、完全不可观测（什么都不见）。</li>
+  </ul>
+  <p>储户中间期可提前取款，拿到安全外部收益 r（可想成政策利率 / 国债）。银行失败两种：中间期被挤兑（illiquidity），或到期付不起约定存款利率 D（insolvency）。存款合同按储户期望剩余最大化定 D（竞争性存款市场），银行用 φ 和透明度最大化自己的期望利润。</p>
+
+  <h3>核心机制</h3>
+  <p>关键：<strong>透明或完全不可观测时，储户信息与 φ 无关</strong>——银行只面对一种失败风险，通常选分散组合把 D 压低。只有部分不透明时，φ 一身两用：既改到期收益分布，又改储户中间期信号的精度。</p>
+  <ul>
+    <li>更分散（φ→½）→ 到期更稳、D 更低、偿付风险降；但信号变糊 → 储户更谨慎、提前取款概率升。</li>
+    <li>更集中 → 信号更尖、挤兑少；但 D 升、到期违约风险升。</li>
+  </ul>
+  <p>均衡随 r 分三段（Proposition 3）：r 低 → 完全不可观测 + 分散；r 居中 → <strong>部分不透明 + 故意不完全分散</strong>；r 很高 → 透明 + 集中（风险转移）。直觉：利率高时，银行宁可多扛短期挤兑，也要用「糊信息」压住长期存款成本——不透明成了把失败风险从「到期」挪到「中间期」的工具。</p>
+  <div class="eq">opacity：用更高的短期挤兑概率，换更低的长期存款利率 D</div>
+  <p class="eq-note">人话：银行不是「藏坏消息好玩」，而是故意让储户看不清，好把存款利率砍下来；利率越高，她越肯为便宜资金付「更容易被挤兑」的代价。和 Chen–Goldstein–Huang–Vashishtha (JFE 2022)「更透明的美国银行付更高存款利率」同向。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>最多两个项目、均匀收益；破产时储户拿零（极端，文中称 α 小正数也稳健）。</li>
+    <li>无协调博弈式 Diamond–Dybvig 多重挤兑——挤兑由信息驱动、储户同质对称。</li>
+    <li>r 当作货币政策代理；重点是微观机制，不是估政策乘数。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「银行披露 / 组合透明度」从监管外生旋钮，改成银行利润最大化的内生选择。高利率环境预测：银行会更不透明、存款利率相对透明银行更低、但流动性失败更频繁——正好对照 2022–23 加息周期里区域银行挤兑叙事。A 股侧可类比：理财子公司 / 城商行资产端不透明与负债成本、赎回压力的联动，不必先假设监管强制不透明。</p>
+  <p class="links"><a href="https://www.nber.org/papers/w34618">NBER w34618</a> · <a href="http://www.anababus.net/research/opct.pdf">作者主页 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. How (Not) to Identify Demand Elasticities in Dynamic Asset Markets</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. How (Not) to Identify Demand Elasticities in Dynamic Asset Markets" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jules H. van Binsbergen, Benjamin David &amp; Christian C. Opp · NBER w34528 · 2025年12月 / 2026年2月 Bocconi 稿 / 2026年6月 NBER 修订 · Wharton / Rochester</p>
+  <div class="tags">
+    <span class="tag">demand elasticity</span>
+    <span class="tag">identification</span>
+    <span class="tag">dynamic trading</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>van Binsbergen &amp; Opp — <em>JF</em> 2019「Real Anomalies」（74(4):1659–1706）；另 Glode &amp; Opp — <em>AER</em> 2016「Asymmetric Information and Intermediation Chains」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>Koijen–Yogo、Gabaix–Koijen 等用 IO 结构方法估机构需求弹性，得到接近零，远小于理论基准，据此说市场「惊人地无弹性」、摩擦很大。把股票当普通商品估「涨价少买多少」——在资产可再卖的动态市场里，这套识别站不站得住？</p>
+
+  <h3>设定</h3>
+  <p>动态一般均衡交易模型：投资者可反复调仓，资产特征不仅是今天价格 P<sub>t</sub>，还包括整条未来转售价格路径 {P<sub>τ</sub>}<sub>τ&gt;t</sub>。工具变量若在抬高今天价格的同时改了未来转售价值，就破坏排他性。作者给出有效识别的必要条件，并在三类价格动态下推导偏误公式：（1）价格冲击以每期概率 π<sub>R</sub> 消退；（2）第一期完全不消退；（3）可预期的价格继续堆高（动量，π<sub>B</sub>）。</p>
+
+  <h3>核心机制</h3>
+  <p>概念张力：普通商品涨价 = 只涨成本；金融资产涨价若伴随「明天还能更高」，收益端也动了——理性人可能<strong>越贵越买</strong>，看起来像「负弹性」或「几乎无弹性」，其实是机会集在变。</p>
+  <ul>
+    <li><strong>有效工具大致要：</strong>价格变动最多只持续一个交易期，且事先不可预期。</li>
+    <li><strong>持久冲击（消退概率 π<sub>R</sub>）：</strong>估得弹性 ≈ π<sub>R</sub> × 真弹性。例：机构日频调仓、冲击平均持续两年 → 估得量级只有真值的约 1/730。</li>
+    <li><strong>动量堆高（π<sub>B</sub>）：</strong>正价格冲击还预示未来更高收益 → 投资者加仓 → <strong>估得弹性与真弹性符号相反</strong>；π<sub>B</sub> 越大偏得越狠。</li>
+  </ul>
+  <div class="eq">ε̂ ≈ π<sub>R</sub> · ε　（消退案）；动量案下 sign(ε̂) = −sign(ε)</div>
+  <p class="eq-note">人话：你以为机构「几乎不卖」，其实很多时候是因为冲击还没消退、甚至还在涨，拿着更值钱。把这种行为读成「需求无弹性 / 行为摩擦」，会差几个数量级，动量场景下连正负号都会读反。</p>
+  <p>文中还给出近似纠偏因子 C，使 C×ε̂≈ε（短交易期、高 λ 时）；并指出标准「乘数」算法在多期设定下严重不够——要维持某条目标价格路径，央行式干预（如 QE）需要的是整条动态支持过程，不是静态一乘。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>偏误公式挂在常值每期消退/堆高概率的程式化动态上；作者强调没有万能纠偏能救所有静态截面 / 事件研究设计。</li>
+    <li>对照的是把资产当 IO「产品」的静态需求系统，不是 8/28 He–Kondor–Li 那种「供给冲击拧弯概念斜率」的 GE 通道——两边互补：那边说测得斜率被 GE 拧扁；这边说识别工具本身常常不合法。</li>
+    <li>实证部分检查常用工具（含指数类）的价格路径是否持久/可预期。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>直接打在「市场无弹性」叙事的方法论七寸上，并和昨天 He–Kondor–Li 成对：一个从 GE 扭曲测得斜率，一个从识别失效解释为何估出来接近零甚至反号。A 股看北向、ETF、互联互通、汇金式托市时，别把「价格动了量却不动」直接读成结构无弹性——先问冲击是一天消退，还是拖很久、甚至还在堆。</p>
+  <p class="links"><a href="https://www.nber.org/papers/w34528">NBER w34528</a> · <a href="https://finance.unibocconi.eu/sites/default/files/Paper%20Jules%20van%20Binsbergen.pdf">Bocconi PDF（2026-02-25）</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Implications of Investor-Focused ESG Reporting</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Implications of Investor-Focused ESG Reporting" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Henry L. Friedman, Mirko S. Heinle &amp; Irina Luneva · 2025年8月作者页稿 / SSRN 4537743（2024-12 修订）· UCLA / Wharton / NYU Stern · R&amp;R RAST</p>
+  <div class="tags">
+    <span class="tag">ESG disclosure</span>
+    <span class="tag">greenwashing</span>
+    <span class="tag">real effects</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Heinle, Smith &amp; Verrecchia — <em>TAR</em> 2018「Risk-Factor Disclosure and Asset Prices」（93(2):191–208）；另 Heinle — <em>JAR</em> 2016「Lobbying and Uniform Disclosure Regulation」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>强制 / 自愿 ESG 报告铺开后，股价、真绿色投入、财务造假、漂绿会怎么动？实证结果杂。需要一个把「投资者用 ESG 报告定价 → 经理既做真努力又会漂绿」写清楚的模型，看引入 ESG 报告何时鼓励绿色、何时反而压股价。</p>
+
+  <h3>设定</h3>
+  <p>经理选 ESG 努力 e（同时影响真 ESG 产出 y 和现金流，现金流对 e 的敏感度记 θ），再发财务报告与 ESG 报告，两份都可以有偏误（财务操纵 + 漂绿）。投资者里有一部分在乎 ESG；股价进经理目标，从而同时给真实行动和报告操纵激励。先解「只有财务报告」基准（Prop. 1），再解「两份报告」（Prop. 2）。</p>
+
+  <h3>核心机制</h3>
+  <p>关键是 θ——绿色努力对现金流是正还是负：</p>
+  <ul>
+    <li><strong>θ &gt; 0（绿色也赚钱）：</strong>引入 ESG 报告 → 股价对 ESG 报告正反应 → 鼓励真 ESG，也鼓励漂绿；通常抬期望现金流与价格。</li>
+    <li><strong>θ 中等负（有权衡但不极端）：</strong>仍可能对 ESG 报告正定价，但引入报告后<strong>公司价格可能反而下降</strong>（Prop. 4）——定价把「绿色伤现金」的信息更清楚地打进价格。</li>
+    <li><strong>θ 很负：</strong>市场对 ESG 报告负反应；引入报告可能<strong>抑制</strong>公司绿色投入（Prop. 5）。</li>
+  </ul>
+  <div class="eq">θ 决定：ESG 报告是「胡萝卜」还是「戒尺」</div>
+  <p class="eq-note">人话：若做绿色本来就赚钱，多一份 ESG 报表会逼经理真做 + 也会漂绿；若绿色明显伤利润，强迫披露可能让股价更难看，甚至让经理干脆少做绿色。漂绿压力与价格对 ESG 报告的敏感度成正比——投资者越在乎 ESG，漂绿激励越强，但真努力也可能一起升。</p>
+  <p>比较静态：ESG 投资者比例升 → 期望 ESG 表现与漂绿激励同升；惩罚漂绿 / 审计 ESG（提高操纵成本）压漂绿；补贴或碳惩罚改 θ，从而改整段比较静态落在哪一档。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>报告偏误有随机成本，投资者无法完全反推（标准 Dye–Sridhar 式）。</li>
+    <li>ESG 与财务报告同时进线性定价；重点是投资者向披露，不是非投资者向规制。</li>
+    <li>θ 外生：不内生化「绿色技术怎么发现」。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 8/24 CSR 披露标准篇、8/20 气候风险披露篇不同：这篇把「现金流权衡 θ」拧成三段式开关，直接解释为何同样一套 ESG 准则，有的行业股价涨、有的跌、有的真绿升、有的漂绿升。A 股 / 港股强制气候与 ESG 披露落地时，可按行业 θ（绿色是否伤短期利润）做异质性假说，而不是指望「披露一律好」。</p>
+  <p class="links"><a href="https://papers.ssrn.com/abstract=4537743">SSRN 4537743</a> · <a href="https://faculty.wharton.upenn.edu/wp-content/uploads/2019/08/FHL___greenwashing.pdf">Wharton PDF</a> · <a href="https://www.iluneva.com/working-papers-1">作者页（2025-08 稿）</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Priority Rules, Internalization, and Payment for Order Flow</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Priority Rules, Internalization, and Payment for Order Flow" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hans Degryse &amp; Nikolaos Karagiannis · 2025年2月3日稿 · <em>Review of Asset Pricing Studies</em> 2025 · KU Leuven</p>
+  <div class="tags">
+    <span class="tag">internalization</span>
+    <span class="tag">PFOF</span>
+    <span class="tag">tick size</span>
+  </div>
+  <div class="qual">
+    <strong>顶刊：</strong>Degryse &amp; Ongena — <em>JF</em> 2005「Distance, Lending Relationships, and Competition」（60(1):231–266）；另 Degryse, Masschelein &amp; Mitchell — <em>RFS</em> 2011「Staying, Dropping, or Switching」。
+  </div>
+
+  <h3>问了什么</h3>
+  <p>价格优先常被强制，但同价谁先成交可以玩花样——这就是 internalization（内化）：同一经纪商的客户买单和卖单优先撮合（场内 preferencing，或场外配对再上报）。内化怎么改限价 / 市价选择、做市商上场次数，从而改 PFOF（做市商向经纪商买订单流）和投资者福利？关键：答案是否取决于 <strong>tick（最小报价单位）相对投资者估值离散度</strong> 是大还是小？</p>
+
+  <h3>设定</h3>
+  <p>单 tick 限价簿、无限期、投资者序贯到达（扩展 Parlour / Foucault / Colliard–Foucault / Hoffmann：限价单存活两期后过期）。三种制度：</p>
+  <ul>
+    <li><strong>NO：</strong>禁止故意内化，严格价格–时间优先。</li>
+    <li><strong>ON：</strong>场内内化——同经纪商订单可插队（加拿大式）。</li>
+    <li><strong>OFF：</strong>场外内化——经纪商在能提高「自家成交」概率时场外配对再报告。</li>
+  </ul>
+  <p>无投资者限价单时，做市商在最小 tick 上接市价单，并愿把半价差以内付给经纪商当 PFOF。稳态下算成交率、每期投资者福利、PFOF 规模。</p>
+
+  <h3>核心机制</h3>
+  <p>内化相对禁止，有两股力：</p>
+  <ul>
+    <li><strong>预期效应（anticipation）：</strong>怕被同经纪商后来者插队 → 先到的人更爱交市价单 → 成交率升。</li>
+    <li><strong>排队加入效应（queue-joining）：</strong>面对别家经纪商的限价单时，更愿意跟队挂单，赌「自家市价单来了优先撮合」。</li>
+  </ul>
+  <p>哪股力赢，取决于 tick：</p>
+  <div class="eq">小 tick：预期效应主导 → 内化 ↑成交、↓福利、↑PFOF；大 tick：相反</div>
+  <p class="eq-note">人话：价差本来就很窄时，被插队的威胁让人更急着用市价单，订单更多流到做市商手里，PFOF 蛋糕变大，但投资者整体更亏。价差很宽时，大家更愿挂限价单「赌内化优待」，做市商上场变少，PFOF 反降，投资者福利相对禁止内化时更好。</p>
+  <p>经纪商若可选 OFF vs NO：小 tick 选 OFF，大 tick 选 NO（Proposition 4）——和「PFOF 何时更高」同向。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>单 tick、限价单只活两期；做市商只在簿上无人时出场——换来可解稳态。</li>
+    <li>模型里内化与 PFOF 无直接绑定（不同于美国「买零售流再自己吃」）；PFOF 只通过「做市商上场次数」间接出现。</li>
+    <li>投资者到一次就走；无信息不对称知情交易。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「内化好不好」从道德判断改成 tick 依赖的比较静态——正好对上美股小数点 tick、期权窄 tick、以及 A 股最小价位改革讨论。监管若只禁 PFOF 不碰内化规则 / tick，小 tick 市场上订单仍可能更多流向做市商。可与 Baldauf–Mollner–Yueshen (JFE 2024) 库存视角的零售分流对照：那边说禁分流可能伤福利；这边说在小 tick 下内化本身就伤投资者福利、抬 PFOF。</p>
+  <p class="links"><a href="https://doi.org/10.1093/rapstu/raaf004">RAPS 2025</a> · <a href="https://lirias.kuleuven.be/retrieve/7c8dfd9b-4c5a-43c3-805d-9bbbd0f11a6a">KU Leuven PDF</a></p>
+</article>
+
+<footer>
+  第十期 · Kyle · 路径 /workspace/research/daily-papers/theory-2026-08-31.html<br>
+  避开 8/18–8/28 已写过的篇目（含不重复 Cespa–Vives《Market Opacity》）。四篇依 PDF/NBER 核验；顶刊：Babus Econometrica 2018 / Farboodi AER 2020；van Binsbergen–Opp JF 2019；Heinle TAR 2018；Degryse JF 2005。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
