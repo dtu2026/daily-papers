@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-09-01</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-09-01">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年9月1日 · 第十一期 · 4 篇 2025–2026 实证稿 · Jeff</p>
+</header>
+<div class="lede">
+  <p>周二四篇：一篇用 LSTM 模仿主动基金经理的买卖，发现 71% 的方向能被复制，越不好猜的经理越能赚钱；一篇用宏观账户拆开「市盈率低得吓人」和「自由现金流收益率其实不极端」；一篇把利率风险从股票里抠出来，解释为什么长久期股票并不比匹配国债多拿溢价；一篇最该当工具书——因子 t 值门槛至少 3.0，别再用 1.96 交差。</p>
+  <p>方法上分别练：滚动窗口分类 + 按可预测性分组、会计恒等式拆两个收益率、用 FOMC 意外当工具变量估久期、以及 multiple testing / local FDR。Harvey 那篇没有新交易策略，但董杰以后报因子或披露代理的显著性，这篇是操作手册。</p>
+  <nav><ol>
+    <li><a href="#p1">Cohen、Lu、Nguyen：模仿金融</a>：71% 的主动基金买卖能被预测，最不可预测的经理四季度累计超额约 0.79%</li>
+    <li><a href="#p2">Atkeson、Heathcote、Perri：估值比率的宏观视角</a>：盈利收益率跌、自由现金流收益率稳，差来自劳动份额下降加投资没跟上</li>
+    <li><a href="#p3">Wang：利率风险与利率保险</a>：股票波动和溢价随久期上升远慢于匹配国债，因为利率在坏消息时下跌</li>
+    <li><a href="#p4">Harvey、Sancetta、Zhao：因子检验该用多高门槛</a>：相关性和发表偏误下 t=2 太松，新因子至少 t≈3.0–3.5</li>
+  </ol></nav>
+</div>
+
+<article id="p1">
+  <h2>1. Mimicking Finance</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Mimicking Finance" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Lauren Cohen, Yiwen Lu, Quoc H. Nguyen · NBER Working Paper 34849 · 2026年2月</p>
+  <div class="tags"><span class="tag">主动基金</span><span class="tag">机器学习</span><span class="tag">可预测性</span><span class="tag">经理技能</span></div>
+  <div class="qual"><strong>顶刊记录（Lauren Cohen）：</strong> Cohen, Malloy, and Nguyen, “Lazy Prices,” <em>Journal of Finance</em>, 2020, 75(3): 1371–1415。</div>
+
+  <h3>研究问题</h3>
+  <p>主动基金经理的买卖，有多少其实只是「按自己过去的习惯 + 可观测的基金/股票/宏观状态」就能复现？如果一大部分能被廉价复制，那这部分就不该当成人的稀缺技能来付费。作者不问「这只基金 alpha 是多少」，先问「她下一步会买还是卖」。</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>样本：1990–2023 美国主动股票基金，1,706 只基金，约 543 万条基金–股票–季度。目标是下一季持股变动方向：增持 ≥1%、减持 ≤−1%、中间当 hold。三分类。</li>
+    <li>朴素基准（训练窗里最常见的那一类，一直猜它）平均精度 52%。单层 LSTM 用过去行为、基金特征、股票特征、同类基金买卖频率和宏观利率，把精度抬到 <strong>71%</strong>（相对提高 36.5%，p&lt;0.0001）。中盘混合风格最高，约 75%。</li>
+    <li>更好猜的人：任职更久、同时管更多基金/风格、基金更老。更不好猜：经理本人持有基金份额更高、团队更大、同类竞争更激烈、基金更大、换手更高、申赎更猛、管理费更高。</li>
+    <li>头寸层面：组合里排名靠后的小仓位更好猜；价值、高自由现金流、高派现公司更好猜；成长、高 R&amp;D、盈利意外大的更难猜。</li>
+    <li>按可预测性把经理分成五组：最不可预测一组相对同类基金一季度超额 0.14%（t=2.05），四季度累计 0.36%（t=2.88）；最好猜一组四季度累计 −0.42%（t=2.36）。Q1−Q5 四季度累计 0.79%（t=3.05），FF3/4/5 调整后仍约 0.78%–0.82%。</li>
+    <li>同一经理内部：模型猜错方向的那些股票，年化约 7.98%，猜对的约 7.07%，差 91bp（t=12.41）。把所有经理对同一只股票的「猜对率」平均后分组，最不可预测股票相对最可预测股票下季年化约 424bp（t=5.74），五因子 alpha 约 386bp（t=4.96）。控制 Active Share 后，可预测性系数仍显著为负。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>给定 t 季能看到的信息，下一季这只基金对这只股票是买、卖还是基本不动。再问：这个「好不好猜」能不能预测未来超额收益。</p>
+  <p><strong>怎么对比或识别：</strong>（1）滚动窗：每个合格基金取 28 个季度，前 20 训练、后 8 测试，整窗每次向前滚一季，禁止打乱时间。（2）精度相对「多数类」基准，而不是相对随机 33%——hold 很多，随机对照会骗人。（3）可预测性与收益：按测试期精度分组，看随后 1–4 季相对 Morningstar 同类的超额，再用 FF 因子调。股票层面按「持有它的基金平均猜对率」分组。</p>
+  <p><strong>主要坑：</strong>季报持股只看到净变化，不是每笔成交；存活要求至少 7 年，样本偏向老基金（作者自己发现老基金更好猜）；可预测性可能只是在跟因子或风格，不过控制 Active Share 和多因子后价差几乎不缩；没有交易成本，424bp 是纸面价差；LSTM 超参和 ±1% 阈值会改 71% 这个数，方向比精确百分比更可信。A 股公募季报持仓可做同款分类，但披露频率和「前十大」截断会让精度不可比。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>可迁移的不是「再训一个 LSTM 炒股」，而是把「可复制的机械行为」和「留下的残差」拆开。董杰做互动易或业绩预告时，也可以先预测「公司下一次会不会说套话 / 会不会发预告」，再看残差大的公司后续收益或分析师修正是否不同。基金侧：用公募季报重合作者的三分类，检验「更好猜的经理是不是更像风格指数」——这和主动份额（active share）是两件事，作者已经说明两者不正交。</p>
+  <p class="links">摘要页：<a href="https://www.nber.org/papers/w34849">nber.org/papers/w34849</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34849/w34849.pdf">w34849.pdf</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. A Macroeconomic Perspective on Stock Market Valuation Ratios</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. A Macroeconomic Perspective on Stock Market Valuation Ratios" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Andrew Atkeson, Jonathan Heathcote, Fabrizio Perri · NBER Working Paper 34748 · 2026年1月，2026年8月修订 · forthcoming <em>AER: Insights</em></p>
+  <div class="tags"><span class="tag">估值</span><span class="tag">盈利收益率</span><span class="tag">自由现金流</span><span class="tag">劳动份额</span></div>
+  <div class="qual"><strong>顶刊记录（Atkeson、Heathcote、Perri）：</strong> “The End of Privilege: A Reexamination of the Net Foreign Asset Position of the United States,” <em>American Economic Review</em>, 2025, 115(7): 2151–2206。</div>
+
+  <h3>研究问题</h3>
+  <p>美国公司板块的市盈率、市净率一类指标已经高过历史均值 25–30 年。是不是该等它们回归，从而股票大跌？作者说：先分清你用的是哪一种「收益率」。盈利收益率（earnings / 企业价值）确实掉到历史低位；但自由现金流收益率（FCF / 企业价值）大致围着历史均值转。两者分道扬镳，主要是会计恒等式，不一定是泡沫。</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>数据：美国 Integrated Macroeconomic Accounts，1952 到 2026Q1。企业价值 ≈ 股权市值 + 负债 − 金融资产（含非上市股权插补，并按居民口径调整跨国子公司）。FCF = 公司增加值 − 劳动报酬 − 税 − 资本开支；盈利 = FCF + 净投资。</li>
+    <li>恒等式：盈利收益率 − FCF 收益率 = 净投资 / 企业价值。右边还能再拆成「资本增速 ×（重置成本资本 / 企业价值）」，也就是投资率和 Tobin’s Q 的倒数。</li>
+    <li>1980Q2–1981Q1 对比 2021Q4–2022Q3：FCF 收益率 3.10% vs 3.07%，几乎没动；盈利收益率从 9.37% 掉到 4.26%。两者缺口从 6.27 个百分点收到 1.19。其中资本/企业价值从约 177% 降到 46% 贡献了大部分（约 1.34 个 log 点），投资率下降贡献其余。</li>
+    <li>FCF 相对增加值的上升，大约能被劳动份额下降对上；FCF 比盈利涨得更快，因为派现率（FCF/盈利）从 2000 年前约 0.42 升到之后约 0.7——盈利占增加值升了，净投资份额没升。</li>
+    <li>Gordon 口径：用历史均值倍数 31.43（对应 r−g≈3.25%）去乘当期 FCF/增加值，1980–2022 企业价值/增加值的上升几乎全被 FCF 份额上升解释。最近三年价值又相对 FCF 多涨一截。2026Q1 FCF 收益率 2.59%；若要回到约 3.18% 的历史均值，要么企业价值相对产出掉约 20 个 log 点（作者写约 15 万亿美元），要么 FCF/产出升到约 14.7%（劳动份额再降约 2.7 个百分点）。</li>
+    <li>核对：宏观企业价值回报与标普 500 季度对数回报相关 0.911；FCF 收益率贴近标普自由现金流收益率；盈利收益率贴近 Shiller 盈利收益率。Compustat 上市公司加总也复制「FCF 收益率稳、盈利收益率跌」；把组织资本算进投资后，投资相对企业价值掉得还更明显一点，所以不是「漏计无形资本」一句话能翻案。</li>
+    <li>样本末 AI 资本开支很响，但宏观净投资/增加值和 Compustat 加总都还没抬起来，盈利与 FCF 的缺口暂时没有被投资潮重新拉开。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>两个估值比率走势为什么分手，分手有多少是「净投资相对市值变小」这种会计事实，而不是折现率或增长预期变了。</p>
+  <p><strong>怎么对比或识别：</strong>这不是 DiD。核心是把同一套账户里的两个比率并排，用恒等式把缺口写成可观测的净投资/价值，再对比标普和 Compustat。识别声明很克制：作者不声称找到劳动份额下降的结构原因，只说<strong>只要这些宏观份额不逆转，就不应指望盈利收益率回到旧均值</strong>。</p>
+  <p><strong>主要坑：</strong>宏观口径是「美国居民公司」（含外资在美子公司、不含美国公司的海外子公司），和 A 股/港股上市公司财报不是同一宇宙；非上市股权和 FDI 是插补的；把期权薪酬、S 公司把劳动收入记成资本收入，都会抬高测到的 FCF；无形资本若被记成中间投入，盈利被低估，但 FCF 口径仍对。这篇不能当「现在该不该买股票」的答案，只能当「别只用 CAPE 做均值回归」的警告。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>A 股同样爱看 PE/PB 高低。这篇的课是：先写清分子是盈利、分红还是自由现金流，分母是股权还是企业价值。回购替代分红会让股息率失真（美国已经发生），A 股回购规模上来以后也会。劳动份额、资本开支强度、派现率都是公司金融变量，可以和披露质量交叉：高披露公司是不是更常把「高 PE」解释成无形资本而不是泡沫？不要在回归里把市盈率当外生估值，至少做一组 FCF 收益率的稳健性。</p>
+  <p class="links">摘要页：<a href="https://www.nber.org/papers/w34748">nber.org/papers/w34748</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34748/w34748.pdf">w34748.pdf</a>（2026年8月修订）</p>
+</article>
+
+<article id="p3">
+  <h2>3. Rate Risk and Rate Insurance</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Rate Risk and Rate Insurance" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Olivier Wang · NBER Working Paper 35636 · 2026年8月</p>
+  <div class="tags"><span class="tag">久期</span><span class="tag">股债协方差</span><span class="tag">货币政策意外</span><span class="tag">价值溢价</span></div>
+  <div class="qual"><strong>顶刊记录（Olivier Wang）：</strong> Wang and Werning, “Dynamic Oligopoly and Price Stickiness,” <em>American Economic Review</em>, 2022, 112(8): 2815–2849。另有 “Banks, Low Interest Rates, and Monetary Policy Transmission,” <em>Journal of Finance</em>, 2025, 80(3): 1379–1416。</div>
+
+  <h3>研究问题</h3>
+  <p>股票既像债券（长久期，利率一动价格就动），又不像债券（现金流会变，而且往往和利率一起变）。作者把股票超额收益拆成「同等久期国债那一块」加上「剩下的现金流残差」。如果坏消息来时利率也跌，国债那一块会涨，对冲股票自己的现金流损失——他叫这个 <strong>rate insurance</strong>（利率保险）。问题是：保险有多强？它能不能解释「长久期股票并不比匹配国债多赚钱」，以及价值溢价近几年塌掉？</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>久期不用 Gordon 的 P/D 去猜（成长股 P/D 约 164 年、价值股约 17 年，差十倍，和数据打架）。改用 FOMC 公告日、Bauer–Swanson 正交化货币政策意外：股票对意外的反应，映射到「反应幅度相同的国债组合」的久期。1988–2019，全市场约 <strong>19.6 年</strong>；价值/成长（D/P）约 21.6 与 23.7 年，几乎一样。</li>
+    <li>利率保险 χ = 久期 − OLS 国债 beta。OLS beta 混进了「和现金流消息绑在一起的利率变动」，所以会低估甚至符号翻负。FOMC 工具变量 beta 全是正的；月度 OLS 在 510 个特征组合里有 445 个为负。2000 年前市场国债 beta 已只有 5.8 年（相对 19.6 年久期），保险早就在；2000 年后变成 −5.7 年。</li>
+    <li>波动：匹配国债波动约每多一年久期 +0.8 个百分点；股票特征组合只 +0.32，行业组合只 +0.12。相对「两块不相关」的方差，保险在行业久期最低五分位对冲掉约 16%，最高五分位约 73%。</li>
+    <li>收益：匹配国债回报随久期升，约每年 +0.3 个百分点；股票原始回报几乎不随久期变。于是「股票减匹配国债」的楔子（wedge）约每年 −0.29 到 −0.32 个百分点，大约 23 年以上变成负的。1988–2019 市场 11.4%，匹配国债 10.8%，楔子接近零——但这是短端正楔子和长端负楔子对冲的结果，不是「股票相对债券没有溢价」。</li>
+    <li>30 年零息国债同期约 13.8%，高于股市。短端楔子和文献里分红剥离（dividend strips）的估计接近。</li>
+    <li>异常：多数多空价差在扣掉匹配国债之后仍为正。价值（B/M）和成长的 FOMC 久期差不多，所以「成长久期长、降息该大赢」解释不了样本里价值曾经赢。2010–2019 相对 1988–2007，异常端点的平均 CAPM alpha 从 6.3% 掉到 2.3%；国债 beta 降得越多（保险变强）的特征，alpha 塌得越狠。B/M 价值价差 CAPM alpha 实际掉 18.9 个百分点，用国债 beta 变化预测约 16.7。</li>
+    <li>定价：用「股票+国债混合市场」（MIX）和「久期中性、多高 χ 空低 χ」（RIP）两个可交易因子，49 个行业 + 30 个国债期限上平均绝对 alpha 约 1.3%，比 FF5 再加 TERM（约 2.2%）更贴。低波异象在控制 RIP 后 alpha 从约 11% 收到不到 2%。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>对利率变动、现金流保持不变时，股票价格弹性（久期）；以及现金流残差和匹配国债的协方差（保险）。再看波动、平均收益、异常收益如何随久期和 χ 变。</p>
+  <p><strong>怎么对比或识别：</strong>FOMC 意外当「与现金流消息无关的利率变动」。全样本 311 次公告里，只留 1 年–30 年收益率同向移动的 161 次，好让国债反应曲线可反演。公司债用合约久期外验；用 2019 年底前估的久期预测 2022 加息年的行业收益，每多一年久期约 −1.37 个百分点，匹配国债约 −1.56，说明估出来的久期在样本外也像利率暴露。</p>
+  <p><strong>主要坑：</strong>FOMC 日少、统计力量弱，所以做组合不做个股；「同向曲线」筛选可能挑了一类特定意外；1988–2019 大部分时间利率在下，楔子的水平（不是斜率）受这段历史 realization 影响；理论部分依赖「国债是净财富」（李嘉图等价不成立），这是宏观假设不是检验出来的。A 股没有同等干净的货币政策意外序列，直接搬 FOMC 设计会空转；能搬的是「先找与基本面正交的利率变动，再定义 χ」。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>做事件研究或把利率当控制时，OLS 的股债 beta 不是久期。政策会同时改现金流预期和折现率，系数是两股力的混合物。若题目是「降准/MLF 对股价」，至少要有一个「更像纯折现率」的窗口，和「更像增长消息」的窗口对比。价值/成长在这篇里久期几乎一样，提醒 A 股不要默认「成长股 = 超长久期」。披露日历和利率决议重叠时，CAR 里可能有一大块是久期风而不是信息含量。</p>
+  <p class="links">摘要页：<a href="https://www.nber.org/papers/w35636">nber.org/papers/w35636</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w35636/w35636.pdf">w35636.pdf</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. What Threshold Should be Applied to Tests of Factor Models?</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. What Threshold Should be Applied to Tests of Factor Models?" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Campbell R. Harvey, Alessio Sancetta, Yuqian Zhao · NBER Working Paper 34898 · 2026年2月</p>
+  <div class="tags"><span class="tag">多重检验</span><span class="tag">FDR</span><span class="tag">因子动物园</span><span class="tag">可复制性</span></div>
+  <div class="qual"><strong>顶刊记录（Campbell R. Harvey）：</strong> Harvey, Liu, and Zhu, “… and the Cross-Section of Expected Returns,” <em>Review of Financial Studies</em>, 2016, 29(1): 5–68。</div>
+
+  <h3>研究问题</h3>
+  <p>大家都承认测过几百个因子之后，不能再用 t=1.96。但该加严多少，文献吵成两派：Harvey–Liu–Zhu 说门槛要到 3；Jensen–Kelly–Pedersen（JKP）和 Chen 认为绝大多数已发表因子是真的，几乎不用加。这篇把统计工具摊开，指出对方算错的地方，并给出一个<strong>不需要知道总共测了多少次</strong>的下限。</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>Chen（2025）用 29,314 个随机会计比率因子，看到 |t|&gt;2 的约占 33%，再用标准正态的 5% 当零假设尾部，得到 FDR≈9%，宣称至少 91% 的「发现」为真。作者指出：因子之间相关，零假设下 t 不再是 N(0,1)——条件均值会整体平移、方差可以大于 1。对去均值后的数据做 Fama–French 式截面 bootstrap，每次复制的 t 均值都不在 0，绝对 t 会被放大；把多次复制平均掉，才会假装恢复标准正态。</li>
+    <li>用 Efron 的 matching / MLE 去估「经验零假设」（假定非零 alpha 的 t 在尾巴上）。价值加权且对冲市场之后：零假设大约 N(−0.15, 1.29²)，真备择比例 P(H<sub>1</sub>) 从忽略相关时的约 0.24 掉到约 0.05。控制 FDR=5% 时，双侧门槛大约 (−4.97, 4.66)，29,314 个里只拒绝 96–111 个。等权组合门槛更高、拒绝更多，但等权忽略交易成本，作者更信价值加权。</li>
+    <li>JKP 的贝叶斯程序在大样本下等价于未调整的 OLS p 值，复制率高并不奇怪。把发表样本嵌进 29K 总体后，同样的高门槛下 153 个 JKP 因子里大约 48 个过线。若真实尝试次数是发表数的 10 倍、100 倍，过线的还会更少。</li>
+    <li>对「只报告一个新因子」的人：改看 local FDR（给定你这个 t 值，零假设为真的概率），并对备择密度给一个下界。不需要知道 N。表 3：若先验 P(H<sub>0</sub>)=0.9，要把 LFDR 压到 0.20（后验赔率约 4:1 支持备择），|t| 至少 3.16；压到 0.05 则至少 3.64。作者的操作建议：因子研究用 <strong>t 大约 3.0–3.5</strong> 当下限，而不是 2.0。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>在很多假说被测过、而且彼此相关时，一个给定的 t 值对应的虚假发现比例（FDR）和「就这个 t 而言零假设为真的概率」（LFDR）。</p>
+  <p><strong>怎么对比或识别：</strong>（1）先把因子对市场回归，看 alpha 的 t，减轻共同市场相关。（2）用分布中心的 t 去拟合经验零假设的均值和方差（matching 或截断 MLE）。（3）新发现用 Theorem 1 的 LFDR 下界：只输入标准正态 p 值和你愿意假设的 P(H<sub>0</sub>)。代码在 GitHub：yzhao7322/Threshold-in-Factor-Models。</p>
+  <p><strong>主要坑：</strong>中心区域全是真零的假设，在 alpha 很小、噪声很大时会坏；下界假设备择的 |t| 尾巴比正态厚（大样本有功效时合理）；没有把 Type I / Type II 的经济成本写进门槛（漏掉一个真因子 vs 发表一个假因子，对期刊和对对冲基金权重不同）；没扣交易成本的 t 会被夸大；有理论的因子和纯数据挖掘不该用同一个先验 P(H<sub>0</sub>)——有模型时可以填更小的 P(H<sub>0</sub>)，但作者强调经济故事仍要单独审，不能只看 t。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>这是本期的工具篇。董杰若用文本指标、互动易长度、「请见公告」占比去预测收益或流动性，本质也是在因子动物园里走。不要只报 t=2.1 星号：至少给 LFDR 或说清你试过多少构造。A 股公司截面相关更强（行业政策、涨跌停），经验零假设偏离 N(0,1) 可能比美股更狠，照 Chen 那种「标准正态 + t=2」会更乐观。有制度故事的 DiD（某个披露规则）和「我从 CSMAR 扫出的第 87 个比率」不该用同一道门槛；前者靠识别，后者必须加严。</p>
+  <p class="links">摘要页：<a href="https://www.nber.org/papers/w34898">nber.org/papers/w34898</a> · PDF：<a href="https://www.nber.org/system/files/working_papers/w34898/w34898.pdf">w34898.pdf</a> · 代码：<a href="https://github.com/yzhao7322/Threshold-in-Factor-Models">GitHub</a></p>
+</article>
+
+<footer>
+  入选规则同前：2025 年及以后版本的股市相关实证；至少一位作者核到 JF / JFE / RFS / JFQA、TAR / JAR / JAE 或 AER / QJE / JPE / Econometrica / REStud 的具体篇目。数字取自 NBER PDF 正文（34748 为 2026年8月修订稿；34849、34898、35636 为对应发行稿）。避开 8/18–8/31 已报编号（含 32767、33336、33351、33477、33485、33625、33651、34086、34291、34520、34584、34636、34807、34903、34906、35007、35049、35093、35095、35158、35178、35243、35262、35286、35413、35431、35451、35500、35513、35519、35528、35579 及 Hagenberg 等 RAST、Zhi Da 三连等）。本轮未收：Fahlenbrach–Sanz–Stulz w35191（PDF 超时，且偏 IPO/组织资本而非股市交易）；Ginger Jin w35625（实验室披露，不是股市面板）。站点：<a href="https://dtu2026.github.io/daily-papers/">dtu2026.github.io/daily-papers</a>
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
