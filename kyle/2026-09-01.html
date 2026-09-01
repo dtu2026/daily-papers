@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-01</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-01">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月1日 · 第十一期 · 4 篇 2025–2026 working paper / 新刊 · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇：订单流<strong>不透明</strong>如何把流动性需求拧成战略互补、酿成 flash crash；有损失厌恶的投资者面前，经理人会<strong>报温和坏消息、藏温和好消息</strong>；信息粗的人反而主动把信号分享给信息精的人（“对着错误做空”）；股价同时管激励与反馈时，透明度升高可能<strong>伤公司价值</strong>。避开 8/18–8/31 已写过的篇目（Cespa–Vives《Market Opacity》此前只在 8/24 脚注提过，今天按 AER 2026 正式版展开）。</p>
+  <p>读法照旧：先看「问了什么」和「为什么值得看」。机制与数字均依 PDF / 作者页稿。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Cespa–Vives：不透明让流动性需求随价差变大，多重均衡里会闪崩</a> — AER 2026</li>
+      <li><a href="#p2">Huang–Piotroski–Xie：损失厌恶下的三阈值披露：报温和坏、藏温和好</a> — 解释向下引导预期</li>
+      <li><a href="#p3">Goldstein–Xiong–Yang：粗信息投资者主动分享，请精信息的人对着自己的错误交易</a> — JFE 2025</li>
+      <li><a href="#p4">Banerjee–Davis–Gondhi：股价既要激励努力又要反馈投资时，更高透明度可能伤价值</a> — RFS 2026</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Giovanni Cespa &amp; Xavier Vives · <em>American Economic Review</em> 116(7), 2026年7月 · Bayes / IESE · 作者页稿 2025-07-21</p>
+  <div class="tags"><span class="tag">市场微观结构</span><span class="tag">流动性脆弱</span><span class="tag">订单流透明</span><span class="tag">flash crash</span></div>
+
+  <h3>问了什么</h3>
+  <p>为什么有时价差一拉开，大家会<strong>更急着</strong>抢流动性（跑向出口），而不是像教科书那样少买一点？电子化之后非标准流动性供给者（HFT、对冲基金）变多，flash event 也变多。作者问：订单流<strong>不透明</strong>能不能把「流动性需求随 illiquidity 上升」写进理性均衡，并解释闪崩式的流动性蒸发。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两期交易。每期有避险者（hedgers）带着禀赋冲击要交易，还有两类做市：一直在场的 D-dealers，以及「非标准」流动性供给者。第二期交易者对第一期禀赋冲击 u<sub>1</sub> 的观察精度是 τη（越大越透明）。</p>
+  <p>透明时：第二期价格对当期冲击的敏感度 Λ<sub>2</sub> 与对上期冲击的敏感度 Λ<sub>21</sub> 互不搅局，流动性需求随价差变<strong>小</strong>（正常的稳定机制）。</p>
+  <p>不透明时：第二期交易者分不清「现在贵」是因为自己这波冲击，还是因为上一期冲击还留在价格里。结果 Λ<sub>2</sub> 与 Λ<sub>21</sub> 变成<strong>战略替代</strong>：市场若相信价格主要由当期冲击驱动（Λ<sub>2</sub> 高、Λ<sub>21</sub> 低），避险者反而更敢下单，进一步推高 Λ<sub>2</sub>。这就是对 Λ<sub>2</sub> 的战略互补，可支撑<strong>多重均衡</strong>。</p>
+  <div class="eq">Λ<sub>2</sub> = Φ(Λ<sub>2</sub>)，Φ 在不透明下严格递增</div>
+  <p class="eq-note">人话：今天的「价差有多大」会自我强化。参数合适时，固定点可以不止一个：低冲击均衡和高冲击（闪崩）均衡并存。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>CARA + 正态，线性策略；避险者关心风险分担，不是知情交易。</li>
+    <li>透明度由第二期对第一期禀赋冲击的信号精度 τη 刻画；μ 是始终在场的做市商质量。</li>
+    <li>「非标准」流动性供给者对市场状况更敏感，不透明会削弱他们的供给。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>全透明（τη→∞）时唯一均衡，流动性需求随 illiquidity 下降（稳定）。</li>
+    <li>全不透明时，战略互补可产生多重均衡；高 Λ<sub>2</sub> 均衡对应流动性干涸式闪崩。</li>
+    <li>数值例子：μ 从 0.9 降到 0.8（约 11% 做市商「掉线」），可从低 Λ<sub>2</sub>≈1.47 跳到 Λ<sub>2</sub>≈9.6（约 6.5 倍），加权价差冲击 WAPI 升约 80%。</li>
+    <li>提高订单流透明度 τη，或提高始终在场的做市商份额 μ，总福利上升（主要是避险者受益）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把 flash crash 写成「不透明 → 战略互补 → 多重均衡」，而不是单纯的算法bug故事。A股盘中熔断、ETF 联动中断、做市商短暂撤出，都能往这个框架里对号。8/24 脚注提过同作者线，今天按 AER 正式版把机制写全。</div>
+
+  <p class="links"><a href="https://doi.org/10.1257/aer.20231613">AER 2026</a> · <a href="https://blog.iese.edu/xvives/files/2025/07/MarketOpacity-0725.pdf">作者页 PDF（2025-07）</a> · <a href="https://openaccess.city.ac.uk/id/eprint/37348/1/paper-april-26.pdf">City 开放获取稿</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Xavier Vives，<em>Econometrica</em>（供给函数竞争等）；Cespa–Vives, “The Beauty Contest and Short-Term Trading,” <em>Journal of Finance</em> 2015。</p>
+</article>
+
+<article id="p2">
+  <h2>2. Strategic Disclosure and Investor Loss Aversion</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Strategic Disclosure and Investor Loss Aversion" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zeqiong Huang, Joseph D. Piotroski &amp; Chloe L. Xie · 2025年5月稿 · Yale / Stanford GSB / MIT Sloan</p>
+  <div class="tags"><span class="tag">自愿披露</span><span class="tag">损失厌恶</span><span class="tag">前景理论</span><span class="tag">业绩引导</span></div>
+
+  <h3>问了什么</h3>
+  <p>经典 Dye (1985) 自愿披露：经理人只报好消息、藏坏消息，一条门槛。现实里管理层常<strong>向下引导预期</strong>：提前报一点「温和的坏」、藏一点「温和的好」，好在正式财报时刚好「小幅超预期」。若投资者有前景理论式的损失厌恶（相对预期点更痛「miss」），理性经理人会不会内生出这种「报坏藏好」的区间？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两期。经理人以概率 q 收到关于期末产出的噪声信号 s，选择披露或沉默。投资者用 Dye 式不确定信息禀赋更新信念，但定价不是期望效用，而是带参考点（当前预期）的前景理论：对「miss 预期」的边际痛苦大于「beat」的边际快乐，且在参考点附近最敏感。</p>
+  <p>经理人关心中期股价 + 期末股价。披露好消息：中期股价高，但把参考点抬高了，期末更容易 disappoint；披露坏消息：中期疼一下，但把参考点压低，期末更易「小胜」。于是激励函数 g(s) 对 s 不再单调，最多可有三个零点。</p>
+  <div class="eq">三门槛：s &lt; s<sub>L</sub> 沉默；s<sub>L</sub>≤s&lt;s<sub>M</sub> 披露；s<sub>M</sub>≤s&lt;s<sub>H</sub> 沉默；s≥s<sub>H</sub> 披露</div>
+  <p class="eq-note">人话：很坏仍藏、很好仍报（经典）；中间多出一段「温和坏要报、温和好要藏」——专门用来管理参考点、躲开损失厌恶的痛点。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投资者损失厌恶参数 γ 足够大，且经理信号足够准，才会出现三门槛；γ→0 退回单门槛。</li>
+    <li>经理未被告知概率 q 足够小（市场更相信「沉默=没消息」）时，更容易维持三门槛。</li>
+    <li>参考点是投资者对产出的共同预期（meet-or-beat），不是财富零点。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>存在（并可唯一）三门槛均衡：披露「温和坏」、隐瞒「温和好」。</li>
+    <li>损失厌恶越强、信号越准，这段「战略引导」区间越大。</li>
+    <li>文中用 guidance / surprise 分布的直方图对照：温和负向 guidance 显著多于温和正向，与模型同向。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把「向下引导预期」从行为轶事写成 Dye 框架里的均衡策略。做 A 股业绩预告、券商一致预期与实际 surprise 的研究，可直接借三门槛做可检验分区（温和好/温和坏 vs 极端好/坏）。</div>
+
+  <p class="links"><a href="https://accounting.wharton.upenn.edu/wp-content/uploads/2025/05/Xie.pdf">Wharton 研讨会 PDF（2025-05）</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Joseph Piotroski，<em>Journal of Finance</em> 2005（内幕交易限制与分析师跟随）、<em>JAR</em> 2000（价值投资财务筛选）；Zeqiong Huang，<em>JAR</em> 2014、<em>JF</em> 2024（流动性转化）；Chloe Xie，<em>JAE</em> 2021、<em>JAR</em> 2025。</p>
+</article>
+
+<article id="p3">
+  <h2>3. Information Sharing in Financial Markets</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Information Sharing in Financial Markets" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Itay Goldstein, Yan Xiong &amp; Liyan Yang · <em>Journal of Financial Economics</em> 163, 2025 · Wharton / HKUST / Toronto Rotman</p>
+  <div class="tags"><span class="tag">知情交易</span><span class="tag">信息分享</span><span class="tag">Kyle</span><span class="tag">社交媒体</span></div>
+
+  <h3>问了什么</h3>
+  <p>为什么专业投资者（甚至社交媒体上的散户）会<strong>主动把私有信息告诉别人</strong>？谁跟谁分享？分享之后谁赚、谁亏、流动性与价格效率怎么变？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>静态 Kyle：资产价值 v，噪声交易 u，竞争性做市商看总订单定价。两个风险中性知情交易者：H 完美看见 v；L 只看见噪声信号 y=v+e（精度 ρ）。先决定是否分享信号，再交易。</p>
+  <p>关键：若 L 把 y 分享给 H，而 H 不回赠，则 H 的最优仓位里对 y 的系数 <strong>为负</strong>（α<sup>S∅</sup><sub>y</sub>&lt;0）——H 会<strong>对着 L 的信号反向下单</strong>。直觉：H 已知道真值，L 的信号里多出来的是误差；顺着 L 的方向加仓只会跟 L 抢同一边、抬高冲击，对着误差下单等于帮 L 对冲掉一部分知情单，降低 L 的价格冲击。</p>
+  <div class="eq">L 分享、H 不分享是均衡：L 利润↑，H 利润↓，两人合计利润↑；λ↑（流动性变差），价格效率↑</div>
+  <p class="eq-note">人话：信息粗的人请信息精的人「对着我的错误做交易」，好让自己少被做市商惩罚。精的人接到信号反而更惨：流动性变差，粗的人还交易得更凶。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>分享是诚实传递信号（不是廉价空谈）；做市商可能读不懂公开分享的内容（对应社交媒体噪声）。</li>
+    <li>扩展：多个 H 时，若能集体承诺「不用 L 的信号」，H 们会更好；各自理性则都会用，落入更差的结果。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>唯一均衡形态：粗信息者分享、精信息者不分享（「有的还要加给他」）。</li>
+    <li>分享提高价格效率，但恶化流动性；成交量方向取决于参数。</li>
+    <li>映射：Value Investors Club 上小基金更爱发帖；社交媒体情绪交易「对着情绪做」只在对手已经很懂时才成立，否则可能反噬。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把「晒单 / 抱团分享」写成策略性减冲击，而不是利他或炫耀。做雪球、股吧、机构路演纪要的信息外溢时，可区分「粗→精」与「精→粗」谁在分享。</div>
+
+  <p class="links"><a href="https://doi.org/10.1016/j.jfineco.2024.103967">JFE 2025</a> · SSRN abstract 3632315（旧题 <em>Whoever Has Will Be Given More</em>）</p>
+  <p class="authors" style="margin-top:8px">顶刊核验：本文即 <em>JFE</em> 2025；Itay Goldstein 另有多篇 <em>JF/JFE/RFS</em>（信息分享与反馈效应综述等）。</p>
+</article>
+
+<article id="p4">
+  <h2>4. Incentivizing Effort and Informing Investment: The Dual Role of Stock Prices</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Incentivizing Effort and Informing Investment: The Dual Role of Stock Prices" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee, Jesse Davis &amp; Naveen Gondhi · <em>Review of Financial Studies</em> 2026 · Michigan Ross / UNC / INSEAD · 作者页稿</p>
+  <div class="tags"><span class="tag">反馈效应</span><span class="tag">最优契约</span><span class="tag">价格效率</span><span class="tag">透明度</span></div>
+
+  <h3>问了什么</h3>
+  <p>股价有两件事：一是反映经理努力，方便写薪酬契约；二是汇总投资者对<strong>新投资机会</strong>的看法，方便公司「听价格」做投资（反馈效应）。两件事会不会打架？透明度升高、价格更会说投资机会时，会不会反而让股价变成更差的努力信号，把公司价值拉低？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>委托人要给风险厌恶的经理激励努力 e（抬高在位资产），并决定是否上一个新项目（规模用 δ 衡量，收益依赖状态 ω）。投资者付成本获取关于项目的私有信息，交易后价格既含努力信息也含项目信息。契约是线性的 α+βP。</p>
+  <p>张力：投资者信息越好（λ 越高），价格对项目消息越敏感，对努力的「信噪比」越差 → 最优 β 与努力 e 下降。投资决策更有效，但激励更贵、努力更少。</p>
+  <div class="eq">净价值 NV 随透明度↑：仅当反馈足够重要（δ 大）且信息结构合适时上升；δ 小时 NV 随透明度下降</div>
+  <p class="eq-note">人话：公司主要靠「老本」吃饭时，让市场更懂新项目，等于给经理考核掺噪声，透明度是负的。新项目很大时，听价格的好处盖过激励损失。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>努力可观察但不可契约验证；投资机会对委托人与经理都无观测，信息优势在市场。</li>
+    <li>δ 刻画新项目相对在位资产的重要性；ρ 等参数刻画状态概率结构。</li>
+    <li>委托人可选择是否把投资权委托给经理（经理无信息优势时仍可能最优，因等于承诺一条事后无效率但有利于努力的规则）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>更高透明度 → 投资更有效，但努力↓；公司价值对透明度的比较静态取决于 δ（Prop. 4–6）。</li>
+    <li>标准「揭示性价格效率」指标在 δ 小时可能与公司价值、真实效率<strong>反向</strong>。</li>
+    <li>多元化甚至事前 NPV 为负的项目，有时被用来缓和道德风险（项目特征进入契约问题）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把「信披越好越好」拆开：对听价格做投资的公司是好事，对主要靠激励经理经营老资产的公司可能是坏事。和 8/20、8/28 反馈/需求弹性线不同，这篇盯的是契约与反馈的交叉项。</div>
+
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BDG_DualRole.pdf">作者主页 PDF</a> · <a href="https://doi.org/10.1093/rfs/hhag008">RFS 2026</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Snehal Banerjee，<em>Journal of Finance</em> 2025（Feedback Effects and Systematic Risk Exposures）、多篇 <em>JFE/RFS</em>；本文为 <em>RFS</em> 2026。</p>
+</article>
+
+<footer>
+  避开 8/18–8/31 已写过的篇目。Cespa–Vives 按 AER 2026 / 作者页 PDF；Huang–Piotroski–Xie 依 Wharton 2025-05 PDF；Goldstein–Xiong–Yang 依 JFE 2025 摘要与作者研讨幻灯机制；Banerjee–Davis–Gondhi 依作者页 PDF 与 RFS 2026。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
