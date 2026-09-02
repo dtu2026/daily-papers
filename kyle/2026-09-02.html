@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-02</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-02">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月2日 · 第十二期 · 4 篇 2025–2026 working paper / 新刊 · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇：交易者<strong>低估拥挤度</strong>时会下更猛、目标仓位更大，但真实利润低于预期，闪崩更深、恢复更慢；创始人对「内容」还是「语境」有知识诅咒，披露激励方向完全相反；处理成本降低并不总是好事——投资规模对处理成本呈<strong>倒 U</strong>；投资者读报告有噪声时，经典「半披露唯一均衡」会崩掉，低成本甚至会<strong>全披露</strong>，高成本则出现两个门槛均衡。</p>
+  <p>避开 8/18–9/1 已写过的篇目。读法照旧：先看「问了什么」和「为什么值得看」。机制与数字均依 PDF / 作者页稿。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Kyle–Obizhaeva–Wang：低估拥挤 → 下单更猛、利润低于预期，闪崩更深</a> — JFQA forthcoming</li>
+      <li><a href="#p2">Banerjee–Davis–Gondhi：知识诅咒打在内容上少披露，打在语境上多披露</a> — MS forthcoming</li>
+      <li><a href="#p3">Hwang–Kim–Laux：处理成本降了，投资先升后降（倒 U）</a> — 解释 XBRL/EDGAR 不是越便宜越好</li>
+      <li><a href="#p4">Bertomeu–Cheynel–Hu：读披露有噪声时，低成本会全披露，高成本有双均衡</a> — 颠覆 Dye 式半披露直觉</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Trading in Crowded Markets</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Trading in Crowded Markets" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Albert S. Kyle, Anna A. Obizhaeva &amp; Yajun Wang · 2025年2月17日稿 · <em>JFQA</em> forthcoming · Maryland / NES / Baruch</p>
+  <div class="tags"><span class="tag">市场微观结构</span><span class="tag">拥挤交易</span><span class="tag">价格冲击</span><span class="tag">闪崩</span></div>
+
+  <h3>问了什么</h3>
+  <p>机构都觉得自己策略独特，但信号高度相关时市场就「挤」。Stein (2009) 讲过：套利者不知道实时有多少人在用同一模型。作者问：交易者对<strong>拥挤度</strong>（信号信息含量的相关程度 / 高精度信号交易者占比）估计错了，会怎样扭曲仓位、流动性、利润，以及闪崩的深度和恢复速度？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>在 Kyle–Obizhaeva–Wang 平滑交易框架上，允许多个高精度信号交易者，且信号可相关。拥挤度刻画的是「大家看到的基本面信息有多像」——相关高时，市场出清会把价格往交易方向推，做市更难。</p>
+  <p>静态比较：若交易者<strong>低估</strong>拥挤度（信号其实比他们以为的更相关），他们会定更大目标仓位、交易更猛、更愿意给别人做对手盘；预期利润高，但<strong>真实利润更低</strong>——因为价格里已经嵌了比他们以为更多的信息（跟 Stein 讲的 MSCI 调仓套利赔钱同构）。若<strong>高估</strong>拥挤度，则下单变怂、流动性变差，预期利润低，真实利润反而可能好于预期。</p>
+  <p>动态版：交易者把大单拆碎、慢慢靠向目标仓。觉得越挤，靠得越慢，实际仓位离目标越远。低估拥挤还会强化短线动量。校准到 2007 年「量化熔断」：闪崩跌幅与事后恢复速度，可反推交易者当时对拥挤度的信念偏差。</p>
+  <div class="eq">低估拥挤 ⇒ 目标仓位↑、交易强度↑、预期利润高但实现利润↓；闪崩更深、恢复更慢</div>
+  <p class="eq-note">人话：你以为「就我看到这个因子」，其实半个街都看到了。你下更猛，价格更早就把信息吃进去了，你赚的比模型里算的少；一旦有人强平，跌得更深、爬回来更慢。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>拥挤来自信号<strong>信息含量</strong>相关（同类基本面），不是噪声项相关（后者反而更愿互为对手盘、流动性更好）。</li>
+    <li>交易者理解模型结构，但可能对拥挤相关参数持错误信念；利润用真实参数评估。</li>
+    <li>动态模型里订单被 shred，逐渐收敛到目标库存。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>低估拥挤：更激进、更愿供流动性，但真实利润低于预期。</li>
+    <li>高估拥挤：流动性变差、仓位变小；预期悲观，真实结果可能好于预期。</li>
+    <li>更挤的市场：闪崩更猛、恢复更慢；可用「跌幅 + 恢复速度」推断信念偏差（文中以 2007 quant meltdown 为例）。</li>
+    <li>政策含义：监管不但要盯策略是否过挤，还要盯市场对拥挤度的<strong>信念</strong>；仓位披露有助于校准信念。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把「抱团 / 拥挤」从口头禅写成可校准的信念误差。A 股北向抱团、量化因子拥挤、可转债与主题基同向踩踏，都能用「低估拥挤 → 下单过猛 → 闪崩更深」对齐。作者之一是 Kyle 本人。</div>
+
+  <p class="links">作者稿 2025-02-17（Kyle–Obizhaeva–Wang；本地核验）· 早期公开稿（Gorban–Obizhaeva–Wang, 2018）：<a href="http://www.mit.edu/~amalenko/Paper3.pdf">MIT FTG PDF</a> · Baruch 主页标注 <em>JFQA</em> forthcoming (2025)</p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Albert S. Kyle，<em>Econometrica</em> 1985（Continuous Auctions and Insider Trading）；Obizhaeva–Wang 与 Kyle 有多篇微观结构合作（含 <em>Econometrica</em> 平滑交易线）。</p>
+</article>
+
+<article id="p2">
+  <h2>2. Information Provision and the Curse of Knowledge</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Information Provision and the Curse of Knowledge" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Snehal Banerjee, Jesse Davis &amp; Naveen Gondhi · 2025年7月28日稿 · <em>Management Science</em> forthcoming · UCSD / UNC / INSEAD</p>
+  <div class="tags"><span class="tag">信息披露</span><span class="tag">知识诅咒</span><span class="tag">融资沟通</span><span class="tag">行为偏误</span></div>
+
+  <h3>问了什么</h3>
+  <p>「知识诅咒」（curse of knowledge）：懂的人没法假装不懂，预测别人信念时甩不掉自己的私有信息。常识说这会损害沟通。作者问：创始人要向外部投资者融资、且生产信息要花钱时，知识诅咒是让她<strong>少</strong>披露还是<strong>多</strong>披露？取决于诅咒打在「内容」还是「语境」上。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>项目回报依赖两块：创始人私有的 x（如创始人专属人力资本），以及双方起初都不知道的 θ（如未来市场状况）。创始人付成本可承诺向投资者提供关于项目的信号；门槛均衡里，只有 x「够好」才愿意花钱披露。</p>
+  <p>知识诅咒：创始人误以为投资者也以某概率已经知道 x，从而扭曲她付成本的激励。</p>
+  <ul>
+    <li><strong>内容诅咒</strong>（r = x）：要沟通的对象就是 x。她以为对方大概已经知道内容 → 再花钱产信号的边际收益下降 → <strong>披露变少</strong>，双方收益往往都更差。这是常识版。</li>
+    <li><strong>语境诅咒</strong>（s = x + θ）：x 是解读信号的语境。她以为对方更懂语境 → 相信对方更能读懂自己产出来的信号 → <strong>更愿意花钱生产信息</strong> → 投资决策可变好，但披露成本上升，也可能加剧创始人与外部人的利益冲突。</li>
+  </ul>
+  <div class="eq">内容诅咒 ⇒ 披露↓；语境诅咒 ⇒ 披露↑（且可能恶化利益冲突）</div>
+  <p class="eq-note">人话：专家以为「这点事你应该懂」有两种效果——若「这点事」就是要讲的内容，她会懒得讲；若「这点事」是读报告的背景知识，她反而更愿意掏干货，因为觉得你听得懂。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>门槛均衡：私有类型够好才付成本披露。</li>
+    <li>诅咒强度用「创始人以为投资者已知 x 的概率」刻画；无偏时该概率为真值（常为 0）。</li>
+    <li>内容 vs 语境由回报/信号是否把 x 当作解读 θ 的背景来区分。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>内容诅咒：披露与双方收益随诅咒减弱；无偏最优。</li>
+    <li>语境诅咒：披露可随诅咒上升；投资效率可能改善，但创始人净收益未必升（成本更高），利益冲突可变大。</li>
+    <li>含义：多样性 / 「不懂行的听众」有时不是沟通负担，而是逼专家把语境讲清楚、多产信息的装置。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把「专家讲不清楚」拆成可反转的两支：内容诅咒与语境诅咒。做招股说明书、业绩说明会、问询函回复时，可问管理层以为投资者「已经懂」的是事实本身，还是解读框架——两者对披露强度的预测相反。</div>
+
+  <p class="links"><a href="https://snehalbanerjee.github.io/wp/BDGcursed.pdf">作者页 WP（2025-07）</a> · <a href="https://snehalbanerjee.github.io/papers/BanerjeeDavisGondhi2026.pdf">MS forthcoming 版 PDF</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Snehal Banerjee，<em>Journal of Finance</em> 2025（Feedback Effects and Systematic Risk Exposures）；本文为 <em>Management Science</em> forthcoming。</p>
+</article>
+
+<article id="p3">
+  <h2>3. Real Effects of Information Processing Costs</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Real Effects of Information Processing Costs" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hyun Hwang, Eunhee Kim &amp; Volker Laux · 2025年7月稿 · UT Austin McCombs / Baruch</p>
+  <div class="tags"><span class="tag">信息处理成本</span><span class="tag">真实效应</span><span class="tag">Kyle</span><span class="tag">融资约束</span></div>
+
+  <h3>问了什么</h3>
+  <p>EDGAR、XBRL、IR 网站、电话会纪要——都在降低投资者「读懂披露」的成本。常识：成本越低，价格越有效，福利越好。作者问：处理成本下降会不会通过二级市场的抽租，反过来<strong>压缩</strong>一级市场能融到的钱，从而让企业投资先升后降？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>企业家有项目、自有资金有限，向初始投资者融资；投完后有道德风险（偷懒拿私利）。薪酬挂钩中期股价。二级市场是 Kyle 式：初始投资者受流动性冲击，投机者付二次成本 c·σ²/2 选择信号精度 σ，做市商看净订单定价。</p>
+  <p>处理成本 c 降有两股劲拧着：</p>
+  <ul>
+    <li><strong>监督渠道</strong>：σ↑ → 股价更能反映努力 → 代理成本 ℒ↓ → 可质押收入↑ → 融得更多、投得更大。</li>
+    <li><strong>抽租渠道</strong>：σ↑ → 投机者利润 Π↑（来自初始投资者的流动性亏损）→ 企业家必须在一级市场补偿这笔「流动性溢价」→ 可质押收入↓ → 投得更少。</li>
+  </ul>
+  <div class="eq">I*(c) 倒 U：c 低时抽租主导（再降 c → I↓）；c 高时监督主导（降 c → I↑）</div>
+  <p class="eq-note">人话：让市场「更好读懂你」有好处（股价更能盯经理），也有坏处（聪明人更好割流动性需求方的韭菜，你融资时就得先把这笔账补上）。两端都差，中间某个处理成本才让投资最大。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>企业家退出在终值实现前，薪酬只能挂钩中期价（股票/期权式）。</li>
+    <li>只有投机者受处理成本影响；初始投资者为流动性交易、不付处理成本。</li>
+    <li>可质押收入 &lt; 单位资本成本，故存在融资约束；企业家投入全部自有资金。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>投资 I*、企业家福利、投资者福利、社会福利都可对 c 呈倒 U，但峰值一般<strong>错位</strong>：企业家喜欢偏高的 c（少补流动性溢价），投机者喜欢偏低的 c，社会最优夹在中间。</li>
+    <li>治理越差（偷懒私利 B 大），投资最大化的 ĉ 越小——弱治理下更该把处理成本压下来换监督。</li>
+    <li>对 EDGAR 实证（Goldstein–Yang–Zuo 等）：前 EDGAR 时代 c 很高，降低 c 抬投资，与倒 U 左半边一致；不意味着 c 能无限往下降。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">给「信披越易读越好」泼冷水：易读会抬高知情交易抽租，伤融资。做 A 股互动易、机读财报、业绩会文字稿的研究，可按治理强弱分组，看处理成本下降对投资是促进还是抑制。</div>
+
+  <p class="links"><a href="https://business.columbia.edu/sites/default/files-efs/imce-uploads/Burton%202025/Papers/4.%20Hwang%2C%20Hyun%20-%20Real%20Effects%20of%20Information%20Processing%20Costs.pdf">Columbia Burton 2025 PDF</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Volker Laux，<em>Journal of Accounting Research</em>（如 Board Independence and CEO Turnover, 2008）、<em>The Accounting Review</em>、<em>Journal of Accounting and Economics</em>、<em>Journal of Financial Economics</em>、<em>Management Science</em>。</p>
+</article>
+
+<article id="p4">
+  <h2>4. Disclosure under Noisy Information Processing</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Disclosure under Noisy Information Processing" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jeremy Bertomeu, Edwige Cheynel &amp; Peicong Hu · 2026年4月27日 · WashU Olin / HKU · MPRA 128905</p>
+  <div class="tags"><span class="tag">自愿披露</span><span class="tag">处理噪声</span><span class="tag">认证/审计</span><span class="tag">多重均衡</span></div>
+
+  <h3>问了什么</h3>
+  <p>经典 Dye / Verrecchia 自愿披露：验证成本给定时，通常有唯一的「好于某门槛才披露」半披露均衡。现实里投资者通过审计、分析师、评级、数据商读报告，中间有噪声。作者问：一点点处理噪声，会不会掀翻「唯一半披露」？认证费变贵时，披露会不会不降反升？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>经理可付验证成本发一条经认证的消息，但发的时候不知道市场会怎么「读」——投资者看到的是带噪声的版本。无噪声时：唯一部分披露。有噪声时：</p>
+  <ul>
+    <li>验证成本<strong>小但为正</strong>：边际类型更想披露，低类型跟着模仿，市场 unravel → <strong>全披露</strong>（即使成本为正）。</li>
+    <li>成本高于 unravel 门槛：一般存在<strong>两个</strong>门槛均衡（披露多 / 披露少）。更惊人的是：在「披露多」的那个均衡里，认证成本升高反而可能让门槛下降、披露<strong>更多</strong>（边际披露者被更差类型拖累，涨价后要靠更激进的披露来重新分开）。</li>
+  </ul>
+  <div class="eq">处理噪声 → 低成本全披露；高成本双门槛；「高披露均衡」里成本↑ 可 ⇒ 披露↑</div>
+  <p class="eq-note">人话：报告经过中间人会糊——糊的时候，便宜的认证反而逼出人人都说；贵的时候市场可能卡在「大家说很多」或「大家说很少」两套自洽规矩里。别把「摩擦变大」直接读成「披露变少」。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>披露经认证但投资者处理带噪声；价格按噪声后的后验形成。</li>
+    <li>扩展：有界支撑、不确定信息禀赋、内生噪声、竞争性信息源；并把认证费内生为中介最优定价。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>任意处理噪声都足以破坏「唯一半披露」；低成本 unravel 到全披露。</li>
+    <li>高成本：双均衡；高披露均衡里，涨认证费可能增加披露。</li>
+    <li>在高披露环境中，基本面不确定与处理噪声都会压披露；利润最大化的中介可能选出「高费 + 高披露」体制。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">直接改写 Dye 课上的比较静态。做分析师解读噪声、AI 摘要、评级滞后时，不要默认「噪声↑ ⇒ 自愿披露↓」；先问市场卡在哪个均衡。和昨天 Huang–Piotroski–Xie 的损失厌恶三门槛是另一条「半披露不必唯一」的故事。</div>
+
+  <p class="links"><a href="https://mpra.ub.uni-muenchen.de/128905/1/MPRA_paper_128905.pdf">MPRA PDF（2026-04）</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Jeremy Bertomeu，<em>Journal of Accounting Research</em>（如 Asset Measurement in Imperfect Credit Markets, 2015; Strategic Withholding…, 2021）、多篇 <em>TAR</em> / <em>JAE</em>。</p>
+</article>
+
+<footer>
+  避开 8/18–9/1 已写过的篇目。Kyle–Obizhaeva–Wang 依 2025-02 稿与 FTG PDF（Baruch 标注 JFQA forthcoming）；Banerjee–Davis–Gondhi 依作者页 2025-07 WP 与 MS forthcoming PDF；Hwang–Kim–Laux 依 Columbia Burton 2025 PDF；Bertomeu–Cheynel–Hu 依 MPRA 2026-04 PDF。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
