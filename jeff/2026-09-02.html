@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市实证论文简报 · 2026-09-02</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #faf7f2;
+    --card: #fff;
+    --accent: #9a3412;
+    --tag: #f5e6d3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 { font-size: 28px; font-weight: 650; letter-spacing: .02em; margin: 0 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 { font-size: 21px; line-height: 1.35; margin: 0 0 6px; }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #f4f1ea;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="jeff" data-date="2026-09-02">
+<div class="wrap">
+<header>
+  <h1>股市实证论文简报</h1>
+  <p class="meta">2026年9月2日 · 第十二期 · 4 篇 2025–2026 实证稿 · Jeff</p>
+</header>
+<div class="lede">
+  <p>周三四篇，两篇直接贴董杰的 A 股语境：一篇用 2015 年中国两融+配资账户级数据，解释散户为什么愿意付 8%–25% 的借款利率去加杠杆，以及平仓线怎么把冲击从彩票股传到非彩票股；一篇用 GPT 给 MD&amp;A / 电话会做摘要，提出 disclosure「bloat」指标，并把它和信息 asymmetry、买卖价差、事后波动挂钩。另两篇围着被动资金：一篇说指数申购本身会压缩会计 anomaly 的多空价差（短腿需求乘数更大）；一篇把 Heath 等（2022）「指数基金不监控」的 DID 规格纠错后，发现没有伤害公司绩效或经理激励的稳健证据。</p>
+  <p>方法上分别练：账户级杠杆与平仓距离、监管断点 / Pingcang 工具变量、LLM 摘要相对原文的 return-informativeness、以及 Russell 指数切换里「同起点对照组」的 DID 纠错。前两篇对董杰做披露文本或两融相关题目最可直接搬家。</p>
+  <nav><ol>
+    <li><a href="#p1">Bian、Da、He、Lou、Shue、Zhou：散户两融</a>：彩票偏好驱动加杠杆；靠近平仓线就甩仓，冲击会外溢</li>
+    <li><a href="#p2">Kim、Muhn、Nikolaev：披露膨胀与 ChatGPT</a>：摘要情感更能解释 CAR；bloat 抬高 asymmetry</li>
+    <li><a href="#p3">Deng、Sammon：被动流入与套利限制</a>：持有期被动流入压缩会计 anomaly 多空收益，短腿价冲更大</li>
+    <li><a href="#p4">Gormley、Kim：指数基金真的不监控吗？</a>：纠正 HMMR 的 DID 后，伤害治理/绩效的结论站不住</li>
+  </ol></nav>
+</div>
+
+<article id="p1">
+  <h2>1. The Drivers and Implications of Retail Margin Trading</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. The Drivers and Implications of Retail Margin Trading" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jiangze Bian, Zhi Da, Zhiguo He, Dong Lou, Kelly Shue, Hao Zhou · <em>Journal of Finance</em> 81(4): 2217–2270 · 2026年5月在线 / 2026年8月刊 · DOI 10.1111/jofi.70049</p>
+  <div class="tags"><span class="tag">A股两融</span><span class="tag">配资</span><span class="tag">彩票偏好</span><span class="tag">平仓外溢</span></div>
+  <div class="qual"><strong>顶刊记录（Kelly Shue）：</strong> Shue and Townsend, “Can the Market Multiply and Divide? Non-Proportional Thinking in Financial Markets,” <em>Journal of Finance</em>, 2021, 76(5): 2307–2357。</div>
+
+  <h3>研究问题</h3>
+  <p>中国散户为什么在历史平均股票回报并不高、借款成本却很高（券商两融约 8%/年，影子配资常超 25%/年）的情况下，还大量加杠杆？杠杆又怎样改变他们的买卖，并在账户加总后影响股价、造成跨股票冲击外溢？作者用的不是「全市场两融余额」这种粗口径，而是能同时看到<strong>券商融资</strong>和<strong>影子配资（伞形信托 / FinTech 子账户）</strong>的账户级持仓与借款。</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>样本窗口卡在 2015 年 5–7 月：春末上涨、6 月中见顶、随后约一个月市值蒸发近 30%。零售成交约占沪市成交 85%（上交所 2015 年报）。峰值时中国家庭两融债务约 3 万亿人民币（约 GDP 的 4.5%），相对持股的债务/资产约 20%。</li>
+    <li>杠杆水平差很大：影子配资账户平均杠杆（资产/权益）约 <strong>6.4</strong>，券商两融约 <strong>1.4</strong>。影子账户平仓线（Pingcang Line）更高、更不统一；券商侧受证监会规则约束，初始保证金最低约 50%。</li>
+    <li><strong>谁在加杠杆：</strong>两融投资者比非两融投资者更爱彩票股。作者用「过去一年连续涨停天数」刻画 A 股的 lottery-ness（因 ±10% 涨跌停让传统偏度失真）。两融账户彩票持仓大约高出 20%；美国文献里人口学特征最多只能解释 3%–5% 的差距（对照 Kumar, 2009）。</li>
+    <li><strong>因果边：</strong>利用券商两融资格的监管断点，以及影子账户平仓线的外生差异（同期开户平仓线相近 → 用同期账户作 instrument），发现「刚够资格」或「更靠近平仓线」会推高彩票持仓——杠杆本身会诱导赌徒式持仓，而不只是事前偏好筛选。</li>
+    <li><strong>靠近平仓就卖：</strong>影子账户距离平仓线落在 Z∈(0,1] 时，当天相对无杠杆账户多卖掉约 <strong>23.2%</strong> 的风险持仓（1% 显著）。下跌市里更倾向先卖<strong>非彩票股</strong>，留下彩票股赌翻本。</li>
+    <li><strong>价格与外溢：</strong>构造股票层面的 margin-induced liquidation pressure（MLPR）。MLPR 升高一个标准差，次日收益约高 <strong>10 bp</strong>（t=2.84）。需求弹性粗算约 1.64，量级接近 Koijen–Yogo 等美国估计。外溢在非彩票股上更强——冲击可从彩票股传到「本来不该一起跌」的股票。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>（1）谁借钱、借了买什么；（2）距离平仓线（或监管资格）是否改变卖出强度与持仓结构；（3）账户加总的被迫交易是否预测次日收益并跨股传染。</p>
+  <p><strong>怎么对比或识别：</strong>账户级描述统计 + 券商资格断点（刚够格 vs 刚不够格）+ 影子平仓线的工具变量（同期开户账户共享相似 Pingcang）+ 股票日度 MLPR 对次日收益的预测回归。对照始终是「同日、同类账户里离平仓更远的人」或「非两融账户」。</p>
+  <p><strong>主要坑：</strong>样本只有三个月的泡沫–崩盘窗口，外推到平常市要小心；影子数据来自平台，不是全市场普查；「彩票」用连板天数，和美股 MAX/偏度不可直接比；MLPR 分母含市值，小盘机械放大，作者已讨论但做 A 股复制时要单独稳健性。监管断点若伴随财富/经验门槛，selection 仍可能混进「谁更爱赌」。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>这是少有的、顶刊级别的中国两融+配资微观证据。董杰若做「互动易 / 公告后的散户交易」或「涨停相关披露」，可以直接借三件事：（1）把两融余额拆成「离平仓近」vs「远」，而不是只看存量；（2）检验坏消息日非彩票股是否先被两融账户甩卖；（3）披露文本里若强调「高波动题材 / 连板逻辑」，可能同时吸引高杠杆彩票偏好资金——bloat 或套话本身未必驱动价格，但可能筛选谁在场。数据上，交易所两融明细 + 公开涨跌停序列就能做简化版 MLPR；影子侧难复制，但 2015 机制对理解「场外配资回潮」仍有对照价值。</p>
+  <p class="links">期刊页：<a href="https://doi.org/10.1111/jofi.70049">doi.org/10.1111/jofi.70049</a> · LSE 记录：<a href="https://researchonline.lse.ac.uk/id/eprint/126110/">researchonline.lse.ac.uk/126110</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Bloated Disclosures: Can ChatGPT Help Investors Process Information?</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Bloated Disclosures: Can ChatGPT Help Investors Process Information?" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Alex G. Kim, Maximilian Muhn, Valeri V. Nikolaev · Chicago Booth / BFI WP · SSRN 4425527 · arXiv 2306.10224v4（2025年3月）</p>
+  <div class="tags"><span class="tag">disclosure</span><span class="tag">LLM摘要</span><span class="tag">bloat</span><span class="tag">信息不对称</span></div>
+  <div class="qual"><strong>顶刊记录（Valeri Nikolaev）：</strong> Ball and Nikolaev, “On earnings and cash flows as predictors of future cash flows,” <em>Journal of Accounting and Economics</em>, 2021, 73(1)；另有 JAR 论文 “Debt Covenants and Accounting Conservatism”（其学位论文）。</div>
+
+  <h3>研究问题</h3>
+  <p>公司 MD&amp;A 和业绩电话会越写越长，投资者读不过来。GPT 这类生成式模型能不能把「真正相关」的信息压短，同时<strong>不丢</strong>（甚至放大）市场在乎的信号？若能，原文相对「最优摘要长度」多出来的部分——作者称为 disclosure <strong>bloat</strong>——会不会抬高信息 asymmetry、拖慢价格发现？</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>样本：美国非金融公司 2009–2020，随机抽约 20% 公司簇，得到 1,790 份 MD&amp;A、8,537 场电话会；用 GPT-3.5-Turbo 做<strong>不限长度</strong>摘要（长文按 chunk 再拼接）。另有 2022 年 out-of-sample（训练截止 2021-09 之后）稳健。</li>
+    <li>长度：MD&amp;A 摘要平均大约是原文的 <strong>25%</strong>（电话会约 <strong>30%</strong>）。平均 Bloat：MD&amp;A <strong>0.754</strong>，电话会 <strong>0.685</strong>（即模型认为约七成内容相对「信号–噪声权衡」偏冗余）；标准差分别约 0.081 / 0.126，firm 层面变异约占七成。</li>
+    <li>情感被放大：原文偏正时摘要更正，偏负时摘要更负；摘要情感标准差从 MD&amp;A 的 0.202 扩到 0.316。</li>
+    <li><strong>更能解释股价：</strong>用 Loughran–McDonald 词典情感对披露日 [0,1] 超额收益回归。MD&amp;A：原文情感多不显著，摘要情感在行业/年份 FE 下系数约 0.025（SE 0.004），公司 FE 下约 0.051（SE 0.009）；一标准差摘要情感对应约 <strong>0.336</strong> 标准差异常收益（约 <strong>161 bp</strong>）。电话会：公司 FE 下系数从原文 0.050 升到摘要 0.097（t 从 7.14 到 12.13），调整 R² 从 7.3% 到 14.1%。</li>
+    <li><strong>Bloat 的市场后果：</strong>控制可读性等之后，Bloat 仍与 PIN、异常买卖价差、披露后波动正相关。电话会样本：一标准差 Bloat ≈ PIN +0.4 ppt、异常价差 +2.2%、事后波动约 +4.8%（相对均值）。MD&amp;A 量级更大（约 PIN +0.8 ppt、价差 +4.3%、波动 +12.2%）。亏损、负情感、负市场反应时 Bloat 更高，贴近 Li (2008) 的 obfuscation 叙事。</li>
+    <li>主题摘要：在电话会摘要上再抽「财务」vs「ESG」；ESG 非空摘要占比从 2009 约 15%–20% 升到 2020 约 38%，ESG 情感对 CAR 的解释力也随年份增强。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>摘要是否比原文更能抓住「有限注意力投资者」在乎的主信号（情感 → 短窗 CAR）；Bloat=（原文长度−摘要长度）/原文长度 是否刻画冗余/低相关文本，并关联信息不对称代理变量。</p>
+  <p><strong>怎么对比或识别：</strong>同一文件 raw vs summary 的 horse race；行业/年份或公司固定效应；2022 out-of-sample；Disney 2022Q4 电话会个案做表面效度（该季 Bloat 样本内最高）。删节内容用相邻期余弦相似度、boilerplate 词占比、以及 GPT-4 抽删因（套话、重复、历史回顾、过度细节）。</p>
+  <p><strong>主要坑：</strong>作者自己加了 CAVEAT——结论仍可能修订；Bloat 依赖温度等超参（他们温度=0.5，Disney 重复 50 次 SD 仅 0.010）；情感用词典而非 BERT，是刻意避免「模型自己已滤噪」；相关不等于因果——差公司可能既 bloat 又价差大；A 股年报/互动易没有英文 MD&amp;A 结构，直接套 GPT-3.5 中文摘要要重做 prompt 与词典。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>董杰做信息披露长度、套话、互动易回复「请见公告」时，这篇几乎是操作手册：先定义「机器认为可删的比例」，再看它是否预测买卖价差、换手或公告后漂移。可迁移步骤：（1）对年报管理层讨论与分析或业绩说明会中文稿做本地 LLM 摘要；（2）Bloat 对 PIN/价差/公告后波动回归，控制字数与 Fog 类可读性——作者强调 bloat ≠ readability；（3）坏消息日 Bloat 是否上升，对应 obfuscation。不必一上来因果识别；先做出稳定的 firm-year 度量，再找外生披露规则冲击。</p>
+  <p class="links">SSRN：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4425527">abstract=4425527</a> · arXiv HTML：<a href="https://arxiv.org/html/2306.10224v4">2306.10224v4</a> · PDF：<a href="https://arxiv.org/pdf/2306.10224.pdf">arxiv.org/pdf/2306.10224.pdf</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Passive Flows and the Limits to Arbitrage</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Passive Flows and the Limits to Arbitrage" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Yao Deng, Marco Sammon · HBS Working Paper · 2026年5月稿</p>
+  <div class="tags"><span class="tag">被动资金</span><span class="tag">套利限制</span><span class="tag">anomaly</span><span class="tag">short covering</span></div>
+  <div class="qual"><strong>顶刊记录（Marco Sammon）：</strong> Chinco and Sammon, “The Passive-Ownership Share Is Double What You Think It Is,” <em>Journal of Financial Economics</em>, 2024, 157；另有 Sammon and Shim, “Index Rebalancing and Stock Market Composition…,” <em>Journal of Financial Economics</em>, 2026, 177。</div>
+
+  <h3>研究问题</h3>
+  <p>被动指数基金的申购赎回，会不会本身就构成 limit to arbitrage？作者问的不是「被动变多之后 anomaly 永久消失」，而是：在 anomaly 策略的<strong>持有期</strong>里，若成分股正好吸到更大的被动流入，会计类多空策略的实现收益会不会被压缩——哪怕多空两边碰到的被动交易量差不多？</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li>核心机制（来自作者摘要与 HBS 页）：被动流入带来的非弹性需求，在<strong>空头腿</strong>上的价格冲击更大——短腿的 demand multiplier 平均更高。于是同样规模的被动流入，把空头腿价格抬得更多，多空价差在持有期内被「夹扁」。</li>
+    <li>因此：会计基础的 long–short anomaly，在「持有期被动流入更大」的股票子集上，实现收益显著更低。</li>
+    <li>一条可检验渠道：在已经高空头兴趣的股票上，被动流入冲击之后 short interest 下降更多——符合 short covering / 轧空式放大。</li>
+    <li>（本稿 PDF 在 SSRN 侧被拦，下列数字未从原文核表；简报只采信作者公开摘要中的方向性结论，不编造系数。）</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>持有期被动 flow-induced trading 是否预测 anomaly 实现收益的截面差异；多空两腿流量相近时，收益压缩是否主要来自短腿更大的价格冲击。</p>
+  <p><strong>怎么对比或识别：</strong>按持有期被动流入分组或交互；比较 long vs short 腿的 demand multiplier；在高 short interest 子样本看流入后空头回补。识别威胁是：被动流入可能与规模、流动性、近期表现相关——需要看作者是否用指数规则/基准权重变化剥离内生需求。</p>
+  <p><strong>主要坑：</strong>「被动流入」测错会把主动聪明钱算进去；anomaly 定义与再平衡频率会改结论；A 股指增/ETF 生态与美股不同，短腿可借券约束更紧，机制可能更强也可能更弱。本篇简报因未能稳定下载全文，细节表格请董杰以作者主页最新 PDF 为准。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>若董杰用会计 anomaly 或应计相关策略做 A 股，持有期要并行跟踪沪深 300 / 中证 500 / 创业板指成分的 ETF 与联接基金申赎。披露事件研究里：指数大额申购周，坏消息的负漂移可能被「短腿被抬」掩盖——看起来像市场不反应披露，其实是机械买盘。也可反过来说：测披露信息含量时，应控制同期被动 flow，否则把流动性冲击误读成基本面。</p>
+  <p class="links">HBS 页：<a href="https://www.hbs.edu/faculty/Pages/item.aspx?num=68992">hbs.edu … item 68992</a> · 作者页：<a href="http://marcosammon.com/research/">marcosammon.com/research</a> · SSRN（若可访问）：检索 “Passive Flows and the Limits to Arbitrage”</p>
+</article>
+
+<article id="p4">
+  <h2>4. Do Index Funds Monitor? Revisited</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Do Index Funds Monitor? Revisited" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Todd A. Gormley, Hwanki Brian Kim · ECGI Finance WP 1057/2025 · 2026年1月稿（SSRN 5004197）· R&amp;R</p>
+  <div class="tags"><span class="tag">指数基金</span><span class="tag">公司治理</span><span class="tag">DID纠错</span><span class="tag">Russell切换</span></div>
+  <div class="qual"><strong>顶刊记录（Todd A. Gormley）：</strong> Appel, Gormley, and Keim, “Passive investors, not passive owners,” <em>Journal of Financial Economics</em>, 2016, 121(1): 111–141。</div>
+
+  <h3>研究问题</h3>
+  <p>Heath, Macciocchi, Michaely, and Ringgenberg (2022, RFS，下称 HMMR) 用 Russell 1000/2000 切换，声称指数所有权上升会伤害公司绩效、削弱薪酬业绩敏感度、降低董事会独立性——即「指数基金不监控」。但 Appel–Gormley–Keim（AGK）等文章结论更乐观。作者问：HMMR 吓人的结果，是不是来自 <strong>DID 对照组选错了</strong>？</p>
+
+  <h3>主要结果</h3>
+  <ul>
+    <li><strong>规格错误：</strong>HMMR 把「1000→2000」与「2000→1000」两类切换塞进同一个回归，却没有按<strong>起始指数</strong>分层。结果是用「另一边指数的未切换股」当控制组——事前趋势本就不同，苹果比橙子。</li>
+    <li>用 HMMR 公开代码数据，改成「只与同起点未切换股比」，或做一个强制对称的 stacked / combined DID 后：指数所有权在进入 Russell 2000（离开 1000）后大约升 <strong>1.20</strong> 个百分点（combined DID，p&lt;0.01；AGK 规格约 1.29 ppt），但<strong>主动基金持股水平不变</strong>。</li>
+    <li>HMMR 关于 pay-performance sensitivity、股权薪酬占比、Tobin’s q / Total q、市净率、ROA 的负面效应，在纠正后<strong>不再显著</strong>；董事会独立性在 subsample 里点估计仍像 HMMR，但两类切换不对称，combined DID 下也不显著。</li>
+    <li>指数股挤出的不是主动共同基金，而是「资产更小、该股占组合权重更低」的机构——监控含义与「取代主动基金」叙事不同。</li>
+    <li>与 AGK (2016) 的差别：AGK 横截面规格（无股票 FE）仍能看到董事会独立性上升；加股票 FE / 切换 DID 则看不到立即效应——治理结果很黏，规格选择本身就会改故事。</li>
+  </ul>
+
+  <h3>方法（在测什么 / 怎么对比 / 主要坑）</h3>
+  <p><strong>在测什么：</strong>Russell 边界切换带来的指数所有权外生变化，是否导致主动所有权、薪酬契约、估值与治理同步变差。</p>
+  <p><strong>怎么对比或识别：</strong>纠正后的 DID = 同起点 switchers vs stayers × 事后；再 stacked 成单一回归检验「进 2000」与「进 1000」符号相反；并并列 AGK 工具变量 / 股票 FE 规格。这是教科书级的「对照组必须可比」案例。</p>
+  <p><strong>主要坑：</strong>Russell 规则在样本期有调整；±100 名次带宽与 AGK 的 500 名样本不同；治理变量变化慢，短期 DID 可能 power 不足；「没有变坏」≠「指数基金积极监控」——只是驳倒 HMMR 的伤害论。A 股没有同款 Russell 断点，但「沪深 300 / 中证 500 调样」常被人做成伪 DID，这篇提醒：必须按调入前指数分层，并画事前趋势。</p>
+
+  <h3>对 A 股 / 披露实证的启示</h3>
+  <p>董杰若用指数调样做治理或披露质量，先复制这篇的诊断：（1）调入组的控制组只能是「差一点但留在原指数」的股票；（2）进与出应符号相反，否则别解释成所有权效应；（3）被挤出的是哪类股东，决定你对监控/信息披露压力的先验。也可直接当审稿清单：看到「指数基金有害」的论文，先问起始指数 FE 或分样本有没有做。</p>
+  <p class="links">ECGI：<a href="https://www.ecgi.global/publications/working-papers/do-index-funds-monitor-revisited">ecgi.global … revisited</a> · PDF：<a href="https://www.ecgi.global/sites/default/files/2026-01/do-index-funds-monitor_0.pdf">2026-01 PDF</a> · SSRN：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5004197">abstract=5004197</a></p>
+</article>
+
+<footer>
+  路径：/workspace/research/daily-papers/2026-09-02.html · 站点同步见 publish.sh · 候选未收：Eisfeldt et al. NBER 34882（PDF 未稳定取得，仅有摘要）；Da–Huynh SSRN 5388919（仅有研讨摘要，缺全文数字）。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
