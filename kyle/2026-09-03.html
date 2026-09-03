@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-03</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-03">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月3日 · 第十三期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇：同一条信息不对称，增发能用「慢而费」的方式发信号，回购却<strong>发不了</strong>——几乎只能走公开市场；知情人数随机时，大单冲击的幂次不只看「平均有几个知情」，还看整条分布；Kyle 里本来价格会完全揭示信息，一旦允许跟朋友<strong>聊一嘴</strong>，中间段消息被分享、极端消息被藏，价格反而可能对不上基本面；相关公司把披露当成美式期权，拖着等同伴爆特别好的消息抬自己的价，风险溢价会先升后掉再升，中等好消息还会带动扎堆披露。</p>
+  <p>避开 8/18–9/2 已写过的篇目。读法照旧：先看「问了什么」和「为什么值得看」。机制与数字均依 PDF / 作者页稿。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Bond–Yuan–Zhong：增发能用低效方式发信号，回购不能，所以回购几乎全是公开市场</a> — 2026-03 作者稿</li>
+      <li><a href="#p2">Çetin–Lin：知情人数不确定时，冲击函数的幂次由价值尾部 + 知情人数整条分布共同决定</a> — arXiv 2026-07</li>
+      <li><a href="#p3">Allmis–Pin–Vega-Redondo：中间消息会分享、极端消息会藏，允许聊天反而让价格不再完全揭示</a> — arXiv 2026-06</li>
+      <li><a href="#p4">Back–Carlin–Kazempour–Xie：披露是美式期权，拖着等相关公司爆特别好的消息；中等好消息会诱发扎堆</a> — NBER / SSRN 2025-04 修订</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. Share Issues versus Share Repurchases</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Share Issues versus Share Repurchases" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Philip Bond, Yue Yuan &amp; Hongda Zhong · 2026年3月19日稿 · Washington / UCL / UT Dallas</p>
+  <div class="tags"><span class="tag">信息不对称</span><span class="tag">增发 vs 回购</span><span class="tag">信号</span><span class="tag">交易方式</span></div>
+
+  <h3>问了什么</h3>
+  <p>回购几乎全走公开市场（OMR），要约回购很少；增发却两种都常用：一次性 SEO，以及慢慢在二级市场卖的 ATM。而且平均 SEO 比 ATM 更大。作者问：公司比投资者更懂自己的资产（Myers–Majluf 式），同时选<strong>规模</strong>和<strong>方式效率</strong>时，增发和回购为什么不是镜像？同一条摩擦能不能同时解释「方式多样性不对称」和「规模–方式关系」？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>公司类型是资产存量 <code>a</code>。交易规模 <code>i</code>：增发为正、回购为负；方式效率 <code>θ ∈ [0,1]</code>（1 最有效）。交易创造盈余 <code>S(i,θ)</code>，公司价值 <code>V=a+i+S</code>。价格由竞争性投资者按公告的 <code>(i,θ)</code> 打平给出。公司最大化长期股东的每股价值。</p>
+  <p>完全信息下人人都选最优规模 <code>I*</code>、最高效率 <code>θ=1</code>。有私有信息时，公司用规模或效率发信号，但两边不对称：</p>
+  <ul>
+    <li><strong>回购发不了效率信号</strong>（命题 1，不靠均衡精炼）：若差公司用更低效方式、更低价格回购，好公司会更愿意去学——低效对好公司只是价值里的一小块，低价回购却人人都喜欢。所以同一规模上，所有回购公司必须用同一效率。D1 均衡里人人 <code>θ=1</code>，只按规模分开：更好的公司回购更多、更接近 <code>I*</code>，更差的回购过少。</li>
+    <li><strong>增发可以</strong>：更差的公司增发更多（接近 <code>I*</code>）、用最高效方式；更好的公司缩规模；最好的一批把规模压到下限 <code>I_L</code>，再改用<strong>低效方式</strong>继续分开（ATM 对应「慢、现金流错配」）。直觉：增发时高价才划算，好公司用低效换更高价，差公司学不起。</li>
+  </ul>
+  <p>文中把效率对应到「现金流是否匹配」：投资是一坨、经营现金流是匀的，所以一次性 SEO 对增发更有效、匀速 OMR 对回购更有效；ATM 慢、要约回购一锤子，都是错配。</p>
+  <div class="eq">回购：只能 <code>θ=1</code>，用规模分开；增发：先缩规模，再用低效方式分开</div>
+  <p class="eq-note">人话：回购时「故意用更笨的办法」会把价格打低，好公司也想来捡便宜，信号作废。增发时「故意用更笨的办法」把价格打高，差公司学不起。所以回购几乎只剩公开市场，增发还能看到 SEO 和 ATM 并存，而且 SEO 往往更大。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>私有信息在资产存量 <code>a</code>，不在项目盈余 <code>S</code>（否则公告收益会反事实地为 0）。</li>
+    <li>必须用股权（不引入债、权证、股利来内生化边界）。</li>
+    <li>基准目标是长期股东价值；第 5 节允许短期股价权重 <code>ε ∈ [0,1)</code>。</li>
+    <li>均衡用 D1 精炼；「回购不能按效率分开」在任意 PBE 都成立。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>方式多样性：增发两边都用，回购几乎全是 OMR——来自同一条信息不对称。</li>
+    <li>规模：更好的公司增发更少、回购更多；SEO 平均大于 ATM。</li>
+    <li>效率：信息不对称总让公司<strong>增发过少</strong>；回购在长期股东目标下<strong>过少</strong>，若很在乎短期股价则<strong>过多</strong>（用超量回购把短期价顶上去，差公司按比例更痛、学不起）。</li>
+    <li>政策：提高最低增发规模 <code>I_L</code>，会把更多好公司推进「低效方式」区间，ATM 相对 SEO 更常见。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">把 A 股「定增 / 配股 / 小额快速」对「回购几乎全是公开市场」写成同一条 Myers–Majluf 摩擦的两个均衡。看回购是过少还是过多，可以直接读管理层在不在乎短期股价。Bond 本人 2016 年和 Zhong 在 <em>RFS</em> 写过回购，这篇把增发拉进来做对照。</div>
+
+  <p class="links"><a href="http://faculty.washington.edu/apbond/research/ShareIssuesVsShareRepurchases.pdf">作者页 PDF（2026-03-19）</a> · 亦见 FMG DP 963 / CEPR DP 20329</p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Philip Bond，<em>Journal of Finance</em> 2015（Government Intervention and Information Aggregation by Prices，与 Itay Goldstein）；另有 <em>RFS</em> 2016（Buying High and Selling Low: Stock Repurchases and Persistent Asymmetric Information，与 Zhong）。</p>
+</article>
+
+<article id="p2">
+  <h2>2. A Limit Order Market with Uncertain Informed Trading Participation</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. A Limit Order Market with Uncertain Informed Trading Participation" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Umut Çetin &amp; Mingwei Lin · 2026年7月5日 · LSE Statistics · arXiv:2607.04221</p>
+  <div class="tags"><span class="tag">限价订单簿</span><span class="tag">知情交易人数</span><span class="tag">价格冲击</span><span class="tag">PIN</span></div>
+
+  <h3>问了什么</h3>
+  <p>经典微观结构常把「有几个知情」当成共同知识。做市的人其实既不知道基本面，也不知道今天局里有没有知情、有几个。作者问：知情人数 <code>N</code> 随机、流动性供给者只知道分布不知道实现时，整本限价订单簿长什么样？大单冲击是平方根、幂律还是对数？这个形状能不能只看 <code>E[N]</code>？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>一期限价市场。竞争性流动性供给者先挂一本边际价格函数 <code>h(·)</code>（买第 <code>y</code> 股的价格）。噪声单 <code>Z ~ N(0, σ²)</code>。知情人数 <code>N</code> 是离散随机变量，与 <code>V,Z</code> 独立；在场的知情者都看到终值 <code>V</code>，风险中性，选同一规模。交易台把 <code>Z+Nx</code> 一次性打到账本上。</p>
+  <p>知情者面对的是期望边际成本 <code>F(x)=E[h(Z+x)]</code>。最优是打到 <code>F(x*)=V</code>：最后一股的期望成本刚好等于自己知道的价值。均衡要求 <code>F</code> 满足一个不动点积分方程：账本 <code>h</code> 必须让流动性供给者打平，而 <code>h</code> 又通过 <code>F</code> 决定知情者怎么下。</p>
+  <p>有界价值、幂型端点时，大单冲击是幂律，指数由两块<strong>一起</strong>定：价值分布在端点的尾部形状，以及知情人数的<strong>整条</strong>分布 <code>p(n)</code>——不是只看期望人数。轻尾端点则变成对数冲击。数值上：在条件均值固定时，<code>N</code> 更分散会把账本打得更平（订单流更难直接读出 <code>V</code>）。</p>
+  <div class="eq"><code>F(x*)=V</code>；大单冲击的幂次 <code>ρ</code> 由价值尾部与 <code>N</code> 的整条分布共同决定，不只由 <code>E[N]</code> 决定</div>
+  <p class="eq-note">人话：挂单的人在猜「对面是噪声还是知情团」。团有多大本身是随机的，所以同样一笔大单，可能是一个知情下很猛，也可能是一群知情一人一点。冲击函数的弯曲程度，因此不能用「平均有几个知情」概括——分布胖瘦会改幂次。人数更不确定时，大单更不像「铁证」，账本可以挂得更平。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>一期、竞争性流动性供给、知情者风险中性且对称；<code>N,V,Z</code> 相互独立，<code>N</code> 外生。</li>
+    <li>存在性：价值有界、<code>p(0)&lt;1</code>、<code>E[N] &lt; ∞</code>（定理 3.7）。</li>
+    <li>幂律渐近还要求端点导数条件，以及 <code>N</code> 的足够矩（Poisson / 几何等常见计数分布都满足）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>均衡存在，且可用 <code>F</code> 的不动点完全刻画；<code>F</code> 对规模严格递增。</li>
+    <li>幂型端点：冲击幂律，指数是一个含 <code>p(n)</code> 的不动点，不能简化成 <code>E[N]</code>。</li>
+    <li>轻尾端点：冲击是对数，不是幂律。</li>
+    <li>人数不确定可以提高在场知情者的期望利润（垄断知情、二元价值的解析例子；连续价值用数值补）。</li>
+    <li>数值：<code>N</code> 更分散（均值不变）会压平账本——作者标明这是数值发现，不是一般比较静态定理。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">A 股是限价市场，盘中常猜「今天有没有主力」。PIN 把「有没有知情」写成一个概率；这篇把它写进整本账本，并证明冲击的形状对知情人数的分布形状敏感。做大单冲击、平方根定律、或「机构抱团日 vs 散户日」时，不要只用平均知情人数当状态变量。</div>
+
+  <p class="links"><a href="https://arxiv.org/pdf/2607.04221">arXiv PDF（2026-07-05）</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Umut Çetin，<em>Review of Financial Studies</em> 2006（Pricing Options in an Extended Black Scholes Economy with Illiquidity，与 Jarrow、Protter、Warachka）。</p>
+</article>
+
+<article id="p3">
+  <h2>3. Revealing information – or not – in a social network of traders</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Revealing information – or not – in a social network of traders" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Patrick Allmis, Paolo Pin &amp; Fernando Vega-Redondo · 2026年6月 · Cambridge / Siena–Bocconi / CUHK · arXiv:2606.11053</p>
+  <div class="tags"><span class="tag">Kyle</span><span class="tag">信息分享</span><span class="tag">社会网络</span><span class="tag">价格揭示</span></div>
+
+  <h3>问了什么</h3>
+  <p>Kyle 传统上假定交易者只能从价格里读别人的信息。圈子小的市场里，大户会私下聊。直觉说私有信息太值钱，不该分享。作者问：在一个几乎是 Kyle 的市场里，知情者会不会把信号告诉网络邻居？允许聊天之后，价格还是不是完全揭示？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>若干战略交易者 + 一条向下倾斜的非战略需求（噪声需求是共同知识）。因此：<strong>若不许聊天，价格会完全揭示</strong> <code>r</code>。偏离 Kyle 的关键就两处：聊天，以及噪声需求可观测。</p>
+  <p>自然随机指定一人看到 <code>r</code>，她决定是否告诉出边邻居，然后所有战略交易者同时下单，价格出清。</p>
+  <p>唯一 PBE：若邻居数 <code>ℓᵢ &gt; 0</code>，她只在一个中间区间 <code>(aᵢ, bᵢ)</code> 里分享。</p>
+  <ul>
+    <li>极端好 / 极端坏：自己偷偷做多或做空更赚，不分享。</li>
+    <li>中间消息：分享，好把邻居拉到同一信息集，减弱彼此抢仓（有点像 Cournot 里分享需求信息）。</li>
+  </ul>
+  <p>「不分享」对邻居是好消息：上端 <code>bᵢ</code> 恰好等于邻居在未分享时对 <code>r</code> 的条件期望，所以沉默会被读成「还行」。分享本身在期望上是坏消息（分享条件下的均值低于无条件均值）。一旦真的分享，均衡价格总是往下掉，原始持有人受损。</p>
+  <p>价格不再完全揭示：<code>r</code> 刚低于 <code>aᵢ</code>（隐瞒、邻居仍猛买）和刚高于 <code>aᵢ</code>（分享、邻居砍仓）可以打出同一价格。内生网络：按「被自然抽中知情」的先验概率排序，均衡是一层层小团体（clique）。</p>
+  <div class="eq">极端 <code>r</code> 隐瞒、中间 <code>r</code> 分享；允许聊天 ⇒ 价格不再一一对应 <code>r</code></div>
+  <p class="eq-note">人话：特别好的消息你不会告诉朋友，否则大家一起买、把价买上去，你赚少了。特别坏的你也不说，否则大家一起砸，你空头的价也没了。只有「还行、没多少油水」时才说，为的是别跟朋友对着抢。旁人看见价格，分不清「略差点但没说」和「中等偏差点说了」，市场就不再完全有效。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>非战略需求共同知识；不许聊天时价格完全揭示——所以无效率完全来自聊天。</li>
+    <li>分享是向出边邻居广播，不能挑人；内生网络要求双向同意、无向边。</li>
+    <li>交易者风险中性；事后（含原始持有人）是零和。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>有邻居时，分享概率严格为正；均衡唯一，分享区间包住无条件均值。</li>
+    <li>沉默 = 好消息；分享发生时价格下跌。</li>
+    <li>允许聊天破坏价格揭示，即使交易者风险中性。</li>
+    <li>内生链接：按知情先验排成有序小团体，知情概率最高的人决定自己要几个朋友，下一层复制。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">和董杰那条「AI 投资者是串谋还是想一块」直接对得上：这篇写的是「该不该把信号告诉圈子」。圈子聊天会让价格对不上基本面，即使没有人非理性。A 股调研圈、微信群、一致预期，都可以读成内生 clique。作者之一 Vega-Redondo 是网络博弈的老人。</div>
+
+  <p class="links"><a href="https://arxiv.org/pdf/2606.11053">arXiv PDF（2026-06）</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Fernando Vega-Redondo，<em>Econometrica</em> 1997（The Evolution of Walrasian Behavior）；<em>Review of Economic Studies</em> 2010（Network Games，与 Galeotti、Goyal、Jackson、Yariv）。</p>
+</article>
+
+<article id="p4">
+  <h2>4. American Disclosure Options</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. American Disclosure Options" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Kerry Back, Bruce I. Carlin, Seyed Mohammad Kazempour &amp; Chloe L. Xie · NBER w31935 · SSRN 2025年4月修订 · Rice / LSU / MIT Sloan</p>
+  <div class="tags"><span class="tag">披露时机</span><span class="tag">美式期权</span><span class="tag">风险溢价</span><span class="tag">扎堆公告</span></div>
+
+  <h3>问了什么</h3>
+  <p>公司什么时候把私有信息公开？Acharya–DeMarzo–Kremer 把披露写成美式期权，但只有一家公司、投资者风险中性，期权价值来自外生公告。作者问：多家相关公司、投资者风险厌恶时，这家的最优披露时机如何被那家拖着走？风险溢价会不会在披露前被顶起来？中等好消息会不会带动同伴立刻跟进？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>每家公司握着一个美式「交换期权」：披露等于把「未被告知、风险厌恶投资者给的价」换成「已告知投资者给的价」。未披露的价格不是死的——相关公司一披露，自己的价也会动。所以时机是一场期权博弈，门槛随别人已披露 / 未披露随机变。</p>
+  <p>公司会拖：盼着正相关的同伴爆出特别好的消息，把自己的价抬上去再讲。像普通美式期权，要足够价内才行权——即使现在披露能立刻抬价，仍可能再等一会儿。</p>
+  <p>风险溢价在披露前上升（不披露本身加大了与随机折现因子的协方差），披露当下掉下去，之后再升。条件风险溢价可以远高于无条件。披露对公司自己永远是好消息（公告收益严格为正），即便从事前看内容并不算「好」。但刚过门槛的「中等好消息」对同伴足够「相对负面」：既改了期权标的，又压缩了剩余不确定性，后者可以压过前者，诱使一区间类型立刻披露——内生扎堆。</p>
+  <p>披露期权价值对相关性呈驼峰：相关为 0 或 1 时期权没价值，中间最大。</p>
+  <div class="eq">拖着等同伴的大好消息；风险溢价：披露前↑、披露时↓、之后再↑；刚过门槛的披露会诱发相关公司扎堆</div>
+  <p class="eq-note">人话：你有成绩单，同学先报了特别好的，你的股价也会被带上去，你更想再等等。可一旦有人报了「刚够格」的成绩，剩下的不确定性一下子变少，你的「再等」期权贬值，可能马上跟进。市场会看到：披露前阴跌、披露日跳涨、中等好消息后面一串公告。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投资者风险厌恶；公司价值有系统性和特质成分。</li>
+    <li>披露不可撤销、是验证信息（不是廉价交谈）。</li>
+    <li>相关公司的披露互相进入对方的信息集；均衡是随机门槛策略。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>披露前负漂移、披露日正跳；跳即使「内容事前不算好」也会发生。</li>
+    <li>内生公告对披露者永远是好消息，但仍可能诱发同伴扎堆（与 ADK 外生坏消息扎堆不同）。</li>
+    <li>早披露者公告收益通常更高（自我选择），但未披露期间风险溢价上升，可能把晚披露者的公告收益抬回去。</li>
+    <li>文中用盈余公告择时做了与模型同方向的经验对照。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <div class="qual">A 股业绩预告、年报扎堆、行业龙头先说、同一板块跟进，都可以读成「美式披露期权 + 相关公司博弈」。不要把扎堆只归因于外生坏消息；中等好消息也能挤出一串公告。作者之一是写过 Kyle 遇见 Glosten–Milgrom 的 Kerry Back。</div>
+
+  <p class="links"><a href="https://www.nber.org/system/files/working_papers/w31935/w31935.pdf">NBER PDF</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4660260">SSRN（2025-04-05 修订）</a></p>
+  <p class="authors" style="margin-top:8px">顶刊核验：Kerry Back，<em>Econometrica</em> 2004（Information in Securities Markets: Kyle Meets Glosten and Milgrom，与 Shmuel Baruch）。</p>
+</article>
+
+<footer>
+  避开 8/18–9/2 已写过的篇目。Bond–Yuan–Zhong 依作者页 2026-03-19 PDF；Çetin–Lin 依 arXiv:2607.04221；Allmis–Pin–Vega-Redondo 依 arXiv:2606.11053；Back–Carlin–Kazempour–Xie 依 NBER w31935（SSRN 2025-04 修订）。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
