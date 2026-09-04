@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-04</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-04">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月4日 · 第十四期 · 4 篇 2025–2026 working paper · Kyle</p>
+</header>
+
+<div class="lede">
+  <p>今天四篇绕着「价格里到底有多少信息」转：学噪声交易（像高频盯别人的单）时，<strong>披露太精准反而容易多均衡、市场更脆</strong>；相对价格信息含量可以从「价格对收益的回归 R²」里识别出来，美股中位数大约只有 2% 多；限价簿上若噪音单很肥尾，<strong>大单不再自动等于知情</strong>，冲击更平、学习更慢；信贷市场里「信息跨度」和「精度」对竞争的作用可以反过来——硬化软信息（拉长跨度）抬竞争，单纯加精反而可能加深赢家诅咒。</p>
+  <p>避开 8/18–9/3 已写过的篇目（含 Crowded Markets、Noisy Processing、Share Issues vs Repurchases、Çetin–Lin 随机知情人数、网络披露、American Disclosure Options 等）。读法照旧：先看「问了什么」和「为什么值得看」。机制与数字均依 PDF / AFA 稿 / NBER 稿；不编造作者或顶刊。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Qin–Yu–Zhu：学噪声交易时，披露太准会制造多均衡；限制高频还可能触发披露断崖式下跌</a> — 2025-07 / SSRN 2026</li>
+      <li><a href="#p2">Dávila–Parlatore：相对价格信息含量 = 价格对收益回归 R² 的组合；美股中位约 2.3%</a> — 2025-01 稿 / RFS 2025</li>
+      <li><a href="#p3">Çetin–Lin–Livieri：噪音单肥尾时，大单未必是消息；交叉深度更远、冲击更凹、学习更慢</a> — arXiv 2026-08</li>
+      <li><a href="#p4">He–Huang–Parlatore：信息「跨度」vs「精度」：硬化软信息抬竞争，加精可能加深赢家诅咒</a> — NBER 修订 2025-09</li>
+    </ol>
+  </nav>
+</div>
+
+<article id="p1">
+  <h2>1. 学噪声交易时，披露太准反而更容易崩：多均衡与披露断点</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 学噪声交易时，披露太准反而更容易崩：多均衡与披露断点" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhenjiang Qin · Hao Yu · Minxing Zhu · University of Macau 等 · 稿日期 2025-07-01（AFA 页）· SSRN 6643254（Crossref 列为 Qin–Yu–Zhu，2026 preprint）</p>
+  <div class="tags">
+    <span class="tag">信息披露</span>
+    <span class="tag">学噪声 / HFT</span>
+    <span class="tag">多均衡</span>
+    <span class="tag">市场脆弱性</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Qin，《The Accounting Review》2014（与 Christensen）《Information and Heterogeneous Beliefs…》；Qin，《Review of Financial Studies》2025《An Equilibrium Model of Imperfect Hedging…》。AFA 公开 HTML 作者栏写 Yu–Zhu；Crossref / SSRN / ORCID 将 Qin 列为第一作者——本稿按 Crossref 署名，正文机制依 AFA 全文。</div>
+
+  <h3>问了什么</h3>
+  <p>理性投资者既能学资产基本面，又能学噪声交易者的需求（论文把这解读成高频/盯单流交易）。公司还公开披露资产收益里的一部分。问题是：披露与「学噪声」叠在一起，会让市场更稳还是更脆？限制高频时，自愿披露会怎样动？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>资产收益拆成两块：\(v = v_1 + v_2\)。投资者有关于 \(v_1\) 的私人信号，也有关于噪声需求 \(n\) 的私人信号；关于 \(v_2\) 的是公开信号 \(s\)，精度 \(\tau_s\)。均衡价格猜成线性：</p>
+  <div class="eq">\(\tilde p = \alpha_0 + \alpha_1 \tilde v_1 + \alpha_2 \tilde s + \alpha_3 \tilde n\)</div>
+  <p class="eq-note">人话：价格 = 对 \(v_1\) 的反应 + 对披露的反应 + 对噪声单的反应。价格信息含量用 \(\xi \equiv \alpha_1/\alpha_3\) 度量——\(\xi\) 大说明价格里基本面相对噪声更重。</p>
+  <p>\(\xi\) 满足一个三次方程 \(g(\xi)=0\)。关键分叉：若投资者<strong>不会</strong>学噪声（\(\tau_z=0\)），均衡唯一；若会学噪声（\(\tau_z&gt;0\)），且公开披露够准（\(\tau_s\) 大），\(g\) 可以有多个正根 → 多均衡。直觉是自我兑现：大家相信价格很有信息 → 更敢跟噪声对着干 → 价格真的更有信息；反之亦然。披露很差时，就算你相信价格很灵，总收益仍被另一维不确定拖着，不敢猛干，多均衡消失。</p>
+  <p>内生披露时，经理选 \(\tau_s\) 最大化期望价格减去二次披露成本。目标函数对 \(\tau_s\) 可以有两个局部最大；\(\tau_z\) 跨过阈值时，最优披露会<strong>跳</strong>。于是限制高频（\(\tau_z\) 往下走）时，披露可能断崖式减少，价格突然掉——论文据此说「管高频也可能砸出闪崩式下跌」。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>竞争型噪声理性预期（CARA–正态），连续统知情投资者。</li>
+    <li>收益二维、披露只覆盖其中一维（à la Goldstein–Yang 2015）。</li>
+    <li>学噪声信号 \(z_i = n + \eta_i\)；多均衡时取信息含量最小的那个根（与 Farboodi–Veldkamp 一致）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>学噪声 + 披露足够准 → 多均衡（脆）；披露够糊 → 唯一均衡。</li>
+    <li>外生披露下，学噪声通常抬高价格信息含量、流动性与期望价格，并改变波动分解（信息驱动 vs 流动性驱动）。</li>
+    <li>内生披露：最优 \(\tau_s\) 对 \(\tau_z\) 非单调且不连续；管高频时可能因披露跳水而崩价。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>董杰做披露与微观结构，这篇把「披露越多越好」直接打穿：在盯单流的世界里，更准的公开信息会加强自我兑现，反而放大脆弱性。和 A 股机构盯盘口、量化跟单的直觉也贴。</p>
+  <p class="links">链接：<a href="https://doi.org/10.2139/ssrn.6643254">SSRN 6643254</a> · <a href="https://afajof.org/management/viewp.php?n=194152">AFA 全文 HTML</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 价格到底有多「灵」？用回归 R² 识别相对价格信息含量</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 价格到底有多「灵」？用回归 R² 识别相对价格信息含量" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Eduardo Dávila (Yale) · Cecilia Parlatore (NYU Stern) · January 2025 稿 · <em>Review of Financial Studies</em> 2025</p>
+  <div class="tags">
+    <span class="tag">价格信息含量</span>
+    <span class="tag">识别</span>
+    <span class="tag">信息聚合</span>
+    <span class="tag">实证对接理论</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Parlatore，《Journal of Finance》2021《Trading Costs and Informational Efficiency》；本文本身 <em>RFS</em> 2025。Dávila–Parlatore 另有多篇 JFE / JF。</div>
+
+  <h3>问了什么</h3>
+  <p>理论里到处是「价格信息含量」，实证常用滚动回归 R²、非同步性等，但缺干净的结构对应。能否只凭定价方程 + 收益过程，就从可观测回归里<strong>识别</strong>相对价格信息含量，并估出美股面板？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>定义两种量：绝对信息含量 = 价格里关于收益创新的信号精度；相对信息含量 \(\tau_\pi^R\) = 绝对精度相对「总共能学到多少」的比例，落在 0–1。高斯下它就是外部观察者只看价格时的<strong>Kalman 增益</strong>：若 \(\tau_\pi^R=0.05\)，看完价格后对收益的不确定砍掉 5%，后验里价格信号权重 5%、先验 95%。</p>
+  <p>识别想法：对价格变化关于当期与未来收益变化做回归，把几条回归的 R² 按理论配方拼起来，就等于相对信息含量——在很大一类模型里成立（偏好/禀赋/信号可以异质，市场可竞争可策略，信息可对称可不对称）。</p>
+  <div class="eq">相对信息含量 ↔ 价格变化对收益变化回归的 R² 组合</div>
+  <p class="eq-note">人话：别只看「收益解释了多少收益」，要看「价格变动里有多少是在提前反映未来收益变动」；理论告诉你该怎么加减那些 R²。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>指定定价方程形式 + 收益（或收益增长）的随机过程；不要求把整个市场微观结构钉死。</li>
+    <li>基线：一期前瞻收益增长；扩展含不可学成分、更长 horizon（Prop. 2–3）。</li>
+  </ul>
+
+  <h3>主要结论（文中数字）</h3>
+  <ul>
+    <li>全样本时间平均：相对信息含量<strong>中位数约 2.34%</strong>，均值约 2.61%——价格有信息，但相对「全部可学」并不大。</li>
+    <li>截面：大市值、高换手、高特质波动、高机构持股、高分析师覆盖 → 信息含量更高。</li>
+    <li>时序：自 1980 年代中期以来，中位/均值/离散度整体上升。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「价格有多有效」一个能跟 Kyle / REE 对话的可估对象，而不是口头 R²。做披露或知情交易实证时，可当结构友好的因变量或状态变量；数字也很打脸直觉——中位只有两个百分点左右。</p>
+  <p class="links">链接：作者稿 January 2025（PDF）· 期刊版 <em>RFS</em> 2025（OpenAlex）</p>
+</article>
+
+<article id="p3">
+  <h2>3. 大单不一定是消息：噪音肥尾把「知情交叉深度」推得更远</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 大单不一定是消息：噪音肥尾把「知情交叉深度」推得更远" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Umut Çetin · Hongzhong Lin · Giulia Livieri · arXiv:2607.01198 · 2026-08</p>
+  <div class="tags">
+    <span class="tag">限价簿</span>
+    <span class="tag">肥尾流动性</span>
+    <span class="tag">价格冲击</span>
+    <span class="tag">知情交易</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Çetin，《Review of Financial Studies》2006《Pricing Options in an Extended Black–Scholes Economy with Illiquidity》。注意：不同于 9/3 简报的 Çetin–Lin（知情人数随机）；本篇是<strong>三人</strong>、主题是 Student-t 噪音单。</div>
+
+  <h3>问了什么</h3>
+  <p>经典 LOB / 高斯噪音设定里，极大单几乎自动被当成知情。真实订单流肥尾：大流动性冲击并不稀罕。那均衡边际成本、价格冲击形状、以及做市商从订单流里学习的速度，会怎样变？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>不知情聚合流 \(Z_t \sim\) 位置–尺度 Student-t，自由度 \(\nu&gt;2\)。\(\nu\) 越小尾巴越肥，作者称之为<strong>流动性尾部风险</strong>。知情者面对执行定价的边际成本表，一阶条件 + 竞争做市 → 边际成本满足非线性不动点。</p>
+  <ul>
+    <li><strong>交叉深度（crossover-depth）</strong>：订单大到「更像知情而非流动性」的门槛。尾巴越肥，这个门槛越往外推——大单在更宽的深度上仍可能是噪音。</li>
+    <li>深度处冲击更<strong>平坦、更凹</strong>；幂律型尾部标度由 \(\nu\)、知情竞争与信念共同决定。</li>
+    <li>做市商更把极端单当 outliers → 信念更新更谨慎 → <strong>价格发现更慢</strong>，买卖价差在大单后更持久。</li>
+  </ul>
+  <div class="eq">尾指数 \(\nu\) ↓ → 交叉深度 ↑，冲击更平，学习更慢</div>
+  <p class="eq-note">人话：市场若经常出现「真的只是想换仓的巨单」，你就不能一看见大单就当有内幕；价格冲击曲线会塌得更慢，信息渗进价格也更磨叽。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>动态多期 LOB，执行型定价；价值 \(V\) 在理论部分有界支撑（数值可放开）。</li>
+    <li>Student-t 噪音是结构性的：多项式尾让高斯证明里的单调/紧性论证失效，作者在尾控紧类上重建不动点存在。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>大单的信息性内生于流动性尾部，不是自动新闻。</li>
+    <li>知情竞争能压冲击、压价差，但擦不掉大单区的肥尾印记。</li>
+    <li>AAPL 十档实证：更远的交叉诊断、大单后价差更粘。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和昨日「知情人数不确定」是同一作者群的另一刀：一个动 \(N\)，一个动噪音尾。A 股大单/龙虎榜叙事常默认「大单=聪明钱」；这篇给反例机制。读的时候别和 9/3 那篇混成一篇。</p>
+  <p class="links">链接：<a href="https://arxiv.org/abs/2607.01198">arXiv:2607.01198</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 信息「跨度」≠「精度」：硬化软信息抬竞争，加精可能加深赢家诅咒</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 信息「跨度」≠「精度」：硬化软信息抬竞争，加精可能加深赢家诅咒" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhiguo He · Jing Huang · Cecilia Parlatore · NBER w33141 · 修订 2025-09（信贷市场竞争）</p>
+  <div class="tags">
+    <span class="tag">信息披露技术</span>
+    <span class="tag">硬/软信息</span>
+    <span class="tag">赢家诅咒</span>
+    <span class="tag">机制设计直觉</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Parlatore JF 2021；He 在 JF / JFE / RFS / Econometrica 等有大量顶刊发表。本文场景是<strong>信贷</strong>而非股市微观结构——因「披露/信息技术如何改变不对称」与董杰议题相邻而收录；不当作限价簿论文读。</div>
+
+  <h3>问了什么</h3>
+  <p>专业化银行有硬信号 + 软信号，非专业化银行只有硬信号。金融科技同时在「测更多维度」（跨度 span）和「把已有维度测得更准」（精度 precision）。这两种技术进步对信贷竞争的作用一样吗？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>借款人质量由多维基本面决定。硬信号覆盖一部分维度，软信号覆盖另一些，两者可重叠。非专业银行只在硬信号为好时参与竞价，并面对专业银行的赢家诅咒——尤其是「只被软信号覆盖」的那些状态。</p>
+  <ul>
+    <li><strong>拉长硬信息跨度</strong>（硬化软信息）：更多维度必须同时为好才给出「硬信号好」→ 竞争概率下降；硬软更相关 → 一旦碰上对手，对软状态的推断更好；「只软」状态本身期望质量也改善。三者都<strong>减轻</strong>非专业银行的诅咒 → 竞争↑，福利（项目融资剩余）随跨度上升。</li>
+    <li><strong>提高硬信号精度</strong>：硬信号彼此更「公开」、更易同时亮绿灯 → 竞争更频繁；对重叠维度推断变强，反而削弱从「我赢了」反推「对手软信号差」的力量 → 诅咒可能<strong>加重</strong>，竞争↓。</li>
+  </ul>
+  <div class="eq">跨度 ↑ ⇒ 竞争 ↑；精度 ↑ ⇒ 竞争可 ↓（方向可相反）</div>
+  <p class="eq-note">人话：让更多「以前靠熟人判断的东西」变成可打分的数据，会抹平专业优势；把同一张表填得更准，有时反而让弱势银行更怕撞上知情对手。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>不对称贷款人 + 多维信息；均衡分「零弱」与「正弱」两类（非专业银行是否在硬信号为好时总是参与）。</li>
+    <li>扩展：相关硬信号（类 open banking）效果类似加精；另有「重叠维度额外信号」稳健性。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>信息跨度与精度是信息科技的两个不同旋钮，对竞争与福利的比较静态可以相反。</li>
+    <li>总福利对硬信息跨度单调改善；精度较低时，加跨度甚至能让专业银行在「正弱」区间也受益。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>披露/信息中介文献常把「更多信息」揉成一个标量。这里把「覆盖面」和「噪声大小」拆开，对理解数据要素、征信、研报覆盖扩张都很有用；和股市里「多披露几个科目」vs「把 EPS 测得更准」可作类比——但请记住原模型是银行竞贷。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w33141">NBER w33141</a></p>
+</article>
+
+<footer>
+  第十四期 · 2026-09-04 · Kyle · 股市理论（微观结构 / 披露 / 不对称信息）· 已避开近期重复篇目 · 发布至 dtu2026.github.io/daily-papers
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
