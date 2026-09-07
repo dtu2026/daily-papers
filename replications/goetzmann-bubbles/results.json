@@ -1,0 +1,251 @@
+{
+  "index": "S&P 500 (Yahoo ^GSPC daily \u2192 month-end)",
+  "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC",
+  "sample_start": "1950-01-31",
+  "sample_end": "2026-08-31",
+  "n_months": 920,
+  "preferred_spec": {
+    "horizon_months": 24,
+    "boom_threshold": "+80% / 24m",
+    "crash_threshold": "-35% / 24m",
+    "n_booms": 3,
+    "n_crashes": 5,
+    "example_booms": [
+      {
+        "end_date": "1955-09-30",
+        "horizon_months": 24,
+        "cum_ret": 0.8702354370666858,
+        "start_date": "1953-09-30"
+      },
+      {
+        "end_date": "1955-11-30",
+        "horizon_months": 24,
+        "cum_ret": 0.8380451494684189,
+        "start_date": "1953-11-30"
+      },
+      {
+        "end_date": "2011-02-28",
+        "horizon_months": 24,
+        "cum_ret": 0.8055203066495678,
+        "start_date": "2009-02-28"
+      }
+    ],
+    "example_crashes": [
+      {
+        "end_date": "1974-09-30",
+        "horizon_months": 24,
+        "cum_ret": -0.42523745670292845,
+        "start_date": "1972-09-30"
+      },
+      {
+        "end_date": "1974-12-31",
+        "horizon_months": 24,
+        "cum_ret": -0.4192291758896921,
+        "start_date": "1972-12-31"
+      },
+      {
+        "end_date": "2002-09-30",
+        "horizon_months": 24,
+        "cum_ret": -0.4324578152922911,
+        "start_date": "2000-09-30"
+      },
+      {
+        "end_date": "2003-01-31",
+        "horizon_months": 24,
+        "cum_ret": -0.3735770557392555,
+        "start_date": "2001-01-31"
+      },
+      {
+        "end_date": "2009-02-28",
+        "horizon_months": 24,
+        "cum_ret": -0.4774810886108747,
+        "start_date": "2007-02-28"
+      }
+    ]
+  },
+  "all_specs": [
+    {
+      "horizon": 12,
+      "boom_th": 0.5,
+      "crash_th": -0.25,
+      "n_booms": 3,
+      "n_crashes": 5,
+      "boom_share_months": 0.004347826086956522,
+      "crash_share_months": 0.02282608695652174,
+      "booms": [
+        {
+          "end_date": "1983-06-30",
+          "horizon_months": 12,
+          "cum_ret": 0.5294224838624491,
+          "start_date": "1982-06-30"
+        },
+        {
+          "end_date": "2010-02-28",
+          "horizon_months": 12,
+          "cum_ret": 0.5025234323462486,
+          "start_date": "2009-02-28"
+        },
+        {
+          "end_date": "2021-03-31",
+          "horizon_months": 12,
+          "cum_ret": 0.5371450626511303,
+          "start_date": "2020-03-31"
+        }
+      ],
+      "crashes": [
+        {
+          "end_date": "1970-05-31",
+          "horizon_months": 12,
+          "cum_ret": -0.2601004858964233,
+          "start_date": "1969-05-31"
+        },
+        {
+          "end_date": "1974-09-30",
+          "horizon_months": 12,
+          "cum_ret": -0.41399980875500986,
+          "start_date": "1973-09-30"
+        },
+        {
+          "end_date": "2001-09-30",
+          "horizon_months": 12,
+          "cum_ret": -0.2753688214284804,
+          "start_date": "2000-09-30"
+        },
+        {
+          "end_date": "2003-03-31",
+          "horizon_months": 12,
+          "cum_ret": -0.26077446914538016,
+          "start_date": "2002-03-31"
+        },
+        {
+          "end_date": "2009-02-28",
+          "horizon_months": 12,
+          "cum_ret": -0.44756241467724345,
+          "start_date": "2008-02-29"
+        }
+      ]
+    },
+    {
+      "horizon": 24,
+      "boom_th": 0.8,
+      "crash_th": -0.35,
+      "n_booms": 3,
+      "n_crashes": 5,
+      "boom_share_months": 0.005434782608695652,
+      "crash_share_months": 0.01847826086956522,
+      "booms": [
+        {
+          "end_date": "1955-09-30",
+          "horizon_months": 24,
+          "cum_ret": 0.8702354370666858,
+          "start_date": "1953-09-30"
+        },
+        {
+          "end_date": "1955-11-30",
+          "horizon_months": 24,
+          "cum_ret": 0.8380451494684189,
+          "start_date": "1953-11-30"
+        },
+        {
+          "end_date": "2011-02-28",
+          "horizon_months": 24,
+          "cum_ret": 0.8055203066495678,
+          "start_date": "2009-02-28"
+        }
+      ],
+      "crashes": [
+        {
+          "end_date": "1974-09-30",
+          "horizon_months": 24,
+          "cum_ret": -0.42523745670292845,
+          "start_date": "1972-09-30"
+        },
+        {
+          "end_date": "1974-12-31",
+          "horizon_months": 24,
+          "cum_ret": -0.4192291758896921,
+          "start_date": "1972-12-31"
+        },
+        {
+          "end_date": "2002-09-30",
+          "horizon_months": 24,
+          "cum_ret": -0.4324578152922911,
+          "start_date": "2000-09-30"
+        },
+        {
+          "end_date": "2003-01-31",
+          "horizon_months": 24,
+          "cum_ret": -0.3735770557392555,
+          "start_date": "2001-01-31"
+        },
+        {
+          "end_date": "2009-02-28",
+          "horizon_months": 24,
+          "cum_ret": -0.4774810886108747,
+          "start_date": "2007-02-28"
+        }
+      ]
+    },
+    {
+      "horizon": 36,
+      "boom_th": 1.0,
+      "crash_th": -0.45,
+      "n_booms": 8,
+      "n_crashes": 0,
+      "boom_share_months": 0.01847826086956522,
+      "crash_share_months": 0.0,
+      "booms": [
+        {
+          "end_date": "1956-08-31",
+          "horizon_months": 36,
+          "cum_ret": 1.037306987275727,
+          "start_date": "1953-08-31"
+        },
+        {
+          "end_date": "1987-07-31",
+          "horizon_months": 36,
+          "cum_ret": 1.1150935611071646,
+          "start_date": "1984-07-31"
+        },
+        {
+          "end_date": "1997-07-31",
+          "horizon_months": 36,
+          "cum_ret": 1.0824640536421044,
+          "start_date": "1994-07-31"
+        },
+        {
+          "end_date": "1997-09-30",
+          "horizon_months": 36,
+          "cum_ret": 1.0472435149238417,
+          "start_date": "1994-09-30"
+        },
+        {
+          "end_date": "1998-03-31",
+          "horizon_months": 36,
+          "cum_ret": 1.2003755043878428,
+          "start_date": "1995-03-31"
+        },
+        {
+          "end_date": "1999-01-31",
+          "horizon_months": 36,
+          "cum_ret": 1.0119492710175044,
+          "start_date": "1996-01-31"
+        },
+        {
+          "end_date": "1999-04-30",
+          "horizon_months": 36,
+          "cum_ret": 1.0410292257239067,
+          "start_date": "1996-04-30"
+        },
+        {
+          "end_date": "1999-07-31",
+          "horizon_months": 36,
+          "cum_ret": 1.0762871245532044,
+          "start_date": "1996-07-31"
+        }
+      ],
+      "crashes": []
+    }
+  ],
+  "caveat": "Exact paper uses reconstructed US market 1792\u20132024 and specific boom/crash definitions in NBER 34903. Our numbers are from Yahoo S&P monthly with transparent thresholds \u2014 a mini design clone."
+}

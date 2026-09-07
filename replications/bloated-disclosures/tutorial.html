@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kim–Muhn–Nikolaev：膨胀的披露（机械代理版）</title><style>
+:root{--ink:#1c1917;--muted:#57534e;--line:#e7e5e4;--paper:#faf7f2;--card:#fff;--accent:#9a3412;--tag:#f5e6d3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 "Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",Georgia,serif}
+.wrap{max-width:780px;margin:0 auto;padding:48px 22px 80px}header h1{font-size:26px;font-weight:650;margin:0 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 22px}
+h2{font-size:19px;margin:0 0 10px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+h3{font-size:15px;margin:18px 0 6px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+p{margin:0 0 10px}ul,ol{margin:0 0 10px;padding-left:1.2em}li{margin:3px 0}
+.qual{background:#f4f1ea;border-left:3px solid var(--accent);padding:10px 14px;font-size:15px;margin:10px 0 14px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 14px;font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}th{background:#f4f1ea}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+pre{background:#1c1917;color:#faf7f2;padding:12px 14px;border-radius:10px;overflow:auto}
+a{color:var(--accent)}footer{color:var(--muted);font-size:13px;margin-top:18px;font-family:ui-sans-serif,system-ui,sans-serif}
+.tag{display:inline-block;background:var(--tag);color:var(--accent);font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;font-family:ui-sans-serif,system-ui,sans-serif}
+</style></head><body><div class="wrap"><header><h1>Kim–Muhn–Nikolaev：膨胀的披露（机械代理版）</h1><p class="meta">SSRN 4425527 · public_mini</p></header>
+<div class="card">
+<span class="tag">public_mini · 披露文本</span>
+<div class="qual"><strong>一句话：</strong>可从 EDGAR 拉 10-K 算长度/压缩率/独特词比并试小样本 CAR；不能复现 GPT-Bloat 与 PIN/价差主表。</div>
+<h3>数据来源</h3>
+<ul><li>https://data.sec.gov/submissions/</li>
+<li>https://www.sec.gov/Archives/edgar/data/</li>
+<li>Yahoo chart API（CAR）</li></ul>
+<h3>识别</h3>
+<p>论文：raw vs GPT summary。我们：公司间机械冗余代理 vs 短窗收益——相关非因果，且无 GPT。</p>
+<h3>规格</h3>
+<p><code>CAR[0,1] = a + b·CompressionSavings + c·log(Tokens) + e</code></p>
+<h3>怎么跑</h3>
+<pre>cd replications/bloated-disclosures
+source ../.venv/bin/activate && python replicate.py</pre>
+<h3>实跑结果</h3>
+<p>n=22 份 10-K；均 tokens=20857；gzip_ratio=0.232；unique_ratio=0.120；corr(compression,CAR)=0.155。</p>
+<table><tr><th>Ticker</th><th>Filing</th><th>Tokens</th><th>gzip</th><th>unique</th><th>CAR[0,1]</th></tr><tr><td>AAPL</td><td>2025-10-31</td><td>25017</td><td>0.254</td><td>0.102</td><td>-0.0087</td></tr><tr><td>MSFT</td><td>2026-07-29</td><td>24683</td><td>0.258</td><td>0.116</td><td>0.1479</td></tr><tr><td>GOOGL</td><td>2026-02-05</td><td>3346</td><td>0.371</td><td>0.308</td><td>-0.0307</td></tr><tr><td>AMZN</td><td>2026-02-06</td><td>24827</td><td>0.256</td><td>0.106</td><td>-0.0632</td></tr><tr><td>TSLA</td><td>2026-04-30</td><td>20311</td><td>0.267</td><td>0.109</td><td>0.0478</td></tr><tr><td>NVDA</td><td>2026-02-25</td><td>5408</td><td>0.304</td><td>0.196</td><td>-0.0405</td></tr><tr><td>JPM</td><td>2026-02-13</td><td>11269</td><td>0.056</td><td>0.033</td><td>0.0148</td></tr><tr><td>BAC</td><td>2026-02-25</td><td>37626</td><td>0.274</td><td>0.074</td><td>0.0372</td></tr><tr><td>T</td><td>2026-02-26</td><td>22576</td><td>0.220</td><td>0.120</td><td>0.0053</td></tr><tr><td>UAL</td><td>2026-03-02</td><td>24205</td><td>0.248</td><td>0.111</td><td>-0.0356</td></tr><tr><td>F</td><td>2026-02-11</td><td>18494</td><td>0.178</td><td>0.130</td><td>0.0315</td></tr><tr><td>WMT</td><td>2026-03-13</td><td>21598</td><td>0.292</td><td>0.131</td><td>0.0053</td></tr></table>
+<p>回归 n=20：b_comp=0.0755 (t=0.59)；
+b_logtok=0.0239 (t=1.37)；R²=0.121。</p>
+<p class="qual">Paper uses GPT summaries to define Bloat=(len_raw-len_summary)/len_raw and links bloat to asymmetry. We only compute mechanical redundancy proxies and a tiny CAR horse-race — NOT a GPT replication.</p>
+<h3>坑</h3>
+<ul><li>Item 7 启发式抽取。</li><li>CAR 未扣市场。</li><li>A 股中文需重做 LLM prompt。</li></ul>
+<p><a href="https://dtu2026.github.io/daily-papers/jeff/2026-09-02.html#p2">简报 2026-09-02</a> · <a href="https://arxiv.org/pdf/2306.10224.pdf">arXiv PDF</a></p>
+</div><footer>回到 <a href="../index.html">复现教程索引</a> · <a href="https://dtu2026.github.io/daily-papers/">https://dtu2026.github.io/daily-papers</a></footer></div></body></html>

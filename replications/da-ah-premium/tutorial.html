@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Da 等：AI 与 A-H 溢价（价格迷你版）</title><style>
+:root{--ink:#1c1917;--muted:#57534e;--line:#e7e5e4;--paper:#faf7f2;--card:#fff;--accent:#9a3412;--tag:#f5e6d3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 "Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",Georgia,serif}
+.wrap{max-width:780px;margin:0 auto;padding:48px 22px 80px}header h1{font-size:26px;font-weight:650;margin:0 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 22px}
+h2{font-size:19px;margin:0 0 10px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+h3{font-size:15px;margin:18px 0 6px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+p{margin:0 0 10px}ul,ol{margin:0 0 10px;padding-left:1.2em}li{margin:3px 0}
+.qual{background:#f4f1ea;border-left:3px solid var(--accent);padding:10px 14px;font-size:15px;margin:10px 0 14px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 14px;font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}th{background:#f4f1ea}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+pre{background:#1c1917;color:#faf7f2;padding:12px 14px;border-radius:10px;overflow:auto}
+a{color:var(--accent)}footer{color:var(--muted);font-size:13px;margin-top:18px;font-family:ui-sans-serif,system-ui,sans-serif}
+.tag{display:inline-block;background:var(--tag);color:var(--accent);font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;font-family:ui-sans-serif,system-ui,sans-serif}
+</style></head><body><div class="wrap"><header><h1>Da 等：AI 与 A-H 溢价（价格迷你版）</h1><p class="meta">SSRN 5234282 · public_mini</p></header>
+<div class="card">
+<span class="tag">public_mini · A/H</span>
+<div class="qual"><strong>一句话：</strong>可用公开行情构造 AH 溢价并在 2023-08-31 附近做事件窗；不能复现 LLM 注意力工具变量。</div>
+<h3>数据</h3>
+<ul><li>Yahoo：A <code>*.SS</code> / H <code>*.HK</code> / <code>CNY=X</code></li>
+<li>深读：/workspace/research/papers/da_llm_lop_explained.html</li></ul>
+<h3>规格</h3>
+<p><code>Premium = A/(H×CNY_per_HKD) - 1</code>；±90 日 post 虚拟变量（公司去均值）。</p>
+<pre>cd replications/da-ah-premium && source ../.venv/bin/activate && python replicate.py</pre>
+<h3>实跑</h3>
+<p>2019-01-02→2026-08-31，6 对；均溢价 0.2768。</p>
+<p>等权溢价：事前 0.3334，事后5日 0.2987，Δ=<strong>-0.0346</strong>。</p>
+<table><tr><th>公司</th><th>事前</th><th>事后5日</th><th>Δ</th></tr><tr><td>Ping An</td><td>0.0896</td><td>0.1156</td><td>0.0259</td></tr><tr><td>CMB</td><td>0.0713</td><td>0.0783</td><td>0.0070</td></tr><tr><td>ICBC</td><td>0.4243</td><td>0.3271</td><td>-0.0972</td></tr><tr><td>ABC</td><td>0.4339</td><td>0.3434</td><td>-0.0905</td></tr><tr><td>Sinopec</td><td>0.5088</td><td>0.4682</td><td>-0.0405</td></tr><tr><td>PetroChina</td><td>0.4722</td><td>0.4597</td><td>-0.0126</td></tr></table>
+<p>±90 日 post 系数=0.0218，t=0.82，n=702（不显著——符合预期）。</p>
+<p class="qual">Paper links LLM/AI attention to A-H premium. We only build public-price A-H premium and a crude post-2023-08-31 window — no LLM attention instrument. FX uses USD/CNY with HKD peg ≈7.8.</p>
+<p><a href="https://dtu2026.github.io/daily-papers/jeff/2026-08-19.html#p2">简报 2026-08-19</a></p>
+</div><footer>回到 <a href="../index.html">复现教程索引</a> · <a href="https://dtu2026.github.io/daily-papers/">https://dtu2026.github.io/daily-papers</a></footer></div></body></html>

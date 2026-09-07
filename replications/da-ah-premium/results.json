@@ -1,0 +1,85 @@
+{
+  "event_date": "2023-08-31",
+  "n_pairs": 6,
+  "pairs_event": [
+    {
+      "name": "Ping An",
+      "a": "601318.SS",
+      "h": "2318.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.08961555987350799,
+      "post5_mean_premium": 0.11555571394278703,
+      "delta_post5_minus_pre": 0.025940154069279048,
+      "n": 1802
+    },
+    {
+      "name": "CMB",
+      "a": "600036.SS",
+      "h": "3968.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.07128173397418198,
+      "post5_mean_premium": 0.07828575943520111,
+      "delta_post5_minus_pre": 0.007004025461019123,
+      "n": 1802
+    },
+    {
+      "name": "ICBC",
+      "a": "601398.SS",
+      "h": "1398.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.4242992289570755,
+      "post5_mean_premium": 0.3271465983867237,
+      "delta_post5_minus_pre": -0.09715263057035178,
+      "n": 1802
+    },
+    {
+      "name": "ABC",
+      "a": "601288.SS",
+      "h": "1288.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.4339164597089938,
+      "post5_mean_premium": 0.3433977860117175,
+      "delta_post5_minus_pre": -0.09051867369727629,
+      "n": 1802
+    },
+    {
+      "name": "Sinopec",
+      "a": "600028.SS",
+      "h": "0386.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.508777346149446,
+      "post5_mean_premium": 0.4682368720943673,
+      "delta_post5_minus_pre": -0.04054047405507871,
+      "n": 1802
+    },
+    {
+      "name": "PetroChina",
+      "a": "601857.SS",
+      "h": "0857.HK",
+      "event_pos_date": "2023-08-31",
+      "pre_mean_premium": 0.472232913488309,
+      "post5_mean_premium": 0.4596754726786377,
+      "delta_post5_minus_pre": -0.012557440809671305,
+      "n": 1802
+    }
+  ],
+  "cross_section_event": {
+    "event_pos_date": "2023-08-31",
+    "pre_mean_premium": 0.3333538736919191,
+    "post5_mean_premium": 0.2987163670915724,
+    "delta_post5_minus_pre": -0.0346375066003467
+  },
+  "regression_pm90": {
+    "panel_post_coef": 0.021821072150129312,
+    "panel_post_t": 0.8210485460355066,
+    "panel_n": 702
+  },
+  "sample_premium_mean": 0.2768193812422873,
+  "sample_start": "2019-01-02",
+  "sample_end": "2026-08-31",
+  "caveat": "Paper links LLM/AI attention to A-H premium. We only build public-price A-H premium and a crude post-2023-08-31 window \u2014 no LLM attention instrument. FX uses USD/CNY with HKD peg \u22487.8.",
+  "related_deep_read": "/workspace/research/papers/da_llm_lop_explained.html",
+  "data_sources": [
+    "https://query1.finance.yahoo.com/v8/finance/chart/"
+  ]
+}

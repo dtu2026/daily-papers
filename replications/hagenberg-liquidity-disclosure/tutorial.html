@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hagenberg 等：流动性与自愿披露（A股设计演练）</title><style>
+:root{--ink:#1c1917;--muted:#57534e;--line:#e7e5e4;--paper:#faf7f2;--card:#fff;--accent:#9a3412;--tag:#f5e6d3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 "Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",Georgia,serif}
+.wrap{max-width:780px;margin:0 auto;padding:48px 22px 80px}header h1{font-size:26px;font-weight:650;margin:0 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 22px}
+h2{font-size:19px;margin:0 0 10px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+h3{font-size:15px;margin:18px 0 6px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+p{margin:0 0 10px}ul,ol{margin:0 0 10px;padding-left:1.2em}li{margin:3px 0}
+.qual{background:#f4f1ea;border-left:3px solid var(--accent);padding:10px 14px;font-size:15px;margin:10px 0 14px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 14px;font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}th{background:#f4f1ea}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+pre{background:#1c1917;color:#faf7f2;padding:12px 14px;border-radius:10px;overflow:auto}
+a{color:var(--accent)}footer{color:var(--muted);font-size:13px;margin-top:18px;font-family:ui-sans-serif,system-ui,sans-serif}
+.tag{display:inline-block;background:var(--tag);color:var(--accent);font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;font-family:ui-sans-serif,system-ui,sans-serif}
+</style></head><body><div class="wrap"><header><h1>Hagenberg 等：流动性与自愿披露（A股设计演练）</h1><p class="meta">RAST · DESIGN DRILL</p></header>
+<div class="card">
+<span class="tag">public_mini · DESIGN DRILL</span>
+<div class="qual"><strong>一句话：</strong>不是 Hagenberg 复现。演示 A 股 DiD 设计 + 真实拉取近期末公告；2019 冲击无法在此做真 DiD，回归为 <em>MOCK</em>。</div>
+<h3>你该怎么做</h3><ol><li>1) Document a microstructure shock that moves spreads/depth without mandating disclosure (e.g. 两融扩容, tick-size pilot).</li><li>2) Treated = newly eligible / venue hit by rule; control = similar firms not hit.</li><li>3) Outcome: annual/quarterly count of 业绩预告/快报 from cninfo (need historical archive, not recent-only API).</li><li>4) Spec: Y_it = a + b Treat_i + c Post_t + d (Treat×Post)_it + FE + controls; cluster by firm.</li><li>5) Show parallel pre-trends; placebo dates; check IA vs non-IA spread components like Hagenberg.</li></ol>
+<p>拟冲击：2019-08-19 两融扩容。缺口：Eastmoney notice API on this box only returns recent filings (observed ~2025-03-15 to 2026-09-08); cannot DiD the 2019 shock here.</p>
+<pre>cd replications/hagenberg-liquidity-disclosure && source ../.venv/bin/activate && python replicate.py</pre>
+<table><tr><th>代码</th><th>公告数</th><th>日期</th><th>预告类</th></tr><tr><td>600519</td><td>150</td><td>2025-03-19→2026-08-15</td><td>5</td></tr><tr><td>000858</td><td>150</td><td>2025-04-26→2026-09-03</td><td>2</td></tr><tr><td>601318</td><td>150</td><td>2025-03-28→2026-09-08</td><td>1</td></tr><tr><td>600036</td><td>150</td><td>2025-03-26→2026-09-08</td><td>5</td></tr><tr><td>000001</td><td>150</td><td>2025-03-15→2026-08-24</td><td>3</td></tr><tr><td>002475</td><td>100</td><td>2026-04-16→2026-09-05</td><td>2</td></tr><tr><td>300015</td><td>150</td><td>2025-11-11→2026-09-07</td><td>2</td></tr><tr><td>002241</td><td>150</td><td>2025-10-15→2026-09-08</td><td>1</td></tr></table>
+<h3>MOCK DiD（禁止当结论）</h3>
+<p>simple DiD=<strong>-1.50</strong>；d̂=-1.500 (t=-1.56)；n=24。</p>
+<table><tr><th></th><th>Pre</th><th>Post</th></tr>
+<tr><td>Treated</td><td>3.83</td><td>2.17</td></tr>
+<tr><td>Control</td><td>3.33</td><td>3.17</td></tr></table>
+<p class="qual">SYNTHETIC panel for teaching the DiD equation only — not real 2019 data.</p>
+<p><a href="https://dtu2026.github.io/daily-papers/jeff/2026-08-31.html#p3">简报 2026-08-31</a></p>
+</div><footer>回到 <a href="../index.html">复现教程索引</a> · <a href="https://dtu2026.github.io/daily-papers/">https://dtu2026.github.io/daily-papers</a></footer></div></body></html>

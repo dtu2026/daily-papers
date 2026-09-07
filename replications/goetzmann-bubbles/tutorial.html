@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Goetzmann 等：美股泡沫与崩盘（公开指数迷你版）</title><style>
+:root{--ink:#1c1917;--muted:#57534e;--line:#e7e5e4;--paper:#faf7f2;--card:#fff;--accent:#9a3412;--tag:#f5e6d3}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 "Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",Georgia,serif}
+.wrap{max-width:780px;margin:0 auto;padding:48px 22px 80px}header h1{font-size:26px;font-weight:650;margin:0 0 8px}
+.meta{color:var(--muted);font-size:14px;margin-bottom:22px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 22px}
+h2{font-size:19px;margin:0 0 10px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+h3{font-size:15px;margin:18px 0 6px;color:var(--accent);font-family:ui-sans-serif,system-ui,sans-serif}
+p{margin:0 0 10px}ul,ol{margin:0 0 10px;padding-left:1.2em}li{margin:3px 0}
+.qual{background:#f4f1ea;border-left:3px solid var(--accent);padding:10px 14px;font-size:15px;margin:10px 0 14px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0 14px;font-family:ui-sans-serif,system-ui,sans-serif}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}th{background:#f4f1ea}
+code,pre{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+pre{background:#1c1917;color:#faf7f2;padding:12px 14px;border-radius:10px;overflow:auto}
+a{color:var(--accent)}footer{color:var(--muted);font-size:13px;margin-top:18px;font-family:ui-sans-serif,system-ui,sans-serif}
+.tag{display:inline-block;background:var(--tag);color:var(--accent);font-size:12px;padding:2px 8px;border-radius:999px;margin-right:6px;font-family:ui-sans-serif,system-ui,sans-serif}
+</style></head><body><div class="wrap"><header><h1>Goetzmann 等：美股泡沫与崩盘（公开指数迷你版）</h1><p class="meta">NBER WP 34903 · public_mini</p></header>
+<div class="card">
+<span class="tag">public_mini · 泡沫</span>
+<div class="qual"><strong>一句话：</strong>可在公开标普月度序列上实现透明暴涨/暴跌定义并计数；不能声称复现 1792–2024 重建指数全表。</div>
+<pre>cd replications/goetzmann-bubbles && source ../.venv/bin/activate && python replicate.py</pre>
+<p>S&amp;P 500 (Yahoo ^GSPC daily → month-end)；1950-01-31→2026-08-31，920 个月。</p>
+<p>主规格 24m / +80% / −35%：暴涨 <strong>3</strong>，暴跌 <strong>5</strong>。</p>
+<table><tr><th>规格</th><th>#booms</th><th>#crashes</th></tr><tr><td>12m / +50% / -25%</td><td>3</td><td>5</td></tr><tr><td>24m / +80% / -35%</td><td>3</td><td>5</td></tr><tr><td>36m / +100% / -45%</td><td>8</td><td>0</td></tr></table>
+<p>暴涨例</p><table><tr><th>窗口</th><th>收益</th></tr><tr><td>1953-09-30→1955-09-30</td><td>87.0%</td></tr><tr><td>1953-11-30→1955-11-30</td><td>83.8%</td></tr><tr><td>2009-02-28→2011-02-28</td><td>80.6%</td></tr></table>
+<p>暴跌例</p><table><tr><th>窗口</th><th>收益</th></tr><tr><td>1972-09-30→1974-09-30</td><td>-42.5%</td></tr><tr><td>1972-12-31→1974-12-31</td><td>-41.9%</td></tr><tr><td>2000-09-30→2002-09-30</td><td>-43.2%</td></tr><tr><td>2001-01-31→2003-01-31</td><td>-37.4%</td></tr><tr><td>2007-02-28→2009-02-28</td><td>-47.7%</td></tr></table>
+<p class="qual">Exact paper uses reconstructed US market 1792–2024 and specific boom/crash definitions in NBER 34903. Our numbers are from Yahoo S&amp;P monthly with transparent thresholds — a mini design clone.</p>
+<p><a href="https://dtu2026.github.io/daily-papers/jeff/2026-08-25.html#p4">简报 2026-08-25</a> · <a href="https://www.nber.org/papers/w34903">w34903</a></p>
+</div><footer>回到 <a href="../index.html">复现教程索引</a> · <a href="https://dtu2026.github.io/daily-papers/">https://dtu2026.github.io/daily-papers</a></footer></div></body></html>

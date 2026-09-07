@@ -1,0 +1,54 @@
+OK AAPL 2025-10-31 25017 0.253945
+OK MSFT 2026-07-29 24683 0.258395
+OK GOOGL 2026-02-05 3346 0.37073919719236675
+OK AMZN 2026-02-06 24827 0.25587
+FAIL META HTTPSConnectionPool(host='data.sec.gov', port=443): Max retries exceeded with url: /submissions/CIK0001324424.json (Caused by NameResolutionError("HTTPSConnection(host='data.sec.gov', port=443): Failed to resolve 'data.sec.gov' ([Errno -3] Temporary failure in name resolution)"))
+OK TSLA 2026-04-30 20311 0.2665077854037825
+OK NVDA 2026-02-25 5408 0.3041169002772236
+FAIL IBM HTTPSConnectionPool(host='data.sec.gov', port=443): Max retries exceeded with url: /submissions/CIK0000051143.json (Caused by NameResolutionError("HTTPSConnection(host='data.sec.gov', port=443): Failed to resolve 'data.sec.gov' ([Errno -3] Temporary failure in name resolution)"))
+OK JPM 2026-02-13 11269 0.055755
+OK BAC 2026-02-25 37626 0.27364159976231794
+OK T 2026-02-26 22576 0.21971
+OK UAL 2026-03-02 24205 0.248165
+OK F 2026-02-11 18494 0.177625
+OK WMT 2026-03-13 21598 0.2917930730403996
+OK GS 2026-02-25 12522 0.073195
+OK MCD 2026-02-24 24978 0.272615
+OK TMO 2026-02-26 22576 0.21971
+OK MMM 2026-02-24 14841 0.102915
+OK PFE 2026-02-26 19485 0.19071
+OK CSCO 2026-03-18 24967 0.258545
+OK ORCL 2026-09-02 24807 0.24803
+OK V 2025-11-06 25787 0.27152
+FAIL MA HTTPSConnectionPool(host='www.sec.gov', port=443): Max retries exceeded with url: /Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm (Caused by NameResolutionError("HTTPSConnection(host='www.sec.gov', port=443): Failed to resolve 'www.sec.gov' ([Errno -3] Temporary failure in name resolution)"))
+OK ABBV 2026-02-12 26553 0.26105
+OK AXP 2026-02-06 22980 0.22664
+{
+  "n_filings": 22,
+  "mean_tokens": 20857.090909090908,
+  "mean_gzip_ratio": 0.23187243434891316,
+  "mean_compression_savings": 0.7681275656510868,
+  "mean_unique_ratio": 0.12037782296347337,
+  "corr_compression_car": 0.1553589453378403,
+  "regression": {
+    "n": 20,
+    "params": {
+      "const": -0.2820049140355929,
+      "compression_savings": 0.07547130055835238,
+      "log_tokens": 0.023929940221375047
+    },
+    "tvalues": {
+      "const": -1.465746356605655,
+      "compression_savings": 0.5854869465607979,
+      "log_tokens": 1.3681827607256116
+    },
+    "rsquared": 0.1209332387580152
+  },
+  "caveat": "Paper uses GPT summaries to define Bloat=(len_raw-len_summary)/len_raw and links bloat to asymmetry. We only compute mechanical redundancy proxies and a tiny CAR horse-race \u2014 NOT a GPT replication.",
+  "data_urls": [
+    "https://www.sec.gov/edgar",
+    "https://data.sec.gov/submissions/",
+    "https://query1.finance.yahoo.com/v8/finance/chart/"
+  ]
+}
+Wrote /workspace/research/daily-papers/replications/bloated-disclosures/results.json

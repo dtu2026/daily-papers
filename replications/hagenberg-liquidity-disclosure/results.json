@@ -1,0 +1,334 @@
+{
+  "label": "DESIGN DRILL — not Hagenberg replication",
+  "shock_intended": {
+    "date": "2019-08-19",
+    "description": "Intended A-share analogue: margin-trading underlying expansion (两融标的扩容). Paper uses 1997 Nasdaq Order Handling Rules.",
+    "data_gap": "Eastmoney notice API on this box only returns recent filings (observed ~2025-03-15 to 2026-09-08); cannot DiD the 2019 shock here."
+  },
+  "real_announcement_pull": [
+    {
+      "code": "600519",
+      "n_anns_pulled": 150,
+      "date_min": "2025-03-19",
+      "date_max": "2026-08-15",
+      "n_forecast_like": 5,
+      "examples": [
+        "贵州茅台:贵州茅台关于召开2026年半年度业绩说明会的公告",
+        "贵州茅台:贵州茅台关于召开2025年度及2026年第一季度业绩说明会的公告",
+        "贵州茅台:贵州茅台关于召开2025年第三季度业绩说明会的公告",
+        "贵州茅台:贵州茅台关于召开2025年半年度业绩说明会的公告",
+        "贵州茅台:贵州茅台关于召开2024年度及2025年第一季度业绩说明会的公告"
+      ]
+    },
+    {
+      "code": "000858",
+      "n_anns_pulled": 150,
+      "date_min": "2025-04-26",
+      "date_max": "2026-09-03",
+      "n_forecast_like": 2,
+      "examples": [
+        "五粮液:2026年半年度业绩预告",
+        "五粮液:关于举办2025年度及2026年第一季度业绩说明会的公告"
+      ]
+    },
+    {
+      "code": "601318",
+      "n_anns_pulled": 150,
+      "date_min": "2025-03-28",
+      "date_max": "2026-09-08",
+      "n_forecast_like": 1,
+      "examples": [
+        "中国平安:中国平安关于召开2025年第三季度业绩说明会的公告"
+      ]
+    },
+    {
+      "code": "600036",
+      "n_anns_pulled": 150,
+      "date_min": "2025-03-26",
+      "date_max": "2026-09-08",
+      "n_forecast_like": 5,
+      "examples": [
+        "招商银行:招商银行股份有限公司关于召开2026年中期业绩说明会的公告",
+        "招商银行:招商银行股份有限公司关于召开2025年度业绩说明会的公告",
+        "招商银行:招商银行股份有限公司2025年度业绩快报公告",
+        "招商银行:招商银行股份有限公司关于召开2025年第三季度业绩说明会的公告",
+        "招商银行:招商银行股份有限公司关于召开2025年中期业绩说明会的公告"
+      ]
+    },
+    {
+      "code": "000001",
+      "n_anns_pulled": 150,
+      "date_min": "2025-03-15",
+      "date_max": "2026-08-24",
+      "n_forecast_like": 3,
+      "examples": [
+        "平安银行:关于召开2026年半年度业绩说明会的公告",
+        "平安银行:关于召开2025年度业绩说明会的公告",
+        "平安银行:关于召开2025年半年度业绩说明会的公告"
+      ]
+    },
+    {
+      "code": "002475",
+      "n_anns_pulled": 100,
+      "date_min": "2026-04-16",
+      "date_max": "2026-09-05",
+      "n_forecast_like": 2,
+      "examples": [
+        "立讯精密:立讯精密工业股份有限公司2026年第三季度业绩预告",
+        "立讯精密:2026年半年度业绩预告"
+      ]
+    },
+    {
+      "code": "300015",
+      "n_anns_pulled": 150,
+      "date_min": "2025-11-11",
+      "date_max": "2026-09-07",
+      "n_forecast_like": 2,
+      "examples": [
+        "爱尔眼科:关于参加2026年湖南辖区上市公司投资者网上集体接待日暨半年度业绩说明会活动的公告",
+        "爱尔眼科:关于举办2025年年度网上业绩说明会的通知"
+      ]
+    },
+    {
+      "code": "002241",
+      "n_anns_pulled": 150,
+      "date_min": "2025-10-15",
+      "date_max": "2026-09-08",
+      "n_forecast_like": 1,
+      "examples": [
+        "歌尔股份:关于举行2025年度业绩说明会的公告"
+      ]
+    }
+  ],
+  "mock_did": {
+    "warning": "SYNTHETIC panel for teaching the DiD equation only — not real 2019 data.",
+    "means": {
+      "treated_pre": 3.8333333333333335,
+      "treated_post": 2.1666666666666665,
+      "control_pre": 3.3333333333333335,
+      "control_post": 3.1666666666666665,
+      "simple_did": -1.5
+    },
+    "regression": {
+      "n": 24,
+      "params": {
+        "const": 3.333333333333335,
+        "treated": 0.5000000000000031,
+        "period": -0.16666666666666652,
+        "did": -1.5000000000000033
+      },
+      "tvalues": {
+        "const": 5.976143046671972,
+        "treated": 0.6811149137797538,
+        "period": -0.2425356250363329,
+        "did": -1.5572892154634639
+      },
+      "rsquared": 0.2400455062571104
+    },
+    "panel": [
+      {
+        "code": "T1",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 5,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T1",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 3,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "T2",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T2",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "T3",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T3",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "T4",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 5,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T4",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "T5",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T5",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 1,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "T6",
+        "treated": 1,
+        "period": 0,
+        "n_forecast_like": 3,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "T6",
+        "treated": 1,
+        "period": 1,
+        "n_forecast_like": 1,
+        "mock": true,
+        "did": 1
+      },
+      {
+        "code": "C1",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 5,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C1",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C2",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 3,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C2",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C3",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C3",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 3,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C4",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C4",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C5",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 5,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C5",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 4,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C6",
+        "treated": 0,
+        "period": 0,
+        "n_forecast_like": 3,
+        "mock": true,
+        "did": 0
+      },
+      {
+        "code": "C6",
+        "treated": 0,
+        "period": 1,
+        "n_forecast_like": 2,
+        "mock": true,
+        "did": 0
+      }
+    ]
+  },
+  "how_you_would_did_this": [
+    "1) Document a microstructure shock that moves spreads/depth without mandating disclosure (e.g. 两融扩容, tick-size pilot).",
+    "2) Treated = newly eligible / venue hit by rule; control = similar firms not hit.",
+    "3) Outcome: annual/quarterly count of 业绩预告/快报 from cninfo (need historical archive, not recent-only API).",
+    "4) Spec: Y_it = a + b Treat_i + c Post_t + d (Treat×Post)_it + FE + controls; cluster by firm.",
+    "5) Show parallel pre-trends; placebo dates; check IA vs non-IA spread components like Hagenberg."
+  ],
+  "data_sources": [
+    "https://np-anotice-stock.eastmoney.com/api/security/ann",
+    "http://www.cninfo.com.cn/ (preferred for deep history; often blocked from overseas IPs)"
+  ]
+}
