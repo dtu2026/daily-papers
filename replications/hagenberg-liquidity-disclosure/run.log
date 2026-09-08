@@ -1,45 +1,65 @@
-600519 anns 150 forecast_like 5
-000858 anns 150 forecast_like 2
-601318 anns 150 forecast_like 1
-600036 anns 150 forecast_like 5
-000001 anns 150 forecast_like 3
-002475 anns 100 forecast_like 2
-300015 anns 150 forecast_like 2
-002241 anns 150 forecast_like 1
+/workspace/research/daily-papers/replications/.venv/lib/python3.13/site-packages/statsmodels/regression/linear_model.py:2018: RuntimeWarning: invalid value encountered in scalar divide
+  return 1 - self.ssr / self.centered_tss
+600519 0
+000858 0
+601318 0
+600036 0
+000001 0
+601166 0
+600276 0
+000333 0
+600519 0
+000858 0
+601318 0
+600036 0
+000001 0
+601166 0
+600276 0
+000333 0
+002001 0
+002008 0
+300015 0
+300124 0
+002241 0
+002475 0
+300014 0
+002460 0
+002001 0
+002008 0
+300015 0
+300124 0
+002241 0
+002475 0
+300014 0
+002460 0
 {
-  "real_n_codes": 8,
-  "real_forecast_counts": {
-    "600519": 5,
-    "000858": 2,
-    "601318": 1,
-    "600036": 5,
-    "000001": 3,
-    "002475": 2,
-    "300015": 2,
-    "002241": 1
+  "means": {
+    "treated_pre": 0.0,
+    "treated_post": 0.0,
+    "control_pre": 0.0,
+    "control_post": 0.0,
+    "simple_did": 0.0
   },
-  "mock_means": {
-    "treated_pre": 3.8333333333333335,
-    "treated_post": 2.1666666666666665,
-    "control_pre": 3.3333333333333335,
-    "control_post": 3.1666666666666665,
-    "simple_did": -1.5
-  },
-  "mock_reg": {
-    "n": 24,
+  "regression": {
+    "n": 32,
     "params": {
-      "const": 3.333333333333335,
-      "treated": 0.5000000000000031,
-      "period": -0.16666666666666652,
-      "did": -1.5000000000000033
+      "const": 0.0,
+      "treated": 0.0,
+      "period": 0.0,
+      "did": 0.0
     },
     "tvalues": {
-      "const": 5.976143046671972,
-      "treated": 0.6811149137797538,
-      "period": -0.2425356250363329,
-      "did": -1.5572892154634639
+      "const": NaN,
+      "treated": NaN,
+      "period": NaN,
+      "did": NaN
     },
-    "rsquared": 0.2400455062571104
+    "rsquared": NaN
+  },
+  "shock": {
+    "date": "2019-08-19",
+    "description": "Illustrative A-share liquidity-access shock: major expansion of margin-trading underlying list (两融标的扩容). Weaker than paper's 1997 Nasdaq Order Handling Rules.",
+    "warning": "Do not claim causal replication; parallel trends unverified."
   }
 }
 Wrote /workspace/research/daily-papers/replications/hagenberg-liquidity-disclosure/results.json
