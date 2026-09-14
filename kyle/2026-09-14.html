@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-14</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    font-size: 15px;
+    margin: 10px 0 14px;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin: 10px 0 6px;
+    padding: 10px;
+    background: #eef2ff;
+    border-radius: 8px;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .links { font-size: 14px; font-family: ui-sans-serif, system-ui, sans-serif; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 20px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-14">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月14日 · 第十九期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>周末过后四篇：资本约束在有市场势力时<strong>反而可能让价冲变小</strong>；一般效用下的动态不对称信息均衡；先选风险再自愿披露；投资者长短信号质量如何撬动公司投资。避开 8/18–9/11 已写过的篇目（含 Crowded Markets、Disclosure Trap、Banerjee 合谋/气候、Cespa–Vives Opacity、Foucault Trade-Off / Exchange Data、Leader-Follower、Price Impact Bound 等）。读法照旧：先看「问了什么」和「为什么值得看」。机制依作者 PDF / 期刊摘要；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Wittwer–Allen：放松资本约束抬价，也抬价冲——有市场势力时约束反而护流动性</a> — AER / NBER 2026</li>
+      <li><a href="#p2">Detemple–Robertson：不知情者一般效用——均衡价会「记住」初始持股</a> — Math Finance 2025</li>
+      <li><a href="#p3">An–Pae：先选项目风险，再决定披不披露——风险与披露的混杂相关</a> — TAR 2026</li>
+      <li><a href="#p4">Dessaint–Foucault–Frésard：长项目要配长信号；错配会加重投资不足</a> — RFS forthcoming</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 放松资本约束：价格上去，价冲也上去</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 放松资本约束：价格上去，价冲也上去" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Milena Wittwer &amp; Jason Allen · Columbia / Bank of Canada · NBER w34645（2026年1月）；正式版 <em>American Economic Review</em> 116(4), 2026年4月，1309–1339</p>
+  <div class="tags"><span class="tag">市场势力</span><span class="tag">资本约束</span><span class="tag">价格冲击</span><span class="tag">Kyle–Wilson 拍卖</span></div>
+
+  <h3>问了什么</h3>
+  <p>中间商（做市商、大户）既有资本充足率一类约束，又有市场势力时，放松资本约束会怎样同时动到<strong>资产价格</strong>和<strong>价格冲击（流动性）</strong>？直觉里「约束紧 → 不敢买 → 流动性差」在完全竞争里常见，但有限个大户互相博弈时还成立吗？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>AER</em> 2026。机制与数字依 NBER / 作者稿 PDF（与正式刊出同题）。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>市场按<strong>统一定价多单位拍卖</strong>出清（Wilson / Kyle 1989 需求计划博弈）：每个大户报一条需求曲线，清出价格对所有成交量统一适用。资本约束（文中对标 Basel III 杠杆率一类门槛 κ）绑住时，大户的支付意愿要再扣一笔<strong>影子成本</strong> λ<sub>κ</sub>——像买东西还要额外交「占用资本税」。</p>
+  <div class="eq">意愿支付 ≈ 风险厌恶下的边际估值 − λ<sub>κ</sub> ×（与价格挂钩的资本占用）</div>
+  <p class="eq-note">人话：约束越松，λ<sub>κ</sub> 越小。整条需求曲线上移（更愿出高价），同时斜率变陡（对数量更敏感）。大家一起变陡时，要把清出价格推高 1 块钱需要的量变少 → <strong>价格冲击上升、流动性下降</strong>。再叠上策略性减量报价，效应在均衡里互相强化。</p>
+  <p>关键对照：许多微观结构文献里的保证金 / VaR 约束往往<strong>抬高</strong>价冲；这里资本约束在有市场势力时可以<strong>压低</strong>价冲——约束本身像一层「刹车」，放松刹车后大户更敢抢量、互相顶价。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>有限个风险厌恶大户，每人有价格影响（非完全竞争）。</li>
+    <li>资本约束依赖拍卖结果（内生影子成本），不是外生加一项固定成本。</li>
+    <li>实证用加拿大国债拍卖；COVID 期间国债一度豁免杠杆率，用来识别风险厌恶与影子成本。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>理论：放松约束 → 价格↑ 且价格冲击↑（流动性↓）。</li>
+    <li>实证：典型拍卖里约束常不绑；但影子成本分布厚尾——「偶尔很痛」。</li>
+    <li>信封估算：影子成本降 1%，平均价格与价冲约升 0.19%；若把约束完全拿掉，约对应 19% 量级（由罕见高成本事件拉动）。加拿大债市本身很深，绝对价冲变化不大；更浅的市场、更少竞争者、更高波动时更敏感。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把 Basel 资本规则直接嵌进 Kyle–Wilson 式需求计划博弈，并给出可估的影子成本。对「监管收紧一定伤流动性」的口号给了一个有市场势力的反例：有时约束紧一点，价冲反而小一点。董杰做 A 股微观结构 / 中介交易时，可对照「有限做市商 + 资本/仓位约束」。</p>
+  <p class="links">链接：<a href="https://www.nber.org/papers/w34645">NBER w34645</a> · AER DOI <a href="https://doi.org/10.1257/aer.20231202">10.1257/aer.20231202</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 不知情者不是 CARA：股价会「记住」你一开始拿了多少股</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 不知情者不是 CARA：股价会「记住」你一开始拿了多少股" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jérôme Detemple &amp; Scott Robertson · Boston University · <em>Mathematical Finance</em> 35(1) 2025，111–160；arXiv:2211.15573v3（2024-03）</p>
+  <div class="tags"><span class="tag">不对称信息</span><span class="tag">动态 REE</span><span class="tag">一般效用</span><span class="tag">禀赋效应</span></div>
+
+  <h3>问了什么</h3>
+  <p>连续时间、知情者一开始就拿到终值信号的经典设定里，文献几乎都假设<strong>所有人</strong>是指数效用（CARA）。若不知情者改成标准 vNM 效用（幂效用等），均衡还存在吗？价格还瞬间透露公共噪声信号吗？不知情者的<strong>初始持股</strong>会不会拧进价格路径？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>Detemple–Rindisbacher–Robertson — <em>Econometrica</em> 2020「Dynamic Noisy Rational Expectations Equilibrium with Insider Information」。机制依 arXiv 2024-03 修订稿 / Math Finance 2025。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>知情者 I 在 t=0 看到关于终值 Ψ(X<sub>T</sub>) 的私有信号；不知情者 U 没有。噪声交易者仍近似 CARA。关键新意：U 的最优仓位依赖<strong>财富</strong>，而财富依赖<strong>初始股价 × 初始持股</strong>——于是今天的均衡价格会反馈进以后的折现因子，形成固定点。</p>
+  <div class="eq">PCE：t=0 向市场释放一个比 I 更吵的公共信号 H → U 按 H 做最优投资；单资产时，看任意短区间 [0,ε] 的价格轨迹就能还原 H（DNREE）</div>
+  <p class="eq-note">人话：不是「开盘价一个数就揭秘」，而是「刚开盘那一小段价格怎么走」把公共噪声信号嵌进去了。作者先在「信号实现当成常数」的完备市场里解出均衡，再抬回随机信号层，避开 CARA 才有的显式线性仓位公式。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>因子 X 为时齐扩散；终值函数 Ψ 满足 Jacobian 一类正则条件。</li>
+    <li>I 与噪声交易者保持 CARA；U 满足单调、凹、Inada、渐近弹性等标准条件。</li>
+    <li>初始配置是<strong>股票禀赋</strong>（不是外生现金），故初始价格进入财富。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>存在偏沟通均衡（PCE）；单资产情形下 PCE 即动态噪声理性预期均衡（DNREE）。</li>
+    <li>信息含量与纯 CARA 模型同族——偏好一般化后，价格仍能瞬间传递公共信号。</li>
+    <li>U 为 CRRA 时可用 Lambert 函数给出准显式解：风险厌恶 → ∞，均衡退回「两个 CARA 代理人」经济；风险厌恶 → 0，价格<strong>不等于</strong>风险中性价格（因为 CRRA 的非负财富约束在极限里还不消失）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「禀赋 → 财富 → 需求 → 价格 → 禀赋市值」这条环写清楚，是 CARA 世界讲不了的故事。读动态不对称信息 / 噪声理性预期时，这是 Detemple–Robertson 线从 Econometrica 2020 往一般效用的自然下一步；也可对照 9/11 的 Anthropelos–Robertson 知情交易价值篇（同作者不同问题）。</p>
+  <p class="links">链接：<a href="https://arxiv.org/pdf/2211.15573.pdf">arXiv PDF</a> · DOI <a href="https://doi.org/10.1111/mafi.12444">10.1111/mafi.12444</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 先选多险还是少险，再决定披不披露</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 先选多险还是少险，再决定披不披露" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Byeong-Je An &amp; Suil Pae · San Diego State / SKK GSB · <em>The Accounting Review</em> 101(1), 2026，1–26 · DOI 10.2308/TAR-2024-0718</p>
+  <div class="tags"><span class="tag">自愿披露</span><span class="tag">风险选择</span><span class="tag">Dye 框架</span><span class="tag">风险厌恶投资者</span></div>
+
+  <h3>问了什么</h3>
+  <p>实证里「公司风险 ↔ 自愿披露」符号经常打架。理论缺口是：多数披露模型把现金流风险当成外生。若公司先选项目风险（或做降险投资），再以 Dye / Jung–Kwon 方式随机收到私有信号并决定披露，均衡里风险与披露概率会怎么共变？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>TAR</em> 2026。Pae 另有 <em>JAR</em> 1999 / 2002、<em>JAE</em> 2002 / 2004 / 2005 等披露理论文。机制依期刊摘要（Crossref / 作者主页书目）；闭式推导未另抓全文 PDF。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>时序：（1）公司在一串不同精度的项目里选一个（降险更贵）；（2）项目选定后公开可见；（3）公司以正概率收到关于未来现金流的私有信号，知情则选披露或不披露以抬市值；（4）风险厌恶投资者定价。</p>
+  <div class="eq">均衡现金流精度 ↑ 当投资者更厌恶风险；↓ 当「公司有私信」的概率更高、或私信质量更好</div>
+  <p class="eq-note">人话：投资者越怕波动，公司越肯花钱买「稳」的项目。但若市场觉得你十有八九藏着好信号、或信号很准，选高风险项目的「隐瞒期权」更值钱，公司反而少降险。披露概率：私信更可能又更准时，披露更勤；投资者风险厌恶上升时，披露概率可升可降——所以实证相关可正可负，都是均衡结果，不一定是设定错了。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投资者给风险定价（非风险中性）。</li>
+    <li>披露沿 Dye（1985）/ Jung–Kwon：不知情不能假披露。</li>
+    <li>扩展：公司还可同时投资抬高现金流均值。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>风险选择与披露激励联立，给出风险–披露混杂相关的理论理由。</li>
+    <li>比较静态可同时兼容「高风险高披露」与「高风险低披露」两类证据。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「真实决策（选险）」嵌进自愿披露，比单独拧披露阈值更贴监管与实证争论。董杰做披露 / A 股信息环境时，可用来想：观测到的披露频率到底在反映信号环境，还是公司已经先调过风险。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.2308/TAR-2024-0718">10.2308/TAR-2024-0718</a> · 作者页 <a href="https://sites.google.com/view/suilpae">Suil Pae</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 长项目要配长信号：错配会加重投资不足</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 长项目要配长信号：错配会加重投资不足" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Olivier Dessaint, Thierry Foucault &amp; Laurent Frésard · INSEAD / HEC Paris / USI · Foucault 工作论文页标注 2026年3月最新稿、<em>RFS</em> 已接收；机制依 INSEAD WP 2023/60（2023-06-19 PDF）</p>
+  <div class="tags"><span class="tag">投资不足</span><span class="tag">价格激励</span><span class="tag">信号期限</span><span class="tag">短视</span></div>
+
+  <h3>问了什么</h3>
+  <p>投资者对短期现金流的预测通常比长期准，而且长短差距可能在拉大。若经理人在乎<strong>当前股价</strong>，投资者「短信号变好」会不会主要刺激短项目、「长信号变好」才托得住长项目？错配时投资扭曲更大吗？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>Thierry Foucault — <em>JFE</em> 2008「Stock price informativeness, cross-listings, and investment decisions」；<em>RFS</em> 2017「Toxic Arbitrage」（with Kozhan, Tham）；亦有 <em>JF</em>。本稿据作者页为 <em>RFS</em> accepted（2026-03 稿）。机制叙述依 2023-06 INSEAD PDF 中的理论部分。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>经理人选投资规模，目标是「当前股价」与「长期基本面」的加权平均（薪酬 / 股东期限使 ω&gt;0 时在乎现价）。投资不可立刻被市场看清；之后投资者分别收到关于短、长现金流的噪声信号并交易，股价只部分反映投资创造的价值。</p>
+  <div class="eq">投资不足程度 ↓ 当匹配期限的信号更准；错配（长项目却只改善短信号）时，激励改善弱得多</div>
+  <p class="eq-note">人话：你砍投资省了成本，股价不会立刻按基本面惩罚你——因为市场看不清你砍了多少，信号又吵。信号变准能减轻这种短视砍投资；但若项目要五年才兑现，而市场只把一年内的信号做准了，股价仍「看不懂」长项目，经理人照样少投长的。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>改进激励渠道（Bond–Edmans–Goldstein）：价格更灵 → 经理人更敢投。</li>
+    <li>项目期限与投资者信号期限可错配；投资在决策当时不完全可观测。</li>
+    <li>实证用 10-K 等文本里的 “N-year business / strategic plan” 度量项目期限，并与分析师长短预测 R² 交互（理论简报不展开回归）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>理论：均衡相对有效水平投资不足；匹配期限的信息改善对投资的拉动更大。</li>
+    <li>附属预测：经理人更在乎现价、投资更难被观察时，错配效应更强；资本成本高时有效投资本身更小，扭曲也更小。</li>
+    <li>若经理人还能在短、长项目间配置资本：长信号变好（或短信号变差）会把更多资本拨给长项目。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「价格激励渠道」拆成期限维度，直接对话短视主义与气候 / 长周期投资。对董杰：披露与分析师预测质量若主要抬短信号，理论上可能挤出长项目——和「更多信息一定更好」不是一回事。</p>
+  <p class="links">链接：SSRN <a href="https://papers.ssrn.com/abstract=4276832">4276832</a> · <a href="https://www.tse-fr.eu/sites/default/files/TSE/documents/sem2023/finance/sem_fin_l_fresard_011223.pdf">TSE/INSEAD PDF</a> · Foucault <a href="https://thierryfoucault.com/working-papers/">工作论文页</a></p>
+</article>
+
+<footer>
+  避开 8/18–9/11 已写过的篇目。Wittwer–Allen 依 NBER / AER 2026 PDF；Detemple–Robertson 依 arXiv 2024-03 / Math Finance 2025；An–Pae 依 TAR 2026 摘要；Dessaint–Foucault–Frésard 依 2023-06 INSEAD PDF 理论部分（作者页标注 RFS accepted）。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
