@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-15</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-15">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月15日 · 第二十期 · 3 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天三篇：知情者把策略「写进代码」让做市商看见参数，反而可能赚更多；市场切成多家交易所时，总流动性与价格发现的峰值不在同一处；人多不一定把地上的「一百块」捡光——调查不准时教授的玩笑反而是对的。避开 8/18–9/14 已写过的篇目（含 Crowded Markets、Disclosure Trap、Banerjee 合谋/气候、Cespa–Vives Opacity、Mandatory Disclosure Oligopolistic MM、Flexible Kyle、Probability Pricing、Wittwer–Allen 等）。读法照旧：先看「问了什么」和「为什么值得看」。机制依作者 PDF；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Bernhardt–Boulatov：知情者承诺交易规则——正态线性时承诺没价值，别处几乎总有</a> — Warwick WP 2025-03</li>
+      <li><a href="#p2">Lou–Rahi：市场切碎——总流动性先升后降，价格发现还能再切一段</a> — FMG DP972 / 2026-05</li>
+      <li><a href="#p3">Bond：地上有没有一百块？人越多越不敢查，安全机会反而更常被捡</a> — 作者稿 2026-06</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 知情者把策略「钉死」：正态世界承诺白做，别处几乎总有油水</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 知情者把策略「钉死」：正态世界承诺白做，别处几乎总有油水" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Dan Bernhardt &amp; Alex Boulatov · Illinois / Warwick · ICEF · Warwick Economics Research Paper 1553，2025年3月</p>
+  <div class="tags"><span class="tag">Kyle</span><span class="tag">策略承诺</span><span class="tag">Stackelberg</span><span class="tag">算法交易</span></div>
+
+  <h3>问了什么</h3>
+  <p>高频做市商会逆向工程知情者的交易算法，看见的是策略的<strong>函数形式</strong>（比如线性策略的斜率），不是私有信号本身。这像不像给了知情者「先手」？知情者若能承诺交易规则（Stackelberg），期望利润会不会高于经典 Kyle 的同时行动（Nash）？什么时候承诺完全没用？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>Dan Bernhardt — <em>Journal of Finance</em> 2004「Informed Trading When Information Becomes Stale」；<em>Review of Financial Studies</em> 1995「Investment and Insider Trading」。机制依 Warwick 作者 PDF（2025-03）。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>标准 Kyle：知情者选下单量 \(x(v)\)，噪声单 \(u\)，做市商只看净流量 \(y=x+u\)，定出半强有效价 \(P(y)\)。双方同时猜对方的规则，得到 Nash 均衡。</p>
+  <p>本文改成：知情者先钉死整条策略函数 \(X(\cdot)\)；做市商知道 \(X\) 的形状（但不知今天的 \(v\)），再按 \(y\) 定价。知情者在「做市商会跟着我的规则改价」的前提下选 \(X\)。作者证明：承诺下，知情者其实在最大化做市商对她下单量的<strong>预测误差</strong>——误差越大，越能从噪声交易者身上榨利润。</p>
+  <div class="eq">Nash 与 Stackelberg 重合 ⇔ 做市商对下单量的「结构反应项」J = 0（命题 3）</div>
+  <p class="eq-note">人话：若你改策略形状时，做市商的定价规则不会额外「拧一下」，那先下手和同时行动一样；一旦改形状会拧定价，先下手就有油水。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>单期 Kyle 式做市：竞争做市商、风险中性知情者（后文放宽）、外生噪声单。</li>
+    <li>策略与定价允许非线性；存在性建立在 Boulatov–Livdan（2024）Nash 唯一性之上。</li>
+    <li>Bernoulli 基本面例子（Cho–Karoui 设定）用来证明「承诺可以严格更好」。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li><strong>正态 + 线性：</strong>\(v,u\) 正态且均衡仿射时，Nash = Stackelberg，承诺没额外利润（命题 4）。这正是教科书 Kyle（1985）。</li>
+    <li><strong>刀刃结果：</strong>在线性均衡附近，几乎所有对噪声分布的扰动都让 \(J\neq 0\)，承诺利润严格更高（命题 5）。</li>
+    <li><strong>直觉校正：</strong>承诺赚更多，不总是「故意下轻一点、少泄密」。扰动定价出现二次项时，有的信号上要下得更猛，有的更轻——取决于二次扭曲的符号和 \(v\) 的大小。</li>
+    <li>即便保持正态，只要知情者风险厌恶，承诺「少打」也能提高效用。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「算法被逆向工程」从坏消息改写成可能的 Stackelberg 优势，并给出何时优势为零的充要条件。对董杰：A 股量化/做市若公开或半公开策略模板（或对手能稳定估计你的 \(\beta\)），故事不必是「被看穿就亏」——在非正态、非线性世界，被看穿规则反而可能抬利润；正态线性课堂例子恰好是没油水的特例。</p>
+  <p class="links">链接：<a href="https://warwick.ac.uk/fac/soc/economics/research/workingpapers/2025/twerp_1553-_bernhardt.pdf">Warwick PDF</a> · <a href="https://wrap.warwick.ac.uk/id/eprint/190375/">WRAP</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 市场切成 N 家：总流动性先升后降，价格发现还能再切一段</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 市场切成 N 家：总流动性先升后降，价格发现还能再切一段" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Youcheng Lou &amp; Rohit Rahi · 中科院数学院 / LSE · FMG Discussion Paper 972，2026年5月稿 / 2026年7月刊出</p>
+  <div class="tags"><span class="tag">市场分割</span><span class="tag">Kyle 多市场</span><span class="tag">流动性</span><span class="tag">价格发现</span></div>
+
+  <h3>问了什么</h3>
+  <p>美欧股票交易早就切成很多 lit 交易所。切碎以后：单所流动性、全市场流动性、价格有多「灵」、谁受益——各怎么变？尤其当有人只能在一家下单、有人能全球扫单，再叠加知情交易时，最优「切几家」对流动性和信息含量是不是同一个数？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>Rohit Rahi — <em>Review of Financial Studies</em> 2009「Strategic Financial Innovation in Segmented Markets」（with Zigrand）；亦有 <em>Review of Economic Studies</em> 2000 信息与市场不完全。机制依 FMG DP972 PDF。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>多交易所版 Kyle：知情投机者可在所有交易所下单；流动性交易者有的<strong>全球</strong>（可拆单），有的<strong>本地</strong>（绑死一家）。每家做市商只看本所订单流定价（跨所信息完全分割的极端）。</p>
+  <p>定义本地流动性 = 单所 Kyle \(\lambda\) 的倒数；全局流动性 = 本地流动性 \(\times\) 交易所数 \(E\)（均匀拆单时的有效深度）。切碎总是削弱本地深度（本地噪声变少、逆向选择相对变重）。但若单所已经很深，适度切碎能抬高<strong>全局</strong>流动性，直到阈值 \(E^\*\)；再切就掉下去——倒 U 形。</p>
+  <div class="eq">全局流动性峰值 \(E^\*\) &lt; 全局价格信息峰值 \(\hat E\)（只要两类流动性交易者都在）</div>
+  <p class="eq-note">人话：为了让「所有价格合在一起」最能反映基本面，你可以切得比「交易最好做」更碎一点；过了信息峰值，流动性、信息、所有人福利一起变差。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>对称交易所、线性均衡；存在性要求综合参数 \(\Phi\)（流动性需求 × 投机竞争 / 信息不对称）相对 \(E\) 够大。</li>
+    <li>抽象掉交易所收费竞争、暗池、HFT 抢速——专攻逆向选择 + 本地/全球流动性结构。</li>
+    <li>福利：本地交易者只吃本地 \(\lambda\)；全球交易者（含知情者）只吃全局 \(\gamma=\lambda/E\)。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>本地流动性随 \(E\) 单调变差 → 本地投资者总是切碎的输家。</li>
+    <li>\(\Phi\le 16\)：单所就不够深，再切只会让所有人更差；\(\Phi&gt;16\)：全局流动性在 \(E^\*&gt;1\) 达峰。</li>
+    <li>全球可及流动性交易者占比 \(\phi\) 越高，\(E^\*\) 与 \(\hat E\) 都越小（价格跨所更相关，多切的信息收益更早耗尽）。</li>
+    <li>定量对照：大盘股 \(\Phi\) 大，观察切碎常仍低于 \(\hat E\)；小盘股更容易已经伤到全局流动性。对应实证里「大盘受益、小盘受损」与倒 U 形深度。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>在非对称信息下把「切几家最好」拆成两条尺子：深度峰值 vs 信息峰值，并证明信息峰值更靠后。对董杰：讨论多地上市、竞价席位、互联互通时，不要只用买卖价差；本地投资者与全球资金的福利方向可以相反，且「还能改善发现」不等于「还能改善交易体验」。</p>
+  <p class="links">链接：<a href="https://www.fmg.ac.uk/sites/default/files/2026-08/DP972.pdf">FMG DP972 PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 地上有没有一百块？人越多越不敢查——安全机会反而更常被捡走</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 地上有没有一百块？人越多越不敢查——安全机会反而更常被捡走" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Philip Bond · University of Washington · 作者稿 2026年6月13日</p>
+  <div class="tags"><span class="tag">套利极限</span><span class="tag">信息获取</span><span class="tag">序贯搜寻</span><span class="tag">夏普比</span></div>
+
+  <h3>问了什么</h3>
+  <p>经济学笑话：学生说地上有张钞票，教授说「不可能，有的话早被人捡了」。把笑话写成模型：一串投资者依次撞见同一机会，付成本做调查、再决定要不要吃掉；吃掉后后人看不到。每人只看见「机会还在不在」，<strong>不知道已经有多少人查过并放弃</strong>。人多了，好机会最终被吃掉的概率会怎样？什么样的机会更容易留下？</p>
+
+  <div class="qual"><strong>顶刊核验：</strong>Philip Bond — <em>Journal of Financial Economics</em> 2022「Silence is safest」（with Zeng）；曾任 <em>Journal of Finance</em> 共同主编（2016–2022）。机制依作者页 PDF（2026-06-13）。</div>
+
+  <h3>核心机制（人话）</h3>
+  <p>机会有好 \(\omega=g\) / 坏 \(\omega=b\)。投资者付费抽噪声信号，再选是否 exploit。关键摩擦：看不到前人调查次数，只看到机会仍 available → 容易把「还在」解读成「可能是坏的，所以没人要」。</p>
+  <p>恒等式把「好机会最终被吃掉的概率」钉在「期望调查次数 × 好人仍看见机会的概率」上。若「看见好机会」的概率不能掉到 0（否则没人查，矛盾），则期望调查次数在人数 \(n\to\infty\) 时仍有界 → <strong>永远被吃掉的概率严格小于 1，且随 \(n\) 下降</strong>。</p>
+  <div class="eq">调查很准 → 教授错（好机会仍常在）；假阳性很多 → 教授对（留下的多半是雷）</div>
+  <p class="eq-note">人话：显微镜很靠谱时，你敢查，好人会被捡走；显微镜乱叫「好」时，地上留太久反而像诅咒，大家更不敢弯腰。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>序贯、有限或大型 \(n\)；一次 exploit 即结束；调查成本与信号精度外生。</li>
+    <li>投资者看不到历史调查次数（核心信息摩擦）。</li>
+    <li>映射：交易机会、新产品、科研选题——同一逻辑。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>均衡唯一；好机会最终被利用的概率随投资者人数增加而下降（命题 1–2）。</li>
+    <li>控制平均盈利后，<strong>更安全</strong>（好状态支付高、好状态概率低的那类）的机会反而更容易被 exploit；高风险高赔付、先验很差的机会更惨。</li>
+    <li>在很宽的参数下，更高的 exploit 概率对应<strong>更低</strong>的观测夏普比——因为被捡走的集合偏向「安全」。</li>
+    <li>信号精度决定笑话的真假：准 → 教授错；假阳性多 → 教授对。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「limits to arbitrage」一条极瘦的信息论机制：不是卖空约束或噪声交易者风险，而是<strong>看不见前人采样次数</strong>。对董杰：策略拥挤、因子失效、课题扎堆，都可以读成「人多 → 每人更不敢付费验证 → 好机会被吃掉的概率下降」；若 alpha 信号假阳性高，街上留久的机会更可能是雷——和「没人做所以一定有金矿」相反。</p>
+  <p class="links">链接：<a href="https://faculty.washington.edu/apbond/research/sidewalk-dollar_webpage.pdf">作者 PDF</a> · Bond <a href="https://faculty.washington.edu/apbond/">主页</a></p>
+</article>
+
+<footer>
+  避开 8/18–9/14 已写过的篇目。Bernhardt–Boulatov 依 Warwick 2025-03 PDF；Lou–Rahi 依 FMG DP972；Bond 依 2026-06-13 作者 PDF。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
