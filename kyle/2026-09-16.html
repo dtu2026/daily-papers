@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-16</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-16">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月16日 · 第二十一期 · 3 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天三篇：央行/监管「怎么说话」在有行为投资者时未必全说；分散清算市场里衍生品为什么不冗余、指数基金也不再总最优；用限价簿斜率把 Kyle 的 λ 直接估出来，给股市信息流标价。避开 8/18–9/15 已写过的篇目（含 Crowded Markets、Disclosure Trap、Banerjee 合谋/气候、Cespa–Vives Opacity、Mandatory Disclosure Oligopolistic MM、Wittwer–Allen、Bernhardt–Boulatov、Bond 人行道一百块、Rostek–Yoon Exchange Design 2021 等）。读法照旧：先看「问了什么」和「为什么值得看」。机制依作者 PDF / 正式刊出稿；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Azarmsa–Beutel：行为投资者更新太猛或太钝时，最优是「不说」</a> — 2026-02 作者稿</li>
+      <li><a href="#p2">Rostek–Yoon：分散清算下衍生品不冗余；有价冲时指数也不再总最优</a> — JPE 2025</li>
+      <li><a href="#p3">Duong–Taub：限价簿斜率当 λ，给股市信息流估出每天约几千万美元</a> — Annals of Finance 2026</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 行为投资者更新太猛或太钝时，最优是「不说」</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 行为投资者更新太猛或太钝时，最优是「不说」" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ehsan Azarmsa &amp; Johannes Beutel · UIC / Deutsche Bundesbank · 作者稿 February 2026（旧题 <em>Managing Asset Return Expectations through Communication</em>）</p>
+  <div class="tags">
+    <span class="tag">information design</span>
+    <span class="tag">belief heterogeneity</span>
+    <span class="tag">central bank communication</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Beutel 与 Adam、Marcet — <em>American Economic Review</em> 2017「Stock Price Booms and Expected Capital Gains」。机制依 2026-02 作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>投资者有的理性、有的带偏先验、有的对公共信号过度反应或反应不足。央行或监管者手里有关于资产回报的私有信号，要不要公开、公开多少？全披露会不会反而放大分歧、伤风险分担，甚至让实体侧多建或少建风险资产？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两期。投资者里比例 <code>1−b</code> 是理性贝叶斯者，比例 <code>b</code> 是行为投资者：先验可偏，更新增益记为 <code>G<sub>B</sub></code>（<code>G<sub>B</sub>&gt;1</code> 过度反应，<code>G<sub>B</sub>&lt;1</code> 反应不足）。社会计划者选披露规则 π，把信号实现映射成公共消息。投资者按主观信念选仓，二次持仓成本刻画风险厌恶；风险资产供给由竞争性生产端内生（房价/开发商类比）。</p>
+  <p>事前福利拆成两块：投资效率（价格更准 → 生产更准）+ 风险分担（信念越齐 → 风险越摊匀）。披露抬高后验方差，有利于投资信息，但当 <code>G<sub>B</sub>≠1</code> 时也放大分歧。</p>
+  <div class="eq">目标里关键项：v(q<sup>R</sup>) = (q<sup>R</sup>)<sup>2</sup> − λ(q<sup>B</sup> − q<sup>R</sup>)<sup>2</sup>，其中 λ = b<sup>2</sup> + b(1−b)(1+k/γ)</div>
+  <p class="eq-note">人话：第一项是「理性后验越极端，投资侧赚越多」；第二项是「行为与理性信念差越大，风险分担亏越多」。λ 越大，分歧惩罚越重，全披露越难成为最优。</p>
+  <p><strong>命题 1：</strong>仅当行为更新增益落在</p>
+  <div class="eq">G<sub>B</sub> ∈ [1 − 1/√λ , 1 + 1/√λ]</div>
+  <p class="eq-note">人话：行为投资者别太疯、也别太钝，全披露才最优；否则最优是不披露。有卖空约束时，中间的「部分披露」可以最优——仓位被卡住，分歧伤不了那么狠。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>线性–二次效用；对称禀赋，刻意关掉 Hirshleifer 效应。</li>
+    <li>行为更新用增益 <code>G<sub>B</sub></code> 概括，不钉死某一种行为偏见。</li>
+    <li>计划者最大化社会剩余（投资效率 + 风险分担）；对 Brunnermeier 等异质信念福利准则也做了稳健性。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>全理性（<code>b=0</code>）时全披露最优；行为更新离 1 太远时不披露最优。</li>
+    <li>过度反应时，正信号会让行为投资者抢太多风险仓，风险集中，披露伤福利。</li>
+    <li>卖空约束下可出现部分披露最优；泡沫早期、主观信念尚未钉死时，沟通更有效。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和「披露越多越好」的直觉对着干：对象是监管沟通/央行讲话，不是公司财报。A 股若谈「政策喊话稳预期」，可直接问：市场里外推/噪声交易者占比高不高、更新是不是过激？若是，少说可能比说满更好。也可对照 9/9 Xue ESG 精度、8/20 Banerjee 气候披露：那边管项目选择或精度税，这边管<strong>公共信号设计在异质更新下的开关</strong>。</p>
+  <p class="links">链接：作者稿 PDF（2026-02；本地核验）· SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4742965">4742965</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 分散清算下衍生品不冗余；有价冲时指数也不再总最优</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 分散清算下衍生品不冗余；有价冲时指数也不再总最优" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Marzena Rostek &amp; Ji Hee Yoon · Wisconsin / UCL · <em>Journal of Political Economy</em> 133(3), 2025, 888–934 · 作者接受稿 2024-07-15</p>
+  <div class="tags">
+    <span class="tag">security design</span>
+    <span class="tag">price impact</span>
+    <span class="tag">decentralized markets</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>JPE</em> 2025。Rostek–Yoon 另有 <em>Econometrica</em> 2021「Exchange Design and Efficiency」。机制依 UCL 作者接受稿 PDF（与正式刊出同题）。</div>
+
+  <h3>问了什么</h3>
+  <p>资产分所、各自独立清算时，衍生品/ETF 这类合成产品还算不算「冗余」？有大户、有价冲时，共同基金定理还成不成？效率上的证券设计，该更像指数，还是更像正交因子？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>多资产、不完全竞争的需求计划竞争（Rostek–Yoon 线）。每只证券单独清算时，跨资产价冲矩阵是对角的，但跨资产<strong>价格推断</strong>仍在：你看不见别的所的订单流，只能从别的价格猜总量。合成产品改的是「哪些价格进你的信息集」和「单位标的上的有效价冲」。</p>
+  <p><strong>定理 1（衍生品非冗余）：</strong>有限个大户、标的协方差满秩时，两套证券设计均衡效用相同，当且仅当：(i) 单位标的价冲一样，或 (ii) 跨资产条件期望交易一样，或 (iii) 各标的总需需求的价格张成一样。否则改证券集合就改福利——即便收益张成与标的相同。</p>
+  <p class="eq-note">人话：经典世界里「张成一样就够了」；分散清算下，衍生品改的是推断误差和价冲，所以一般<strong>不冗余</strong>。</p>
+  <p><strong>定理 2（有效证券设计，对称情形）：</strong>无推断噪声、标的对称相关、交易需求对称时，有效证券的相关 ρ⁺ 一般落在 0 与 1 之间——既不是纯因子（ρ⁺=0），也不是纯指数（ρ⁺=1）。大相关时有效证券要比标的「更不像」，小相关时要比标的「更像」。</p>
+  <p class="eq-note">人话：一边要对齐目标组合（偏指数），一边要压自己资产上的价冲（偏因子）。两者折中，所以「全员同一指数基金」在有价冲的分散市场里一般不再最优。</p>
+  <p><strong>命题 1：</strong>有大户时，证券数量往往<strong>少于</strong>「补全市场」所需；堆太多衍生品可以伤福利。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>二次–高斯、需求计划竞争；独立清算 vs 联合清算对照。</li>
+    <li>定理 2 在对称相关 + 对称交易需求 + 推断噪声→0 的基准上给闭式；一般情形靠单位价冲比较。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>分散清算 → 衍生品一般非冗余（信息通道 + 价冲通道）。</li>
+    <li>价格接受者时，共同基金式结论仍近似成立；有价冲时，有效证券必须贴合交易需求与 Σ，指数通常不是福利最大。</li>
+    <li>与 SEC 2019 ETF 篮子灵活度改革的直觉同向：篮子不必死钉指数。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把 8/25 Benign Granularity、Lou–Rahi 碎片化（9/15）旁边再放一块「证券设计」：不是问切几家交易所，而是问<strong>该上什么产品</strong>。A 股 ETF/股指期货/跨境产品，可问：独立清算下跨品种推断有多强？大户价冲大时，越像指数越好，还是该留一点异质性篮子？</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1086/733422">10.1086/733422</a> · <a href="https://discovery.ucl.ac.uk/id/eprint/10198140/1/Derivatives_final_updated.pdf">UCL 作者接受稿 PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 限价簿斜率当 λ，给股市信息流估出每天约几千万美元</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 限价簿斜率当 λ，给股市信息流估出每天约几千万美元" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hai Duong &amp; Bart Taub · University of Glasgow · <em>Annals of Finance</em> 22, 2026（收稿 2025-08，接受 2026-01）</p>
+  <div class="tags">
+    <span class="tag">Kyle λ</span>
+    <span class="tag">limit order book</span>
+    <span class="tag">information flow</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Taub 与 Bernhardt — <em>Journal of Finance</em> 2008「Cross-Asset Speculation in Stock Markets」。机制与数字依期刊 PDF（Annals of Finance 2026）。</div>
+
+  <h3>问了什么</h3>
+  <p>知情交易把信息「写进」买卖盘。能不能从完整限价簿（含大量撤单）直接读出 Kyle 的价冲 λ，再估出整市信息流的价值？跨股票的价冲相关，是不是像 CAPM 那样由一个系统因子驱动？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>把限价簿某一瞬间的未成交挂单看成供给曲线，对价格–数量做回归，斜率就是 λ。再用价格波动与成交量波动，代回 Kyle 公式，得到信息流价值（等价于知情者利润）。</p>
+  <div class="eq">归一化信息流 ω ≡ (σ<sub>P</sub> / λ) / (P·V)　（无量纲；亦可写成与 σ<sub>P</sub> σ<sub>q</sub> 等价的知情利润形式）</div>
+  <p class="eq-note">人话：分子是「每单位深度里藏了多少信息」，分母是成交金额，得到每单位成交里信息值的份额。</p>
+  <p>周三样本（2016–2018）归一化信息流约 <code>1.6×10<sup>−4</sup></code>、<code>1.6×10<sup>−4</sup></code>、<code>1.79×10<sup>−4</sup></code>。用约 0.00016 乘 Nasdaq 日成交金额约 3000 亿美元，得到约<strong>每天 4800 万美元</strong>量级的信息流总价值（与 Yang–Zhu 2019 机构日利润量级同阶）。跨资产价冲矩阵抽出的系统成分，与市场波动一致，支持「知情者区分系统面与可分散面」的 CAPM 式解读。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>把可见 LOB 斜率当作 Kyle λ 的实现（含撤单重建簿）；不是「成交后拖尾冲击」叙事。</li>
+    <li>静态 Kyle 公式用于把 λ 与波动映射成信息价值；跨资产用价冲矩阵做因子分解。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>λ 可从全深度 LOB 直接估；97% 量级的消息是撤单，只看成交会漏结构。</li>
+    <li>归一化信息流 ≈ 1.6–1.8×10<sup>−4</sup>（周三纵截面）；Nasdaq 规模约 4800 万美元/日。</li>
+    <li>跨股票价冲相关呈单因子，由系统波动驱动；归一化信息流偏逆周期。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>偏「可操作的测量理论」：把 Kyle λ 从不可见参数变成簿上斜率。和 9/11 Monteiro–Tourky「仿射均衡唯一」、9/15 Bernhardt–Boulatov「承诺策略」同一 Kyle 家族，但这篇问的是<strong>市场每天在交易多少信息</strong>。读 A 股 Level-2/逐笔时，可试：用挂单斜率当 λ，再和波动拼出 ω，看系统成分是否也跟指数波动走。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1007/s10436-026-00479-y">10.1007/s10436-026-00479-y</a> · 作者稿亦见 Glasgow ePrints</p>
+</article>
+
+<footer>
+  避开 8/18–9/15 已写过的篇目。Azarmsa–Beutel 依 2026-02 PDF；Rostek–Yoon 依 JPE 2025 / UCL 接受稿；Duong–Taub 依 Annals of Finance 2026 PDF。顶刊核验：Beutel AER 2017；Rostek Econometrica 2021 + 本文 JPE 2025；Taub JF 2008。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
