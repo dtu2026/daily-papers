@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-17</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-17">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月17日 · 第二十二期 · 3 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天三篇：投资者自己披露时为何会出现「误导性」报告；挂单再撤单的 spoofing 为何能在均衡里站住、又为何在中等流动性市场最猖獗；社会责任基金怎样才真正改变企业排污，而不是只把脏资产转手给利润投资者。避开 8/18–9/16 已写过的篇目（含 Foucault DaC、Kyle Meets Friedman、Flexible Info Acq、PSV、Disclosure Timing、Banerjee 合谋/气候/证券借贷、Azarmsa–Beutel、Rostek–Yoon 产品设计、Duong–Taub、Blockholder 动态、Social Traders 等）。机制依作者 PDF / 正式刊出稿；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Gao–Lu：投资者先建仓再披露——总披初始证据，极端才披附加证据，中间隐瞒会「误导」价格</a> — arXiv 2025-11 / CAR</li>
+      <li><a href="#p2">Williams–Skrzypacz：Spoofing 可以是均衡；知情者比例单峰，中等流动性市场最容易出现</a> — forthcoming JF</li>
+      <li><a href="#p3">Oehmke–Opp：社会责任投资要有「冲击授权」才改得动企业；资金紧时和利润资本互补</a> — REStud 2025</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 投资者先建仓再披露：总披初始证据，极端才披附加证据</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 投资者先建仓再披露：总披初始证据，极端才披附加证据" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Pingyang Gao &amp; Jinzhi Lu · HKU / CityU HK · arXiv:2404.07630v5（2025-11-14 修订）；亦见 <em>Contemporary Accounting Research</em> 在线 / 正式刊出通道</p>
+  <div class="tags">
+    <span class="tag">voluntary disclosure</span>
+    <span class="tag">investor (not firm) disclosure</span>
+    <span class="tag">misleading disclosure</span>
+    <span class="tag">Dye endowment uncertainty</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Gao — <em>Journal of Accounting Research</em> 2008「Keynesian Beauty Contest, Accounting Disclosure, and Market Efficiency」（46(4):785–807）；另 <em>JAR</em> 2013「Informational Feedback Effect, Adverse Selection, and Optimal Disclosure Policy」（with Liang）。机制依 arXiv v5 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>经典 Dye（1985）是公司经理披露。若换成<strong>投资者</strong>：先可能拿到关于目标公司的初始证据 <code>r</code>，再可能拿到帮助解读 <code>r</code> 的附加证据 <code>x</code>；先按信息建仓，再自愿披露部分或全部发现，最后平仓。市场不确定他有没有信息。他会怎么披？会不会出现「报告方向和完整信息相反」的误导性披露？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>时间线：可能收到 <code>r</code>（及条件于 <code>r</code> 的 <code>x</code>）→ 选仓位 → 发报告 → 价格反应 → 平仓。与经理不同，投资者可以多头或空头，因此<strong>关心的是价格波动幅度</strong>，不单边偏向涨价。</p>
+  <p><strong>命题 1：</strong>知情与部分知情投资者<strong>总会披露初始证据 <code>r</code></strong>，不论实现好坏。直觉：若沉默，市场推断你没拿到 <code>r</code>，价格不动，利润归零；你又总能顺着（或逆着）价格方向建仓，所以有动机把价格推离先验。这和 Dye 经理「坏消息隐瞒」不一样——经理多头敞口，投资者两边都能赚。</p>
+  <p><strong>命题 2（附加证据 <code>x</code>）：</strong>固定 <code>r</code> 后，披露策略分三段：</p>
+  <ul>
+    <li><code>x</code> 足够低：先空、再披详尽报告（含 <code>x</code>）；</li>
+    <li><code>x</code> 足够高：先多、再披详尽报告；</li>
+    <li><code>x</code> 居中：<strong>隐瞒 <code>x</code></strong>，只发简单报告（仅 <code>r</code>），仓位方向跟 <code>r</code> 相对先验的方向走。</li>
+  </ul>
+  <div class="eq">隐瞒 <code>x</code> 当且仅当简单报告带来的期望价格偏离 ≥ 详尽报告：π<sub>q</sub>(x) ≥ π(x)</div>
+  <p class="eq-note">人话：中间的 <code>x</code> 几乎不改「完整信息下」的价格，但隐瞒后市场用 <code>µ<sub>ND</sub></code> 填空，简单报告反而能制造更大偏离——于是中间隐瞒、两头全披。结果是披露本身<strong>推高价格波动</strong>。</p>
+  <p><strong>误导性披露（定义）：</strong>简单报告让价格往完整信息 <code>rx</code> 的<strong>反方向</strong>动。因为隐瞒了中等 <code>x</code>，均衡里可以出现：新闻其实偏正，但报告把价打下去（或反过来）。长短双方都可以这么干；更能干的投资者更少误导，但简单报告的价格反应可以更大。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>Dye 式信息禀赋不确定；<code>r</code> 与 <code>x</code> 多维可验证披露；投资者先交易后披露。</li>
+    <li>目标公司也可内生回应投资者报告（文中稳健性）；均衡唯一性借助 neologism-proof 信念。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>初始证据总披露（与经典经理隐瞒坏消息对照）。</li>
+    <li>附加证据两尾披露、中间隐瞒 → 波动上升；可出现误导性披露。</li>
+    <li>公司信息环境越强，越能纪律化误导披露，但也会改变隐瞒区间。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把披露主体从「公司」换成「交易者」：做空机构研报、调研纪要、自媒体「曝光」都可对号。A 股龙虎榜/知名游资或私募发声前后的价量，可问：他们是不是先建仓再「只说一半」？和 8/21 Disclosure Timing、9/14 An–Pae「先选险再披露」同一披露家族，但这篇的核心是<strong>投资者动机 + 误导性均衡</strong>。</p>
+  <p class="links">链接：arXiv <a href="https://arxiv.org/abs/2404.07630">2404.07630</a> · PDF <a href="https://arxiv.org/pdf/2404.07630">pdf</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Spoofing 可以是均衡；知情者比例单峰，中等流动性最容易中招</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Spoofing 可以是均衡；知情者比例单峰，中等流动性最容易中招" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Basil Williams &amp; Andrzej Skrzypacz · NYU / Stanford GSB · <em>Journal of Finance</em> forthcoming；作者页与 SSRN abstract 3742327（修订至 2025-02-20）；机制核验用与作者摘要一致的可公开稿（TSE/SSRN 早期 PDF）</p>
+  <div class="tags">
+    <span class="tag">spoofing</span>
+    <span class="tag">Glosten–Milgrom + cancellation</span>
+    <span class="tag">manipulation</span>
+    <span class="tag">cross-market surveillance</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Williams — <em>Journal of Finance</em> 2023「Model Secrecy and Stress Tests」（with Leitner，78(2):1055–1095）；Skrzypacz — <em>American Economic Review</em> 2010「Bargaining with Arrival of New Traders」（with Fuchs）。本文本身即将刊于 JF。</div>
+
+  <h3>问了什么</h3>
+  <p>挂大单再撤、反向成交——spoofing——能不能在理性均衡里出现？对价格发现、价差、波动有什么伤害？哪种市场（知情者多还是少）最容易滋生？跨市场相关资产上的 spoofing，监管该把资源投在「场内盯」还是「跨市场盯」？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>在 Glosten–Milgrom（1985）上加两样东西：订单可以<strong>撤单</strong>；撤单既可以是外生流动性冲击，也可以是<strong>策略性</strong>的。Spoofing 的定义：先挂与真实意图相反的方向，再撤掉，然后在被推动的价格上反向成交。</p>
+  <p>做市商知道均衡里有人会 spoof，但仍无法把「真流动性撤单」和「假动作」完全分开。于是：假卖单压价 → 真买单吃便宜；假买单抬价 → 真卖单卖高。信息渗入更慢，买卖价差和收益波动上升。</p>
+  <p><strong>关键比较静态：</strong>均衡 spoofing 强度对知情者比例呈<strong>单峰（single-peaked）</strong>。知情者太少，价格几乎不信订单，骗不动；知情者太多，做市商对订单极敏感，假动作成本太高。中间流动性最肥——监管直觉上「中等活跃」的市场反而要更盯。</p>
+  <p>扩展：相关资产上可以跨市场 spoof；资源有限时，跨市场监控与场内监控如何分配，取决于相关强度与各市场知情密度。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>离散多期、竞争做市商；知情 + 噪声；撤单通道外生或策略。</li>
+    <li>为可处理性用市价单框架刻画限价簿撤单的经济力（作者明确说明这是可解的近似）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>Spoofing 可以是均衡现象，不是「大家看穿就消失」的场外噪声。</li>
+    <li>减慢价格发现，抬价差与波动；单峰于知情者比例 → 中等流动性市场更易见。</li>
+    <li>仅靠「教育市场」不够，惩罚/查处有独立价值；跨市场监控有明确分工含义。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>微观结构操纵的理论几乎空白，这篇补了一块可教的 GM 扩展。A 股程序化、拉锯挂撤、跨期指/现货联动，可对「单峰」做截面预测：既不是最活跃主板、也不是最冷清的票，中等深度品种是否更易出现异常挂撤比。和 8/31 PFOF/内化、今日若再读零售批发商「信息租金」故事，同属「订单流里藏了什么」。</p>
+  <p class="links">链接：SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3742327">3742327</a> · 作者页 <a href="https://www.basilwilliams.org/research">basilwilliams.org/research</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 社会责任投资要有「冲击授权」才改得动企业；紧约束下与利润资本互补</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 社会责任投资要有「冲击授权」才改得动企业；紧约束下与利润资本互补" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Martin Oehmke &amp; Marcus M. Opp · LSE / Stockholm School of Economics · <em>Review of Economic Studies</em> 92(2), 2025, 1193–1225（OA）</p>
+  <div class="tags">
+    <span class="tag">ESG / SRI</span>
+    <span class="tag">impact mandate</span>
+    <span class="tag">social profitability index</span>
+    <span class="tag">financial constraints</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>Review of Economic Studies</em> 2025。机制依 LSE Research Online 正式 OA PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>利润寻求资本供给完全弹性时，社会责任（SR）基金怎样才能让企业少制造外部性？只拒绝「脏」公司、或只看 ESG 分数，够不够？SR 资本稀缺时，该先投哪家？企业融资约束绑死时，SR 与普通资本是替代还是互补？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两种基金授权：</p>
+  <ul>
+    <li><strong>窄授权（narrow mandate）：</strong>只按企业<strong>造成的社会成本水平</strong>调整，不必牺牲财务回报——但往往<strong>改不动</strong>生产，因为利润资本会补上缺口，脏产能仍可扩张。</li>
+    <li><strong>冲击授权（impact mandate）：</strong>允许在财务表现与「相对无该基金投资时的反事实」少制造的社会成本之间权衡。基金必须把「想要的冲击—回报权衡」写进目标。</li>
+  </ul>
+  <p>在冲击授权下，作者导出<strong>社会盈利指数（SPI）</strong>：单位稀缺 SR 资本带来的授权目标「bang for buck」。因为冲击看的是<strong>避免的污染</strong>（相对反事实），而不是污染水平本身，高污染行业的项目也可以 SPI 很高——「去最脏的地方撬杠杆」可以理性。</p>
+  <p>若企业面临<strong>紧的财务约束</strong>，最优冲击方式常常是<strong>放大清洁产能的规模</strong>。此时 SR 资本与利润资本<strong>互补</strong>：两类投资者都在时总剩余更高。原因是：纯利润投资者无视外部性，会把脏产能开得过大；SR 资金给清洁侧加杠杆，纠正规模扭曲。</p>
+  <p>没有显式冲击授权时，SR 基金容易只是<strong>替换</strong>利润投资者的持仓，企业行为不变——「漂绿持仓」的理论版本。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>企业生产带外部性；利润资本供给弹性；SR 资本可稀缺。</li>
+    <li>冲击用「有无该 SR 投资」的反事实差额定义；SPI 类比经典盈利指数，但目标换成授权下的社会目标。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>要有真实影响，授权须允许牺牲部分财务回报换冲击；窄授权往往无实锤影响。</li>
+    <li>SPI 给出稀缺 SR 资本的最优排序；高污染行业仍可排前列。</li>
+    <li>紧融资约束下，清洁扩产是主渠道，SR 与利润资本互补。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 8/20 Banerjee–Prokopev 气候披露、9/8–9/9 责任投资者/ESG 精度线对着读：那边多从披露与反馈入手，这篇问<strong>基金契约本身有没有冲击条款</strong>。A 股「可持续」「碳中和」主题基金、绿色债，可直接问：合同里写的是「少持有脏」（窄），还是「相对不投时少排多少」（冲击）？有没有 SPI 式的稀缺资本排序？</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1093/restud/rdae048">10.1093/restud/rdae048</a> · LSE OA <a href="https://researchonline.lse.ac.uk/id/eprint/122413/">eprint 122413</a></p>
+</article>
+
+<footer>
+  避开 8/18–9/16 已写过的篇目。Gao–Lu 依 arXiv 2404.07630v5；Williams–Skrzypacz 依 forthcoming JF / 与作者摘要一致的可公开稿；Oehmke–Opp 依 REStud 2025 OA PDF。顶刊：Gao JAR 2008/2013；Williams JF 2023 + 本文 forthcoming JF；Oehmke–Opp 本文 REStud 2025。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
