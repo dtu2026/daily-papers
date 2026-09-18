@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-18</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-18">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月18日 · 第二十三期 · 3 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天三篇：空头操纵怎样和「挤兑式」协调失败叠在一起，才可能让禁空改善事前效率；寡占做市商怎样把「知情赶紧走、对冲慢慢走」拧成日内成交量与价差的 U 形；以及 Rostek–Yoon 对「不完全竞争金融市场」近几年统一框架与市场设计含义的综述。避开 8/18–9/17 已写过的篇目（含 Gao–Lu 投资者披露、Spoofing、Oehmke–Opp SRI、Mandatory Disclosure Oligopolistic MM、Blockholder 动态、Cespa–Vives Opacity、AI Collusion、Banerjee 合谋/证券借贷、Rostek–Yoon 产品设计 JPE 等）。机制依 JET / RFS 摘要与作者公开稿、JEL 作者稿 PDF；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Gao–Jiang–Lu：操纵性做空叠上恐慌挤兑时，禁空才可能抬事前企业价值</a> — JET 2025</li>
+      <li><a href="#p2">Chen–Wang：寡占做市 + 知情急对冲慢 ⇒ 成交量与价差都可呈 U 形</a> — RFS 2025</li>
+      <li><a href="#p3">Rostek–Yoon：不完全竞争金融市场——价冲固定点、市场设计与碎片化</a> — JEL 2025</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 操纵性做空叠上恐慌挤兑：禁空何时才改善事前效率</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 操纵性做空叠上恐慌挤兑：禁空何时才改善事前效率" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Pingyang Gao, Xu Jiang &amp; Jinzhi Lu · Chicago Booth / Duke Fuqua / CityU HK · <em>Journal of Economic Theory</em> 223, 2025, 105939（在线 2024-12）</p>
+  <div class="tags">
+    <span class="tag">short selling</span>
+    <span class="tag">manipulation</span>
+    <span class="tag">panic runs</span>
+    <span class="tag">feedback</span>
+    <span class="tag">global games</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>JET</em> 2025。Gao — <em>JAR</em> 2008「Keynesian Beauty Contest…」、<em>JAR</em> 2013「Informational Feedback Effect…」（with Liang）；亦有 <em>JAE</em> 2018（with Jiang）。机制依 Stern / CityUHK 作者公开稿与期刊摘要（DOI 10.1016/j.jet.2024.105939）。</div>
+
+  <h3>问了什么</h3>
+  <p>禁空能不能提高企业的事前价值？赞成方说空头让坏消息进价、改善真实决策；反对方说「空头打压」会人为压价。Goldstein–Guembel（GG）已证明：不知情投机者也可以做空并赚钱（操纵性做空，MSS），但这种均衡在「只买不空」的对称设定里站不住。本文把 GG 式操纵接到一个<strong>带协调失败的投资/挤兑博弈</strong>上，问：什么时候禁空反而提高事前效率？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>时间线可以想成三步：</p>
+  <ul>
+    <li>投机者（以已知概率拿到关于基本面的私信）在 Kyle 式市场里交易，股价内生反映一部分信息。</li>
+    <li>一群投资者看到股价后，各自决定是否继续投资／是否「跑」。他们的行动有战略互补：别人越跑，自己越想跑（全局博弈给出唯一均衡阈值）。</li>
+    <li>决策反过来决定企业现金流，从而闭环到股价反馈。</li>
+  </ul>
+  <p>关键权衡：股价信息多，有助于真实决策；但投资者也会用股价去猜「别人会不会跑」。对价格越敏感，协调失败可能越严重。禁空压低价格信息量，也降低投资者对价格的敏感度——信息损失 vs 协调改善，谁赢取决于参数。</p>
+  <div class="eq">禁空改善事前效率 ⇔ 挤兑脆弱性够高，且投机者信息质量不处在「太强 / 太弱」两端</div>
+  <p class="eq-note">人话：金融企业、危机里不确定性高时，操纵性做空更容易点燃挤兑；这时禁空去掉「假空」的好处，可以压过去掉「真知情空」的坏处。若没有协调摩擦（单人决策），或市场几乎全是知情者／几乎全是噪音，禁空反而伤效率——这正是对 GG 的扩展：GG 里禁空去不掉效率损失，这里可以。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投机者是否知情是随机的；交易一轮，Kyle 式价格发现。</li>
+    <li>投资者事后做协调博弈，用全局博弈消多重均衡。</li>
+    <li>监管只能「一刀切」禁空，分不清知情空与操纵空。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li><strong>命题 3：</strong>禁空提高效率，当且仅当协调摩擦处在某个非空区间——该区间在零协调摩擦时为空，协调足够强时才非空。</li>
+    <li>无协调摩擦时（推论 1）：投资者可忽略股价，多信息不会伤她；禁空减信息 ⇒ 必降效率（哪怕均衡里存在 MSS）。</li>
+    <li>信息质量两端：知情者极多 ⇒ MSS 少见，知情空的信息好处主导；知情者极少 ⇒ 价格太糊，MSS 本身不成立。中等知情比例 + 高挤兑脆弱性，才是禁空的「窗口」。</li>
+    <li>政策含义：危机期对金融股临时禁空，可以用「MSS × 恐慌挤兑」来讲通，而不是泛泛的「空头有害」。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「操纵性做空」和「价格反馈 + 挤兑」接到同一条事前福利判据上，比单独讲 GG 或单独讲银行挤兑都更贴监管争论。对董杰做 A 股／披露／微观结构：想问「交易限制何时改善实体决策」，这篇给的是可检验的交叉条件——高协调摩擦行业 × 中等信息不对称窗口。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1016/j.jet.2024.105939">10.1016/j.jet.2024.105939</a> · <a href="https://www.stern.nyu.edu/sites/default/files/assets/documents/Gao%20Jiang%20Lu-Manipulation,%20Panic%20Runs,%20and%20the%20Short%20Selling%20Ban.pdf">Stern 作者 PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 寡占做市：知情急、对冲慢，成交量与价差都可呈 U 形</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 寡占做市：知情急、对冲慢，成交量与价差都可呈 U 形" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Wen Chen &amp; Yajun Wang · Texas Tech / Baruch · <em>Review of Financial Studies</em> 38(1), 2025, 235–293</p>
+  <div class="tags">
+    <span class="tag">market making</span>
+    <span class="tag">oligopoly</span>
+    <span class="tag">intraday patterns</span>
+    <span class="tag">bid-ask spread</span>
+    <span class="tag">asymmetric information</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>RFS</em> 2025。Wang — <em>JF</em> 2023「Beliefs Aggregation and Return Predictability」（with Kyle, Obizhaeva）；亦有 <em>REStud</em> 2018「Smooth Trading…」。机制依 RFS 正式摘要（Crossref / DOI 10.1093/rfs/hhae062）与作者公开研究通讯；闭式推导以正式 PDF 为准，此处不编造公式细节。</div>
+
+  <h3>问了什么</h3>
+  <p>为什么日内成交量和买卖价差常常一起「两头高、中间低」（U 形）？做市商有市场势力时，这种形状从哪来？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>多期交易、寡占做市商。交易者并不「策略性拆单」，但也会平滑交易：</p>
+  <ul>
+    <li><strong>私信动机：</strong>有信息的人想赶在信息扩散前动手 ⇒ 偏向前段成交。</li>
+    <li><strong>流动性／对冲动机：</strong>为了再平衡、套保、用钱，可以等到条件更好时再做 ⇒ 推向后段。</li>
+  </ul>
+  <p>信息或流动性冲击到来之后，交易不会立刻结束，而会拖几期。做市商有市场势力时，正好在「大家最想成交」的时候把价差拉宽——开盘附近（信息急）和收盘附近（对冲／再平衡急）都贵。于是成交量与价差可以同时呈 U 形。校准与实证日内形态一致。</p>
+  <div class="eq">交易动机高峰处，寡占做市商加价差 ⇒ 量与价差同向 U 形</div>
+  <p class="eq-note">人话：不是因为交易者在玩动态博弈拆单，而是「急的信息」和「可等的对冲」时间错开，再叠加做市商在高峰加价。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>多期；做市商寡占（有市场势力）。</li>
+    <li>交易者有私信与流动性／对冲两类动机；冲击后交易可跨期平滑。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>即使交易者非策略，交易仍会在信息／流动性冲击后持续多期。</li>
+    <li>私信交易偏早、对冲偏晚；做市商在动机强时加宽价差。</li>
+    <li>信息摩擦较小、或流动性交易者占比更高时，成交量的 U 形更明显。</li>
+    <li>开收盘附近成本往往最高；中段相对便宜——与常见日内实证一致。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「U 形价差／成交量」从经验规律推进到有市场势力做市商的动态机制，且区分知情急 vs 对冲慢。对 A 股集合竞价开收盘、做市商／券商流动性供给讨论，这篇给的是：高峰时段价差大，可能是势力定价，而不只是「波动大」。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1093/rfs/hhae062">10.1093/rfs/hhae062</a> · Wang <a href="https://sites.google.com/site/yajunwangfin/research">作者页</a> · TTU <a href="https://www.depts.ttu.edu/rawlsbusiness/research/research-news/timing-the-market.php">研究通讯</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 不完全竞争金融市场：价冲固定点、设计工具与碎片化</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 不完全竞争金融市场：价冲固定点、设计工具与碎片化" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Marzena Rostek &amp; Ji Hee Yoon · Wisconsin / UCL · <em>Journal of Economic Literature</em> 63(4), 2025, 1191–1243 · 作者稿 2025-02-10</p>
+  <div class="tags">
+    <span class="tag">survey</span>
+    <span class="tag">price impact</span>
+    <span class="tag">imperfect competition</span>
+    <span class="tag">market design</span>
+    <span class="tag">fragmentation</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>JEL</em> 2025（DOI 10.1257/jel.20241340）。Rostek–Yoon 另有 <em>Econometrica</em> 2021「Exchange Design and Efficiency」、<em>JPE</em> 2025「Financial Product Design…」（9/16 已写产品设计篇）。机制依 UCL / 作者 2025-02 稿 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>大型机构无处不在、价冲是主成本、交易又高度碎片化时，理论该怎么统一写？不完全竞争如何改写「流动性、信息效率、福利」之间的关系，并打开哪些市场设计问题？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>综述的主轴不是又一篇 Kyle 变体，而是把「需求日程（demand schedule）博弈」写成<strong>价冲的固定点</strong>：</p>
+  <ul>
+    <li>每个大交易者在假定自己的价冲矩阵 Λ<sub>i</sub> 下优化需求日程；</li>
+    <li>均衡要求这个 Λ<sub>i</sub> 正好等于别人日程在市清处的斜率（Jacobian）。</li>
+  </ul>
+  <div class="eq">均衡 =（给定 Λ 的最优）+（Λ 等于市清斜率）的固定点</div>
+  <p class="eq-note">人话：你猜自己砸盘有多疼，优化完之后，市场上真的有多疼，两者要一致。价冲来自别人边际效用递减，不是外生「噪声交易方差」 alone。</p>
+  <p>在此框架上，交易频率、信息披露时机、透明 vs 隐私、资产创新、市场碎片化都不再「中性」：改结构会改价冲路径，从而改福利与再分配。综述特别强调：信息效率、流动性、福利<strong>不再一一对应</strong>——提高透明度或鼓励参与，在大户世界里可能翻车。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>主框架：二次–正态、多资产、可提交价格或有条件的数量日程；放松价格接受者假设。</li>
+    <li>覆盖静态／动态、集中／分散清算；并对照单边势力（Cournot／流动性提供者价格接受者）与双边势力。</li>
+  </ul>
+
+  <h3>主要结论（综述提炼）</h3>
+  <ul>
+    <li><strong>价冲决定因素：</strong>来自他人效用凹性；流动性 ≈ 价冲之逆。</li>
+    <li><strong>动态：</strong>双边势力下，当期价冲依赖未来与当期不确定性；供给冲击公告与冲击实现可在时间上分离，并带来再分配。</li>
+    <li><strong>市场设计工具：</strong>交易频率、公开信息时机、透明／隐私设计都通过价冲起作用；高频租金、批量拍卖等争论放进同一语言。</li>
+    <li><strong>碎片化：</strong>切市场不必总伤福利；可通过改变信息与价冲同时改善信息效率（与 9/15 Lou–Rahi、9/16 Rostek–Yoon 产品设计形成对照阅读）。</li>
+    <li><strong>金融创新：</strong>不完全竞争下，零净供给的新合约也不再冗余——会影响价冲与跨资产推断。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是近几年「大户／价冲／分散清算」理论的地图。董杰若要在微观结构或披露题目里定位贡献，可先用这篇对齐：你的机制改的是哪一块价冲固定点、哪一种设计工具、以及福利判据是否还等于「更信息／更流动性」。与 9/16 的 JPE 产品设计篇是同一作者线的「总览 vs 专题」。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1257/jel.20241340">10.1257/jel.20241340</a> · <a href="https://www.aeaweb.org/articles?id=10.1257/jel.20241340">AEA 页</a> · UCL 作者稿（本地核验 2025-02-10）</p>
+</article>
+
+<footer>
+  避开 8/18–9/17 已写过的篇目。Gao–Jiang–Lu 依 JET 2025 / Stern 作者公开稿；Chen–Wang 依 RFS 2025 正式摘要与作者研究通讯；Rostek–Yoon 依 JEL 2025 / 2025-02 作者稿。顶刊：Gao JAR 2008/2013 + 本文 JET；Wang JF 2023 + 本文 RFS；Rostek Econometrica 2021 + 本文 JEL。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
