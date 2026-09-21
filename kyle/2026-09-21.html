@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-21</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-21">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月21日 · 第二十四期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇围着「场外零售流的信息租金」「可持续投资怎样伤股价治理」「绿色披露该不该一开始就全透明」「偏 impact 的 CEO 反而能把利润激励拧得更紧」：批发商为什么愿意给零售单比公开最优报价更好的价；知情绿资一筛公司，股价就更难当合约信号；监管「先松后紧」的披露节奏可能比永远全披更利于转型；测量不对称时，故意雇「非价值最大化」经理可以是最优。避开 8/18–9/18 已写过的篇目（含 Gao–Jiang–Lu 禁空、Chen–Wang 寡占做市、Rostek–Yoon JEL/JPE、Gao–Lu 投资者披露、Spoofing、Oehmke–Opp SRI、Foucault Trade-Off、Q-learner、Disclosure Trap、Mandatory Disclosure Oligopolistic MM、Blockholder 动态等）。机制依作者页／ECGI／研讨会摘要与 JFE 正式元数据；不编造顶刊履历。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Baldauf–Mollner–Williams：零售场外单＝做市私信，批发商用更好成交价抢信息租金</a> — WP</li>
+      <li><a href="#p2">Chen–Gupta–Starmans：绿资筛公司 ⇒ 股价更糊 ⇒ 股权激励更贵；减负外部性反而「做善事赚治理」</a> — JFE 2026</li>
+      <li><a href="#p3">Gupta–Starmans：绿色披露「先松后紧」可胜过永远全透明——速度换广度</a> — ECGI WP / R&amp;R JF</li>
+      <li><a href="#p4">Chaigneau–Edmans–Sahuguet：测量不对称时，偏 impact 的经理反而让利润激励更敢拧</a> — ECGI 2026</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 零售场外单＝做市私信：批发商用更好成交价抢信息租金</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 零售场外单＝做市私信：批发商用更好成交价抢信息租金" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Markus Baldauf, Joshua Mollner &amp; Basil Williams · UBC Sauder / Northwestern Kellogg / Imperial · Working paper（SSRN 5768164；CFM–Imperial Market Microstructure 研讨会摘要 2025-12；作者页摘要）</p>
+  <div class="tags">
+    <span class="tag">retail order flow</span>
+    <span class="tag">wholesalers</span>
+    <span class="tag">off-exchange</span>
+    <span class="tag">information rents</span>
+    <span class="tag">market design</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Baldauf — <em>Journal of Finance</em> 2020「High-Frequency Trading and Market Performance」（with Mollner）；另有 <em>JFE</em> 2024「Siphoned Apart…」、<em>JPE</em> 2024「Competition and Information Leakage」。Williams — <em>JF</em> forthcoming「Spoofing in Equilibrium」（with Skrzypacz；9/17 已写 spoofing 篇本身）；亦有 <em>JF</em> 2023「Model Secrecy and Stress Tests」。机制依研讨会公开摘要与作者页研究摘要；闭式细节以作者 PDF 为准，此处不编造公式。</div>
+
+  <h3>问了什么</h3>
+  <p>美股零售单大多被券商路由到批发商（wholesaler），在场外以<strong>优于公开最优买卖价（NBBO）</strong>的价格成交。经典「逆向选择／库存」故事很难解释为什么常见「中点或更好」的成交。批发商为什么愿意给这种折扣？监管若加强报告、改成逐单拍卖，零售价会变好还是变差？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>关键闭环不是「零售流本身更干净所以可以给更好价」，而是<strong>场外成交顺便送私信</strong>：</p>
+  <ul>
+    <li>批发商执行一笔场外零售单后，私下学到这笔订单流信息；</li>
+    <li>这份私信在<strong>随后的公开交易所做市</strong>里变成信息租金；</li>
+    <li>为了抢到这份租金，批发商在场外竞相给出更优成交价——甚至可以到中点或更好。</li>
+  </ul>
+  <div class="eq">场外更好价 ⇔ 为公开市场做市信息租金「付门票」</div>
+  <p class="eq-note">人话：你以为批发商在「补贴」散户，其实是在买下一轮做市的偷看权。中点成交可以是均衡，不必硬套「零售单全是噪音」。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>零售单在场外由批发商执行；批发商可从执行中学到私信，再参与公开市场做市。</li>
+    <li>政策对照：加强成交报告、逐单公开拍卖、以及作者提出的 request-for-stream（RFS）设计。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>信息租金机制能解释「中点或更好」的场外成交——经典仅看逆向选择／库存的模型难讲通。</li>
+    <li><strong>加强交易报告：</strong>主要消灭信息租金 ⇒ 零售成交价可能<strong>变差</strong>。</li>
+    <li><strong>逐单公开拍卖：</strong>竞争可能改善价格，但公开性也会抹掉信息租金 ⇒ 净效果模糊。</li>
+    <li><strong>RFS（request-for-stream）：</strong>既加强竞争，又保留信息租金 ⇒ 作者论证可明确改善零售价。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把 PFOF／批发商／场外零售流从「道德讨伐」改写成可检验的信息租金故事，并直接对照美国正在讨论的报告与拍卖改革。对董杰做微观结构：A 股虽无完全同构的 wholesaler 制度，但「暗池／场外询价／关系做市」里「先成交再带走私信」的逻辑可对照阅读；政策上「更透明总更好」在这篇里不成立。</p>
+  <p class="links">链接：SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5768164">5768164</a> · <a href="https://www.basilwilliams.org/research">Williams 作者页摘要</a> · <a href="https://www.market-microstructure.net/abstracts">CFM–Imperial 研讨会摘要</a> · Baldauf <a href="https://sites.google.com/site/mbaldauf/">主页</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 绿资一筛，股价更糊：股权激励更贵；减负外部性反而「做善事赚治理」</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 绿资一筛，股价更糊：股权激励更贵；减负外部性反而「做善事赚治理」" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Alvin Chen, Deeksha Gupta &amp; Jan Starmans · SSE / Johns Hopkins / SSE · <em>Journal of Financial Economics</em> 2026（104273）；ECGI WP 1052/2025（2025-12）</p>
+  <div class="tags">
+    <span class="tag">ESG</span>
+    <span class="tag">price informativeness</span>
+    <span class="tag">market monitoring</span>
+    <span class="tag">Kyle</span>
+    <span class="tag">incentives</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>本文本身即 <em>JFE</em> 2026（DOI 10.1016/j.jfineco.2026.104273）。Gupta — <em>JF</em> 2024「Utility Tokens as a Commitment to Competition」（with Goldstein, Sverchkov）；<em>RFS</em> 2026「The Pace of Change…」。机制依 ECGI 2025-12 作者稿 PDF 与 JFE 正式元数据。</div>
+
+  <h3>问了什么</h3>
+  <p>可持续投资文献多讲「绿资如何压低脏公司的融资成本」。作者问另一条：知情绿资改变交易方式后，股价还能不能当<strong>经理努力的合约信号</strong>（Holmström–Tirole 式市场监督）？会不会反而抬高股权激励成本？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>离散 Kyle 市场：知情者同时看到财务结果 F 与外部性 E，社会关切强度为 γ。负外部性时，她看到「财务好但很脏」可能<strong>不买</strong>（负向筛选）；正外部性时，她看到「财务差但很绿」可能<strong>仍买</strong>（正向筛选）。两种都会让订单流更不像「只反映财务努力」：</p>
+  <div class="eq">γ ↑ ⇒ 知情交易对财务信号的响应 ↓ ⇒ 股价努力信息量 φ* ↓ ⇒ 激励成本 C ↑</div>
+  <p class="eq-note">人话：股价本来是「经理有没有好好干活」的嘈杂考卷；绿资按外部性改答题策略后，考卷更糊，股东就得发更高奖金才能让经理努力——甚至干脆不发激励、努力掉到零。</p>
+  <p>悖论：纯粹只在乎钱的股东，也可能投资去<strong>降低负外部性</strong>——不是因为良心，而是为了让知情者重新按财务信号交易，把股价监督弄回来（「做善事赚治理」）。正外部性那边则相反：股东可能有动机<strong>压低正外部性</strong>以改善监督——作者据此给「净零」一个治理理由：把外部性往零推，对监测最有利。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>三期；经理努力抬高财务成功概率；激励只能绑股价，有限责任。</li>
+    <li>知情者可买 0/1 股；噪音交易几何分布；做市商按财务期望定价（基线不把 E 写进价）。</li>
+    <li>扩展：公开 ES 新闻进合约、股东内生减 E、经理社会努力、信号精度、F–E 相关、绿资占比等。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>γ 足够大时，努力信息量相对无社会关切基准下降，激励成本上升；成本过高时股东放弃诱导努力。</li>
+    <li>负外部性：ES 越好（脏得越少）⇔ 治理越好；正外部性：ES 越好⇔ 治理越差——符号取决于外部性方向。</li>
+    <li>可以没有 greenium（期望收益不变），但波动／信息量仍随 ES 变——可持续投资的效应可出现在高阶矩。</li>
+    <li>公开 ES 新闻可进最优合约：即使用于「解读股价何时更可信」，而非直接奖绿——解释为何强治理公司更常见 ES 挂钩薪酬。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把 ESG 从「资本成本通道」接到「股价治理通道」，并与 Oehmke–Opp 等「冲击授权」故事互补：那边问绿资何时改实体，这边问绿资何时伤／促市场监督。对董杰做披露与 A 股：强制气候披露、ESG 评级进投资流程，可能改变知情交易构成，从而改变「股价能不能当契约信号」——这是可写进披露／治理交叉题目的机制。</p>
+  <p class="links">链接：DOI <a href="https://doi.org/10.1016/j.jfineco.2026.104273">10.1016/j.jfineco.2026.104273</a> · ECGI <a href="https://www.ecgi.global/sites/default/files/2025-12/sustainable-investing-and-market-governance.pdf">PDF</a> · SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5025025">5025025</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 绿色披露「先松后紧」：故意模糊早期绿色度，换更多公司最终转绿</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 绿色披露「先松后紧」：故意模糊早期绿色度，换更多公司最终转绿" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Deeksha Gupta &amp; Jan Starmans · Johns Hopkins / SSE · ECGI WP 1058/2025（2025-04）；SSRN 4557187；作者页标注 R&amp;R <em>Journal of Finance</em></p>
+  <div class="tags">
+    <span class="tag">green disclosure</span>
+    <span class="tag">dynamic regulation</span>
+    <span class="tag">SRI</span>
+    <span class="tag">greenwashing</span>
+    <span class="tag">transition</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Gupta — <em>JF</em> 2024「Utility Tokens…」；<em>RFS</em> 2026「Pace of Change…」；姐妹篇已刊 <em>JFE</em> 2026（上篇）。本稿 R&amp;R JF（作者页）。机制依 ECGI 2025-04 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>欧盟 SFDR、SEC 气候披露草案等都有「要求随时间变严」的节奏。监管该不该一开始就全透明？动态变严的披露能否优于「永远全披」？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>无限期；公司绿色转型是<strong>两步</strong>：先付成本「采纳」绿技术（脏 → 低绿），再付成本「扩容」（低绿 → 高绿）。有社会责任投资者按绿色度估值。投资者若完全看不清类型，价格对早期昂贵步骤的激励可能不够——早期高固定成本会卡死转型。</p>
+  <p>作者的关键设计洞见：早期<strong>故意松披露</strong>（作者戏称「政府强制漂绿」）制造误定价补贴，帮公司跨过早期门槛；后期<strong>收紧披露</strong>再逼完成扩容。预期「松只是暂时的」还会放大效果——更多公司愿意迈出第一步，也更多公司在后期真正做完。</p>
+  <div class="eq">动态披露（先松后紧）可 ≻ 永久全透明；代价是部分公司变慢，换来最终转绿的公司更多</div>
+  <p class="eq-note">人话：不是「披露越严越好」。早期太透明，脏公司一眼被看穿、拿不到估值补贴，第一步就不走；先糊一点再慢慢揭开，像给转型发阶段性奖学金。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>连续统公司；初始类型：脏／低绿／高绿；每期利润期望相同，社会收益随类型升。</li>
+    <li>完整转型两步均有成本，且社会最优是走完两步。</li>
+    <li>无披露时投资者看不见类型；监管选披露严格度路径。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>早期阶段特别贵时，动态变严的披露可严格优于永远全透明。</li>
+    <li>跨期互补：未来更严会提高当前松披露的效力；当前松也提高未来严披露下完成后期步骤的公司数。</li>
+    <li>新权衡：<strong>速度 vs 广度</strong>——动态规则可能拖慢部分公司，但提高最终改革的公司总数。</li>
+    <li>政策映射：SFDR／气候披露「分阶段加严」不必只是政治妥协，可以是最优设计。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>直接回答「披露监管该不该动态变严」——董杰做披露理论时可把「信息量单调有益」换成「转型技术成本形状 ⇒ 最优披露路径」。与上篇 CGS 对照：那边是交易端社会关切伤股价治理；这边是监管端故意调控披露严格度服务转型。两篇合读是「ESG × 披露 × 治理」同一作者线的交易篇与监管篇。</p>
+  <p class="links">链接：ECGI <a href="https://www.ecgi.global/sites/default/files/2025-05/dynamic-green-disclosure-requirements.pdf">PDF</a> · SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557187">4557187</a> · Gupta <a href="https://sites.google.com/view/deekshagupta">作者页</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 测量不对称时：偏 impact 的经理，反而让利润激励更敢拧</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 测量不对称时：偏 impact 的经理，反而让利润激励更敢拧" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Pierre Chaigneau, Alex Edmans &amp; Nicolas Sahuguet · Queen’s / LBS / HEC Montréal · ECGI Finance WP 1143/2026（2026-06／08）；SSRN 6895618</p>
+  <div class="tags">
+    <span class="tag">executive compensation</span>
+    <span class="tag">multitasking</span>
+    <span class="tag">ESG</span>
+    <span class="tag">mission</span>
+    <span class="tag">incentives</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Edmans — <em>JF</em>／<em>JFE</em>／<em>RFS</em> 多篇（如 <em>RFS</em> 2013「The Effect of Liquidity on Governance」；经典 blockholder／exit 线）。Chaigneau 亦有多篇顶刊合约论文。机制依 ECGI 2026-06 作者稿 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>公司同时追利润与社会影响时，董事会该不该雇一个「偏好和股东一模一样」的经理？实务里有人被骂「太绿」（Fink、Chapek），有人被骂「太狂热」（Musk、Zuckerberg）。这些「非价值最大化」任命会不会其实是最优？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>经理把固定资源分给两项活动：测得准的叫「利润」，测得糊的叫「impact」（也可对调标签）。产出不可直接写进合约，只能用嘈杂绩效指标。经典 Holmström–Milgrom 多任务：你敢在好测维度上拧高激励，经理就会扔掉难测维度。</p>
+  <p>作者的解法：故意雇一个<strong>内在偏好偏向难测维度（impact）</strong>的经理。他天生想多投 impact，于是董事会可以在利润指标上用更强激励，而不用太担心 impact 被掏空——偏误本身就是「软保护」。</p>
+  <div class="eq">偏 impact 的经理 + 强利润激励 ≻ 无偏经理 + 弱利润激励（当测量不对称够大时）</div>
+  <p class="eq-note">人话：强财务奖金 ≠ 经理没情怀；相反，可能正是因为情怀太重，才需要用钱把他往利润拽。使命型企业发高财务激励，也不必等于漂绿——它可能是用「选人」而不是「impact 奖金」来保使命。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>两项活动；经理私自看到各维生产力；资源固定。</li>
+    <li>绩效测量质量不对称；存在经理市场（连续统类型）决定最优偏误与薪酬结构。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>测量不对称时，最优经理偏误可指向测得更差的那一维。</li>
+    <li>重新解释「高财务激励」：可能是在抵消经理对 impact 的内在动机，而非经理唯利是图。</li>
+    <li>重新解释使命型企业的高财务激励：不必是漂绿，可以是「选偏 impact 的人 + 用钱校正」。</li>
+    <li>市场均衡刻画最优偏误水平及其对薪酬水平／结构的含义。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「CEO 该不该有 ESG 情怀」从文化辩论改成测量与合约问题。对董杰：若写披露／ESG／治理，这篇提供「人」这一侧——上两篇分别是交易与披露监管；这篇是选经理与薪酬设计。三者一起构成「可持续偏好进入市场 → 改变信息与合约 → 改变谁该当 CEO」的链条。</p>
+  <p class="links">链接：ECGI <a href="https://www.ecgi.global/sites/default/files/2026-06/the-value-of-non-value-maximizing-managers.pdf">June PDF</a> · <a href="https://www.ecgi.global/publications/working-papers/the-value-of-non-value-maximizing-managers">ECGI 页</a> · SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6895618">6895618</a></p>
+</article>
+
+<footer>
+  避开 8/18–9/18 已写过的篇目。Baldauf–Mollner–Williams 依研讨会／作者页摘要（SSRN 5768164）；Chen–Gupta–Starmans 依 ECGI PDF + JFE 2026 元数据；Gupta–Starmans Dynamic Green Disclosure 依 ECGI 2025-04 PDF；Chaigneau–Edmans–Sahuguet 依 ECGI 2026-06 PDF。顶刊：Baldauf JF 2020；Gupta JF 2024 / 本文 JFE；Edmans 多篇 JF/JFE/RFS。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
