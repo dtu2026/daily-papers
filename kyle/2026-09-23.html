@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-23</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-23">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月23日 · 第二十六期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇围着「机器怎么学报价、人怎么筛信号、做空摩擦怎样改披露、beta 信息怎样弯报价」：基础 Q-learning 做市会学到「绝不亏」的极端价差；经理披露与知情做空互相内生卡死；有人能挖现金流 beta 时，价冲斜率会跟着订单流一起抖；LASSO 式「弱信号不交易」竟可在模型不确定下成为均衡。四篇均有 2025–2026 可核验版本，且未出现在 8/18–9/22 的理论简报。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Guarino–Jehiel–Symons-Hicks：基础 Q-learning 做市学到「不亏价」；加一点反事实更新才回到竞争价</a> — 2025 WP</li>
+      <li><a href="#p2">Kumar–Langberg–Sivaramakrishnan：做空越贵，知情者既可能吓住披露，也可能逼出更多披露</a> — 2025 CAR</li>
+      <li><a href="#p3">Huang–Schneemeier–Subrahmanyam–Yang：有人偷偷知道 beta，风险厌恶做市商的价冲斜率会跟着订单流抖</a> — 2025 MS</li>
+      <li><a href="#p4">Chen–Hu–Yang：模型不确定时，LASSO「弱信号不交易」可成为均衡，并软化竞争</a> — 2025 MS</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 基础 Q-learning 做市学到「不亏价」；加一点反事实更新才回到竞争价</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 基础 Q-learning 做市学到「不亏价」；加一点反事实更新才回到竞争价" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Antonio Guarino, Philippe Jehiel &amp; James Symons-Hicks · UCL–CEPR / PSE–UCL / LSE · <em>Q-Learning and Algorithmic Market Making: Loss-free, Collusive, or Competitive Prices?</em> · 2025-07-08 稿；CEPR DP20461（2025-07-15）</p>
+  <div class="tags">
+    <span class="tag">Q-learning</span>
+    <span class="tag">algorithmic market making</span>
+    <span class="tag">Glosten–Milgrom</span>
+    <span class="tag">loss-free pricing</span>
+    <span class="tag">counterfactual updating</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Philippe Jehiel 在 <em>Econometrica</em> 有多篇正式发表（如 1995、2001、2002、2006、2010 等机制设计／学习文献；另有 <em>Review of Economic Studies</em>、<em>AER</em>）。本稿依作者页 PDF（2025-07-08）与 CEPR DP20461 摘要／正文核对；不是 Colliard–Foucault–Lovo（已于 08-18 写过）的重复。</div>
+
+  <h3>问了什么</h3>
+  <p>算法做市商用 Q-learning 学 ask／bid，会不会自然学到竞争价，还是会卡在「超竞争」的宽价差？文献常把宽价差归因于默契合谋。本文问：在经典 Glosten–Milgrom 设定里，<strong>同样是 Q-learning，只改更新规则与探索参数</strong>，结果可以从「永不亏」的极端价，一路变到竞争均衡价吗？若出现超竞争价，真是合谋，还是只是在回避亏损？</p>
+
+  <h3>设定与关键假设（已核验事实）</h3>
+  <ul>
+    <li>多日、每日一期的 Glosten–Milgrom：资产日终取高值或低值；知情交易者概率 <code>μ</code>，噪声交易者概率 <code>1−μ</code>。</li>
+    <li><code>N</code> 家算法做市商在离散报价网格上选 ask／bid；交易发生在最优 ask／bid；同价随机撮合。</li>
+    <li>基准：无状态 Q-learning，只更新「自己选过的那一档」报价；ε-greedy 探索。</li>
+    <li>对照：降低学习率、改变探索衰减；软最大化探索；以及「反事实更新」——卖出成功时，也更新所有更低 ask 的 Q 值（买方若愿出此价，更低价也会买）。</li>
+  </ul>
+
+  <h3>核心机制（本简报解读）</h3>
+  <p>基准算法的关键是：任何「可能亏」的报价，只要碰到一串坏运气（卖出高值资产／买入低值资产），Q 值就会被打成负；一旦有「永不亏」的极端报价（ask ≥ 最高可能值、bid ≤ 最低可能值）Q 值非负，算法就再也不敢回去试中间价。论文把这写成 loss-free pricing，并证明无探索时几乎必然发生。</p>
+  <div class="eq">基准：只更新已选报价 ⇒ 负收益把中间价「永久染红」⇒ ask→v<sub>H</sub>、bid→v<sub>L</sub></div>
+  <p class="eq-note">人话：机器像学过一次烫手的炉子就再也不碰；最后只敢报「怎么都不会亏」的价。知情者不来了，噪声若也有弹性，市场近乎停摆。</p>
+  <p>反事实更新改变信息结构：机器明白「更激进的价本来也能成交」，于是可以在期望收益层面比较「削价抢单」是否合算。在 Robbins–Monro 学习率与足够高的反事实权重下，报价收敛到竞争 ask／bid。</p>
+
+  <h3>主要结论（已核验事实）</h3>
+  <ul>
+    <li><strong>基准 Q-learning：</strong>模拟与解析均得到 loss-free 价；与固定高价「人类」做市商对打时，算法甚至学不会削价抢单。</li>
+    <li><strong>调参：</strong>更小学习率、更高持续探索或 soft-max，可把价差从极端拉回一点，但仍远高于竞争价；机制仍是回避亏损，而非历史依赖的默契合谋。</li>
+    <li><strong>反事实更新：</strong>报价收敛到竞争均衡；单一算法对固定高价对手会削一档并拿走全部交易。</li>
+    <li>作者明确对比 Colliard–Foucault–Lovo：对方强调超竞争与有限学习；本文强调「结果取决于算法设计」，并给出解析条件。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>对「AI 做市／AI 合谋」辩论，这篇是很硬的反例：<strong>宽价差可以完全不是合谋，而是更新规则太朴素</strong>。监管若只看「算法是否学会了互相抬价」，可能误判；更该问算法有没有反事实／订单簿推断能力。对董杰的 AI 投资者研究：同一套强化学习，换观测与更新，可以从市场失灵走到竞争；合谋不是默认终点。</p>
+  <p class="links">核验与原文：<a href="https://james-symonshicks.github.io/Files/Guarino_Jehiel_SymonsHicks_AlgorithmicMarketMaking_2025_July.pdf">作者页 PDF（2025-07-08）</a> · <a href="https://cepr.org/publications/dp20461">CEPR DP20461</a> · 顶刊履历：Jehiel <em>Econometrica</em>（机制设计／学习系列）</p>
+</article>
+
+<article id="p2">
+  <h2>2. 做空越贵，知情者既可能吓住披露，也可能逼出更多披露</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 做空越贵，知情者既可能吓住披露，也可能逼出更多披露" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Praveen Kumar, Nisan Langberg &amp; Konduru Sivaramakrishnan · Houston / Tel Aviv / Rice · <em>Strategic disclosure and informed trading with short-selling constraints</em> · <em>Contemporary Accounting Research</em> 42(4), 2025, 2322–2356</p>
+  <div class="tags">
+    <span class="tag">voluntary disclosure</span>
+    <span class="tag">short-sale constraints</span>
+    <span class="tag">informed trading</span>
+    <span class="tag">price efficiency</span>
+    <span class="tag">endogenous constraints</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Nisan Langberg 与 Sivaramakrishnan 合作的「Voluntary Disclosure with Informed Trading in the IPO Market」发表于 <em>Journal of Accounting Research</em> 54(5), 2016, 1365–1394。Sivaramakrishnan 另有多篇 <em>JAR</em>／<em>TAR</em>／<em>JAE</em>。本稿依 CAR 2025 正式条目与摘要核对机制方向；不编造正文未公开的参数结果。</div>
+
+  <h3>问了什么</h3>
+  <p>股价同时被经理自愿披露与外部知情交易推动，而做空成本／约束会扭曲知情交易。三者一起决定时：做空摩擦怎样改变披露？披露又怎样反过来改变知情做空？价格效率是否一定随经理信息变好而提高？</p>
+
+  <h3>设定与关键假设（已核验事实）</h3>
+  <ul>
+    <li>经理选择是否自愿披露；外部人可知情交易（含做空）；价格由披露与订单共同形成。</li>
+    <li>关键摩擦是做空／交易成本，以及可能内生绑定的卖空约束。</li>
+    <li>论文联合求解披露、价格与做空，并讨论对价格效率的含义。</li>
+  </ul>
+
+  <h3>核心机制（本简报解读）</h3>
+  <p>直觉上「做空越难 → 坏消息更难进价 → 经理更敢瞒」只是一侧。另一侧是：知情者能力越强，经理越怕被做空打穿，反而更愿意先说。卖空约束若内生绑定，两条通道可在不同参数下分别占优，于是「知情程度 ↑」既可能抑制披露，也可能促进披露。</p>
+  <div class="eq">做空成本 ↑ ⇒ 知情卖压变弱／约束更易绑定 ⇒ 披露激励可升可降（取决于哪条通道主导）</div>
+  <p class="eq-note">人话：禁空不一定自动让公司更透明或更不透明；要看知情资金是被「堵死」了，还是被「逼得经理先坦白」。</p>
+  <p>进一步，更多披露若挤出知情做空，价格效率未必随经理信息禀赋改善——披露多了，市场上「会做空的知情单」反而少了。</p>
+
+  <h3>主要结论（已核验事实）</h3>
+  <ul>
+    <li>做空／交易成本对均衡披露政策及其与知情交易、价格效率的互动有实质影响。</li>
+    <li>因卖空约束可内生绑定，更知情的交易者既可以吓阻披露，也可以鼓励披露——从而调和文献里「短卖约束与披露」方向相反的证据。</li>
+    <li>价格效率不必随经理信息禀赋提高：更大披露可在均衡中抑制知情做空。</li>
+    <li>论文据此给出可检验的披露—做空—效率联合预测。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>A 股融券、转融通、限制名单经常变：这篇提醒不要把「收紧做空 → 披露变差」或「放宽做空 → 效率一定升」当成单箭头。对董杰的披露／微观结构工作，可直接对应：融券余額或可借券冲击之后，自愿披露频率与知情卖压是否同向／反向移动，取决于约束是否「刚好卡死」。</p>
+  <p class="links">核验与原文：<a href="https://doi.org/10.1111/1911-3846.13066">CAR / Wiley DOI</a> · <a href="https://cris.tau.ac.il/en/publications/strategic-disclosure-and-informed-trading-with-short-selling-cons/">TAU 记录（页码 2322–2356）</a> · 顶刊履历：<a href="https://doi.org/10.1111/1475-679X.12133">Langberg et al. JAR 2016</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 有人偷偷知道 beta，风险厌恶做市商的价冲斜率会跟着订单流抖</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 有人偷偷知道 beta，风险厌恶做市商的价冲斜率会跟着订单流抖" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Shiyang Huang, Jan Schneemeier, Avanidhar Subrahmanyam &amp; Liyan Yang · HKU / Michigan State / UCLA / Toronto · <em>Securities Markets in Which Some Investors Receive Information About Cash Flow Betas</em> · <em>Management Science</em> 71(7), 2025, 6155–6183</p>
+  <div class="tags">
+    <span class="tag">cash-flow beta</span>
+    <span class="tag">private information</span>
+    <span class="tag">nonlinear pricing</span>
+    <span class="tag">liquidity risk</span>
+    <span class="tag">beta anomaly</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Liyan Yang 有 <em>Journal of Finance</em>（如 Information Diversity…, 2015；Commodity Financialization…, 2022）与 <em>RFS</em>（如 Secret and Overt Information Acquisition, 2023）等。Avanidhar Subrahmanyam 有多篇 <em>JF</em>／<em>JFE</em>／<em>RFS</em>。本稿依 MS 正式摘要与 DOI 核对；实证部分只报告作者声称已确认的方向。</div>
+
+  <h3>问了什么</h3>
+  <p>标准知情交易模型多假设私信关于现金流水平。若有人还能私下知道现金流对公共因子的 <strong>beta</strong>，而做市商风险厌恶、平均 beta 又非负，价格表还是线性的吗？价冲斜率会怎样随订单流随机共变？这能否帮解释 beta 异象？</p>
+
+  <h3>设定与关键假设（已核验事实）</h3>
+  <ul>
+    <li>单因子设定：存在关于现金流及其 beta 的私有信息。</li>
+    <li>做市商风险厌恶；平均 beta 非负。</li>
+    <li>由此得到非线性价格表，其随机斜率与订单流的协方差有符号预测，并连到期望收益与 beta 异象。</li>
+  </ul>
+
+  <h3>核心机制（本简报解读）</h3>
+  <p>当订单流又大又「像高 beta」时，风险厌恶做市商担心自己吃进的是高系统风险头寸，于是把边际价冲抬高；因子期望收益为正时，这种「斜率跟着流量一起抖」更明显。协方差本身变成一种可定价的流动性／信息风险。</p>
+  <div class="eq">E[因子]&gt;0 时：Cov(价冲斜率, 订单流)&gt;0；该协方差 ↑ ⇒ 期望收益 ↓</div>
+  <p class="eq-note">人话：市场不只怕「你知道公司赚不赚钱」，还怕「你知道它有多跟大盘绑在一起」。大单来时价冲变得更陡，这种「抖」本身会要求补偿，却也可能掩盖传统 beta 异象。</p>
+
+  <h3>主要结论（已核验事实）</h3>
+  <ul>
+    <li>关于 beta 的私信 + 做市商风险厌恶 + 平均 beta 非负 ⇒ 非线性价格表。</li>
+    <li>随机斜率与订单流的协方差：在因子期望收益为正时为正，反之则反。</li>
+    <li>作者预测：该协方差与期望收益负相关；控制这一关系后，资产收益中的 beta 异象减弱。</li>
+    <li>实证检验确认上述预测（作者摘要陈述）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>它把「流动性风险」和「因子暴露不确定」焊在同一张报价表上。对 A 股：行业／风格 beta 常被量化私募私下估计；可检验大单日的已实现价冲斜率是否与流量同向抖动，以及这种抖动是否预测后续收益并削弱低 beta 异象。对董杰的微观结构—资产定价接口很直接。</p>
+  <p class="links">核验与原文：<a href="https://doi.org/10.1287/mnsc.2022.02061">Management Science DOI</a> · <a href="https://ideas.repec.org/a/inm/ormnsc/v71y2025i7p6155-6183.html">RePEc 记录</a> · 顶刊履历：Yang <em>JF</em>／<em>RFS</em>；Subrahmanyam 多篇顶刊</p>
+</article>
+
+<article id="p4">
+  <h2>4. 模型不确定时，LASSO「弱信号不交易」可成为均衡，并软化竞争</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 模型不确定时，LASSO「弱信号不交易」可成为均衡，并软化竞争" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Wen Chen, Bo Hu &amp; Liyan Yang · Texas Tech / George Mason / Toronto · <em>Whence LASSO? A Rational Interpretation</em> · <em>Management Science</em> Special Issue on AI for Finance and Business Decisions, 2025 · DOI 10.1287/mnsc.2024.06127；SSRN 4279679</p>
+  <div class="tags">
+    <span class="tag">LASSO</span>
+    <span class="tag">model uncertainty</span>
+    <span class="tag">robust trading</span>
+    <span class="tag">inactive zone</span>
+    <span class="tag">implicit collusion</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Liyan Yang 同上（<em>JF</em>／<em>RFS</em>）。Wen Chen 与 Yajun Wang 的「Dynamic Market Making with Asymmetric Information and Market Power」发表于 <em>Review of Financial Studies</em> 38(1), 2025, 235–293。本稿依 MS 摘要、SSRN 条目与 George Mason 2026-06 院方报道核对机制；不编造未读到的命题编号。</div>
+
+  <h3>问了什么</h3>
+  <p>实务里常用 LASSO：弱信号被惩罚掉，策略出现「不交易的死区」。但理性交易者不是该抓住一切边际优势吗？在什么经济环境里，LASSO 会作为均衡估计／交易规则内生出现？它是提高还是损害交易者总利润？</p>
+
+  <h3>设定与关键假设（已核验事实）</h3>
+  <ul>
+    <li>多名交易者从历史价格提取信息、预测收益并交易。</li>
+    <li>基准：无模型不确定时，理性贝叶斯／MSE 学习。</li>
+    <li>关键：存在模型不确定时，交易者采用稳健交易策略；在线性交易约束下，均衡决策与 LASSO 估计一致；并扩展到 elastic-net。</li>
+  </ul>
+
+  <h3>核心机制（本简报解读）</h3>
+  <p>无不确定时，大家用 MSE／贝叶斯，弱信号也会交易，竞争把总利润打薄。有不确定时，厌恶模糊的人用稳健策略：对中等偏弱的信号直接「不动」——这正是 LASSO 的 inactive zone。线性约束把这种稳健最优钉成 LASSO 形式。</p>
+  <div class="eq">模型不确定 + 稳健最优 + 线性策略约束 ⇒ 均衡交易 = LASSO（弱信号落入 inactive zone）</div>
+  <p class="eq-note">人话：不是统计学家替你选了 LASSO，而是「我怕模型错了」时，最优就是对模棱两可的信号按兵不动；大家一起变保守，反而少互相踩踏，总利润可以留下来。</p>
+  <p>代价是估计／交易偏差：信念若与真实分布偏离，保守性带来的「市场势力」未必盖得过偏差损失。作者称这种因共同保守而保留利润的效应为 implicit collusion（无需沟通）。</p>
+
+  <h3>主要结论（已核验事实）</h3>
+  <ul>
+    <li>LASSO 可在模型不确定与稳健交易下作为均衡内生出现；框架可扩展到 elastic-net。</li>
+    <li>LASSO 型策略通过减弱交易者之间的竞争提高总利润，但也会引入交易偏差、损害盈利。</li>
+    <li>大市场中，激进 MSE 策略的总利润趋于被竞争耗尽；LASSO 的保守性可保留正的总利润。</li>
+    <li>（院方报道补充机制语境）与做市库存目标叠加时，inactive zone 可能在阈值阈值后切换成动量式出清，加剧流动性枯竭——属延伸讨论，非摘要核心定理。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>它给「为什么量化都爱正则化」一个微观结构答案：<strong>正则化可以是均衡稳健性，而不只是过拟合补丁</strong>。对董杰的 AI 投资者／合谋线：多代理若共用带死区的学习规则，宽价差或留存利润可能来自共同模糊厌恶，而不是通信合谋。实证上可看：宏观不确定升高时，订单对弱信号的反应是否更接近「阈值死区」。</p>
+  <p class="links">核验与原文：<a href="https://doi.org/10.1287/mnsc.2024.06127">Management Science DOI</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4279679">SSRN 4279679</a> · <a href="https://www.gmu.edu/news/2026-06/machine-learning-teaches-asset-traders-not-sweat-small-stuff">GMU 报道（机制通俗版）</a> · 顶刊履历：Yang <em>JF</em>／<em>RFS</em>；Chen–Wang <em>RFS</em> 2025</p>
+</article>
+
+<footer>
+  去重范围：已检索 /workspace/research/daily-papers/ 全部 theory-2026-08-* 与 theory-2026-09-* 标题与 SSRN／DOI；四篇均未出现。明确排除：Kyle Meets Friedman（08-18）、Learning about Noise 6643254（09-04）、Colliard–Foucault–Lovo（08-18）、Chen–Wang Dynamic Market Making（09-18，不同文）、昨日 Aoyagi／Barucci／Anthropelos 等。事实来源：Guarino 等用作者 PDF + CEPR；Kumar 等用 CAR DOI／TAU 摘要；Huang 等用 MS 摘要／DOI；Chen–Hu–Yang 用 MS 摘要／SSRN／GMU 报道。顶刊履历分别由 Jehiel Econometrica、Langberg JAR 2016、Yang JF／RFS、Chen RFS 2025 满足。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
