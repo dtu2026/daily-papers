@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-24</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-24">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月24日 · 第二十七期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇绕着「信息怎么分、机构怎么改价格、约束交易怎么改冲击、一群人一起披不披露」：柠檬市场里信息结构几乎决定谁拿走全部剩余；市场「宏观结构」把被动投资、央行购债、中介资本放进同一套需求斜率故事；带终端交易目标的受限交易者，线性均衡只能长成两个状态变量；利益冲突的团体披露往往不会像单人那样完全揭开。四篇均有 2025–2026 可核验版本，且未出现在 8/18–9/23 的理论简报。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Kartik–Zhong：信息结构决定买卖双方谁拿走柠檬市场的剩余；买家不必全知</a> — TE 2026</li>
+      <li><a href="#p2">Haddad–Muir：市场宏观结构——谁在场、怎么交易，决定资产价格水平和动态</a> — NBER / ARFE 2025</li>
+      <li><a href="#p3">Kwon–Choi：受限交易者的 Kyle 线性均衡，结构上只靠「剩余需求」两个状态</a> — arXiv 2025</li>
+      <li><a href="#p4">Onuchic–Ramos：团体披露不会像单人那样总是全披露；议事规则改信息含量</a> — CEPR 2025</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. Lemonade from Lemons: Information Design and Adverse Selection</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. Lemonade from Lemons: Information Design and Adverse Selection" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Navin Kartik &amp; Weijie Zhong · Yale / Stanford GSB · 作者页修订 2025-09-08；正式版 <em>Theoretical Economics</em> 21 (2026), 281–324</p>
+  <div class="tags">
+    <span class="tag">信息设计</span>
+    <span class="tag">逆向选择</span>
+    <span class="tag">垄断定价</span>
+    <span class="tag">披露</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Navin Kartik — <em>Econometrica</em> 2007「Signaling Character in Electoral Competition」；<em>American Economic Review</em> 2021「Delegation in Veto Bargaining」（与 Kleiner、Van Weelden）。机制与三角形图依作者 2025-09 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>卖家贴价、买家决定买不买。买卖双方对资产价值的信息可以任意相关。信息结构一变，均衡里谁拿走交易剩余？特别地：买家比卖家更知情、买家完全知情、以及完全不限制信息，这三种情形的可行支付集合各是什么？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>作者固定一个极简市场规则（卖方报价、买方接受／拒绝），然后在所有可能的信息结构上扫一遍均衡支付。直觉是：谁知道什么，决定卖方敢不敢压价、买方敢不敢买，从而切开「可行＋个人理性」三角形。</p>
+  <div class="eq">π_b ≥ 0，π_s ≥ π̲_s，π_b + π_s ≤ 期望交易剩余</div>
+  <p class="eq-note">人话：买方不买就零；卖方至少能拿到「把价贴在最低估值附近」或「干脆不卖」的保底；两人加总不能超过把货交出去的总蛋糕。作者证明：在不限制信息时，这个三角形里的每一点都能被某个信息结构实现（Theorem 1）。</p>
+  <ul>
+    <li>若要求买方对价格不更新信念（例如买方 Blackwell 更知情），卖方保底抬高，可行集缩成更小的三角形；此时「卖方一无所知」已足以扫满该集合（Theorem 2）。</li>
+    <li>若买方完全知情价值，卖方保底再抬到「Akerlof 无披露」利润，可行集再缩一圈（Theorem 3）。</li>
+    <li>只有在「Akerlof 市场要么全成交要么零成交」这类特殊环境，完全知情买家才能扫满所有可行支付；否则买家<strong>故意少知一些</strong>反而能多分蛋糕。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>交易总是有效（买方价值不低于卖方成本）；扩展节讨论负剩余。</li>
+    <li>卖方只能贴价，不能用更复杂机制（作者证明对主结果无损失）。</li>
+    <li>解概念是弱完美贝叶斯；作者另用离散化＋序贯均衡逼近，说明不靠离谱的偏离路径信念。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <p>信息结构几乎「任意切割」买卖双方剩余，但切割刀刃由个人理性与可行性钉死。最大化买方福利，常常要求卖方手里握有买方没有的信息，并且均衡里价格会改买方信念。对隐私争论的含义：消费者并不总是「自己知道更多就更好」——在这篇模型里，垄断者多知道一点，有时反而抬高消费者福利。</p>
+
+  <h3>为什么值得看</h3>
+  <p>把 Bergemann–Brooks–Morris（买方全知）和 Roesler–Szentes（卖方无知）嵌进同一张图，并推广到相互依赖价值／柠檬市场。董杰做披露与知情交易时，可直接当「信息结构改分配」的对照尺：强制全披露、允许选择性披露、平台多知道一点，分别落在图上哪一块。</p>
+  <p class="links">PDF：<a href="https://navinkartik.com/Papers/KZ-Lemonade.pdf">作者页 2025-09</a> · 刊出：<a href="https://doi.org/10.3982/te6451">Theoretical Economics 2026</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. Market Macrostructure: Institutions and Asset Prices</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. Market Macrostructure: Institutions and Asset Prices" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Valentin Haddad &amp; Tyler Muir · UCLA Anderson · NBER Working Paper 33434，2025年1月；拟刊 <em>Annual Review of Financial Economics</em></p>
+  <div class="tags">
+    <span class="tag">宏观结构</span>
+    <span class="tag">被动投资</span>
+    <span class="tag">QE</span>
+    <span class="tag">中介资产定价</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Tyler Muir — <em>Journal of Finance</em> 2021「Do Intermediaries Matter for Aggregate Asset Prices?」（与 Haddad）；<em>Quarterly Journal of Economics</em>「Financial Crises and Risk Premia」。机制依 NBER PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>金融市场上的「大玩家」和制度安排（谁在交易、目标函数是什么、有什么摩擦）怎样改资产价格的<strong>水平和动态</strong>？作者把这条线命名为 market macrostructure，与微观结构（信息不对称、做市）和标准代表性代理人资产定价对照。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>一个简单框架：资产供给固定；机构有需求函数；家庭既可以直接买，也可以通过机构间接持有。关键是家庭对机构持仓的替代不完全——如果家庭能完美对冲机构的每一笔买卖，宏观结构就是面纱。</p>
+  <div class="eq">∂D_H / ∂D_I = −1 ⇒ 机构只是面纱；否则机构冲击会进价格</div>
+  <p class="eq-note">人话：家庭若完全理解并反向对冲机构的买卖，机构持仓变了价格也不动。只要替代不到位（交易成本、注意力、监管），机构风险承受能力一抖，价格就跟抖。</p>
+  <p>作者用三类互补方法填充这个框架：准自然实验（指数纳入、季末监管）、带惰性投资者的均衡模型、以及基于持仓数据的需求系统估计。</p>
+
+  <h3>三个应用切片</h3>
+  <ul>
+    <li><strong>中介与危机：</strong>金融危机相对其他宏观灾难，风险溢价更被压低——指向金融部门健康，而不只是宏观基本面（Muir 等证据线）。</li>
+    <li><strong>被动投资崛起：</strong>主动投资者对被动份额上升的战略反应只能对冲约三分之二的直接效应，市场因此更缺乏弹性（Haddad–Huebner–Loualiche 线）。</li>
+    <li><strong>央行购债：</strong>QE 不只压当期期限溢价；投资者预期「坏时央行会买」会事前抬高长久期债需求，把安全属性写进价格。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>强调低频（月／季／年）价格，而非盘口信息不对称。</li>
+    <li>按机构类型与「活跃度」切分主体，而不是按信念乐观／悲观。</li>
+    <li>数量／持仓数据是识别关键玩家与策略的核心材料。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给董杰一条从微观结构往上走一层的地图：A 股的被动基金膨胀、险资／游资角色、以及「政策托底预期」如何改事前风险溢价，都可以放进「谁是活跃需求、家庭替代完不完整」这一句话。不必当新实证，当组织文献与写引言的坐标系即可。</p>
+  <p class="links">PDF：<a href="https://www.nber.org/system/files/working_papers/w33434/w33434.pdf">NBER w33434</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. Uniqueness and Existence of Linear Equilibrium with a Constrained Trader</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. Uniqueness and Existence of Linear Equilibrium with a Constrained Trader" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Heeyoung Kwon &amp; Jin Hyuk Choi · Rutgers / UNIST · arXiv:2508.10138，2025年8月</p>
+  <div class="tags">
+    <span class="tag">Kyle</span>
+    <span class="tag">交易约束</span>
+    <span class="tag">线性均衡唯一</span>
+    <span class="tag">价格冲击</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Jin Hyuk Choi — <em>Journal of Financial Economics</em> 2019「Information and Trading Targets in a Dynamic Market Equilibrium」（与 Larsen、Seppi）。机制依 arXiv PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>离散时间 Kyle 型市场里，只有一个带随机终端交易目标的受限交易者（必须在最后一期把仓位凑到目标 Ã）。在<strong>全体线性均衡</strong>里，均衡结构是否唯一？这样的线性均衡是否存在？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>受限交易者开头看到目标 Ã，但不能直接看到基本面 v；Ã 与 v 相关，所以他有部分信息。做市商只看总订单流，竞争性定价。交易者必须 θ_N = Ã。</p>
+  <div class="eq">状态只需 q_n = E[Ã − θ_n | 做市商信息]，以及残差 Ã − θ_n − q_n</div>
+  <p class="eq-note">人话：做市商心里有个「他还差多少单」的预期 q；他自己知道的「真正还差多少」减去这个预期，就是第二个状态。作者证明：凡是线性均衡，价格冲击、q 的更新、下单量，都只能写成这两个状态的线性函数——没有别的线性写法（Theorem 3.1）。</p>
+  <p>存在性则靠把均衡条件写成二维边值问题，再利用缩放性质把射击法降到一维，证明解存在（Theorem 3.2）。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>只考虑线性均衡（价格对订单流线性，截距对历史线性）。</li>
+    <li>比 Choi–Larsen–Seppi（2019）少一个知情交易者，只留受限交易者，以便证明存在性。</li>
+    <li>与 Choi–Kwon–Larsen（2023）连续时间模型同构；离散结果暗示连续时间那个结构在线性类里是「唯一候选」。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <p>连续时间论文里看到的 U 型成交、时变 λ，不是某个特殊猜测的产物，而是线性类里结构唯一的对象。存在性则把此前数值／经验含义钉在「真有解」上。</p>
+
+  <h3>为什么值得看</h3>
+  <p>和 9/11 Monteiro–Tourky（单期正态 Kyle 策略唯一）同一「唯一性」家族，但这篇问的是<strong>带仓位目标的动态线性结构</strong>。读 A 股「指数增强／对标 TWAP 必须收盘前补齐」时，可把「剩余目标」和「市场以为你还差多少」拆成两个状态，看冲击如何日内变形。</p>
+  <p class="links">PDF：<a href="https://arxiv.org/pdf/2508.10138">arXiv:2508.10138</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. Disclosure by Groups</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. Disclosure by Groups" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Paula Onuchic &amp; João Ramos · LSE / USC · CEPR Discussion Paper 20057，2025年3月；作者页标注 Econometrica R&amp;R（2026-07 稿）</p>
+  <div class="tags">
+    <span class="tag">团体披露</span>
+    <span class="tag">议事规则</span>
+    <span class="tag">硬信息</span>
+    <span class="tag">组织</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Paula Onuchic — <em>American Economic Review</em> 2023「Signaling and Discrimination in Collaborative Projects」（与 Debraj Ray）。机制依 CEPR 摘要与作者页说明。</div>
+
+  <h3>问了什么</h3>
+  <p>一群利益冲突的发送者，要通过事先定好的议事程序，集体决定「披不披露」关于状态的硬信息。接收者看到的是团体消息。和经典单人披露（Grossman–Milgrom 式全披露）比，均衡还全披露吗？议事规则怎样改信息含量？接收者怎样解读「谁更有权」的成员？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>每人先提披露建议，再按程序（如多数决、加权投票、议程顺序）聚合成团体行动：要么放出可验证信息，要么沉默。关键不是某个人想隐瞒，而是<strong>聚合规则</strong>让「最想披露的人」未必能推动全披。</p>
+  <ul>
+    <li>与单人披露经典结果对照：（序贯）均衡通常<strong>不是</strong>全披露。</li>
+    <li>作者刻画：哪些议事规则改动能提高团体信息含量。</li>
+    <li>接收者对团体消息的解读，对「权力更大」的成员更不友好——人话：你越能左右披不披，市场越怀疑你在捂坏消息。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>披露的是硬信息（真则真，但不能撒谎）；可选择不披。</li>
+    <li>团体成员利益冲突；程序事先给定。</li>
+    <li>接收者是理性贝叶斯，从均衡策略反推。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>公司披露、行业协会口径、监管「吹风会」往往是<strong>一群人</strong>议出来的，不是一个人的 Dye／Grossman 问题。把「董事会／公关／业务条线谁有一票否决」写进披露模型，正好接董杰信息披露线；也和今天 Kartik–Zhong 的「信息结构改剩余」形成对照——那边扫所有信息结构，这边问<strong>组织程序</strong>如何限制可达的披露集。</p>
+  <p class="links">摘要／CEPR：<a href="https://cepr.org/publications/dp20057">DP20057</a> · 作者页：<a href="https://paulaonuchic.com/paula-onuchic-1">Onuchic research</a></p>
+</article>
+
+<footer>
+  避开 8/18–9/23 已写过的篇目（含 Guarino–Jehiel Q-learning 做市、Kumar–Langberg 做空披露、Huang–Schneemeier beta、Chen–Hu–Yang LASSO、Cespa–Vives Opacity、Monteiro–Tourky 单期 Kyle 唯一、Wittwer–Allen、Allmis 社交网络分享、Degryse PFOF 等）。Kartik–Zhong 依作者 2025-09 PDF / TE 2026；Haddad–Muir 依 NBER w33434；Kwon–Choi 依 arXiv:2508.10138；Onuchic–Ramos 依 CEPR DP20057 / 作者页。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
