@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-25</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-25">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月25日 · 第二十八期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇围着「私信怎样一点点渗进价格、披露怎样劝人进场或离场、短视经理怎样用好消息撬动市场学习、会计信息怎样改股东投票的知情激励」：内幕信号分批到达时，公开消息流会跟着跳；把披露做得更清楚，未必能把散户拉进股市；短视反而可能过度披好消息，却在某些参数下改善投资效率；披露精度对股东私人调研是先挤进再挤出，但福利仍单调变好。四篇均有 2025–2026 可核验版本，且未出现在 8/18–9/24 的理论简报。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Robertson：内幕信号分批进场，公开过滤跟着跳；多到极限会内生出连续公开信息流</a> — F&amp;S 2025</li>
+      <li><a href="#p2">Jung–Smith：披露更清晰／更信息，对「怕不确定」的散户参与有对冲效应</a> — 2026-04</li>
+      <li><a href="#p3">Jung：短视经理过度披好消息，但好消息披露能撬动投资者去挖信息</a> — 2025-12</li>
+      <li><a href="#p4">Chen–Pi：会计披露精度让股东私人调研先挤进再挤出；投票准确度仍单调上升</a> — 2026-04</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 内幕信号分批进场：公开过滤跟着跳；多到极限会内生出连续公开信息流</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 内幕信号分批进场：公开过滤跟着跳；多到极限会内生出连续公开信息流" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Scott Robertson · Boston University · <em>Equilibrium with Heterogeneous Information Flows</em> · <em>Finance and Stochastics</em> 29(3), 2025, 791–846；arXiv:2304.01272（公开修订稿）</p>
+  <div class="tags">
+    <span class="tag">不对称信息</span>
+    <span class="tag">噪声理性预期</span>
+    <span class="tag">动态入场</span>
+    <span class="tag">过滤收敛</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Scott Robertson 与 Detemple、Rindisbacher — <em>Econometrica</em> 2020「Dynamic Noisy Rational Expectations Equilibrium with Insider Information」。机制依 arXiv 公开稿与 F&amp;S 2025 刊出记录。注意：与 9/11、9/22 已写的 Anthropelos–Robertson「Strategic Informed Trading」是不同论文。</div>
+
+  <h3>问了什么</h3>
+  <p>经典不对称信息模型里，内幕往往在时刻 0 一次性拿到信号。作者问：如果<strong>多个内幕在不同时间陆续入场</strong>，每人都收到关于终端支付的噪声私信，市场会怎样反应？公开信息流与均衡价格会不会在信号到达时「跳」一下？当信号越来越密时，公开过滤会不会收敛到某种连续的公开信息流？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>资产终端支付是公开可观察因子过程 \(X\) 在终点的取值。第 \(n\) 个内幕在 \(t_n\) 收到 \(G_n = X_1 +\) 噪声。为防全披露，同期有噪声交易。均衡是「部分沟通均衡」：在每个信号时刻，公开市场收到同形态、但更糊的信号 \(H_n\)（私信加噪声交易污染）。</p>
+  <div class="eq">\(H_n = G_n + \frac{1}{\alpha_n} C_n^{-1} Z_n\)</div>
+  <p class="eq-note">人话：\(\alpha_n\) 是该内幕的风险容忍权重，\(C_n\) 是私信精度，\(Z_n\) 是噪声交易。公开看到的是「被噪声稀释后的私信」，所以比内幕自己看到的更糊；正是这份稀释，让价格不会瞬间把 \(G_n\) 说穿。</p>
+  <ul>
+    <li>在两次信号之间，市场完整（可对冲）；在信号到达的那一瞬间，信息跳跃，市场暂时不完整。</li>
+    <li>价格在跳跃之间是扩散，在跳跃点跳一下；交易策略对私信是「静态仓位」——新信息主要靠入场那一刻的持仓变化传给市场。</li>
+    <li>当信号越来越密并按作者给出的尺度缩放时，公开过滤收敛到由 \(X\) 与 \(J_t = X_1 + Y_t\)（\(Y\) 为独立高斯过程）生成的过滤——这正是 Corcuera 等人外生假定的「连续私信流」过滤，但这里是<strong>许多内幕分批入场</strong>内生出来的公开信息。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>CARA 效用 + 高斯噪声；竞争性价格接受者（不是 Kyle 价冲）。</li>
+    <li>因子 \(X\) 为 OU 过程；内幕收到信号前不交易（简化记号；作者讨论若允许提前交易，信息结构不变、价格会变）。</li>
+    <li>噪声交易防止全披露；信号通道相互独立。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>存在部分沟通均衡：每个信号时刻公开收到降质版 \(H_n\)，价格与公开过滤同时跳。</li>
+    <li>有限个信号时，均衡价格对因子与相关公开信号仿射；策略可写成「对照私信 vs 公开信号」的清晰分解。</li>
+    <li>信号加密极限下，公开过滤内生收敛到连续信息流 \(J\)；作者还给出信息漂移过程，使布朗运动在极限过滤下仍是半鞅。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「私信只在 0 时刻」换成「私信像流水线一样进场」，直接回答「新消息刚进来那一刹那，价格为什么会跳、谁先知道」。对董杰做信息披露／微观结构的动态版本很有用：公开信息不是外生公告日历，而是<strong>内幕交易 + 噪声</strong>挤出来的。也可对照已写的 Detemple–Robertson 动态噪声理性预期线——那边是效用一般化，这边是信号到达时间一般化。</p>
+  <p class="links">PDF：<a href="https://arxiv.org/pdf/2304.01272">arXiv:2304.01272</a> · 刊出：<a href="https://doi.org/10.1007/s00780-025-00565-5">Finance and Stochastics 2025</a> · 顶刊履历：Econometrica 2020</p>
+</article>
+
+<article id="p2">
+  <h2>2. 披露更清楚／更信息：对「怕不确定」的散户，进场激励有对冲</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 披露更清楚／更信息：对「怕不确定」的散户，进场激励有对冲" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Kyle Jung &amp; Kevin Smith · NYU Stern / Stanford GSB · <em>Disclosure and Stock Market Participation</em> · 作者稿 2026-04-27</p>
+  <div class="tags">
+    <span class="tag">披露监管</span>
+    <span class="tag">市场参与</span>
+    <span class="tag">模糊厌恶</span>
+    <span class="tag">零售投资者</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Kevin Smith — <em>Journal of Finance</em> 2024「Disclosing to Informed Traders」（与 Banerjee、Marinovic）；<em>JF</em> 2025「Feedback Effects and Systematic Risk Exposures」；<em>RFS</em> 2019「Financial Markets with Trade on Risk and Return」；另有 forthcoming <em>RFS</em>「Climate Risk Disclosure and Risk Sharing…」。机制依 2026-04-27 作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>监管常说：披露标准要让投资者「更有信心」，从而更愿意参与股市。作者问：当不成熟投资者既<strong>厌恶模糊</strong>（搞不清现金流分布），又受<strong>卖空限制</strong>时，把披露做得更信息、或更易懂（更低复杂度），到底会提高还是降低参与？参与上升和福利上升是一回事吗？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>市场上有成熟投资者与不成熟投资者。不成熟者若觉得对分布太糊，可以选择不参与。披露同时拧三颗旋钮：模糊程度、风险溢价、流动性。</p>
+  <ul>
+    <li><strong>模糊渠道：</strong>披露给出具体信息，降低模糊 ⇒ 鼓励参与。</li>
+    <li><strong>风险溢价渠道：</strong>披露也改变预期收益；尤其在市场压力大时，更信息的披露可能压低股权风险溢价 ⇒ 劝退参与。</li>
+    <li><strong>流动性／信念差渠道：</strong>披露改变「成熟 vs 不成熟」估值差距的波动，参与可升可降。</li>
+  </ul>
+  <p>因此出现对冲：把披露<strong>写得更易懂</strong>（降复杂度）通常在「模糊相对风险溢价已经不高」时更能拉高参与；把披露<strong>做得更信息</strong>则往往在相反条件下才拉高参与。参与和福利经常分叉——监管若只盯参与率，可能选错标准。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>不成熟投资者有模糊厌恶 + 卖空约束；成熟投资者理性交易。</li>
+    <li>披露标准同时影响「信息量」与「可读／复杂度」两个维度。</li>
+    <li>作者讨论零售参与、国际投资「本土偏好」、个股投资者构成等应用。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>披露对参与有多条方向相反的渠道，不存在「披露越好、参与一定越高」。</li>
+    <li>更易懂的披露与更信息的披露，对参与的生效条件不同。</li>
+    <li>参与最大化的披露政策，未必最大化投资者福利。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「披露改革 → 散户进场」这条政策口号拆成可对冲的机制，直接服务董杰信息披露线，也和 A 股「投资者适当性／注册制下散户参与」对话。读时可对照 Smith 已写过的「向知情者披露」（JF 2024）——那边是知情交易者如何改变自愿披露；这边是披露如何改变<strong>谁愿意进场</strong>。</p>
+  <p class="links">作者页摘要：<a href="https://kylejaehoonjung.com/research/">Jung research</a> · <a href="https://ksmith142.github.io/">Smith research</a> · 顶刊履历：Smith JF／RFS</p>
+</article>
+
+<article id="p3">
+  <h2>3. 短视经理过度披好消息；但好消息披露能撬动投资者去挖信息</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 短视经理过度披好消息；但好消息披露能撬动投资者去挖信息" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Kyle (Jaehoon) Jung · NYU Stern · <em>Managerial Myopia, Voluntary Disclosure, and Learning from Markets</em> · 本稿 2025-12-01（首稿 2022-01）</p>
+  <div class="tags">
+    <span class="tag">自愿披露</span>
+    <span class="tag">价格反馈</span>
+    <span class="tag">短视</span>
+    <span class="tag">信息获取</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Kyle Jung 与 Bertomeu、Marinovic — 「Moral Hazard and the Value of Information」<strong>Accepted at</strong> <em>Journal of Accounting Research</em>（作者 CV 2026）。机制依 2025-12-01 作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>经理在投项目前会看股价学习。若经理又短视（更在乎短期股价），自愿披露会怎样改投资者的挖信息激励，进而改投资效率？短视一定意味着「少披露、学得少」吗？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>设定是投资反馈模型：经理有关于项目的私信，可选择披露；投资者可付成本挖私有信息并交易；经理再从价格里学，决定投资。</p>
+  <ul>
+    <li><strong>新渠道（相对旧文献）：</strong>若公司披出<strong>好消息</strong>，市场预期公司会加大投资 ⇒ 知情交易者的私有信息更「值钱」（交易利润上升）⇒ 挖信息激励变强。于是自愿披露可以<strong>挤进</strong>信息获取、改善投资效率。</li>
+    <li><strong>叠上短视：</strong>短视经理一般会<strong>过度披好消息</strong>（为抬短期价），从而挤出投资者挖信息、伤害价格信息量。</li>
+    <li><strong>缓解条件：</strong>当经理自己的信息质量低、项目风险大时，上述「好消息撬动挖信息」渠道更强，短视的坏处被部分抵消——战略披露甚至能减轻短视对投资效率的伤害。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>经理目标是短期股价与长期价值的凸组合；短视 = 长期权重更低。</li>
+    <li>投资者私人信息获取内生；价格反馈进入投资决策。</li>
+    <li>披露是关于项目前景的（可验证／硬信息设定下的自愿披或不披）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>价值最大化经理下，披露可通过抬高知情交易利润来挤进信息获取。</li>
+    <li>短视 ⇒ 过度披好消息 ⇒ 通常挤出信息获取、降低投资效率。</li>
+    <li>经理信息弱、项目风险高时，短视的负面被披露的「撬动挖信息」效应缓解。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>旧叙事常说短视导致隐瞒；这篇反过来强调短视导致<strong>过度披露好消息</strong>，并给出何时这种过度披露反而「意外」有利于市场学习。接董杰披露 × 反馈效应线；也可与 9/8 的 Chen–Schneemeier「披露陷阱」对照——那边是反馈太多学得少，这边是短视披太多挤出挖信息，两边都在讲「披露量不是越多越好」。</p>
+  <p class="links">SSRN：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5841983">5841983</a> · 作者页：<a href="https://kylejaehoonjung.com/research/">Jung research</a> · 顶刊履历：Accepted JAR</p>
+</article>
+
+<article id="p4">
+  <h2>4. 会计披露越准，股东私人调研先挤进再挤出；投票准确度仍单调变好</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 会计披露越准，股东私人调研先挤进再挤出；投票准确度仍单调变好" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hui Chen &amp; Shaoting Pi · University of Zurich / Iowa State · <em>Disclosure and Shareholder Voting</em> · 作者稿 2026-04-11</p>
+  <div class="tags">
+    <span class="tag">股东投票</span>
+    <span class="tag">会计披露</span>
+    <span class="tag">信息获取</span>
+    <span class="tag">公司治理</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Hui Chen 与 Schneemeier — <em>The Accounting Review</em> 101(1), 2026「Project Selection, Information Feedback, and Catering to Market Belief」（9/8 简报姐妹篇）。机制依 2026-04-11 作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>公司提案是否该通过，取决于「内部财务状态」与「外部条件」是否匹配。股东先看公开会计披露，再可选花钱做「匹配／不匹配」私人调研，最后简单多数表决。会计披露做得更准，会怎样改变私人调研激励、投票准确度与福利？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>披露精度同时拧两颗旋钮：</p>
+  <ul>
+    <li><strong>决策价值：</strong>披露更清楚 ⇒ 私人「匹配信号」更好用 ⇒ 更想调研（挤进）。</li>
+    <li><strong>关键性（pivotality）：</strong>披露更清楚 ⇒ 投票结果更好预测 ⇒ 单票更难成为关键票 ⇒ 更不想调研（挤出）。</li>
+  </ul>
+  <p>于是均衡私人信息获取对披露精度<strong>单峰</strong>：先升后降；作者给出峰值处的闭式条件。股权越分散，单人越难成关键票，峰值要求的披露精度越高。</p>
+  <p>未获取信息的股东在对称均衡里对赞成／反对各投一半——这不是外加假设，而是关键推理下的内生中立：若未知情者系统性偏赞成，成为关键票本身会泄露信息，使该策略站不住。</p>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>提案价值取决于内部状态与外部条件的对齐；会计披露是关于内部状态的公开信号。</li>
+    <li>股东可付成本获取匹配／不匹配私信；简单多数决。</li>
+    <li>规范视角：董事会或准则制定者选择披露精度以改善集体决策。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>信息获取对披露精度非单调；存在闭式峰值。</li>
+    <li>尽管存在挤出，投票准确度与福利仍随披露精度<strong>单调上升</strong>——因为挤出发生在「多一张私信也几乎改不了结果」的区域，抑制昂贵调研反而是有效的。</li>
+    <li>内部与外部状态相关（提案筛选）时，定性结构保留；先验越偏，越需要更精确披露才能维持分散调研。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把 Condorcet 陪审团叙事接进会计披露：公开信息不是只「告诉你答案」，还会改「你还愿不愿意自己查」。对董杰做披露理论，这是治理场景下的挤进／挤出；和今天 Jung 的价格反馈挤进、Jung–Smith 的参与对冲，构成「披露如何改私人信息生产」的三件套。</p>
+  <p class="links">作者稿 PDF（本地核验 2026-04-11）· AES 2026 议程论文 · 顶刊履历：Chen TAR 2026</p>
+</article>
+
+<footer>
+  避开 8/18–9/24 已写过的篇目（含 Kartik–Zhong Lemonade、Haddad–Muir Macrostructure、Kwon–Choi Constrained Trader、Onuchic–Ramos Groups、Anthropelos–Robertson Strategic Informed Trading、Chen–Schneemeier Disclosure Trap、Luo–Subrahmanyam 气候披露市场质量等）。Robertson 依 arXiv／F&amp;S 2025；Jung–Smith 与 Jung 依作者 PDF；Chen–Pi 依 2026-04-11 作者 PDF。顶刊：Robertson Econometrica 2020；Smith JF／RFS；Jung Accepted JAR；Chen TAR 2026。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
