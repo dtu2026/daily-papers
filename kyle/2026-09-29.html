@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-29</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-29">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月29日 · 第三十期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇围着「钱怎么委托出去、ESG 怎么投票、资产卖柠檬时中介信息科技帮不帮、棕色企业联合研发怎样少补贴」：公募与另类的合约差别，根子在底层资产是否流动／透明；大被动基金把公司 ESG 拧到中间，直投／穿透投票反而更极端；OTD 里「懂行的中介」能抬福利，「瞎买的中介」在逆向选择重时反而伤福利；碳税＋研发补贴下，把够棕的企业协调进合资，能少花纳税人的钱。四篇均有 2025–2026 可核验版本，且未出现在 8/18–9/28 的理论简报。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Berk–DeMarzo：公募看业绩调仓，另类要靠尽调；合约差来自流动性与透明度</a> — 2026-04</li>
+      <li><a href="#p2">Ravina–Persico：大基金求募资规模 → ESG 走中间；穿透投票会更极端</a> — ECGI 2025-04</li>
+      <li><a href="#p3">He–Jiang–Xu：OTD 多一层中介：信号准才抬福利，瞎中介在柠檬重时伤福利</a> — 2026-02</li>
+      <li><a href="#p4">Gustafson–Wang：棕色企业联合做减排研发，协调好就能少补贴</a> — 2026-01</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 公募看业绩调仓，另类要靠尽调；合约差来自流动性与透明度</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 公募看业绩调仓，另类要靠尽调；合约差来自流动性与透明度" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jonathan B. Berk &amp; Peter M. DeMarzo · Stanford / NBER · <em>A Unified Theory of Delegated Capital Management</em> · 作者稿 2026-04-12（FTG Boulder 会议 PDF）</p>
+  <div class="tags">
+    <span class="tag">委托资产管理</span>
+    <span class="tag">公募 vs 另类</span>
+    <span class="tag">信息租金</span>
+    <span class="tag">业绩费／Carry</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Jonathan Berk — <em>Journal of Finance</em> 多篇（含 Berk–Green 2004 共同基金流量业绩经典）；Peter DeMarzo — <em>Econometrica</em>／<em>RFS</em>／<em>JF</em> 多篇企业金融与合约理论。机制依 2026-04-12 FTG PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>Berk–Green（2004）解释了公募：竞争下投资者净 alpha 为零，资金流暴露经理能力。另类（PE／VC／对冲）却常见业绩费、alpha 持续、募资封顶、同一基金不同 LP 费率不同。作者问：在<strong>同样完全竞争</strong>假设下，这些「谜」能不能用底层资产的<strong>流动性与透明度</strong>一把讲清？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>经理能力 \(\alpha\) 未知；投进去的规模 \(q\) 有价格冲击 \(\beta\)。给定信息，最优规模是把「能力预期」对半摊到冲击上：</p>
+  <div class="eq">\(q^*_{t|s} = \hat\alpha_s / (2\beta)\)</div>
+  <p class="eq-note">人话：\(\hat\alpha_s\) 是用当前信息估的能力；\(\beta\) 越大（越难做大），最优仓位越小。期望超额收益大约是 \(\hat\alpha_s/2\)。</p>
+  <ul>
+    <li><strong>公募端（流动、透明）：</strong>业绩很快说话，投资者靠事后流量调仓即可；人人同条款时净 alpha 仍被竞争抹平；标准「按 AUM 收费」合约最优。</li>
+    <li><strong>另类端（不流动、不透明）：</strong>资本要锁很久，事后学太慢／太贵 ⇒ 事前尽调更划算。若所有 LP 条款相同，一人尽调、他人搭便车 ⇒ 谁也不尽调。均衡必须<strong>差别定价</strong>：知情 LP 拿优惠条款并赚正的事后 alpha（补偿尽调成本），不知情 LP 付更高费；募资规模被封顶。</li>
+    <li>有限责任下，最优激励自然长成「门槛＋提成」的 carry（期权型业绩费），而不是线性分成。</li>
+    <li>双边直接签约会留下信息租金、扭曲规模；把不知情资本也拉进<strong>委托募资</strong>，反而能回到一阶最优。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>完全竞争资本市场（正 NPV 机会面前资金供给无限弹性）＋理性预期。</li>
+    <li>另类资产的非流动性／不透明使「事后从业绩推断」变贵，事前尽调成为有效信息技术。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>公募与另类的合约与 alpha 差异，不必假设「另类市场不竞争」；同一竞争范式下，资产属性就够分岔。</li>
+    <li>知情投资者的正事后 alpha 与竞争均衡相容（对标 Grossman–Stiglitz：信息有成本就要留租金）。</li>
+    <li>费率离散、募资封顶、carry＋门槛，都是内生最优，不是「行业习惯」外生硬塞。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「公募零 alpha」与「另类好像有 alpha」放进同一理论。A 股公募／私募／「阳光私募」费率与锁定期差异，可先问底层持仓能不能日频盯、能不能快赎，再谈该不该有业绩提成。</p>
+
+  <p class="links">链接：FTG Boulder 会议 PDF（本地核验 2026-04-12）· 顶刊履历：Berk JF；DeMarzo Econometrica／RFS／JF</p>
+</article>
+
+<article id="p2">
+  <h2>2. 大基金求募资规模 → ESG 走中间；穿透投票会更极端</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 大基金求募资规模 → ESG 走中间；穿透投票会更极端" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Enrichetta Ravina &amp; Nicola Persico · Northwestern · <em>ESG Choice with Polarized Investors</em> · ECGI Finance WP 1051/2025；作者稿 2025-04-03；SSRN 5086547</p>
+  <div class="tags">
+    <span class="tag">ESG／极化</span>
+    <span class="tag">被动基金投票</span>
+    <span class="tag">代理投票</span>
+    <span class="tag">公司决策</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Nicola Persico — <em>Econometrica</em> 2000「Information Acquisition in Auctions」；另有 <em>AER</em>／<em>REStud</em>／<em>QJE</em>。Enrichetta Ravina — <em>Review of Financial Studies</em> 2010「What Do Independent Directors Know?…」（with Sapienza）。机制依 ECGI／作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>个人投资者在 ESG 上高度极化，但真正投票的是 BlackRock／Vanguard 这类大被动基金，公司政策往往「既被左骂不够绿、也被右骂太绿」。作者问：大基金为什么<strong>内生地走中间</strong>？若把投票权交回个人（直投或穿透投票／「政治企业家」），公司 ESG 会不会更极端？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两类投资者：activists（喜欢 ESG）与 skeptics（不喜欢）。大基金要最大化 AUM，客户两边都想要；小基金可以只服务一侧。</p>
+  <ul>
+    <li><strong>大基金主导时（Theorem 1）：</strong>为同时留住两类客户，基金把组合公司的 ESG 拧到<strong>中间</strong>立场，并通过投票／engagement 把公司政策推到该点。</li>
+    <li><strong>穿透投票／个人直投时（Theorem 2）：</strong>中间调解消失，公司政策更反映底层极化；因持股内生于公司 ESG 立场，还可出现<strong>多重自确认均衡</strong>（绿公司吸引绿股东，进一步更绿，等等）。</li>
+    <li>作者还讨论弃权、投资者作为「公民」的外部性，以及小基金「迎合极端」的分工。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>个人偏好极化且可观测地分两类；多数人通过大被动渠道持股，存在一定「黏性」客户。</li>
+    <li>投资者更愿意把钱放进与自己 ESG 偏好对齐的基金；基金能影响组合公司政策。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>现状下政治极化<strong>尚未</strong>充分映射到公司 ESG——大基金的募资激励充当缓冲。</li>
+    <li>「把 ESG 决定权还给个人」并不中性：预期会看到更极端、更分叉的公司政策，以及可能的多重均衡。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 8/20 Banerjee–Prokopev、9/8–9/9 责任投资者／气候披露线对照：那边多谈披露与绿投数量，这篇谈<strong>谁投票</strong>。A 股指数基金／险资／社保在 ESG 议案上的中间立场，以及「个人投资者直连投票」设想，可直接套这个缓冲／极化对照。</p>
+
+  <p class="links">链接：ECGI <a href="https://www.ecgi.global/publications/working-papers/esg-choice-polarized-investors">WP 1051/2025</a> · SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5086547">5086547</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. OTD 多一层中介：信号准才抬福利，瞎中介在柠檬重时伤福利</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. OTD 多一层中介：信号准才抬福利，瞎中介在柠檬重时伤福利" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Zhiguo He, Sheila Jiang &amp; Douglas Xu · Stanford / Florida · <em>Tech-Driven Intermediation in the Originate-to-Distribute Model</em> · 作者稿 2026-02-11（FTG Boulder PDF）</p>
+  <div class="tags">
+    <span class="tag">逆向选择</span>
+    <span class="tag">Originate-to-Distribute</span>
+    <span class="tag">信息科技</span>
+    <span class="tag">中介福利</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Zhiguo He — <em>Journal of Finance</em>／<em>Econometrica</em>／<em>RFS</em> 多篇（信息、中介、银行与公司金融）。机制依 2026-02-11 作者／FTG PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>ABS／CLO 越来越多不是发起人直接卖给投资者，而是经 Apollo／Blackstone 这类中介转手；同时中介大举投金融科技。投资者若怕发起人卖柠檬，为什么更信「也有信息优势的中介」？信息科技（信号精度 \(\alpha\)）什么时候让中介层<strong>抬福利</strong>，什么时候<strong>伤福利</strong>？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>三层：发起人生产高／低质资产（类型私有），中介看到精度为 \(\alpha\) 的质量信号并可买入，无保留成本的风险中性投资者最终接盘。社会想要：只产好资产，并尽量转到投资者手里。</p>
+  <ul>
+    <li><strong>直接交易（无中介）：</strong>柠檬问题＋内生产量 ⇒ 均衡稳定但相对约束最优有生产／配置扭曲（Proposition 2）。</li>
+    <li><strong>科技无关区（\(\alpha\) 太低，Proposition 4）：</strong>中介信号几乎没用；低质发起人可把资产先甩给「瞎」中介再转售 ⇒ 逆向选择可被<strong>放大</strong>。</li>
+    <li><strong>科技相关区（\(\alpha\) 够高，Proposition 5–6）：</strong>高低信号市场出现严格正的售价楔；\(\alpha\) 升改善筛选。</li>
+    <li><strong>福利（Proposition 7）：</strong>不知情中介（科技无关区）在逆向选择重时可<strong>降低</strong>社会福利；完全知情中介（\(\alpha=1\)）则总是改善福利（把交易推近约束最优，但仍难让低质发起人完全停产）。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>发起人与中介都有保留成本；投资者无保留成本、竞争性、看不到类型与中介信号。</li>
+    <li>中介信号精度 \(\alpha\in[0,1]\) 是信息科技；存在定向搜索／信号市场结构。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「多一层中介」本身不保证更好：关键是中介<strong>是否真懂</strong>。</li>
+    <li>金融科技投资与中介化同步上升，在模型里对应 \(\alpha\) 进入「科技相关区」才有稳健福利收益。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>不是经典股市 Kyle，但是同一条「不对称信息＋谁来贴标签」逻辑，直接对应信贷资产证券化与私募信贷。读 A 股／中资美元债 CLO、理财子转手非标时，可问：中介的尽调／模型精度有没有跨过「瞎买伤福利」的门槛。</p>
+
+  <p class="links">链接：FTG Boulder 会议 PDF（本地核验 2026-02-11）· 顶刊履历：He JF／Econometrica／RFS</p>
+</article>
+
+<article id="p4">
+  <h2>4. 棕色企业联合做减排研发，协调好就能少补贴</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 棕色企业联合做减排研发，协调好就能少补贴" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Matthew Gustafson &amp; Zhe Wang · Penn State · <em>Subsidizing Less by Coordinating More: When Brown Firms Collaborate on Green Innovation</em> · 作者稿 2026-01-19（FTG PDF）</p>
+  <div class="tags">
+    <span class="tag">气候政策</span>
+    <span class="tag">研发合资</span>
+    <span class="tag">绿色溢价</span>
+    <span class="tag">补贴设计</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Matthew Gustafson — <em>Journal of Finance</em> 2021「Weathering Cash Flow Shocks」；另有 <em>RFS</em> 2023 海平面上升与市政债等。机制依 2026-01-19 FTG／作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>减排有污染外部性，减排技术有知识外溢——标准药方是碳税＋研发补贴。财政紧时，能否让高排放（「棕色」）企业组成研发合资（JV），靠市场力量（含 greenium）多内化一点外溢，从而<strong>少花补贴</strong>仍达一阶最优？什么样的 JV 最省补贴？分散形成会不会自动凑齐？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>三阶段：政府宣布碳税与补贴 → JV 资助一篮子减排项目（有突破则全体排放强度下降）→ 产品市场竞争，利润受碳税与资本成本（随「棕色度」与 greenium \(\beta\)）影响。</p>
+  <div class="eq">补贴率 \(S = 1 - \dfrac{\text{JV 私人研发收益}}{\text{社会研发收益}}\)</div>
+  <p class="eq-note">人话：外溢越大，私人收益相对社会收益越小，政府要报销的比例越高。把 JV 做得「更有私人收益」，就能把 \(S\) 压下去。</p>
+  <ul>
+    <li>企业私人收益 \(v(e,\beta)\) 随棕色度 \(e\) 与 greenium \(\beta\) 上升（Lemma 2）：越脏、绿溢价越高，减排越「划算」。</li>
+    <li>故：JV 更棕、greenium 更高、或（在私人总收益为正时）JV 更大 ⇒ 一阶最优所需补贴更低（Corollary 1–4）。</li>
+    <li><strong>最优 JV（Proposition 2）：</strong>只纳入 \(v(e,\beta)\ge 0\) 的足够棕色企业；不是「越大越好、谁都拉进来」。</li>
+    <li><strong>分散形成失败（Proposition 3）：</strong>搭便车严重时，市场自己凑不出这个 JV。</li>
+    <li><strong>政府协调（Proposition 4）：</strong>让每个企业「对 JV 是否成立至关重要」，并按私人创新激励分摊未报销成本，可实施上述最优结构。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>产品市场仍竞争；只在研发上合作（符合多数法域对研发合资的反垄断口径）。</li>
+    <li>突破的知识外溢惠及全体企业；资本成本含随棕色度上升的 greenium。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「少补贴」的前提是「多协调」：JV 组成＋greenium 与补贴是互补工具。</li>
+    <li>反垄断／产业政策含义：气候动机的棕色企业合作，若结构对了，可以是省财政的一阶工具，而不是天然的合谋嫌疑。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 Banerjee 气候披露线、Gupta–Starmans 动态绿披、责任投资者反馈对照：那些管披露与持股，这篇管<strong>棕色企业研发合作＋补贴</strong>。A 股煤电／钢铁／化工联合攻关碳捕集、绿债定价（greenium）时，可问：合资名单够不够「棕」、有没有免费搭便车的绿企业被塞进来。</p>
+
+  <p class="links">链接：FTG 会议 PDF（本地核验 2026-01-19）· 顶刊履历：Gustafson JF 2021／RFS 2023</p>
+</article>
+
+<footer>
+  避开 8/18–9/28 已写过的篇目（含 Aoyagi Crowding-In、Ali–Kleiner–Zhang、Lee–Wu、Corona–Huang–Kim、Banerjee 合谋／气候／Q-learner、Huang–Piotroski–Xie Loss Aversion、Khorrami–Thereze、Pavan–Sundaresan–Vives、Foucault Trade-Off、Lou–Rahi、Mandatory Disclosure Oligopolistic MM、Kaniel Polarizing Green Disclosure 因本期未能核到可用全文 PDF 暂未收录等）。Berk–DeMarzo 依 FTG 2026-04-12 PDF；Ravina–Persico 依 ECGI WP 1051／2025-04 PDF；He–Jiang–Xu 依 2026-02-11 PDF；Gustafson–Wang 依 2026-01-19 PDF。顶刊：Berk JF；Persico Econometrica；He JF／Econometrica；Gustafson JF。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
