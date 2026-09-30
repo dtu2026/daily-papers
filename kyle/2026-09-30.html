@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-09-30</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-09-30">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年9月30日 · 第三十一期 · 4 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇围着「基金变多会不会把股东监督撕碎、公司为啥发半流动代币、场外对冲要不要进中央清算、员工未归属股权怎么反过来管经理」：基金产品化／穿透投票不一定必然削弱治理——要看是供给便宜还是需求极化在驱动；非银行企业发「只能兑自家服务」的代币，靠流动性溢价融资，且溢价对不流动成本可以非单调；清算决策有战略互补，多重均衡并存，对未清算合约加保证金有时反而把人推出清算、抬高系统风险；员工拿未归属股权后，看到经理偷懒会走人，这条「工人监督」通道能在稀释经理股份的同时把努力拧紧。四篇均有 2025–2026 可核验 PDF，且未出现在 8/18–9/29 的理论简报。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Malenko–Malenko–Tsoy：基金增殖未必伤治理；偏好强时经理会用穿透投票抢客户</a> — ECGI 2026-03</li>
+      <li><a href="#p2">Luo–Lyandres–Xiao：半流动代币靠流动性溢价融资；溢价对不流动成本可先升后降</a> — FTG 2026</li>
+      <li><a href="#p3">Sannino–Zeng：清算越多 OTC 越安全→私人清算激励反而钝；保证金或伤清算</a> — 2026-03</li>
+      <li><a href="#p4">Zhang–Zhong：员工未归属股权＝工人监督通道；稀释经理股份仍可抬努力</a> — 2026-07</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 基金增殖未必伤治理；偏好强时经理会用穿透投票抢客户</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 基金增殖未必伤治理；偏好强时经理会用穿透投票抢客户" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Andrey Malenko, Nadya Malenko &amp; Anton Tsoy · Boston College / Toronto · <em>Fragmentation of Shareholder Power</em>（曾用题 <em>Fund Proliferation, Decentralization, and Shareholder Power</em>）· ECGI Finance WP 1129/2026；作者稿 2026-03-08</p>
+  <div class="tags">
+    <span class="tag">资产管理</span>
+    <span class="tag">基金增殖</span>
+    <span class="tag">穿透投票</span>
+    <span class="tag">股东监督</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Nadya Malenko — <em>Journal of Finance</em> 多篇（含 2019「Proxy Advisory Firms…」、2024「Trading and Shareholder Democracy」、2025「Creating Controversy in Proxy Voting Advice」、2026「The Voting Premium」）；<em>RFS</em> forthcoming「Voting Choice」（与 Andrey）；另有 <em>AER</em> 2016。Andrey Malenko — 同系列 JF／JFE／RFS。机制依 ECGI／作者 2026-03 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>机构持股曾让股东更集中、经理更听机构的话；但近年来基金产品爆炸（主题／ESG／风格 ETF）与托管去中心化（BlackRock 穿透投票、Vanguard 把投票权分给基金经理、「Big Three」拆 steward 团队）又把股东权力撕散。作者问：这些趋势<strong>一定</strong>削弱对管理层的监督吗？什么时候不会？穿透投票这类「把控制权还给终端投资者」的竞争边界，会不会被基金经理滥用？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>在 Salop 圆上：股票特征与投资者偏好都是圆上的点；基金选「投资授权」位置、收管理费，然后按持股集中度与费率激励去监督公司。监督激励大致随「持仓有多集中」和「费率有多高（经理能分走多少增值）」一起涨。</p>
+  <div class="eq">监督强度 ↑ ← 持股更集中 × 费率更高（经理分成更大）</div>
+  <p class="eq-note">人话：块头大的股东更愿意花钱盯经理；但若竞争把费率打到零，就算持股大，经理也懒得盯——因为盯出来的增值几乎全给客户。</p>
+  <ul>
+    <li><strong>供给端驱动的增殖</strong>（开新产品更便宜：技术／监管放松）：更多基金进入 → 所有权更碎＋费率被压低 → 监督变弱。</li>
+    <li><strong>需求端驱动的增殖</strong>（投资者更在乎特定主题／价值观）：专业化基金能收更高费，且组合更集中以贴合偏好 → 监督激励可以<strong>变强</strong>（尤其新产品由在位基金家族推出时）。</li>
+    <li><strong>新的竞争维度：</strong>偏好很强时，资管会用「去中心化 stewardship／穿透投票」抢客户，却不内化随之而来的治理成本——此时碎片化可能有害，且危害取决于是「终端投资者自己投」还是「授权给专项基金经理」。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>投资者既关心财务回报（扣费后），也可能对股票特征有非金钱／信念异质偏好。</li>
+    <li>基金经理的监督激励取决于费率分成与组合集中度；所有权越分散，监督越贵。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「基金变多＝治理变差」不是必然：要分清增殖是供给便宜还是需求极化。</li>
+    <li>强偏好下，穿透投票可能成为抢客工具；治理效果取决于去中心化<strong>怎么做</strong>。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 9/29 Ravina–Persico「大基金走中间／穿透投票更极端」同一条政策线：那边谈 ESG 立场极化，这篇谈<strong>监督激励与所有权结构</strong>。A 股指数增强／主题 ETF 井喷、以及「把投票权还给持有人」的讨论，可先问驱动是费率战还是偏好分化，再谈会不会把主动监督拆散。</p>
+
+  <p class="links">链接：ECGI <a href="https://www.ecgi.global/sites/default/files/2026-03/fragmentation-of-shareholder-power.pdf">WP 1129/2026 PDF</a> · SSRN <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6083066">6083066</a> · 顶刊履历：Nadya／Andrey Malenko JF／RFS／AER</p>
+</article>
+
+<article id="p2">
+  <h2>2. 半流动代币靠流动性溢价融资；溢价对不流动成本可先升后降</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 半流动代币靠流动性溢价融资；溢价对不流动成本可先升后降" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Dan Luo, Evgeny Lyandres &amp; Yizhou Xiao · CUHK / Tel Aviv–Monash · <em>Financing via Partially Liquid Tokens</em> · FTG Boulder 会议 PDF（S26.Y.Xiao）；作者稿（会议版）</p>
+  <div class="tags">
+    <span class="tag">代币／稳定币</span>
+    <span class="tag">流动性溢价</span>
+    <span class="tag">Diamond–Dybvig</span>
+    <span class="tag">企业融资</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Evgeny Lyandres — <em>Journal of Finance</em> 2012「Real Options, Volatility, and Stock Returns」；<em>RFS</em> 2008「The New Issues Puzzle…」、2019「Owners’ portfolio diversification…」；<em>JFE</em> 2011／2019 等。机制依 FTG Boulder PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>航司里程、亚马逊积分、平台「生态稳定币」都是<strong>半流动</strong>：能兑发行方自己的服务，却不能当万能现金。非银行企业为什么要发这种代币来融资，而不是只靠银行／存款？代币相对「全流动债权」的流动性溢价从哪来？什么时候该让代币可交易、甚至 1:1 兑回现金（像稳定币）？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>把 Diamond–Dybvig 扩成「两种消费」：自家服务＋其他商品。消费者事先不知道会不会需要哪一种，事后借钱贵。企业预售「只能兑自家服务」的代币；消费者愿为「未来不用贵借」付溢价——这就是融资来源。</p>
+  <div class="eq">代币价格 ≈ 服务期望价值 ＋ 流动性溢价（省下的事后借贷成本）</div>
+  <p class="eq-note">人话：你提前付钱锁住「以后在这个平台买东西不用再去借贵钱」的权利；企业今天就能用这笔钱。但代币不能买外面的东西，所以它和银行存款不是完美替代——这种「半流动」决定了溢价形状。</p>
+  <ul>
+    <li>流动性溢价受「代币 ↔ 全流动债权」不完全替代驱动，对不流动成本可以<strong>非单调</strong>（不是越贵借越一定溢价越高）。</li>
+    <li>企业更想发代币的情形：服务本身价值高但需求不频繁；或对本服务的需求与其他消费需求<strong>正相关</strong>（更怕同时两头缺钱）。</li>
+    <li>设计：在一定条件下企业会给发行／赎回更多灵活性，甚至让代币可交易；对可交易代币，还可能允许 1:1 兑现金，对应现实中的稳定币安排。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>消费者流动性需求不确定，事后借贷有摩擦成本；银行类全流动债权已存在。</li>
+    <li>代币只能兑发行方服务（或部分可交易／可兑现金，取决于设计选择）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>非银行企业可用半流动代币与银行存款并存地创造「定向流动性」并融资。</li>
+    <li>代币设计（可否交易、可否 1:1 兑现）是内生的，不是外生「加密时髦」。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>不是经典 Kyle 知情交易，但是同一条「流动性／不对称摩擦如何定价」逻辑，直接对应平台币、商旅积分与企业稳定币。读 A 股互联网／航旅预售卡券、或中资机构谈「生态稳定币」时，可问：需求相关结构支不支持流动性溢价，以及该不该打开二级转让／兑现。</p>
+
+  <p class="links">链接：FTG Boulder <a href="https://www.financetheory.org/storage/pdf/papers/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026/S26.Y.Xiao.pdf">S26.Y.Xiao.pdf</a> · 顶刊履历：Lyandres JF／RFS／JFE</p>
+</article>
+
+<article id="p3">
+  <h2>3. 清算越多 OTC 越安全→私人清算激励反而钝；保证金或伤清算</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 清算越多 OTC 越安全→私人清算激励反而钝；保证金或伤清算" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Francesco Sannino &amp; Jing Zeng · Frankfurt School / Bonn · <em>Collateral, Contagion and Clearing</em> · 作者稿 2026-03-08（FTG Boulder PDF）</p>
+  <div class="tags">
+    <span class="tag">中央清算</span>
+    <span class="tag">传染</span>
+    <span class="tag">保证金</span>
+    <span class="tag">OTC 衍生品</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Francesco Sannino — <em>Journal of Finance</em> 2024「The Equilibrium Size and Value-Added of Venture Capital」（79(2)）；另有 <em>JFE</em> 2026「Committing to Trade: A Theory of Intermediation」。机制依 2026-03-08 FTG PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>场外衍生品里，一对机构对冲后暴露在对手方违约风险下；违约还能沿着网络传染。中央对手方（CCP）把合约更新、把抵押品在成员间共用，理论上「人多力量大」。但危机后许多品种的清算率却<strong>平台期</strong>——私人激励不足。作者问：清算决策如何与合约条款、传染、CCP 抵押需求相互反馈？对未清算合约加最低保证金，会不会反而把人推出清算、抬高系统风险？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>\(N\) 对「买方–卖方」机构围成圆；坏状态下随机有一个卖方外生违约，违约还可能以概率 \(\rho\) 传到下一对。每对同时选：合约转移＋保证金，以及<strong>是否进 CCP</strong>。CCP 收够在各状态下偿付的最低抵押，违约时动用违约基金并在成员间均摊。</p>
+  <div class="eq">清算的私人价值 = 对手方保护 − 抵押成本 − 分摊 CCP 损失</div>
+  <p class="eq-note">人话：进 CCP 像买「共用保险」：人越多，每人摊的抵押越少（规模效应），但 OTC 残段也因别人已清算而更安全——你自己再进 CCP 的边际好处变小。两股力量对着干，就容易出现「大家都不清」和「大家都清」两套均衡。</p>
+  <ul>
+    <li><strong>无跨对传染基准：</strong>在一定条件下清算价值随 CCP 规模上升 ⇒ 至多两个均衡（全清／全不清）；全清帕累托优于全不清。此时对 OTC 加最低保证金会推高清算。</li>
+    <li><strong>有传染时：</strong>均衡呈「若干 OTC 链＋末端一个清算对」的重复结构；参与清算越少 ⇒ OTC 链越长 ⇒ 同时违约上限更高（系统风险更大）。</li>
+    <li><strong>政策悖论：</strong>OTC 最低保证金让靠近清算成员的对子只感到成本，却让深陷 OTC 链的对子因传染下降而<strong>更不想清</strong>；可构造例子：相对放任，加保证金后清算更少、系统风险更高。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>机构风险中性；存在最低可质押收入约束，违约摧毁全部资产（含不可质押部分）。</li>
+    <li>传染沿环形网络外生传递；CCP 按「每状态偿付」收最低抵押并均摊损失。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>清算决策有战略互补／协调效应，可解释同一品种跨司法辖区清算率差异。</li>
+    <li>「给 OTC 加保证金 ⇒ 更安全且更多人去清算」不必成立；在传染网络里可能适得其反。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和 Kuong–Maurin「做市商当记录保管人」、后危机 CCP 设计文献对照：这篇把<strong>自愿清算＋内生系统风险</strong>绑在一起。读利率／信用衍生品清算率停滞、或「未清算保证金」监管时，可问：政策是在推人进 CCP，还是在 OTC 段把风险「关小」从而削弱进场激励。</p>
+
+  <p class="links">链接：FTG Boulder <a href="https://www.financetheory.org/storage/pdf/papers/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026/S26.F.Sannino.pdf">S26.F.Sannino.pdf</a> · 作者页摘要 · 顶刊履历：Sannino JF 2024／JFE 2026</p>
+</article>
+
+<article id="p4">
+  <h2>4. 员工未归属股权＝工人监督通道；稀释经理股份仍可抬努力</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 员工未归属股权＝工人监督通道；稀释经理股份仍可抬努力" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Anthony Lee Zhang &amp; Hongda Zhong · Chicago Booth / UT Dallas · <em>Corporate Governance by Workers</em> · 作者稿 2026-07（FTG Boulder／作者页 PDF）</p>
+  <div class="tags">
+    <span class="tag">公司治理</span>
+    <span class="tag">员工股权</span>
+    <span class="tag">道德风险</span>
+    <span class="tag">资本结构</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Hongda Zhong — <em>Journal of Finance</em> 2021「A Dynamic Model of Optimal Creditor Dispersion」；<em>RFS</em> 多篇（含债务期限结构等）。Anthony Lee Zhang — <em>JFE</em> 多篇（含 2022「Competition and Manipulation in Derivative Contract Markets」等）。机制依 2026-07 作者 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>一线员工人多、常比外部投资者更早看到经理在不在干事。给员工一大片未归属股权（ESOP／期权／跟业绩挂钩的奖金），传统故事是「激励员工努力」——但人太多时直接激励很弱。作者问：未归属股权能不能通过「员工看到偷懒就离职、砸公司价值」这条通道，反过来<strong>给经理加码努力激励</strong>？即便稀释了经理持股？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>在 Holmström–Tirole 式融资＋道德风险骨架上加工人：经理选努力；工人看到努力后再决定干不干；工人报酬可以是固定工资＋未归属股权。</p>
+  <div class="eq">经理努力激励 ↑ ← 偷懒 ⇒ 工人离职 ⇒ 公司价值↓ ⇒ 经理自己的股权也缩水</div>
+  <p class="eq-note">人话：员工手里捏着还没归属的股票；若发现老板摆烂，股票不值钱，外面机会更好就走。老板知道「摆烂会赶人跑、公司更烂」，就算股份被员工稀释了一点，仍可能更不敢摆烂——这就是工人监督通道。</p>
+  <ul>
+    <li><strong>固定工资基准：</strong>经理激励问题与工人定价问题分开；给投资者股权换融资会削弱经理努力。</li>
+    <li><strong>未归属股权打开通道后：</strong>经理努力影响留人；留人损失越大，努力激励越强。于是「给工人股权稀释经理」可以<strong>净提高</strong>努力。</li>
+    <li>工人薪酬 markdown（压低工资）与经理激励挂钩：工人被压得越狠，离职对公司越疼，经理越怕被看到偷懒。</li>
+    <li>模型还连到劳动议价力量、资本结构与经理业绩的可检验预测。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>工人能观察到经理努力，并据此决定是否接受雇用／留下。</li>
+    <li>工人报酬含与公司价值挂钩的未归属部分；经理不是产出的完全剩余索取人。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>广泛未归属员工股权可以是治理工具，而不只是「激励太多人努力」的笨办法。</li>
+    <li>工人监督把薪酬 markdown、融资结构与经理努力拧在同一条链上。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和股东积极主义／披露反馈线对照：那些靠<strong>外部股东或价格</strong>管经理，这篇靠<strong>内部知情工人的退出威胁</strong>。A 股高新／互联网大面积期权与「核心员工持股」时，可问：归属期与离职成本有没有真的让「摆烂会被自己人用脚投票」变得可信。</p>
+
+  <p class="links">链接：作者页 <a href="https://anthonyleezhang.github.io/pdfs/workermonitoring.pdf">workermonitoring.pdf</a> · FTG Boulder 日程 · 顶刊履历：Zhong JF／RFS；Zhang JFE</p>
+</article>
+
+<footer>
+  避开 8/18–9/29 已写过的篇目（含 Berk–DeMarzo、Ravina–Persico、He–Jiang–Xu、Gustafson–Wang、Aoyagi Crowding-In、Ali–Kleiner–Zhang、Lee–Wu、Corona–Huang–Kim、Kartik–Zhong、Haddad–Muir、Khorrami–Thereze、Kuong–Maurin Dealers、Mandatory Disclosure Oligopolistic MM、Bank Opacity、Blonien–Ober《Is 24/7 Trading Better?》因作者尚无名单内顶刊发表暂未收录、Duffie–Wang Smart Contracting 因 NBER／SSRN PDF 本机拉取被拒暂未收录等）。Malenko 等依 ECGI 2026-03 PDF；Luo–Lyandres–Xiao 依 FTG S26.Y.Xiao.pdf；Sannino–Zeng 依 FTG S26.F.Sannino.pdf；Zhang–Zhong 依作者 2026-07 PDF。顶刊：Malenko JF／RFS／AER；Lyandres JF／RFS／JFE；Sannino JF 2024；Zhong JF／RFS。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
