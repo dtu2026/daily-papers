@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-01</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-01">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月1日 · 第三十二期 · 5 篇 2025–2026 理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天五篇围着「怎么借、怎么筛、怎么一次谈成、GP 怎么卖给自己、冲击资本怎么撬动全行业」：抵押品怕被查时，债务＋信用链条用「概率所有权」把检查激励冲淡，反而抬融资能力；中介用第三方资金把「筛不筛」和「分多少钱」拆开，企业融资更便宜，但动态逆向选择让筛选整体过松；网络里双边议价用智能合约「全亮或全灭」可消 holdup，立刻谈成有效且均分增益的合同；PE 延续基金（CV）同时有「烂资产贵卖」和「好资产贱卖」两种摩擦，合投与门槛利率哪头拧，决定谁吃亏；冲击投资者不必人人补贴——给一小撮「关键质量」让步合同，就能撬开其余企业的竞争性融资。五篇均有可核验 PDF，且未出现在 8/18–9/30 的理论简报全文。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Gorton–Li–Ordoñez：债务与信用链用「概率所有权」藏信息，抬融资能力</a> — 2026-06</li>
+      <li><a href="#p2">Axelson–Makarov：第三方资金让筛选更松、企业更便宜；限制杠杆可提福利</a> — FTG 2026-03</li>
+      <li><a href="#p3">Duffie–Wang：智能合约「全亮或全灭」消 holdup；网络立刻谈成有效合同</a> — FTG／NBER 2026</li>
+      <li><a href="#p4">Ivashina–Mayer–Phalippou：延续基金既怕劣质高卖也怕优质贱卖</a> — 2026-02</li>
+      <li><a href="#p5">Hoffmann–Vladimirov：冲击资本只补贴关键质量，撬开全行业协调</a> — FTG 2026-02</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 债务与信用链用「概率所有权」藏信息，抬融资能力</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 债务与信用链用「概率所有权」藏信息，抬融资能力" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Gary Gorton, Ye Li &amp; Guillermo Ordoñez · Yale / Washington / Penn · <em>Information-Concealing Credit Architecture</em> · 作者稿 2026-06-09（FTG Boulder；亦见 NBER WP 33658）</p>
+  <div class="tags">
+    <span class="tag">信用结构</span>
+    <span class="tag">信息获取</span>
+    <span class="tag">债务优先</span>
+    <span class="tag">中介链条</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Gary Gorton — <em>Journal of Finance</em> 1990「Financial Intermediaries and Liquidity Creation」、1995／1997 多篇；<em>RFS</em> 2000「The Design of Bank Loan Contracts」；<em>JFE</em> 2012「Securitized Banking and the Run on Repo」等。Guillermo Ordoñez — <em>AER</em>／<em>JPE</em>／<em>REStud</em> 等宏观／金融理论发表。机制依作者 2026-06-09 PDF（yeli-macrofinance.com）。</div>
+
+  <h3>问了什么</h3>
+  <p>抵押品价值不确定时，出资人忍不住去「开箱检查」。检查成本最终由资产所有者承担，融资额度反而变小。作者问：合同形态与中介链条，能不能<strong>故意削弱检查激励</strong>，让信息敏感度下降、融资能力上升？为什么现实里信用链条看起来「过度复杂」？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>关键不是「谁更懂」，而是「谁最终有多大概率拿到这件抵押品」。股权持有人一直暴露在资产不确定性里，检查诱惑强；债权人只有借款人违约才接管抵押品，检查激励更弱——于是出现债务优先于股权的融资排序（作者称此 pecking order 本身不是主要新意，而是铺垫）。</p>
+  <div class="eq">融资额度 ↑ ← 检查激励 ↓ ←「最终拥有抵押品」的概率被稀释</div>
+  <p class="eq-note">人话：你越不太可能真拿到那栋楼／那笔现金流，就越懒得花钱去鉴定它值不值。债务让「拿到」变成违约才发生；再插一层中介，终端出资人的概率所有权更稀，检查更不划算，信息敏感约束放松，能借更多。</p>
+  <ul>
+    <li><strong>单层中介：</strong>中间人借给终端借款人，再拿这笔债权去向终端出资人融资。违约路径要「穿过」中间人，终端出资人检查端抵押品的激励弱于直接放贷。</li>
+    <li><strong>信用链：</strong>把异质信息成本、资产相关性的中介按序串起来，可在去中心化议价里形成「最优复杂度」——看起来多余的环节，功能是系统性压低检查。</li>
+    <li>与 Myers–Majluf 不同：那边信息不对称环境外生；这里投资者<strong>是否生产信息是内生的</strong>，架构在塑造信息环境。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>借款人与出资人对抵押品价值对称无知；检查有成本，且成本最终削弱融资容量。</li>
+    <li>债务赋予「仅违约时」的概率所有权；中介可再稀释该概率。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>债务支持的信息不敏感融资大于股权；中介／信用链可进一步抬升融资能力。</li>
+    <li>看似过度复杂的金融架构，可在分权均衡中作为「藏信息、扩信贷」的最优设计出现。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>和「透明度越高越好」的监管直觉对着干：有时<strong>故意让人不想查</strong>才是抵押品的最大用途。对照 A 股／银行间质押式回购、多层资管嵌套——问嵌套是在藏风险，还是在用概率所有权换额度。</p>
+
+  <p class="links">链接：作者 PDF <a href="https://yeli-macrofinance.com/info_concealing_chain.pdf">info_concealing_chain.pdf</a> · <a href="https://www.financetheory.org/papers/information-concealing-credit-architecture">FTG 页</a> · <a href="https://www.nber.org/papers/w33658">NBER w33658</a> · 顶刊履历：Gorton JF／RFS／JFE；Ordoñez AER／JPE 等</p>
+</article>
+
+<article id="p2">
+  <h2>2. 第三方资金让筛选更松、企业更便宜；限制杠杆可提福利</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 第三方资金让筛选更松、企业更便宜；限制杠杆可提福利" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ulf Axelson &amp; Igor Makarov · LSE · <em>Leveraging to Lend: A Theory of Lax Credit</em> · 2026-03-08（FTG Boulder S26）</p>
+  <div class="tags">
+    <span class="tag">中介融资</span>
+    <span class="tag">第三方资金</span>
+    <span class="tag">筛选</span>
+    <span class="tag">动态逆向选择</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Ulf Axelson — <em>Journal of Finance</em> 2007「Security Design with Investor Private Information」、2009「Why Are Buyouts Levered?」、2013「Borrow Cheap, Buy High?」、2023「Informational Black Holes in Financial Markets」；<em>RFS</em> 2009「Liquidity and Manipulation of Executive Compensation Schemes」；<em>JFE</em> 2026「Sequential Credit Markets」。机制依 FTG Boulder <code>S26.I.Makarov.pdf</code>。</div>
+
+  <h3>问了什么</h3>
+  <p>银团、PE、风投常把「自己的钱」和「按单募集的第三方资金」混在一起用。作者问：第三方资金到底在干什么？它是让竞争更狠、企业融资更便宜，还是让筛选整体变松、坏项目也能过？限制中介杠杆会不会反而提高社会总福利？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>创业者按序拜访知情投资人；拜访时长可观测（像征信／口碑）。合同写两样东西：知情方自留份额上的回报率 <em>r<sub>I</sub></em>，以及交给不知情市场的融资比例 <em>δ</em>。</p>
+  <div class="eq">筛不筛 ← 由 r_I 定　｜　钱怎么分 ← 由 δ 定　（第三方资金把两件事拆开）</div>
+  <p class="eq-note">人话：没有第三方时，利率既管「过不过线」又管「投资人分多少」，二者拧在一起，投资人租金很难被竞争打掉。有了第三方，知情方可以先承诺用外面的钱摊薄自己的信息租金，却不必为了抢单去改筛选标准——竞争变狠，企业综合资本成本下降。</p>
+  <ul>
+    <li><strong>好处：</strong>投资人数量增多时，有第三方则租金可被竞争掉；无第三方则租金仍远离零。</li>
+    <li><strong>坏处（第二条主结果）：</strong>每一轮双边谈判虽最大化本轮剩余，但企业家可与当前投资人私下改合同；后面投资人看不到真合同，只按均衡信念更新。企业家<strong>不内化</strong>「本轮放宽筛选 → 后面逆向选择更重」，于是整体筛选过松、坏项目过度融资。</li>
+    <li>企业家私人福利因第三方上升，但社会总剩余更低；限制第三方融资可把阶段筛选拧紧，缓解动态外部性，提高福利。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>去中心化、按序拜访的融资；第三方资金在观察信号<strong>之前</strong>承诺（事后卖贷会因无交易而失败）。</li>
+    <li>不假设第三方资金「天生更便宜」——相对成本由竞争与信息内生决定。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>第三方资金＝分离筛选与分成的工具 → 强化竞争、降低企业融资成本。</li>
+    <li>同一机制放大动态逆向选择 → 筛选过松；限制第三方杠杆可以是福利改进的监管。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把危机前「音乐不停就要跳舞」（Chuck Prince）写成模型：能撬第三方的中介抢走单，其他机构被迫跟进。对照 A 股券商跟投、银行银团分销、私募基金「GP＋LP 跟投」——便宜融资与过松尽调是不是同一枚硬币的两面。</p>
+
+  <p class="links">链接：FTG PDF <a href="https://www.financetheory.org/storage/pdf/papers/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026/S26.I.Makarov.pdf">S26.I.Makarov.pdf</a> · <a href="https://www.financetheory.org/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026">Boulder 日程</a> · 顶刊履历：Axelson JF／RFS／JFE</p>
+</article>
+
+<article id="p3">
+  <h2>3. 智能合约「全亮或全灭」消 holdup；网络立刻谈成有效合同</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 智能合约「全亮或全灭」消 holdup；网络立刻谈成有效合同" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Darrell Duffie &amp; Chaojun Wang · Stanford / Wharton · <em>Smart Contracting in Network Markets</em> · 2026-03-08（FTG Boulder；NBER WP 35678）</p>
+  <div class="tags">
+    <span class="tag">智能合约</span>
+    <span class="tag">网络议价</span>
+    <span class="tag">Holdup</span>
+    <span class="tag">OTC／银团</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Darrell Duffie — <em>Econometrica</em>（含 OTC 市场奠基工作）、<em>Journal of Finance</em>／<em>RFS</em> 大量发表（违约期限结构、OTC 估值、银行融资风险等）。机制依 FTG Boulder <code>S26.C.Wang.pdf</code>（NBER PDF 本机拉取曾被拒，FTG 稿可核验）。</div>
+
+  <h3>问了什么</h3>
+  <p>场外做市、银团贷款、多档 CLO、需要第三方融资的收购、询价建档——都是「一对多」网络里双边谈条款。先和 A 谈成，B 就拿捏你；先和 B 谈成，A 又拿捏你。作者问：若用智能合约把全网合同做成<strong>原子结算</strong>（要么一起生效，要么一个都不生效），能不能消灭 holdup？均衡会长什么样？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>协议：任何一方可对自己收到的条款按「绿灯（greenlight）」；当且仅当<strong>所有人</strong>的条款都亮绿灯时，这些条款才同时变成有约束力的合同。</p>
+  <div class="eq">Holdup ↓ ← 原子生效：「全亮 ⇒ 全生效；有一盏不亮 ⇒ 全作废」</div>
+  <p class="eq-note">人话：中间商不能「先吃进卖家再被买家压价」——因为单独和卖家的成交根本不会生效，除非买家那边也同时绿灯。银团里某个出资人也不能靠「你已经跟别人谈妥了、离不开我」来低球——没有全员绿灯就没有这笔交易。</p>
+  <ul>
+    <li>分析树状网络（轮辐／链式等常见结构）。在温和技术条件下，任何带 Markov 策略的完美贝叶斯均衡，都立刻谈成<strong>社会有效</strong>、且各方<strong>期望增益相等</strong>的合同。</li>
+    <li>文中 OTC 例子：无智能合约协议时均衡可无交易；有绿灯协议则恢复有效交易。</li>
+    <li>对照：即便枢纽方拥有几乎全部议价力（反复 take-it-or-leave-it），没有原子协议仍可能 holdup；绿灯协议补上这块缺口。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>完全信息下的双边议价；合同跨边存在外部性（一边条款影响另一边价值）。</li>
+    <li>绿灯协议可被技术执行（智能合约／原子结算）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>原子智能合约消除网络 holdup；均衡立刻达成有效且均分增益的结果。</li>
+    <li>应用覆盖 OTC、银团、多档证券化、第三方融资购买、建档询价等。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>把「区块链／智能合约」从口号落成议价理论：关键不是去中介，而是<strong>同时锁定多边条款</strong>。对照科创板询价、银行银团、债券簿记——有没有「先锁一部分承诺、其余人再敲竹杠」的制度漏洞。</p>
+
+  <p class="links">链接：FTG PDF <a href="https://www.financetheory.org/storage/pdf/papers/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026/S26.C.Wang.pdf">S26.C.Wang.pdf</a> · <a href="https://www.financetheory.org/papers/smart-contracting-in-network-markets">FTG 页</a> · <a href="https://www.nber.org/papers/w35678">NBER w35678</a> · 顶刊履历：Duffie Econometrica／JF／RFS</p>
+</article>
+
+<article id="p4">
+  <h2>4. 延续基金既怕劣质高卖也怕优质贱卖</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 延续基金既怕劣质高卖也怕优质贱卖" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Victoria Ivashina, Simon Mayer &amp; Ludovic Phalippou · Harvard / Carnegie Mellon / Oxford · <em>Private Equity Continuation Vehicles: A Model of Strategic Asset Transfers</em> · 2026-02-27</p>
+  <div class="tags">
+    <span class="tag">私募股权</span>
+    <span class="tag">延续基金</span>
+    <span class="tag">逆向选择</span>
+    <span class="tag">逆向「贱卖」</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Victoria Ivashina — <em>Journal of Finance</em> 多篇（含「Asymmetric Information Effects on Loan Spreads」「Monetary Policy and Global Banking」等）；<em>JFE</em> 多篇（含 2010「Bank Lending during the Financial Crisis of 2008」、Chapter 11 债权交易、证券化等）。机制依 Mannheim／作者研讨班 PDF（2026-02-27）。</div>
+
+  <h3>问了什么</h3>
+  <p>延续基金（CV）里，GP 把老基金里的公司「卖给自己」新成立的载体：一边给想退出的老 LP 流动性，一边拉长高潜力资产的持有期。争议与诉讼不断——是效率工具，还是租金抽取？作者问：CV 里到底有哪些信息摩擦？合投、附带权益（carry）、老基金是否「价内」如何决定谁吃亏？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>GP 夹在老 LP 与新 LP 中间，既有信息优势又当中介。摩擦有两类，方向相反：</p>
+  <div class="eq">标准逆向选择：新 LP 为劣质资产付贵　｜　反向选择（inverse selection）：新 LP 为优质资产付贱</div>
+  <p class="eq-note">人话：大家担心 GP 把烂项目塞进 CV 高价甩给新人（经典柠檬）；诉讼里更刺眼的另一面是——GP 可能把好公司压价「卖给自己」，老 LP 被低估。两种病的药常常互斥：拧紧门槛保护老 LP 免于贱卖，又可能加重新人买到柠檬的风险。</p>
+  <ul>
+    <li>老 LP 在「高门槛（少付 carry、但更易遭 inverse selection）」与「低门槛（多付 carry、缓和 inverse selection、却加重新人的逆向选择）」之间权衡。</li>
+    <li>老基金<strong>价外（out of the money）</strong>时，高门槛合同更倾向继续优质资产，并挤出劣质延续，缓解逆向选择；carry 结构与是否价内／价外共同塑造转移质量与价格。</li>
+    <li>GP 合投是双刃剑：合投多 → GP 更内化继续烂资产的损失（缓逆向选择），但也更想把好资产压价转走（加重 inverse selection）。</li>
+    <li>老 LP 滚动跟投可防 inverse selection，却暴露于逆向选择。文中亦报告 CV 合同特征的专有数据模式（如 legacy 端 carry 更陡、结晶 carry 常再投入等）。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>三期缔约框架；GP 相对两类 LP 有信息优势，并处于中介位置。</li>
+    <li>CV 同时服务流动性需求与延长期权价值；合同含门槛、carry、合投等。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>CV 效率与租金并存；关键冲突不止「劣质高卖」，还有「优质贱卖」。</li>
+    <li>合投、carry、价内／价外状态系统决定 CV 发生概率、资产质量与价值分配。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「GP 卖给自己」争议一张清晰的信息地图。对照国内私募延长期、S 基金接续、市场化债转股续作——尽调与跟投条款在防哪一种选择偏差，可能完全不同。</p>
+
+  <p class="links">链接：研讨班 PDF <a href="https://www.bwl.uni-mannheim.de/media/Lehrstuehle/bwl/Area_Finance/Finance_Area_Seminar/FSS_2026/Simon_Paper.pdf">Simon_Paper.pdf</a> · <a href="https://www.financetheory.org/papers/private-equity-continuation-vehicles-a-model-of-strategic-asset-transfers">FTG 页</a> · 顶刊履历：Ivashina JF／JFE</p>
+</article>
+
+<article id="p5">
+  <h2>5. 冲击资本只补贴关键质量，撬开全行业协调</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p5" data-title="5. 冲击资本只补贴关键质量，撬开全行业协调" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Florian Hoffmann &amp; Vladimir Vladimirov · Amsterdam · <em>Impact Through Catalytic Finance</em> · 2026-02-25（FTG Boulder；CEPR DP 20861）</p>
+  <div class="tags">
+    <span class="tag">冲击投资</span>
+    <span class="tag">协调陷阱</span>
+    <span class="tag">证券设计</span>
+    <span class="tag">催化资本</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Vladimir Vladimirov — <em>Journal of Finance</em> 2025「Auctions vs. Negotiations: The Role of the Payment Structure」（与 Hoffmann）、2025「Worker Runs」（与 Hoffmann）；<em>JAR</em> 2025「Disclosure, Patenting, and Trade Secrecy」（与 Boot，lead article）；另有 <em>JFE</em> 2015 并购融资等。机制依 FTG Boulder <code>S26.V.Vladimirov.pdf</code>。</div>
+
+  <h3>问了什么</h3>
+  <p>绿色转型、标准切换这类「全行业一起上才划算」的投资，常卡在协调陷阱：我怕别人不上，别人也怕我不上。冲击投资者愿意吃一点让步回报去撬动。作者问：最优策略是均匀补贴所有人，还是<strong>歧视性</strong>地只给一部分企业「让步合同」？该补贴大企业还是小企业？债务还是股权？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>成功＝自家努力 × 足够多同伴采用。协调要求给企业「保险」（少暴露于「只有我上了」的现金流风险）；隐藏努力的代理问题又要求企业<strong>多</strong>暴露于现金流风险。两件事一般不能同时满足。</p>
+  <div class="eq">最优冲击融资：让步合同 → 内生关键质量的企业　⇒　其余企业获得竞争性、非让步融资</div>
+  <p class="eq-note">人话：不必给全行业发补贴券。先用股权／担保一类「扛风险」的合同，把一小撮企业稳稳推上车；一旦关键质量够了，别人不再怕「独自冲锋」，普通债／竞争性融资就能跟进。让步最好给规模较小、代理问题更重、机会成本高的企业；对大而治理好的关键企业，反而应少扭曲、近乎市场价格，好保住它们的努力激励。</p>
+  <ul>
+    <li>与统一税／统一补贴不同：最优工具在<strong>证券种类</strong>（债 vs 股）与<strong>条款</strong>上都可歧视。</li>
+    <li>即便事前同质企业，给不同条款也能打破协调陷阱（文中两企业例子：先用股权稳住企业 1，企业 2 即可用竞争性债务跟进）。</li>
+    <li>错配代价高：若把让步浪费在「本可竞争性融资」的大企业上，或关键质量选错，总努力扭曲与财政成本都会上升。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>采用存在战略互补；企业努力隐藏；冲击投资者要唯一实施「普遍采用」并最大化有保证的收益。</li>
+    <li>合同可在企业间歧视（工具与条款）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>催化资本＝对内生关键质量使用扭曲性让步合同，撬开其余企业的市场融资。</li>
+    <li>让步应倾斜给更小、更「代理脆弱」的企业；关键大企业宜近乎竞争条款。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>给「转型金融／绿色债券／可持续挂钩债」一张设计图纸：钱不该撒胡椒面。对照产业政策与引导基金——是在买关键质量的协调，还是在给本已好融资的大企业送租。</p>
+
+  <p class="links">链接：FTG PDF <a href="https://www.financetheory.org/storage/pdf/papers/events/34th-meeting-at-the-university-of-colorado-at-boulder-spring-2026/S26.V.Vladimirov.pdf">S26.V.Vladimirov.pdf</a> · <a href="https://www.vladimir-vladimirov.net/">作者页摘要</a> · CEPR DP20861 · 顶刊履历：Vladimirov JF 2025×2／JAR 2025；Hoffmann 合著同上</p>
+</article>
+
+<footer>
+  避开 8/18–9/30 已写过的篇目（含 9/30 Malenko–Malenko–Tsoy、Luo–Lyandres–Xiao、Sannino–Zeng、Zhang–Zhong；9/29 Berk–DeMarzo、Ravina–Persico、He–Jiang–Xu、Gustafson–Wang；9/28 Aoyagi Crowding-In、Ali–Kleiner–Zhang、Lee–Wu、Corona–Huang–Kim；以及 Khorrami–Thereze、Kuong–Maurin Dealers、Foucault–Maurin Exchange Data、Babus–Farboodi Bank Opacity、Kartik–Zhong Lemonade、Kim–Choi Mandatory Disclosure Oligopolistic MM（8/28 已写）等）。Lin–Ma–Yang–Zhu《Payment Methods and Market Feedback》仅有 FTG 摘要、本机未取得 PDF，未收录。Gorton–Li–Ordoñez 依作者 2026-06-09 PDF；Axelson–Makarov 依 FTG S26.I.Makarov.pdf；Duffie–Wang 依 FTG S26.C.Wang.pdf（NBER w35678 本机曾被拒）；Ivashina–Mayer–Phalippou 依 Mannheim Simon_Paper.pdf；Hoffmann–Vladimirov 依 FTG S26.V.Vladimirov.pdf。顶刊：Gorton JF／RFS／JFE；Axelson JF／RFS／JFE；Duffie Econometrica／JF／RFS；Ivashina JF／JFE；Vladimirov JF 2025／JAR 2025。审计 PDF 存 /workspace/research/daily-papers/scratch-1001/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
