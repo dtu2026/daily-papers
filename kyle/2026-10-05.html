@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-05</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-05">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月5日 · 第三十四期 · 4 篇 2025–2026 理论／模型稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇都在问「信息和中介到底值多少钱」：Kadan–Manela 用 Kyle–Back 框架推出一个只要「价格变动 × 订单流」就能算的信息价值公式，结果美股全市场每年只有市值的 0.04%，远低于主动管理费——一个干净的谜题；Guo–Wachter 用三期模型说明，投资者把财报季第二个月「重复的」盈余消息当成新消息，导致大盘月度收益「先延续、后反转」；Pástor–Stambaugh–Taylor 说私募市场向散户开放对散户福利几乎没用（几个基点），但会实打实压低私募企业的资本成本、让它们扩张；Colliard–Zhao 说在有道德风险的金融业里，AI 变强反而可能抬高从业者的代理租金。四篇均有可核验 PDF，且未出现在 8/18–10/2 的理论简报全文。下面把<strong>作者论文明确证明／报告的事实</strong>与<strong>本简报的机制解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Kadan–Manela：信息价值＝价格变动与订单流的协变；算出来小得离谱</a> — arXiv 2026-08</li>
+      <li><a href="#p2">Guo–Wachter：财报季第二个月「重复消息」被当新消息，大盘先延续后反转</a> — NBER 2026-09</li>
+      <li><a href="#p3">Pástor–Stambaugh–Taylor：私募向散户开放，散户几乎没赚，企业资本成本却降了</a> — NBER／BFI 2026-08</li>
+      <li><a href="#p4">Colliard–Zhao：AI 越强，金融从业者的代理租金可能越高</a> — FTG 2026（稿 2025-06）</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 信息价值＝价格变动与订单流的协变；算出来小得离谱</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 信息价值＝价格变动与订单流的协变；算出来小得离谱" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ohad Kadan &amp; Asaf Manela · Arizona State／WashU St. Louis · <em>The Value of Information: A Puzzle</em> · arXiv 2605.11180 v2（2026-08-30）；FTG Bridging Theory and Empirical Research 2026 报告</p>
+  <div class="tags">
+    <span class="tag">Kyle–Back</span>
+    <span class="tag">信息价值</span>
+    <span class="tag">噪声交易者损失</span>
+    <span class="tag">主动管理费</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Kadan &amp; Manela — <em>Review of Financial Studies</em> 2019「Estimating the Value of Information」（32(3): 951–991；见本文参考文献）。理论部分依 arXiv PDF 第 2 节命题 1–2。</div>
+
+  <h3>问了什么</h3>
+  <p>如果你能提前知道一只股票今天收盘价，这条信息值多少钱？Kyle 模型告诉我们答案有上限，因为知情者要慢慢下单、躲价格冲击。问题是：现实里知情者赚了多少几乎没法直接测——你看不到谁是知情者，也看不到谁是噪声交易者。作者想要一个只用公开可观测数据就能算的「信息总价值」。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两步。第一步（假设 1，竞争性做市）：做市商平均不赚不亏，所以知情者赚的＝噪声交易者亏的。噪声交易者每次买入都推高价格、卖出都压低价格，于是他们的总损失就是「价格变动 × 噪声订单」的累积。第二步（假设 2，知情交易「正交」）：知情者为了藏身会把单子摊得很平滑，平滑的交易与价格的瞬时抖动不相关；于是把看不到的噪声订单 dZ 换成看得到的总订单流 dY，协变不变。</p>
+  <div class="eq">Ω = E[∫₀ᵀ dP · dZ] = E[∫₀ᵀ dP · dY]　　；　　线性定价下 Ω = E(λ̄) · σ<sub>y</sub>² · T</div>
+  <p class="eq-note">人话：Ω 是一段时间内全体知情者能赚到的总钱数。dP 是价格的小变动，dZ 是噪声单，dY＝知情单＋噪声单（就是你在逐笔数据里看到的带方向成交量）。第一个等号说「信息价值＝噪声交易者的亏损」；第二个等号说「不用分辨谁是噪声，直接拿总订单流算就行」，前提是用足够高的频率去量。第三个式子是命题 2：若价格对订单流是线性的（斜率就是 Kyle 的 λ），信息价值＝平均价格冲击 λ × 订单流方差 × 时长——冲击越大、订单流越活跃，信息越值钱。</p>
+  <ul>
+    <li><strong>作者证明的事实：</strong>命题 1、2 在 Kyle（1985）、Back（1992）、Back–Cao–Willard（2000）、Collin-Dufresne–Fos（2016）等一大类模型里成立；允许其他公共信息冲击价格（价格不必与订单流完全共线）。</li>
+    <li><strong>作者报告的估计：</strong>用 2003-09 至 2024-12 美股 TAQ 逐笔数据，平均每只股票每天约 1.37 万美元、年化约 350 万美元；全市场合计只有市值的 <strong>0.04%</strong>。对比 French（2008）估的主动管理成本约 0.67%（作者延到 2024 年约 0.50%），差一个数量级。</li>
+    <li>验证：动荡期更高；大盘成长股、动量股更高；财报日跳到平常 3 倍以上；散户关注度高、知情交易强度高时也更高。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>做市竞争（否则 Ω 是噪声损失的上界，谜题只会更深）。</li>
+    <li>知情者交易平滑、与价格瞬时变动正交（Kyle–Back 的标准性质）。</li>
+    <li>扩展里放松到离散时间、跳跃、部分正交；作者逐条讨论风险厌恶、多知情者、做市垄断、PFOF 等，结论是多数解释要么让谜题更深，要么解决不了。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>信息价值有一个简单、可估、单位清楚（美元）的闭式表达。</li>
+    <li>美股层面的信息价值远小于投资者为「找信息」支付的费用；要么市场极有效，要么主动管理费大部分在付别的服务，要么有系统性犯错的行为交易者在额外「送钱」（作者倾向于最后一条仍待检验）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>这是把 Kyle 模型直接变成测量工具的漂亮例子，公式只用逐笔价格和带方向成交量。A 股没有指定做市商、是连续竞价，「竞争做市」假设要改写成「限价单提供者平均不亏」；但 Level-2 数据完全可以照算 λ × 订单流方差，再拿去对比公募主动管理费、或看财报日与问询函日的跳升。对董杰的 AI 投资者题目：若 AI 交易者让订单流更「平滑」或更「抖」，命题 2 的分解能直接告诉你信息租往哪边走。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2605.11180">arXiv 2605.11180</a> · <a href="https://arxiv.org/pdf/2605.11180">PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 财报季第二个月「重复消息」被当新消息，大盘先延续后反转</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 财报季第二个月「重复消息」被当新消息，大盘先延续后反转" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hongye Guo &amp; Jessica A. Wachter · HKU／Wharton · <em>Correlation Neglect in Asset Prices</em> · NBER w35753（2026-09）；2025 Q-Group Jack Treynor Prize</p>
+  <div class="tags">
+    <span class="tag">相关性忽视</span>
+    <span class="tag">盈余公告周期</span>
+    <span class="tag">过度反应</span>
+    <span class="tag">行为资产定价</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Jessica Wachter — <em>Quarterly Journal of Economics</em> 2024「A Retrieved-Context Theory of Financial Decisions」（与 Kahana，139(2): 1095–1147；见本文参考文献）。<strong>说明：</strong>本文是「小模型＋大样本证据」，理论部分是第 4 节的三期模型，下面以模型为主、证据为辅。</div>
+
+  <h3>问了什么</h3>
+  <p>美股公司季度结束后，在下季第一个月（1、4、7、10 月）和第二个月（2、5、8、11 月）陆续发财报。第二个月发的也是<strong>同一季度</strong>的盈余，所以关于宏观经济的信息在很大程度上是重复的。投资者有没有把这种重复当成新消息、重复计数？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>经济处于好状态的概率 p 未知，投资者先验是均匀分布。第 1 期（财报季首月）看到一个 0/1 信号 s₁；第 2 期以概率 pₓ 看到的只是 s₁ 的「重放」，否则是独立新信号；第 3 期（下一季首月）真相进一步揭示。理性投资者知道第 2 期可能是重复，不会多更新；「相关性忽视」投资者把它当独立证据。</p>
+  <div class="eq">理性：P₁ = (s₁+1)/3，第 2 期期望不动 → Cov(R₁,R₂)=0　　；　　忽视者：P₂ = (ŝ₁+ŝ₂+1)/4 → E[R₂R₁] = pₓ·E[(2s₁−1)²]/72 &gt; 0，E[R₃R₂] &lt; 0</div>
+  <p class="eq-note">人话：(N+1)/(T+2) 是「拉普拉斯继承律」——T 个信号里有 N 个说「好」，好状态的概率估计就是它。理性投资者第 2 期价格平均停在 P₁，所以前后两个月收益不相关。忽视者把同一条「好消息」数了两次，第 2 期价格被推过头：第 1 月涨、第 2 月接着涨（延续，第一个式子大于 0）；等下一季首月新的真实消息到来，多推的部分被吐回去（反转，第二个式子小于 0）。重复的概率 pₓ 越高，两条臂都越强。注意忽视者不是「方向上偏乐观或悲观」，平均收益仍为 0，扭曲的是收益的<strong>序列相关</strong>。</p>
+  <ul>
+    <li><strong>作者报告的证据：</strong>1926–2024 美股月度数据，「第二个月 → 下季首月」回归系数 −0.277（反转臂），「首月 → 第二个月」0.271（延续臂）；两臂之差 t 值 −4.29，对应样本内夏普约 0.4 的贝塔中性择时策略；仅反转臂的样本外 R² 就超过 2%（常见择时变量多为负或几十个基点）。</li>
+    <li>模型额外预测均得到支持：两个月公布的盈余越相似，效应越强；分析师预测修正也呈「先同向、后反向」；行业层面相对大盘的收益也有同样模式，大行业更强。</li>
+    <li>附录 B 说明这种忽视可以从人类记忆的基本机制（检索情境理论）推出来。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>风险中性、无风险利率为零；状态二元；均匀先验（作者说一般 Beta 先验同样成立）。</li>
+    <li>真实世界视为一串相互独立、相互重叠的三期模型，抽象掉状态本身的自相关。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>相关性忽视能同时解释大盘收益「延续臂＋反转臂」，而理性学习两者都为零。</li>
+    <li>即使在高度专业、有金钱激励的大盘定价中，也能看到这种偏差。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>直接连到董杰的信息披露研究：披露的<strong>时间结构</strong>（谁先发、谁后发、内容有多重复）本身就能制造可预测收益。A 股的披露日历很不同——一季报和年报都挤在 4 月 30 日前，半年报 8 月 31 日前、三季报 10 月 31 日前，截止日附近高度扎堆——可以把模型里的 pₓ 换成「同月内前后批次财报的相似度」，检验 A 股是否在 4 月下旬、8 月下旬出现类似的「先延续后反转」。</p>
+
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35753">NBER w35753</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 私募向散户开放：散户几乎没赚，企业资本成本却降了</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 私募向散户开放：散户几乎没赚，企业资本成本却降了" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ľuboš Pástor, Robert F. Stambaugh &amp; Lucian A. Taylor · Chicago Booth／Wharton · <em>Democratizing Private Markets: Equilibrium Predictions</em> · NBER w35665（2026-08，2026-09 修订）；BFI WP 2026-119；CEPR DP21892</p>
+  <div class="tags">
+    <span class="tag">市场分割</span>
+    <span class="tag">私募股权</span>
+    <span class="tag">CAPM alpha</span>
+    <span class="tag">散户准入</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Pástor &amp; Stambaugh — <em>Journal of Political Economy</em> 2003「Liquidity Risk and Expected Stock Returns」；Pástor, Stambaugh &amp; Taylor — <em>Journal of Financial Economics</em> 2021「Sustainable Investing in Equilibrium」（142(2): 550–571）。机制依 BFI 版全文 PDF。</div>
+
+  <h3>问了什么</h3>
+  <p>美国正在把私募市场向散户开放（2025 年 8 月 SEC 放宽封闭式基金投私募基金、行政令推动 401(k) 纳入另类资产）。散户真的会因此更好吗？对私募企业的定价、所有权、投资又有什么影响？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两类投资者（机构 A、散户 B）、两家公司（上市 1、私募 2），收益正相关但不完全相关。开放前散户不能持有私募；开放后可以，但要付比例成本 c。关键量是「上市股票复制不了的私募风险」——作者叫它<strong>未被张成的私募风险</strong>。</p>
+  <div class="eq">Var(d₂ | d₁) = K₂² · v₂₂ · (1 − ρ₁₂²)　　；　　α₂ = + h · β₁ · p₁/p₂，开放前 h = a · (W<sub>B</sub>/W<sub>A</sub>) · K₂² · v₂|₁ / p<sub>M</sub></div>
+  <p class="eq-note">人话：第一个式子是散户用上市股票「模仿」私募之后剩下的那部分风险：私募规模 K₂ 越大（平方增长）、波动越大、与上市股票越不相关，这块越大。开放前，散户只能多买上市股票当替身；这块风险全压在机构身上，机构要求补偿，于是私募股有正的 CAPM alpha（第二个式子，h 是「分割楔子」：风险厌恶 a × 散户相对财富 × 未张成风险）。上市股相应有负 alpha。开放后，散户分担一部分，楔子缩小，私募资本成本下降，企业在凸调整成本下扩张资本。</p>
+  <ul>
+    <li><strong>作者证明的事实：</strong>持仓、价格、alpha、福利、资本调整全部闭式；散户福利增益随未张成私募风险单调上升；机构因失去「独家承担私募风险」的租金而受损，投资者部门总福利一般下降（作者强调这不等于社会福利，没算原股东、中介和工人）。</li>
+    <li><strong>作者报告的校准：</strong>私募只占公＋私总值约 7%。散户福利增益平均约 2 个基点、95 分位 7 个基点、最大 24 个基点；机构平均损失 11 个基点。私募 alpha 从约 1%/年降到 0.4%，资本成本降约 60 个基点，私募资本扩张近 5%；持有成本 0.8%/年时散户最终持有私募约 40%（无摩擦应为 70% 以上），持有成本翻倍到 1.6% 时散户完全不进。若私募占比升到 16%，散户增益约 11 个基点；到 30% 约 47 个基点。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>两期、均值–方差（等价于正态下的 CARA）、相同相对风险厌恶。</li>
+    <li>散户唯一的劣势是比例持有成本 c；不建模逆向选择、流动性、信息不对称（作者列为扩展方向）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「民主化」对散户福利几乎没影响，原因不是费用或逆向选择，而是私募市场太小，能分到的风险分担太少。</li>
+    <li>对企业影响大：所有权结构重塑、资本成本下降、私募资本扩张；私募正 alpha 缩小。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>一个干净的「市场分割 → 定价楔子」模型，可以直接套到 A 股的准入门槛：科创板、北交所的 50 万元／资产门槛，以及公募 REITs、QFII／沪深港通额度。可检验的预测是：门槛降低时，被隔离资产的 alpha 与资本成本下降，而散户福利增益取决于这块资产「上市替身复制不了的风险」有多大。论文末尾也点名「信息不对称」是下一步——正好是董杰熟悉的方向。</p>
+
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35665">NBER w35665</a> · <a href="https://bfi.uchicago.edu/wp-content/uploads/2026/08/BFI_WP_2026-119.pdf">BFI 全文 PDF</a> · <a href="https://cepr.org/publications/dp21892">CEPR DP21892</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. AI 越强，金融从业者的代理租金可能越高</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. AI 越强，金融从业者的代理租金可能越高" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jean-Edouard Colliard &amp; Junli Zhao · HEC Paris · <em>Artificial Intelligence and the Rents of Finance Workers</em> · 作者稿 2025-06-27；FTG Summer 2026（INSEAD）报告</p>
+  <div class="tags">
+    <span class="tag">AI 与金融就业</span>
+    <span class="tag">道德风险</span>
+    <span class="tag">任务分配模型</span>
+    <span class="tag">资本再配置</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Colliard &amp; Foucault — <em>Review of Financial Studies</em> 2012「Trading Fees and Efficiency in Limit Order Markets」（25(11): 3389–3421）。机制依 FTG <code>C1_26.J.Colliard.pdf</code>。</div>
+
+  <h3>问了什么</h3>
+  <p>标准的「任务替代」观点认为：AI 能做的金融任务越多，金融从业者的工资和岗位越受冲击。但金融业高薪里有很大一块是道德风险带来的代理租金（按业绩付费，项目越大租金越大）。把这一点放进来，AI 变强还会压低从业者收入吗？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>投资者把资本分给高、低两类「金融机构」（如银行、主动基金）。项目成败取决于一串任务，每个任务可以给机器或员工做；机器免费，员工努力不可观测。机构竞争吸引资本，必须给投资者最高回报。</p>
+  <div class="eq">成功概率 y = ∫[a(x)·q<sub>M</sub>(x) + h(x)·e·q]·f(x)dx　　；　　激励工资 w = c/q　　；　　员工租金（每单位资本）= (c/q) · F(x̃) · Q<sub>M</sub>(x̃)</div>
+  <p class="eq-note">人话：第一个式子说成功概率是「机器做的任务 × 机器能力」加「员工做的任务 × 员工能力 × 是否努力」。要让员工努力，只能在成功时付钱，每单位资本付 w＝努力成本 c ÷ 员工能力 q。员工偷懒时项目仍可能靠机器那部分成功，所以他能白拿一笔「租金」，大小＝激励工资 × 机器那部分的成功概率（F(x̃) 是交给机器的任务份额，Q<sub>M</sub> 是机器在这些任务上的平均能力）。机器一变强，偷懒也更可能成功，租金就上升——这是<strong>搭便车效应</strong>。</p>
+  <ul>
+    <li><strong>作者证明的事实：</strong>(1) 有道德风险时，交给员工的任务<strong>多于</strong>无道德风险基准（员工按成功拿钱、边际任务对机构「免费」），机器在集约边际上用得不够。(2) 资本稀缺时，道德风险让员工既拿更多租金、岗位也更多。(3) 「核心」改进（两类机构都交给机器的任务变强，如数据分析）把资本推向高类型机构，对岗位正、对租金负；「前沿」改进（低类型机构才交给机器的高阶任务变强，如生成式 AI）把资本推向低类型机构，对岗位负、对租金正。</li>
+    <li>只有两种情况 AI 改进对员工不利：机器强到不再需要激励员工；或改进集中在本来就交给机器的任务上。机器强到让机构改为「全机器」时，总福利反而下降。</li>
+    <li>扩展：员工与机器完全互补时搭便车效应仍在但更弱；员工「偷偷用 AI」（任务分配不可观测）时租金更高，但 AI 变强后机构更不必防员工偷用，租金又可能下降。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>全员风险中性；员工有限责任，只在成功时付钱；机器使用成本为零。</li>
+    <li>机构类型对投资者可观测；基准模型中任务分配可观测，只有努力不可观测。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>在有代理问题的金融业，AI 改进的收益可能大部分被从业者以租金形式拿走，与竞争性任务模型的预测相反。</li>
+    <li>实证上应按「道德风险程度」而不只按「任务内容」来划分职业。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>对董杰的 AI 投资者研究是一块重要拼图：AI 进入基金和投行之后，谁拿走生产率红利取决于合同结构，而不只是技术。可以对照 A 股公募的业绩报酬与经理更替，看 AI 工具普及后经理薪酬与规模分配的变化；也可以和 Farboodi–Kondor–Kurlat（10/2 已写）放在一起读：一个讲 AI 让筛选犯相关错误，一个讲 AI 让代理租金上升。</p>
+
+  <p class="links">链接：FTG PDF <a href="https://www.financetheory.org/storage/pdf/papers/events/summer-ftg-conference-2026/C1_26.J.Colliard.pdf">C1_26.J.Colliard.pdf</a> · <a href="https://www.financetheory.org/events/summer-ftg-conference-2026">FTG Summer 2026 程序</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/2 已写过的篇目（含 10/2 Fardeau、Kuong、Hugonnier–Nik Nejad、Farboodi–Kondor–Kurlat、Döttling–Emery–Zhao；10/1 Gorton–Li–Ordoñez、Axelson–Makarov、Duffie–Wang、Ivashina–Mayer–Phalippou、Hoffmann–Vladimirov；Khorrami–Thereze、Colliard–Foucault–Lovo 算法做市、Pástor–Sikorskaya–Wang 市值集中等）。本期未收录：Döttling–Levit–Malenko–Rola-Janicka《Governing Global Externalities》（NBER w35778，偏全球外部性治理、股市机制较弱）；Gondhi–Shen–Zou《AI and Quantity Traps》（作者页标「即将发布」，无全文）；Chen–Han–Zhong《Human Skills in the Age of AI》（偏技能与决策权，股市机制较弱）；arXiv 本周 q-fin.TR 几篇 AI 执行合谋／共享模型稿未核到允许名单顶刊作者。Kadan–Manela 依 arXiv v2 PDF；Guo–Wachter 依 NBER w35753 PDF；Pástor–Stambaugh–Taylor 依 BFI WP 2026-119 PDF（NBER 直链本机被拒）；Colliard–Zhao 依 FTG PDF。顶刊：Kadan–Manela RFS 2019；Wachter QJE 2024；Pástor–Stambaugh JPE 2003、Pástor–Stambaugh–Taylor JFE 2021；Colliard–Foucault RFS 2012。审计 PDF 存 /workspace/research/daily-papers/scratch-1005/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
