@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-06</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-06">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月6日 · 第三十五期 · 4 篇 2026 年理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇都围绕「证据怎么传、谁来核、价格能透露多少」：Kolb–Zhou 问一个很具体的问题——披露的证据带不带<strong>时间戳</strong>，会不会改变公司什么时候说好消息、什么时候说坏消息；Lizzeri–Lou–Perego 说「强制只认可核实的证据」并不总是好事，当发送者与接收者利益比较一致时，可核实反而让信息传得更差；Gao–Lu–Yang 用一个审计模型比较「同行评议（靠专业判断事后核查）」与「PCAOB 检查（事前承诺核查力度）」；Awaya–Krishna–Osipov 比较多单位拍卖里「歧视价格」与「统一价格」两种格式，谁的成交价更能告诉场外投资者资产真实价值。四篇均有可核验全文 PDF，且未出现在 8/18–10/5 的理论简报中。下面把<strong>作者证明的事实</strong>与<strong>本简报的解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Kolb–Zhou：证据带时间戳，好消息马上说、坏消息按日期延迟说；没有时间戳，好消息会被「囤着」再分批放</a> — arXiv 2026-09</li>
+      <li><a href="#p2">Lizzeri–Lou–Perego：利益越一致，强制「只认证据」越伤信息传递；沉默本身可以传信息</a> — NBER／CEPR 2026-09</li>
+      <li><a href="#p3">Gao–Lu–Yang：谁来审审计师？核查者信号够准选同行评议，否则选事前承诺的 PCAOB</a> — arXiv 2026-09</li>
+      <li><a href="#p4">Awaya–Krishna–Osipov：多单位拍卖里，最高中标价何时比统一成交价更「有信息」</a> — arXiv 2026-08</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 证据带时间戳，好消息马上说、坏消息按日期延迟说；没有时间戳，好消息会被「囤着」再分批放</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 证据带时间戳，好消息马上说、坏消息按日期延迟说；没有时间戳，好消息会被「囤着」再分批放" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Aaron Kolb &amp; Beixi Zhou · Indiana Kelley／Pittsburgh · <em>Dynamic Disclosure with(out) Timestamps</em> · arXiv 2609.25485（作者稿 2026-09-18）</p>
+  <div class="tags">
+    <span class="tag">动态披露</span>
+    <span class="tag">硬证据</span>
+    <span class="tag">时间戳</span>
+    <span class="tag">Minimum Principle</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Aaron Kolb — <em>Journal of Finance</em> 2026「Leader-Follower Dynamics in Shareholder Activism」（与 Cetemen、Cisternas、Viswanathan，81(3): 1377–1435；该文 9/11 已写）；另有 <em>Review of Economic Studies</em> 2025「Signalling with Private Monitoring」（与 Cisternas，92(2): 909–953）。机制依 arXiv v1 PDF 第 2–5 节。</div>
+
+  <h3>问了什么</h3>
+  <p>很多证据本身带日期（审计报告、医学化验单、签好的合同），也有很多不带或很难核实日期（旧照片翻新用、销售「压单」把早就能签的合同挪到下个季度报）。公司在不同时点选择要不要放出手里的证据。问题是：<strong>证据能不能证明「自己是哪天产生的」</strong>，会怎样改变披露的时机和市场的判断？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>公司的真实状态在「好」和「坏」之间随机切换。公司在某个随机时刻 τ 拿到一份硬证据，证明「τ 时刻状态是好或坏」，之后自己决定什么时候公开。公司每一刻的收益就是市场对「现在是好状态」的信念 π<sub>t</sub>，所以它想让市场尽量乐观。</p>
+  <div class="eq">好证据 s 时刻产生、t 时刻还剩的可信度：q<sub>t</sub><sup>G,s</sup> = p* + (1−p*)e<sup>−(λ₀+λ₁)(t−s)</sup>　；　坏证据：q<sub>t</sub><sup>B,s</sup> = p* − p*·e<sup>−(λ₀+λ₁)(t−s)</sup></div>
+  <p class="eq-note">人话：λ₁ 是「好变坏」的速度，λ₀ 是「坏变好」的速度，p* 是长期平均处于好状态的概率。证据越旧，它对「现在」的说服力越弱：好证据的效力从 1 往 p* 衰减，坏证据的杀伤力从 0 往 p* 回升。所以<strong>旧的坏消息没那么坏，旧的好消息没那么好</strong>——这就是时间戳要紧的原因。</p>
+  <ul>
+    <li><strong>有时间戳（定理 1）：</strong>均衡唯一。好证据一拿到就公开——晚说没好处，因为市场会按真实日期「倒推」，晚说只是白白让市场在中间那段时间更悲观。坏证据则等到「公开后的信念 q<sub>t</sub><sup>B,s</sup>」从下方追上「不公开时的信念 p<sub>t</sub>」那一刻再说：公开旧的坏消息能让市场停止「没消息就是坏消息」的猜测，把信念切到一条更高的轨道上。延迟期 a*(s) 有限，而且与公司的耐心（贴现率 r）无关。此时「最小原则」成立：没披露时市场的信念是所有可能策略里最悲观的那个。</li>
+    <li><strong>没有时间戳，好消息（命题 3、定理 2）：</strong>只要初始信念够高，满足</li>
+  </ul>
+  <div class="eq">p₀ &gt; (λ₀ + r) / (λ₀ + λ₁ + r)</div>
+  <p class="eq-note">人话：先验 p₀ 越高、公司越有耐心（r 越小），越值得把好证据先「压一压」再放——因为市场看不到日期，会以为这是新鲜的好证据，信念在之后每一刻都更高；代价只是压着期间少拿一点。于是出现「囤积 → 随机清仓 → 完全透明」三阶段：先不说，接着按日历时间（而非证据年龄）以越来越高的强度随机放出，最后存量连续地清空，之后一有好证据就马上说。作者证明不能「一次性全部倒出来」，只能连续清空。</p>
+  <ul>
+    <li><strong>没有时间戳，坏消息（命题 5、定理 3）：</strong>公司越没耐心，坏证据越可以被拖到任意远；在平稳先验下存在一个均衡，坏消息只在固定间隔 Δ 的时点<strong>集中爆发</strong>（「每隔一段时间统一出一批坏消息」）。</li>
+    <li><strong>福利：</strong>公司事前期望收益在任何策略下都一样（迭代期望律），但给接收方（投资者）一个「猜状态、二次损失」的微观基础后，有时间戳的均衡在两种情形下都 Blackwell 占优——取消时间戳既直接藏起了证据的年龄，也间接推迟甚至阻止了披露。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>两状态马尔可夫切换；证据只来一次，到达时间服从指数分布，公司不能事前承诺披露策略。</li>
+    <li>接收方被动做贝叶斯更新；公司收益就是市场信念（可解释为一群投资者按信念选行动）。</li>
+    <li>无时间戳部分主要看「与证据年龄无关」的策略；另讨论了按先进先出披露的均衡，透明期开始更晚。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>时间戳让好消息更快、坏消息更容易被说出来；要求证据附带可核实日期的制度能让投资者更早拿到信息。</li>
+    <li>没有时间戳时，「好消息被囤着分批放」「坏消息成批集中放」都是理性均衡结果，不需要行为偏差。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）A 股临时公告要求在重大事件发生后及时披露，并写明事件日期——这在模型里就相当于「时间戳」；而业绩预告、经营数据、订单、销售回款这类信息，底层事件发生的日子往往说不清。可检验的预测：底层日期越难核实的信息类型，越可能出现好消息「先压后放」、坏消息在定期报告或周五盘后集中出现。这和董杰熟悉的公告时机研究（周五效应、年报扎堆）能直接连上，模型提供了一个不依赖「投资者注意力不足」的理性解释。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.25485">arXiv 2609.25485</a> · <a href="https://arxiv.org/pdf/2609.25485">PDF</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 利益越一致，强制「只认证据」越伤信息传递；沉默本身可以传信息</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 利益越一致，强制「只认证据」越伤信息传递；沉默本身可以传信息" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Alessandro Lizzeri, Yichuan Lou &amp; Jacopo Perego · Princeton／Tokyo／Columbia · <em>The Limits of Verifiability: Credibility and Flexibility in Communication</em> · NBER w35712（2026-09）；CEPR DP21900（2026-09-02）</p>
+  <div class="tags">
+    <span class="tag">可核实披露</span>
+    <span class="tag">廉价谈话</span>
+    <span class="tag">噪声证据</span>
+    <span class="tag">披露强制</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Lizzeri &amp; Perego — <em>Review of Economic Studies</em>「The Selective Disclosure of Evidence: An Experiment」（与 Farina、Fréchette、Ispano，本文参考文献列为 2025 年 forthcoming）。机制依 Perego 主页作者稿 PDF（2026-08-28 生成，83 页）。</div>
+
+  <h3>问了什么</h3>
+  <p>传统看法：让信息「可核实」（只能拿证据说话）总比空口说（廉价谈话）好，因为证据能逼出真话——这就是经典的「层层揭开」（unraveling）结论。作者问：如果发送者<strong>知道的比她的证据能证明的多</strong>，而且她和接收者的利益只部分一致，这个结论还成立吗？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>发送者（如管理层）知道真实状态 θ，也看到一个带噪声的证据 s（如某项报表指标）。可核实制度下她只能「出示 s」或「沉默」；不可核实制度下她可以随便报一个 s。接收者据此选行动 a。</p>
+  <div class="eq">接收者收益 −(a − θ)²　；　发送者收益 −(a − θ − b)²　；　证据：Pr(s<sub>H</sub> | θ) = kθ + (1−k)/2</div>
+  <p class="eq-note">人话：接收者想让行动正好等于真实状态；发送者想让行动比真实状态高 b，b 就是「偏差」，衡量两人利益有多不一致。k 是证据精度：k = 0 时证据和状态毫无关系，k = 1 时最准。关键在于证据只是真相的粗略、带噪声的摘要。</p>
+  <ul>
+    <li><strong>命题 1：</strong>「全部证据都披露」的均衡存在，<strong>当且仅当</strong>偏差 b 足够大。利益很一致时它不存在：不管市场怎么解读沉默，总有某些「证据和真实情况不符」的发送者宁愿沉默，因为沉默引出的行动正好接近她心中的真相。</li>
+    <li><strong>命题 2：</strong>偏差小时，接收者最喜欢的均衡<strong>比「全披露」更有信息量</strong>——沉默不是在藏坏消息，而是在说「我手里的证据会误导你」。所以即便能强制全披露，强制也是低效的：它废掉了沉默的信息作用。</li>
+    <li><strong>命题 3（可信度与灵活性的权衡）：</strong>存在门槛 β₀ &lt; β₁：偏差 b ≤ β₀ 时，可核实制度比廉价谈话<strong>更差</strong>；b &gt; β₁ 时（证据有信息量的话）可核实制度更好，此时廉价谈话完全失效。证据即使毫无统计信息，可核实仍可能有用，因为「哪张牌在你手里」本身限制了模仿；而让证据更准（Blackwell 意义上）在中等偏差时反而可能降低沟通质量。</li>
+    <li><strong>命题 4（两种渠道并用）：</strong>对任意偏差，都存在「先出示证据、再用廉价谈话补充解读」的均衡。但若强制披露，会改变廉价谈话所处的信念环境，可能破坏本来能维持的沟通（评注 2）；不强制时，两种渠道并存对接收者总是不差（评注 3）。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>Crawford–Sobel 式部分一致的偏好；发送者观察到真实状态，但只能核实证据 s。</li>
+    <li>可核实披露是「全有或全无」；抽象掉披露成本、证据获取、道德风险。</li>
+    <li>比较对象是各制度下接收者最优的均衡。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>可核实不是免费的：它提高可信度，但也让发送者不能灵活表达证据之外的私人信息。</li>
+    <li>利益冲突大的场合（大机构、股权分散的公司）适合标准化、可核实的报告；利益一致的场合（小组织）灵活的口头沟通更好。作者引用 Liberti–Mian（2009）和 Lisowsky–Minnis（2020，股权越分散的私营公司越倾向做审计）作为佐证。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这直接关系到「硬披露 vs 软披露」：财务报表与 XBRL 指标是可核实的，管理层讨论、业绩说明会、互动易回复是廉价谈话。模型预测：管理层与投资者利益越一致（如管理层持股高、股权集中），软信息渠道越有价值，强制增加硬指标的效果越弱；利益冲突越大，硬披露越重要。A 股近年交易所要求更多量化、可核实的指标（如 ESG 披露指引），这篇给了一个「何时会适得其反」的理论框架。</p>
+
+  <p class="links">链接：<a href="https://www.nber.org/papers/w35712">NBER w35712</a> · <a href="https://cepr.org/publications/dp21900">CEPR DP21900</a> · <a href="https://www.jperego.com/files/papers/LLP/draft.pdf">作者稿 PDF</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 谁来审审计师？核查者信号够准选同行评议，否则选事前承诺的 PCAOB</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 谁来审审计师？核查者信号够准选同行评议，否则选事前承诺的 PCAOB" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Pingyang Gao, Jinzhi Lu &amp; Zhenpeng Yang · HKU／CityU HK · <em>Audit the Auditors: Commitment versus Professional Judgment</em> · arXiv 2609.24020（作者稿 2026-09-22）</p>
+  <div class="tags">
+    <span class="tag">审计监管</span>
+    <span class="tag">承诺 vs 判断</span>
+    <span class="tag">威慑</span>
+    <span class="tag">PCAOB</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Pingyang Gao — <em>The Accounting Review</em> 2019「Auditing Standards, Professional Judgment, and Audit Quality」（与 Zhang，94(6): 201–225；见本文参考文献）。机制依 arXiv v1 PDF 第 2–6 节。</div>
+
+  <h3>问了什么</h3>
+  <p>2002 年萨班斯法案（SOX）前，美国审计行业靠同行互评监督；之后改为独立的 PCAOB 检查。实证上两者谁更好结论不一。作者抓住一个根本差别：同行评议者是行家，能凭专业判断<strong>事后</strong>决定查哪单；PCAOB 是流程化机构，能<strong>事前</strong>承诺检查力度，但缺少一线判断。哪个对投资者更好？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>审计师花力气 β 去查报表，力气越大越能发现坏项目；如果给了坏项目「无保留意见」被查出，要受罚 L。代表投资者的监督者看到无保留意见后，决定以概率 a 去核查真相。</p>
+  <div class="eq">判断制（事后）：a(ω) = (I/c) · Pr(坏 | 无保留意见, 信号 ω)　；　审计师：β = Pr(坏) · L · ā / k</div>
+  <p class="eq-note">人话：第一个式子说，监督者看到自己的私人信号 ω 越指向「有问题」，就查得越狠；I/c 是「核查的激励」（坏项目上马的损失 I 相对核查成本 c）。第二个式子说审计师的努力取决于「出错后平均被查到的概率」ā 乘以罚金 L，再除以努力成本 k。麻烦在于：事后核查时，监督者理性地相信「无保留意见多半是真的好」，于是不太想查；审计师预见到这一点，就偷懒。事前承诺制里，监督者先公开锁定 a，就像斯塔克尔伯格领先者，能用威慑把审计师的努力拉上去。</p>
+  <ul>
+    <li><strong>命题 2：</strong>判断制下，私人信号越准，监督者越能「把力气花在刀刃上」（资源配置效应），审计师也越努力（私人信息的威慑效应）。</li>
+    <li><strong>命题 4（主结论）：</strong>存在门槛 q†：监督者的私人信号精度高于 q† 时偏好同行评议，低于时偏好 PCAOB。信号完全没用时承诺制更好；信号完全准确时判断制更好。</li>
+    <li><strong>命题 5：</strong>审计风险（坏项目被放行的概率）同样有门槛 q‡，信号够准时判断制下审计风险更低。</li>
+    <li><strong>命题 6：</strong>核查成本越高、或审计师越容易被激励（L/k 越大），越偏向 PCAOB 式承诺。可检验预测：同行评议下审计师激励越强，核查强度越<strong>低</strong>；PCAOB 下则越<strong>高</strong>。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>项目好坏各半；审计师如实报告自己的发现；监督者只在无保留意见时核查。</li>
+    <li>两种制度是极端版本：纯判断无承诺，纯承诺无私人信息。成本均为二次型。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>同行评议与独立检查的取舍是「专业信息」与「承诺力」的取舍，没有绝对优劣。</li>
+    <li>复杂、核查成本高的审计（大客户、复杂业务）更适合事前承诺的检查，和「PCAOB 对四大所效果更明显」的实证一致。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）中国的审计监督同样是混合体：中注协的执业质量检查、证监会和财政部的检查、交易所的年报问询。模型给了一个可直接检验的问题：事前公布检查计划（如按比例抽查、公开检查名单）与依赖专业判断的「有针对性检查」，哪类事务所、哪类客户效果更好？模型也是董杰「披露质量由谁保证」这一链条上的一环：披露可信度来自审计，审计努力来自对审计师的监督。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.24020">arXiv 2609.24020</a> · <a href="https://arxiv.org/pdf/2609.24020">PDF</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 多单位拍卖里，最高中标价何时比统一成交价更「有信息」</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 多单位拍卖里，最高中标价何时比统一成交价更「有信息」" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Yu Awaya, Vijay Krishna &amp; Eduard Osipov · Tokyo／Penn State · <em>Informational Content of Auction Prices</em> · arXiv 2608.04332（2026-08）；2026 Cowles 经济理论会议报告</p>
+  <div class="tags">
+    <span class="tag">共同价值拍卖</span>
+    <span class="tag">价格信息含量</span>
+    <span class="tag">次序统计量</span>
+    <span class="tag">Lehmann 排序</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Awaya &amp; Krishna — <em>American Economic Review</em> 2016「On Communication and Collusion」（106(2): 285–315）；Krishna 另有 <em>Econometrica</em> 2001「Convex Potentials with an Application to Mechanism Design」（与 Maenner）、AER 2008「Asymmetric Auctions with Resale」（与 Hafalir）。来源：Krishna 个人主页发表列表与 RePEc。机制依 arXiv v1 PDF 第 2–6 节。</div>
+
+  <h3>问了什么</h3>
+  <p>卖 k 份完全相同、价值共同但未知的资产给 n 个出价者（每人最多要一份），每个出价者各有一个带噪声的私人信号。场外投资者看不到这些信号，只看到成交价。<strong>歧视价格拍卖</strong>（中标者各付自己的报价，公布最高价）和<strong>统一价格拍卖</strong>（所有中标者付最高的落选报价）哪个让场外的人更了解真实价值？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两种格式都有对称、单调的均衡出价，所以价格可以反推出某个信号：歧视价格拍卖的最高价暴露的是<strong>最高信号</strong> X<sup>(1)</sup>；统一价格暴露的是<strong>第 k+1 高的信号</strong> X<sup>(k+1)</sup>。于是问题变成：最高的那个信号，还是排在第 k+1 位的那个信号，更有信息？作者用 Lehmann 标准比较——对所有「单交叉」偏好的决策者（例如「只在价值够高时才投资」的投资者），一个信号是否都更有用。</p>
+  <div class="eq">比例信号族（信号 = 价值 × 乘性噪声）：若 k/n ≥ 1 − ρ(1)/ρ(0)，则 X<sup>(1)</sup> Lehmann 优于 X<sup>(k+1)</sup>，其中 ρ(z) = z·f(z)/F(z)</div>
+  <p class="eq-note">人话：k/n 是「份数 ÷ 出价人数」。ρ 是噪声分布的「弹性」，衡量高信号相对低信号有多大说服力；ρ(1)/ρ(0) 越小，说明高端信号越有信息、低端信号越没信息，右边门槛就越低。直觉：当高端信号能给出「几乎确凿」的证据（例如信号超过某值就说明价值肯定高），最高价只需一个人拿到这样的信号就能显露出来，而第 k+1 高价需要至少 k+1 个人都拿到。作者给的数字：截尾正态噪声门槛约 0.29，截尾指数／Weibull 约 0.42，截尾 Gumbel 约 0.22。</p>
+  <ul>
+    <li><strong>定理 4.1／5.1／6.1：</strong>分别对乘性噪声、加性噪声和一般分布族给出充分条件；一般情形用「累积得分函数」在支撑上下端点的比值代替 ρ(1)/ρ(0)。</li>
+    <li><strong>命题 4.1、6.1–6.3（必要性）：</strong>比例信号族里统一价格永远不可能反过来 Lehmann 优于最高价；最高价占优<strong>要求</strong>高信号无界地有信息（似然比上确界为无穷）、或低信号信息很弱、或 k/n 不能趋于 0。</li>
+    <li><strong>应用：</strong>同一套结果可用于陪审团投票（何时一致同意规则比多数规则福利更高）、平台评分（何时最高分比中位数更有信息）。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>纯共同价值、单位需求、信号在给定价值下条件独立且满足单调似然比。</li>
+    <li>场外观察者只看到价格（统一价格拍卖的唯一价格，或歧视价格拍卖的最高价），不看到全部报价。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>拍卖格式不仅影响收入，还影响价格对二级市场的「信息溢出」；份数相对人数较多、高信号有决定性时，公布最高中标价更有信息。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这与 A 股 IPO 询价和国债招标直接相关：IPO 网下询价公布报价分布与剔除后的发行价，财政部国债招标使用荷兰式、美国式或混合式规则。模型提醒我们，发行环节公布哪个价格，会影响二级市场从中学到多少——比如 IPO 首日的「价格发现」有多少是因为发行价本身没传递足够信息。另外，Awaya–Krishna 2016 AER 讲的正是「沟通如何支撑合谋」，对董杰的 AI 投资者合谋题目是值得一起读的前作。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2608.04332">arXiv 2608.04332</a> · <a href="https://arxiv.org/pdf/2608.04332">PDF</a> · <a href="https://sites.google.com/site/vjkrishna/publications">Krishna 发表列表</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/5 已写过的篇目（含 10/5 Kadan–Manela、Guo–Wachter、Pástor–Stambaugh–Taylor、Colliard–Zhao；10/2 Fardeau、Kuong、Hugonnier–Nik Nejad、Farboodi–Kondor–Kurlat、Döttling–Emery–Zhao；9/11 Cetemen–Cisternas–Kolb–Viswanathan 积极股东领头交易；8/21 Lee–Marinovic 披露时机等）。本期未收录：Cetemen–Ozdenoren《AI and the Market for Signals》（arXiv 2609.17752，讲劳动力市场信号与 AI，股市机制较弱）；Baldi-Lanfranchi–Collin-Dufresne–Daniel《Asymmetric Reversals》（NBER w35840，实证）；Goetzmann–Kim–Shiller《“Non-Marginal” Investor Beliefs》（NBER w35708，实证）；Li–Bandyopadhyay《Shared Models, Selective Trading, and Order Flow》（arXiv 2610.01897，未核到允许名单顶刊作者）；FTG 2026 Gorbenko–Orlov 困境债务投资者（偏公司债）。Kolb–Zhou、Gao–Lu–Yang、Awaya–Krishna–Osipov 依 arXiv v1 PDF；Lizzeri–Lou–Perego 依作者主页 PDF。顶刊：Kolb JF 2026、REStud 2025；Lizzeri–Perego REStud（forthcoming）；Gao TAR 2019；Awaya–Krishna AER 2016、Krishna Econometrica 2001。审计 PDF 存 /workspace/research/daily-papers/scratch-1006/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
