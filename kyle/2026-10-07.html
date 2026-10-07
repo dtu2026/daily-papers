@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-07</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-07">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月7日 · 第三十六期 · 4 篇 2026 年理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇讲的都是「交易规则怎样决定价格里有多少真信息」。Dai–Jia–Yu 研究一种新合约：按收盘那一刻的标的价格结算的超短期二元合约。持有合约的人会在结算前几秒去现货市场「推价格」，现货反而看起来更有流动性，价格却更不靠谱。Della Corte–Kosowski 等人在 Glosten–Milgrom／Diamond–Verrecchia 框架里把监管者的禁空决定内生化：禁空是否有效，取决于「持股的人里知情者多不多」。Frick–Iijima–Ishii–Wu 证明，在一大类拍卖格式里，<strong>一价拍卖的出价对「市场基本面」最有信息</strong>，正好接着昨天的 Awaya–Krishna–Osipov 往下读。Liu–Zhang–Cong 等人研究以太坊出块拍卖：卖方一旦可以「先看报价、再决定要不要等、要不要把报价透露给别人」，买方就会故意压低或隐藏早期报价，形成棘轮效应（ratchet effect）。四篇都有可核验的全文 PDF，也都没有出现在 8/18–10/6 的理论简报里。下面照例把<strong>作者证明的结论</strong>和<strong>本简报的解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Dai–Jia–Yu：按收盘价结算的 5 分钟合约诱发「尾盘推价」，现货价差更窄、价格却更不准；拉长合约期限是解药</a> — arXiv 2026-06</li>
+      <li><a href="#p2">Della Corte–Kosowski–Papadimitriou–Rapanos：禁空是把双刃剑，持股者里知情者少时能托住左尾，知情者多时只会拉宽价差</a> — arXiv 2026-09</li>
+      <li><a href="#p3">Frick–Iijima–Ishii–Wu：把拍卖当成「统计实验」，一价拍卖的出价最能透露基本面</a> — arXiv 2026-09（首版 2026-02）</li>
+      <li><a href="#p4">Liu–Zhang–Cong–Li–Wang：卖方能「看完报价再决定等不等、透露不透露」，买方就藏起早期报价，这就是棘轮效应</a> — arXiv 2026-07</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 按收盘价结算的 5 分钟合约诱发「尾盘推价」，现货价差更窄、价格却更不准；拉长合约期限是解药</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 按收盘价结算的 5 分钟合约诱发「尾盘推价」，现货价差更窄、价格却更不准；拉长合约期限是解药" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">David Dai, Ruizhe Jia &amp; Shihao Yu · Stanford MS&amp;E／SMU Lee Kong Chian · <em>Settlement Manipulation in Prediction Markets</em> · arXiv 2606.31675（2026-06）；SMU SKBI 工作论文 PDF</p>
+  <div class="tags">
+    <span class="tag">结算价操纵</span>
+    <span class="tag">Glosten–Milgrom</span>
+    <span class="tag">价格发现</span>
+    <span class="tag">市场设计</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Ruizhe Jia &amp; Shihao Yu — <em>Review of Financial Studies</em> 2026「Price Discovery on Decentralized Exchanges」（与 Agostino Capponi；DOI 10.1093/rfs/hhag002，讲去中心化交易所上知情者用「跳跃式竞价」抢执行优先权）。来源：Shihao Yu 个人主页 CV（Accepted at RFS）、SMU SKBI 发表列表、图书馆目录（RFS 2026-01-19 在线）。机制依 arXiv v1 PDF 第 4–5 节。</div>
+
+  <h3>问了什么</h3>
+  <p>预测市场（Polymarket、Kalshi）上增长最快的合约，其实是押资产价格的二元合约：「5 分钟后比特币比现在高，就付 1 美元，否则付 0」。Nasdaq 和 Cboe 也已申请上市股指版本。这类合约按<strong>现货市场在收盘时刻的价格</strong>结算，而这个价格可以被交易本身推动。问题是：这种合约会不会诱发结算前的操纵？它让标的价格变得更有信息，还是更没信息？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>模型有两个市场、五个阶段。资产价值 V 只有 +σ 和 −σ 两种可能，只有一个知情者知道。第 1 阶段，有人在预测市场买「涨」合约，可能是操纵者，也可能是普通散户，做市商分不出来。第 2 阶段，现货市场来一笔普通订单（知情者或噪声交易者）。第 3 阶段是结算窗口：如果操纵者入场了，就由她来下这一单，决定要不要买入现货把价格往上推。第 4 阶段，合约按现货的「后验均值 + 一点噪声」结算。</p>
+  <div class="eq">推价的净收益：Γ = H(A/ε) − H(V̄/ε) − (A − V̄)</div>
+  <p class="eq-note">人话：V̄ 是现货市场此刻对资产价值的估计；A 是做市商的卖价（ask）。H(·) 是合约「最终赢」的概率：后验均值高于 +ε 就肯定赢，低于 −ε 就肯定输，中间按直线过渡（ε 代表结算噪声）。前两项之差是「推一把以后合约赢面增加多少」，最后一项 (A − V̄) 是推价要付的成本，也就是买在卖价上、比真实估值多付的半个价差。Γ &gt; 0 就推。</p>
+  <ul>
+    <li><strong>命题 1 与推论 1（越怕被操纵，卖价反而越低）：</strong>做市商预期操纵者会来买，就知道这时的买单更可能是「没信息的推价单」，而不是知情者的单，于是逆向选择变轻，卖价下调。所以操纵让现货<strong>看起来更有流动性</strong>。</li>
+    <li><strong>命题 3（价格发现一定变差）：</strong>只要知情者存在、操纵者入场概率在 0 和 1 之间，结算后「价格还没解释掉的那部分价值不确定性」就一定比没有预测市场时大。有两个渠道：一是<em>挤占</em>，操纵者占了本来可能属于知情者的那一单；二是<em>稀释</em>，她的推价单和知情单混在一起，一笔买单透露的信息变少。作者特别指出，这正好是 Zhu（2014）暗池结论的镜像：暗池把没信息的单吸走，让交易所价格更准；这里的衍生合约把没信息的单送进定价市场，让价格更不准。</li>
+    <li><strong>命题 4（均衡）：</strong>操纵者以某个介于 0 和 1 之间的概率入场；推价策略是角点解：第 2 阶段价格已经往她那边走（来的是买单），她就不推；价格往反方向走（来的是卖单），她一定推。预测市场的买价和卖价都等于 1/2，价差为零。</li>
+    <li><strong>命题 5（谁买单）：</strong>零价差下，预测市场做市商仍有租金，操纵者仍有利润，这两部分加上推价成本，恰好等于普通散户的期望损失。散户什么都没做错，只是持有了「涨」合约：现货做市商为了防推价把卖价压低，结算就系统性地偏离了她持有的方向。</li>
+    <li><strong>命题 8（期限是解药）：</strong>合约期限越长，结算前的普通价格发现越充分，价格到收盘时离行权价越远，固定大小的一次推价就越难改变结果。期限趋于无穷时，「推价能改变结果的概率」、操纵者的条件利润和无条件利润都趋于 0。作者也提到第二个工具：用一段时间的均价或收盘集合竞价来结算，而不是只用一个瞬间的价格。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>一次性、分阶段的 Glosten–Milgrom 序贯交易；做市商风险中性、竞争性、零利润报价，但报价不能交叉（卖价不低于买价），所以可能出现零价差下的租金。</li>
+    <li>操纵者没有任何信息，只靠合约头寸获利；结算噪声小、逆向选择适中（ε &lt; σπ &lt; 1/2，π 是知情者到达概率）。</li>
+  </ul>
+
+  <h3>主要结论（含实证）</h3>
+  <ul>
+    <li>Polymarket 的 5 分钟比特币合约于 2026-02-12 上线。上线后，Binance 现货在每个周期最后 10 秒的净订单流比上线前高约 50%；在结算前合约价格仍接近五五开的周期（约占 6%），这一跳升约是其他周期的 3.9 倍；结算后 10 秒内价格回吐约四分之一（其他周期约十分之一）。15 分钟合约上这种迹象明显弱得多。</li>
+    <li>在「几乎已定局」（某一方赢面 90%–100%）的周期里，出现反向推价时结果被翻转 34%，没有推价时只有 1%。作者按实际盈利识别出 821 个疑似操纵钱包（约占 24.3 万个交易者的 1/300），在被推的周期里赚了 820 万美元；剔除做市商后，93% 的损失落在散户身上。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这篇本质上是 Kumar–Seppi（1992）「现金结算操纵」在超短期合约里的再现，和 A 股的几个制度直接对得上：股指期货和 ETF 期权交割日的尾盘异动、收盘集合竞价（14:57–15:00）、以及被处罚过的「尾盘拉抬收盘价」类案件。模型给出两条可检验的预测：一是结算／定价参考价越依赖单一时点，尾盘越容易出现「无信息、会回吐」的成交冲击；二是操纵压力反而会让被操纵时段的报价价差变窄，所以只看流动性指标会误判市场质量。对董杰的「AI 投资者合谋」题目也有启发：如果多个算法都持有同方向的衍生头寸，它们在结算窗口同时推价，即使没有任何沟通，也会表现得像合谋。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2606.31675">arXiv 2606.31675</a> · <a href="https://arxiv.org/pdf/2606.31675">PDF</a> · <a href="https://skbi.smu.edu.sg/sites/skbi.smu.edu.sg/files/Research/Settlement%20Manipulation%20in%20Prediction%20Markets.pdf">SMU SKBI PDF</a> · <a href="https://www.shihaoyu.org/research/">Shihao Yu 研究页</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 禁空是把双刃剑：持股者里知情者少时能托住左尾，知情者多时只会拉宽价差</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 禁空是把双刃剑：持股者里知情者少时能托住左尾，知情者多时只会拉宽价差" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Pasquale Della Corte, Robert Kosowski, Dimitris Papadimitriou &amp; Nikolaos P. Rapanos · Imperial College London／King's College London · <em>The Double-Edged Sword of Short-Selling Bans</em> · arXiv 2609.08881（作者稿 2026-09-09；早期版本曾在 2023 NFA 报告）</p>
+  <div class="tags">
+    <span class="tag">禁止卖空</span>
+    <span class="tag">Diamond–Verrecchia</span>
+    <span class="tag">逆向选择</span>
+    <span class="tag">尾部风险</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Robert Kosowski — <em>Journal of Finance</em> 2006「Can Mutual Fund "Stars" Really Pick Stocks? New Evidence from a Bootstrap Analysis」（与 Timmermann、Wermers、White，61(6): 2551–2595；用自助法区分基金经理的真实选股能力和运气）。来源：Wiley 期刊页、SSRN。机制依 arXiv v1 PDF 第 2 节；实证结果依第 1、4 节。</div>
+
+  <h3>问了什么</h3>
+  <p>2020 年 3 月新冠冲击时，法国、意大利、西班牙等 6 国临时禁止卖空，英国等国没有。已有文献大多认为禁空伤害流动性，也托不住价格。但监管者的目标往往不是「平均价格」，而是「别出现暴跌」。作者问：如果监管者在乎的是暴跌概率，禁空什么时候真的有用？哪些股票上有用？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>这是一个单期的 Diamond–Verrecchia（1987）模型：股票价值是 1（概率 p）或 0；交易者依次到来，知情者（占比 α）知道真实价值，噪声交易者以概率 η 卖出；做市商按「看到这笔单之后的条件期望」报价。新增两点：一是监管者想让「价格跌破阈值 c 的概率」低于 x，但她不知道噪声交易者到底有多想卖（η 不确定）；二是知情者和噪声交易者<strong>手里有股票的比例不同</strong>，分别记为 h<sub>I</sub> 和 h<sub>N</sub>。禁空以后，只有手里有股票的人才能卖。</p>
+  <div class="eq">禁空前买价：Bid = (1−α)η·p / [(1−α)η + α(1−p)]　；　禁空后买价：(1−α)h<sub>N</sub>η·p / [α h<sub>I</sub>(1−p) + (1−α)h<sub>N</sub>η]</div>
+  <p class="eq-note">人话：做市商看到一笔卖单，会问「这单来自知情者（坏消息）的概率有多大」。禁空后，能卖的只剩持股者。如果知情者持股比例高于噪声交易者（h<sub>I</sub> &gt; h<sub>N</sub>），卖单更可能是坏消息，买价就被压低，价差变宽（引理 2）。买单不受禁空影响，所以卖价不变。</p>
+  <ul>
+    <li><strong>引理 3／结论 2（禁空能否防暴跌）：</strong>在 η 服从均匀分布时，禁空后的暴跌概率 = (h<sub>I</sub>² / h<sub>N</sub>) × 禁空前的暴跌概率。因此当且仅当 <strong>h<sub>I</sub>² &lt; h<sub>N</sub></strong> 时，禁空能降低暴跌概率。直觉：禁空有两种效果，一是让卖单变少（总是有利），二是改变做市商对卖单的解读（持股者里知情者越多越不利）。h<sub>I</sub>² 正是这两个比例相乘的结果。</li>
+    <li><strong>结论 1：</strong>基本面越差（p 低）、知情者越多（α 高）、监管者想守住的价位越高（c 高），监管者越倾向于禁空；监管者对噪声交易者抛售需求越不确定，越倾向于出手（附录引理 5）。</li>
+    <li><strong>引理 4：</strong>禁空不改变平均价格，但会降低中位数价格，因为「没成交」此时更像坏消息（想卖却没股票可卖的知情者）。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>静态、风险中性、单只股票；监管者只在乎短期暴跌，不在乎价格效率。</li>
+    <li>实证中用机构持股比例 m 代表「知情者持股」，于是 h<sub>I</sub>/h<sub>N</sub> 与 m/(1−m) 成正比。作者承认这只是一个不完美的代理变量。</li>
+  </ul>
+
+  <h3>主要结论（含实证）</h3>
+  <ul>
+    <li>用 17 个欧洲市场做双重差分（以主权 CDS 与金融压力指数作工具变量）：实施禁空的国家机构持股更低；禁空使平均买卖价差扩大约 13 个基点，其中高机构持股股票扩大 22–29 个基点，低机构持股股票只扩大 5–8 个基点且不显著；禁空使最大回撤（绝对值）减少约 310 个基点，低机构持股股票减少得更多；平均收益没有被托住。</li>
+    <li>政策含义：禁空在散户主导、机构持股少的股票上更划算；在机构持股多的股票上，成本大、收益小。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）A 股恰好是散户占比高、机构持股分化大的市场，而且 2023–2024 年监管层多次收紧融券和转融券（如暂停限售股出借、提高融券保证金比例）。这个模型给出了一个可以直接拿 A 股去检验的横截面预测：限制融券以后，机构持股低的股票应该左尾风险下降、价差变化不大；机构持股高的股票应该价差明显变宽、左尾改善有限。它和 9/18 讲过的「操纵性做空 + 恐慌挤兑」理论（禁空何时提高事前效率）是两种不同的论证，可以对照着读：那篇从企业基本面被做空伤害的角度出发，这篇从做市商如何解读卖单的角度出发。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.08881">arXiv 2609.08881</a> · <a href="https://arxiv.org/pdf/2609.08881">PDF</a> · <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.2006.01015.x">Kosowski et al. JF 2006</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 把拍卖当成「统计实验」：一价拍卖的出价最能透露基本面</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 把拍卖当成「统计实验」：一价拍卖的出价最能透露基本面" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Mira Frick, Ryota Iijima, Yuhta Ishii &amp; Nicholas Wu · Princeton／Penn State／Microsoft Research · <em>Auctions as Experiments</em> · arXiv 2609.21168（本版 2026-09-21；首版 2026-02-09）</p>
+  <div class="tags">
+    <span class="tag">拍卖格式</span>
+    <span class="tag">Lehmann 准确度</span>
+    <span class="tag">策略响应</span>
+    <span class="tag">信息含量</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Frick, Iijima &amp; Ishii — <em>Econometrica</em> 2020「Misinterpreting Others and the Fragility of Social Learning」（88(6): 2281–2328；讲哪怕对他人类型有一点点误判，社会学习也会崩溃）。来源：Econometric Society 期刊页、RePEc／Cowles。机制依 arXiv v1 PDF 第 2–4 节。</div>
+
+  <h3>问了什么</h3>
+  <p>国债招标、IPO 询价、广告位拍卖里，出价者对「市场基本面」θ 比外人更了解。外人（发行人、二级市场投资者、下一轮拍卖的组织者）只能从出价里倒推 θ。<strong>换一种拍卖格式，出价里关于 θ 的信息会多还是少？</strong>昨天的 Awaya–Krishna–Osipov 比较的是「成交价」这一个数字；这篇假设外人能看到全部出价，比较的是整套出价分布的信息量。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>n 个人竞买一件东西，每人的估值 v 从一个随 θ 升高而整体变高的分布里独立抽取（例如 v = θ + 个人口味）。出价者知道 θ，外人不知道。每种拍卖都把「θ → 一堆出价」变成一个统计实验，作者用 Lehmann 准确度来比较哪个实验更好。θ 变化通过两个渠道影响出价：一是估值本身变高；二是<strong>策略响应</strong>，即同样的估值，因为对手变强而调整出价。引理 1 说明，哪种拍卖的策略响应更正，哪种就更准确。</p>
+  <div class="eq">一价拍卖均衡出价：b<sub>θ</sub>(v) = v − ∫ F<sub>θ</sub>(x)<sup>n−1</sup> dx ／ F<sub>θ</sub>(v)<sup>n−1</sup>（积分从估值下界到 v）</div>
+  <p class="eq-note">人话：出价 = 自己的估值减去一块「让利」（bid shading）。对手越强（θ 越高），让利越小，所以<strong>同一个估值的人在 θ 高时会出得更高</strong>，这就是正的策略响应。二价拍卖里每个人都如实报估值，不管 θ 是多少，策略响应为零；三价拍卖里对手越强反而出得越低，策略响应为负。于是一价拍卖的出价对 θ 比估值本身还敏感。</p>
+  <ul>
+    <li><strong>命题 1：</strong>一价比二价准确，二价比三价准确；一价也比全付拍卖（all-pay，输家也付钱）准确。</li>
+    <li><strong>定理 1（主结论）：</strong>在任何「标准拍卖」（出价最高者得、付款可以依赖名次和全部出价）中，只要出价分布对 θ 满足单调似然比，一价拍卖都是最准确的。证明利用了收入等价：所有这些拍卖期望收入相同，但一价拍卖同时具备「只有赢家付钱」和「付款只看自己的出价」两个特点，这两点让策略响应最强。</li>
+    <li><strong>命题 2、3：</strong>在第 k 价拍卖中，k 越小越准确；在「按自己出价的若干倍付款」的一类拍卖中，名次越高的人付的倍数相对越大，越准确。</li>
+    <li><strong>推论 1、2（福利含义）：</strong>对任何「状态越高、最优行动越高」的决策问题（预测 θ、给下一轮拍卖定保留价等），看一价出价总能得到更高的期望收益。在某些估值分布下，看一价出价几乎能完美猜出 θ，而看二价出价几乎等于什么都没看到，即使二价拍卖的出价人数多得多。</li>
+    <li><strong>扩展：</strong>相互依赖估值、出价者只看到 θ 的噪声信号，结论仍然成立；一价 vs 二价的比较可以推广到相关估值和多单位拍卖。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>基准模型中出价者完全知道 θ 和自己的估值（5.2 节放松为噪声信号）；只看对称单调均衡；不允许拍卖额外要求出价者「直接报告 θ」。</li>
+    <li>Lehmann 准确度比 Blackwell 排序宽松，所以福利结论只对「单调决策问题」成立。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>所有标准拍卖收入相同，但信息溢出不同。如果组织者或场外投资者要从出价中学习基本面，一价（荷兰式／歧视价格）格式是最优的。</li>
+    <li>和 Awaya–Krishna–Osipov 结合：AKO 给出最高信号比第二高信号更有信息的条件，按传递性就能推出一价拍卖的成交价比二价拍卖的成交价更有信息（本文脚注明确指出这一点）。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）和昨天那篇放在一起，这个问题就比较完整了：拍卖格式不只影响发行收入，还决定二级市场能从一级市场学到多少。在 A 股的语境下，可以从两个角度去想。一是 IPO 网下询价：交易所会公布全部报价的分布，报价机构的「让利」幅度会随它对市场热度的判断而变化，所以报价分布本身就是一个比发行价更丰富的基本面信号。二是财政部国债招标在荷兰式（统一价格）、美国式（歧视价格）和混合式之间选择，按本文逻辑（第 5.3 节把一价 vs 二价的比较推广到了多单位拍卖），美国式的投标分布应当对利率预期更有信息。本文的「策略响应」概念也值得借到董杰的 AI 合谋题目里：如果算法出价者学会了根据对手强弱调整让利，它们的出价就会同时携带「对手情况」的信息。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.21168">arXiv 2609.21168</a> · <a href="https://arxiv.org/pdf/2609.21168">PDF</a> · <a href="https://www.econometricsociety.org/publications/econometrica/2020/11/01/misinterpreting-others-and-fragility-social-learning">Econometrica 2020 期刊页</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 卖方能「看完报价再决定等不等、透露不透露」，买方就藏起早期报价，这就是棘轮效应</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 卖方能「看完报价再决定等不等、透露不透露」，买方就藏起早期报价，这就是棘轮效应" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jingyu Liu, Bolin Zhang, Lin William Cong, Siguang Li &amp; Xuechao Wang · HKUST（广州）／NTU · <em>From PBS to ePBS: the Microstructure of Block Building</em> · arXiv 2607.11240（2026-07-13）</p>
+  <div class="tags">
+    <span class="tag">两阶段拍卖</span>
+    <span class="tag">可核实信息</span>
+    <span class="tag">承诺</span>
+    <span class="tag">延迟优势</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Lin William Cong — <em>Review of Financial Studies</em> 2019「Blockchain Disruption and Smart Contracts」（与 Zhiguo He，32(5): 1754–1797；讲去中心化共识在增强竞争的同时也可能便利合谋）。来源：RePEc、Stanford GSB 发表页。机制依 arXiv v1 PDF 第 3–4、6 节。</div>
+
+  <h3>问了什么</h3>
+  <p>以太坊每 12 秒出一个块，「谁来组装这个块」的权利由出块者（proposer）拍卖给专业构建者（builder）。现行 PBS 制度由中继（relay）撮合，出块时点对构建者来说基本是外生的；即将上线的 ePBS 让出块者直接收报价，可以<strong>先看报价，再决定马上出块还是再等一轮</strong>，还可以选择把哪些报价透露给谁。代价是晚出块，块被网络确认的概率会下降。问题是：这种「事后灵活性」对卖方是好是坏？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>模型是一个两阶段拍卖。第一阶段构建者报价；出块者看到报价后，以第一阶段的最高价成交，或者推迟到第二阶段，这时可以公开或私下发送可核实的报价信息，「快」的构建者能看到并重新报价，「慢」的看不到。推迟后成交的确认概率是 k<sub>2</sub> ≤ 1。在 PBS 下，第一阶段就成交的概率 q<sub>1</sub> 是外生的。</p>
+  <ul>
+    <li><strong>定理 1、命题 4（PBS）：</strong>估值独立同分布时，只要 q<sub>1</sub> ≥ 1/2，就存在第一阶段如实「分离」报价的均衡，构建者收益和标准一价拍卖相同；如果 q<sub>1</sub> &lt; 1/n（均匀分布时 q<sub>1</sub> ≤ 1/3），就不存在严格分离的均衡。第一阶段报价很少真正决定付款时，没人愿意在第一阶段暴露自己的估值。</li>
+    <li><strong>定理 2（ePBS 的棘轮效应）：</strong>出块者能先看报价再决定，第一阶段的报价就同时成了「出价」和「信号」：报高了，出块者会推迟，并利用这个信息在第二阶段榨更多钱。于是均衡变成「单边混同」：估值低于某个门槛 c 的构建者第一阶段都报 0，只有高估值者给出正报价；出块者看到全是 0 就推迟，看到正报价就马上成交。当确认概率 k<sub>2</sub> 不低于某个门槛（K<sup>+</sup> = 1 ／ (1 + ∫F)，即推迟的代价足够小）时，存在「所有人第一阶段都报 0、拍卖完全拖到第二阶段」的完全混同均衡。</li>
+    <li><strong>推论 1：</strong>无论是部分混同还是完全混同，构建者的总收益都不超过标准一价拍卖；而出块者的收入和分配效率也可能低于一价拍卖，作者称之为「收入—效率低谷」。</li>
+    <li><strong>命题 6 与 TEE 方案：</strong>如果出块者能事前承诺，最优规则就退化为 Myerson 最优拍卖，棘轮效应消失。作者提出用可信执行环境（TEE）作为有限承诺工具，事前锁定「何时停、透露什么」。在保守的离散算例中，出块者收入比一价拍卖高约 25%。</li>
+    <li><strong>校准数值：</strong>用 CFR 无悔学习算法在非独立估值、快慢异质、私下透露的现实设定下验证：ePBS 在推迟变得可信时出现收入—效率低谷；ePBS 会压缩、但不会消除「快」构建者的延迟溢价。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>两阶段、付自己报价（pay-as-bid）的终止规则；报价可核实，不能伪造；晚出块的代价用确认概率 k<sub>2</sub> 简化表示。</li>
+    <li>解析结果主要针对两名快构建者、独立同分布估值的简化版本；更一般的情形依赖数值模拟。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「事后灵活性」对缺乏承诺的卖方是坏事：买方预见到早期报价会被利用，就隐藏或压低早期报价。问题的根源是承诺缺失，而不是信息不足。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）虽然场景是区块链，但机制是经典的「早期报价既是出价又是信号」，和 A 股开盘集合竞价高度同构：9:15–9:25 期间交易所实时揭示虚拟成交价和未匹配量，9:15–9:20 可以撤单、9:20 以后不能撤。这正是「报价会被披露、但约束力随时间变化」的两阶段结构，模型预测前一段报价会被策略性地压低或虚报，与 9/17 讲过的 spoofing 理论可以互相印证。在披露方面，它说明信息披露规则若不能事前承诺，可能让参与者干脆不说真话。Cong–He（2019 RFS）关于区块链便利合谋的结论，也和董杰的 AI 合谋题目直接相关。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2607.11240">arXiv 2607.11240</a> · <a href="https://arxiv.org/pdf/2607.11240">PDF</a> · <a href="https://ideas.repec.org/a/oup/rfinst/v32y2019i5p1754-1797..html">Cong–He RFS 2019（RePEc）</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/6 已写过的篇目（含 10/6 Kolb–Zhou、Lizzeri–Lou–Perego、Gao–Lu–Yang、Awaya–Krishna–Osipov；9/18 操纵性做空与挤兑；9/17 spoofing；9/2 Bertomeu–Cheynel–Hu；8/19 Chen–Jin《When Public Signals Backfire》已写过并做过精读，本期弃用）。本期未收录：Döttling–Levit–Malenko–Rola-Janicka《Governing Global Externalities》（NBER w35778，10/5 已判断股市机制较弱）；Pagès–Possamaï–Rodriguez Polo《Equilibrium prices under hidden Markov fundamentals》（arXiv 2609.21684，偏数理资产定价，未核顶刊）；Zang–Andrade–Nakajima《Who Aggregates Information? CLOB vs AMM》（arXiv 2609.20017，未核到名单内顶刊作者）；Pennanen《Social welfare and price discovery in double auction markets》（arXiv 2610.01562，未核到名单内顶刊作者）。Dai–Jia–Yu、Della Corte 等、Frick 等、Liu 等均依 arXiv v1 全文 PDF。顶刊：Jia–Yu RFS 2026；Kosowski JF 2006；Frick–Iijima–Ishii Econometrica 2020；Cong RFS 2019。PDF 存 /workspace/research/daily-papers/scratch-1007/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
