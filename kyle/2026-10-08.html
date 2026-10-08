@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-08</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-08">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月8日 · 第三十七期 · 4 篇 2026 年理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇从微观结构一路讲到长期定价，共同的问题是：<strong>谁会去拿信息，拿到的信息又能多快、多完整地进到价格里</strong>。Capponi–Cartea–Drissi 把区块链交易所当作唯一的定价场所来建模：成交是一块一块离散清算的，块内谁先成交靠「出价买优先权」决定。他们发现，知情者越多，敢参与的人反而越少，价格信息被截断，流动性变差，块时间太长时市场甚至会关门。Choi–Larsen 补上了 Foster–Viswanathan（1996）「多个部分知情者」Kyle 模型三十年来缺的那块地基：离散时间均衡确实存在，而且交易轮次加密时会收敛到 Back–Cao–Willard（2000）的连续时间均衡。Cabrales–Curello–Gossner–Serrano 研究「风险厌恶的人更愿意还是更不愿意花钱买信息」，答案取决于两件事：你拿信息去买「顺周期」的资产还是「保险」，以及背景风险的尾部有多厚。Lu–Stachurski 证明，一个很少进入、而且进入后终究会离开的「灾难状态」，可以主导长期资产的定价；他们还算出了它从什么期限开始接管定价。四篇都读了 arXiv 全文 PDF，都没有出现在 8/18–10/7 的理论简报里。和往常一样，下面把<strong>作者证明的结论</strong>和<strong>本简报的解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Capponi–Cartea–Drissi：块内「花钱买排位」让只有高估值者敢交易；竞争越强，信息越被截断、流动性越差，块越长越可能关市</a> — arXiv 2026-05（首版 2025-03）</li>
+      <li><a href="#p2">Choi–Larsen：多个部分知情者的离散 Kyle 均衡终于被证明存在，并收敛到连续时间版本</a> — arXiv 2026-07</li>
+      <li><a href="#p3">Cabrales–Curello–Gossner–Serrano：买信息去投资，越怕风险越不愿付钱；买信息去保险，越怕风险越愿付钱，但都要看尾部形状</a> — arXiv 2026-09</li>
+      <li><a href="#p4">Lu–Stachurski：很少发生的灾难状态可以主导长期定价，接管的期限约为 (d/Δ)·log(1/ε)</a> — arXiv 2026-09</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 块内「花钱买排位」让只有高估值者敢交易；竞争越强，信息越被截断、流动性越差，块越长越可能关市</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 块内「花钱买排位」让只有高估值者敢交易；竞争越强，信息越被截断、流动性越差，块越长越可能关市" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Agostino Capponi, Álvaro Cartea &amp; Fayçal Drissi · Columbia IEOR／Oxford-Man Institute · <em>The Viability of Blockchain Markets under Discrete Clearing and Paid Priority</em> · arXiv 2605.17425（本版 2026-05-19；首版 2025-03-21；论文注明已入选 NBER SI 2026 Financial Market Structure 与 EEA-ESEM 2026）</p>
+  <div class="tags">
+    <span class="tag">离散清算</span>
+    <span class="tag">优先权拍卖</span>
+    <span class="tag">内生参与</span>
+    <span class="tag">流动性供给</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Agostino Capponi — <em>Review of Financial Studies</em> 2026「Price Discovery on Decentralized Exchanges」（与 Ruizhe Jia、Shihao Yu；DOI 10.1093/rfs/hhag002，2026-01-19 在线；实证发现付高优先费的 DEX 交易含更多私人信息、主导价格发现）。来源：Crossref 元数据（期刊名、作者、上线日期）、SMU SKBI 2026-10 通讯、SSRN 4236993。机制依 arXiv v1 PDF 第 I–V 节。</div>
+
+  <h3>问了什么</h3>
+  <p>如果区块链要成为金融基础设施，它就得能单独撑起一个市场：自己形成价格，自己提供流动性。区块链交易有三个和交易所不同的地方。第一，<strong>离散清算</strong>：以太坊每 12 秒左右出一个块，块内所有交易一次性结算。第二，<strong>块时间不能太短</strong>，否则共识不安全、去中心化保不住。第三，<strong>块内顺序靠付费</strong>：交易者给出块者付「优先费」来排队，即优先权拍卖（PGA）。作者要回答：在这三条规则下，市场还能不能正常定价、正常提供流动性？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>博弈分三步。① M 个潜在交易者决定要不要付固定成本 C 去获取信息、进场。② 一个流动性提供者（LP）决定 DEX 池子的深度 L：一边从噪声交易者那里赚手续费，一边要承担被知情者「吃掉」的损失。③ 进场的知情者各自看到私人估值 v（大家都知道方向，比如都是买方，只是对涨多少看法不同），然后同时决定买多少 Q、付多少优先费 Φ。出块者按优先费从高到低排序执行。DEX 的价格规则是线性的：买 Q 单位，每单位滑点 Q/L，成交后价格上移 2Q/L。所以<strong>排在后面的人要在前面所有人推高的价格上成交</strong>，抢排位就是为了躲开前面的人的价格冲击。</p>
+  <div class="eq">均衡优先费（命题 1）：Φ(Q<sub>i</sub>) = (2/L)·(M−1)·∫<sub>0</sub><sup>Q<sub>i</sub></sup> x² dG(x)</div>
+  <p class="eq-note">人话：Q<sub>i</sub> 是自己的下单量，G 是对手下单量的分布，L 是池子深度，M−1 是对手人数。积分相当于把「下单量比我小、我能压过去的对手」带来的价格冲击加总，这就是抢到前排能省下的钱。单子越大，排在后面的损失越大，就越愿意付高费；对手越多，费越高；池子越深（L 大），价格冲击越小，费越低。这是一种「全付拍卖」：不管排第几，优先费都照付。</p>
+  <div class="eq">参与门槛（引理 2）：v<sup>M</sup> − π = ∫<sub>v<sup>M</sup></sub><sup>v̄</sup> [ e<sup>(M−1)(1−F(u))</sup> − 1 ] du</div>
+  <p class="eq-note">人话：v<sup>M</sup> 是愿意下单的最低估值；π 是 DEX 按比例收的手续费；v̄ 是估值上限；F 是估值的分布函数。估值低于 v<sup>M</sup> 的人干脆不交易。原因是：估值低，想买的量就小，愿付的优先费也低，于是排在后面，要吃前面那些高估值、大单子的价格冲击，算下来不赚钱。（等号右边的直觉解读是本简报的：它概括了排在前面的高估值对手带来的预期冲击。）引理 2 证明 v<sup>M</sup> 随 M 严格上升，M→∞ 时趋于 v̄。</p>
+  <ul>
+    <li><strong>命题 2、3（竞争越强，信息越被截断）：</strong>估值高于门槛的人才下单，下单量 Q(v) = L·Q̃(v)，与池子深度成正比、随估值上升。对手越多，门槛越高，每人下单越少。块末的期望价格是 M(v<sup>M</sup>−π)/(M−1)，竞争加剧时从下方趋近 v̄−π。也就是说，价格只反映「被截断的、偏极端的」那部分估值，并被推向极端值。</li>
+    <li><strong>命题 4：</strong>估值低于门槛的人优先费为 0。优先费随估值上升，所以优先费本身会暴露估值；知情者也不会像 Kyle 模型那样「藏在噪声单里」，因为只要出一点点正的优先费就能排到所有噪声单前面。</li>
+    <li><strong>命题 5（流动性）：</strong>均衡池子深度为 L* = πN／(M·S<sub>M</sub>) − θ。其中 N 是噪声交易的规模；θ 衡量噪声需求对池子深度有多敏感；S<sub>M</sub> 衡量知情者总下单量的离散程度，也就是 LP 在一次清算中要承担的逆向选择。市场能开着的条件是 M·S<sub>M</sub> ≤ πN／θ。直觉是：一个块把传统市场里分好几轮的交易压到一轮里，LP 没有机会在中途调整报价，只能一次性承受全部知情单。</li>
+    <li><strong>命题 6：</strong>进场人数 M* 随噪声交易规模 N 增加、随信息成本 C 下降。在传统市场里，这两点都会让价格更有效；在这里却相反：进场者越多，门槛越高，价格里的信息越窄。</li>
+    <li><strong>推论 1（块时间）：</strong>块时间 T 越长，估值越分散、噪声需求越少。结果是门槛上升，价格更极端，流动性下降；块时间超过某个临界值，市场就会关门。这就是「安全性和效率之间的取舍」。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>知情者风险中性，同一块内的知情者要么都买、要么都卖（块时间够长，价格方向基本确定）；估值独立同分布。</li>
+    <li>DEX 价格冲击线性、可加；出块者严格按优先费排序；LP 设好深度以后就不再参与。噪声单只付基础费，排在所有知情单之后。</li>
+  </ul>
+
+  <h3>主要结论（含实证）</h3>
+  <ul>
+    <li>与 Holden–Subrahmanyam（1992）对照：在多轮连续交易的传统市场，知情者之间的竞争会让信息在早期就进入价格，之后深度变好；而在「一轮清算 + 付费排位」的区块链上，竞争反而让价格发现和流动性同时变差。</li>
+    <li>两条典型事实与模型一致：区块链上的单笔成交量显著大于中心化订单簿上同一交易对的单笔成交量（引用 Cartea–Drissi–Monga 2025 的证据，支持「只有高估值者参与」）；用 Uniswap v3 数据发现，块内排位越靠前，成交量越大。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）把「区块链」换成「一次性清算的竞价」，这个模型和 A 股的开盘、收盘集合竞价有可比之处：都是把一段时间的订单压在一轮里撮合。不同之处在于，A 股集合竞价是统一价格成交，没有付费排位；连续竞价阶段则按价格优先、时间优先排序。模型提醒我们，排序规则本身会决定「谁敢报单」，进而决定价格里有多少信息。论文文献综述也把自己和 Budish–Cramton–Shim（2015）的统一价格频繁批量拍卖做了区分（那里 LP 参与报价；这里是歧视性定价，LP 不参与）。对董杰的「AI 投资者合谋」题目有两点启发。一是多个交易算法在同一时间窗口里抢排位，就像这里的全付拍卖：人数越多，单个算法越收敛，看起来像「默契地少交易」，其实是竞争均衡。二是「知情者多反而价格更差」这一结论说明，判断算法是否在合谋，不能只看价格效率有没有下降。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2605.17425">arXiv 2605.17425</a> · <a href="https://arxiv.org/pdf/2605.17425">PDF</a> · <a href="https://doi.org/10.1093/rfs/hhag002">Capponi–Jia–Yu RFS 2026（DOI）</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4236993">SSRN 4236993</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 多个部分知情者的离散 Kyle 均衡终于被证明存在，并收敛到连续时间版本</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 多个部分知情者的离散 Kyle 均衡终于被证明存在，并收敛到连续时间版本" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Jin Hyuk Choi &amp; Kasper Larsen · UNIST／Rutgers · <em>Existence and Convergence of Discrete-Time Kyle Models with Multiple Insiders</em> · arXiv 2607.15057（v1 2026-07-16，v2 2026-07-20）</p>
+  <div class="tags">
+    <span class="tag">Kyle 模型</span>
+    <span class="tag">Foster–Viswanathan</span>
+    <span class="tag">均衡存在性</span>
+    <span class="tag">离散→连续</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Choi &amp; Larsen — <em>Journal of Financial Economics</em> 2019「Information and Trading Targets in a Dynamic Market Equilibrium」（与 Duane Seppi，132(3): 22–49，DOI 10.1016/j.jfineco.2018.11.003；多期 Kyle 模型里同时有长期私人信息的内幕人和要拆单完成调仓目标的机构，推出订单流自相关、「阳光交易」等日内规律）。来源：Crossref、NSF PAR、SSRN 2561507、RePEc。内容依 arXiv v2 PDF 第 1–3 节。</div>
+
+  <h3>问了什么</h3>
+  <p>Kyle（1985）只有一个内幕人；Holden–Subrahmanyam（1992）推广到多个<em>完全</em>知情者；Foster–Viswanathan（1996，JF）再推广到多个<em>部分</em>知情者：每人只知道最终价值的一部分，彼此信号相关。这个模型就是著名的「预测别人的预测」（forecasting the forecasts of others）。它被大量引用，但有一个尴尬的地方：<strong>没人证明过它的均衡确实存在</strong>，FV 只给了均衡应满足的条件和数值解。本文要补上这个证明，并检验交易轮次越来越密时，离散均衡会不会收敛到 Back–Cao–Willard（2000）的连续时间均衡。</p>
+
+  <h3>模型设定（人话）</h3>
+  <p>有 M 个部分知情者。交易者 i 一开始看到信号 ã<sub>i</sub>，股票最终价值是所有信号之和 ṽ = ã<sub>1</sub> + … + ã<sub>M</sub>。信号对称：方差都是 σ<sub>ã</sub>²，两两协方差都是 ρ。有 N 轮交易，每轮噪声交易量是方差 σ<sub>w</sub>²/N 的正态冲击。做市商只看到总订单流，按条件期望定价。</p>
+  <div class="eq">均衡策略：Δθ<sub>i,n</sub> = β<sub>n</sub>·(ã<sub>i</sub> − t<sub>n−1</sub>)，　Δp<sub>n</sub> = λ<sub>n</sub>·Δy<sub>n</sub>，　Δt<sub>n</sub> = ζ<sub>n</sub>·Δy<sub>n</sub>，　λ<sub>n</sub> = M·ζ<sub>n</sub></div>
+  <p class="eq-note">人话：Δθ<sub>i,n</sub> 是交易者 i 第 n 轮的下单量；β<sub>n</sub> 是这一轮的「交易激进度」；t<sub>n−1</sub> 是市场根据过去订单流对「单个人的信号」的估计。所以每个人按「我的信号比市场以为的高多少」来下单。Δy<sub>n</sub> 是这一轮的总订单流（所有知情单加噪声单）；λ<sub>n</sub> 是 Kyle λ，即每单位订单流把价格推多少。λ = M·ζ 的意思是：价格 = M × 市场对单个信号的估计，因为价值是 M 个信号之和。</p>
+  <ul>
+    <li><strong>定理 2.3（存在性，本文主结果）：</strong>只要 M ≥ 2、−σ<sub>ã</sub>²/(M−1) &lt; ρ &lt; σ<sub>ã</sub>²（即信号协方差矩阵正定，不含完全相关的 HS 情形），就存在一个关于剩余不确定性 Σ<sub>n</sub> 的二阶差分递推解，它满足 Σ<sup>+</sup><sub>n</sub> &gt; Σ<sub>n−1</sub> &gt; Σ<sub>n</sub>，并恰好对上初始条件 Σ<sub>0</sub> = (Mσ<sub>ã</sub>² + c<sub>0</sub>)/(−c<sub>0</sub>)，其中 c<sub>0</sub> = (M−1)(ρ − σ<sub>ã</sub>²) &lt; 0。用这个解就能显式构造出 β<sub>n</sub>、ζ<sub>n</sub>、λ<sub>n</sub>，即 FV 均衡存在。证明方法是「打靶法」（shooting）：从终点 Σ<sub>N</sub> 出发往回推，调整 Σ<sub>N</sub> 直到推回来正好命中 Σ<sub>0</sub>。FV 的对称假设把问题降成一维，所以打靶法可行。</li>
+    <li><strong>定理 3.2（收敛性）：</strong>当 N→∞ 时，离散递推 Σ<sub>⌊tN⌋</sub> 逐点收敛到 BCW 的二阶常微分方程解 S(t)，它的差分也收敛到 S′(t)。因此离散均衡的全部系数都收敛到连续时间均衡（t = 1 那一点因为常微分方程奇异而除外）。作者特别指出，这种收敛在 Kyle 类模型里并不是理所当然的：Caldentey–Stacchetti（2010）的随机期限模型就收敛到一个与对应连续时间模型不同的极限。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>信号结构对称（方差相同、两两协方差相同）。FV（1994）那种非对称结构会产生二维卡尔曼滤波，不在本文范围内。</li>
+    <li>知情者风险中性，下单时看不到当期价格（同 Kyle 1985）；只考虑线性均衡。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>FV（1996）的离散模型从此有了严格的存在性保证，而且与 BCW（2000）的连续时间模型「是同一个东西的两种分辨率」。研究者可以放心地用离散版本做数值计算和比较静态，再用连续版本推解析式。</li>
+    <li>背景（FV 1996 原文的经典结论，本简报转述，并非本文新结果）：知情者信号越相关，彼此竞争越激烈，信息越快进入价格；相关度低或为负时，知情者会「互相等待」，前期交易不积极，后期才加速。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这是一篇纯数学稿，但它补的正好是董杰「AI 投资者是否合谋」最可能用到的基准模型的地基。如果多个 AI 交易者用相似的数据和模型，它们的信号就高度相关（ρ 接近 σ<sub>ã</sub>²），FV 均衡给出的是<strong>完全不合谋</strong>时的交易激进度、价格冲击和信息释放速度。只有先有这条可靠的竞争基准，才能判断实际观察到的「交易不积极、λ 偏高」是合谋，还是 FV 意义上的正常竞争。另外，A 股日内数据往往按固定时间切片，模型给出的离散到连续的收敛结论，也说明不同切片频率下估出的 λ 序列应当可以互相对照。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2607.15057">arXiv 2607.15057</a> · <a href="https://arxiv.org/pdf/2607.15057">PDF</a> · <a href="https://doi.org/10.1016/j.jfineco.2018.11.003">Choi–Larsen–Seppi JFE 2019（DOI）</a> · <a href="https://par.nsf.gov/biblio/10106392-information-trading-targets-dynamic-market-equilibrium">NSF PAR 记录</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 买信息去投资，越怕风险越不愿付钱；买信息去保险，越怕风险越愿付钱，但都要看尾部形状</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 买信息去投资，越怕风险越不愿付钱；买信息去保险，越怕风险越愿付钱，但都要看尾部形状" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Antonio Cabrales, Gregorio Curello, Olivier Gossner &amp; Roberto Serrano · Carlos III／Mannheim／École Polytechnique &amp; LSE／Brown · <em>Comparative Statics of Information Acquisition and Risk Aversion</em> · arXiv 2609.12149（v1 2026-09-10，v2 2026-09-28）</p>
+  <div class="tags">
+    <span class="tag">信息价值</span>
+    <span class="tag">风险厌恶</span>
+    <span class="tag">背景风险</span>
+    <span class="tag">尾部形状</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Cabrales, Gossner &amp; Serrano — <em>American Economic Review</em> 2013「Entropy and the Value of Information for Investors」（103(1): 360–377，DOI 10.1257/aer.103.1.360；对怕破产的投资者，信息结构的价值可以完全按「信念熵的下降量」排序，与偏好、财富和投资问题无关）。来源：AEA 期刊页、RePEc、Crossref。本文就是在那篇基础上加入背景风险。机制依 arXiv v2 PDF 第 2–6 节。</div>
+
+  <h3>问了什么</h3>
+  <p>谁最愿意花钱买信息？是胆大的人还是胆小的人？直觉有两种。胆大的人愿意用信息去挑好的投资机会；胆小的人愿意用信息在最需要的时候买保险。作者给出精确的条件：什么情况下「越风险厌恶，越愿意为信息付钱」，什么情况下相反。</p>
+
+  <h3>模型设定（人话）</h3>
+  <p>一个人本来就有不确定的财富 W（背景风险，例如工资、已有持仓），密度为 f。她可以先花价格 μ 买一个信号，信号越高，说明 W 越可能高（单调似然比，MLR），然后从一组资产里选一个。资产 b(w) 的收益依赖于背景财富的实现值 w。作者区分两类资产菜单：<strong>投资菜单</strong>是顺周期的，越往上的资产越把收益从坏状态挪到好状态；<strong>保险菜单</strong>是逆周期的，越往上的资产越把收益挪到坏状态。另外假设「没有信息时她什么都不买」（ZAZI），这样就能把信息的价值单独拿出来看。命题 1 说明，每个人都有唯一的「信息保留价格」M(u)：价格低于它就买，高于它就不买。</p>
+  <div class="eq">CARA 例子（引理 1）：M = −(1/r)·log{ [(1−p)e<sup>−r(H+k<sub>H</sub>)</sup> + p e<sup>−rk<sub>L</sub></sup>] ／ [(1−p)e<sup>−rk<sub>H</sub></sup> + p e<sup>−rk<sub>L</sub></sup>] }，随 r 严格递减</div>
+  <p class="eq-note">人话：r 是绝对风险厌恶系数；p 是坏状态的概率；k<sub>H</sub>、k<sub>L</sub> 是好、坏状态下原有的财富；H 是顺周期投资在好状态的收益（坏状态亏 L，没有信息时不值得投）。完全信息让她只在好状态投资。分母是不买信息时的「负效用」，分子是买了信息、只在好状态投资时的「负效用」，取对数再除以 r，就换算成了愿意付的钱。r 越大，好状态多出来的那笔钱就越不值钱，所以愿付价格下降。在保险的镜像例子（引理 2）里，信息让她只在坏状态买保险，愿付价格随 r 上升。</p>
+  <ul>
+    <li><strong>定理 1：</strong>背景风险的密度是对数凹的（log-concave，例如正态分布，尾部薄），资产是投资菜单 ⇒ 越风险厌恶，越不愿为信息付钱。</li>
+    <li><strong>定理 2：</strong>背景风险是「向下对数凸」的（log f 凸、支撑向下无界，即左尾厚），资产是保险菜单 ⇒ 越风险厌恶，越愿为信息付钱。</li>
+    <li><strong>命题 2、3（反例）：</strong>投资菜单配上严格对数凸的尾部，或者保险菜单配上「超指数」薄左尾，上面两个结论都可能反过来。所以尾部条件不是技术细节，而是实质性的。</li>
+    <li><strong>机制拆解（6.1 节）：</strong>买信息有两个效果。一是付价格 μ，所有状态下的财富都整体下移；二是信息让资产选择能「按信号调整」，把一部分概率质量挪过某个财富门槛。尾部薄时，整体下移对左尾的伤害相对大，所以很怕风险的人不愿付钱；尾部厚时，按信号调整对左尾的改善相对大，所以很怕风险的人愿意付钱。</li>
+    <li><strong>应用（6.2 节）：</strong>标的收益是背景财富的单调函数时，看涨期权仓位构成投资菜单，看跌期权构成保险菜单。所以在对数凹背景风险下，越风险厌恶的人越不愿在买看涨期权之前买信息。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>期望效用；信号有限且满足 MLR；资产收益是背景财富的确定函数（作者把「资产收益条件分布随背景财富变化」留作以后的工作）。</li>
+    <li>只做个人决策，不做市场均衡：作者明确说，把这种「谁去拿信息」的选择效应放进 Grossman–Stiglitz 式的市场模型，不在本文范围内。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「风险厌恶与信息需求」的方向由两个可观察的因素决定：信息用来做顺周期投资还是做对冲，以及背景风险的尾部是薄还是厚。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）在 Grossman–Stiglitz 和 Verrecchia 式的信息获取模型里，通常假设 CARA、没有背景风险，所以谁去当知情者只看成本和风险容忍度。这篇说明，加入背景风险以后，「哪类投资者更愿意去研究公司」取决于他们拿信息做什么。对 A 股信息披露研究有一个可以检验的推论：散户多以做多为主（投资菜单），机构更多用信息做对冲和风控（保险菜单）。按定理 1、2 的组合，可以推出两条可检验的预测：在厚尾时期（例如股灾、熔断前后），为对冲而找信息的需求，应当在风险厌恶更高的投资者中更强；在薄尾的平常时期，为做多选股而找信息的需求，应当在风险厌恶更低的投资者中更强。这可以用调研频次、互动易提问、年报下载量等指标去检验。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.12149">arXiv 2609.12149</a> · <a href="https://arxiv.org/pdf/2609.12149">PDF</a> · <a href="https://www.aeaweb.org/articles?id=10.1257/aer.103.1.360">Cabrales–Gossner–Serrano AER 2013 期刊页</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 很少发生的灾难状态可以主导长期定价，接管的期限约为 (d/Δ)·log(1/ε)</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 很少发生的灾难状态可以主导长期定价，接管的期限约为 (d/Δ)·log(1/ε)" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Ye Lu &amp; John Stachurski · University of Sydney／GRIPS（政策研究大学院大学） · <em>Rare States and Long-Run Pricing</em> · arXiv 2609.27134（2026-09-22）</p>
+  <div class="tags">
+    <span class="tag">长期定价</span>
+    <span class="tag">罕见灾难</span>
+    <span class="tag">定价半群</span>
+    <span class="tag">期限结构</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>John Stachurski — <em>Journal of Finance</em> 2020「Necessary and Sufficient Conditions for Existence and Uniqueness of Recursive Utilities」（与 Jaroslav Borovička，75(3): 1457–1493，DOI 10.1111/jofi.12877；给出 Epstein–Zin 递归效用存在且唯一的充要条件，关键是一个「检验值」）。来源：RePEc、ANU 研究门户、NBER w24162、Crossref。机制依 arXiv v1 PDF 第 1、5–7 节。</div>
+
+  <h3>问了什么</h3>
+  <p>战争、萧条、金融危机这类灾难很少发生，但一旦发生会持续好几年。标准的长期定价理论（Hansen–Scheinkman 定价半群）通常假设状态之间「互相可达」，于是所有资产在长期都按同一个速率定价。但如果「进入灾难」的概率远小于「走出灾难」的概率，经济就接近一个「单向」结构：灾难几乎进不去，进去了也终会出来。问题是：<strong>这种很少进入的状态，能不能主导长期资产的价格？如果能，从多长的期限开始？</strong></p>
+
+  <h3>核心机制（人话）</h3>
+  <p>把经济状态建模成有限状态的连续时间马尔可夫链。每个期限 t 的定价算子 Π<sub>t</sub> 把「t 期后的收益」映射成「今天的价格」，它同时包含了状态转移、随机折现和现金流增长。作者用图论把状态分成若干「连通类」（互相可达的状态集合），每个类有自己的长期<strong>定价速率</strong> λ（价格随期限按 e<sup>λt</sup> 变化，−λ 就是长期收益率）。</p>
+  <ul>
+    <li><strong>结构结论：</strong>真实概率和定价概率划分出的连通类、可达关系完全相同，但给各类的「重要性」排序不同：真实概率看谁常驻（常返或暂留），定价看谁的 λ 最大。一个真实概率趋于零的灾难类，完全可以有最高的定价速率。</li>
+    <li><strong>定价走廊（第 5 节）：</strong>一份收益的价格只取决于「从初始状态出发、沿可达路径能走到收益为正的状态」所经过的那些类，作者称为定价走廊。走廊里最大的类定价速率决定这份收益的长期价格速率。走廊外的类再「重要」也影响不到它。</li>
+    <li><strong>罕见转移与交叉期限（第 7 节）：</strong>用 ε 表示罕见转移的强度，ε = 0 时灾难类进不去。ε 稍大于 0 时，灾难类以 ε<sup>d</sup> 的小权重进入价格（d 衡量连接路径有多「罕见」），但它的定价速率更高，所以期限足够长时一定会反超。</li>
+  </ul>
+  <div class="eq">交叉期限：t<sub>c</sub>(ε) ≈ (d／Δ)·log(1／ε)，　ε → 0</div>
+  <p class="eq-note">人话：t<sub>c</sub> 是灾难类贡献开始超过正常类贡献的期限；ε 是进入灾难的强度（越小越罕见）；d 衡量要经过几步罕见转移才能连上；Δ 是灾难类与走廊内最高定价速率之差。灾难越罕见，接管越晚，但只是按对数变慢；定价速率优势越大，接管越早。</p>
+  <ul>
+    <li><strong>灾难—复苏应用（第 6–7 节，CRRA 偏好，作者强调参数是示意、不是校准）：</strong>风险厌恶 α = 4、固定收益（ϑ = 0）时，灾难类的定价速率更高（λ<sub>D</sub> = −0.0797，λ<sub>N</sub> = −0.1168，Δ = 0.0371）。换成与消费成比例的现金流（ϑ = 1）时，Δ = −0.0391，灾难类不再占主导。可见同样的经济、同样的偏好，不同现金流的长期定价可以由不同状态主导。风险厌恶越高、灾难越持久（复苏强度 κ 越小），越容易出现灾难主导。</li>
+    <li><strong>数值：</strong>年灾难进入概率 1.75%（平均约 56.6 年才进入一次）时，从正常状态出发，25 年期固定收益价格中约 94.5%–95.8% 来自灾难相关的主导分量（对应三种复苏速度）。在基准参数下，真实平稳分布里的灾难概率只有 8.9%，而在长期定价测度下灾难状态的质量达 71.9%。从灾难状态出发、期限 50 年的情形里，最后十年才复苏的路径真实概率只有 0.062%，却贡献了约 36.8% 的「复苏部分」价格。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>有限状态、时间齐次马尔可夫环境；随机折现因子和现金流增长都是严格为正的乘性泛函。</li>
+    <li>交叉期限的显式式子需要额外的「两项谱分离」条件；应用部分用 CRRA 而非 Epstein–Zin。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>不能用「发生得多不多」来判断一个状态对定价重不重要。罕见状态对短期限价格几乎没影响，但对长期限价格可能是决定性的，交叉期限的位置有明确的公式。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这篇偏数理资产定价，和 A 股微观结构的距离较远，但有两点可以借用。一是做 A 股长期估值、股息贴现或「股权期限结构」时，如果样本期里极端状态（2015 年股灾、2016 年熔断）很少，从样本频率估出的状态概率会严重低估这些状态在长期定价里的分量。「定价走廊」的思路说明，应该按「从当前状态出发、能走到哪些状态」来判断哪些风险需要定价。二是对信息披露研究：很少触发的强制披露情形（例如退市风险警示、重大违法强制退市）对短期价格影响小，但按这个逻辑，它们对长期估值可能有不成比例的影响。</p>
+
+  <p class="links">链接：<a href="https://arxiv.org/abs/2609.27134">arXiv 2609.27134</a> · <a href="https://arxiv.org/pdf/2609.27134">PDF</a> · <a href="https://ideas.repec.org/a/bla/jfinan/v75y2020i3p1457-1493.html">Borovička–Stachurski JF 2020（RePEc）</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/7 已写过的篇目（含 10/7 Dai–Jia–Yu、Della Corte 等、Frick–Iijima–Ishii–Wu、Liu–Zhang–Cong–Li–Wang；10/5 Kadan–Manela；9/3 Çetin–Lin 不确定知情参与；9/4 Çetin–Lin–Livieri；8/28 一篇以 Foster–Viswanathan JF 1996 作顶刊核验的论文与本期 Choi–Larsen 不是同一篇）。本期未收录：An–Su–Wang《Quantity, Risk, and Return》（arXiv 2609.05162，Yinan Su 有 JFE 2019 Kelly–Pruitt–Su，但正文自述为实证论文）；Baldi-Lanfranchi–Collin-Dufresne–Daniel《Asymmetric Reversals》（NBER w35840，实证，10/6 已判断）；Fiechtner–Blanchet《Strategic Index Reconstitution》（arXiv 2609.15901，未核到允许名单内的顶刊作者）；Bandi–Su《(Early) AI Compute Asset Pricing》（arXiv 2607.12156，标的是算力期货，股市机制较弱）；Dianetti–Ferrari–Hu–Xing《Latent Fragility and Clustered Withdrawals》（arXiv 2607.22317，银行挤兑，未作为股市题目收录）；Nakamura《The Privacy Subsidy in Market Microstructure》（arXiv 2609.10543，未核到名单内顶刊作者）。四篇均依 arXiv 全文 PDF。顶刊：Capponi RFS 2026；Choi–Larsen JFE 2019；Cabrales–Gossner–Serrano AER 2013；Stachurski JF 2020（均经 Crossref 核对期刊、卷期、作者）。PDF 存 /workspace/research/daily-papers/scratch-1008/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
