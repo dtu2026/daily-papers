@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-12</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-12">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月12日 · 第三十八期 · 3 篇 2026 年理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天三篇都围着<strong>披露什么时候说、说了以后市场会怎样、谁又从价格里学到什么</strong>。Bouton–Llorente-Saguer–Macé–Meirowitz–Pi–Xefteris 把「同一条状态信息」按时间拆成两种角色：行动<strong>之前</strong>放出来是前瞻披露——它让人更确定公司要做什么，却让人对「做对没做对」吵起来，成交量上升、价差变宽；行动<strong>之后</strong>放出来是回顾披露——它只压缩对状态的分歧，价差期望收窄、成交量不变。Edmans–Levit–Schneemeier 问负责任投资者该「一刀切剔除」还是「看到改革信号再加仓」：不能承诺未来交易时，社会关切太强反而让条件投资不可信，更充分的 ESG 披露也可能适得其反。Aggarwal–Luneva 做了一套自愿披露 + 价格反馈的结构估计：公司发 CapEx 指引会挤出投资者的私人研究，沉默时价格反馈更丰富；短视激励下，沉默的价值大约相当于长期价值的四分之一。三篇都读了全文 PDF（NBER／ECGI／作者 CDN），都没有出现在 8/18–10/8 的理论简报里。和往常一样，下面把<strong>作者证明的结论</strong>和<strong>本简报的解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Bouton 等：同一条披露，行动前说会抬分歧、抬成交、抬价差；行动后说则压分歧、压价差、成交不动</a> — NBER w30757（2026-09 修订）</li>
+      <li><a href="#p2">Edmans–Levit–Schneemeier：负责任投资「关切适中」才诱得出改革；关切太强或披露太准都会让条件投资垮掉</a> — ECGI WP 823/2022（2026-07）</li>
+      <li><a href="#p3">Aggarwal–Luneva：自愿发 CapEx 指引挤掉价格反馈；短视下沉默大约值长期价值的四分之一</a> — SSRN 6162006（2026-01）</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. 同一条披露，行动前说会抬分歧、抬成交、抬价差；行动后说则压分歧、压价差、成交不动</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. 同一条披露，行动前说会抬分歧、抬成交、抬价差；行动后说则压分歧、压价差、成交不动" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Laurent Bouton, Aniol Llorente-Saguer, Antonin Macé, Adam Meirowitz, Shaoting Pi &amp; Dimitrios Xefteris · Georgetown／QMUL／Paris School of Economics／Utah／Iowa State／Cyprus · <em>Forward-Looking and Backward-Looking Disclosure: Investor Disagreement and Market Liquidity</em> · NBER Working Paper 30757（首版 2022-12；本版 Revised September 2026；旧题 <em>Public Information as a Source of Disagreement Among Shareholders</em>）</p>
+  <div class="tags">
+    <span class="tag">前瞻／回顾披露</span>
+    <span class="tag">投资者分歧</span>
+    <span class="tag">价差与成交量</span>
+    <span class="tag">理性预期</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Laurent Bouton — <em>American Economic Review</em> 2013「A Theory of Strategic Voting in Runoff Elections」（103(4): 1248–1288，DOI 10.1257/aer.103.4.1248）；另有与 Castanheira 合著 <em>Econometrica</em> 2012「One Person, Many Votes: Divided Majority and Information Aggregation」（80(1): 43–87，DOI 10.3982/ECTA9111）。来源：Crossref。机制依 NBER 2026-09 修订 PDF 第 2–4 节。</div>
+
+  <h3>问了什么</h3>
+  <p>公司的价值取决于两件事：世界的状态 ω，以及管理层选的行动 k 有没有对上这个状态。投资者手里有私人信号，看的是状态；公开披露也是关于状态的噪声信号。作者问：<strong>同一条披露，放在公司行动之前还是之后，对分歧、成交量和买卖价差的影响会不会反过来？</strong> 他们刻意不用偏好异质、解读异质或过度自信，只用共同先验、共同解读的理性预期，把「时机」单独拆出来。</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>两种制度只差时间线。前瞻制度：先交易一轮 → 披露 → 再交易一轮 → 公司再按披露「指路」选行动（正确概率为 Q）。回顾制度：公司先按同样准确度 Q 选好行动并公开 → 先交易 → 披露 → 再交易。披露对象本身完全一样，都是状态的噪声公共信号。</p>
+  <div class="eq">分歧：d(I) := max<sub>i</sub> v<sub>i</sub>(I) − min<sub>i</sub> v<sub>i</sub>(I)，　v<sub>i</sub>(I) = E[x(k,ω) | I]</div>
+  <p class="eq-note">人话：每个人按自己信息集算出对公司价值的期望 v<sub>i</sub>；分歧就是人群里最高估值减最低估值。前瞻制度里，披露前记 d<sub>F,1</sub>，披露后记 d<sub>F,2</sub>(ŝ)；回顾制度里，行动已公开，披露前记 d<sub>B,1</sub>(k)，披露后记 d<sub>B,2</sub>(k,ŝ)。</p>
+  <ul>
+    <li><strong>命题 1（前瞻、披露前共识）：</strong>前瞻制度第一轮，所有人给公司的期望价值都等于 Q，因而 d<sub>F,1</sub> = 0。原因是：决策在每个状态下正确的概率都是 Q，所以无论私人信号让你觉得状态是 α 还是 β，你都预期公司会选「对你以为最可能的状态」的行动，价值期望落在同一个数 Q 上。大家对状态吵得很凶，但对公司值多少钱却一致。</li>
+    <li><strong>命题 2（前瞻披露制造分歧）：</strong>披露一出，人人更清楚公司即将采取的行动；但私人信号不同的人对「这个行动对不对」看法分裂——支持该行动的人变乐观，反对的人变悲观。于是 d<sub>F,2</sub>(ŝ) &gt; 0 = d<sub>F,1</sub>。</li>
+    <li><strong>命题 3–4 与推论 1（回顾压缩分歧）：</strong>回顾制度下，行动已公开，披露前就有分歧；披露作为关于状态的额外公共信号，在期望上把估值往共同后验压。于是 E[d<sub>B,2</sub> | k] &lt; d<sub>B,1</sub>(k)。同一条披露：前瞻制造分歧，回顾压缩分歧。</li>
+  </ul>
+  <div class="eq">Glosten–Milgrom 价差：Spread = P<sup>buy</sup> − P<sup>sell</sup>；噪声每侧期望量 y/2，知情者 n 人</div>
+  <p class="eq-note">人话：做市商按「接到买单／卖单」后的条件期望报价；价差反映逆向选择。作者把命题 2–4 的分歧不对称翻译成市场结果（命题 5–6、推论 2）。</p>
+  <ul>
+    <li><strong>推论 2（交易不对称，本文核心可检验预测）：</strong>前瞻披露后，成交量从只有噪声的 y 升到 n+y，期望价差从 0 变宽；回顾披露后，成交量两轮都是 n+y（不变），期望价差严格收窄。校准例子（q=0.65，Q=0.75，n=10，y=4）：前瞻价差变化 +0.163，回顾 −0.033。</li>
+    <li><strong>价格细节：</strong>公开信息价值 V<sup>pub</sup> 在前瞻制度披露前后期望不变（仍是 Q）；报价中点可以动，因为买卖两侧面临不同的逆向选择。回顾制度里，确认行动的披露把公开后验推到 Q²/(Q²+(1−Q)²)，矛盾披露推到 1/2；期望有符号的公开价值变动为 0，但绝对价格反应不必小。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>共同先验、共同解读；至少两名投资者私人信号不同；两种制度决策准确度同为 Q。</li>
+    <li>基准微观结构是风险中性做市商的 Glosten–Milgrom；知情者按私人信号方向交易。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>披露对市场质量的影响，一阶取决于它相对「公司行动」的时间位置，而不是披露内容本身。</li>
+    <li>实证含义：应把 MD&amp;A／指引／行业新闻按「公司是否已公开行动」切开；前瞻与回顾应对价差给出<strong>符号相反</strong>的预测——这是对「异质解读」类替代解释的尖锐检验。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）A 股里「前瞻」与「回顾」几乎天天并存：业绩预告、并购方案说明会、监管问询回复往往在行动未定前放出；年报附注、事后分部数据、处罚决定则多在行动已公开后。这篇给出一个干净的对照实验设计——同一条信息、只改时机。对董杰的披露与微观结构工作，可直接套：比较「预案披露日」与「实施／落地日」附近的有效价差与成交量，看符号是否与推论 2 一致。对「AI 投资者合谋」也有一笔：算法若同时吃进前瞻指引，私人信号会更尖锐地投影到「行动对不对」上，成交量和价差的上升可以是理性学习，不必先归因于合谋。</p>
+
+  <p class="links">链接：<a href="https://www.nber.org/papers/w30757">NBER w30757</a> · <a href="https://www.nber.org/system/files/working_papers/w30757/w30757.pdf">PDF</a> · <a href="https://doi.org/10.1257/aer.103.4.1248">Bouton AER 2013（DOI）</a> · <a href="https://doi.org/10.3982/ECTA9111">Bouton–Castanheira Econometrica 2012（DOI）</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 负责任投资「关切适中」才诱得出改革；关切太强或披露太准都会让条件投资垮掉</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 负责任投资「关切适中」才诱得出改革；关切太强或披露太准都会让条件投资垮掉" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Alex Edmans, Doron Levit &amp; Jan Schneemeier · LBS／Washington／Michigan State · <em>Socially Responsible Divestment</em> · ECGI Finance Working Paper 823/2022（本版 2026-07-11；SSRN 4093518）</p>
+  <div class="tags">
+    <span class="tag">负责任投资</span>
+    <span class="tag">剔除 vs 倾斜</span>
+    <span class="tag">不可承诺</span>
+    <span class="tag">ESG 披露</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Alex Edmans — <em>Journal of Financial Economics</em> 2011「Does the stock market fully value intangibles? Employee satisfaction and equity prices」（101(3): 621–644，DOI 10.1016/j.jfineco.2011.03.021）。Jan Schneemeier — <em>Journal of Financial Economics</em> 2017「The source of information in prices and investment-price sensitivity」（与 Edmans、Jayaraman，126(1): 74–96，DOI 10.1016/j.jfineco.2017.06.017）；另有 JFE 2022「A theory of financial media」（DOI 10.1016/j.jfineco.2021.06.038）。来源：Crossref。机制依 ECGI 2026-07 PDF 第 2–3 节与命题 1–4。</div>
+
+  <h3>问了什么</h3>
+  <p>负责任投资者想减少外部性，常用两条路。一是<strong>无条件剔除</strong>（exclusion）：棕色公司一概不买，抬高资本成本、压规模。二是<strong>条件投资／倾斜</strong>（conditional investment / tilting）：看到改革信号再多买，用二级市场价格奖励纠正行动。问题是：纠正行动往往不可缔约、只靠噪声公共信号；投资者又<strong>不能承诺</strong>未来交易——信号出来后行动已完成，她可能只想压规模而不愿加仓。在「既有一级市场资本成本渠道、又有二级市场价格激励渠道」的模型里，条件投资还能不能既有效又可信？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>经理人私下看到纠正行动是否有效（e），再决定是否采取（a）。行动有私人成本，若有效则降低单位外部性。市场看到噪声信号 s∈{0,1}。公司再融资扩张，规模随股价上升。负责任投资者 R 有价格冲击，目标函数里既有交易利润，也有对外部性的关切权重 ϱ；家庭投资者有凸交易成本，给 R 留下向下倾斜的剩余需求。</p>
+  <div class="eq">均衡股价：p(x<sub>R</sub>, s) = [μ − c·E[a|s] − (q − x<sub>R</sub>)(q+q̄)ϖ<sub>H</sub>] ／ [q + q̄ − rq]</div>
+  <p class="eq-note">人话：μ 是资产在位价值；c·E[a|s] 是市场对「已采取纠正行动」的期望成本扣减；q 是新股供给，q̄ 是原有股份；ϖ<sub>H</sub> 是家庭交易成本；r 是扩张投资的回报率。分子是「扣掉行动成本与吸收新股所需折扣后的总价值」，分母是「有效股份数」（扩张回报占掉一部分股份）。R 买得越多（x<sub>R</sub> 大），折扣越小，股价越高，公司融到的钱越多、扩张越大。</p>
+  <div class="eq">引理 1：x<sub>R</sub>(s) = max{ (q／(ϖ<sub>R</sub>/ϖ<sub>H</sub>+2)) · [1 − ϱ·(rς/(1−φ))·(1−E[ae|s])] , 0 }，且 x<sub>R</sub>(1) ≥ x<sub>R</sub>(0)</div>
+  <p class="eq-note">人话：ϱ=0 时她只按相对交易成本买固定份额；ϱ&gt;0 时她内化「买股→抬价→扩张→更多外部性」，于是买得更少；若 ϱ 极大就完全剔除（x<sub>R</sub>=0）。关键是：她的最优仓位随期望外部性削减 E[ae|s] <strong>上升</strong>——改革成本已打进股价、不影响交易利润，但扩张的外部性代价更低，所以正信号下更愿意买。这就是条件策略的事后激励。</p>
+  <ul>
+    <li><strong>命题 1（中心结果，非单调）：</strong>无行动均衡（经理从不改革）始终存在。能诱发出正概率改革的「行动均衡」只在 ϱ 处于中间区间时成立：ϱ 太高 → 事后不愿为奖励正信号而买股，条件策略不可信；ϱ 太低 → 无论信号好坏都大举买入，正负信号价差不够补偿行动成本。关切越强，不一定越能推动改革。</li>
+    <li><strong>命题 2（信号精度）：</strong>行动均衡要求信号足够准（ϑ &gt; ϑ̲）。信号太糊，R 的买卖差拉不开。但精度继续提高时，均衡改革概率未必单调上升——价格更充分反映改革成本，会削弱经理激励（与命题 3 相连）。</li>
+    <li><strong>命题 3–4（披露与福利）：</strong>经理内生选择披露精度时，可能披露不足。监管强制提高 ESG／环境表现披露，也可能让行动均衡垮掉：股价更干净地扣掉改革成本，正信号带来的价格奖励变小。在行动均衡内存续的参数区，R 严格偏好能维持该均衡的制度；改革对朔源公司价值的影响有正有负，取决于成本与扩张渠道的权衡。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>R 不能承诺交易策略；纠正行动不可直接观察，只通过公共信号；外部性随公司规模上升。</li>
+    <li>家庭有凸交易成本；R 可有交易成本；单一棕色公司的示意模型（「最佳一类」在多公司扩展中才字面成立）。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「只关心外部性、完全不顾利润」的受托责任定义，反而可能摧毁条件投资的可信性；适度利润动机是改革激励机制的一部分。</li>
+    <li>剔除在压规模上有效，但不奖励纠正；倾斜在有承诺摩擦时仍可能可行，但对社会关切与披露精度都要求「适中」。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）中国公募／保险的 ESG 产品常在「行业剔除」与「最佳一类倾斜」之间摇摆；交易所与行业协会也在推更细的环境信息披露。这篇的机制提醒：披露越准，股价越把改革成本折进价格，二级市场「奖励改革」的空间可能变窄——这和「多披露一定更好」的直觉对着干。对董杰的披露研究，可把「ESG／环责披露强制」当作一次精度冲击，看棕色公司是否出现「改革公告后超额收益变小、实际减排投入下降」的组合；对微观结构，条件策略的核心是 x<sub>R</sub>(1)−x<sub>R</sub>(0) 能否形成足够的价格楔子，这可以直接连到知情／主题资金的订单流差异。</p>
+
+  <p class="links">链接：<a href="https://www.ecgi.global/publications/working-papers/socially-responsible-divestment">ECGI 页面</a> · <a href="https://www.ecgi.global/sites/default/files/2026-09/fin-823-2022_socially_responsible_divestment.pdf">PDF</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4093518">SSRN 4093518</a> · <a href="https://doi.org/10.1016/j.jfineco.2011.03.021">Edmans JFE 2011（DOI）</a> · <a href="https://doi.org/10.1016/j.jfineco.2017.06.017">Edmans–Jayaraman–Schneemeier JFE 2017（DOI）</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 自愿发 CapEx 指引挤掉价格反馈；短视下沉默大约值长期价值的四分之一</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 自愿发 CapEx 指引挤掉价格反馈；短视下沉默大约值长期价值的四分之一" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Rishabh Aggarwal &amp; Irina Luneva · Indian School of Business／NYU Stern · <em>The Value of Silence: Voluntary Disclosure, Market Feedback, and Investment Efficiency</em> · SSRN 6162006（稿日期 2026-01；ISB WP Forthcoming）</p>
+  <div class="tags">
+    <span class="tag">自愿披露</span>
+    <span class="tag">价格反馈</span>
+    <span class="tag">挤出效应</span>
+    <span class="tag">结构估计</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Irina Luneva — <em>Review of Accounting Studies</em> 2024「Financial information and diverging beliefs」（与 Armstrong、Heinle，29，DOI 10.1007/s11142-024-09832-w；信号精度不确定时，同一公共信息可使信念发散，成交量对盈余惊喜呈单峰）。来源：Crossref、作者主页。说明：名单内会计顶刊为 TAR／JAR／JAE；RAST 为会计领域另一份主要期刊，本期以 Crossref 正式出版记录核验。机制与估计依作者 CDN PDF（2026-01）第 1、3 节。</div>
+
+  <h3>问了什么</h3>
+  <p>公司既可以从股价里学到自己没有的信息（价格反馈），又会自愿披露投资计划。披露会改变投资者去不去挖私人信息，从而改变股价里还剩多少「决策相关」内容。作者问：公司披露之后，从价格里学到的是更多还是更少？短视的价格水平激励，会让长期投资效率损失多少？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>生产力 F̃ = F̃<sub>1</sub>·F̃<sub>2</sub>：F̃<sub>1</sub> 是公司特有成分（经理有比较优势），F̃<sub>2</sub> 是共同／市场成分（投资者有比较优势）。经理效用是短视权重 β 下短期价格与长期现金流的凸组合。时序：经理收到关于 f̃<sub>1</sub> 的私人信号 → 选择披露或沉默 → 投资者收到关于 f̃<sub>2</sub> 的私人信号并定价 → 经理从价格反推投资者信息并选择投资 I → 现金流实现。模型对「披露挤进还是挤出投资者研究」不加先验，留给数据估计。</p>
+  <div class="eq">U = βP + (1−β) CF，　CF = F̃ I − (r/2) I²</div>
+  <p class="eq-note">人话：β 越大，经理越在乎眼下的股价水平；CF 是规模报酬不变技术扣掉凸投资成本后的长期现金流。最优投资（给定信息）是把期望生产力除以 r，与短视无关——短视只扭曲<strong>披露</strong>，再经由价格信号质量间接扭曲投资。</p>
+  <div class="eq">引理 1：I*(s<sub>m</sub>, s<sub>i</sub>) = (1/r) exp(c<sub>0</sub> + c<sub>m</sub> s<sub>m</sub> + c<sub>i</sub> s<sub>i</sub>)，　E[CF*] = (1/(2r)) exp(2(c<sub>0</sub>+c<sub>m</sub>s<sub>m</sub>+c<sub>i</sub>s<sub>i</sub>))</div>
+  <p class="eq-note">人话：对数投资对经理信号与投资者信号线性；权重 c<sub>m</sub>、c<sub>i</sub> 随各自信号精度上升、随基本面先验精度下降（推论 1）。无噪声交易者时，价格对投资者信号单调，经理能从价格完全反推出 s<sub>i</sub>。</p>
+  <div class="eq">价格反馈：ΔV<sub>d</sub> = τ<sub>d</sub> ／ [τ<sub>f2</sub>(τ<sub>f2</sub>+τ<sub>d</sub>)]　（披露后）；沉默时用 τ<sub>nd</sub> 替换 τ<sub>d</sub> 得 ΔV<sub>nd</sub></div>
+  <p class="eq-note">人话：ΔV 是经理在看到价格之后，关于共同成分 f̃<sub>2</sub> 的方差下降幅度。投资者信号越准（τ<sub>d</sub> 或 τ<sub>nd</sub> 大），价格反馈越强。若估计出 τ<sub>nd</sub> ≫ τ<sub>d</sub>，就是「披露挤出了投资者研究」。</p>
+  <ul>
+    <li><strong>结构估计（美国公司自愿 CapEx 指引）：</strong>校准短视 β≈0.513（约一半权重在短期价格）。GMM 估计显示：无披露时，投资者私人信息大约消掉共同成分不确定性的 56%；有披露时只剩约 17%。经理对特有成分的信息价值与投资者信息同阶（约 29% 的不确定性消减）。因此自愿 CapEx 指引<strong>平均挤出</strong>价格反馈。</li>
+    <li><strong>真实效率：</strong>相对「完全不从价格学习」的基准，价格反馈把长期价值抬高约 27%。相对「无短视」（β=0）基准，短视驱动的策略性披露使平均长期价值损失约 29%；分解表明主因是策略性披露本身，挤出效应是次要但同向的放大机制。</li>
+    <li><strong>沉默的价值：</strong>若经理不在乎短期价格而更多保持沉默，投资者会做更多研究，价格反馈更肥，投资更有效——这就是标题里的「沉默的价值」。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>风险中性经理与代表性投资者；无噪声交易者（价格完全揭示投资者信号）；生产力两因子对数正态。</li>
+    <li>实证样本是至少披露过一次与盈余公告同步的 CapEx 指引的公司，作者强调这使效率损失估计偏向上界。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>「多披露」在价格反馈渠道上可能伤害真实效率；沉默可以是有意的信息设计，而不只是坏消息隐瞒。</li>
+    <li>经理与市场在信息上是互补的：特有成分靠经理，共同成分靠市场；自愿披露投资计划会改变后者的供给。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这和董杰一直跟的「披露 ↔ 价格反馈 ↔ 真实效率」主线几乎同题：A 股也有大量自愿业绩预告、投资计划与互动易回复。可检验的对应是——发出详细 CapEx／项目指引之后，价格对后续宏观或行业冲击的增量解释力是否下降（类似 ΔV<sub>d</sub> vs ΔV<sub>nd</sub>）。对「AI 投资者合谋」也有一笔旁白：若 AI 投资者的研究投入内生于公司披露，强制或竞相披露可能让价格里可学的共同信息变少，经理从市场学到的反而更少；合谋检验需要先净掉这条挤出渠道。本文是理论 + 结构估计，机制段落依模型，百分数依作者估计，不把估计当成普遍常数。</p>
+
+  <p class="links">链接：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6162006">SSRN 6162006</a> · <a href="https://files.cdn-files-a.com/uploads/4824311/normal_698159ef17826.pdf">PDF（CDN）</a> · <a href="https://doi.org/10.1007/s11142-024-09832-w">Armstrong–Heinle–Luneva RAST 2024（DOI）</a> · <a href="https://www.iluneva.com/publications">Luneva 出版物页</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/8 已写过的篇目（含 10/8 Capponi–Cartea–Drissi、Choi–Larsen、Cabrales 等、Lu–Stachurski；10/7 Dai–Jia–Yu 等；10/6 Kolb–Zhou、Lizzeri–Lou–Perego、Gao–Lu–Yang、Awaya–Krishna–Osipov；8/28 已写 Kim–Choi《Mandatory Disclosure in Oligopolistic Market Making》与 Viswanathan–Xing《Flexible Information Acquisition in the Kyle Model》，本期弃用用户提示中的这两条候选；8/19 已写 Chen–Jin《When Public Signals Backfire》；9/8 已写 Chen–Schneemeier《Disclosure Trap》；9/4 已写 Çetin–Lin–Livieri）。本期未收录：Barbalau–Schneemeier《Strategic ESG Disclosure When Ratings Reveal Investor Preferences》（SSRN 6643178，Schneemeier 有 JFE，但本机 SSRN 403、作者页无开放 PDF，未能按「本轮读全文」标准收录）；Lin–Ma–Yang–Zhu《Payment Methods and Market Feedback》（FTG／SSRN 5789982，Yang 有 RFS，同因无全文 PDF）；Keller–Tseng《An Infinite-Dimensional Insider Trading Game》（arXiv 2602.21125，未核到名单内已发表顶刊）；Noh《A continuous-time Kyle model with price-responsive traders》（arXiv 2601.09872，未核到名单内顶刊作者）；Ekren–Nikitopoulos–Vy《Multidimensional stochastic liquidity in Kyle》（arXiv 2607.10934，未核到名单内顶刊）。三篇依 NBER／ECGI／作者 CDN 全文 PDF。顶刊：Bouton AER 2013、Econometrica 2012；Edmans JFE 2011；Schneemeier JFE 2017／2022；Luneva RAST 2024（均经 Crossref）。PDF 存 /workspace/research/daily-papers/scratch-1012/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
