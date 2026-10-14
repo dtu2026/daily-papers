@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股市理论论文简报 · 2026-10-14</title>
+<style>
+  :root {
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #e7e5e4;
+    --paper: #f7f8fb;
+    --card: #fff;
+    --accent: #1e3a8a;
+    --tag: #e0e7ff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.7 "Source Han Serif SC", "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 22px 80px; }
+  header h1 {
+    font-size: 28px;
+    font-weight: 650;
+    letter-spacing: .02em;
+    margin: 0 0 8px;
+  }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+  .lede {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+  }
+  .lede p { margin: 0 0 10px; }
+  .lede p:last-child { margin: 0; }
+  nav ol { padding-left: 1.2em; margin: 8px 0 0; }
+  nav li { margin: 4px 0; }
+  nav a { color: var(--accent); text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  article {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 24px 22px;
+    margin: 0 0 28px;
+  }
+  article h2 {
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 0 0 6px;
+  }
+  .authors { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .tag {
+    background: var(--tag);
+    color: var(--accent);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  h3 {
+    font-size: 15px;
+    font-family: ui-sans-serif, system-ui, "PingFang SC", "Noto Sans SC", sans-serif;
+    letter-spacing: .04em;
+    color: var(--accent);
+    margin: 18px 0 6px;
+    font-weight: 650;
+  }
+  p { margin: 0 0 10px; }
+  ul { margin: 0 0 10px; padding-left: 1.2em; }
+  li { margin: 3px 0; }
+  .qual {
+    background: #eef2ff;
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    margin: 12px 0 16px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .eq {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 8px 0 6px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+  .eq-note { color: var(--muted); font-size: 14px; margin: 0 0 10px; }
+  .links { font-size: 14px; margin-top: 14px; }
+  .links a { color: var(--accent); }
+  footer {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+</style>
+<!-- star-inject --><meta name="robots" content="noindex, nofollow, noarchive"><meta name="googlebot" content="noindex, nofollow, noarchive"><style>
+.star-row { margin: 2px 0 10px; }
+.star-btn, .star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #d6d3d1;
+  background: #fffaf3;
+  color: #9a3412;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .08em;
+  box-shadow: none;
+}
+.star-btn:hover { border-color: #9a3412; background: #fff7ed; }
+.star-btn.starred {
+  color: #57534e;
+  background: #f5f5f4;
+  border-color: #e7e5e4;
+  cursor: pointer;
+}
+.star-btn.starred:hover { border-color: #a8a29e; background: #fafaf9; }
+a.star-read {
+  color: #3f6212;
+  background: #f4f7ee;
+  border-color: #d4ddc7;
+}
+a.star-read:hover { border-color: #3f6212; }
+</style><!-- /star-inject -->
+</head>
+<body data-who="kyle" data-date="2026-10-14">
+<div class="wrap">
+<header>
+  <h1>股市理论论文简报</h1>
+  <p class="meta">2026年10月14日 · 第三十九期 · 4 篇 2026 年理论稿 · Kyle</p>
+</header>
+
+<section class="lede">
+  <p>今天四篇都在问<strong>信息从哪里来、谁看得见、看见之后市场怎么定价</strong>。Yun 把「LLM 交易工具在下单前吐出的草稿会被对手的 LLM 读到」写进 Kyle 模型：这条暗道一面让双方更懂基本面，一面让人能看出对方有没有按约定交易，于是默契合谋能撑住的市场环境大约扩大到原来的 2.7 倍——<strong>这一篇和董杰的「AI 投资者会不会合谋」几乎同题</strong>。Frenkel–Guttman–Kremer 在经典 Dye／Jung–Kwon 自愿披露模型里加入「可能是真、也可能是假」的新闻：经典的单一门槛均衡消失，经理对中等好消息会<strong>随机地</strong>选择说或不说；新闻挤出了经理的披露，但价格整体反而更有信息量。Pegoraro–Sammon–Shim 说指数调整前的「抢跑」资金其实是在给指数基金提供流动性，竞争越激烈，连宽松跟踪指数的资金也会挤到调整当天交易。Han–Hu–Zhang 问写在价格上（而不是状态上）的期货和方差互换能把市场补到多完整：答案是「对价格能张成的那部分风险，已经和完全市场一样好」。四篇都读了全文 PDF（会议站／FTG／作者 Dropbox），都没有出现在 8/18–10/12 的理论简报里。下面照旧把<strong>作者证明的结论</strong>和<strong>本简报的解读</strong>分开写。</p>
+  <nav>
+    <ol>
+      <li><a href="#p1">Yun：LLM 的下单草稿一旦泄露，交易者更容易默契合谋——它同时是「第二个信号」和「看得见意图的监督器」</a> — SSRN 7439840（2026-08-31）</li>
+      <li><a href="#p2">Frenkel–Guttman–Kremer：新闻可能是假的时，经理对中等好消息会「抛硬币」决定说不说；新闻挤出披露，但价格更有信息</a> — FTG 2026-07（作者稿 2026-07-21）</li>
+      <li><a href="#p3">Pegoraro–Sammon–Shim：指数调整前的「抢跑」其实是在供给流动性；抢跑者越多，越该在调整当天集中交易</a> — FTG 第 35 次会议（CMU，2026-09）</li>
+      <li><a href="#p4">Han–Hu–Zhang：期货管方向、方差互换管波动；两者合起来，「凡是价格能张成的风险」都已分担到最优</a> — FTG 第 35 次会议（2026-07 稿）</li>
+    </ol>
+  </nav>
+</section>
+
+<article id="p1">
+  <h2>1. LLM 的下单草稿一旦泄露，交易者更容易默契合谋——它同时是「第二个信号」和「看得见意图的监督器」</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p1" data-title="1. LLM 的下单草稿一旦泄露，交易者更容易默契合谋——它同时是「第二个信号」和「看得见意图的监督器」" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Hayong Yun · Michigan State University · <em>When LLMs Whisper: Information Leakage and Collusion in Financial Markets</em> · 作者稿 2026-08-31 · SSRN 7439840（DOI 10.2139/ssrn.7439840）；本稿 PDF 来自 CREDIT 2026 会议站</p>
+  <div class="tags">
+    <span class="tag">AI 投资者合谋</span>
+    <span class="tag">Kyle 模型</span>
+    <span class="tag">重复博弈</span>
+    <span class="tag">信息泄露</span>
+    <span class="tag">Q-learning／LLM 实验</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Hayong Yun — <em>Review of Financial Studies</em> 2009「The Choice of Corporate Liquidity and Corporate Governance」（22(4): 1447–1475，DOI 10.1093/rfs/hhn041；公司治理强弱如何影响公司选择现金还是信用额度）；另有与 Shive 合著 <em>Journal of Financial Economics</em> 2013「Are mutual funds sitting ducks?」（107(1): 220–237，DOI 10.1016/j.jfineco.2012.08.012；可预测的基金资金流被他人抢跑）。来源：Crossref。机制依会议 PDF 第 3–8 节与附录 B。</div>
+
+  <h3>问了什么</h3>
+  <p>投行把 LLM 工具铺进研究和交易流程后，这些工具会在下单<strong>之前</strong>生成「草稿」——交易计划、工具调用参数、一段推理。安全研究已经表明这类输出会外泄（文中举 2025 年 Microsoft 365 Copilot 的 EchoLeak 漏洞和提示注入），而且人看不懂、别的 LLM 却读得懂。作者问：<strong>如果每家的 LLM 都能读到对手的下单草稿，哪怕没有任何人主动串通，默契合谋（tacit collusion）是不是更容易维持？</strong>机制是什么，监管该看什么？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>基础框架是两个知情交易者的 Kyle 模型，加上 Dou–Goldstein–Ji（2025）那种做市商定价：做市商在「定价误差」和「库存」之间权衡，市场上还有一股把价格拉回长期均值的被动需求（强度 ξ）。每期：资产价值 v 正态；交易者 i 收到私人信号 s<sub>i</sub> = v + ε<sub>i</sub>；噪声交易 u；做市商只看总订单流 y = x<sub>1</sub> + x<sub>2</sub> + u，报价 p = v̄ + λy。</p>
+  <p>新东西是「泄露通道」：交易者 j 的 LLM 先起草打算下的单 x<sup>⋆</sup><sub>j</sub>，对手 i 的 LLM 读到一个带噪声的版本。因为均衡下单是信号的线性函数，读到带噪声的草稿就等价于读到对手信号的带噪声版本：</p>
+  <div class="eq">s̃<sub>j</sub> = s<sub>j</sub> + ν<sub>j</sub>，　ν<sub>j</sub> ~ N(0, σ<sub>ν</sub><sup>2</sup>(C))；泄露容量 C 越大，σ<sub>ν</sub> 越小</div>
+  <p class="eq-note">人话：C 是「对手 LLM 能把你的草稿读得多清楚」的旋钮，由工具设计、上下文窗口、权限控制决定。C = 0 等于没泄露；C → ∞ 等于把对手的私人信号完整看到。主分析里 C 是环境给定的，不是公司选的（文中另有把 C 内生化的扩展分析）。</p>
+  <div class="eq">后验：E[v | s<sub>i</sub>, s̃<sub>j</sub>] = v̄ + κ(C)·[α(C)·s<sub>i</sub> + (1−α(C))·s̃<sub>j</sub> − v̄]；κ(C) 随 C 上升</div>
+  <p class="eq-note">人话：κ 是「信号压过先验」的权重。没泄露时 κ<sub>0</sub> = σ<sub>v</sub><sup>2</sup>/(σ<sub>v</sub><sup>2</sup>+σ<sub>ε</sub><sup>2</sup>)；多了对手的信号，精度相加，κ 变大。α 是自己信号在两条信号里的比重。这是<strong>信息渠道</strong>：大家对 v 看得更准。</p>
+  <p>交易者用线性规则 x<sub>i</sub> = χ·(E[v|I<sub>i</sub>] − v̄)，χ 是「激进度」。三档激进度：一次性纳什 χ<sup>N</sup> = 1/(3λκ)，卡特尔（联合利润最大）χ<sup>M</sup> = 1/(4λκ)，对卡特尔偷跑的最优偏离 χ<sup>BR</sup> = 1/(2λκ) − χ<sup>C</sup>/2。合谋就是两人都把 χ 压到纳什以下，像古诺卡特尔一起限产。</p>
+  <div class="eq">意图残差：e = x<sub>j</sub> − x̂<sub>j</sub> = −χ<sup>C</sup>κ(C)α(C)·ν<sub>j</sub>，　σ<sub>e</sub>(C) = χ<sup>C</sup>κ(C)α(C)σ<sub>ν</sub>(C)</div>
+  <p class="eq-note">人话：我读到你的草稿，就能按合谋约定算出你「应该」下多少单 x̂<sub>j</sub>；事后再和你实际下的单 x<sub>j</sub> 比。守约时差额只是泄露噪声，很小；你偷偷加码，差额就会跳出来。规则「|e| 超过门槛 τ 就惩罚」的检出率 q(C) 随 C 上升。关键在于：价格只能告诉我你下了多少单，告诉不了你的私人信号；没有信号，我就判断不了你下单是不是超了约定。草稿补上了这块，所以这是价格之外的<strong>执行渠道</strong>。</p>
+  <div class="eq">合谋可维持条件：q(C) · (1−ρ<sup>T</sup>)/(1−ρ) · L(C) ≥ Δ(C)</div>
+  <p class="eq-note">人话：左边是「被抓概率 × 未来 T 期回到纳什竞争的折现损失」（ρ 是贴现因子，L = 合谋利润 − 纳什利润），右边 Δ 是偷跑一次能多赚的钱。左边大过右边，合谋就撑得住。没泄露时检出只能靠价格，噪声交易多（σ<sub>u</sub> 大）或被动需求弱时 q<sub>0</sub> 太低，条件不成立。</p>
+  <ul>
+    <li><strong>命题 6.1（作者证明）：</strong>泄露同时加强两条渠道——后验精度上升，总订单流对 v 更有信息；在检验「能分辨」的区域，检出率 q(C) 随 C 上升。</li>
+    <li><strong>命题 6.2（主结果）：</strong>在若干正则条件下，C 增大时合谋利润上升、偷跑优势 Δ 下降、检出率上升，所以合谋可维持的参数集合<strong>严格扩大</strong>：没泄露能合谋的地方有泄露也能，反之不然。推论 6.4 把两条渠道拆开，各自都放松约束，叠加时更强；推论 6.5 说泄露容量随机波动也成立。</li>
+    <li><strong>数值（作者校准）：</strong>在（噪声波动 σ<sub>u</sub>，被动需求 ξ）网格上，约束成立的格子从无泄露的约 36% 升到有泄露的约 98%，约 2.7 倍，且严格包含。扩张集中在 σ<sub>u</sub> 高、价格最不灵的区域。噪声交易者每期的价格冲击成本从 0.748（无泄露纳什）升到 0.942（泄露支撑的卡特尔），约 +26%。</li>
+    <li><strong>模拟与实验：</strong>Q-learning 智能体在泄露组交易更保守、联合利润更高，噪声高且被动需求弱的格子里差距约大五倍。用 gpt-4o-mini 和 gpt-4o 做实验室：弱模型在「谢林点」（双方不沟通也自然落到的焦点）上协调；强模型拿泄露的推理去抢跑；给 LLM 完整历史记忆后，泄露组与无泄露组的激进度差距缩小约一半，行为更接近理论的合作均衡。缓解实验：截断到 8 个词的 token 预算最稳；把通道改成离散标签对强模型反而适得其反。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>线性高斯、两名对称知情者、线性策略；有限期冷酷触发（被抓后惩罚 T 期再回到合谋）。</li>
+    <li>主闭式解里，做市商的 λ 只随 χ 变、不随泄露变（沿用 DGJ 的简化）；附录 A.10 用完全贝叶斯的 λ<sub>B</sub>(C) 重做，结论保留。</li>
+    <li>对手实际下单滞后一期可见（经由同一套日志或交易后报告）；网上附录 IA.A.2 改为对手订单不可直接观测、只能从总订单流推断，结论保留但扩张幅度变小。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>不需要任何显性协议：机器可读的事前痕迹就足以把「各自为战」推向「默契限量」，而且在价格监督最弱的市场最明显。</li>
+    <li>监管抓手：意图残差可以用「留存的下单前输出 + 实际订单」直接算；长期低残差加超额收益是可疑信号。相比压低带宽，让通道变模糊的做法更有效。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）董杰在做「AI 投资者会不会合谋」，这篇给了一个可落地的机制：合谋不必来自算法自己「学会」惩罚，而是来自<strong>事前信息外溢 + 价格之外的监督</strong>。可以和 8/18 讲过的 Dou–Goldstein–Ji 对照：DGJ 的合谋靠价格触发，这篇加了一条非价格的监督渠道，所以在价格最吵的地方效果最大。放到 A 股，可检验的含义是：同一家数据／模型供应商服务的量化机构，在小盘、散户噪声大的股票上，交易激进度是否更低、订单流是否更同步。几点保留：主结果靠一组正则条件与固定 λ 的简化；表 1 显示泄露低时检出率并非单调（作者解释为检验尚处「分辨不清」的区域）；LLM 实验只用了两个 OpenAI 模型。适合当作理论动机和实验设计模板，而不是现成的实证结论。</p>
+
+  <p class="links">链接：<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7439840">SSRN 7439840</a> · <a href="https://greta.it/images/credit/credit26/papers/2409/Yun.pdf">PDF（CREDIT 2026）</a> · <a href="https://doi.org/10.1093/rfs/hhn041">Yun RFS 2009（DOI）</a> · <a href="https://doi.org/10.1016/j.jfineco.2012.08.012">Shive–Yun JFE 2013（DOI）</a></p>
+</article>
+
+<article id="p2">
+  <h2>2. 新闻可能是假的时，经理对中等好消息会「抛硬币」决定说不说；新闻挤出披露，但价格更有信息</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p2" data-title="2. 新闻可能是假的时，经理对中等好消息会「抛硬币」决定说不说；新闻挤出披露，但价格更有信息" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Sivan Frenkel, Ilan Guttman &amp; Ilan Kremer · Tel Aviv／NYU Stern／Hebrew University &amp; Warwick · <em>Strategic Disclosure with Fake and Real News</em> · 作者稿 2026-07-21（FTG 论文库 2026-07-26）</p>
+  <div class="tags">
+    <span class="tag">自愿披露</span>
+    <span class="tag">假新闻／社交媒体</span>
+    <span class="tag">混合策略均衡</span>
+    <span class="tag">价格信息含量</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Ilan Guttman &amp; Ilan Kremer（与 Skrzypacz）— <em>American Economic Review</em> 2014「Not Only What but Also When: A Theory of Dynamic Voluntary Disclosure」（104(8): 2400–2420，DOI 10.1257/aer.104.8.2400）；三位作者合著 <em>Journal of Financial Economics</em> 2020「The effect of exogenous information on voluntary disclosure and market quality」（138(1): 176–192，DOI 10.1016/j.jfineco.2020.04.018，本文的前作）；Kremer 另有 <em>Journal of Finance</em> 2024「Disclosing a Random Walk」（79(2)，DOI 10.1111/jofi.13290）。来源：Crossref。机制依作者 Dropbox PDF 第 2–7 节。</div>
+
+  <h3>问了什么</h3>
+  <p>经典自愿披露模型（Dye 1985；Jung–Kwon 1988，下称 DJK）里，所有信息都在经理手上：她可能知道公司价值，也可能不知道；知道时选择说或不说。现实中还有分析师、媒体、社交平台上的传闻，<strong>有真有假，投资者又分不清</strong>。作者问：加一条「可能是真新闻、也可能是假新闻」的外部信息源，经理的披露策略和价格信息含量会怎么变？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>公司价值 X。以概率 q 经理得知 X，可以如实、无成本地披露，或者沉默。之后市场必然看到一条新闻 S：如果经理是知情的，S 以概率 p 等于真值 X（真新闻），否则是与 X 无关、同分布的噪声 Z（假新闻）；如果经理不知情，新闻一定是假的。经理<strong>在看到新闻之前</strong>决定说不说。投资者风险中性，价格 = 条件期望。</p>
+  <div class="eq">沉默时的价格：P<sup>ND</sup>(s) = ρ̂(s)·s + (1 − ρ̂(s))·P<sub>f</sub><sup>ND</sup>，　ρ̂(s) = q·p·α(s) ／ [1 − q + q(1−p)W(α) + q·p·α(s)]</div>
+  <p class="eq-note">人话：看到「经理没说 + 新闻说值 s」，投资者先猜这条新闻是真的概率 ρ̂(s)：真，就按 s 定价；假，就按「沉默且新闻是假」的平均价 P<sub>f</sub><sup>ND</sup> 定价。α(s) 是价值为 s 的知情经理选择沉默的概率，W(α) 是知情经理整体沉默的概率。关键：如果价值为 s 的经理一定会披露（α(s)=0），那「没说却出现 s 这条新闻」只能是假新闻，ρ̂(s)=0。</p>
+  <ul>
+    <li><strong>命题 1（作者证明）：</strong>只要 0 &lt; p &lt; 1，DJK 那种「高于门槛就说、低于就不说」的纯策略均衡<strong>不存在</strong>。原因：若大家相信门槛是 y，那么高于 y 的新闻在经理沉默时一定被当成假的，价格跳回接近先验均值；略低于 y 的新闻则可能是真的坏消息。于是价值刚刚高于 y 的经理，沉默反而比披露更划算，门槛被击穿。</li>
+    <li><strong>命题 2（均衡刻画）：</strong>存在两个门槛 x<sub>l</sub> &lt; x<sub>h</sub>：低于 x<sub>l</sub> 一定沉默，高于 x<sub>h</sub> 一定披露，中间区域<strong>随机</strong>披露，披露概率随价值单调上升。这个区域里沉默价格对新闻的斜率为 1/p &gt; 1：新闻越好，既说明公司更值钱，也说明经理更可能是知情却没说。</li>
+    <li><strong>引理 2（挤出）：</strong>有新闻时知情经理的沉默概率 W*(p) 严格大于无新闻 DJK 的 F(x<sup>0</sup>)：外部信息越可能替你说话，你越不必自己说。</li>
+    <li><strong>命题 3（信息含量）：</strong>按 Ganuza–Penalva（2010）的「积分精度」排序（价格分布更分散 = 更有信息），有新闻的环境严格优于无新闻：<strong>披露少了，但价格整体更有信息</strong>，哪怕新闻可能是假的。</li>
+    <li><strong>扩展（第 6 节）：</strong>经理不知情时新闻也可能为真，只要「知情时更可能为真」足够明显，结论保留；新闻不一定到来时同样是两门槛混合；如果经理先看到新闻再决定，低信号区出现「信号越高、越不披露」。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>DJK 框架：披露真实且无成本；不知情的经理无法证明自己不知情；经理只关心新闻出来后的股价。</li>
+    <li>新闻质量与经理知情程度正相关（典型如内部销售数据、临床试验、勘探结果的「泄露」）；不建模有意散布的谣言。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>真假难辨的外部信息会让「中等好消息」的披露变成随机，从而产生现有公司特征解释不了的披露差异。</li>
+    <li>可检验含义（作者提出）：股价同步性低（公司特有信息多）的公司，自愿披露的「无法解释部分」更大；社交媒体兴起相当于新闻更多但更不可靠，混合区域变宽；新闻几乎全假（如 meme 股）时，又会回到接近无新闻的 DJK，披露反而更多。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）A 股的情景很贴：股吧、雪球、自媒体的「小作文」天天有，交易所又有澄清公告制度。这篇给出一个干净的预测——<strong>传闻越多、越真假难辨，公司对中等好消息的自愿披露越随机，整体披露频率下降</strong>，而价格信息含量未必下降。董杰可以用「传闻热度 × 传闻事后被证实比例」刻画 p，检验业绩预告、自愿性公告的「残差波动」是否随之变化；对 AI 方向也有一笔：生成式 AI 让假新闻更便宜，等于压低 p，按模型预测，先扩大、再（p 接近 0 时）缩小混合区。与 8/19 Chen–Jin「公共信号反噬」、9/8 Chen–Schneemeier「披露陷阱」放在一起读，是「外部信息如何改变公司说不说」的三个角度。</p>
+
+  <p class="links">链接：<a href="https://www.financetheory.org/papers/strategic-disclosure-with-fake-and-real-news">FTG 论文页</a> · <a href="https://www.dropbox.com/scl/fi/y28yjjgsf64j80w64es0q/FGK_Fake_News_July2026.pdf?rlkey=ut7si7nb7r1s2sp6utgqrjwqz&amp;dl=1">PDF（Dropbox）</a> · <a href="https://doi.org/10.1257/aer.104.8.2400">Guttman–Kremer–Skrzypacz AER 2014（DOI）</a> · <a href="https://doi.org/10.1016/j.jfineco.2020.04.018">Frenkel–Guttman–Kremer JFE 2020（DOI）</a></p>
+</article>
+
+<article id="p3">
+  <h2>3. 指数调整前的「抢跑」其实是在供给流动性；抢跑者越多，越该在调整当天集中交易</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p3" data-title="3. 指数调整前的「抢跑」其实是在供给流动性；抢跑者越多，越该在调整当天集中交易" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Stefano Pegoraro, Marco Sammon &amp; John J. Shim · Notre Dame／Harvard Business School／Notre Dame · <em>Optimal Index-Linked Rebalancing with Anticipatory Trading</em> · 作者稿 2026-08-01 · FTG 第 35 次会员会议（CMU，2026-09-25～26）</p>
+  <div class="tags">
+    <span class="tag">指数调整</span>
+    <span class="tag">抢跑／预判交易</span>
+    <span class="tag">流动性供给</span>
+    <span class="tag">承诺</span>
+    <span class="tag">理论 + 实证</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Marco Sammon &amp; John J. Shim — <em>Review of Financial Studies</em> 2026「Who Clears the Market When Passive Investors Trade?」（39(10): 3330–3377，DOI 10.1093/rfs/hhag032）与 <em>Journal of Financial Economics</em> 2026「Index rebalancing and stock market composition: Do indexes time the market?」（177: 104229，DOI 10.1016/j.jfineco.2025.104229）；Sammon 另有 <em>Journal of Finance</em> 2025「The Disappearing Index Effect」（与 Greenwood，80(2): 657–698）；Shim 有 <em>QJE</em> 2015（Budish–Cramton–Shim 高频交易军备竞赛）；Pegoraro 有 <em>JPE</em> 2023（131(10)）。来源：Crossref。机制依 FTG PDF 第 4–7 节（证明在网上附录，需向作者索取）。</div>
+
+  <h3>问了什么</h3>
+  <p>标普、罗素调整成分股时，指数跟踪资金常在实施日收盘集合竞价里一天成交超过流通股的 20%，当天价格却几乎不动（2010–2024 年直接纳入标普 500 的股票，实施日平均收益 −9 个基点，成交量是平时日均的 20–25 倍）。另一边，专门预判指数调整的「抢跑」资金提前建仓，看起来像在吃指数基金的钱。作者问：<strong>抢跑到底是掠夺，还是流动性供给？为什么连可以灵活跟踪的主动资金也挤在同一天交易？</strong></p>
+
+  <h3>核心机制（人话）</h3>
+  <p>五期模型：0 期公告；1 期实施前可以交易；2 期实施日；3 期实施后；4 期按基本面价值清算。指数把旧股 O 换成新股 N，基金要卖 Q 股 O、买 Q 股 N。L 个同质投机者古诺竞争，必须在 3 期前平仓，持仓有成本 c·S<sup>2</sup>。</p>
+  <div class="eq">成交价：P<sub>J,t</sub> = v̄ + λ<sub>J</sub>·Z<sub>J,t</sub> + ρ<sub>J</sub>·z<sub>J,t</sub> + M<sub>J,t</sub></div>
+  <p class="eq-note">人话：λ 是永久冲击（累计净买量 Z 推高价格且留在价里），ρ 是临时冲击（当期净买量 z 只影响当期成交价），M 是基本面随机游走。最终按基本面清算，所以交易中付出的冲击都是真实成本。</p>
+  <div class="eq">基金目标：min C<sup>F</sup> = IS<sup>F</sup> + κ·ν·(x<sub>1</sub> + x<sub>3</sub>)</div>
+  <p class="eq-note">人话：IS 是执行成本（买贵、卖便宜的冲击）；后一项是跟踪误差惩罚——只要不在实施日交易，基金组合就和指数不一样，每偏离一股付 κν（ν 是两只股票收益差的期望绝对值，κ 是基金对跟踪误差的厌恶程度）。</p>
+  <ul>
+    <li><strong>命题 1（挤出，作者证明）：</strong>基金在实施日以外交易得越多，投机者提前建仓越少，实施日可用的投机流动性越少。</li>
+    <li><strong>命题 2（抢跑者降低成本）：</strong>若基金全部在实施日交易，无投机者时执行成本为 (μ<sub>N</sub>+μ<sub>O</sub>)Q<sup>2</sup>；有投机者时严格更低（μ = λ + ρ）。与 Brunnermeier–Pedersen 的掠夺性交易不同：这里需求可预测而非被迫，投机者在实施日站在<strong>对面</strong>卖给基金。</li>
+    <li><strong>命题 3（无承诺）：</strong>跟踪误差厌恶 κ ≥ κ<sup>*</sup><sub>NC</sub> 时，基金全部在实施日交易；κ 中等时只把一部分挪到实施<strong>后</strong>（x<sub>3</sub> &gt; 0）；κ 更小时前后都交易，且 x<sub>3</sub> &gt; x<sub>1</sub>。原因：提前买会和投机者的建仓同向，永久推高后面整块订单的价格。</li>
+    <li><strong>命题 4–5（承诺与竞争）：</strong>如果基金能事先承诺交易时间表（重复的调整日历、声誉可以支撑），门槛更低，κ<sup>*</sup><sub>FC</sub> ≤ κ<sup>*</sup><sub>NC</sub>。投机者数量 L → ∞ 时，无承诺门槛停在 (μ<sub>N</sub>+μ<sub>O</sub>)Q/ν &gt; 0，有承诺门槛则趋于 0：<strong>只要投机者足够多、基金能承诺，再宽松的跟踪者也会全部挤到实施日</strong>。承诺与竞争互相强化。</li>
+    <li><strong>命题 6–7（可度量量）：</strong>实施后价格反转 Γ(L) &lt; 0，随竞争加剧变小但不到 0；投机者承接的成交量占比 V(L) 随 L 上升，极限小于 1。作者主张：反转幅度（按需求规模标准化）才是指数投资者「可避免成本」的正确度量。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>线性永久＋临时冲击（Almgren–Chriss 式的简约设定），新旧股票同步一买一卖；投机者无信息优势，只靠预判需求与流动性赚钱。</li>
+    <li>三期解析解；多期版本数值求解，用于快速纳入、宽松跟踪者等应用。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>实证（作者估计）：近年指数基金能以约 1% 的成本完成相当于日均 20 倍以上的交易，相对常见的机构冲击估计「出奇地便宜」；标准化反转二十年来明显下降，符合抢跑竞争加剧。</li>
+    <li>融券数据：标普直接纳入、罗素 1000→2000 这类正向需求事件，空头仓位在实施日附近上升、之后回落（投机者先卖空供货、再回补）；罗素 2000→1000 这类负向需求事件，空头仓位在实施日附近下降，方向与模型一致。新股快速纳入指数会抬高 IPO 发行价，但股票流动性差、难以卖空时，成本落到指数投资者身上。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）A 股沪深 300、中证 500／1000 每年两次定期调整，ETF 规模快速扩大，「指数调整抢跑」也是量化私募的常见策略。这篇提供了一个可直接迁移的框架：<strong>用实施后反转（除以被动需求规模）衡量指数投资者真正付出的成本</strong>，用融券余额的「先升后降」识别中介行为。对董杰的微观结构研究，可检验转融通、融券限制收紧前后，调整前的价格漂移、实施日冲击与事后反转如何变化——模型预测卖空越难，投机中介越少，实施日冲击和反转越大。顺带一提，这篇对「抢跑」给出了偏正面的福利结论，和监管通常的直觉相反，值得在讨论 AI／量化抢跑时作为对照。</p>
+
+  <p class="links">链接：<a href="https://www.financetheory.org/events/35th-meeting-at-carnegie-mellon-university-fall-2026">FTG 第 35 次会议页</a> · <a href="https://www.financetheory.org/storage/pdf/papers/events/35th-meeting-at-carnegie-mellon-university-fall-2026/F26.S.Pegoraro.pdf">PDF</a> · <a href="https://doi.org/10.1093/rfs/hhag032">Sammon–Shim RFS 2026（DOI）</a> · <a href="https://doi.org/10.1016/j.jfineco.2025.104229">Sammon–Shim JFE 2026（DOI）</a> · <a href="https://doi.org/10.1111/jofi.13410">Greenwood–Sammon JF 2025（DOI）</a></p>
+</article>
+
+<article id="p4">
+  <h2>4. 期货管方向、方差互换管波动；两者合起来，「凡是价格能张成的风险」都已分担到最优</h2>
+  <!-- star-inject --><p class="star-row"><button type="button" class="star-btn" data-id="p4" data-title="4. 期货管方向、方差互换管波动；两者合起来，「凡是价格能张成的风险」都已分担到最优" aria-pressed="false">☆ 想精读</button></p><!-- /star-inject -->
+  <p class="authors">Baiyang Han, Junyi Hu &amp; Anthony Lee Zhang · Stanford GSB／USC Marshall／Chicago Booth · <em>Markets for Price Risk</em> · 作者稿 2026-07 · FTG 第 35 次会员会议（CMU，2026-09-25～26）</p>
+  <div class="tags">
+    <span class="tag">资产定价理论</span>
+    <span class="tag">不完全市场一般均衡</span>
+    <span class="tag">期货</span>
+    <span class="tag">方差互换／期权</span>
+    <span class="tag">风险溢价</span>
+  </div>
+  <div class="qual"><strong>顶刊核验：</strong>Anthony Lee Zhang — <em>Journal of Financial Economics</em> 2022「Competition and manipulation in derivative contract markets」（144(2): 396–413，DOI 10.1016/j.jfineco.2022.02.001；衍生品合约设计与操纵）；另有 JFE 2023（与 Yannelis，「Competition and selection in credit markets」，DOI 10.1016/j.jfineco.2023.103710）、<em>Review of Financial Studies</em> 2026（与 Ma、Zeng，稳定币挤兑，DOI 10.1093/rfs/hhag072）。来源：Crossref。机制依 FTG PDF 第 2–7 节。</div>
+
+  <h3>问了什么</h3>
+  <p>Arrow（1964）把金融资产想成「状态 → 支付」的合约。可现实里的石油期货、利率互换、股指期权，支付写在<strong>市场价格</strong>上，而价格本身是均衡结果。作者问：只写在价格上的低维衍生品，能把市场补到离 Arrow 完全市场多近？期货、方差互换各自解决什么问题？风险溢价的符号由什么决定？</p>
+
+  <h3>核心机制（人话）</h3>
+  <p>N 类消费者，CARA 效用（风险厌恶 α<sub>i</sub>），两种商品：钱和一种实物（如原油）。每人有二次「生产技术」W<sub>i</sub>(y) = ψy − y<sup>2</sup>/(2κ<sub>i</sub>)，κ<sub>i</sub> 越大越能消化库存（需求越有弹性）。唯一的不确定性是各人的随机库存 x<sub>i</sub>（正态，均值 μ<sub>i</sub>，总均值归一为 0）。第一期交易金融合约，第二期库存实现后开现货市场。</p>
+  <div class="eq">现货价：p − ψ = −Σ<sub>i</sub>x<sub>i</sub> ／ Σ<sub>i</sub>κ<sub>i</sub></div>
+  <p class="eq-note">人话：总库存越多，价格越低；κ 之和是总需求曲线的斜率。现货市场把货分配得完全有效（每人拿到总库存中与 κ<sub>i</sub> 成比例的份额），但<strong>风险分担不对</strong>：作者指出三种扭曲——现货「做市方」天然多头波动、「吃流动性方」天然空头波动；库存冲击本身是财富冲击却没人分担；预期的买方与卖方对价格方向的暴露相反。</p>
+  <div class="eq">第一最优：G<sub>i</sub><sup>*</sup>(x) = C<sub>i</sub> + [α<sub>i</sub><sup>−1</sup> ／ Σ<sub>j</sub>α<sub>j</sub><sup>−1</sup>] · W<sup>*</sup>(x)</div>
+  <p class="eq-note">人话：Borch 规则——社会总财富 W* 的波动，按「风险容忍度 1/α 的占比」分给每个人。Arrow 证券能做到；问题是只有价格衍生品时能做到多少。</p>
+  <ul>
+    <li><strong>方法（作者证明）：</strong>把每人的库存冲击投影到价格上，剩下与价格无关的「基差风险」变成一个依赖价格的财富惩罚。于是不完全市场问题化成「只有价格这一个风险源」的完全市场问题；CARA-正态下每人的风险中性分布仍是正态，只是均值、方差被「倾斜」。每人对价格的一阶暴露叫 delta，二阶暴露叫 gamma（借期权希腊字母）。</li>
+    <li><strong>期货 = 交易 delta：</strong>经济体总 delta 为负——价格高恰好是总库存低、总财富低的时候，所以整体想做多期货对冲，均衡期货价格<strong>高于</strong>预期现货价，期货风险溢价为负。有趣的是，买方卖方对预期现货交易的方向性对冲彼此抵消，不影响风险溢价，只产生成交量（推广了 Hirshleifer 1990）。</li>
+    <li><strong>方差互换 = 交易 gamma：</strong>支付 (p − ψ)<sup>2</sup>。吃流动性的一方（被动接受随机需求）天然空头波动，做市一方天然多头波动，方差互换让双方互相抵消，正如期货让买卖双方抵消方向风险。整体经济总 gamma 为负（社会财富对价格是凹的），所以整体想做多方差，均衡下<strong>方差风险溢价为负</strong>。</li>
+    <li><strong>命题 5（价格条件完全性）：</strong>有期货和方差互换的均衡，任何只依赖价格的、预算平衡的再分配都无法帕累托改进。原因是每人的风险中性分布是正态，正态由均值和方差决定，而这两种合约恰好交易这两个量，于是所有人的定价核被拉齐。</li>
+    <li><strong>命题 6（福利损失）：</strong>相对第一最优的损失近似为 Σ<sub>i</sub>α<sub>i</sub>ν<sub>i</sub>/2 · E[p<sup>2</sup>]：价格张成不了的基差风险 ν<sub>i</sub> 落在风险厌恶高的人身上越多，损失越大。</li>
+  </ul>
+
+  <h3>关键假设</h3>
+  <ul>
+    <li>商品与钱之间拟线性（没有收入效应，所以金融交易不改变现货均衡）、CARA、正态库存冲击、二次技术；商品不可储存。</li>
+    <li>作者说明：若冲击不是正态，确定性等价里会出现价格的更高阶项，就需要更高阶的价格衍生品才能对冲；「两种合约就够」依赖高斯 + 二次设定。</li>
+  </ul>
+
+  <h3>主要结论</h3>
+  <ul>
+    <li>低维价格衍生品不是「不完全」的劣质替代：对价格可张成的那部分风险，它们已经实现最优分担；剩下的损失全在基差风险。</li>
+    <li>给期权／方差市场一个新的社会价值：让现货中天然多头波动和空头波动的两方互相对冲；同时自然推出负的期货与方差风险溢价。</li>
+  </ul>
+
+  <h3>为什么值得看</h3>
+  <p>（本简报的解读）这篇偏资产定价理论，和董杰的披露主线较远，但对理解中国衍生品很有用：商品期货（原油、铁矿石）、股指期货、50ETF／300ETF 期权和隐含波动率指数。模型说「做市方天然多头波动、需求方天然空头波动」，可以拿来解释为什么期权做市商、产业套保者和投机者的持仓结构不同，也给「方差风险溢价为负」提供了一个不依赖投资者偏好扭曲的来源。若董杰之后做股指期货／期权的微观结构，可以借它的 delta／gamma 拆分来界定谁需要对冲什么。</p>
+
+  <p class="links">链接：<a href="https://www.financetheory.org/events/35th-meeting-at-carnegie-mellon-university-fall-2026">FTG 第 35 次会议页</a> · <a href="https://www.financetheory.org/storage/pdf/papers/events/35th-meeting-at-carnegie-mellon-university-fall-2026/F26.A.Zhang.pdf">PDF</a> · <a href="https://doi.org/10.1016/j.jfineco.2022.02.001">Zhang JFE 2022（DOI）</a> · <a href="https://doi.org/10.1093/rfs/hhag072">Ma–Zeng–Zhang RFS 2026（DOI）</a></p>
+</article>
+
+<footer>
+  避开 8/18–10/12 已写过的篇目（含 10/12 Bouton 等 NBER w30757、Edmans–Levit–Schneemeier SSRN 4093518、Aggarwal–Luneva SSRN 6162006；10/8 Capponi–Cartea–Drissi、Choi–Larsen（亦即 SSRN 7127400）、Cabrales 等、Lu–Stachurski；10/7 Dai–Jia–Yu、Della Corte–Kosowski 等、Frick–Iijima–Ishii–Wu、Liu–Zhang–Cong 等；10/6 Kolb–Zhou、Lizzeri–Lou–Perego、Gao–Lu–Yang、Awaya–Krishna–Osipov；10/5 Kadan–Manela、Guo–Wachter、Pástor–Stambaugh–Taylor、Colliard–Zhao；8/28 Kim–Choi、Viswanathan–Xing；8/19 Chen–Jin；9/8 Chen–Schneemeier）。用户提示里的候选已写过而弃用：Anthropelos–Robertson（9/11、9/22）、Cartea–Chang–Graumans SSRN 5080700（9/8）、Barucci–Mathieu–Sánchez-Betancourt SSRN 5085589（9/22）、Qin–Yu–Zhu SSRN 6643254（9/4）；Banerjee–Szydlowski《Algorithmic Trading Architecture》已于 8/26 写过；Tourky–Monteiro《The one-period Kyle model has one equilibrium》（SSRN 7218099）即 9/11 已写的 arXiv 2607.23585。本期未收录：Dou–Goldstein–Li–Yang《The Limits of AI Trading》（SSRN 5866104，Goldstein、Yang 均有名单内顶刊，但 SSRN 对本机返回「Content Blocked」、作者页只有摘要、NBER SI 幻灯片下载超时，未能按「读全文」标准收录，建议拿到 PDF 后补写）；Huang–Ouyang《Prompt Quality and LLM Memory》（FTG 2026 秋，Ouyang 有 JFE 2026，已读引言与模型，主题偏 AI 投顾、离股市理论稍远，留作备选）；Gondhi–Shen–Zou《AI and Quantity Traps》（讲学术发表，离题）；Atanasova《Price-State Resolvability and Algorithmic Collusion in Kyle Markets》（SSRN 7439778，页面抓取超时、未核到名单内顶刊）；Ashkenazi-Golan–Plumb–Possnig–Zhang《Delegate Pricing to Algorithms》（arXiv 2610.11675，产品市场定价、未核到名单内顶刊）。四篇依 CREDIT 2026 会议站／FTG 会议站／作者 Dropbox 全文 PDF。顶刊：Yun RFS 2009、JFE 2013；Guttman–Kremer AER 2014、Frenkel–Guttman–Kremer JFE 2020、Kremer JF 2024；Sammon–Shim RFS 2026、JFE 2026，Greenwood–Sammon JF 2025；Zhang JFE 2022、RFS 2026（均经 Crossref）。PDF 存 /workspace/research/daily-papers/scratch-1014/。不编造论文或顶刊记录。
+</footer>
+</div>
+<!-- star-inject --><script src="../star-config.js?v=5"></script><script src="../star.js?v=5"></script><!-- /star-inject -->
+</body>
+</html>
